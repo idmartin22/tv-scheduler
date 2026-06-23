@@ -350,7 +350,7 @@ function App(){
         if(data&&active){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
-          if(data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(data.prioOvr);
+          if(data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
           if(data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
         }
@@ -433,7 +433,7 @@ function App(){
       const fb=getFaveBoost(e.name,e.leagueId,favTeams);
       const fm=fb.match?FAVE_BOOST:0;
       const raw=e.rawBase+lm+fm;
-      const ov=prioOvr[e.id];
+      const ov=prioOvr[e.id]??prioOvr[String(e.id)];
       const bd=[
         ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")),
         lm>0&&{l:`League mod +${lm}`,v:lm},
