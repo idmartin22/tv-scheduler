@@ -22,6 +22,7 @@
   <script type="text/babel">
     const { useState, useMemo, useEffect } = React;
 
+
 const FLAT_BASE = 20;
 const BAR_OPEN  = 7  * 60;
 const BAR_CLOSE = 24 * 60;
@@ -41,6 +42,16 @@ const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITH
 async function githubLoad() {
   try {
     const r = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/${GITHUB_FILE}?t=${Date.now()}`);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+async function githubLoadSchedule(date) {
+  // date format: YYYY-MM-DD
+  try {
+    const url = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/schedule/${date}.json?t=${Date.now()}`;
+    const r = await fetch(url);
     if (!r.ok) return null;
     return await r.json();
   } catch(e) { return null; }
@@ -168,12 +179,18 @@ function matchLid(league) {
   return "other";
 }
 
+function makeLeagueId(leagueName) {
+  return leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
 function makeEvent(o) {
   const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
   const raw=FLAT_BASE+st.v+sk.v+rv.v+mq.v;
   const bd=[{l:"Flat base",v:FLAT_BASE},st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
   const lid=matchLid(o.league);
-  return {id:o.id,time:o.time,name:o.name,sport:o.sport,league:o.league,channel:o.ch,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:lid,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+  const isUnknown=lid==="other";
+  const finalLid=isUnknown?makeLeagueId(o.league):lid;
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:o.ch,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:finalLid,isUnknown,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
 }
 
 const EVENTS = [
@@ -279,6 +296,10 @@ const LG=[
   {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
 ];
 const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
+
+function parseScheduleEvents(rawEvents) {
+  return rawEvents.map(o=>makeEvent(o));
+}
 const DEF_ORDER=ALL_LEAGUES.map(l=>l.id);
 const DEF_MODS=(()=>{
   const total=ALL_LEAGUES.length;
@@ -309,6 +330,12 @@ function App(){
   const [tab,setTab]=useState("grid");
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
+  const [unknownLeagues,setUnknownLeagues]=useState({}); // leagueId -> {n, sport, gc, gtc}
+  const [scheduleDate,setScheduleDate]=useState(()=>{
+    const now=new Date();
+    return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  });
+  const [dynamicEvents,setDynamicEvents]=useState(null); // null = use hardcoded EVENTS
   const [ready,setReady]=useState(false);
   const [favTeams,setFavTeams]=useState({...DEF_FAVES});
   const [leagueMods,setLeagueMods]=useState({...DEF_MODS});
@@ -318,17 +345,26 @@ function App(){
     (async()=>{
       setSyncStatus("loading");
       try{
+        // Load settings
         const data=await githubLoad();
         if(data&&active){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
-          if(data.sha) setGhaSha(data.sha);
-          // fetch sha separately for saving
-          try{
-            const r=await fetch(GITHUB_API,{headers:{'Authorization':`Bearer ${GITHUB_PAT}`,'Accept':'application/vnd.github+json'}});
-            if(r.ok){const j=await r.json();if(active)setGhaSha(j.sha);}
-          }catch(e){}
+          if(data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(data.prioOvr);
+          if(data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
+          if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
         }
+        // fetch SHA for saving
+        try{
+          const r=await fetch(GITHUB_API,{headers:{'Authorization':`Bearer ${GITHUB_PAT}`,'Accept':'application/vnd.github+json'}});
+          if(r.ok){const j=await r.json();if(active)setGhaSha(j.sha);}
+        }catch(e){}
+        // Load today's schedule
+        const today=new Date();
+        const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+        if(active)setScheduleDate(dateStr);
+        const sched=await githubLoadSchedule(dateStr);
+        if(sched?.events&&active) setDynamicEvents(sched.events);
         if(active)setSyncStatus("saved");
       }catch(e){
         if(active)setSyncStatus("error");
@@ -338,12 +374,37 @@ function App(){
     return()=>{active=false;};
   },[]);
 
-  const debouncedSave=React.useCallback((mods, faves)=>{
+  // Compute active events — use GitHub schedule if loaded, else hardcoded EVENTS
+  const activeEvents=useMemo(()=>{
+    const evs=dynamicEvents?parseScheduleEvents(dynamicEvents):EVENTS;
+    return evs;
+  },[dynamicEvents]);
+
+  // Auto-register unknown leagues found in today's events
+  useEffect(()=>{
+    const found={};
+    activeEvents.forEach(e=>{
+      if(e.isUnknown&&!ALL_LEAGUES.find(l=>l.id===e.leagueId)){
+        found[e.leagueId]={n:e.league,sport:e.sport||"Other",gc:"#374151",gtc:"#9ca3af",isUnknown:true};
+      }
+    });
+    if(Object.keys(found).length>0){
+      setUnknownLeagues(prev=>{
+        const merged={...prev,...found};
+        // Only save if there are new ones
+        const hasNew=Object.keys(found).some(k=>!prev[k]);
+        if(hasNew) debouncedSave(buildSavePayload({unknownLeagues:merged}));
+        return merged;
+      });
+    }
+  },[activeEvents]);
+
+  const debouncedSave=React.useCallback((payload)=>{
     if(saveTimerRef.current) clearTimeout(saveTimerRef.current);
     setSyncStatus("saving");
     saveTimerRef.current=setTimeout(async()=>{
       try{
-        const newSha=await githubSave({leagueMods:mods,favTeams:faves},ghaSha);
+        const newSha=await githubSave(payload,ghaSha);
         setGhaSha(newSha);
         setSyncStatus("saved");
       }catch(e){
@@ -352,12 +413,22 @@ function App(){
     },500);
   },[ghaSha]);
 
-  const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(leagueMods,f);};
+  const buildSavePayload=React.useCallback((overrides={})=>{
+    return {
+      leagueMods: overrides.leagueMods ?? leagueMods,
+      favTeams:   overrides.favTeams   ?? favTeams,
+      prioOvr:    overrides.prioOvr    ?? prioOvr,
+      mirrors:    overrides.mirrors    ?? mirrors,
+      unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
+    };
+  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues]);
 
-  const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(m,favTeams);};
+  const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
+
+  const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
 
   const ewp=useMemo(()=>{
-    const base=EVENTS.map(e=>{
+    const base=activeEvents.map(e=>{
       const lm=leagueMods[e.leagueId]??0;
       const fb=getFaveBoost(e.name,e.leagueId,favTeams);
       const fm=fb.match?FAVE_BOOST:0;
@@ -418,12 +489,12 @@ function App(){
   const asgnd=useMemo(()=>final.filter(a=>a.tv!==-1),[final]);
   const unasgd=useMemo(()=>final.filter(a=>a.tv===-1),[final]);
 
-  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);return{...p,[evId]:c};});
+  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave(buildSavePayload({mirrors:n}));return n;});
   const bumpAndAssign=e=>{
     if(!e.bumpTgt)return;
     const b=final.find(a=>a.name===e.bumpTgt.name&&a.tv===e.bumpTgt.tv);
     if(!b)return;
-    setPrioOvr(p=>({...p,[e.id]:e.priority+1,[b.id]:-1}));setSel(null);
+    setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave(buildSavePayload({prioOvr:n}));return n;});setSel(null);
   };
   const selEv=sel?final.find(a=>a&&a.id===sel):null;
 
@@ -444,7 +515,7 @@ function App(){
       <div style={{background:C.SUR,borderBottom:`1px solid ${C.BD}`,padding:"8px 14px",position:"sticky",top:0,zIndex:30}}>
         {/* Row 1: Title + subtitle */}
         <div style={{marginBottom:6}}>
-          <div style={{fontFamily:"monospace",fontSize:12,fontWeight:700,color:C.A}}>🍺 BAR SCHEDULER — TUE JUN 23</div>
+          <div style={{fontFamily:"monospace",fontSize:12,fontWeight:700,color:C.A}}>{`🍺 BAR SCHEDULER — ${scheduleDate}`}</div>
           <div style={{fontFamily:"monospace",fontSize:9,color:C.DM,marginTop:1}}>{asgnd.length} assigned · {unasgd.length} unassigned · {schedulableTVs.size} active{activePreset&&<span style={{color:"#fb923c",marginLeft:8}}>⬡ {activePreset} ({activeTVs.size} TVs)</span>}<span style={{marginLeft:10,fontFamily:"monospace",fontSize:9,color:syncStatus==="saved"?"#4ade80":syncStatus==="saving"?"#fbbf24":syncStatus==="loading"?"#60a5fa":syncStatus==="error"?"#f87171":"#4a5a72"}}>{syncStatus==="saved"?"✓ SYNCED":syncStatus==="saving"?"⟳ SAVING...":syncStatus==="loading"?"⟳ LOADING...":syncStatus==="error"?"✗ SYNC ERROR":""}</span></div>
         </div>
         {/* Row 2: Mirror preset + TV toggles */}
@@ -522,7 +593,7 @@ function App(){
             if(!e)return null;const c=sc(e);
             const asgn=final.find(a=>a&&a.id===e.id);
             const tvLbl=asgn?.tv===-1?"⚠":asgn?TVS[asgn.tv]?.name||`T${asgn.tv+1}`:"—";
-            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>({...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)}));};
+            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});};
             return(
               <div key={e.id} style={{display:"grid",gridTemplateColumns:"26px 30px 1fr 48px 36px 44px",gap:6,padding:"6px 14px",borderBottom:"1px solid #191c23",background:sel===e.id?`${c.bg}44`:i%2===0?`${c.bg}18`:`${c.bg}0e`,cursor:"pointer",alignItems:"center"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
                 <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:C.MT,textAlign:"center"}}>{i+1}</div>
@@ -552,13 +623,13 @@ function App(){
         <div style={{paddingBottom:80}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
             <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>LEAGUE MODIFIERS — 0 to {MAX_MOD}{ready&&<span style={{color:"#22c55e",marginLeft:8}}>● SAVED</span>}</div>
-            <button style={{background:"none",border:`1px solid ${C.A}`,borderRadius:4,color:C.A,fontFamily:"monospace",fontSize:9,padding:"3px 10px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(m,favTeams);}}>RESET</button>
+            <button style={{background:"none",border:`1px solid ${C.A}`,borderRadius:4,color:C.A,fontFamily:"monospace",fontSize:9,padding:"3px 10px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>RESET</button>
           </div>
           <div style={{fontFamily:"monospace",fontSize:9,color:C.DM,padding:"4px 14px 3px"}}>Type modifier 0–{MAX_MOD} · list auto-sorts · fave team = +{FAVE_BOOST} boost · auto-saves</div>
           <div style={{display:"grid",gridTemplateColumns:"24px 22px 1fr 60px 150px",gap:5,padding:"4px 14px",borderBottom:`1px solid ${C.BD}`}}>
             {["#","","LEAGUE","MOD","FAVE TEAMS (comma-sep)"].map(h=><div key={h} style={{fontFamily:"monospace",fontSize:8,color:C.DM}}>{h}</div>)}
           </div>
-          {[...ALL_LEAGUES].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
+          {[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:true}))].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
             const leagueId=lg.id;
             const mod=leagueMods[leagueId]??0;
             const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
@@ -568,7 +639,7 @@ function App(){
               <div key={leagueId} style={{display:"grid",gridTemplateColumns:"24px 22px 1fr 60px 150px",gap:5,padding:"5px 14px",borderBottom:"1px solid #191c23",alignItems:"center",background:hasFave?`${lg.gc}28`:`${lg.gc}18`}}>
                 <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
                 <div style={{fontSize:14,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
-                <div style={{fontSize:12,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:9,color:"#fbbf24"}}>⭐</span>}</div>
+                <div style={{fontSize:12,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:9,color:"#fbbf24"}}>⭐</span>}{lg.isUnknown&&<span style={{marginLeft:5,fontSize:9,color:"#fb923c"}}>⚠️</span>}</div>
                 <input
                   type="number"
                   min="0"
