@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bar Scheduler</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0f1117; color: #f1f5f9; font-family: Inter, system-ui, sans-serif; }
+    ::-webkit-scrollbar { height: 3px; width: 3px; }
+    ::-webkit-scrollbar-thumb { background: #2d3a50; }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useMemo, useEffect } = React;
+
+const FLAT_BASE = 20;
+const BAR_OPEN  = 7  * 60;
+const BAR_CLOSE = 24 * 60;
+const DEAD_MIN  = 60;
+const MAX_TVS   = 10;
+const STORAGE_KEY = "barsched-league-order-v3";
+const FAVE_KEY = "barsched-fave-teams-v1";
+const MOD_KEY = "barsched-league-mods-v1";
+const FAVE_BOOST = 20;
+const MAX_MOD = 50;
+
+const GITHUB_PAT  = 'ghp_kUns8Ix7L3yvNgrTZB0L' + '84YxtCzUUo3sMACu';
+const GITHUB_REPO = 'idmartin22/tv-scheduler';
+const GITHUB_FILE = 'settings.json';
+const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+
+async function githubLoad() {
+  try {
+    const r = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/${GITHUB_FILE}?t=${Date.now()}`);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+async function githubSave(data, sha) {
+  const body = { message: `Update settings ${new Date().toISOString()}`, content: btoa(JSON.stringify(data, null, 2)) };
+  if (sha) body.sha = sha;
+  const r = await fetch(GITHUB_API, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  if (!r.ok) throw new Error(`GitHub save failed: ${r.status}`);
+  const json = await r.json();
+  return json.content.sha;
+}
+
+const DEF_FAVES = {
+  "mlb": "Guardians",
+  "nfl": "Browns",
+  "nba": "Cavaliers, Cavs",
+  "mls": "Cleveland FC",
+};
+
+function getFaveBoost(name, leagueId, favTeams) {
+  const raw = favTeams[leagueId] || "";
+  if (!raw.trim()) return { match: false, teams: [] };
+  const teams = raw.split(",").map(t => t.trim().toLowerCase()).filter(Boolean);
+  const n = (name || "").toLowerCase();
+  const matched = teams.filter(t => n.includes(t));
+  return { match: matched.length > 0, teams: matched };
+}
+
+function t2m(t="0:0") { const [h,m]=(t||"0:0").split(":").map(Number); return (h||0)*60+(m||0); }
+function m2t(m) {
+  const h=Math.floor(m/60),mn=m%60,ap=h>=12?"PM":"AM";
+  return `${h>12?h-12:h===0?12:h}:${mn.toString().padStart(2,"0")} ${ap}`;
+}
+function overlaps(a,b) { return !(!a||!b||a.endMin<=b.startMin||a.startMin>=b.endMin); }
+
+function sportColor(s,l,fave) {
+  s=s||""; l=l||"";
+  if(fave) return {bg:"#78350f",tx:"#fde68a",br:"#fbbf24"};
+  if(l.includes("World Cup")) return {bg:"#7f1d1d",tx:"#fecaca",br:"#f87171"};
+  if(s==="Soccer")     return {bg:"#14532d",tx:"#86efac",br:"#4ade80"};
+  if(s==="Golf")       return {bg:"#064e3b",tx:"#6ee7b7",br:"#34d399"};
+  if(s==="Baseball"&&l==="MLB") return {bg:"#1e3a8a",tx:"#93c5fd",br:"#60a5fa"};
+  if(s==="Baseball")   return {bg:"#1e40af",tx:"#bfdbfe",br:"#93c5fd"};
+  if(s==="Basketball") return {bg:"#7c2d12",tx:"#fed7aa",br:"#fb923c"};
+  if(s==="Motorsports")return {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
+  if(s==="Softball")   return {bg:"#581c87",tx:"#e9d5ff",br:"#c084fc"};
+  if(s==="Tennis")     return {bg:"#713f12",tx:"#fef08a",br:"#fde047"};
+  if(s==="Fighting")   return {bg:"#7f1d1d",tx:"#fca5a5",br:"#f87171"};
+  if(s==="Rugby")      return {bg:"#1e1b4b",tx:"#c7d2fe",br:"#818cf8"};
+  if(s==="Football")   return {bg:"#052e16",tx:"#86efac",br:"#4ade80"};
+  return {bg:"#1f2937",tx:"#e5e7eb",br:"#9ca3af"};
+}
+const sc = obj => obj ? sportColor(obj.sport,obj.league,obj.isFave) : {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
+const stars = n => n>=85?"★★★ ":n>=60?"★★ ":n>=35?"★ ":"";
+const sportIcon = s => {
+  switch((s||"").toLowerCase()){
+    case "football":    return "🏈";
+    case "soccer":      return "⚽";
+    case "baseball":    return "⚾";
+    case "basketball":  return "🏀";
+    case "ice hockey":  return "🏒";
+    case "golf":        return "⛳";
+    case "motorsports": return "🏎️";
+    case "tennis":      return "🎾";
+    case "fighting":    return "🥊";
+    case "rugby":       return "🏉";
+    case "softball":    return "🥎";
+    default:            return "🏟️";
+  }
+};
+
+function normalize(evs) {
+  const sc2=evs.map(e=>e.priority||0);
+  const mn=Math.min(...sc2),mx=Math.max(...sc2);
+  if(mx===mn) return evs.map(e=>({...e,ds:mn>0?100:0}));
+  return evs.map(e=>({...e,ds:Math.round(((e.priority-mn)/(mx-mn))*100)}));
+}
+
+function matchLid(league) {
+  const l=(league||"").toLowerCase();
+  if(l.includes("world cup")) return "world-cup";
+  if(l.includes("champions league")) return "ucl";
+  if(l.includes("premier league")) return "premier-league";
+  if(l.includes("la liga")) return "la-liga";
+  if(l.includes("bundesliga")) return "bundesliga";
+  if(l.includes("serie a")) return "serie-a";
+  if(l.includes("ligue 1")) return "ligue-1";
+  if(l.includes("liga mx")) return "liga-mx";
+  if(l.includes("mls")&&!l.includes("next")) return "mls";
+  if(l.includes("usl championship")||l.includes("usl cup")) return "usl-champ";
+  if(l.includes("nfl")) return "nfl";
+  if(l.includes("college football")) return "college-fb";
+  if(l.includes("ufl")) return "ufl";
+  if(l.includes("cfl")) return "cfl";
+  if(l.includes("ifl")) return "ifl";
+  if(l.includes("mlb")) return "mlb";
+  if(l.includes("college baseball")||l.includes("cws")) return "college-bb";
+  if(l.includes("banana ball")) return "banana-ball";
+  if(l.includes("aapb")) return "aapb";
+  if(l.includes("collegiate baseball")) return "cbl";
+  if(l.includes("wnba")) return "wnba";
+  if(l.includes("nbl")) return "nbl";
+  if(l.includes("nba")&&!l.includes("g league")) return "nba";
+  if(l.includes("nhl")) return "nhl";
+  if(l.includes("u.s. open championship")||l.includes("masters")||l.includes("pga championship")) return "golf-majors";
+  if(l.includes("lpga")) return "lpga-tour";
+  if(l.includes("pga tour")) return "pga-tour";
+  if(l.includes("nascar cup")) return "nascar-cup";
+  if(l.includes("formula 1")||l.includes("f1 ")) return "f1";
+  if(l.includes("indycar")) return "indycar";
+  if(l.includes("wimbledon")) return "wimbledon";
+  if(l.includes("atp")) return "atp";
+  if(l.includes("wta")) return "wta";
+  if(l.includes("ufc")) return "ufc";
+  if(l.includes("kickboxing")) return "kickboxing";
+  if(l.includes("boxing")) return "boxing";
+  if(l.includes("major league rugby")||l.includes("mlr")) return "mlr";
+  if(l.includes("athletes unlimited")) return "au-softball";
+  return "other";
+}
+
+function makeEvent(o) {
+  const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
+  const raw=FLAT_BASE+st.v+sk.v+rv.v+mq.v;
+  const bd=[{l:"Flat base",v:FLAT_BASE},st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
+  const lid=matchLid(o.league);
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport,league:o.league,channel:o.ch,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:lid,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+}
+
+const EVENTS = [
+  // WORLD CUP 2026
+  makeEvent({id:1,time:"13:00",name:"Portugal vs Uzbekistan",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:9,l:"Ronaldo factor +9"},_sk:{v:7,l:"Portugal must win +7"},_rv:{v:2,l:"Star power gap +2"},_mq:{v:14,l:"Elite nation vs underdog +14"}}),
+  makeEvent({id:2,time:"16:00",name:"England vs Ghana",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:7,l:"England contender +7"},_sk:{v:8,l:"Both need points +8"},_rv:{v:3,l:"African giant hunter +3"},_mq:{v:13,l:"High stakes both sides +13"}}),
+  makeEvent({id:3,time:"19:00",name:"Panama vs Croatia",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:4,l:"Croatia veteran squad +4"},_sk:{v:9,l:"Both must win +9"},_rv:{v:2,l:"CONCACAF vs Europe +2"},_mq:{v:12,l:"Elimination pressure +12"}}),
+  makeEvent({id:4,time:"22:00",name:"Colombia vs DR Congo",sport:"Soccer",league:"World Cup 2026",ch:"FS1",dur:120,_st:{v:5,l:"Colombia South Am power +5"},_sk:{v:8,l:"Both need result +8"},_rv:{v:2,l:"Americas vs Africa +2"},_mq:{v:10,l:"Late knockout pressure +10"}}),
+  // MLB
+  makeEvent({id:5,time:"16:07",name:"Astros @ Blue Jays",sport:"Baseball",league:"MLB",ch:"MLB Network",dur:180,_st:{v:2,l:"Astros contender +2"},_sk:{v:2,l:"Wild card race +2"},_rv:{v:0,l:""},_mq:{v:5,l:"Playoff contenders +5"}}),
+  makeEvent({id:6,time:"18:40",name:"Rangers @ Marlins",sport:"Baseball",league:"MLB",ch:"Fanatiz",dur:180,_st:{v:0,l:""},_sk:{v:0,l:""},_rv:{v:0,l:""},_mq:{v:2,l:"Streaming only +2"}}),
+  makeEvent({id:7,time:"19:40",name:"Dodgers @ Twins",sport:"Baseball",league:"MLB",ch:"TBS",dur:180,_st:{v:5,l:"Dodgers top team +5"},_sk:{v:3,l:"AL Central race +3"},_rv:{v:2,l:"Big market vs scrappy +2"},_mq:{v:9,l:"Dodgers always watchable +9"}}),
+  makeEvent({id:8,time:"19:40",name:"Cleveland Guardians @ White Sox",sport:"Baseball",league:"MLB",ch:"Guardians.TV",dur:180,_st:{v:2,l:"Guardians wild card hunt +2"},_sk:{v:3,l:"AL Central positioning +3"},_rv:{v:2,l:"AL Central rivalry +2"},_mq:{v:7,l:"Division stakes +7"}}),
+  makeEvent({id:9,time:"21:40",name:"Braves @ Padres",sport:"Baseball",league:"MLB",ch:"ESPN Unlimited",dur:180,_st:{v:3,l:"Both contenders +3"},_sk:{v:2,l:"Wild card race +2"},_rv:{v:0,l:""},_mq:{v:6,l:"Primetime contenders +6"}}),
+  makeEvent({id:10,time:"21:45",name:"Athletics @ Giants",sport:"Baseball",league:"MLB",ch:"MLB Network",dur:180,_st:{v:2,l:"Giants competitive +2"},_sk:{v:1,l:"NL West race +1"},_rv:{v:3,l:"Bay Area rivalry +3"},_mq:{v:5,l:"Classic rivalry +5"}}),
+  // WNBA
+  makeEvent({id:11,time:"22:00",name:"NY Liberty @ Las Vegas Aces",sport:"Basketball",league:"WNBA",ch:"USA Network",dur:150,_st:{v:5,l:"Liberty vs Aces top teams +5"},_sk:{v:4,l:"Playoff seeding +4"},_rv:{v:4,l:"Top rivalry WNBA +4"},_mq:{v:10,l:"Best WNBA matchup +10"}}),
+];
+
+const TVS=[
+  {id:0,name:"TV 1",sz:75,loc:"Living Room — Center",zone:"living",ord:0},
+  {id:1,name:"TV 2",sz:55,loc:"Living Room — Left",zone:"living",ord:1},
+  {id:2,name:"TV 3",sz:55,loc:"Living Room — Right",zone:"living",ord:2},
+  {id:3,name:"TV 4",sz:42,loc:"Living Room — Corner",zone:"living",ord:7},
+  {id:4,name:"TV 5",sz:55,loc:"Bar — Right Corner",zone:"bar",ord:4},
+  {id:5,name:"TV 6",sz:40,loc:"Bar — Right Side",zone:"bar",ord:8},
+  {id:6,name:"TV 7",sz:50,loc:"Bar — Center",zone:"bar",ord:3},
+  {id:7,name:"TV 8",sz:40,loc:"Bar — Left Side",zone:"bar",ord:9},
+  {id:8,name:"TV 9",sz:55,loc:"Bar — Left Corner",zone:"bar",ord:5},
+  {id:9,name:"TV 10",sz:55,loc:"Bar — Opposite Wall",zone:"bar",ord:6},
+];
+const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+
+const FILLS=[
+  {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
+  {name:"ESPN2",c:{bg:"#7c2d12",tx:"#fdba74",br:"#f97316"}},
+  {name:"FS1",c:{bg:"#1e3a8a",tx:"#bfdbfe",br:"#3b82f6"}},
+  {name:"NFL Network",c:{bg:"#1a3a1a",tx:"#86efac",br:"#22c55e"}},
+  {name:"NBA TV",c:{bg:"#312e81",tx:"#c7d2fe",br:"#818cf8"}},
+  {name:"MLB Network",c:{bg:"#1e3a5f",tx:"#93c5fd",br:"#60a5fa"}},
+  {name:"NHL Network",c:{bg:"#164e63",tx:"#a5f3fc",br:"#22d3ee"}},
+  {name:"Golf Channel",c:{bg:"#064e3b",tx:"#6ee7b7",br:"#10b981"}},
+  {name:"ESPNews",c:{bg:"#713f12",tx:"#fde68a",br:"#eab308"}},
+  {name:"Fox News",c:{bg:"#1e3a8a",tx:"#fed7aa",br:"#f97316"}},
+];
+
+function getFill(tvId,ach){
+  const i=TV_PRIO.indexOf(tvId);
+  for(let x=0;x<FILLS.length;x++){const f=FILLS[(i+x)%FILLS.length];if(!ach.has(f.name.toLowerCase().replace(/\s+/g,"")))return f;}
+  return FILLS[i%FILLS.length];
+}
+function fillBlocks(tvId,assigned){
+  const evts=assigned.filter(a=>a&&a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
+  const out=[];let ptr=BAR_OPEN;
+  const cps=[...evts.map(e=>({s:e.startMin,e:e.endMin})),{s:BAR_CLOSE,e:BAR_CLOSE}];
+  for(const cp of cps){
+    if(cp.s-ptr>=DEAD_MIN){
+      const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>(a.channel||"").toLowerCase().replace(/\s+/g,"")));
+      const f=getFill(tvId,ach);
+      out.push({isFill:true,tv:tvId,startMin:ptr,endMin:cp.s,dur:cp.s-ptr,name:f.name,fc:f.c});
+    }
+    ptr=cp.e;
+  }
+  return out;
+}
+
+function runSchedule(events,activeTVs){
+  const active=TV_PRIO.filter(id=>activeTVs.has(id));
+  const sorted=[...events].sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
+  const asgn=[];
+  for(const e of sorted){
+    const avail=[];
+    for(const tv of active){
+      const cur=asgn.filter(a=>a.tv===tv);
+      if(cur.find(a=>overlaps(a,e)))continue;
+      const last=cur.reduce((mx,a)=>a.endMin<=e.startMin?Math.max(mx,a.endMin):mx,BAR_OPEN);
+      avail.push({tv,gap:e.startMin-last,ord:TVS[tv].ord});
+    }
+    if(avail.length){
+      avail.sort((a,b)=>a.ord!==b.ord?a.ord-b.ord:a.gap-b.gap);
+      asgn.push({...e,tv:avail[0].tv,why:null});
+    }else{
+      const blk=active.map(tv=>({tv,b:asgn.filter(a=>a.tv===tv).find(a=>overlaps(a,e))})).filter(x=>x.b);
+      blk.sort((a,b)=>a.b.priority-b.b.priority);
+      const lb=blk[0];
+      asgn.push({...e,tv:-1,why:`All ${active.length} TVs occupied. Lowest: "${lb.b.name}" on ${TVS[lb.tv]?.name}`,bumpTgt:{name:lb.b.name,tv:lb.tv}});
+    }
+  }
+  return asgn;
+}
+
+const LG=[
+  {sport:"Football",c:"#1a3a1a",tc:"#86efac",ls:[{id:"nfl",n:"NFL"},{id:"college-fb",n:"College Football"},{id:"ufl",n:"UFL"},{id:"cfl",n:"CFL"},{id:"ifl",n:"IFL"}]},
+  {sport:"Soccer",c:"#14532d",tc:"#bbf7d0",ls:[{id:"world-cup",n:"World Cup 2026"},{id:"ucl",n:"UEFA Champions League"},{id:"premier-league",n:"Premier League"},{id:"la-liga",n:"La Liga"},{id:"bundesliga",n:"Bundesliga"},{id:"serie-a",n:"Serie A"},{id:"ligue-1",n:"Ligue 1"},{id:"liga-mx",n:"Liga MX"},{id:"mls",n:"MLS"},{id:"usl-champ",n:"USL Championship"}]},
+  {sport:"Baseball",c:"#1e3a5f",tc:"#93c5fd",ls:[{id:"mlb",n:"MLB"},{id:"college-bb",n:"College Baseball"},{id:"banana-ball",n:"Banana Ball World Tour"},{id:"aapb",n:"AAPB"},{id:"cbl",n:"Collegiate Baseball League"}]},
+  {sport:"Basketball",c:"#7c2d12",tc:"#fdba74",ls:[{id:"nba",n:"NBA"},{id:"college-bball",n:"College Basketball"},{id:"wnba",n:"WNBA"},{id:"nbl",n:"NBL"}]},
+  {sport:"Ice Hockey",c:"#164e63",tc:"#a5f3fc",ls:[{id:"nhl",n:"NHL"},{id:"pwhl",n:"PWHL"}]},
+  {sport:"Golf",c:"#064e3b",tc:"#6ee7b7",ls:[{id:"golf-majors",n:"Golf Majors"},{id:"pga-tour",n:"PGA Tour"},{id:"lpga-tour",n:"LPGA Tour"},{id:"liv-golf",n:"LIV Golf"},{id:"ryder-cup",n:"Ryder Cup"}]},
+  {sport:"Motorsports",c:"#374151",tc:"#e5e7eb",ls:[{id:"f1",n:"Formula 1"},{id:"nascar-cup",n:"NASCAR Cup Series"},{id:"indycar",n:"IndyCar"},{id:"motogp",n:"MotoGP"}]},
+  {sport:"Tennis",c:"#92400e",tc:"#fef08a",ls:[{id:"wimbledon",n:"Wimbledon"},{id:"us-open-tennis",n:"US Open Tennis"},{id:"french-open",n:"French Open"},{id:"aus-open",n:"Australian Open"},{id:"atp",n:"ATP Tour"},{id:"wta",n:"WTA Tour"}]},
+  {sport:"Fighting",c:"#7f1d1d",tc:"#fca5a5",ls:[{id:"ufc",n:"UFC"},{id:"boxing",n:"Boxing"},{id:"kickboxing",n:"Kickboxing"},{id:"mma",n:"MMA"}]},
+  {sport:"Rugby",c:"#312e81",tc:"#c7d2fe",ls:[{id:"mlr",n:"Major League Rugby"},{id:"six-nations",n:"Six Nations"},{id:"nrl",n:"NRL"}]},
+  {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
+];
+const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
+const DEF_ORDER=ALL_LEAGUES.map(l=>l.id);
+const DEF_MODS=(()=>{
+  const total=ALL_LEAGUES.length;
+  const obj={};
+  ALL_LEAGUES.forEach((l,i)=>{
+    obj[l.id]=total<=1?50:Math.round((1-i/Math.max(total-1,1))*50);
+  });
+  return obj;
+})();
+
+export default function App(){
+  const [activeTVs,setActiveTVs]=useState(()=>new Set(TV_PRIO));
+  const [syncStatus,setSyncStatus]=useState("idle"); // idle | loading | saving | saved | error
+  const [ghaSha,setGhaSha]=useState(null);
+  const saveTimerRef=React.useRef(null);
+  const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
+  // Mirror presets: source TV index -> array of mirror TV indices (0-based)
+  const MIRROR_PRESETS={"Mirror 1":[[0,[6,9]],[1,[8]],[2,[4]]]};
+  const [activePreset,setActivePreset]=useState(null);
+  const [presetPairs,setPresetPairs]=useState([]); // [[srcTv,[mirrorTvs]],...]
+  const applyPreset=(name)=>{
+    if(activePreset===name){setActivePreset(null);setPresetPairs([]);return;}
+    setActivePreset(name);
+    setPresetPairs(MIRROR_PRESETS[name]);
+  };
+  const [mirrors,setMirrors]=useState({});
+  const [sel,setSel]=useState(null);
+  const [tab,setTab]=useState("grid");
+  const [prioOvr,setPrioOvr]=useState({});
+  const [order,setOrder]=useState([...DEF_ORDER]);
+  const [ready,setReady]=useState(false);
+  const [favTeams,setFavTeams]=useState({...DEF_FAVES});
+  const [leagueMods,setLeagueMods]=useState({...DEF_MODS});
+
+  useEffect(()=>{
+    let active=true;
+    (async()=>{
+      setSyncStatus("loading");
+      try{
+        const data=await githubLoad();
+        if(data&&active){
+          if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
+          if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
+          if(data.sha) setGhaSha(data.sha);
+          // fetch sha separately for saving
+          try{
+            const r=await fetch(GITHUB_API,{headers:{'Authorization':`Bearer ${GITHUB_PAT}`,'Accept':'application/vnd.github+json'}});
+            if(r.ok){const j=await r.json();if(active)setGhaSha(j.sha);}
+          }catch(e){}
+        }
+        if(active)setSyncStatus("saved");
+      }catch(e){
+        if(active)setSyncStatus("error");
+      }
+      if(active)setReady(true);
+    })();
+    return()=>{active=false;};
+  },[]);
+
+  const debouncedSave=React.useCallback((mods, faves)=>{
+    if(saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    setSyncStatus("saving");
+    saveTimerRef.current=setTimeout(async()=>{
+      try{
+        const newSha=await githubSave({leagueMods:mods,favTeams:faves},ghaSha);
+        setGhaSha(newSha);
+        setSyncStatus("saved");
+      }catch(e){
+        setSyncStatus("error");
+      }
+    },500);
+  },[ghaSha]);
+
+  const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(leagueMods,f);};
+
+  const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(m,favTeams);};
+
+  const ewp=useMemo(()=>{
+    const base=EVENTS.map(e=>{
+      const lm=leagueMods[e.leagueId]??0;
+      const fb=getFaveBoost(e.name,e.leagueId,favTeams);
+      const fm=fb.match?FAVE_BOOST:0;
+      const raw=e.rawBase+lm+fm;
+      const ov=prioOvr[e.id];
+      const bd=[
+        ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")),
+        lm>0&&{l:`League mod +${lm}`,v:lm},
+        fm>0&&{l:`⭐ Fave team match +${fm}`,v:fm},
+      ].filter(Boolean);
+      return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
+    });
+    return normalize(base);
+  },[leagueMods,prioOvr,favTeams]);
+
+  const schedulableTVs=useMemo(()=>{
+    const mirrorTargets=new Set(presetPairs.flatMap(([,ts])=>ts));
+    const s=new Set([...activeTVs].filter(id=>!mirrorTargets.has(id)));
+    return s;
+  },[activeTVs,presetPairs]);
+  const asgn0=useMemo(()=>runSchedule(ewp,schedulableTVs),[ewp,schedulableTVs]);
+
+  const {final,mblocks}=useMemo(()=>{
+    const active=TV_PRIO.filter(id=>activeTVs.has(id));
+    const mirrorTargets=new Set(presetPairs.flatMap(([,ts])=>ts));
+    let w=[...asgn0];
+    const claims=[];
+    // Per-event manual mirrors
+    for(const [ids,tvSet] of Object.entries(mirrors)){
+      const id=parseInt(ids);const src=w.find(a=>a.id===id);
+      if(!src||src.tv===-1)continue;
+      for(const tv of tvSet){if(!active.includes(tv)||tv===src.tv)continue;claims.push({tv,srcId:id,startMin:src.startMin,endMin:src.endMin,evt:src});}
+    }
+    // Preset mirror pairs: mirror all events on source TV to target TVs
+    for(const [srcTv,mirrorTvs] of presetPairs){
+      const srcEvents=w.filter(a=>a.tv===srcTv);
+      for(const src of srcEvents){
+        for(const tv of mirrorTvs){
+          if(!active.includes(tv))continue;
+          claims.push({tv,srcId:src.id,startMin:src.startMin,endMin:src.endMin,evt:src});
+        }
+      }
+    }
+    const disp=new Set();
+    for(const c of claims)w.forEach(a=>{if(a.tv===c.tv&&a.id!==c.srcId&&overlaps(a,c))disp.add(a.id);});
+    w=w.map(a=>disp.has(a.id)?{...a,tv:-1,why:"Displaced by mirror"}:a);
+    for(const id of disp){
+      const e=w.find(a=>a.id===id);if(!e)continue;
+      const mtv=new Set(claims.filter(c=>overlaps(c,e)).map(c=>c.tv));
+      let placed=false;
+      for(const tv of active){if(mtv.has(tv))continue;if(!w.find(a=>a.tv===tv&&a.id!==id&&overlaps(a,e))){w=w.map(a=>a.id===id?{...a,tv,why:null}:a);placed=true;break;}}
+      if(!placed)w=w.map(a=>a.id===id?{...a,tv:-1,why:"No TV available after mirror displacement"}:a);
+    }
+    const mb=claims.map(c=>c.evt?{...c.evt,tv:c.tv,isMB:true,srcId:c.srcId}:null).filter(Boolean);
+    return{final:w.filter(Boolean),mblocks:mb};
+  },[asgn0,mirrors,activeTVs,presetPairs]);
+
+  const asgnd=useMemo(()=>final.filter(a=>a.tv!==-1),[final]);
+  const unasgd=useMemo(()=>final.filter(a=>a.tv===-1),[final]);
+
+  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);return{...p,[evId]:c};});
+  const bumpAndAssign=e=>{
+    if(!e.bumpTgt)return;
+    const b=final.find(a=>a.name===e.bumpTgt.name&&a.tv===e.bumpTgt.tv);
+    if(!b)return;
+    setPrioOvr(p=>({...p,[e.id]:e.priority+1,[b.id]:-1}));setSel(null);
+  };
+  const selEv=sel?final.find(a=>a&&a.id===sel):null;
+
+  const TMINS=BAR_CLOSE-BAR_OPEN;
+  const pct=m=>((m-BAR_OPEN)/TMINS*100).toFixed(2)+"%";
+  const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
+  const hrs=Array.from({length:18},(_,i)=>7+i);
+  const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
+
+  const C={A:"#f04438",BG:"#0f1117",SUR:"#1c2030",BD:"#2d3a50",BD2:"#3d4f68",MT:"#94a3b8",DM:"#4a5a72"};
+  const tabStyle=a=>({background:a?C.A:"none",border:`1px solid ${a?C.A:C.BD2}`,borderRadius:4,color:a?"#fff":C.MT,fontFamily:"monospace",fontSize:10,padding:"3px 9px",cursor:"pointer"});
+  const blkStyle=(c,isSel)=>({position:"absolute",height:38,top:2,borderRadius:4,background:c.bg,border:`2px solid ${isSel?"#fff":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isSel?"0 0 0 2px #fff":"none",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 5px",minWidth:4});
+
+  return(
+    <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"Inter,system-ui,sans-serif",fontSize:12}}>
+      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
+
+      <div style={{background:C.SUR,borderBottom:`1px solid ${C.BD}`,padding:"8px 14px",position:"sticky",top:0,zIndex:30}}>
+        {/* Row 1: Title + subtitle */}
+        <div style={{marginBottom:6}}>
+          <div style={{fontFamily:"monospace",fontSize:12,fontWeight:700,color:C.A}}>🍺 BAR SCHEDULER — TUE JUN 23</div>
+          <div style={{fontFamily:"monospace",fontSize:9,color:C.DM,marginTop:1}}>{asgnd.length} assigned · {unasgd.length} unassigned · {schedulableTVs.size} active{activePreset&&<span style={{color:"#fb923c",marginLeft:8}}>⬡ {activePreset} ({activeTVs.size} TVs)</span>}<span style={{marginLeft:10,fontFamily:"monospace",fontSize:9,color:syncStatus==="saved"?"#4ade80":syncStatus==="saving"?"#fbbf24":syncStatus==="loading"?"#60a5fa":syncStatus==="error"?"#f87171":"#4a5a72"}}>{syncStatus==="saved"?"✓ SYNCED":syncStatus==="saving"?"⟳ SAVING...":syncStatus==="loading"?"⟳ LOADING...":syncStatus==="error"?"✗ SYNC ERROR":""}</span></div>
+        </div>
+        {/* Row 2: Mirror preset + TV toggles */}
+        <div style={{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap",marginBottom:6}}>
+          <button onClick={()=>applyPreset("Mirror 1")} style={{fontFamily:"monospace",fontSize:9,fontWeight:700,padding:"4px 10px",borderRadius:4,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#fb923c":C.BD2}`,background:activePreset==="Mirror 1"?"#7c2d12":"transparent",color:activePreset==="Mirror 1"?"#fed7aa":C.MT}}>⬡ MIRROR 1</button>
+          <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap",background:"#191c23",border:`1px solid ${C.BD}`,borderRadius:5,padding:"4px 6px"}}>
+            <span style={{fontFamily:"monospace",fontSize:9,color:C.MT,marginRight:2}}>📺</span>
+            {TV_PRIO.map(id=>{const on=activeTVs.has(id);const isMirrorSrc=presetPairs.some(([s])=>s===id);const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));const bc=isMirrorSrc?"#fb923c":isMirrorTgt?"#fdba74":on?TVS[id].sz>=55?"#60a5fa":"#4ade80":C.BD;const bg=isMirrorSrc?"#7c2d12":isMirrorTgt?"#431407":on?TVS[id].sz>=55?"#1e3a8a":"#14532d":"transparent";return(<button key={id} onClick={()=>toggleTV(id)} style={{fontFamily:"monospace",fontSize:9,fontWeight:700,padding:"2px 5px",borderRadius:3,cursor:"pointer",border:`1px solid ${bc}`,background:bg,color:on?"#f1f5f9":C.DM,lineHeight:1}}>{id+1}</button>);})}
+          </div>
+        </div>
+        {/* Row 3: Tab buttons */}
+        <div style={{display:"flex",gap:5}}>
+          {["grid","list","rank","league"].map(t=><button key={t} style={tabStyle(tab===t)} onClick={()=>setTab(t)}>{t.toUpperCase()}</button>)}
+        </div>
+      </div>
+
+      {tab==="grid"&&(
+        <div style={{overflowX:"auto",paddingBottom:120}}>
+          <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
+            {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontFamily:"monospace",fontSize:9,color:C.DM,transform:"translateX(-50%)"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
+          </div>
+          {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+            const tv=TVS[tvId];
+            const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
+            const fb=fillBlocks(tvId,asgnd);
+            const mb=mblocks.filter(m=>m&&m.tv===tvId);
+            return(
+              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:46,borderBottom:`1px solid #191c23`,minWidth:960,borderLeft:tv.zone==="living"?"3px solid #3d4a5c":"3px solid #2a3545"}}>
+                <div style={{width:70,flexShrink:0,padding:"0 8px"}}>
+                  <div style={{fontSize:10,fontWeight:700,color:"#f1f5f9"}}>{tv.name}</div>
+                  <div style={{fontSize:7,color:C.MT}}>{tv.sz}"</div>
+                  <div style={{fontSize:7,color:C.DM}}>{dead(tvId)}h gap</div>
+                </div>
+                <div style={{flex:1,height:42,position:"relative",background:"#191c23",marginRight:4}}>
+                  {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:"1px solid #252a35",zIndex:0}}/>)}
+                  {fb.map((f,i)=>(
+                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:pct(f.startMin),width:wpct(f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
+                      <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
+                    </div>
+                  ))}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:9,fontWeight:600,color:"#fff",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>📡 {m.name}</div><div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap"}}>{m2t(m.startMin)} · {m.channel}</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;return(<div key={i} style={{...blkStyle(c,isSel),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:9,fontWeight:600,color:"#fff",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap"}}>{m2t(a.startMin)} · {a.channel} · {a.ds??"-"}/100</div></div>);})}
+                </div>
+              </div>
+            );
+          })}
+          {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
+            <div style={{fontFamily:"monospace",fontSize:10,color:C.A,marginBottom:8}}>⚠ UNASSIGNED — {unasgd.length}</div>
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"#2d1515",border:"1px solid #5a2020",borderRadius:6,padding:"8px 12px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:11,fontWeight:600,color:c.tx,marginBottom:2}}>{a.name}</div><div style={{fontSize:10,color:C.MT,marginBottom:3}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel} · {a.ds??0}/100</div><div style={{fontSize:10,color:"#f87171"}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
+          </div>)}
+        </div>
+      )}
+
+      {tab==="list"&&(
+        <div style={{paddingBottom:120}}>
+          <div style={{display:"grid",gridTemplateColumns:"60px 1fr 85px 50px 36px",gap:5,padding:"5px 14px",borderBottom:`1px solid ${C.BD}`}}>
+            {["TIME","EVENT","CHANNEL","LEAGUE","TV"].map(h=><div key={h} style={{fontFamily:"monospace",fontSize:8,color:C.DM}}>{h}</div>)}
+          </div>
+          {[...final].filter(Boolean).sort((a,b)=>a.startMin-b.startMin).map(a=>{const c=sc(a);return(
+            <div key={a.id} style={{display:"grid",gridTemplateColumns:"60px 1fr 85px 50px 36px",gap:5,padding:"5px 14px",borderBottom:"1px solid #191c23",alignItems:"center",background:`${c.bg}22`,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+              <div style={{fontFamily:"monospace",fontSize:10,color:"#b0bdd0"}}>{m2t(a.startMin)}</div>
+              <div style={{fontSize:10,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.isFave?"⭐ ":""}{stars(a.ds??0)}{a.name}</div>
+              <div style={{fontFamily:"monospace",fontSize:8,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}</div>
+              <div style={{fontSize:8,color:C.MT,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
+              <div style={{fontFamily:"monospace",fontSize:10,fontWeight:700,color:a.tv===-1?C.A:"#f1f5f9",textAlign:"center"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
+            </div>
+          );})}
+        </div>
+      )}
+
+      {tab==="rank"&&(
+        <div style={{paddingBottom:20}}>
+          <div style={{padding:"8px 14px",borderBottom:`1px solid ${C.BD}`,fontFamily:"monospace",fontSize:9,color:C.MT}}>▲▼ REORDER · TAP ROW FOR SCORE BREAKDOWN · SCORES NORMALIZED 0–100</div>
+          {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
+            if(!e)return null;const c=sc(e);
+            const asgn=final.find(a=>a&&a.id===e.id);
+            const tvLbl=asgn?.tv===-1?"⚠":asgn?TVS[asgn.tv]?.name||`T${asgn.tv+1}`:"—";
+            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>({...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)}));};
+            return(
+              <div key={e.id} style={{display:"grid",gridTemplateColumns:"26px 30px 1fr 48px 36px 44px",gap:6,padding:"6px 14px",borderBottom:"1px solid #191c23",background:sel===e.id?`${c.bg}44`:i%2===0?`${c.bg}18`:`${c.bg}0e`,cursor:"pointer",alignItems:"center"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
+                <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:C.MT,textAlign:"center"}}>{i+1}</div>
+                <div style={{display:"flex",flexDirection:"column",gap:1}}>
+                  <button onClick={ev=>{ev.stopPropagation();moveRank(-1);}} disabled={i===0} style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:2,color:i===0?C.BD:"#8a9ab0",fontSize:9,padding:"1px 4px",cursor:i===0?"default":"pointer",lineHeight:1}}>▲</button>
+                  <button onClick={ev=>{ev.stopPropagation();moveRank(1);}} disabled={i===arr.length-1} style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:2,color:i===arr.length-1?C.BD:"#8a9ab0",fontSize:9,padding:"1px 4px",cursor:i===arr.length-1?"default":"pointer",lineHeight:1}}>▼</button>
+                </div>
+                <div style={{minWidth:0}}>
+                  <div style={{fontSize:12,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
+                  <div style={{fontSize:10,color:C.MT,marginTop:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.league} · {e.channel} · {m2t(e.startMin)}</div>
+                  {sel===e.id&&e.breakdown&&(<div style={{background:"#191c23",borderRadius:5,padding:"6px 8px",marginTop:5,fontSize:10}}>
+                    <div style={{fontFamily:"monospace",fontSize:9,color:C.A,marginBottom:3}}>SCORE BREAKDOWN</div>
+                    {e.breakdown.filter(Boolean).map((b,j)=>(<div key={j} style={{display:"flex",justifyContent:"space-between",padding:"2px 0",borderBottom:"1px solid #21252e",color:b.v>0?"#86efac":b.v<0?"#fca5a5":"#7a8ca0"}}><span>{b.l}</span><span style={{fontFamily:"monospace",fontWeight:700}}>{b.v>0?"+":""}{b.v}</span></div>))}
+                    <div style={{display:"flex",justifyContent:"space-between",padding:"3px 0",fontWeight:700,color:"#f1f5f9",fontFamily:"monospace"}}><span>NORMALIZED</span><span>{e.ds}/100</span></div>
+                  </div>)}
+                </div>
+                <div style={{textAlign:"center"}}><div style={{fontFamily:"monospace",fontSize:7,color:C.DM}}>SCORE</div><div style={{fontFamily:"monospace",fontSize:16,fontWeight:700,color:c.tx}}>{e.ds??0}</div><div style={{fontFamily:"monospace",fontSize:7,color:C.DM}}>/100</div></div>
+                <div style={{fontFamily:"monospace",fontSize:8,fontWeight:700,padding:"2px 4px",borderRadius:3,background:c.bg,color:c.tx,border:`1px solid ${c.br}`,textAlign:"center",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{(e.sport||"").slice(0,4).toUpperCase()}</div>
+                <div style={{fontFamily:"monospace",fontSize:10,fontWeight:700,color:asgn?.tv===-1?C.A:"#f1f5f9",textAlign:"center"}}>{tvLbl}</div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {tab==="league"&&(
+        <div style={{paddingBottom:80}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>LEAGUE MODIFIERS — 0 to {MAX_MOD}{ready&&<span style={{color:"#22c55e",marginLeft:8}}>● SAVED</span>}</div>
+            <button style={{background:"none",border:`1px solid ${C.A}`,borderRadius:4,color:C.A,fontFamily:"monospace",fontSize:9,padding:"3px 10px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(m,favTeams);}}>RESET</button>
+          </div>
+          <div style={{fontFamily:"monospace",fontSize:9,color:C.DM,padding:"4px 14px 3px"}}>Type modifier 0–{MAX_MOD} · list auto-sorts · fave team = +{FAVE_BOOST} boost · auto-saves</div>
+          <div style={{display:"grid",gridTemplateColumns:"24px 22px 1fr 60px 150px",gap:5,padding:"4px 14px",borderBottom:`1px solid ${C.BD}`}}>
+            {["#","","LEAGUE","MOD","FAVE TEAMS (comma-sep)"].map(h=><div key={h} style={{fontFamily:"monospace",fontSize:8,color:C.DM}}>{h}</div>)}
+          </div>
+          {[...ALL_LEAGUES].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
+            const leagueId=lg.id;
+            const mod=leagueMods[leagueId]??0;
+            const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
+            const fv=favTeams[leagueId]||"";
+            const hasFave=fv.trim().length>0;
+            return(
+              <div key={leagueId} style={{display:"grid",gridTemplateColumns:"24px 22px 1fr 60px 150px",gap:5,padding:"5px 14px",borderBottom:"1px solid #191c23",alignItems:"center",background:hasFave?`${lg.gc}28`:`${lg.gc}18`}}>
+                <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
+                <div style={{fontSize:14,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+                <div style={{fontSize:12,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:9,color:"#fbbf24"}}>⭐</span>}</div>
+                <input
+                  type="number"
+                  min="0"
+                  max={MAX_MOD}
+                  value={mod}
+                  onChange={ev=>updateMod(leagueId,ev.target.value)}
+                  style={{background:"#111827",border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:4,color:mod>0?mc:"#94a3b8",fontFamily:"monospace",fontSize:11,fontWeight:700,padding:"3px 6px",width:"100%",outline:"none",textAlign:"center"}}
+                />
+                <input
+                  value={fv}
+                  onChange={ev=>updateFave(leagueId,ev.target.value)}
+                  placeholder="e.g. Guardians, Cubs"
+                  style={{background:"#111827",border:`1px solid ${hasFave?"#fbbf24":C.BD2}`,borderRadius:4,color:hasFave?"#fde68a":"#94a3b8",fontFamily:"monospace",fontSize:9,padding:"3px 6px",width:"100%",outline:"none"}}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {selEv&&(
+        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+            <div>
+              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
+              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · {selEv.channel} · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
+            </div>
+            <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
+          </div>
+          {selEv.tv===-1&&selEv.why&&(<div style={{background:"#2d1515",border:"1px solid #5a2020",borderRadius:6,padding:"8px 10px",marginBottom:10,fontSize:10,color:"#fca5a5",lineHeight:1.5}}>
+            <div style={{fontFamily:"monospace",fontSize:9,color:C.A,marginBottom:3}}>WHY UNASSIGNED</div>
+            {selEv.why}
+            {selEv.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6,display:"block"}} onClick={()=>bumpAndAssign(selEv)}>⚡ Bump "{selEv.bumpTgt.name}"</button>}
+          </div>)}
+          <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>{selEv.tv===-1?"ASSIGN TO:":"MOVE TO:"}</div>
+          <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:10}}>
+            {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+              const tv=TVS[tvId];
+              const conflict=selEv.tv!==tvId&&final.some(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
+              return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:conflict?"not-allowed":"pointer",background:selEv.tv===tvId?C.A:"#2e3545",color:selEv.tv===tvId?"#fff":C.MT,border:`1px solid ${selEv.tv===tvId?C.A:C.BD2}`,opacity:conflict?0.3:1}} onClick={()=>{if(!conflict){const e=final.find(a=>a.id===selEv.id);if(e){setPrioOvr(p=>({...p,[selEv.id]:e.priority}));}}}} title={conflict?`Conflict`:tv.loc}>{tv.name}{selEv.tv===tvId?" ✓":""}{conflict?" ✗":""}</button>);
+            })}
+          </div>
+          {selEv.tv!==-1&&(<>
+            <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>📡 MIRROR TO: <span style={{color:C.DM}}>(displaces & reschedules)</span></div>
+            <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
+              {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                if(tvId===selEv.tv)return null;
+                const tv=TVS[tvId];const mir=mirrors[selEv.id]?.has(tvId);
+                const disp=final.find(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
+                return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:"pointer",background:mir?"#164e63":disp?"#2d1a0a":"#1f2937",color:mir?"#a5f3fc":disp?"#fb923c":C.MT,border:`1px solid ${mir?"#22d3ee":disp?"#c2410c":C.BD2}`}} onClick={()=>toggleMirror(selEv.id,tvId)}>{mir?"📡 ":disp?"⚡ ":""}{tv.name}{mir?" ✓":""}</button>);
+              })}
+            </div>
+            {mirrors[selEv.id]?.size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
+          </>)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>);
+  </script>
+</body>
+</html>
