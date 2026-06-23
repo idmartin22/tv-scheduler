@@ -289,7 +289,7 @@ const DEF_MODS=(()=>{
   return obj;
 })();
 
-export default function App(){
+function App(){
   const [activeTVs,setActiveTVs]=useState(()=>new Set(TV_PRIO));
   const [syncStatus,setSyncStatus]=useState("idle"); // idle | loading | saving | saved | error
   const [ghaSha,setGhaSha]=useState(null);
