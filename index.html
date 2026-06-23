@@ -53,8 +53,7 @@ async function githubLoad() {
     if (!r.ok) return null;
     const meta = await r.json();
     // Decode base64 content
-    const binStr = atob(meta.content.replace(/
-/g,''));
+    const binStr = atob(meta.content.split('\n').join(''));
     const bytes = new Uint8Array(binStr.length);
     for(let i=0;i<binStr.length;i++) bytes[i]=binStr.charCodeAt(i);
     const json = new TextDecoder().decode(bytes);
