@@ -350,8 +350,12 @@ function App(){
         if(data&&active){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
-          if(data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
-          if(data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
+          // Auto-clear prioOvr and mirrors if it's a new day
+          const today=new Date();
+          const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+          const isNewDay=data.lastDate&&data.lastDate!==todayStr;
+          if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
+          if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
         }
         // fetch SHA for saving
@@ -364,7 +368,11 @@ function App(){
         const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
         if(active)setScheduleDate(dateStr);
         const sched=await githubLoadSchedule(dateStr);
-        if(sched?.events&&active) setDynamicEvents(sched.events);
+        if(sched?.events&&active){
+          setDynamicEvents(sched.events);
+          // Save lastDate so next load can detect day change
+          setTimeout(()=>debouncedSave({leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,lastDate:dateStr}),2000);
+        }
         if(active)setSyncStatus("saved");
       }catch(e){
         if(active)setSyncStatus("error");
@@ -420,8 +428,9 @@ function App(){
       prioOvr:    overrides.prioOvr    ?? prioOvr,
       mirrors:    overrides.mirrors    ?? mirrors,
       unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
+      lastDate:   overrides.lastDate   ?? scheduleDate,
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues]);
+  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -588,7 +597,10 @@ function App(){
 
       {tab==="rank"&&(
         <div style={{paddingBottom:20}}>
-          <div style={{padding:"8px 14px",borderBottom:`1px solid ${C.BD}`,fontFamily:"monospace",fontSize:9,color:C.MT}}>▲▼ REORDER · TAP ROW FOR SCORE BREAKDOWN · SCORES NORMALIZED 0–100</div>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>▲▼ REORDER · TAP ROW FOR SCORE BREAKDOWN · SCORES NORMALIZED 0–100</div>
+            <button style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:4,color:C.MT,fontFamily:"monospace",fontSize:9,padding:"2px 8px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave({leagueMods,favTeams,prioOvr:{},mirrors,unknownLeagues,lastDate:scheduleDate});}}>RESET</button>
+          </div>
           {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
             if(!e)return null;const c=sc(e);
             const asgn=final.find(a=>a&&a.id===e.id);
