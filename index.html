@@ -359,6 +359,7 @@ function App(){
   const [syncStatus,setSyncStatus]=useState("idle"); // idle | loading | saving | saved | error
   const [ghaSha,setGhaSha]=useState(null);
   const saveTimerRef=React.useRef(null);
+  const settingsLoaded=React.useRef(false);
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
   // Mirror presets: source TV index -> array of mirror TV indices (0-based)
   const MIRROR_PRESETS={"Mirror 1":[[0,[6,9]],[1,[8]],[2,[4]]]};
@@ -417,6 +418,7 @@ function App(){
           // Save lastDate so next load can detect day change
           setTimeout(()=>debouncedSave({leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,lastDate:dateStr}),2000);
         }
+        settingsLoaded.current=true;
         if(active)setSyncStatus("saved");
       }catch(e){
         if(active)setSyncStatus("error");
@@ -452,6 +454,7 @@ function App(){
   },[activeEvents]);
 
   const debouncedSave=React.useCallback((payload)=>{
+    if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
     if(saveTimerRef.current) clearTimeout(saveTimerRef.current);
     setSyncStatus("saving");
     saveTimerRef.current=setTimeout(async()=>{
