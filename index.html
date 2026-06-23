@@ -4,6 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bar Scheduler</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#fb923c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Bar Scheduler">
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
@@ -58,16 +64,49 @@ async function githubLoadSchedule(date) {
 }
 
 async function githubSave(data, sha) {
-  const body = { message: `Update settings ${new Date().toISOString()}`, content: btoa(JSON.stringify(data, null, 2)) };
+  // Safe base64 encoding that handles unicode
+  const json = JSON.stringify(data, null, 2);
+  const bytes = new TextEncoder().encode(json);
+  const binStr = Array.from(bytes).map(b => String.fromCharCode(b)).join('');
+  const b64 = btoa(binStr);
+
+  // If no SHA provided, fetch current one first
+  if (!sha) {
+    try {
+      const r = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+      if (r.ok) { const j = await r.json(); sha = j.sha; }
+    } catch(e) {}
+  }
+
+  const body = { message: `Update settings ${new Date().toISOString()}`, content: b64 };
   if (sha) body.sha = sha;
+
   const r = await fetch(GITHUB_API, {
     method: 'PUT',
     headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
+
+  // On 409 conflict, refresh SHA and retry once
+  if (r.status === 409 || r.status === 422) {
+    const r2 = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (r2.ok) {
+      const j2 = await r2.json();
+      body.sha = j2.sha;
+      const r3 = await fetch(GITHUB_API, {
+        method: 'PUT',
+        headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!r3.ok) throw new Error(`GitHub save failed: ${r3.status}`);
+      const j3 = await r3.json();
+      return j3.content.sha;
+    }
+  }
+
   if (!r.ok) throw new Error(`GitHub save failed: ${r.status}`);
-  const json = await r.json();
-  return json.content.sha;
+  const j = await r.json();
+  return j.content.sha;
 }
 
 const DEF_FAVES = {
