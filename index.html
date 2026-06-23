@@ -52,11 +52,8 @@ async function githubLoad() {
     });
     if (!r.ok) return null;
     const meta = await r.json();
-    // Decode base64 content
-    const binStr = atob(meta.content.split('\n').join(''));
-    const bytes = new Uint8Array(binStr.length);
-    for(let i=0;i<binStr.length;i++) bytes[i]=binStr.charCodeAt(i);
-    const json = new TextDecoder().decode(bytes);
+    // Decode base64 content — simple atob since content is plain JSON
+    const json = atob(meta.content.split('\n').join(''));
     return JSON.parse(json);
   } catch(e) { return null; }
 }
@@ -566,7 +563,6 @@ function App(){
 
   return(
     <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"Inter,system-ui,sans-serif",fontSize:12}}>
-      <div style={{maxWidth:600,margin:"0 auto",position:"relative"}}>
       <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
 
       <div style={{background:C.SUR,borderBottom:`1px solid ${C.BD}`,padding:"8px 14px",position:"sticky",top:0,zIndex:30}}>
@@ -644,7 +640,7 @@ function App(){
       )}
 
       {tab==="rank"&&(
-        <div style={{paddingBottom:20}}>
+        <div style={{paddingBottom:20,maxWidth:700,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
             <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>▲▼ REORDER · TAP ROW FOR SCORE BREAKDOWN · SCORES NORMALIZED 0–100</div>
             <button style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:4,color:C.MT,fontFamily:"monospace",fontSize:9,padding:"2px 8px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave({leagueMods,favTeams,prioOvr:{},mirrors,unknownLeagues,lastDate:scheduleDate});}}>RESET</button>
@@ -680,7 +676,7 @@ function App(){
       )}
 
       {tab==="league"&&(
-        <div style={{paddingBottom:80}}>
+        <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
             <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>LEAGUE MODIFIERS — 0 to {MAX_MOD}{ready&&<span style={{color:"#22c55e",marginLeft:8}}>● SAVED</span>}</div>
             <button style={{background:"none",border:`1px solid ${C.A}`,borderRadius:4,color:C.A,fontFamily:"monospace",fontSize:9,padding:"3px 10px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>RESET</button>
@@ -757,7 +753,6 @@ function App(){
         </div>
       )}
     </div>
-      </div>
   );
 }
 
