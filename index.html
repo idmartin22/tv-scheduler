@@ -47,9 +47,18 @@ const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITH
 
 async function githubLoad() {
   try {
-    const r = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/${GITHUB_FILE}?t=${Date.now()}`);
+    const r = await fetch(GITHUB_API + `?t=${Date.now()}`, {
+      headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' }
+    });
     if (!r.ok) return null;
-    return await r.json();
+    const meta = await r.json();
+    // Decode base64 content
+    const binStr = atob(meta.content.replace(/
+/g,''));
+    const bytes = new Uint8Array(binStr.length);
+    for(let i=0;i<binStr.length;i++) bytes[i]=binStr.charCodeAt(i);
+    const json = new TextDecoder().decode(bytes);
+    return JSON.parse(json);
   } catch(e) { return null; }
 }
 
@@ -558,6 +567,7 @@ function App(){
 
   return(
     <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"Inter,system-ui,sans-serif",fontSize:12}}>
+      <div style={{maxWidth:600,margin:"0 auto",position:"relative"}}>
       <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
 
       <div style={{background:C.SUR,borderBottom:`1px solid ${C.BD}`,padding:"8px 14px",position:"sticky",top:0,zIndex:30}}>
@@ -748,6 +758,7 @@ function App(){
         </div>
       )}
     </div>
+      </div>
   );
 }
 
