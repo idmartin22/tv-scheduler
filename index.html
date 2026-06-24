@@ -401,7 +401,8 @@ function App(){
       if(d<today){d.setTime(today.getTime());}
       if(d>maxFuture){d.setTime(maxFuture.getTime());}
       const newStr=dateToStr(d);
-      loadScheduleForDate(newStr);
+      // Call outside setState to avoid batching issues
+      setTimeout(()=>loadScheduleForDate(newStr),0);
       return newStr;
     });
   },[loadScheduleForDate]);
