@@ -469,7 +469,7 @@ function App(){
         }
         // fetch SHA for saving
         try{
-          const r=await fetch(GITHUB_API,{headers:{'Authorization':`Bearer ${GITHUB_PAT}`,'Accept':'application/vnd.github+json'}});
+          const r=await fetch(GITHUB_API,{headers:{'Accept':'application/vnd.github+json'}});
           if(r.ok){const j=await r.json();if(active)setGhaSha(j.sha);}
         }catch(e){}
         // Load today's schedule
