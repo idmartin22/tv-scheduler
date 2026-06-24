@@ -76,15 +76,16 @@ function formatDateLabel(s) {
 function todayStr() { return dateToStr(new Date()); }
 
 async function githubLoadSchedule(date) {
-  // date format: YYYY-MM-DD
   try {
     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}.json?t=${Date.now()}`;
+    console.log('Fetching schedule:', url, 'PAT length:', GITHUB_PAT.length);
     const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    console.log('Schedule fetch status:', r.status);
     if (!r.ok) return null;
     const meta = await r.json();
     const json = atob(meta.content.split('\n').join(''));
     return JSON.parse(json);
-  } catch(e) { return null; }
+  } catch(e) { console.error('githubLoadSchedule error:', e); return null; }
 }
 
 async function githubSave(data, sha) {
@@ -383,13 +384,15 @@ function App(){
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
+    console.log('loadScheduleForDate called with:', dateStr);
     setScheduleStatus("loading");
     setDynamicEvents(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
+      console.log('sched result:', sched ? 'has data, events:' + sched.events?.length : 'null');
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
       else setScheduleStatus("none");
-    }catch(e){setScheduleStatus("error");}
+    }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
   },[]);
 
   const navigateDate=React.useCallback((delta)=>{
