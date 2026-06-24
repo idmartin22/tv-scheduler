@@ -362,7 +362,7 @@ function parseScheduleEvents(rawEvents) {
   return rawEvents.map(o=>makeEvent(o));
 }
 const DEF_ORDER=ALL_LEAGUES.map(l=>l.id);
-const DEF_MODS=(()=>{
+let DEF_MODS=(()=>{
   const total=ALL_LEAGUES.length;
   const obj={};
   ALL_LEAGUES.forEach((l,i)=>{
@@ -561,6 +561,7 @@ function App(){
   const [ghaSha,setGhaSha]=useState(null);
   const saveTimerRef=React.useRef(null);
   const settingsLoaded=React.useRef(false);
+  const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
@@ -642,6 +643,10 @@ function App(){
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
+          // Store as last known good — these are now the true defaults
+          lastKnownGood.current = data;
+          // Overwrite DEF_MODS so any fallback uses real settings
+          if(data.leagueMods) DEF_MODS={...DEF_MODS,...data.leagueMods};
         }
         // fetch SHA for saving
         try{
@@ -660,6 +665,16 @@ function App(){
         if(active)setSyncStatus("saved");
       }catch(e){
         settingsLoaded.current=true; // allow saves even if load failed
+        // Restore last known good if available — never fall back to DEF_MODS
+        if(lastKnownGood.current&&active){
+          const d=lastKnownGood.current;
+          if(d.leagueMods) setLeagueMods(d.leagueMods);
+          if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
+          if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
+          if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
+          if(d.mirrors) setMirrors(d.mirrors);
+          if(d.unknownLeagues) setUnknownLeagues(d.unknownLeagues);
+        }
         if(active)setSyncStatus("error");
       }
       if(active)setReady(true);
@@ -694,6 +709,13 @@ function App(){
 
   const debouncedSave=React.useCallback((payload)=>{
     if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
+    // Safety: never save if leagueMods looks identical to DEF_MODS and lastKnownGood exists
+    // (means GitHub load failed and we have stale defaults in state)
+    if(lastKnownGood.current&&payload.leagueMods){
+      const isDefault=JSON.stringify(payload.leagueMods)===JSON.stringify(DEF_MODS);
+      const wasCustom=JSON.stringify(lastKnownGood.current.leagueMods)!==JSON.stringify(DEF_MODS);
+      if(isDefault&&wasCustom){console.warn("Save blocked — payload looks like DEF_MODS but GitHub has custom settings");return;}
+    }
     if(saveTimerRef.current) clearTimeout(saveTimerRef.current);
     setSyncStatus("saving");
     saveTimerRef.current=setTimeout(async()=>{
