@@ -13,16 +13,23 @@
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #0f1117; color: #f1f5f9; font-family: Inter, system-ui, sans-serif; }
-    ::-webkit-scrollbar { height: 3px; width: 3px; }
-    ::-webkit-scrollbar-thumb { background: #2d3a50; }
-    @keyframes pulse-now { 0%,100% { box-shadow: 0 0 0 2px #4ade80; } 50% { box-shadow: 0 0 0 4px #4ade80, 0 0 8px #4ade80; } }
+    body { background: #080b12; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { height: 4px; width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 4px; }
+    @keyframes pulse-now { 0%,100% { box-shadow: 0 0 0 2px #22c55e, 0 0 12px rgba(34,197,94,0.3); } 50% { box-shadow: 0 0 0 3px #22c55e, 0 0 20px rgba(34,197,94,0.5); } }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
     .now-playing { animation: pulse-now 2s infinite; }
+    .fade-in { animation: fadeIn 0.2s ease; }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
     input[type=number] { -moz-appearance: textfield; }
+    button { transition: all 0.15s ease; }
+    input { transition: border-color 0.15s ease; }
   </style>
 </head>
 <body>
@@ -648,45 +655,91 @@ function App(){
   const hrs=Array.from({length:18},(_,i)=>7+i);
   const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
 
-  const C={A:"#f04438",BG:"#0f1117",SUR:"#1c2030",BD:"#2d3a50",BD2:"#3d4f68",MT:"#94a3b8",DM:"#4a5a72"};
-  const tabStyle=a=>({background:a?C.A:"none",border:`1px solid ${a?C.A:C.BD2}`,borderRadius:4,color:a?"#fff":C.MT,fontFamily:"monospace",fontSize:10,padding:"3px 9px",cursor:"pointer"});
-  const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:38,top:2,borderRadius:4,background:c.bg,border:`2px solid ${isNow?"#4ade80":isSel?"#fff":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #4ade80":isSel?"0 0 0 2px #fff":"none",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 5px",minWidth:4});
+  const C={
+  A:"#f97316",        // orange accent
+  A2:"#fb923c",       // orange light
+  BG:"#080b12",       // deep background
+  SUR:"#0f1520",      // surface
+  SUR2:"#141d2b",     // elevated surface
+  BD:"#1a2640",       // border subtle
+  BD2:"#243350",      // border visible
+  MT:"#7c92b0",       // muted text
+  DM:"#3d5070",       // dim text
+  GRN:"#22c55e",      // green
+  BLU:"#3b82f6",      // blue
+};
+  const tabStyle=a=>({background:a?C.A:"transparent",border:"none",borderRadius:20,color:a?"#fff":C.MT,fontSize:11,fontWeight:a?700:500,padding:"6px 14px",cursor:"pointer",letterSpacing:a?"0.02em":0});
+  const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:40,top:2,borderRadius:6,background:c.bg,border:`1.5px solid ${isNow?"#22c55e":isSel?"rgba(255,255,255,0.9)":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #22c55e,0 2px 8px rgba(0,0,0,0.4)":isSel?"0 0 0 2px rgba(255,255,255,0.6),0 2px 8px rgba(0,0,0,0.4)":"0 1px 4px rgba(0,0,0,0.3)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 7px",minWidth:4,transition:"box-shadow 0.15s ease"});
 
   return(
-    <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"Inter,system-ui,sans-serif",fontSize:12}}>
+    <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"'Inter',system-ui,sans-serif",fontSize:13}}>
       <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
 
-      <div style={{background:C.SUR,borderBottom:`1px solid ${C.BD}`,padding:"8px 14px",position:"sticky",top:0,zIndex:30}}>
-        {/* Row 1: Title + date nav + subtitle */}
-        <div style={{marginBottom:6}}>
-          <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:2}}>
-            <div style={{fontFamily:"monospace",fontSize:12,fontWeight:700,color:C.A}}>🍺 BAR SCHEDULER</div>
-            <button onClick={()=>navigateDate(-1)} style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:3,color:C.MT,fontFamily:"monospace",fontSize:10,padding:"1px 6px",cursor:"pointer",lineHeight:1}}>◀</button>
-            <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:isToday?"#f1f5f9":"#fbbf24",minWidth:90,textAlign:"center"}}>{formatDateLabel(scheduleDate)}{isToday&&<span style={{color:"#4ade80",marginLeft:4,fontSize:8}}>TODAY</span>}</div>
-            <button onClick={()=>navigateDate(1)} style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:3,color:C.MT,fontFamily:"monospace",fontSize:10,padding:"1px 6px",cursor:"pointer",lineHeight:1}}>▶</button>
-            {!isToday&&<button onClick={goToToday} style={{background:"#14532d",border:"1px solid #4ade80",borderRadius:3,color:"#4ade80",fontFamily:"monospace",fontSize:8,padding:"1px 6px",cursor:"pointer",lineHeight:1}}>TODAY</button>}
-            <span style={{fontFamily:"monospace",fontSize:8,color:scheduleStatus==="loaded"?"#4ade80":scheduleStatus==="loading"?"#fbbf24":scheduleStatus==="none"?"#4a5a72":"#f87171",marginLeft:2}}>{scheduleStatus==="loaded"?"● SCHED":scheduleStatus==="loading"?"⟳ LOADING":scheduleStatus==="none"?"○ NO SCHED":""}</span>
+      {/* ── HEADER ── */}
+      <div style={{background:"rgba(8,11,18,0.92)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderBottom:`1px solid ${C.BD}`,padding:"12px 16px 0",position:"sticky",top:0,zIndex:30}}>
+        {/* Top row: logo + date nav + status */}
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+          <div style={{display:"flex",alignItems:"center",gap:8}}>
+            <span style={{fontSize:18}}>🍺</span>
+            <div>
+              <div style={{fontSize:15,fontWeight:800,color:"#f1f5f9",letterSpacing:"-0.02em",lineHeight:1}}>Bar Scheduler</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:1}}>
+                {asgnd.length} events · {schedulableTVs.size} TVs active
+                <span style={{marginLeft:8,color:syncStatus==="saved"?C.GRN:syncStatus==="saving"?"#fbbf24":syncStatus==="error"?"#ef4444":C.MT}}>
+                  {syncStatus==="saved"?"✓":syncStatus==="saving"?"↑":syncStatus==="error"?"✗":""}
+                </span>
+              </div>
+            </div>
           </div>
-          <div style={{fontFamily:"monospace",fontSize:9,color:C.DM}}>{asgnd.length} assigned · {unasgd.length} unassigned · {schedulableTVs.size} active{activePreset&&<span style={{color:"#fb923c",marginLeft:8}}>⬡ {activePreset} ({activeTVs.size} TVs)</span>}<span style={{marginLeft:10,color:syncStatus==="saved"?"#4ade80":syncStatus==="saving"?"#fbbf24":syncStatus==="loading"?"#60a5fa":syncStatus==="error"?"#f87171":"#4a5a72"}}>{syncStatus==="saved"?"✓ SYNCED":syncStatus==="saving"?"⟳ SAVING...":syncStatus==="loading"?"⟳ LOADING...":syncStatus==="error"?"✗ SYNC ERROR":""}</span></div>
-        </div>
-        {/* Row 2: Mirror preset + TV toggles */}
-        <div style={{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap",marginBottom:6}}>
-          <button onClick={()=>applyPreset("Mirror 1")} style={{fontFamily:"monospace",fontSize:9,fontWeight:700,padding:"4px 10px",borderRadius:4,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#fb923c":C.BD2}`,background:activePreset==="Mirror 1"?"#7c2d12":"transparent",color:activePreset==="Mirror 1"?"#fed7aa":C.MT}}>⬡ MIRROR 1</button>
-          <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap",background:"#191c23",border:`1px solid ${C.BD}`,borderRadius:5,padding:"4px 6px"}}>
-            <span style={{fontFamily:"monospace",fontSize:9,color:C.MT,marginRight:2}}>📺</span>
-            {TV_PRIO.map(id=>{const on=activeTVs.has(id);const isMirrorSrc=presetPairs.some(([s])=>s===id);const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));const bc=isMirrorSrc?"#fb923c":isMirrorTgt?"#fdba74":on?TVS[id].sz>=55?"#60a5fa":"#4ade80":C.BD;const bg=isMirrorSrc?"#7c2d12":isMirrorTgt?"#431407":on?TVS[id].sz>=55?"#1e3a8a":"#14532d":"transparent";const lbl=tvNames[id]||`TV ${id+1}`;return(<button key={id} onClick={()=>toggleTV(id)} title={lbl} style={{fontFamily:"monospace",fontSize:9,fontWeight:700,padding:"2px 5px",borderRadius:3,cursor:"pointer",border:`1px solid ${bc}`,background:bg,color:on?"#f1f5f9":C.DM,lineHeight:1}}>{id+1}</button>);})}
+          {/* Date navigation */}
+          <div style={{display:"flex",alignItems:"center",gap:4}}>
+            <button onClick={()=>navigateDate(-1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>‹</button>
+            <div style={{textAlign:"center",minWidth:96}}>
+              <div style={{fontSize:13,fontWeight:700,color:isToday?"#f1f5f9":"#f97316",letterSpacing:"0.02em"}}>{formatDateLabel(scheduleDate)}</div>
+              <div style={{fontSize:9,color:scheduleStatus==="loaded"?C.GRN:scheduleStatus==="loading"?"#fbbf24":C.DM,marginTop:1}}>
+                {isToday?"TODAY · ":""}{scheduleStatus==="loaded"?"LOADED":scheduleStatus==="loading"?"LOADING...":"NO SCHEDULE"}
+              </div>
+            </div>
+            <button onClick={()=>navigateDate(1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>›</button>
+            {!isToday&&<button onClick={goToToday} style={{background:"rgba(34,197,94,0.15)",border:"1px solid rgba(34,197,94,0.4)",borderRadius:8,color:C.GRN,fontSize:10,fontWeight:600,padding:"0 8px",height:30,cursor:"pointer"}}>Today</button>}
           </div>
         </div>
-        {/* Row 3: Tab buttons */}
-        <div style={{display:"flex",gap:5}}>
-          {["grid","list","rank","league","schedule"].map(t=><button key={t} style={tabStyle(tab===t)} onClick={()=>setTab(t)}>{t.toUpperCase()}</button>)}
+        {/* TV toggles + Mirror */}
+        <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
+          <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#f97316":C.BD2}`,background:activePreset==="Mirror 1"?"rgba(249,115,22,0.15)":"transparent",color:activePreset==="Mirror 1"?"#f97316":C.MT}}>Mirror 1</button>
+          <button onClick={()=>{
+            const tv14=new Set([0,1,2,3]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,3';
+            setActiveTVs(isActive?new Set(TV_PRIO):tv14);
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
+            {TV_PRIO.map(id=>{
+              const on=activeTVs.has(id);
+              const isMirrorSrc=presetPairs.some(([s])=>s===id);
+              const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));
+              const lbl=tvNames[id]||`TV ${id+1}`;
+              const bg=isMirrorSrc?"rgba(249,115,22,0.2)":isMirrorTgt?"rgba(249,115,22,0.08)":on?TVS[id].sz>=55?"rgba(59,130,246,0.2)":"rgba(34,197,94,0.12)":"transparent";
+              const bc=isMirrorSrc?"#f97316":isMirrorTgt?"rgba(249,115,22,0.4)":on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
+              const tc=isMirrorSrc?"#f97316":on?"#f1f5f9":C.DM;
+              return(<button key={id} onClick={()=>toggleTV(id)} title={lbl} style={{fontSize:10,fontWeight:600,padding:"3px 7px",borderRadius:6,cursor:"pointer",border:`1px solid ${bc}`,background:bg,color:tc,minWidth:28}}>{id+1}</button>);
+            })}
+          </div>
         </div>
+        {/* Tab bar */}
+        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
+          {["grid","list","rank","league","schedule"].map(t=>(
+            <button key={t} style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
+              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Schedule"}
+            </button>
+          ))}
+        </div>
+        <div style={{height:10}}/>
       </div>
 
       {tab==="grid"&&(
         <div style={{overflowX:"auto",paddingBottom:120}}>
           <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
-            {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontFamily:"monospace",fontSize:9,color:C.DM,transform:"translateX(-50%)"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
+            {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
           </div>
           {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
@@ -694,44 +747,51 @@ function App(){
             const fb=fillBlocks(tvId,asgnd);
             const mb=mblocks.filter(m=>m&&m.tv===tvId);
             return(
-              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:46,borderBottom:`1px solid #191c23`,minWidth:960,borderLeft:tv.zone==="living"?"3px solid #3d4a5c":"3px solid #2a3545"}}>
-                <div style={{width:70,flexShrink:0,padding:"0 8px"}}>
-                  <div style={{fontSize:10,fontWeight:700,color:"#f1f5f9"}}>{tv.name}</div>
-                  <div style={{fontSize:7,color:C.MT}}>{tv.sz}"</div>
-                  <div style={{fontSize:7,color:C.DM}}>{dead(tvId)}h gap</div>
+              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?"#f97316":tvId<=2?"#3b82f6":"#1e2d45"}`}}>
+                <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
+                  <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
+                  <div style={{fontSize:9,color:C.MT,marginTop:1}}>{tv.sz}"</div>
                 </div>
-                <div style={{flex:1,height:42,position:"relative",background:"#191c23",marginRight:4}}>
-                  {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:"1px solid #252a35",zIndex:0}}/>)}
+                <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
+                  {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
                   {fb.map((f,i)=>(
                     <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:pct(f.startMin),width:wpct(f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:9,fontWeight:600,color:"#fff",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>📡 {m.name}</div><div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap"}}>{m2t(m.startMin)} · {m.channel}</div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:9,fontWeight:600,color:"#fff",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap"}}>{m2t(a.startMin)} · {a.channel} · {a.ds??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel} · {a.ds??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
           })}
           {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
-            <div style={{fontFamily:"monospace",fontSize:10,color:C.A,marginBottom:8}}>⚠ UNASSIGNED — {unasgd.length}</div>
-            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"#2d1515",border:"1px solid #5a2020",borderRadius:6,padding:"8px 12px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:11,fontWeight:600,color:c.tx,marginBottom:2}}>{a.name}</div><div style={{fontSize:10,color:C.MT,marginBottom:3}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel} · {a.ds??0}/100</div><div style={{fontSize:10,color:"#f87171"}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
+            <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel} · {a.ds??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
           </div>)}
         </div>
       )}
 
       {tab==="list"&&(
-        <div style={{paddingBottom:120}}>
-          <div style={{display:"grid",gridTemplateColumns:"60px 1fr 85px 50px 36px",gap:5,padding:"5px 14px",borderBottom:`1px solid ${C.BD}`}}>
-            {["TIME","EVENT","CHANNEL","LEAGUE","TV"].map(h=><div key={h} style={{fontFamily:"monospace",fontSize:8,color:C.DM}}>{h}</div>)}
+        <div style={{paddingBottom:120,maxWidth:700,margin:"0 auto"}}>
+          <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
+            {["TIME","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
           </div>
-          {[...final].filter(Boolean).sort((a,b)=>a.startMin-b.startMin).map(a=>{const c=sc(a);return(
-            <div key={a.id} style={{display:"grid",gridTemplateColumns:"60px 1fr 85px 50px 36px",gap:5,padding:"5px 14px",borderBottom:"1px solid #191c23",alignItems:"center",background:`${c.bg}22`,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
-              <div style={{fontFamily:"monospace",fontSize:10,color:"#b0bdd0"}}>{m2t(a.startMin)}</div>
-              <div style={{fontSize:10,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.isFave?"⭐ ":""}{stars(a.ds??0)}{a.name}</div>
-              <div style={{fontFamily:"monospace",fontSize:8,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}</div>
-              <div style={{fontSize:8,color:C.MT,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
-              <div style={{fontFamily:"monospace",fontSize:10,fontWeight:700,color:a.tv===-1?C.A:"#f1f5f9",textAlign:"center"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
+          {[...final].filter(Boolean).sort((a,b)=>a.startMin-b.startMin).map(a=>{
+            const c=sc(a);
+            const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
+            return(
+            <div key={a.id} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",background:isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+              <div>
+                <div style={{fontSize:12,fontWeight:600,color:isNow?C.GRN:"#f1f5f9"}}>{m2t(a.startMin)}</div>
+                <div style={{fontSize:9,color:C.MT,marginTop:1}}>{m2t(a.endMin)}</div>
+              </div>
+              <div style={{minWidth:0}}>
+                <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.isFave?"⭐ ":""}{a.name}</div>
+                <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
+              </div>
+              <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}</div>
+              <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 0"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
             </div>
           );})}
         </div>
@@ -739,34 +799,54 @@ function App(){
 
       {tab==="rank"&&(
         <div style={{paddingBottom:20,maxWidth:700,margin:"0 auto"}}>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
-            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>▲▼ REORDER · TAP ROW FOR SCORE BREAKDOWN · SCORES NORMALIZED 0–100</div>
-            <button style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:4,color:C.MT,fontFamily:"monospace",fontSize:9,padding:"2px 8px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave({leagueMods,favTeams,prioOvr:{},mirrors,unknownLeagues,lastDate:scheduleDate});}}>RESET</button>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 16px 8px"}}>
+            <div style={{fontSize:11,color:C.MT}}>Tap a game for score breakdown</div>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave({leagueMods,favTeams,prioOvr:{},mirrors,unknownLeagues,lastDate:scheduleDate});}}>Reset</button>
           </div>
           {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
             if(!e)return null;const c=sc(e);
             const asgn=final.find(a=>a&&a.id===e.id);
-            const tvLbl=asgn?.tv===-1?"⚠":asgn?TVS[asgn.tv]?.name||`T${asgn.tv+1}`:"—";
+            const tvLbl=asgn?.tv===-1?"⚠":asgn?`T${asgn.tv+1}`:"—";
+            const scoreColor=(e.ds??0)>=75?"#22c55e":(e.ds??0)>=50?"#f59e0b":"#94a3b8";
             const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});};
             return(
-              <div key={e.id} style={{display:"grid",gridTemplateColumns:"26px 30px 1fr 48px 36px 44px",gap:6,padding:"6px 14px",borderBottom:"1px solid #191c23",background:sel===e.id?`${c.bg}44`:i%2===0?`${c.bg}18`:`${c.bg}0e`,cursor:"pointer",alignItems:"center"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
-                <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:C.MT,textAlign:"center"}}>{i+1}</div>
-                <div style={{display:"flex",flexDirection:"column",gap:1}}>
-                  <button onClick={ev=>{ev.stopPropagation();moveRank(-1);}} disabled={i===0} style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:2,color:i===0?C.BD:"#8a9ab0",fontSize:9,padding:"1px 4px",cursor:i===0?"default":"pointer",lineHeight:1}}>▲</button>
-                  <button onClick={ev=>{ev.stopPropagation();moveRank(1);}} disabled={i===arr.length-1} style={{background:"none",border:`1px solid ${C.BD2}`,borderRadius:2,color:i===arr.length-1?C.BD:"#8a9ab0",fontSize:9,padding:"1px 4px",cursor:i===arr.length-1?"default":"pointer",lineHeight:1}}>▼</button>
+              <div key={e.id} className="fade-in" style={{margin:"4px 10px",borderRadius:12,overflow:"hidden",border:`1px solid ${sel===e.id?c.br:C.BD}`,background:sel===e.id?`${c.bg}44`:C.SUR2,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 32px 1fr 52px 36px",gap:8,padding:"10px 12px",alignItems:"center"}}>
+                  {/* Rank # */}
+                  <div style={{fontSize:13,fontWeight:700,color:i<3?"#f59e0b":C.DM,textAlign:"center"}}>{i+1}</div>
+                  {/* Up/down */}
+                  <div style={{display:"flex",flexDirection:"column",gap:2}}>
+                    <button onClick={ev=>{ev.stopPropagation();moveRank(-1);}} disabled={i===0} style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:4,color:i===0?C.BD:C.MT,fontSize:10,padding:"2px 5px",cursor:i===0?"default":"pointer",lineHeight:1}}>▲</button>
+                    <button onClick={ev=>{ev.stopPropagation();moveRank(1);}} disabled={i===arr.length-1} style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:4,color:i===arr.length-1?C.BD:C.MT,fontSize:10,padding:"2px 5px",cursor:i===arr.length-1?"default":"pointer",lineHeight:1}}>▼</button>
+                  </div>
+                  {/* Event info */}
+                  <div style={{minWidth:0}}>
+                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
+                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · {e.channel}</div>
+                  </div>
+                  {/* Score */}
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:20,fontWeight:800,color:scoreColor,lineHeight:1}}>{e.ds??0}</div>
+                    <div style={{fontSize:9,color:C.DM,marginTop:1}}>/100</div>
+                  </div>
+                  {/* TV */}
+                  <div style={{textAlign:"center",fontSize:12,fontWeight:700,color:asgn?.tv===-1?"#ef4444":"#f1f5f9",background:C.SUR,borderRadius:6,padding:"4px 0",border:`1px solid ${C.BD}`}}>{tvLbl}</div>
                 </div>
-                <div style={{minWidth:0}}>
-                  <div style={{fontSize:12,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
-                  <div style={{fontSize:10,color:C.MT,marginTop:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.league} · {e.channel} · {m2t(e.startMin)}</div>
-                  {sel===e.id&&e.breakdown&&(<div style={{background:"#191c23",borderRadius:5,padding:"6px 8px",marginTop:5,fontSize:10}}>
-                    <div style={{fontFamily:"monospace",fontSize:9,color:C.A,marginBottom:3}}>SCORE BREAKDOWN</div>
-                    {e.breakdown.filter(Boolean).map((b,j)=>(<div key={j} style={{display:"flex",justifyContent:"space-between",padding:"2px 0",borderBottom:"1px solid #21252e",color:b.v>0?"#86efac":b.v<0?"#fca5a5":"#7a8ca0"}}><span>{b.l}</span><span style={{fontFamily:"monospace",fontWeight:700}}>{b.v>0?"+":""}{b.v}</span></div>))}
-                    <div style={{display:"flex",justifyContent:"space-between",padding:"3px 0",fontWeight:700,color:"#f1f5f9",fontFamily:"monospace"}}><span>NORMALIZED</span><span>{e.ds}/100</span></div>
-                  </div>)}
-                </div>
-                <div style={{textAlign:"center"}}><div style={{fontFamily:"monospace",fontSize:7,color:C.DM}}>SCORE</div><div style={{fontFamily:"monospace",fontSize:16,fontWeight:700,color:c.tx}}>{e.ds??0}</div><div style={{fontFamily:"monospace",fontSize:7,color:C.DM}}>/100</div></div>
-                <div style={{fontFamily:"monospace",fontSize:8,fontWeight:700,padding:"2px 4px",borderRadius:3,background:c.bg,color:c.tx,border:`1px solid ${c.br}`,textAlign:"center",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{(e.sport||"").slice(0,4).toUpperCase()}</div>
-                <div style={{fontFamily:"monospace",fontSize:10,fontWeight:700,color:asgn?.tv===-1?C.A:"#f1f5f9",textAlign:"center"}}>{tvLbl}</div>
+                {/* Score breakdown */}
+                {sel===e.id&&e.breakdown&&(
+                  <div style={{borderTop:`1px solid ${C.BD}`,padding:"10px 12px",background:C.SUR}}>
+                    <div style={{fontSize:10,fontWeight:700,color:C.A,marginBottom:6,letterSpacing:"0.05em"}}>SCORE BREAKDOWN</div>
+                    {e.breakdown.filter(Boolean).map((b,j)=>(
+                      <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
+                        <span style={{color:C.MT}}>{b.l}</span>
+                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{b.v}</span>
+                      </div>
+                    ))}
+                    <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
+                      <span>Normalized score</span><span style={{color:scoreColor}}>{e.ds}/100</span>
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}
@@ -776,30 +856,33 @@ function App(){
       {tab==="league"&&(
         <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
           {/* TV Name Labels */}
-          <div style={{padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
-            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT,marginBottom:6}}>TV NAME LABELS — tap to rename · saved automatically</div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:6}}>
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>TV Names</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>Tap to rename · saves automatically</div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:8}}>
               {TV_PRIO.map(id=>(
-                <div key={id} style={{display:"flex",flexDirection:"column",gap:2}}>
-                  <div style={{fontFamily:"monospace",fontSize:7,color:C.DM,textAlign:"center"}}>TV {id+1}</div>
+                <div key={id} style={{display:"flex",flexDirection:"column",gap:3}}>
+                  <div style={{fontSize:9,fontWeight:600,color:C.DM,textAlign:"center"}}>TV {id+1}</div>
                   <input
                     value={tvNames[id]||""}
                     onChange={ev=>updateTvName(id,ev.target.value)}
                     maxLength={8}
                     placeholder={`TV ${id+1}`}
-                    style={{background:"#111827",border:`1px solid ${C.BD2}`,borderRadius:4,color:"#f1f5f9",fontFamily:"monospace",fontSize:9,padding:"3px 5px",width:"100%",outline:"none",textAlign:"center"}}
+                    style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",fontSize:11,fontWeight:500,padding:"5px 6px",width:"100%",outline:"none",textAlign:"center"}}
                   />
                 </div>
               ))}
             </div>
           </div>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 14px",borderBottom:`1px solid ${C.BD}`}}>
-            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>LEAGUE MODIFIERS — 0 to {MAX_MOD}{ready&&<span style={{color:"#22c55e",marginLeft:8}}>● SAVED</span>}</div>
-            <button style={{background:"none",border:`1px solid ${C.A}`,borderRadius:4,color:C.A,fontFamily:"monospace",fontSize:9,padding:"3px 10px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>RESET</button>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 16px 6px"}}>
+            <div>
+              <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>League Modifiers</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:2}}>0–{MAX_MOD} · auto-sorts · fave team +{FAVE_BOOST}</div>
+            </div>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
           </div>
-          <div style={{fontFamily:"monospace",fontSize:9,color:C.DM,padding:"4px 14px 3px"}}>Type modifier 0–{MAX_MOD} · list auto-sorts · fave team = +{FAVE_BOOST} boost · auto-saves</div>
-          <div style={{display:"grid",gridTemplateColumns:"24px 22px 1fr 60px 150px",gap:5,padding:"4px 14px",borderBottom:`1px solid ${C.BD}`}}>
-            {["#","","LEAGUE","MOD","FAVE TEAMS (comma-sep)"].map(h=><div key={h} style={{fontFamily:"monospace",fontSize:8,color:C.DM}}>{h}</div>)}
+          <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+            {["#","","LEAGUE","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
           </div>
           {[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:true}))].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
             const leagueId=lg.id;
@@ -808,23 +891,23 @@ function App(){
             const fv=favTeams[leagueId]||"";
             const hasFave=fv.trim().length>0;
             return(
-              <div key={leagueId} style={{display:"grid",gridTemplateColumns:"24px 22px 1fr 60px 150px",gap:5,padding:"5px 14px",borderBottom:"1px solid #191c23",alignItems:"center",background:hasFave?`${lg.gc}28`:`${lg.gc}18`}}>
-                <div style={{fontFamily:"monospace",fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
-                <div style={{fontSize:14,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
-                <div style={{fontSize:12,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:9,color:"#fbbf24"}}>⭐</span>}{lg.isUnknown&&<span style={{marginLeft:5,fontSize:9,color:"#fb923c"}}>⚠️</span>}</div>
+              <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?`${lg.gc}20`:`${lg.gc}10`}}>
+                <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
+                <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+                <div style={{fontSize:13,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}{lg.isUnknown&&<span style={{marginLeft:5,fontSize:10,color:"#f97316"}}>⚠️</span>}</div>
                 <input
                   type="number"
                   min="0"
                   max={MAX_MOD}
                   value={mod}
                   onChange={ev=>updateMod(leagueId,ev.target.value)}
-                  style={{background:"#111827",border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:4,color:mod>0?mc:"#94a3b8",fontFamily:"monospace",fontSize:11,fontWeight:700,padding:"3px 6px",width:"100%",outline:"none",textAlign:"center"}}
+                  style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}
                 />
                 <input
                   value={fv}
                   onChange={ev=>updateFave(leagueId,ev.target.value)}
-                  placeholder="e.g. Guardians, Cubs"
-                  style={{background:"#111827",border:`1px solid ${hasFave?"#fbbf24":C.BD2}`,borderRadius:4,color:hasFave?"#fde68a":"#94a3b8",fontFamily:"monospace",fontSize:9,padding:"3px 6px",width:"100%",outline:"none"}}
+                  placeholder="Guardians, Cubs..."
+                  style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}
                 />
               </div>
             );
@@ -835,13 +918,13 @@ function App(){
       {tab==="schedule"&&(
         <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
           <div style={{padding:"8px 14px",borderBottom:`1px solid ${C.BD}`,display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>SCHEDULE — {formatDateLabel(scheduleDate)}{isToday&&" (TODAY)"}</div>
+            <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Schedule — {formatDateLabel(scheduleDate)}{isToday&&<span style={{color:C.GRN,marginLeft:6,fontSize:10}}>Today</span>}</div>
             <div style={{fontFamily:"monospace",fontSize:9,color:scheduleStatus==="loaded"?"#4ade80":scheduleStatus==="none"?"#f87171":"#fbbf24"}}>{scheduleStatus==="loaded"?"● SCHEDULE LOADED":scheduleStatus==="loading"?"⟳ LOADING...":"○ NO SCHEDULE FOR THIS DATE"}</div>
           </div>
 
           {/* Open in Claude button */}
           <div style={{padding:"20px 14px"}}>
-            <div style={{fontFamily:"monospace",fontSize:9,color:C.MT,marginBottom:12}}>
+            <div style={{fontSize:12,color:C.MT,marginBottom:16,lineHeight:1.5}}>
               To add a schedule for this date, take screenshots from livesportsontv.com and open Claude to parse and push them.
             </div>
             <button
@@ -873,7 +956,7 @@ RULES:
 Please confirm you understand and are ready for me to upload the screenshots.`;
                 window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
               }}
-              style={{display:"flex",alignItems:"center",gap:8,background:"#7c3aed",border:"none",borderRadius:8,color:"#fff",fontFamily:"monospace",fontSize:11,fontWeight:700,padding:"12px 20px",cursor:"pointer",width:"100%",justifyContent:"center"}}
+              style={{display:"flex",alignItems:"center",gap:10,background:"linear-gradient(135deg,#7c3aed,#6d28d9)",border:"none",borderRadius:12,color:"#fff",fontSize:13,fontWeight:700,padding:"14px 20px",cursor:"pointer",width:"100%",justifyContent:"center",boxShadow:"0 4px 15px rgba(124,58,237,0.3)"}}
             >
               <span style={{fontSize:16}}>🤖</span> OPEN CLAUDE TO PARSE SCREENSHOTS
             </button>
