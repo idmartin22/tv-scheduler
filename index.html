@@ -78,9 +78,7 @@ function todayStr() { return dateToStr(new Date()); }
 async function githubLoadSchedule(date) {
   try {
     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}.json?t=${Date.now()}`;
-    console.log('Fetching schedule:', url, 'PAT length:', GITHUB_PAT.length);
     const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
-    console.log('Schedule fetch status:', r.status);
     if (!r.ok) return null;
     const meta = await r.json();
     const json = atob(meta.content.split('\n').join(''));
@@ -384,12 +382,10 @@ function App(){
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
-    console.log('loadScheduleForDate called with:', dateStr);
     setScheduleStatus("loading");
     setDynamicEvents(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
-      console.log('sched result:', sched ? 'has data, events:' + sched.events?.length : 'null');
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
       else setScheduleStatus("none");
     }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
@@ -857,7 +853,7 @@ I need you to parse livesportsontv.com screenshots for ${scheduleDate} and push 
 GITHUB DETAILS:
 - Repo: idmartin22/tv-scheduler
 - File path: schedule/${scheduleDate}.json
-- PAT: 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
+- PAT: ${GITHUB_PAT}
 
 INSTRUCTIONS:
 1. I will upload screenshots from livesportsontv.com showing sports events for ${scheduleDate}
