@@ -506,9 +506,9 @@ function App(){
 
   // Compute active events — use GitHub schedule if loaded, else hardcoded EVENTS
   const activeEvents=useMemo(()=>{
-    const evs=dynamicEvents?parseScheduleEvents(dynamicEvents):EVENTS;
+    const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):EVENTS;
     return evs;
-  },[dynamicEvents]);
+  },[dynamicEvents,scheduleDate]);
 
   // Auto-register unknown leagues found in today's events
   useEffect(()=>{
