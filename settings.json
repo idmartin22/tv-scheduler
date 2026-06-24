@@ -58,7 +58,22 @@
   },
   "prioOvr": {},
   "mirrors": {},
-  "unknownLeagues": {},
+  "unknownLeagues": {
+    "mixed-coverage": {
+      "n": "Mixed Coverage",
+      "sport": "Tennis",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "acb": {
+      "n": "ACB",
+      "sport": "Basketball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    }
+  },
   "tvNames": {
     "0": "TV 1",
     "1": "TV 2",
@@ -71,5 +86,5 @@
     "8": "TV 9",
     "9": "TV 10"
   },
-  "lastDate": "2026-06-23"
+  "lastDate": "2026-06-24"
 }
