@@ -42,15 +42,16 @@ const MOD_KEY = "barsched-league-mods-v1";
 const FAVE_BOOST = 20;
 const MAX_MOD = 50;
 
-const GITHUB_PAT  = 'ghp_HSJYCI' + 'EfsxPcsyOn7Z5zS' + 'vgNYRUhxB1WJyK0';
+const GITHUB_PAT  = ''; // PAT stored securely in Cloudflare Worker
 const GITHUB_REPO = 'idmartin22/tv-scheduler';
 const GITHUB_FILE = 'settings.json';
-const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+const WORKER_BASE = 'https://github-proxy.isaac-d-martin.workers.dev';
+const GITHUB_API  = `https://github-proxy.isaac-d-martin.workers.dev/github/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
 
 async function githubLoad() {
   try {
     const r = await fetch(GITHUB_API + `?t=${Date.now()}`, {
-      headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' }
+      headers: { 'Accept': 'application/vnd.github+json' }
     });
     if (!r.ok) return null;
     const meta = await r.json();
@@ -78,10 +79,12 @@ function todayStr() { return dateToStr(new Date()); }
 async function githubLoadSchedule(date) {
   // date format: YYYY-MM-DD
   try {
-    const url = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/schedule/${date}.json?t=${Date.now()}`;
-    const r = await fetch(url);
+    const url = `https://github-proxy.isaac-d-martin.workers.dev/github/repos/${GITHUB_REPO}/contents/schedule/${date}.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } });
     if (!r.ok) return null;
-    return await r.json();
+    const meta = await r.json();
+    const json = atob(meta.content.split('\n').join(''));
+    return JSON.parse(json);
   } catch(e) { return null; }
 }
 
@@ -95,7 +98,7 @@ async function githubSave(data, sha) {
   // If no SHA provided, fetch current one first
   if (!sha) {
     try {
-      const r = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+      const r = await fetch(GITHUB_API, { headers: { 'Accept': 'application/vnd.github+json' } });
       if (r.ok) { const j = await r.json(); sha = j.sha; }
     } catch(e) {}
   }
@@ -105,19 +108,19 @@ async function githubSave(data, sha) {
 
   const r = await fetch(GITHUB_API, {
     method: 'PUT',
-    headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    headers: { 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
 
   // On 409 conflict, refresh SHA and retry once
   if (r.status === 409 || r.status === 422) {
-    const r2 = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    const r2 = await fetch(GITHUB_API, { headers: { 'Accept': 'application/vnd.github+json' } });
     if (r2.ok) {
       const j2 = await r2.json();
       body.sha = j2.sha;
       const r3 = await fetch(GITHUB_API, {
         method: 'PUT',
-        headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        headers: { 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
       if (!r3.ok) throw new Error(`GitHub save failed: ${r3.status}`);
