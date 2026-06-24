@@ -2,25 +2,455 @@
   "date": "2026-06-24",
   "label": "WED JUN 24",
   "events": [
-    {"id":1,"time":"06:00","name":"Wimbledon Qualifying","sport":"Tennis","league":"Wimbledon","ch":"ESPN Unlimited","dur":240,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":2,"time":"06:30","name":"WTA & ATP Tournaments","sport":"Tennis","league":"Mixed Coverage","ch":"Tennis Channel","dur":240,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":3,"time":"12:10","name":"Texas Rangers @ Miami Marlins","sport":"Baseball","league":"MLB","ch":"MLB Network","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":4,"time":"14:00","name":"Valencia @ Barcelona","sport":"Basketball","league":"ACB","ch":"Fanatiz","dur":150,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":5,"time":"14:10","name":"Cleveland Guardians @ Chicago White Sox","sport":"Baseball","league":"MLB","ch":"Fanatiz","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":6,"time":"15:00","name":"Switzerland vs Canada","sport":"Soccer","league":"World Cup 2026","ch":"FOX","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":7,"time":"15:00","name":"Bosnia-Herzegovina vs Qatar","sport":"Soccer","league":"World Cup 2026","ch":"FS1","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":8,"time":"15:10","name":"Boston Red Sox @ Colorado Rockies","sport":"Baseball","league":"MLB","ch":"MLB Network","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":9,"time":"18:00","name":"Scotland vs Brazil","sport":"Soccer","league":"World Cup 2026","ch":"FOX","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":10,"time":"18:00","name":"Morocco vs Haiti","sport":"Soccer","league":"World Cup 2026","ch":"FS1","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":11,"time":"18:40","name":"Kansas City Royals @ Tampa Bay Rays","sport":"Baseball","league":"MLB","ch":"ESPN Unlimited","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":12,"time":"18:40","name":"New York Yankees @ Detroit Tigers","sport":"Baseball","league":"MLB","ch":"Prime Video","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":13,"time":"19:07","name":"Houston Astros @ Toronto Blue Jays","sport":"Baseball","league":"MLB","ch":"Fanatiz","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":14,"time":"19:10","name":"Chicago Cubs @ New York Mets","sport":"Baseball","league":"MLB","ch":"MLB Network","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":15,"time":"19:30","name":"Phoenix Mercury @ Indiana Fever","sport":"Basketball","league":"WNBA","ch":"USA Network","dur":150,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":16,"time":"20:00","name":"2026 NBA Draft - Second Round","sport":"Basketball","league":"NBA","ch":"ESPN","dur":150,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":17,"time":"21:00","name":"South Africa vs Korea Republic","sport":"Soccer","league":"World Cup 2026","ch":"FS1","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":18,"time":"21:00","name":"Czechia vs Mexico","sport":"Soccer","league":"World Cup 2026","ch":"FOX","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":19,"time":"21:45","name":"Athletics @ San Francisco Giants","sport":"Baseball","league":"MLB","ch":"MLB Network","dur":180,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}},
-    {"id":20,"time":"22:00","name":"Atlanta Dream @ Golden State Valkyries","sport":"Basketball","league":"WNBA","ch":"CNBC","dur":150,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}}
+    {
+      "id": 1,
+      "time": "15:00",
+      "name": "Switzerland vs Canada",
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FOX",
+      "dur": 120,
+      "_st": {
+        "v": 4,
+        "l": "Switzerland solid +4"
+      },
+      "_sk": {
+        "v": 9,
+        "l": "Both need points to advance +9"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 12,
+        "l": "Must-win group stage +12"
+      }
+    },
+    {
+      "id": 2,
+      "time": "15:00",
+      "name": "Bosnia-Herzegovina vs Qatar",
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FS1",
+      "dur": 120,
+      "_st": {
+        "v": 2,
+        "l": "Lower-ranked nations +2"
+      },
+      "_sk": {
+        "v": 8,
+        "l": "Elimination stakes +8"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 8,
+        "l": "Group stage pressure +8"
+      }
+    },
+    {
+      "id": 3,
+      "time": "18:00",
+      "name": "Scotland vs Brazil",
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FOX",
+      "dur": 120,
+      "_st": {
+        "v": 9,
+        "l": "Brazil 5x World Champion +9"
+      },
+      "_sk": {
+        "v": 8,
+        "l": "Brazil must win +8"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "Classic underdog vs giant +3"
+      },
+      "_mq": {
+        "v": 15,
+        "l": "Elite nation vs underdog +15"
+      }
+    },
+    {
+      "id": 4,
+      "time": "18:00",
+      "name": "Morocco vs Haiti",
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FS1",
+      "dur": 120,
+      "_st": {
+        "v": 4,
+        "l": "Morocco 2022 semifinalist +4"
+      },
+      "_sk": {
+        "v": 7,
+        "l": "Both need result +7"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 9,
+        "l": "Morocco favored heavily +9"
+      }
+    },
+    {
+      "id": 5,
+      "time": "21:00",
+      "name": "South Africa vs Korea Republic",
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FS1",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Korea solid squad +3"
+      },
+      "_sk": {
+        "v": 9,
+        "l": "Both fighting for survival +9"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 11,
+        "l": "High stakes both sides +11"
+      }
+    },
+    {
+      "id": 6,
+      "time": "21:00",
+      "name": "Czechia vs Mexico",
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FOX",
+      "dur": 120,
+      "_st": {
+        "v": 5,
+        "l": "Mexico CONCACAF power +5"
+      },
+      "_sk": {
+        "v": 9,
+        "l": "Mexico must win to advance +9"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "CONCACAF vs Europe +2"
+      },
+      "_mq": {
+        "v": 13,
+        "l": "Mexico elimination pressure +13"
+      }
+    },
+    {
+      "id": 7,
+      "time": "12:10",
+      "name": "Rangers @ Marlins",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "MLB Network",
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": ""
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 2,
+        "l": "Afternoon game +2"
+      }
+    },
+    {
+      "id": 8,
+      "time": "14:10",
+      "name": "Cleveland Guardians @ White Sox",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "Guardians.TV",
+      "dur": 180,
+      "_st": {
+        "v": 3,
+        "l": "Guardians AL Central leaders +3"
+      },
+      "_sk": {
+        "v": 4,
+        "l": "Division race +4"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "AL Central rivalry +3"
+      },
+      "_mq": {
+        "v": 8,
+        "l": "First place Guardians +8"
+      }
+    },
+    {
+      "id": 9,
+      "time": "15:10",
+      "name": "Red Sox @ Rockies",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "MLB Network",
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": ""
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 2,
+        "l": "Afternoon game +2"
+      }
+    },
+    {
+      "id": 10,
+      "time": "18:40",
+      "name": "Royals @ Rays",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "ESPN Unlimited",
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": ""
+      },
+      "_sk": {
+        "v": 2,
+        "l": "AL wild card race +2"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 3,
+        "l": "Wild card implications +3"
+      }
+    },
+    {
+      "id": 11,
+      "time": "18:40",
+      "name": "Yankees @ Tigers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "Prime Video",
+      "dur": 180,
+      "_st": {
+        "v": 4,
+        "l": "Yankees AL East leaders +4"
+      },
+      "_sk": {
+        "v": 3,
+        "l": "AL East race +3"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Historic franchise +2"
+      },
+      "_mq": {
+        "v": 7,
+        "l": "Yankees always watchable +7"
+      }
+    },
+    {
+      "id": 12,
+      "time": "19:07",
+      "name": "Astros @ Blue Jays",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "Fanatiz",
+      "dur": 180,
+      "_st": {
+        "v": 2,
+        "l": "Astros contender +2"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "AL wild card +2"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 3,
+        "l": "Streaming only +3"
+      }
+    },
+    {
+      "id": 13,
+      "time": "19:10",
+      "name": "Cubs @ Mets",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "MLB Network",
+      "dur": 180,
+      "_st": {
+        "v": 2,
+        "l": "Both contenders +2"
+      },
+      "_sk": {
+        "v": 3,
+        "l": "NL wild card race +3"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "Historic rivalry +3"
+      },
+      "_mq": {
+        "v": 6,
+        "l": "Rivalry game +6"
+      }
+    },
+    {
+      "id": 14,
+      "time": "21:45",
+      "name": "Athletics @ Giants",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "MLB Network",
+      "dur": 180,
+      "_st": {
+        "v": 2,
+        "l": "Giants competitive +2"
+      },
+      "_sk": {
+        "v": 1,
+        "l": "NL West race +1"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "Bay Area rivalry +3"
+      },
+      "_mq": {
+        "v": 5,
+        "l": "Classic Bay Area rivalry +5"
+      }
+    },
+    {
+      "id": 15,
+      "time": "20:00",
+      "name": "2026 NBA Draft - Second Round",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": "ESPN",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Future stars +3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 5,
+        "l": "Draft day excitement +5"
+      }
+    },
+    {
+      "id": 16,
+      "time": "19:30",
+      "name": "Phoenix Mercury @ Indiana Fever",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": "USA Network",
+      "dur": 150,
+      "_st": {
+        "v": 5,
+        "l": "Caitlin Clark Fever factor +5"
+      },
+      "_sk": {
+        "v": 3,
+        "l": "Playoff seeding +3"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "High profile matchup +3"
+      },
+      "_mq": {
+        "v": 9,
+        "l": "Must-see WNBA game +9"
+      }
+    },
+    {
+      "id": 17,
+      "time": "22:00",
+      "name": "Atlanta Dream @ Golden State Valkyries",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": "CNBC",
+      "dur": 150,
+      "_st": {
+        "v": 2,
+        "l": "Valkyries new team +2"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Playoff race +2"
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 4,
+        "l": "Late game +4"
+      }
+    },
+    {
+      "id": 18,
+      "time": "14:00",
+      "name": "Valencia @ Barcelona",
+      "sport": "Basketball",
+      "league": "ACB",
+      "ch": "Fanatiz",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Barcelona dominant +3"
+      },
+      "_sk": {
+        "v": 4,
+        "l": "Liga ACB finals +4"
+      },
+      "_rv": {
+        "v": 4,
+        "l": "Classic Spanish rivalry +4"
+      },
+      "_mq": {
+        "v": 8,
+        "l": "Championship finals +8"
+      }
+    }
   ]
 }
