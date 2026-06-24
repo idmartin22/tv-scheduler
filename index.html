@@ -371,7 +371,10 @@ let DEF_MODS=(()=>{
   return obj;
 })();
 
+const SC={A:"#f04438",BG:"#0f1117",SUR:"#1c2030",BD:"#2d3a50",BD2:"#3d4f68",MT:"#94a3b8",DM:"#4a5a72"};
+
 function ScheduleUploader({date, onPushed, ghPat, ghRepo}) {
+  const C=SC;
   const [images, setImages] = useState([]);
   const [parsing, setParsing] = useState(false);
   const [parsedEvents, setParsedEvents] = useState(null);
