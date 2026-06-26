@@ -139,6 +139,55 @@ async function githubSave(data, sha) {
   return j.content.sha;
 }
 
+// Spectrum Cleveland/Elyria channel lineup
+const SPECTRUM = {
+  // Broadcast locals
+  "NBC": 3, "CBS": 4, "ABC": 5, "FOX": 8, "PBS": 9,
+  "WJW": 8, "WKYC": 3, "WOIO": 4, "WEWS": 5,
+  "CW": 7, "ION": 23,
+  "Univision": 11, "Telemundo": 13,
+  // Sports tier
+  "ESPN": 250, "ESPN2": 251, "FS1": 252, "FS2": 253,
+  "FOX Sports 1": 252, "FOX Sports 2": 253,
+  "NFL Network": 254, "NFL RedZone": 255,
+  "Golf Channel": 257, "MLB Network": 258,
+  "ESPNews": 259, "ESPNU": 260,
+  "CBS Sports Network": 261, "CBSSN": 261,
+  "NBA TV": 262, "Tennis Channel": 263,
+  "Outdoor Channel": 264, "NHL Network": 265,
+  "Racer Network": 266, "SEC Network": 269,
+  "BTN": 271, "Big Ten Network": 271,
+  "ACC Network": 278, "BTN Extra": 287,
+  "MLB Cleveland Guardians": 447, "Guardians.TV": 447,
+  "BeIN Sports": 449, "beIN Sports": 449, "beIN SPORTS": 449,
+  "FOX Soccer Plus": 450,
+  "FanDuel TV": 453,
+  "MLB Strike Zone": 459,
+  // 4K / IP
+  "FOX 4K": 470, "FS1 4K": 471,
+  "NBC Sports 4K": 474,
+  "ESPN 4K": 477,
+  // Cable sports carry
+  "USA Network": 500, "USA": 500,
+  "TNT": 502, "TBS": 504,
+  "truTV": 528,
+  // Spanish sports
+  "ESPN Deportes": 1005, "FOX Deportes": 1006,
+  "beIN SPORTS Español": 1007, "TUDN": 1008,
+};
+
+function getSpectrumCh(ch) {
+  if (!ch) return null;
+  const key = (ch || "").trim();
+  if (SPECTRUM[key] !== undefined) return SPECTRUM[key];
+  // Fuzzy: case-insensitive partial match
+  const kl = key.toLowerCase();
+  for (const [k, v] of Object.entries(SPECTRUM)) {
+    if (k.toLowerCase() === kl) return v;
+  }
+  return null;
+}
+
 const DEF_FAVES = {
   "mlb": "Guardians",
   "nfl": "Browns",
@@ -759,15 +808,15 @@ function App(){
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}</div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel} · {a.ds??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
           })}
           {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
             <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
-            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel} · {a.ds??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
           </div>)}
         </div>
       )}
@@ -790,7 +839,7 @@ function App(){
                 <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.isFave?"⭐ ":""}{a.name}</div>
                 <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
               </div>
-              <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}</div>
+              <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}{getSpectrumCh(a.channel)!==null&&<span style={{color:"#67e8f9",marginLeft:3,fontSize:9}}>#{getSpectrumCh(a.channel)}</span>}</div>
               <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 0"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
             </div>
           );})}
@@ -822,7 +871,7 @@ function App(){
                   {/* Event info */}
                   <div style={{minWidth:0}}>
                     <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
-                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · {e.channel}</div>
+                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · {e.channel}{getSpectrumCh(e.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(e.channel)}</span>:null}</div>
                   </div>
                   {/* Score */}
                   <div style={{textAlign:"center"}}>
@@ -980,7 +1029,7 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
               <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
-              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · {selEv.channel} · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
+              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · {selEv.channel}{getSpectrumCh(selEv.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3,fontWeight:700}}>ch {getSpectrumCh(selEv.channel)}</span>:null} · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
             </div>
             <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
           </div>
