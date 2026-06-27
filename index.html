@@ -1002,6 +1002,24 @@ RULES:
 - Push the JSON file to GitHub using the Contents API PUT method
 - Confirm when done
 
+CRITICAL — STREAMING vs BROADCAST CHANNEL RULES:
+livesportsontv.com often shows both a streaming badge and a broadcast badge. Always use the PRIMARY carrier as "ch". Follow these rules exactly:
+
+CHANNEL NAME MAPPING:
+- ESPN+ → use "ESPN Unlimited" (ESPN+ was rebranded; it is streaming only, NOT the ESPN cable channel)
+- ESPN (cable) → use "ESPN" only if it is the actual ESPN cable channel, not a streaming exclusive
+- Paramount+ with a CBS badge → use "Paramount+" (the game is NOT airing on the local CBS broadcast channel)
+- Peacock with an NBC badge → use "Peacock" (not on NBC broadcast)
+- Apple TV+ or MLS Season Pass → use "Apple TV+"
+- Amazon Prime Video / Thursday Night Football → use "Prime Video" (unless NFL Network simulcast is confirmed, then use "NFL Network")
+- Max (HBO Max) → use "Max"
+- Fubo → use "Fubo"
+
+SPECTRUM CABLE CHANNELS (these ARE on cable, use the short name):
+ESPN=250, ESPN2=251, FS1=252, FS2=253, FOX=8, CBS=4, NBC=3, ABC=5, TNT=502, TBS=504, truTV=528, USA=500, MLB Network=258, NFL Network=254, NBA TV=262, NHL Network=265, Golf Channel=257, BTN=271, SEC Network=269, ACC Network=278, beIN Sports=449, Guardians.TV=447, TUDN=1008
+
+If a game shows ONLY a streaming service badge with no cable channel, set "ch" to the streaming service name. Never use "CBS", "NBC", "ABC", or "FOX" for a game that is streaming-only.
+
 Please confirm you understand and are ready for me to upload the screenshots.`;
                 window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
               }}
