@@ -642,6 +642,8 @@ function App(){
     setOvrSaving(true);
     const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
     const updated=[...tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
+    console.log('saveOverride called:', {eventId,tvId,fromMin,toMin});
+    console.log('tvOverrides updated to:', updated);
     setTvOverrides(updated);
     const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
     if(newSha) setOverridesSha(newSha);
@@ -742,11 +744,12 @@ function App(){
 
   // Apply TV overrides on top of the scored final array
   const finalWithOverrides=useMemo(()=>{
+    console.log('finalWithOverrides recomputing, tvOverrides:', tvOverrides);
     if(!tvOverrides.length) return final;
-    // Clone each event, apply override TV/time if one exists
     return final.map(evt=>{
       const ovr=tvOverrides.find(o=>o.eventId===evt.id);
       if(!ovr) return evt;
+      console.log('Applying override to event:', evt.id, evt.name, '-> TV', ovr.tvId);
       return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
     });
   },[final,tvOverrides]);
