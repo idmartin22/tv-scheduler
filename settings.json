@@ -59,11 +59,13 @@
     "mls": ""
   },
   "prioOvr": {
-    "8": 65,
-    "9": 63,
-    "18": 78
+    "6": 65
   },
-  "mirrors": {},
+  "mirrors": {
+    "8": [
+      7
+    ]
+  },
   "unknownLeagues": {
     "mixed-coverage": {
       "n": "Mixed Coverage",
@@ -212,30 +214,5 @@
       "gtc": "#9ca3af",
       "isUnknown": true
     }
-  },
-  "tvNames": {
-    "0": "TV 1",
-    "1": "TV 2",
-    "2": "TV 3",
-    "3": "TV 4",
-    "4": "TV 5",
-    "5": "TV 6",
-    "6": "TV 7",
-    "7": "TV 8",
-    "8": "TV 9",
-    "9": "TV 10"
-  },
-  "tvFillCh": {
-    "0": "NFL Network",
-    "1": "ESPN",
-    "2": "FS1",
-    "3": "NBA TV",
-    "4": "ESPNews",
-    "5": "ESPN2",
-    "6": "Fox News",
-    "7": "MLB Network",
-    "8": "NHL Network",
-    "9": "Golf Channel"
-  },
-  "lastDate": "2026-06-28"
+  }
 }
