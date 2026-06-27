@@ -368,6 +368,8 @@ const TVS=[
   {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+// Grid display order: basement TVs first (1,2,3,10) then bar TVs in sequence (4-9)
+const TV_DISPLAY=[0,1,2,9,3,4,5,6,7,8];
 
 const FILLS=[
   {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
@@ -918,7 +920,7 @@ function App(){
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
 
           </div>
-          {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+          {TV_DISPLAY.filter(id=>activeTVs.has(id)).map(tvId=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
             const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
             const fb=fillBlocks(tvId,asgnd,tvFillCh);
