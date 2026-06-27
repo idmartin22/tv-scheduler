@@ -1188,12 +1188,12 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
             <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
               {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
                 if(tvId===selEv.tv)return null;
-                const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;const mir=mirrors[selEv.id]?.has(tvId);
+                const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;const mirSet=mirrors[selEv.id] instanceof Set?mirrors[selEv.id]:new Set(mirrors[selEv.id]||[]);const mir=mirSet.has(tvId);
                 const disp=final.find(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
                 return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:"pointer",background:mir?"#164e63":disp?"#2d1a0a":"#1f2937",color:mir?"#a5f3fc":disp?"#fb923c":C.MT,border:`1px solid ${mir?"#22d3ee":disp?"#c2410c":C.BD2}`}} onClick={()=>toggleMirror(selEv.id,tvId)}>{mir?"📡 ":disp?"⚡ ":""}{tv.name}{mir?" ✓":""}</button>);
               })}
             </div>
-            {mirrors[selEv.id]?.size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
+            {(mirrors[selEv.id] instanceof Set?mirrors[selEv.id]:new Set(mirrors[selEv.id]||[])).size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
           </>)}
 
           {/* ── OVERRIDE ASSIGNMENT ── */}
