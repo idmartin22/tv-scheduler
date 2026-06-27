@@ -1173,12 +1173,12 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
                   <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TV:</span>
                   {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
                     const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
-                    const active=ovrForm.tvId===tvId;
+                    const isActive=ovrForm.tvId===tvId;
                     return(<button key={tvId} onClick={()=>setOvrForm(f=>({...f,tvId}))}
                       style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,
-                        background:active?"#f59e0b":"transparent",
-                        color:active?"#000":C.MT,
-                        border:`1px solid ${active?"#f59e0b":C.BD2}`,cursor:"pointer"}}>
+                        background:isActive?"#f59e0b":"transparent",
+                        color:isActive?"#000":C.MT,
+                        border:`1px solid ${isActive?"#f59e0b":C.BD2}`,cursor:"pointer"}}>
                       {tvLabel}
                     </button>);
                   })}
@@ -1201,9 +1201,8 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
                   <button onClick={()=>{
                     if(ovrForm.tvId===null){alert("Pick a TV first");return;}
                     if(ovrForm.toMin<=ovrForm.fromMin){alert("End time must be after start");return;}
-                    // Check conflict
-                    const conflict=finalWithOverrides.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
-                      !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin)&&!a._override);
+                    const conflict=final.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
+                      !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin));
                     if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||"TV "+(ovrForm.tvId+1)} already has "${conflict.name}" in that window. Override anyway?`))return;
                     saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
                   }} disabled={ovrSaving}
@@ -1240,16 +1239,10 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
               </div>
             )}
           </div>
-
-        </>)}
         </div>
       )}
     </div>
+    </div>
+    </div>
   );
 }
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App/>);
-  </script>
-</body>
-</html>
