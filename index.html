@@ -329,16 +329,16 @@ const EVENTS = [
 ];
 
 const TVS=[
-  {id:0,name:"TV 1",sz:75,loc:"Living Room — Center",zone:"living",ord:0},
-  {id:1,name:"TV 2",sz:55,loc:"Living Room — Left",zone:"living",ord:1},
-  {id:2,name:"TV 3",sz:55,loc:"Living Room — Right",zone:"living",ord:2},
-  {id:3,name:"TV 4",sz:42,loc:"Living Room — Corner",zone:"living",ord:7},
-  {id:4,name:"TV 5",sz:55,loc:"Bar — Right Corner",zone:"bar",ord:4},
-  {id:5,name:"TV 6",sz:40,loc:"Bar — Right Side",zone:"bar",ord:8},
-  {id:6,name:"TV 7",sz:50,loc:"Bar — Center",zone:"bar",ord:3},
-  {id:7,name:"TV 8",sz:40,loc:"Bar — Left Side",zone:"bar",ord:9},
-  {id:8,name:"TV 9",sz:55,loc:"Bar — Left Corner",zone:"bar",ord:5},
-  {id:9,name:"TV 10",sz:55,loc:"Bar — Opposite Wall",zone:"bar",ord:6},
+  {id:0,name:"TV 1",sz:75,loc:"Basement — Center",zone:"basement",brand:"Vizio",input:"SmartCast",ord:0},
+  {id:1,name:"TV 2",sz:55,loc:"Basement — Left",zone:"basement",brand:"Vizio",input:"SmartCast",ord:1},
+  {id:2,name:"TV 3",sz:55,loc:"Basement — Right",zone:"basement",brand:"Vizio",input:"SmartCast",ord:2},
+  {id:3,name:"TV 4",sz:55,loc:"Bar — Right Corner",zone:"bar",brand:"Philips",input:"Firestick",ord:4},
+  {id:4,name:"TV 5",sz:32,loc:"Bar — Right Side",zone:"bar",brand:"Vizio",input:"SmartCast",ord:8},
+  {id:5,name:"TV 6",sz:47,loc:"Bar — Center Right",zone:"bar",brand:"Vizio",input:"Roku",ord:3},
+  {id:6,name:"TV 7",sz:32,loc:"Bar — Center Left",zone:"bar",brand:"Vizio",input:"Roku",ord:9},
+  {id:7,name:"TV 8",sz:55,loc:"Bar — Left Side",zone:"bar",brand:"LG",input:"Firestick",ord:5},
+  {id:8,name:"TV 9",sz:60,loc:"Bar — Left Corner",zone:"bar",brand:"Sharp",input:"Roku",ord:6},
+  {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
 
@@ -698,10 +698,15 @@ function App(){
   };
   const selEv=sel?final.find(a=>a&&a.id===sel):null;
 
-  const TMINS=BAR_CLOSE-BAR_OPEN;
-  const pct=m=>((m-BAR_OPEN)/TMINS*100).toFixed(2)+"%";
+  // Dynamic time window based on actual events
+  const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
+  const GRID_START=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
+  const GRID_END=allEvtMins.length?Math.ceil(Math.max(...allEvtMins)/60)*60:BAR_CLOSE;
+  const TMINS=GRID_END-GRID_START;
+  const pct=m=>((m-GRID_START)/TMINS*100).toFixed(2)+"%";
   const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
-  const hrs=Array.from({length:18},(_,i)=>7+i);
+  const hrsCount=Math.round(TMINS/60);
+  const hrs=Array.from({length:hrsCount},(_,i)=>GRID_START/60+i);
   const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
 
   const C={
@@ -757,10 +762,10 @@ function App(){
         <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
           <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#f97316":C.BD2}`,background:activePreset==="Mirror 1"?"rgba(249,115,22,0.15)":"transparent",color:activePreset==="Mirror 1"?"#f97316":C.MT}}>Mirror 1</button>
           <button onClick={()=>{
-            const tv14=new Set([0,1,2,3]);
-            const isActive=[...activeTVs].sort().join()==='0,1,2,3';
+            const tv14=new Set([0,1,2,9]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,9';
             setActiveTVs(isActive?new Set(TV_PRIO):tv14);
-          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,9'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.MT}}>TVs 1–4</button>
           <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
             {TV_PRIO.map(id=>{
               const on=activeTVs.has(id);
@@ -799,7 +804,7 @@ function App(){
               <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?"#f97316":tvId<=2?"#3b82f6":"#1e2d45"}`}}>
                 <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
                   <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
-                  <div style={{fontSize:9,color:C.MT,marginTop:1}}>{tv.sz}"</div>
+                  <div style={{fontSize:8,color:C.MT,marginTop:1,lineHeight:1.4}}>{tv.brand}</div><div style={{fontSize:8,color:C.MT,lineHeight:1.4}}>{tv.sz}"</div><div style={{fontSize:8,color:"#67e8f9",lineHeight:1.4}}>{tv.input}</div>
                 </div>
                 <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
                   {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
