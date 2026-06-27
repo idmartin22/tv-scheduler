@@ -93,6 +93,32 @@ async function githubLoadSchedule(date) {
   } catch(e) { console.error('githubLoadSchedule error:', e); return null; }
 }
 
+async function githubLoadOverrides(date) {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return { overrides: [], sha: null };
+    const meta = await r.json();
+    const json = atob(meta.content.split('\n').join(''));
+    return { overrides: JSON.parse(json).overrides || [], sha: meta.sha };
+  } catch(e) { return { overrides: [], sha: null }; }
+}
+
+async function githubSaveOverrides(date, overrides, sha) {
+  try {
+    const content = btoa(JSON.stringify({ date, overrides }, null, 2));
+    const body = { message: `Update overrides for ${date}`, content };
+    if (sha) body.sha = sha;
+    const r = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json`,
+      { method: 'PUT', headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+    if (!r.ok) return null;
+    const j = await r.json();
+    return j.content?.sha || null;
+  } catch(e) { return null; }
+}
+
 async function githubSave(data, sha) {
   // Safe base64 encoding that handles unicode
   const json = JSON.stringify(data, null, 2);
@@ -440,10 +466,15 @@ function App(){
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
     setScheduleStatus("loading");
     setDynamicEvents(null);
+    setOverrides([]);
+    setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
       else setScheduleStatus("none");
+      const ovr=await githubLoadOverrides(dateStr);
+      setOverrides(ovr.overrides||[]);
+      setOverridesSha(ovr.sha);
     }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
   },[]);
 
@@ -484,6 +515,10 @@ function App(){
   };
   const [mirrors,setMirrors]=useState({});
   const [sel,setSel]=useState(null);
+  const [overrides,setOverrides]=useState([]); // [{id,tvId,startMin,endMin}]
+  const [overridesSha,setOverridesSha]=useState(null);
+  const [ovrForm,setOvrForm]=useState(null); // {tvId,fromMin,toMin} when form open
+  const [ovrSaving,setOvrSaving]=useState(false);
   const [tab,setTab]=useState("grid");
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
@@ -603,6 +638,25 @@ function App(){
     },500);
   },[ghaSha]);
 
+  const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
+    setOvrSaving(true);
+    const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
+    const updated=[...overrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
+    setOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setOvrSaving(false);
+    setOvrForm(null);
+    setSel(null);
+  },[overrides,overridesSha,scheduleDate]);
+
+  const removeOverride=React.useCallback(async(eventId,tvId)=>{
+    const updated=overrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId));
+    setOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[overrides,overridesSha,scheduleDate]);
+
   const buildSavePayload=React.useCallback((overrides={})=>{
     return {
       leagueMods: overrides.leagueMods ?? leagueMods,
@@ -697,6 +751,24 @@ function App(){
     setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});setSel(null);
   };
   const selEv=sel?final.find(a=>a&&a.id===sel):null;
+
+  // Apply overrides: inject override assignments into a copy of final
+  const finalWithOverrides=React.useMemo(()=>{
+    if(!overrides.length) return final;
+    const copy=[...final];
+    overrides.forEach(ovr=>{
+      // Find the event
+      const evIdx=copy.findIndex(a=>a&&a.id===ovr.eventId);
+      if(evIdx===-1) return;
+      const ev=copy[evIdx];
+      // Only apply if override window overlaps with current view
+      // Create a synthetic assigned version for the override TV/window
+      const synth={...ev, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin,
+        dur:ovr.endMin-ovr.startMin, _override:true};
+      copy.push(synth);
+    });
+    return copy;
+  },[final,overrides]);
 
   // Dynamic time window based on actual events + current time trimming
   const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
@@ -1089,6 +1161,87 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
             </div>
             {mirrors[selEv.id]?.size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
           </>)}
+
+          {/* ── OVERRIDE SECTION ─────────────────────────────── */}
+          <div style={{marginTop:10,borderTop:`1px solid ${C.BD}`,paddingTop:8}}>
+            <div style={{fontFamily:"monospace",fontSize:10,color:"#f59e0b",marginBottom:6}}>
+              ⏱ OVERRIDE ASSIGNMENT
+            </div>
+            {ovrForm&&ovrForm.eventId===selEv.id?(
+              <div style={{background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.3)",borderRadius:6,padding:8}}>
+                <div style={{display:"flex",gap:6,alignItems:"center",marginBottom:6,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TV:</span>
+                  {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                    const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
+                    const active=ovrForm.tvId===tvId;
+                    return(<button key={tvId} onClick={()=>setOvrForm(f=>({...f,tvId}))}
+                      style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,
+                        background:active?"#f59e0b":"transparent",
+                        color:active?"#000":C.MT,
+                        border:`1px solid ${active?"#f59e0b":C.BD2}`,cursor:"pointer"}}>
+                      {tvLabel}
+                    </button>);
+                  })}
+                </div>
+                <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,flexWrap:"wrap"}}>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FROM:</span>
+                    <input type="time" value={`${String(Math.floor(ovrForm.fromMin/60)).padStart(2,'0')}:${String(ovrForm.fromMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,fromMin:parseInt(h)*60+parseInt(m)}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TO:</span>
+                    <input type="time" value={`${String(Math.floor(ovrForm.toMin/60)).padStart(2,'0')}:${String(ovrForm.toMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,toMin:parseInt(h)*60+parseInt(m)}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                </div>
+                <div style={{display:"flex",gap:6}}>
+                  <button onClick={()=>{
+                    if(ovrForm.tvId===null){alert("Pick a TV first");return;}
+                    if(ovrForm.toMin<=ovrForm.fromMin){alert("End time must be after start");return;}
+                    // Check conflict
+                    const conflict=finalWithOverrides.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
+                      !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin)&&!a._override);
+                    if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||"TV "+(ovrForm.tvId+1)} already has "${conflict.name}" in that window. Override anyway?`))return;
+                    saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
+                  }} disabled={ovrSaving}
+                    style={{padding:"4px 12px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"#f59e0b",color:"#000",border:"none",cursor:"pointer",fontWeight:700}}>
+                    {ovrSaving?"SAVING...":"SAVE OVERRIDE"}
+                  </button>
+                  <button onClick={()=>setOvrForm(null)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"transparent",color:C.MT,border:`1px solid ${C.BD}`,cursor:"pointer"}}>
+                    CANCEL
+                  </button>
+                </div>
+              </div>
+            ):(
+              <div style={{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}}>
+                <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:null,fromMin:selEv.startMin,toMin:selEv.endMin})}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                    background:"rgba(245,158,11,0.1)",color:"#f59e0b",
+                    border:"1px solid rgba(245,158,11,0.4)",cursor:"pointer"}}>
+                  + SET OVERRIDE
+                </button>
+                {overrides.filter(o=>o.eventId===selEv.id).map(o=>(
+                  <div key={o.tvId} style={{display:"flex",gap:4,alignItems:"center",
+                    background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.2)",
+                    borderRadius:4,padding:"2px 6px"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:"#f59e0b"}}>
+                      {tvNames[o.tvId]||`TV ${o.tvId+1}`} {String(Math.floor(o.startMin/60)).padStart(2,'0')}:{String(o.startMin%60).padStart(2,'0')}–{String(Math.floor(o.endMin/60)).padStart(2,'0')}:{String(o.endMin%60).padStart(2,'0')}
+                    </span>
+                    <button onClick={()=>removeOverride(selEv.id,o.tvId)}
+                      style={{background:"none",border:"none",color:"#ef4444",cursor:"pointer",fontSize:10,padding:0}}>✕</button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+        </>)}
         </div>
       )}
     </div>
