@@ -881,9 +881,7 @@ function App(){
         <div style={{overflowX:"auto",paddingBottom:120}}>
           <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
-          {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
-            <div style={{position:"absolute",left:pct(nowMin),top:0,bottom:0,width:2,background:"#ef4444",zIndex:10,pointerEvents:"none"}}/>
-          )}
+
           </div>
           {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
