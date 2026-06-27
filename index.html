@@ -698,10 +698,15 @@ function App(){
   };
   const selEv=sel?final.find(a=>a&&a.id===sel):null;
 
-  // Dynamic time window based on actual events
+  // Dynamic time window based on actual events + current time trimming
   const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
-  const GRID_START=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
-  const GRID_END=allEvtMins.length?Math.ceil(Math.max(...allEvtMins)/60)*60:BAR_CLOSE;
+  const earliestEvt=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
+  const latestEvt=allEvtMins.length?Math.ceil(Math.max(...allEvtMins)/60)*60:BAR_CLOSE;
+  // On today's view, trim left edge to current hour but never clip still-active events
+  const activeEvts=[...final].filter(Boolean).filter(a=>a.endMin>nowMin);
+  const earliestActive=activeEvts.length?Math.floor(Math.min(...activeEvts.map(a=>a.startMin))/60)*60:earliestEvt;
+  const GRID_START=isToday?Math.max(earliestEvt,Math.min(earliestActive,Math.floor(nowMin/60)*60)):earliestEvt;
+  const GRID_END=latestEvt;
   const TMINS=GRID_END-GRID_START;
   const pct=m=>((m-GRID_START)/TMINS*100).toFixed(2)+"%";
   const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
