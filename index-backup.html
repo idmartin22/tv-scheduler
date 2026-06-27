@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bar Scheduler</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#fb923c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Bar Scheduler">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #080b12; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { height: 4px; width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 4px; }
+    @keyframes pulse-now { 0%,100% { box-shadow: 0 0 0 2px #22c55e, 0 0 12px rgba(34,197,94,0.3); } 50% { box-shadow: 0 0 0 3px #22c55e, 0 0 20px rgba(34,197,94,0.5); } }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+    .now-playing { animation: pulse-now 2s infinite; }
+    .fade-in { animation: fadeIn 0.2s ease; }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+    button { transition: all 0.15s ease; }
+    input { transition: border-color 0.15s ease; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useMemo, useEffect } = React;
+
+
+const FLAT_BASE = 20;
+const BAR_OPEN  = 7  * 60;
+const BAR_CLOSE = 24 * 60;
+const DEAD_MIN  = 60;
+const MAX_TVS   = 10;
+const STORAGE_KEY = "barsched-league-order-v3";
+const FAVE_KEY = "barsched-fave-teams-v1";
+const MOD_KEY = "barsched-league-mods-v1";
+const FAVE_BOOST = 20;
+const MAX_MOD = 50;
+
+const GITHUB_PAT  = 'ghp_uCQAATKH' + '1vsNTPGdLZtBJjG' + 'FUY7lMp3acy8a';
+const GITHUB_REPO = 'idmartin22/tv-scheduler';
+const GITHUB_FILE = 'settings.json';
+const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+
+async function githubLoad() {
+  try {
+    const r = await fetch(GITHUB_API + `?t=${Date.now()}`, {
+      headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!r.ok) return null;
+    const meta = await r.json();
+    // Decode base64 content — simple atob since content is plain JSON
+    const json = atob(meta.content.split('\n').join(''));
+    return JSON.parse(json);
+  } catch(e) { return null; }
+}
+
+function dateToStr(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function strToDate(s) {
+  const [y,m,d]=s.split('-').map(Number);
+  return new Date(y,m-1,d);
+}
+function formatDateLabel(s) {
+  const d=strToDate(s);
+  const days=['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  const months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  return `${days[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}`;
+}
+function todayStr() { return dateToStr(new Date()); }
+
+async function githubLoadSchedule(date) {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return null;
+    const meta = await r.json();
+    const json = atob(meta.content.split('\n').join(''));
+    return JSON.parse(json);
+  } catch(e) { console.error('githubLoadSchedule error:', e); return null; }
+}
+
+async function githubSave(data, sha) {
+  // Safe base64 encoding that handles unicode
+  const json = JSON.stringify(data, null, 2);
+  const bytes = new TextEncoder().encode(json);
+  const binStr = Array.from(bytes).map(b => String.fromCharCode(b)).join('');
+  const b64 = btoa(binStr);
+
+  // If no SHA provided, fetch current one first
+  if (!sha) {
+    try {
+      const r = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+      if (r.ok) { const j = await r.json(); sha = j.sha; }
+    } catch(e) {}
+  }
+
+  const body = { message: `Update settings ${new Date().toISOString()}`, content: b64 };
+  if (sha) body.sha = sha;
+
+  const r = await fetch(GITHUB_API, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+
+  // On 409 conflict, refresh SHA and retry once
+  if (r.status === 409 || r.status === 422) {
+    const r2 = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (r2.ok) {
+      const j2 = await r2.json();
+      body.sha = j2.sha;
+      const r3 = await fetch(GITHUB_API, {
+        method: 'PUT',
+        headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!r3.ok) throw new Error(`GitHub save failed: ${r3.status}`);
+      const j3 = await r3.json();
+      return j3.content.sha;
+    }
+  }
+
+  if (!r.ok) throw new Error(`GitHub save failed: ${r.status}`);
+  const j = await r.json();
+  return j.content.sha;
+}
+
+// Spectrum Cleveland/Elyria channel lineup
+const SPECTRUM = {
+  // Broadcast locals
+  "NBC": 3, "CBS": 4, "ABC": 5, "FOX": 8, "PBS": 9,
+  "WJW": 8, "WKYC": 3, "WOIO": 4, "WEWS": 5,
+  "CW": 7, "ION": 23,
+  "Univision": 11, "Telemundo": 13,
+  // Sports tier
+  "ESPN": 250, "ESPN2": 251, "FS1": 252, "FS2": 253,
+  "FOX Sports 1": 252, "FOX Sports 2": 253,
+  "NFL Network": 254, "NFL RedZone": 255,
+  "Golf Channel": 257, "MLB Network": 258,
+  "ESPNews": 259, "ESPNU": 260,
+  "CBS Sports Network": 261, "CBSSN": 261,
+  "NBA TV": 262, "Tennis Channel": 263,
+  "Outdoor Channel": 264, "NHL Network": 265,
+  "Racer Network": 266, "SEC Network": 269,
+  "BTN": 271, "Big Ten Network": 271,
+  "ACC Network": 278, "BTN Extra": 287,
+  "MLB Cleveland Guardians": 447, "Guardians.TV": 447,
+  "BeIN Sports": 449, "beIN Sports": 449, "beIN SPORTS": 449,
+  "FOX Soccer Plus": 450,
+  "FanDuel TV": 453,
+  "MLB Strike Zone": 459,
+  // 4K / IP
+  "FOX 4K": 470, "FS1 4K": 471,
+  "NBC Sports 4K": 474,
+  "ESPN 4K": 477,
+  // Cable sports carry
+  "USA Network": 500, "USA": 500,
+  "TNT": 502, "TBS": 504,
+  "truTV": 528,
+  // Spanish sports
+  "ESPN Deportes": 1005, "FOX Deportes": 1006,
+  "beIN SPORTS Español": 1007, "TUDN": 1008,
+};
+
+function getSpectrumCh(ch) {
+  if (!ch) return null;
+  const key = (ch || "").trim();
+  if (SPECTRUM[key] !== undefined) return SPECTRUM[key];
+  // Fuzzy: case-insensitive partial match
+  const kl = key.toLowerCase();
+  for (const [k, v] of Object.entries(SPECTRUM)) {
+    if (k.toLowerCase() === kl) return v;
+  }
+  return null;
+}
+
+const DEF_FAVES = {
+  "mlb": "Guardians",
+  "nfl": "Browns",
+  "nba": "Cavaliers, Cavs",
+  "mls": "Cleveland FC",
+};
+
+function getFaveBoost(name, leagueId, favTeams) {
+  const raw = favTeams[leagueId] || "";
+  if (!raw.trim()) return { match: false, teams: [] };
+  const teams = raw.split(",").map(t => t.trim().toLowerCase()).filter(Boolean);
+  const n = (name || "").toLowerCase();
+  const matched = teams.filter(t => n.includes(t));
+  return { match: matched.length > 0, teams: matched };
+}
+
+function t2m(t="0:0") { const [h,m]=(t||"0:0").split(":").map(Number); return (h||0)*60+(m||0); }
+function m2t(m) {
+  const h=Math.floor(m/60),mn=m%60,ap=h>=12?"PM":"AM";
+  return `${h>12?h-12:h===0?12:h}:${mn.toString().padStart(2,"0")} ${ap}`;
+}
+function overlaps(a,b) { return !(!a||!b||a.endMin<=b.startMin||a.startMin>=b.endMin); }
+
+function sportColor(s,l,fave) {
+  s=s||""; l=l||"";
+  if(fave) return {bg:"#78350f",tx:"#fde68a",br:"#fbbf24"};
+  if(l.includes("World Cup")) return {bg:"#7f1d1d",tx:"#fecaca",br:"#f87171"};
+  if(s==="Soccer")     return {bg:"#14532d",tx:"#86efac",br:"#4ade80"};
+  if(s==="Golf")       return {bg:"#064e3b",tx:"#6ee7b7",br:"#34d399"};
+  if(s==="Baseball"&&l==="MLB") return {bg:"#1e3a8a",tx:"#93c5fd",br:"#60a5fa"};
+  if(s==="Baseball")   return {bg:"#1e40af",tx:"#bfdbfe",br:"#93c5fd"};
+  if(s==="Basketball") return {bg:"#7c2d12",tx:"#fed7aa",br:"#fb923c"};
+  if(s==="Motorsports")return {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
+  if(s==="Softball")   return {bg:"#581c87",tx:"#e9d5ff",br:"#c084fc"};
+  if(s==="Tennis")     return {bg:"#713f12",tx:"#fef08a",br:"#fde047"};
+  if(s==="Fighting")   return {bg:"#7f1d1d",tx:"#fca5a5",br:"#f87171"};
+  if(s==="Rugby")      return {bg:"#1e1b4b",tx:"#c7d2fe",br:"#818cf8"};
+  if(s==="Football")   return {bg:"#052e16",tx:"#86efac",br:"#4ade80"};
+  return {bg:"#1f2937",tx:"#e5e7eb",br:"#9ca3af"};
+}
+const sc = obj => obj ? sportColor(obj.sport,obj.league,obj.isFave) : {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
+const stars = n => n>=85?"★★★ ":n>=60?"★★ ":n>=35?"★ ":"";
+const sportIcon = s => {
+  switch((s||"").toLowerCase()){
+    case "football":    return "🏈";
+    case "soccer":      return "⚽";
+    case "baseball":    return "⚾";
+    case "basketball":  return "🏀";
+    case "ice hockey":  return "🏒";
+    case "golf":        return "⛳";
+    case "motorsports": return "🏎️";
+    case "tennis":      return "🎾";
+    case "fighting":    return "🥊";
+    case "rugby":       return "🏉";
+    case "softball":    return "🥎";
+    default:            return "🏟️";
+  }
+};
+
+function normalize(evs) {
+  const sc2=evs.map(e=>e.priority||0);
+  const mn=Math.min(...sc2),mx=Math.max(...sc2);
+  if(mx===mn) return evs.map(e=>({...e,ds:mn>0?100:0}));
+  return evs.map(e=>({...e,ds:Math.round(((e.priority-mn)/(mx-mn))*100)}));
+}
+
+function matchLid(league) {
+  const l=(league||"").toLowerCase();
+  if(l.includes("world cup")) return "world-cup";
+  if(l.includes("champions league")) return "ucl";
+  if(l.includes("premier league")) return "premier-league";
+  if(l.includes("la liga")) return "la-liga";
+  if(l.includes("bundesliga")) return "bundesliga";
+  if(l.includes("serie a")) return "serie-a";
+  if(l.includes("ligue 1")) return "ligue-1";
+  if(l.includes("liga mx")) return "liga-mx";
+  if(l.includes("mls")&&!l.includes("next")) return "mls";
+  if(l.includes("usl championship")||l.includes("usl cup")) return "usl-champ";
+  if(l.includes("nfl")) return "nfl";
+  if(l.includes("college football")) return "college-fb";
+  if(l.includes("ufl")) return "ufl";
+  if(l.includes("cfl")) return "cfl";
+  if(l.includes("ifl")) return "ifl";
+  if(l.includes("mlb")) return "mlb";
+  if(l.includes("college baseball")||l.includes("cws")) return "college-bb";
+  if(l.includes("banana ball")) return "banana-ball";
+  if(l.includes("aapb")) return "aapb";
+  if(l.includes("collegiate baseball")) return "cbl";
+  if(l.includes("wnba")) return "wnba";
+  if(l.includes("nbl")) return "nbl";
+  if(l.includes("nba")&&!l.includes("g league")) return "nba";
+  if(l.includes("nhl")) return "nhl";
+  if(l.includes("u.s. open championship")||l.includes("masters")||l.includes("pga championship")) return "golf-majors";
+  if(l.includes("lpga")) return "lpga-tour";
+  if(l.includes("pga tour")) return "pga-tour";
+  if(l.includes("nascar cup")) return "nascar-cup";
+  if(l.includes("formula 1")||l.includes("f1 ")) return "f1";
+  if(l.includes("indycar")) return "indycar";
+  if(l.includes("wimbledon")) return "wimbledon";
+  if(l.includes("atp")) return "atp";
+  if(l.includes("wta")) return "wta";
+  if(l.includes("ufc")) return "ufc";
+  if(l.includes("kickboxing")) return "kickboxing";
+  if(l.includes("boxing")) return "boxing";
+  if(l.includes("major league rugby")||l.includes("mlr")) return "mlr";
+  if(l.includes("athletes unlimited")) return "au-softball";
+  return "other";
+}
+
+function makeLeagueId(leagueName) {
+  return leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
+function makeEvent(o) {
+  const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
+  const raw=FLAT_BASE+st.v+sk.v+rv.v+mq.v;
+  const bd=[{l:"Flat base",v:FLAT_BASE},st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
+  const lid=matchLid(o.league);
+  const isUnknown=lid==="other";
+  const finalLid=isUnknown?makeLeagueId(o.league):lid;
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:o.ch,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:finalLid,isUnknown,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+}
+
+const EVENTS = [
+  // WORLD CUP 2026
+  makeEvent({id:1,time:"13:00",name:"Portugal vs Uzbekistan",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:9,l:"Ronaldo factor +9"},_sk:{v:7,l:"Portugal must win +7"},_rv:{v:2,l:"Star power gap +2"},_mq:{v:14,l:"Elite nation vs underdog +14"}}),
+  makeEvent({id:2,time:"16:00",name:"England vs Ghana",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:7,l:"England contender +7"},_sk:{v:8,l:"Both need points +8"},_rv:{v:3,l:"African giant hunter +3"},_mq:{v:13,l:"High stakes both sides +13"}}),
+  makeEvent({id:3,time:"19:00",name:"Panama vs Croatia",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:4,l:"Croatia veteran squad +4"},_sk:{v:9,l:"Both must win +9"},_rv:{v:2,l:"CONCACAF vs Europe +2"},_mq:{v:12,l:"Elimination pressure +12"}}),
+  makeEvent({id:4,time:"22:00",name:"Colombia vs DR Congo",sport:"Soccer",league:"World Cup 2026",ch:"FS1",dur:120,_st:{v:5,l:"Colombia South Am power +5"},_sk:{v:8,l:"Both need result +8"},_rv:{v:2,l:"Americas vs Africa +2"},_mq:{v:10,l:"Late knockout pressure +10"}}),
+  // MLB
+  makeEvent({id:5,time:"16:07",name:"Astros @ Blue Jays",sport:"Baseball",league:"MLB",ch:"MLB Network",dur:180,_st:{v:2,l:"Astros contender +2"},_sk:{v:2,l:"Wild card race +2"},_rv:{v:0,l:""},_mq:{v:5,l:"Playoff contenders +5"}}),
+  makeEvent({id:6,time:"18:40",name:"Rangers @ Marlins",sport:"Baseball",league:"MLB",ch:"Fanatiz",dur:180,_st:{v:0,l:""},_sk:{v:0,l:""},_rv:{v:0,l:""},_mq:{v:2,l:"Streaming only +2"}}),
+  makeEvent({id:7,time:"19:40",name:"Dodgers @ Twins",sport:"Baseball",league:"MLB",ch:"TBS",dur:180,_st:{v:5,l:"Dodgers top team +5"},_sk:{v:3,l:"AL Central race +3"},_rv:{v:2,l:"Big market vs scrappy +2"},_mq:{v:9,l:"Dodgers always watchable +9"}}),
+  makeEvent({id:8,time:"19:40",name:"Cleveland Guardians @ White Sox",sport:"Baseball",league:"MLB",ch:"Guardians.TV",dur:180,_st:{v:2,l:"Guardians wild card hunt +2"},_sk:{v:3,l:"AL Central positioning +3"},_rv:{v:2,l:"AL Central rivalry +2"},_mq:{v:7,l:"Division stakes +7"}}),
+  makeEvent({id:9,time:"21:40",name:"Braves @ Padres",sport:"Baseball",league:"MLB",ch:"ESPN Unlimited",dur:180,_st:{v:3,l:"Both contenders +3"},_sk:{v:2,l:"Wild card race +2"},_rv:{v:0,l:""},_mq:{v:6,l:"Primetime contenders +6"}}),
+  makeEvent({id:10,time:"21:45",name:"Athletics @ Giants",sport:"Baseball",league:"MLB",ch:"MLB Network",dur:180,_st:{v:2,l:"Giants competitive +2"},_sk:{v:1,l:"NL West race +1"},_rv:{v:3,l:"Bay Area rivalry +3"},_mq:{v:5,l:"Classic rivalry +5"}}),
+  // WNBA
+  makeEvent({id:11,time:"22:00",name:"NY Liberty @ Las Vegas Aces",sport:"Basketball",league:"WNBA",ch:"USA Network",dur:150,_st:{v:5,l:"Liberty vs Aces top teams +5"},_sk:{v:4,l:"Playoff seeding +4"},_rv:{v:4,l:"Top rivalry WNBA +4"},_mq:{v:10,l:"Best WNBA matchup +10"}}),
+];
+
+const TVS=[
+  {id:0,name:"TV 1",sz:75,loc:"Basement — Center",zone:"basement",brand:"Vizio",input:"SmartCast",ord:0},
+  {id:1,name:"TV 2",sz:55,loc:"Basement — Left",zone:"basement",brand:"Vizio",input:"SmartCast",ord:1},
+  {id:2,name:"TV 3",sz:55,loc:"Basement — Right",zone:"basement",brand:"Vizio",input:"SmartCast",ord:2},
+  {id:3,name:"TV 4",sz:55,loc:"Bar — Right Corner",zone:"bar",brand:"Philips",input:"Firestick",ord:4},
+  {id:4,name:"TV 5",sz:32,loc:"Bar — Right Side",zone:"bar",brand:"Vizio",input:"SmartCast",ord:8},
+  {id:5,name:"TV 6",sz:47,loc:"Bar — Center Right",zone:"bar",brand:"Vizio",input:"Roku",ord:3},
+  {id:6,name:"TV 7",sz:32,loc:"Bar — Center Left",zone:"bar",brand:"Vizio",input:"Roku",ord:9},
+  {id:7,name:"TV 8",sz:55,loc:"Bar — Left Side",zone:"bar",brand:"LG",input:"Firestick",ord:5},
+  {id:8,name:"TV 9",sz:60,loc:"Bar — Left Corner",zone:"bar",brand:"Sharp",input:"Roku",ord:6},
+  {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
+];
+const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+
+const FILLS=[
+  {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
+  {name:"ESPN2",c:{bg:"#7c2d12",tx:"#fdba74",br:"#f97316"}},
+  {name:"FS1",c:{bg:"#1e3a8a",tx:"#bfdbfe",br:"#3b82f6"}},
+  {name:"NFL Network",c:{bg:"#1a3a1a",tx:"#86efac",br:"#22c55e"}},
+  {name:"NBA TV",c:{bg:"#312e81",tx:"#c7d2fe",br:"#818cf8"}},
+  {name:"MLB Network",c:{bg:"#1e3a5f",tx:"#93c5fd",br:"#60a5fa"}},
+  {name:"NHL Network",c:{bg:"#164e63",tx:"#a5f3fc",br:"#22d3ee"}},
+  {name:"Golf Channel",c:{bg:"#064e3b",tx:"#6ee7b7",br:"#10b981"}},
+  {name:"ESPNews",c:{bg:"#713f12",tx:"#fde68a",br:"#eab308"}},
+  {name:"Fox News",c:{bg:"#1e3a8a",tx:"#fed7aa",br:"#f97316"}},
+];
+
+function getFill(tvId,ach){
+  const i=TV_PRIO.indexOf(tvId);
+  for(let x=0;x<FILLS.length;x++){const f=FILLS[(i+x)%FILLS.length];if(!ach.has(f.name.toLowerCase().replace(/\s+/g,"")))return f;}
+  return FILLS[i%FILLS.length];
+}
+function fillBlocks(tvId,assigned){
+  const evts=assigned.filter(a=>a&&a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
+  const out=[];let ptr=BAR_OPEN;
+  const cps=[...evts.map(e=>({s:e.startMin,e:e.endMin})),{s:BAR_CLOSE,e:BAR_CLOSE}];
+  for(const cp of cps){
+    if(cp.s-ptr>=DEAD_MIN){
+      const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>(a.channel||"").toLowerCase().replace(/\s+/g,"")));
+      const f=getFill(tvId,ach);
+      out.push({isFill:true,tv:tvId,startMin:ptr,endMin:cp.s,dur:cp.s-ptr,name:f.name,fc:f.c});
+    }
+    ptr=cp.e;
+  }
+  return out;
+}
+
+function runSchedule(events,activeTVs){
+  const active=TV_PRIO.filter(id=>activeTVs.has(id));
+  const sorted=[...events].sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
+  const asgn=[];
+  for(const e of sorted){
+    const avail=[];
+    for(const tv of active){
+      const cur=asgn.filter(a=>a.tv===tv);
+      if(cur.find(a=>overlaps(a,e)))continue;
+      const last=cur.reduce((mx,a)=>a.endMin<=e.startMin?Math.max(mx,a.endMin):mx,BAR_OPEN);
+      avail.push({tv,gap:e.startMin-last,ord:TVS[tv].ord});
+    }
+    if(avail.length){
+      avail.sort((a,b)=>a.ord!==b.ord?a.ord-b.ord:a.gap-b.gap);
+      asgn.push({...e,tv:avail[0].tv,why:null});
+    }else{
+      const blk=active.map(tv=>({tv,b:asgn.filter(a=>a.tv===tv).find(a=>overlaps(a,e))})).filter(x=>x.b);
+      blk.sort((a,b)=>a.b.priority-b.b.priority);
+      const lb=blk[0];
+      asgn.push({...e,tv:-1,why:`All ${active.length} TVs occupied. Lowest: "${lb.b.name}" on ${TVS[lb.tv]?.name}`,bumpTgt:{name:lb.b.name,tv:lb.tv}});
+    }
+  }
+  return asgn;
+}
+
+const LG=[
+  {sport:"Football",c:"#1a3a1a",tc:"#86efac",ls:[{id:"nfl",n:"NFL"},{id:"college-fb",n:"College Football"},{id:"ufl",n:"UFL"},{id:"cfl",n:"CFL"},{id:"ifl",n:"IFL"}]},
+  {sport:"Soccer",c:"#14532d",tc:"#bbf7d0",ls:[{id:"world-cup",n:"World Cup 2026"},{id:"ucl",n:"UEFA Champions League"},{id:"premier-league",n:"Premier League"},{id:"la-liga",n:"La Liga"},{id:"bundesliga",n:"Bundesliga"},{id:"serie-a",n:"Serie A"},{id:"ligue-1",n:"Ligue 1"},{id:"liga-mx",n:"Liga MX"},{id:"mls",n:"MLS"},{id:"usl-champ",n:"USL Championship"}]},
+  {sport:"Baseball",c:"#1e3a5f",tc:"#93c5fd",ls:[{id:"mlb",n:"MLB"},{id:"college-bb",n:"College Baseball"},{id:"banana-ball",n:"Banana Ball World Tour"},{id:"aapb",n:"AAPB"},{id:"cbl",n:"Collegiate Baseball League"}]},
+  {sport:"Basketball",c:"#7c2d12",tc:"#fdba74",ls:[{id:"nba",n:"NBA"},{id:"college-bball",n:"College Basketball"},{id:"wnba",n:"WNBA"},{id:"nbl",n:"NBL"}]},
+  {sport:"Ice Hockey",c:"#164e63",tc:"#a5f3fc",ls:[{id:"nhl",n:"NHL"},{id:"pwhl",n:"PWHL"}]},
+  {sport:"Golf",c:"#064e3b",tc:"#6ee7b7",ls:[{id:"golf-majors",n:"Golf Majors"},{id:"pga-tour",n:"PGA Tour"},{id:"lpga-tour",n:"LPGA Tour"},{id:"liv-golf",n:"LIV Golf"},{id:"ryder-cup",n:"Ryder Cup"}]},
+  {sport:"Motorsports",c:"#374151",tc:"#e5e7eb",ls:[{id:"f1",n:"Formula 1"},{id:"nascar-cup",n:"NASCAR Cup Series"},{id:"indycar",n:"IndyCar"},{id:"motogp",n:"MotoGP"}]},
+  {sport:"Tennis",c:"#92400e",tc:"#fef08a",ls:[{id:"wimbledon",n:"Wimbledon"},{id:"us-open-tennis",n:"US Open Tennis"},{id:"french-open",n:"French Open"},{id:"aus-open",n:"Australian Open"},{id:"atp",n:"ATP Tour"},{id:"wta",n:"WTA Tour"}]},
+  {sport:"Fighting",c:"#7f1d1d",tc:"#fca5a5",ls:[{id:"ufc",n:"UFC"},{id:"boxing",n:"Boxing"},{id:"kickboxing",n:"Kickboxing"},{id:"mma",n:"MMA"}]},
+  {sport:"Rugby",c:"#312e81",tc:"#c7d2fe",ls:[{id:"mlr",n:"Major League Rugby"},{id:"six-nations",n:"Six Nations"},{id:"nrl",n:"NRL"}]},
+  {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
+];
+const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
+
+function parseScheduleEvents(rawEvents) {
+  return rawEvents.map(o=>makeEvent(o));
+}
+const DEF_ORDER=ALL_LEAGUES.map(l=>l.id);
+let DEF_MODS=(()=>{
+  const total=ALL_LEAGUES.length;
+  const obj={};
+  ALL_LEAGUES.forEach((l,i)=>{
+    obj[l.id]=total<=1?50:Math.round((1-i/Math.max(total-1,1))*50);
+  });
+  return obj;
+})();
+
+function App(){
+  const [activeTVs,setActiveTVs]=useState(()=>new Set(TV_PRIO));
+  const [syncStatus,setSyncStatus]=useState("idle"); // idle | loading | saving | saved | error
+  const [ghaSha,setGhaSha]=useState(null);
+  const saveTimerRef=React.useRef(null);
+  const settingsLoaded=React.useRef(false);
+  const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
+  const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
+
+  const loadScheduleForDate=React.useCallback(async(dateStr)=>{
+    setScheduleStatus("loading");
+    setDynamicEvents(null);
+    try{
+      const sched=await githubLoadSchedule(dateStr);
+      if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
+      else setScheduleStatus("none");
+    }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
+  },[]);
+
+  const navigateDate=React.useCallback((delta)=>{
+    setScheduleDate(prev=>{
+      const d=strToDate(prev);
+      d.setDate(d.getDate()+delta);
+      const today=new Date(); today.setHours(0,0,0,0);
+      const maxFuture=new Date(today); maxFuture.setDate(today.getDate()+6);
+      if(d<today){d.setTime(today.getTime());}
+      if(d>maxFuture){d.setTime(maxFuture.getTime());}
+      const newStr=dateToStr(d);
+      // Call outside setState to avoid batching issues
+      setTimeout(()=>loadScheduleForDate(newStr),0);
+      return newStr;
+    });
+  },[loadScheduleForDate]);
+
+  const goToToday=React.useCallback(()=>{
+    const t=todayStr();
+    setScheduleDate(t);
+    loadScheduleForDate(t);
+  },[loadScheduleForDate]);
+
+  const updateTvName=(id,val)=>{
+    const n={...tvNames,[id]:val||`TV ${id+1}`};
+    setTvNames(n);
+    debouncedSave(buildSavePayload({tvNames:n}));
+  };
+  // Mirror presets: source TV index -> array of mirror TV indices (0-based)
+  const MIRROR_PRESETS={"Mirror 1":[[0,[6,9]],[1,[8]],[2,[4]]]};
+  const [activePreset,setActivePreset]=useState(null);
+  const [presetPairs,setPresetPairs]=useState([]); // [[srcTv,[mirrorTvs]],...]
+  const applyPreset=(name)=>{
+    if(activePreset===name){setActivePreset(null);setPresetPairs([]);return;}
+    setActivePreset(name);
+    setPresetPairs(MIRROR_PRESETS[name]);
+  };
+  const [mirrors,setMirrors]=useState({});
+  const [sel,setSel]=useState(null);
+  const [tab,setTab]=useState("grid");
+  const [prioOvr,setPrioOvr]=useState({});
+  const [order,setOrder]=useState([...DEF_ORDER]);
+  const [unknownLeagues,setUnknownLeagues]=useState({}); // leagueId -> {n, sport, gc, gtc}
+  const [scheduleDate,setScheduleDate]=useState(()=>{
+    const now=new Date();
+    return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  });
+  const [dynamicEvents,setDynamicEvents]=useState(null); // null = use hardcoded EVENTS
+  const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
+  const [ready,setReady]=useState(false);
+  const [favTeams,setFavTeams]=useState({...DEF_FAVES});
+  const [leagueMods,setLeagueMods]=useState({...DEF_MODS});
+
+  useEffect(()=>{
+    let active=true;
+    (async()=>{
+      setSyncStatus("loading");
+      try{
+        // Load settings
+        const data=await githubLoad();
+        if(data&&active){
+          if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
+          if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
+          // Auto-clear prioOvr and mirrors if it's a new day
+          const today=new Date();
+          const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+          const isNewDay=data.lastDate&&data.lastDate!==todayStr;
+          if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
+          if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
+          if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
+          if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
+          // Store as last known good — these are now the true defaults
+          lastKnownGood.current = data;
+          // Overwrite DEF_MODS so any fallback uses real settings
+          if(data.leagueMods) DEF_MODS={...DEF_MODS,...data.leagueMods};
+        }
+        // fetch SHA for saving
+        try{
+          const r=await fetch(GITHUB_API,{headers:{'Accept':'application/vnd.github+json'}});
+          if(r.ok){const j=await r.json();if(active)setGhaSha(j.sha);}
+        }catch(e){}
+        // Load today's schedule
+        const today=new Date();
+        const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+        if(active)setScheduleDate(dateStr);
+        const sched=await githubLoadSchedule(dateStr);
+        if(sched?.events&&active){
+          setDynamicEvents(sched.events);
+        }
+        settingsLoaded.current=true;
+        if(active)setSyncStatus("saved");
+      }catch(e){
+        settingsLoaded.current=true; // allow saves even if load failed
+        // Restore last known good if available — never fall back to DEF_MODS
+        if(lastKnownGood.current&&active){
+          const d=lastKnownGood.current;
+          if(d.leagueMods) setLeagueMods(d.leagueMods);
+          if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
+          if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
+          if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
+          if(d.mirrors) setMirrors(d.mirrors);
+          if(d.unknownLeagues) setUnknownLeagues(d.unknownLeagues);
+        }
+        if(active)setSyncStatus("error");
+      }
+      if(active)setReady(true);
+    })();
+    return()=>{active=false;};
+  },[]);
+
+  // Compute active events — use GitHub schedule if loaded, else hardcoded EVENTS
+  const activeEvents=useMemo(()=>{
+    const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):EVENTS;
+    return evs;
+  },[dynamicEvents,scheduleDate]);
+
+  // Auto-register unknown leagues found in today's events
+  useEffect(()=>{
+    const found={};
+    activeEvents.forEach(e=>{
+      if(e.isUnknown&&!ALL_LEAGUES.find(l=>l.id===e.leagueId)){
+        found[e.leagueId]={n:e.league,sport:e.sport||"Other",gc:"#374151",gtc:"#9ca3af",isUnknown:true};
+      }
+    });
+    if(Object.keys(found).length>0){
+      setUnknownLeagues(prev=>{
+        const merged={...prev,...found};
+        // Only save if there are new ones
+        const hasNew=Object.keys(found).some(k=>!prev[k]);
+        if(hasNew) debouncedSave(buildSavePayload({unknownLeagues:merged}));
+        return merged;
+      });
+    }
+  },[activeEvents]);
+
+  const debouncedSave=React.useCallback((payload)=>{
+    if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
+    // Safety: never save if leagueMods looks identical to DEF_MODS and lastKnownGood exists
+    // (means GitHub load failed and we have stale defaults in state)
+    if(lastKnownGood.current&&payload.leagueMods){
+      const isDefault=JSON.stringify(payload.leagueMods)===JSON.stringify(DEF_MODS);
+      const wasCustom=JSON.stringify(lastKnownGood.current.leagueMods)!==JSON.stringify(DEF_MODS);
+      if(isDefault&&wasCustom){console.warn("Save blocked — payload looks like DEF_MODS but GitHub has custom settings");return;}
+    }
+    if(saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    setSyncStatus("saving");
+    saveTimerRef.current=setTimeout(async()=>{
+      try{
+        const newSha=await githubSave(payload,ghaSha);
+        setGhaSha(newSha);
+        setSyncStatus("saved");
+      }catch(e){
+        setSyncStatus("error");
+      }
+    },500);
+  },[ghaSha]);
+
+  const buildSavePayload=React.useCallback((overrides={})=>{
+    return {
+      leagueMods: overrides.leagueMods ?? leagueMods,
+      favTeams:   overrides.favTeams   ?? favTeams,
+      prioOvr:    overrides.prioOvr    ?? prioOvr,
+      mirrors:    overrides.mirrors    ?? mirrors,
+      unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
+      tvNames:    overrides.tvNames    ?? tvNames,
+      lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
+    };
+  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,scheduleDate]);
+
+  const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
+
+  const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
+
+  const ewp=useMemo(()=>{
+    const base=activeEvents.map(e=>{
+      const lm=leagueMods[e.leagueId]??0;
+      const fb=getFaveBoost(e.name,e.leagueId,favTeams);
+      const fm=fb.match?FAVE_BOOST:0;
+      const raw=e.rawBase+lm+fm;
+      const ov=prioOvr[e.id]??prioOvr[String(e.id)];
+      const bd=[
+        ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")),
+        lm>0&&{l:`League mod +${lm}`,v:lm},
+        fm>0&&{l:`⭐ Fave team match +${fm}`,v:fm},
+      ].filter(Boolean);
+      return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
+    });
+    return normalize(base);
+  },[leagueMods,prioOvr,favTeams,activeEvents]);
+
+  // Current time in minutes for "What's on Now"
+  const [nowMin,setNowMin]=useState(()=>{const n=new Date();return n.getHours()*60+n.getMinutes();});
+  useEffect(()=>{
+    const t=setInterval(()=>{const n=new Date();setNowMin(n.getHours()*60+n.getMinutes());},60000);
+    return()=>clearInterval(t);
+  },[]);
+  const isToday=scheduleDate===todayStr();
+
+  const schedulableTVs=useMemo(()=>{
+    const mirrorTargets=new Set(presetPairs.flatMap(([,ts])=>ts));
+    const s=new Set([...activeTVs].filter(id=>!mirrorTargets.has(id)));
+    return s;
+  },[activeTVs,presetPairs]);
+  const asgn0=useMemo(()=>runSchedule(ewp,schedulableTVs),[ewp,schedulableTVs]);
+
+  const {final,mblocks}=useMemo(()=>{
+    const active=TV_PRIO.filter(id=>activeTVs.has(id));
+    const mirrorTargets=new Set(presetPairs.flatMap(([,ts])=>ts));
+    let w=[...asgn0];
+    const claims=[];
+    // Per-event manual mirrors
+    for(const [ids,tvSet] of Object.entries(mirrors)){
+      const id=parseInt(ids);const src=w.find(a=>a.id===id);
+      if(!src||src.tv===-1)continue;
+      for(const tv of tvSet){if(!active.includes(tv)||tv===src.tv)continue;claims.push({tv,srcId:id,startMin:src.startMin,endMin:src.endMin,evt:src});}
+    }
+    // Preset mirror pairs: mirror all events on source TV to target TVs
+    for(const [srcTv,mirrorTvs] of presetPairs){
+      const srcEvents=w.filter(a=>a.tv===srcTv);
+      for(const src of srcEvents){
+        for(const tv of mirrorTvs){
+          if(!active.includes(tv))continue;
+          claims.push({tv,srcId:src.id,startMin:src.startMin,endMin:src.endMin,evt:src});
+        }
+      }
+    }
+    const disp=new Set();
+    for(const c of claims)w.forEach(a=>{if(a.tv===c.tv&&a.id!==c.srcId&&overlaps(a,c))disp.add(a.id);});
+    w=w.map(a=>disp.has(a.id)?{...a,tv:-1,why:"Displaced by mirror"}:a);
+    for(const id of disp){
+      const e=w.find(a=>a.id===id);if(!e)continue;
+      const mtv=new Set(claims.filter(c=>overlaps(c,e)).map(c=>c.tv));
+      let placed=false;
+      for(const tv of active){if(mtv.has(tv))continue;if(!w.find(a=>a.tv===tv&&a.id!==id&&overlaps(a,e))){w=w.map(a=>a.id===id?{...a,tv,why:null}:a);placed=true;break;}}
+      if(!placed)w=w.map(a=>a.id===id?{...a,tv:-1,why:"No TV available after mirror displacement"}:a);
+    }
+    const mb=claims.map(c=>c.evt?{...c.evt,tv:c.tv,isMB:true,srcId:c.srcId}:null).filter(Boolean);
+    return{final:w.filter(Boolean),mblocks:mb};
+  },[asgn0,mirrors,activeTVs,presetPairs]);
+
+  const asgnd=useMemo(()=>final.filter(a=>a.tv!==-1),[final]);
+  const unasgd=useMemo(()=>final.filter(a=>a.tv===-1),[final]);
+
+  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave({leagueMods,favTeams,prioOvr,mirrors:n,unknownLeagues});return n;});
+  const bumpAndAssign=e=>{
+    if(!e.bumpTgt)return;
+    const b=final.find(a=>a.name===e.bumpTgt.name&&a.tv===e.bumpTgt.tv);
+    if(!b)return;
+    setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});setSel(null);
+  };
+  const selEv=sel?final.find(a=>a&&a.id===sel):null;
+
+  // Dynamic time window based on actual events + current time trimming
+  const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
+  const earliestEvt=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
+  const latestEvt=allEvtMins.length?Math.ceil(Math.max(...allEvtMins)/60)*60:BAR_CLOSE;
+  // On today's view, trim left edge to current hour but never clip still-active events
+  const activeEvts=[...final].filter(Boolean).filter(a=>a.endMin>nowMin);
+  const earliestActive=activeEvts.length?Math.floor(Math.min(...activeEvts.map(a=>a.startMin))/60)*60:earliestEvt;
+  const GRID_START=isToday?Math.max(earliestEvt,Math.min(earliestActive,Math.floor(nowMin/60)*60)):earliestEvt;
+  const GRID_END=latestEvt;
+  const TMINS=GRID_END-GRID_START;
+  const pct=m=>((m-GRID_START)/TMINS*100).toFixed(2)+"%";
+  const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
+  // Clamped positioning: events that started before GRID_START are clipped at left edge
+  const clampedLeft=m=>((Math.max(m,GRID_START)-GRID_START)/TMINS*100).toFixed(2)+"%";
+  const clampedWidth=(startMin,dur)=>{const visStart=Math.max(startMin,GRID_START);const visEnd=startMin+dur;return Math.max(0,(visEnd-visStart)/TMINS*100).toFixed(2)+"%";};
+  const hrsCount=Math.round(TMINS/60);
+  const hrs=Array.from({length:hrsCount},(_,i)=>GRID_START/60+i);
+  const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
+
+  const C={
+  A:"#f97316",        // orange accent
+  A2:"#fb923c",       // orange light
+  BG:"#080b12",       // deep background
+  SUR:"#0f1520",      // surface
+  SUR2:"#141d2b",     // elevated surface
+  BD:"#1a2640",       // border subtle
+  BD2:"#243350",      // border visible
+  MT:"#7c92b0",       // muted text
+  DM:"#3d5070",       // dim text
+  GRN:"#22c55e",      // green
+  BLU:"#3b82f6",      // blue
+};
+  const tabStyle=a=>({background:a?C.A:"transparent",border:"none",borderRadius:20,color:a?"#fff":C.MT,fontSize:11,fontWeight:a?700:500,padding:"6px 14px",cursor:"pointer",letterSpacing:a?"0.02em":0});
+  const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:40,top:2,borderRadius:6,background:c.bg,border:`1.5px solid ${isNow?"#22c55e":isSel?"rgba(255,255,255,0.9)":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #22c55e,0 2px 8px rgba(0,0,0,0.4)":isSel?"0 0 0 2px rgba(255,255,255,0.6),0 2px 8px rgba(0,0,0,0.4)":"0 1px 4px rgba(0,0,0,0.3)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 7px",minWidth:4,transition:"box-shadow 0.15s ease"});
+
+  return(
+    <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"'Inter',system-ui,sans-serif",fontSize:13}}>
+      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
+
+      {/* ── HEADER ── */}
+      <div style={{background:"rgba(8,11,18,0.92)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderBottom:`1px solid ${C.BD}`,padding:"12px 16px 0",position:"sticky",top:0,zIndex:30}}>
+        {/* Top row: logo + date nav + status */}
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+          <div style={{display:"flex",alignItems:"center",gap:8}}>
+            <span style={{fontSize:18}}>🍺</span>
+            <div>
+              <div style={{fontSize:15,fontWeight:800,color:"#f1f5f9",letterSpacing:"-0.02em",lineHeight:1}}>Bar Scheduler</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:1}}>
+                {asgnd.length} events · {schedulableTVs.size} TVs active
+                <span style={{marginLeft:8,color:syncStatus==="saved"?C.GRN:syncStatus==="saving"?"#fbbf24":syncStatus==="error"?"#ef4444":C.MT}}>
+                  {syncStatus==="saved"?"✓":syncStatus==="saving"?"↑":syncStatus==="error"?"✗":""}
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* Date navigation */}
+          <div style={{display:"flex",alignItems:"center",gap:4}}>
+            <button onClick={()=>navigateDate(-1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>‹</button>
+            <div style={{textAlign:"center",minWidth:96}}>
+              <div style={{fontSize:13,fontWeight:700,color:isToday?"#f1f5f9":"#f97316",letterSpacing:"0.02em"}}>{formatDateLabel(scheduleDate)}</div>
+              <div style={{fontSize:9,color:scheduleStatus==="loaded"?C.GRN:scheduleStatus==="loading"?"#fbbf24":C.DM,marginTop:1}}>
+                {isToday?"TODAY · ":""}{scheduleStatus==="loaded"?"LOADED":scheduleStatus==="loading"?"LOADING...":"NO SCHEDULE"}
+              </div>
+            </div>
+            <button onClick={()=>navigateDate(1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>›</button>
+            {!isToday&&<button onClick={goToToday} style={{background:"rgba(34,197,94,0.15)",border:"1px solid rgba(34,197,94,0.4)",borderRadius:8,color:C.GRN,fontSize:10,fontWeight:600,padding:"0 8px",height:30,cursor:"pointer"}}>Today</button>}
+          </div>
+        </div>
+        {/* TV toggles + Mirror */}
+        <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
+          <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#f97316":C.BD2}`,background:activePreset==="Mirror 1"?"rgba(249,115,22,0.15)":"transparent",color:activePreset==="Mirror 1"?"#f97316":C.MT}}>Mirror 1</button>
+          <button onClick={()=>{
+            const tv14=new Set([0,1,2,9]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,9';
+            setActiveTVs(isActive?new Set(TV_PRIO):tv14);
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,9'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
+            {TV_PRIO.map(id=>{
+              const on=activeTVs.has(id);
+              const isMirrorSrc=presetPairs.some(([s])=>s===id);
+              const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));
+              const lbl=tvNames[id]||`TV ${id+1}`;
+              const bg=isMirrorSrc?"rgba(249,115,22,0.2)":isMirrorTgt?"rgba(249,115,22,0.08)":on?TVS[id].sz>=55?"rgba(59,130,246,0.2)":"rgba(34,197,94,0.12)":"transparent";
+              const bc=isMirrorSrc?"#f97316":isMirrorTgt?"rgba(249,115,22,0.4)":on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
+              const tc=isMirrorSrc?"#f97316":on?"#f1f5f9":C.DM;
+              return(<button key={id} onClick={()=>toggleTV(id)} title={lbl} style={{fontSize:10,fontWeight:600,padding:"3px 7px",borderRadius:6,cursor:"pointer",border:`1px solid ${bc}`,background:bg,color:tc,minWidth:28}}>{id+1}</button>);
+            })}
+          </div>
+        </div>
+        {/* Tab bar */}
+        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
+          {["grid","list","rank","league","schedule"].map(t=>(
+            <button key={t} style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
+              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Schedule"}
+            </button>
+          ))}
+        </div>
+        <div style={{height:10}}/>
+      </div>
+
+      {tab==="grid"&&(
+        <div style={{overflowX:"auto",paddingBottom:120}}>
+          <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
+            {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
+          </div>
+          {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+            const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
+            const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
+            const fb=fillBlocks(tvId,asgnd);
+            const mb=mblocks.filter(m=>m&&m.tv===tvId);
+            return(
+              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?"#f97316":tvId<=2?"#3b82f6":"#1e2d45"}`}}>
+                <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
+                  <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
+                  <div style={{fontSize:8,color:C.MT,marginTop:1,lineHeight:1.4}}>{tv.brand}</div><div style={{fontSize:8,color:C.MT,lineHeight:1.4}}>{tv.sz}"</div><div style={{fontSize:8,color:"#67e8f9",lineHeight:1.4}}>{tv.input}</div>
+                </div>
+                <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
+                  {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
+                  {fb.map((f,i)=>(
+                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:clampedLeft(f.startMin),width:clampedWidth(f.startMin,f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
+                      <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
+                    </div>
+                  ))}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
+                </div>
+              </div>
+            );
+          })}
+          {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
+            <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
+          </div>)}
+        </div>
+      )}
+
+      {tab==="list"&&(
+        <div style={{paddingBottom:120,maxWidth:700,margin:"0 auto"}}>
+          <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
+            {["TIME","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+          </div>
+          {[...final].filter(Boolean).sort((a,b)=>a.startMin-b.startMin).map(a=>{
+            const c=sc(a);
+            const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
+            return(
+            <div key={a.id} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",background:isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+              <div>
+                <div style={{fontSize:12,fontWeight:600,color:isNow?C.GRN:"#f1f5f9"}}>{m2t(a.startMin)}</div>
+                <div style={{fontSize:9,color:C.MT,marginTop:1}}>{m2t(a.endMin)}</div>
+              </div>
+              <div style={{minWidth:0}}>
+                <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.isFave?"⭐ ":""}{a.name}</div>
+                <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
+              </div>
+              <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}{getSpectrumCh(a.channel)!==null&&<span style={{color:"#67e8f9",marginLeft:3,fontSize:9}}>#{getSpectrumCh(a.channel)}</span>}</div>
+              <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 0"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
+            </div>
+          );})}
+        </div>
+      )}
+
+      {tab==="rank"&&(
+        <div style={{paddingBottom:20,maxWidth:700,margin:"0 auto"}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 16px 8px"}}>
+            <div style={{fontSize:11,color:C.MT}}>Tap a game for score breakdown</div>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave({leagueMods,favTeams,prioOvr:{},mirrors,unknownLeagues,lastDate:scheduleDate});}}>Reset</button>
+          </div>
+          {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
+            if(!e)return null;const c=sc(e);
+            const asgn=final.find(a=>a&&a.id===e.id);
+            const tvLbl=asgn?.tv===-1?"⚠":asgn?`T${asgn.tv+1}`:"—";
+            const scoreColor=(e.ds??0)>=75?"#22c55e":(e.ds??0)>=50?"#f59e0b":"#94a3b8";
+            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});};
+            return(
+              <div key={e.id} className="fade-in" style={{margin:"4px 10px",borderRadius:12,overflow:"hidden",border:`1px solid ${sel===e.id?c.br:C.BD}`,background:sel===e.id?`${c.bg}44`:C.SUR2,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 32px 1fr 52px 36px",gap:8,padding:"10px 12px",alignItems:"center"}}>
+                  {/* Rank # */}
+                  <div style={{fontSize:13,fontWeight:700,color:i<3?"#f59e0b":C.DM,textAlign:"center"}}>{i+1}</div>
+                  {/* Up/down */}
+                  <div style={{display:"flex",flexDirection:"column",gap:2}}>
+                    <button onClick={ev=>{ev.stopPropagation();moveRank(-1);}} disabled={i===0} style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:4,color:i===0?C.BD:C.MT,fontSize:10,padding:"2px 5px",cursor:i===0?"default":"pointer",lineHeight:1}}>▲</button>
+                    <button onClick={ev=>{ev.stopPropagation();moveRank(1);}} disabled={i===arr.length-1} style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:4,color:i===arr.length-1?C.BD:C.MT,fontSize:10,padding:"2px 5px",cursor:i===arr.length-1?"default":"pointer",lineHeight:1}}>▼</button>
+                  </div>
+                  {/* Event info */}
+                  <div style={{minWidth:0}}>
+                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
+                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · {e.channel}{getSpectrumCh(e.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(e.channel)}</span>:null}</div>
+                  </div>
+                  {/* Score */}
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:20,fontWeight:800,color:scoreColor,lineHeight:1}}>{e.ds??0}</div>
+                    <div style={{fontSize:9,color:C.DM,marginTop:1}}>/100</div>
+                  </div>
+                  {/* TV */}
+                  <div style={{textAlign:"center",fontSize:12,fontWeight:700,color:asgn?.tv===-1?"#ef4444":"#f1f5f9",background:C.SUR,borderRadius:6,padding:"4px 0",border:`1px solid ${C.BD}`}}>{tvLbl}</div>
+                </div>
+                {/* Score breakdown */}
+                {sel===e.id&&e.breakdown&&(
+                  <div style={{borderTop:`1px solid ${C.BD}`,padding:"10px 12px",background:C.SUR}}>
+                    <div style={{fontSize:10,fontWeight:700,color:C.A,marginBottom:6,letterSpacing:"0.05em"}}>SCORE BREAKDOWN</div>
+                    {e.breakdown.filter(Boolean).map((b,j)=>(
+                      <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
+                        <span style={{color:C.MT}}>{b.l}</span>
+                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{b.v}</span>
+                      </div>
+                    ))}
+                    <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
+                      <span>Normalized score</span><span style={{color:scoreColor}}>{e.ds}/100</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {tab==="league"&&(
+        <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
+          {/* TV Name Labels */}
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>TV Names</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>Tap to rename · saves automatically</div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:8}}>
+              {TV_PRIO.map(id=>(
+                <div key={id} style={{display:"flex",flexDirection:"column",gap:3}}>
+                  <div style={{fontSize:9,fontWeight:600,color:C.DM,textAlign:"center"}}>TV {id+1}</div>
+                  <input
+                    value={tvNames[id]||""}
+                    onChange={ev=>updateTvName(id,ev.target.value)}
+                    maxLength={8}
+                    placeholder={`TV ${id+1}`}
+                    style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",fontSize:11,fontWeight:500,padding:"5px 6px",width:"100%",outline:"none",textAlign:"center"}}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 16px 6px"}}>
+            <div>
+              <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>League Modifiers</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:2}}>0–{MAX_MOD} · auto-sorts · fave team +{FAVE_BOOST}</div>
+            </div>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
+          </div>
+          <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+            {["#","","LEAGUE","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+          </div>
+          {[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:true}))].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
+            const leagueId=lg.id;
+            const mod=leagueMods[leagueId]??0;
+            const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
+            const fv=favTeams[leagueId]||"";
+            const hasFave=fv.trim().length>0;
+            return(
+              <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?`${lg.gc}20`:`${lg.gc}10`}}>
+                <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
+                <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+                <div style={{fontSize:13,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}{lg.isUnknown&&<span style={{marginLeft:5,fontSize:10,color:"#f97316"}}>⚠️</span>}</div>
+                <input
+                  type="number"
+                  min="0"
+                  max={MAX_MOD}
+                  value={mod}
+                  onChange={ev=>updateMod(leagueId,ev.target.value)}
+                  style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}
+                />
+                <input
+                  value={fv}
+                  onChange={ev=>updateFave(leagueId,ev.target.value)}
+                  placeholder="Guardians, Cubs..."
+                  style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {tab==="schedule"&&(
+        <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
+          <div style={{padding:"8px 14px",borderBottom:`1px solid ${C.BD}`,display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+            <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Schedule — {formatDateLabel(scheduleDate)}{isToday&&<span style={{color:C.GRN,marginLeft:6,fontSize:10}}>Today</span>}</div>
+            <div style={{fontFamily:"monospace",fontSize:9,color:scheduleStatus==="loaded"?"#4ade80":scheduleStatus==="none"?"#f87171":"#fbbf24"}}>{scheduleStatus==="loaded"?"● SCHEDULE LOADED":scheduleStatus==="loading"?"⟳ LOADING...":"○ NO SCHEDULE FOR THIS DATE"}</div>
+          </div>
+
+          {/* Open in Claude button */}
+          <div style={{padding:"20px 14px"}}>
+            <div style={{fontSize:12,color:C.MT,marginBottom:16,lineHeight:1.5}}>
+              To add a schedule for this date, take screenshots from livesportsontv.com and open Claude to parse and push them.
+            </div>
+            <button
+              onClick={()=>{
+                const prompt = `You are helping manage the Bar Scheduler app at idmartin22.github.io/tv-scheduler/
+
+I need you to parse livesportsontv.com screenshots for ${scheduleDate} and push the schedule JSON to GitHub.
+
+GITHUB DETAILS:
+- Repo: idmartin22/tv-scheduler
+- File path: schedule/${scheduleDate}.json
+- PAT: ${GITHUB_PAT}
+
+INSTRUCTIONS:
+1. I will upload screenshots from livesportsontv.com showing sports events for ${scheduleDate}
+2. Parse ALL visible events (all times are Eastern Time)
+3. Convert to this exact JSON format and push to GitHub:
+{"date":"${scheduleDate}","label":"${formatDateLabel(scheduleDate)}","events":[{"id":1,"time":"HH:MM","name":"Team A vs Team B","sport":"Soccer","league":"World Cup 2026","ch":"FOX","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}}]}
+
+RULES:
+- time: 24hr ET format (1:00 PM = "13:00")
+- sport: Soccer, Baseball, Basketball, Football, Golf, Hockey, Tennis, Motorsports, Softball, Rugby, Fighting
+- dur: soccer=120, baseball=180, basketball=150, football=210, golf=240
+- Skip events before 7:00 AM ET
+- id: sequential from 1
+- Push the JSON file to GitHub using the Contents API PUT method
+- Confirm when done
+
+CRITICAL — STREAMING vs BROADCAST CHANNEL RULES:
+livesportsontv.com often shows both a streaming badge and a broadcast badge. Always use the PRIMARY carrier as "ch". Follow these rules exactly:
+
+CHANNEL NAME MAPPING:
+- ESPN+ → use "ESPN Unlimited" (ESPN+ was rebranded; it is streaming only, NOT the ESPN cable channel)
+- ESPN (cable) → use "ESPN" only if it is the actual ESPN cable channel, not a streaming exclusive
+- Paramount+ with a CBS badge → use "Paramount+" (the game is NOT airing on the local CBS broadcast channel)
+- Peacock with an NBC badge → use "Peacock" (not on NBC broadcast)
+- Apple TV+ or MLS Season Pass → use "Apple TV+"
+- Amazon Prime Video / Thursday Night Football → use "Prime Video" (unless NFL Network simulcast is confirmed, then use "NFL Network")
+- Max (HBO Max) → use "Max"
+- Fubo → use "Fubo"
+
+SPECTRUM CABLE CHANNELS (these ARE on cable, use the short name):
+ESPN=250, ESPN2=251, FS1=252, FS2=253, FOX=8, CBS=4, NBC=3, ABC=5, TNT=502, TBS=504, truTV=528, USA=500, MLB Network=258, NFL Network=254, NBA TV=262, NHL Network=265, Golf Channel=257, BTN=271, SEC Network=269, ACC Network=278, beIN Sports=449, Guardians.TV=447, TUDN=1008
+
+If a game shows ONLY a streaming service badge with no cable channel, set "ch" to the streaming service name. Never use "CBS", "NBC", "ABC", or "FOX" for a game that is streaming-only.
+
+Please confirm you understand and are ready for me to upload the screenshots.`;
+                window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
+              }}
+              style={{display:"flex",alignItems:"center",gap:10,background:"linear-gradient(135deg,#7c3aed,#6d28d9)",border:"none",borderRadius:12,color:"#fff",fontSize:13,fontWeight:700,padding:"14px 20px",cursor:"pointer",width:"100%",justifyContent:"center",boxShadow:"0 4px 15px rgba(124,58,237,0.3)"}}
+            >
+              <span style={{fontSize:16}}>🤖</span> OPEN CLAUDE TO PARSE SCREENSHOTS
+            </button>
+            <div style={{fontFamily:"monospace",fontSize:8,color:C.DM,marginTop:8,textAlign:"center"}}>
+              Opens Claude in a new tab preloaded with all context · upload screenshots there · schedule auto-loads here when done
+            </div>
+            {scheduleStatus==="none"&&(
+              <button
+                onClick={()=>loadScheduleForDate(scheduleDate)}
+                style={{display:"block",margin:"12px auto 0",background:"none",border:`1px solid ${C.BD2}`,borderRadius:6,color:C.MT,fontFamily:"monospace",fontSize:9,padding:"6px 14px",cursor:"pointer"}}
+              >
+                ↻ CHECK FOR SCHEDULE
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {selEv&&(
+        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+            <div>
+              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
+              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · {selEv.channel}{getSpectrumCh(selEv.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3,fontWeight:700}}>ch {getSpectrumCh(selEv.channel)}</span>:null} · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
+            </div>
+            <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
+          </div>
+          {selEv.tv===-1&&selEv.why&&(<div style={{background:"#2d1515",border:"1px solid #5a2020",borderRadius:6,padding:"8px 10px",marginBottom:10,fontSize:10,color:"#fca5a5",lineHeight:1.5}}>
+            <div style={{fontFamily:"monospace",fontSize:9,color:C.A,marginBottom:3}}>WHY UNASSIGNED</div>
+            {selEv.why}
+            {selEv.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6,display:"block"}} onClick={()=>bumpAndAssign(selEv)}>⚡ Bump "{selEv.bumpTgt.name}"</button>}
+          </div>)}
+          <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>{selEv.tv===-1?"ASSIGN TO:":"MOVE TO:"}</div>
+          <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:10}}>
+            {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+              const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
+              const conflict=selEv.tv!==tvId&&final.some(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
+              return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:conflict?"not-allowed":"pointer",background:selEv.tv===tvId?C.A:"#2e3545",color:selEv.tv===tvId?"#fff":C.MT,border:`1px solid ${selEv.tv===tvId?C.A:C.BD2}`,opacity:conflict?0.3:1}} onClick={()=>{if(!conflict){const e=final.find(a=>a.id===selEv.id);if(e){setPrioOvr(p=>({...p,[selEv.id]:e.priority}));}}}} title={conflict?`Conflict`:tv.loc}>{tv.name}{selEv.tv===tvId?" ✓":""}{conflict?" ✗":""}</button>);
+            })}
+          </div>
+          {selEv.tv!==-1&&(<>
+            <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>📡 MIRROR TO: <span style={{color:C.DM}}>(displaces & reschedules)</span></div>
+            <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
+              {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                if(tvId===selEv.tv)return null;
+                const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;const mir=mirrors[selEv.id]?.has(tvId);
+                const disp=final.find(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
+                return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:"pointer",background:mir?"#164e63":disp?"#2d1a0a":"#1f2937",color:mir?"#a5f3fc":disp?"#fb923c":C.MT,border:`1px solid ${mir?"#22d3ee":disp?"#c2410c":C.BD2}`}} onClick={()=>toggleMirror(selEv.id,tvId)}>{mir?"📡 ":disp?"⚡ ":""}{tv.name}{mir?" ✓":""}</button>);
+              })}
+            </div>
+            {mirrors[selEv.id]?.size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
+          </>)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>);
+  </script>
+</body>
+</html>
