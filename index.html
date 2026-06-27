@@ -710,6 +710,9 @@ function App(){
   const TMINS=GRID_END-GRID_START;
   const pct=m=>((m-GRID_START)/TMINS*100).toFixed(2)+"%";
   const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
+  // Clamped positioning: events that started before GRID_START are clipped at left edge
+  const clampedLeft=m=>((Math.max(m,GRID_START)-GRID_START)/TMINS*100).toFixed(2)+"%";
+  const clampedWidth=(startMin,dur)=>{const visStart=Math.max(startMin,GRID_START);const visEnd=startMin+dur;return Math.max(0,(visEnd-visStart)/TMINS*100).toFixed(2)+"%";};
   const hrsCount=Math.round(TMINS/60);
   const hrs=Array.from({length:hrsCount},(_,i)=>GRID_START/60+i);
   const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
@@ -814,12 +817,12 @@ function App(){
                 <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
                   {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
                   {fb.map((f,i)=>(
-                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:pct(f.startMin),width:wpct(f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
+                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:clampedLeft(f.startMin),width:clampedWidth(f.startMin,f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
