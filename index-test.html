@@ -100,13 +100,14 @@ async function githubLoadOverrides(date) {
     if (!r.ok) return { overrides: [], sha: null };
     const meta = await r.json();
     const json = atob(meta.content.split('\n').join(''));
-    return { overrides: JSON.parse(json).overrides || [], sha: meta.sha };
+    const parsed=JSON.parse(json);
+    return { overrides: parsed.overrides||[], removed: parsed.removed||[], sha: meta.sha };
   } catch(e) { return { overrides: [], sha: null }; }
 }
 
-async function githubSaveOverrides(date, ovrs, sha) {
+async function githubSaveOverrides(date, ovrs, removed, sha) {
   try {
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ date, overrides: ovrs }, null, 2))));
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ date, overrides: ovrs, removed: removed||[] }, null, 2))));
     const body = { message: `Update overrides for ${date}`, content };
     if (sha) body.sha = sha;
     const r = await fetch(
@@ -471,6 +472,7 @@ function App(){
     setScheduleStatus("loading");
     setDynamicEvents(null);
     setTvOverrides([]);
+    setRemovedEvents([]);
     setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
@@ -478,6 +480,7 @@ function App(){
       else setScheduleStatus("none");
       const ovr=await githubLoadOverrides(dateStr);
       setTvOverrides(ovr.overrides||[]);
+      setRemovedEvents(ovr.removed||[]);
       setOverridesSha(ovr.sha);
     }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
   },[]);
@@ -525,6 +528,7 @@ function App(){
   const [mirrors,setMirrors]=useState({});
   const [sel,setSel]=useState(null);
   const [tvOverrides,setTvOverrides]=useState([]);
+  const [removedEvents,setRemovedEvents]=useState([]);
   const [overridesSha,setOverridesSha]=useState(null);
   const [ovrForm,setOvrForm]=useState(null);
   const [ovrSaving,setOvrSaving]=useState(false);
@@ -656,7 +660,7 @@ function App(){
     console.log('saveOverride called:', {eventId,tvId,fromMin,toMin});
     console.log('tvOverrides updated to:', updated);
     setTvOverrides(updated);
-    const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
     if(newSha) setOverridesSha(newSha);
     setOvrSaving(false);
     setOvrForm(null);
@@ -666,9 +670,33 @@ function App(){
   const removeOverride=React.useCallback(async(eventId,tvId)=>{
     const updated=tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId));
     setTvOverrides(updated);
-    const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
     if(newSha) setOverridesSha(newSha);
-  },[tvOverrides,overridesSha,scheduleDate]);
+  },[tvOverrides,removedEvents,overridesSha,scheduleDate]);
+
+  const removeFromGrid=React.useCallback(async(eventId)=>{
+    if(removedEvents.includes(eventId)) return;
+    const updated=[...removedEvents,eventId];
+    setRemovedEvents(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setSel(null);
+  },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
+
+  const restoreToGrid=React.useCallback(async(eventId)=>{
+    const updated=removedEvents.filter(id=>id!==eventId);
+    setRemovedEvents(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
+
+  const resetAllOverrides=React.useCallback(async()=>{
+    if(!window.confirm('Reset all manual changes? This will restore the original schedule assignments.')) return;
+    setTvOverrides([]);
+    setRemovedEvents([]);
+    const newSha=await githubSaveOverrides(scheduleDate,[],[],overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[overridesSha,scheduleDate]);
 
   const buildSavePayload=React.useCallback((overrides={})=>{
     return {
@@ -756,15 +784,14 @@ function App(){
 
   // Apply TV overrides on top of the scored final array
   const finalWithOverrides=useMemo(()=>{
-    console.log('finalWithOverrides recomputing, tvOverrides:', tvOverrides);
-    if(!tvOverrides.length) return final;
-    return final.map(evt=>{
-      const ovr=tvOverrides.find(o=>o.eventId===evt.id);
-      if(!ovr) return evt;
-      console.log('Applying override to event:', evt.id, evt.name, '-> TV', ovr.tvId);
-      return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
-    });
-  },[final,tvOverrides]);
+    return final
+      .filter(evt=>!removedEvents.includes(evt.id))
+      .map(evt=>{
+        const ovr=tvOverrides.find(o=>o.eventId===evt.id);
+        if(!ovr) return evt;
+        return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
+      });
+  },[final,tvOverrides,removedEvents]);
   const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
   const unasgd=useMemo(()=>finalWithOverrides.filter(a=>a.tv===-1),[finalWithOverrides]);
 
@@ -829,6 +856,14 @@ function App(){
                 <span style={{marginLeft:8,color:syncStatus==="saved"?C.GRN:syncStatus==="saving"?"#fbbf24":syncStatus==="error"?"#ef4444":C.MT}}>
                   {syncStatus==="saved"?"✓":syncStatus==="saving"?"↑":syncStatus==="error"?"✗":""}
                 </span>
+                {(tvOverrides.length>0||removedEvents.length>0)&&(
+                  <button onClick={resetAllOverrides}
+                    style={{marginLeft:8,fontSize:9,padding:"1px 6px",borderRadius:4,cursor:"pointer",
+                      background:"rgba(239,68,68,0.1)",color:"#ef4444",
+                      border:"1px solid rgba(239,68,68,0.3)",fontFamily:"monospace"}}>
+                    ↺ RESET
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -940,7 +975,18 @@ function App(){
                 <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
               </div>
               <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}{getSpectrumCh(a.channel)!==null&&<span style={{color:"#67e8f9",marginLeft:3,fontSize:9}}>#{getSpectrumCh(a.channel)}</span>}</div>
-              <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 0"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
+              <div style={{display:"flex",flexDirection:"column",gap:2,alignItems:"center"}}>
+                <div style={{fontSize:11,fontWeight:700,color:isRemoved?"#6b7280":a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",background:isRemoved?"rgba(107,114,128,0.15)":a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 4px",textDecoration:isRemoved?"line-through":"none"}}>
+                  {isRemoved?"OFF":a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}
+                </div>
+                {isRemoved&&(
+                  <button onClick={()=>restoreToGrid(a.id)}
+                    style={{fontSize:8,padding:"1px 4px",borderRadius:3,background:"rgba(34,197,94,0.1)",
+                      color:"#22c55e",border:"1px solid rgba(34,197,94,0.3)",cursor:"pointer",fontFamily:"monospace"}}>
+                    RESTORE
+                  </button>
+                )}
+              </div>
             </div>
           );})}
         </div>
@@ -1253,6 +1299,12 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
                       background:"transparent",color:C.MT,border:`1px solid ${C.BD}`,cursor:"pointer"}}>
                     CANCEL
                   </button>
+                  <button onClick={()=>removeFromGrid(selEv.id)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"rgba(239,68,68,0.1)",color:"#ef4444",
+                      border:"1px solid rgba(239,68,68,0.4)",cursor:"pointer",marginLeft:"auto"}}>
+                    🚫 REMOVE FROM GRID
+                  </button>
                 </div>
               </div>
             ):(
@@ -1261,6 +1313,11 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
                   style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
                     background:"rgba(245,158,11,0.1)",color:"#f59e0b",border:"1px solid rgba(245,158,11,0.4)"}}>
                   + SET OVERRIDE
+                </button>
+                <button onClick={()=>removeFromGrid(selEv.id)}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
+                    background:"rgba(239,68,68,0.1)",color:"#ef4444",border:"1px solid rgba(239,68,68,0.4)"}}>
+                  🚫 REMOVE FROM GRID
                 </button>
                 {tvOverrides.filter(o=>o.eventId===selEv.id).map(o=>(
                   <div key={`${o.eventId}-${o.tvId}`} style={{display:"flex",gap:4,alignItems:"center",
