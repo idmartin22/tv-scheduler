@@ -93,6 +93,32 @@ async function githubLoadSchedule(date) {
   } catch(e) { console.error('githubLoadSchedule error:', e); return null; }
 }
 
+async function githubLoadOverrides(date) {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return { overrides: [], sha: null };
+    const meta = await r.json();
+    const json = atob(meta.content.split('\n').join(''));
+    return { overrides: JSON.parse(json).overrides || [], sha: meta.sha };
+  } catch(e) { return { overrides: [], sha: null }; }
+}
+
+async function githubSaveOverrides(date, ovrs, sha) {
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ date, overrides: ovrs }, null, 2))));
+    const body = { message: `Update overrides for ${date}`, content };
+    if (sha) body.sha = sha;
+    const r = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json`,
+      { method: 'PUT', headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+    if (!r.ok) return null;
+    const j = await r.json();
+    return j.content?.sha || null;
+  } catch(e) { return null; }
+}
+
 async function githubSave(data, sha) {
   // Safe base64 encoding that handles unicode
   const json = JSON.stringify(data, null, 2);
@@ -355,19 +381,23 @@ const FILLS=[
   {name:"Fox News",c:{bg:"#1e3a8a",tx:"#fed7aa",br:"#f97316"}},
 ];
 
-function getFill(tvId,ach){
+function getFill(tvId,ach,tvFillChMap){
+  if(tvFillChMap&&tvFillChMap[tvId]){
+    const preferred=FILLS.find(f=>f.name===tvFillChMap[tvId]);
+    if(preferred&&!ach.has(preferred.name.toLowerCase().replace(/\s+/g,"")))return preferred;
+  }
   const i=TV_PRIO.indexOf(tvId);
   for(let x=0;x<FILLS.length;x++){const f=FILLS[(i+x)%FILLS.length];if(!ach.has(f.name.toLowerCase().replace(/\s+/g,"")))return f;}
   return FILLS[i%FILLS.length];
 }
-function fillBlocks(tvId,assigned){
+function fillBlocks(tvId,assigned,tvFillChMap){
   const evts=assigned.filter(a=>a&&a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
   const out=[];let ptr=BAR_OPEN;
   const cps=[...evts.map(e=>({s:e.startMin,e:e.endMin})),{s:BAR_CLOSE,e:BAR_CLOSE}];
   for(const cp of cps){
     if(cp.s-ptr>=DEAD_MIN){
       const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>(a.channel||"").toLowerCase().replace(/\s+/g,"")));
-      const f=getFill(tvId,ach);
+      const f=getFill(tvId,ach,tvFillChMap);
       out.push({isFill:true,tv:tvId,startMin:ptr,endMin:cp.s,dur:cp.s-ptr,name:f.name,fc:f.c});
     }
     ptr=cp.e;
@@ -440,10 +470,15 @@ function App(){
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
     setScheduleStatus("loading");
     setDynamicEvents(null);
+    setTvOverrides([]);
+    setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
       else setScheduleStatus("none");
+      const ovr=await githubLoadOverrides(dateStr);
+      setTvOverrides(ovr.overrides||[]);
+      setOverridesSha(ovr.sha);
     }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
   },[]);
 
@@ -473,6 +508,11 @@ function App(){
     setTvNames(n);
     debouncedSave(buildSavePayload({tvNames:n}));
   };
+  const updateFillCh=(id,val)=>{
+    const n={...tvFillCh,[id]:val};
+    setTvFillCh(n);
+    debouncedSave(buildSavePayload({tvFillCh:n}));
+  };
   // Mirror presets: source TV index -> array of mirror TV indices (0-based)
   const MIRROR_PRESETS={"Mirror 1":[[0,[6,9]],[1,[8]],[2,[4]]]};
   const [activePreset,setActivePreset]=useState(null);
@@ -484,6 +524,10 @@ function App(){
   };
   const [mirrors,setMirrors]=useState({});
   const [sel,setSel]=useState(null);
+  const [tvOverrides,setTvOverrides]=useState([]);
+  const [overridesSha,setOverridesSha]=useState(null);
+  const [ovrForm,setOvrForm]=useState(null);
+  const [ovrSaving,setOvrSaving]=useState(false);
   const [tab,setTab]=useState("grid");
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
@@ -494,6 +538,7 @@ function App(){
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = use hardcoded EVENTS
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
   const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
   const [ready,setReady]=useState(false);
   const [favTeams,setFavTeams]=useState({...DEF_FAVES});
@@ -517,6 +562,7 @@ function App(){
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
+          if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
           lastKnownGood.current = data;
           // Overwrite DEF_MODS so any fallback uses real settings
@@ -603,6 +649,25 @@ function App(){
     },500);
   },[ghaSha]);
 
+  const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
+    setOvrSaving(true);
+    const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
+    const updated=[...tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
+    setTvOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setOvrSaving(false);
+    setOvrForm(null);
+    setSel(null);
+  },[tvOverrides,overridesSha,scheduleDate]);
+
+  const removeOverride=React.useCallback(async(eventId,tvId)=>{
+    const updated=tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId));
+    setTvOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[tvOverrides,overridesSha,scheduleDate]);
+
   const buildSavePayload=React.useCallback((overrides={})=>{
     return {
       leagueMods: overrides.leagueMods ?? leagueMods,
@@ -611,9 +676,10 @@ function App(){
       mirrors:    overrides.mirrors    ?? mirrors,
       unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
       tvNames:    overrides.tvNames    ?? tvNames,
+      tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -686,8 +752,17 @@ function App(){
     return{final:w.filter(Boolean),mblocks:mb};
   },[asgn0,mirrors,activeTVs,presetPairs]);
 
-  const asgnd=useMemo(()=>final.filter(a=>a.tv!==-1),[final]);
-  const unasgd=useMemo(()=>final.filter(a=>a.tv===-1),[final]);
+  // Apply TV overrides on top of the scored final array
+  const finalWithOverrides=useMemo(()=>{
+    if(!tvOverrides.length) return final;
+    return final.map(evt=>{
+      const ovr=tvOverrides.find(o=>o.eventId===evt.id);
+      if(!ovr) return evt;
+      return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
+    });
+  },[final,tvOverrides]);
+  const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
+  const unasgd=useMemo(()=>finalWithOverrides.filter(a=>a.tv===-1),[finalWithOverrides]);
 
   const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave({leagueMods,favTeams,prioOvr,mirrors:n,unknownLeagues});return n;});
   const bumpAndAssign=e=>{
@@ -696,7 +771,7 @@ function App(){
     if(!b)return;
     setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});setSel(null);
   };
-  const selEv=sel?final.find(a=>a&&a.id===sel):null;
+  const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
 
   // Dynamic time window based on actual events + current time trimming
   const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
@@ -806,7 +881,7 @@ function App(){
           {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
             const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
-            const fb=fillBlocks(tvId,asgnd);
+            const fb=fillBlocks(tvId,asgnd,tvFillCh);
             const mb=mblocks.filter(m=>m&&m.tv===tvId);
             return(
               <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?"#f97316":tvId<=2?"#3b82f6":"#1e2d45"}`}}>
@@ -936,6 +1011,33 @@ function App(){
               ))}
             </div>
           </div>
+
+          {/* Dead Time Channels */}
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>Dead Time Channels</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>Channel shown on each TV when no event is scheduled</div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>
+              {TV_PRIO.map(id=>{
+                const tv=TVS[id];
+                const tvLabel=tvNames[id]||tv.name;
+                return(
+                  <div key={id} style={{display:"flex",flexDirection:"column",gap:3}}>
+                    <div style={{fontSize:9,fontWeight:600,color:C.DM}}>{tvLabel} · {tv.sz}"</div>
+                    <select
+                      value={tvFillCh[id]||FILLS[TV_PRIO.indexOf(id)%FILLS.length].name}
+                      onChange={ev=>updateFillCh(id,ev.target.value)}
+                      style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",
+                        fontSize:11,padding:"4px 8px",cursor:"pointer"}}>
+                      {FILLS.map(f=>(
+                        <option key={f.name} value={f.name}>{f.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 16px 6px"}}>
             <div>
               <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>League Modifiers</div>
@@ -1056,7 +1158,7 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
       )}
 
       {selEv&&(
-        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
+        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",maxHeight:"70vh",overflowY:"auto",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
               <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
@@ -1089,6 +1191,83 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
             </div>
             {mirrors[selEv.id]?.size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
           </>)}
+
+          {/* ── OVERRIDE ASSIGNMENT ── */}
+          <div style={{marginTop:10,borderTop:`1px solid ${C.BD}`,paddingTop:8}}>
+            <div style={{fontFamily:"monospace",fontSize:10,color:"#f59e0b",marginBottom:6}}>⏱ OVERRIDE ASSIGNMENT</div>
+            {ovrForm&&ovrForm.eventId===selEv.id?(
+              <div style={{background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.3)",borderRadius:6,padding:"8px"}}>
+                <div style={{display:"flex",gap:4,alignItems:"center",marginBottom:6,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TV:</span>
+                  {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                    const tvLabel=tvNames[tvId]||TVS[tvId].name;
+                    const isActive=ovrForm.tvId===tvId;
+                    return(<button key={tvId} onClick={()=>setOvrForm(f=>({...f,tvId}))}
+                      style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,cursor:"pointer",
+                        background:isActive?"#f59e0b":"transparent",color:isActive?"#000":C.MT,
+                        border:`1px solid ${isActive?"#f59e0b":C.BD2}`}}>{tvLabel}</button>);
+                  })}
+                </div>
+                <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,flexWrap:"wrap"}}>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FROM:</span>
+                    <input type="time"
+                      value={`${String(Math.floor(ovrForm.fromMin/60)).padStart(2,'0')}:${String(ovrForm.fromMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,fromMin:+h*60+ +m}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TO:</span>
+                    <input type="time"
+                      value={`${String(Math.floor(ovrForm.toMin/60)).padStart(2,'0')}:${String(ovrForm.toMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,toMin:+h*60+ +m}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                </div>
+                <div style={{display:"flex",gap:6}}>
+                  <button disabled={ovrSaving} onClick={()=>{
+                    if(ovrForm.tvId===null){alert("Pick a TV first");return;}
+                    if(ovrForm.toMin<=ovrForm.fromMin){alert("End time must be after start");return;}
+                    const conflict=final.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
+                      !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin));
+                    if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||TVS[ovrForm.tvId].name} already has "${conflict.name}" in that window. Override anyway?`))return;
+                    saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
+                  }} style={{padding:"4px 12px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                    background:"#f59e0b",color:"#000",border:"none",cursor:"pointer",fontWeight:700}}>
+                    {ovrSaving?"SAVING...":"SAVE OVERRIDE"}
+                  </button>
+                  <button onClick={()=>setOvrForm(null)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"transparent",color:C.MT,border:`1px solid ${C.BD}`,cursor:"pointer"}}>
+                    CANCEL
+                  </button>
+                </div>
+              </div>
+            ):(
+              <div style={{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}}>
+                <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:null,fromMin:selEv.startMin,toMin:selEv.endMin})}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
+                    background:"rgba(245,158,11,0.1)",color:"#f59e0b",border:"1px solid rgba(245,158,11,0.4)"}}>
+                  + SET OVERRIDE
+                </button>
+                {tvOverrides.filter(o=>o.eventId===selEv.id).map(o=>(
+                  <div key={`${o.eventId}-${o.tvId}`} style={{display:"flex",gap:4,alignItems:"center",
+                    background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.2)",
+                    borderRadius:4,padding:"2px 6px"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:"#f59e0b"}}>
+                      {tvNames[o.tvId]||TVS[o.tvId].name} {String(Math.floor(o.startMin/60)).padStart(2,'0')}:{String(o.startMin%60).padStart(2,'0')}–{String(Math.floor(o.endMin/60)).padStart(2,'0')}:{String(o.endMin%60).padStart(2,'0')}
+                    </span>
+                    <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:o.tvId,fromMin:o.startMin,toMin:o.endMin})}
+                      style={{background:"none",border:"none",color:"#f59e0b",cursor:"pointer",fontSize:10,padding:0,lineHeight:1}}
+                      title="Edit override">✏️</button>
+                    <button onClick={()=>removeOverride(selEv.id,o.tvId)}
+                      style={{background:"none",border:"none",color:"#ef4444",cursor:"pointer",fontSize:11,padding:0,lineHeight:1}}
+                      title="Remove override">✕</button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
