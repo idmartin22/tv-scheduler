@@ -657,15 +657,15 @@ function App(){
     if(newSha) setOverridesSha(newSha);
   },[overrides,overridesSha,scheduleDate]);
 
-  const buildSavePayload=React.useCallback((overrides={})=>{
+  const buildSavePayload=React.useCallback((payloadOverrides={})=>{
     return {
-      leagueMods: overrides.leagueMods ?? leagueMods,
-      favTeams:   overrides.favTeams   ?? favTeams,
-      prioOvr:    overrides.prioOvr    ?? prioOvr,
-      mirrors:    overrides.mirrors    ?? mirrors,
-      unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
-      tvNames:    overrides.tvNames    ?? tvNames,
-      lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
+      leagueMods: payloadOverrides.leagueMods ?? leagueMods,
+      favTeams:   payloadOverrides.favTeams   ?? favTeams,
+      prioOvr:    payloadOverrides.prioOvr    ?? prioOvr,
+      mirrors:    payloadOverrides.mirrors    ?? mirrors,
+      unknownLeagues: payloadOverrides.unknownLeagues ?? unknownLeagues,
+      tvNames:    payloadOverrides.tvNames    ?? tvNames,
+      lastDate:   payloadOverrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
   },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,scheduleDate]);
 
