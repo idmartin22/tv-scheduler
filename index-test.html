@@ -740,8 +740,18 @@ function App(){
     return{final:w.filter(Boolean),mblocks:mb};
   },[asgn0,mirrors,activeTVs,presetPairs]);
 
-  const asgnd=useMemo(()=>final.filter(a=>a.tv!==-1),[final]);
-  const unasgd=useMemo(()=>final.filter(a=>a.tv===-1),[final]);
+  // Apply TV overrides on top of the scored final array
+  const finalWithOverrides=useMemo(()=>{
+    if(!tvOverrides.length) return final;
+    // Clone each event, apply override TV/time if one exists
+    return final.map(evt=>{
+      const ovr=tvOverrides.find(o=>o.eventId===evt.id);
+      if(!ovr) return evt;
+      return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
+    });
+  },[final,tvOverrides]);
+  const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
+  const unasgd=useMemo(()=>finalWithOverrides.filter(a=>a.tv===-1),[finalWithOverrides]);
 
   const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave({leagueMods,favTeams,prioOvr,mirrors:n,unknownLeagues});return n;});
   const bumpAndAssign=e=>{
@@ -750,7 +760,7 @@ function App(){
     if(!b)return;
     setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});setSel(null);
   };
-  const selEv=sel?final.find(a=>a&&a.id===sel):null;
+  const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
 
   // Dynamic time window based on actual events + current time trimming
   const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
