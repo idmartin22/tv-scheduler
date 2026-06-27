@@ -881,6 +881,10 @@ function App(){
         <div style={{overflowX:"auto",paddingBottom:120}}>
           <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
+          {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
+            <div style={{position:"absolute",left:`calc(70px + (100% - 70px) * ${((nowMin-GRID_START)/TMINS).toFixed(4)})`,
+              top:0,bottom:0,width:2,background:"#ef4444",zIndex:10,pointerEvents:"none"}}/>
+          )}
           </div>
           {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
@@ -895,6 +899,13 @@ function App(){
                 </div>
                 <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
                   {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
+                  {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
+                    <div style={{position:"absolute",left:pct(nowMin),top:0,bottom:0,width:2,
+                      background:"#ef4444",zIndex:10,pointerEvents:"none",borderRadius:1}}>
+                      <div style={{position:"absolute",top:-4,left:-3,width:8,height:8,
+                        borderRadius:"50%",background:"#ef4444"}}/>
+                    </div>
+                  )}
                   {fb.map((f,i)=>(
                     <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:clampedLeft(f.startMin),width:clampedWidth(f.startMin,f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
