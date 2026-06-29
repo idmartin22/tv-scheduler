@@ -3,183 +3,393 @@
   "events": [
     {
       "id": 1,
+      "time": "13:00",
       "name": "Brazil vs Japan",
-      "league": "World Cup",
-      "channel": "FOX/FOX ONE",
-      "startTime": "13:00",
-      "endTime": "15:00",
-      "startMin": 780,
-      "endMin": 900,
-      "dur": 120,
-      "isFave": false
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FOX",
+      "dur": 135,
+      "_st": {
+        "v": 9,
+        "l": "Brazil Group A favorite +9"
+      },
+      "_sk": {
+        "v": 9,
+        "l": "Round of 32 elimination +9"
+      },
+      "_rv": {
+        "v": 6,
+        "l": "South America vs Asia +6"
+      },
+      "_mq": {
+        "v": 16,
+        "l": "World Cup R32 on FOX +16"
+      },
+      "_score": 40
     },
     {
       "id": 2,
+      "time": "16:30",
       "name": "Germany vs Paraguay",
-      "league": "World Cup",
-      "channel": "FOX/FOX ONE",
-      "startTime": "16:30",
-      "endTime": "18:30",
-      "startMin": 990,
-      "endMin": 1110,
-      "dur": 120,
-      "isFave": false
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FOX",
+      "dur": 135,
+      "_st": {
+        "v": 8,
+        "l": "Germany top contender +8"
+      },
+      "_sk": {
+        "v": 9,
+        "l": "Round of 32 elimination +9"
+      },
+      "_rv": {
+        "v": 5,
+        "l": "Europe vs South America +5"
+      },
+      "_mq": {
+        "v": 16,
+        "l": "World Cup R32 on FOX +16"
+      },
+      "_score": 38
     },
     {
       "id": 3,
+      "time": "21:00",
       "name": "Netherlands vs Morocco",
-      "league": "World Cup",
-      "channel": "FOX/FOX ONE",
-      "startTime": "21:00",
-      "endTime": "23:00",
-      "startMin": 1260,
-      "endMin": 1380,
-      "dur": 120,
-      "isFave": false
+      "sport": "Soccer",
+      "league": "World Cup 2026",
+      "ch": "FOX",
+      "dur": 135,
+      "_st": {
+        "v": 7,
+        "l": "Netherlands strong contender +7"
+      },
+      "_sk": {
+        "v": 9,
+        "l": "Round of 32 elimination +9"
+      },
+      "_rv": {
+        "v": 6,
+        "l": "Europe vs Africa +6"
+      },
+      "_mq": {
+        "v": 16,
+        "l": "World Cup R32 on FOX +16"
+      },
+      "_score": 38
     },
     {
       "id": 4,
-      "name": "Travelers Championship - Play-off (Scheffler vs Hovland)",
-      "league": "Golf",
-      "channel": "Peacock/Golf Channel/NBCS",
-      "startTime": "9:00",
-      "endTime": "12:00",
-      "startMin": 540,
-      "endMin": 720,
+      "time": "19:10",
+      "name": "Texas Rangers @ Cleveland Guardians",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "ESPN/ABC",
       "dur": 180,
-      "isFave": false
+      "_st": {
+        "v": 5,
+        "l": "Rangers AL West +5"
+      },
+      "_sk": {
+        "v": 4,
+        "l": "AL Wild Card race +4"
+      },
+      "_rv": {
+        "v": 4,
+        "l": "Texas vs Cleveland +4"
+      },
+      "_mq": {
+        "v": 9,
+        "l": "MLB Sunday Night Baseball ESPN +9"
+      },
+      "_score": 22
     },
     {
       "id": 5,
-      "name": "Wimbledon - Day 1",
-      "league": "Tennis",
-      "channel": "ESPN Unlimited/ESPN",
-      "startTime": "6:00",
-      "endTime": "18:00",
-      "startMin": 360,
-      "endMin": 1080,
-      "dur": 720,
-      "isFave": false
+      "time": "21:40",
+      "name": "Los Angeles Angels @ Seattle Mariners",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "ESPN Unlimited",
+      "dur": 150,
+      "_st": {
+        "v": 3,
+        "l": "Angels AL West +3"
+      },
+      "_sk": {
+        "v": 3,
+        "l": "AL West standings +3"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "AL West division game +2"
+      },
+      "_mq": {
+        "v": 4,
+        "l": "MLB late game ESPN+ +4"
+      },
+      "_score": 12
     },
     {
       "id": 6,
-      "name": "Wimbledon: Jannik Sinner vs Miomir Kecmanovic",
-      "league": "Tennis",
-      "channel": "ESPN Unlimited",
-      "startTime": "8:30",
-      "endTime": "11:00",
-      "startMin": 510,
-      "endMin": 660,
+      "time": "21:40",
+      "name": "San Francisco Giants @ Arizona Diamondbacks",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "MLB Network",
       "dur": 150,
-      "isFave": false
+      "_st": {
+        "v": 3,
+        "l": "Giants NL West +3"
+      },
+      "_sk": {
+        "v": 3,
+        "l": "NL West standings +3"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "NL West division game +2"
+      },
+      "_mq": {
+        "v": 4,
+        "l": "MLB late MLB Network +4"
+      },
+      "_score": 12
     },
     {
       "id": 7,
-      "name": "Wimbledon: Aryna Sabalenka vs Teodora Kostovic",
-      "league": "Tennis",
-      "channel": "ESPN Unlimited",
-      "startTime": "11:30",
-      "endTime": "14:00",
-      "startMin": 690,
-      "endMin": 840,
-      "dur": 150,
-      "isFave": false
+      "time": "6:00",
+      "name": "Wimbledon Day 1",
+      "sport": "Tennis",
+      "league": "Wimbledon",
+      "ch": "ESPN Unlimited",
+      "dur": 720,
+      "_st": {
+        "v": 6,
+        "l": "Wimbledon Grand Slam +6"
+      },
+      "_sk": {
+        "v": 5,
+        "l": "Opening day coverage +5"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "International tennis +3"
+      },
+      "_mq": {
+        "v": 7,
+        "l": "Wimbledon ESPN +7"
+      },
+      "_score": 21
     },
     {
       "id": 8,
-      "name": "Wimbledon: Wu Yibing vs Novak Djokovic",
-      "league": "Tennis",
-      "channel": "ESPN Unlimited",
-      "startTime": "14:00",
-      "endTime": "17:00",
-      "startMin": 840,
-      "endMin": 1020,
-      "dur": 180,
-      "isFave": false
+      "time": "8:30",
+      "name": "Wimbledon: Sinner vs Kecmanovic",
+      "sport": "Tennis",
+      "league": "Wimbledon",
+      "ch": "ESPN Unlimited",
+      "dur": 150,
+      "_st": {
+        "v": 7,
+        "l": "Sinner world #1 +7"
+      },
+      "_sk": {
+        "v": 5,
+        "l": "R1 featured match +5"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "Top seed opening match +3"
+      },
+      "_mq": {
+        "v": 7,
+        "l": "Wimbledon ESPN +7"
+      },
+      "_score": 22
     },
     {
       "id": 9,
-      "name": "Texas Rangers @ Cleveland Guardians",
-      "league": "MLB",
-      "channel": "ESPN/ABC",
-      "startTime": "19:10",
-      "endTime": "22:00",
-      "startMin": 1150,
-      "endMin": 1320,
-      "dur": 170,
-      "isFave": false
+      "time": "11:30",
+      "name": "Wimbledon: Sabalenka vs Kostovic",
+      "sport": "Tennis",
+      "league": "Wimbledon",
+      "ch": "ESPN Unlimited",
+      "dur": 150,
+      "_st": {
+        "v": 7,
+        "l": "Sabalenka world #2 +7"
+      },
+      "_sk": {
+        "v": 5,
+        "l": "R1 featured match +5"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "Top seed opening match +3"
+      },
+      "_mq": {
+        "v": 7,
+        "l": "Wimbledon ESPN +7"
+      },
+      "_score": 22
     },
     {
       "id": 10,
-      "name": "Los Angeles Angels @ Seattle Mariners",
-      "league": "MLB",
-      "channel": "ESPN Unlimited",
-      "startTime": "21:40",
-      "endTime": "0:10",
-      "startMin": 1300,
-      "endMin": 1450,
-      "dur": 150,
-      "isFave": false
+      "time": "14:00",
+      "name": "Wimbledon: Wu Yibing vs Djokovic",
+      "sport": "Tennis",
+      "league": "Wimbledon",
+      "ch": "ESPN Unlimited",
+      "dur": 180,
+      "_st": {
+        "v": 8,
+        "l": "Djokovic all-time great +8"
+      },
+      "_sk": {
+        "v": 5,
+        "l": "R1 featured match +5"
+      },
+      "_rv": {
+        "v": 4,
+        "l": "Djokovic Wimbledon return +4"
+      },
+      "_mq": {
+        "v": 7,
+        "l": "Wimbledon ESPN +7"
+      },
+      "_score": 24
     },
     {
       "id": 11,
-      "name": "San Francisco Giants @ Arizona Diamondbacks",
-      "league": "MLB",
-      "channel": "MLB Network",
-      "startTime": "21:40",
-      "endTime": "0:10",
-      "startMin": 1300,
-      "endMin": 1450,
-      "dur": 150,
-      "isFave": false
+      "time": "9:00",
+      "name": "Travelers Championship - Play-off",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": "Peacock/Golf Channel",
+      "dur": 240,
+      "_st": {
+        "v": 5,
+        "l": "PGA Tour regular event +5"
+      },
+      "_sk": {
+        "v": 6,
+        "l": "Play-off sudden death +6"
+      },
+      "_rv": {
+        "v": 3,
+        "l": "Scheffler vs Hovland +3"
+      },
+      "_mq": {
+        "v": 5,
+        "l": "PGA Tour Peacock/Golf Channel +5"
+      },
+      "_score": 19
     },
     {
       "id": 12,
-      "name": "Valley Blue Sox vs Upper Valley Nighthawks",
-      "league": "Collegiate Baseball",
-      "channel": "ESPN Select",
-      "startTime": "18:30",
-      "endTime": "21:00",
-      "startMin": 1110,
-      "endMin": 1260,
-      "dur": 150,
-      "isFave": false
+      "time": "19:00",
+      "name": "Oklahoma City Spark vs Carolina Blaze",
+      "sport": "Softball",
+      "league": "Athletes Unlimited",
+      "ch": "ESPN2",
+      "dur": 120,
+      "_st": {
+        "v": 2,
+        "l": "Athletes Unlimited Softball +2"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 1,
+        "l": "OKC vs Carolina +1"
+      },
+      "_mq": {
+        "v": 3,
+        "l": "Softball ESPN2 +3"
+      },
+      "_score": 8
     },
     {
       "id": 13,
-      "name": "Keene Swamp Bats vs North Adams SteepleCATS",
+      "time": "18:30",
+      "name": "Valley Blue Sox vs Upper Valley Nighthawks",
+      "sport": "Baseball",
       "league": "Collegiate Baseball",
-      "channel": "ESPN Select",
-      "startTime": "18:35",
-      "endTime": "21:00",
-      "startMin": 1115,
-      "endMin": 1260,
-      "dur": 145,
-      "isFave": false
+      "ch": "ESPN Select",
+      "dur": 150,
+      "_st": {
+        "v": 1,
+        "l": "Collegiate summer league +1"
+      },
+      "_sk": {
+        "v": 1,
+        "l": "Regular season +1"
+      },
+      "_rv": {
+        "v": 1,
+        "l": "New England rivalry +1"
+      },
+      "_mq": {
+        "v": 2,
+        "l": "Collegiate Baseball ESPN Select +2"
+      },
+      "_score": 5
     },
     {
       "id": 14,
-      "name": "Newport Gulls vs Sanford Mainers",
+      "time": "18:35",
+      "name": "Keene Swamp Bats vs North Adams SteepleCATS",
+      "sport": "Baseball",
       "league": "Collegiate Baseball",
-      "channel": "ESPN Select",
-      "startTime": "18:35",
-      "endTime": "21:00",
-      "startMin": 1115,
-      "endMin": 1260,
+      "ch": "ESPN Select",
       "dur": 145,
-      "isFave": false
+      "_st": {
+        "v": 1,
+        "l": "Collegiate summer league +1"
+      },
+      "_sk": {
+        "v": 1,
+        "l": "Regular season +1"
+      },
+      "_rv": {
+        "v": 1,
+        "l": "New England rivalry +1"
+      },
+      "_mq": {
+        "v": 2,
+        "l": "Collegiate Baseball ESPN Select +2"
+      },
+      "_score": 5
     },
     {
       "id": 15,
-      "name": "Oklahoma City Spark vs Carolina Blaze",
-      "league": "Softball",
-      "channel": "ESPN2",
-      "startTime": "19:00",
-      "endTime": "21:00",
-      "startMin": 1140,
-      "endMin": 1260,
-      "dur": 120,
-      "isFave": false
+      "time": "18:35",
+      "name": "Newport Gulls vs Sanford Mainers",
+      "sport": "Baseball",
+      "league": "Collegiate Baseball",
+      "ch": "ESPN Select",
+      "dur": 145,
+      "_st": {
+        "v": 1,
+        "l": "Collegiate summer league +1"
+      },
+      "_sk": {
+        "v": 1,
+        "l": "Regular season +1"
+      },
+      "_rv": {
+        "v": 1,
+        "l": "New England rivalry +1"
+      },
+      "_mq": {
+        "v": 2,
+        "l": "Collegiate Baseball ESPN Select +2"
+      },
+      "_score": 5
     }
   ]
 }
