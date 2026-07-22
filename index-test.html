@@ -478,9 +478,11 @@ function App(){
   const saveTimerRef=React.useRef(null);
   const settingsLoaded=React.useRef(false);
   const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
+  const latestDateRequest=React.useRef(null); // guards against out-of-order date-navigation fetches
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
+    latestDateRequest.current=dateStr;
     setScheduleStatus("loading");
     setDynamicEvents(null);
     setTvOverrides([]);
@@ -488,13 +490,18 @@ function App(){
     setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
+      if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
-      else setScheduleStatus("none");
+      else {setDynamicEvents([]);setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
+      if(latestDateRequest.current!==dateStr)return;
       setTvOverrides(ovr.overrides||[]);
       setRemovedEvents(ovr.removed||[]);
       setOverridesSha(ovr.sha);
-    }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
+    }catch(e){
+      if(latestDateRequest.current!==dateStr)return;
+      console.error('loadScheduleForDate error:', e);setScheduleStatus("error");
+    }
   },[]);
 
   const navigateDate=React.useCallback((delta)=>{
