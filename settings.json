@@ -60,7 +60,23 @@
   },
   "prioOvr": {},
   "mirrors": {},
-  "unknownLeagues": {},
+  "unknownLeagues": {
+    "the-basketball-tournament-tbt": {
+      "n": "The Basketball Tournament (TBT)",
+      "sport": "Basketball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "little-league-softball": {
+      "n": "Little League Softball",
+      "sport": "Softball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    }
+  },
+  "leagueEnabled": {},
   "tvNames": {
     "0": "TV 1",
     "1": "TV 2",
@@ -85,6 +101,5 @@
     "8": "NFL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-07-23",
-  "leagueEnabled": {}
+  "lastDate": "2026-07-21"
 }
