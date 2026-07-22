@@ -1,0 +1,55 @@
+# Bar Scheduler - Channel Priority List
+# Channels listed top-to-bottom = highest to lowest priority
+# When an event airs on multiple channels, the highest channel on this list wins
+# Format: Channel Name (SpectrumCh#) — omit number for streaming-only
+# Lines starting with # are comments and are ignored
+
+# ── BROADCAST LOCALS ──────────────────────────────────────────────────────────
+FOX (8)
+NBC (3)
+CBS (4)
+ABC (5)
+ION (23)
+
+# ── PREMIUM SPORTS CABLE ──────────────────────────────────────────────────────
+ESPN (250)
+ESPN2 (251)
+FS1 (252)
+FS2 (253)
+TNT (502)
+TBS (504)
+truTV (528)
+USA (500)
+MLB Network (258)
+NFL Network (254)
+NBA TV (262)
+NHL Network (265)
+Golf Channel (257)
+CBS Sports Network (261)
+ESPNews (259)
+ESPNU (260)
+SEC Network (269)
+BTN (271)
+ACC Network (278)
+Tennis Channel (263)
+beIN Sports (449)
+FOX Soccer Plus (450)
+FanDuel TV (453)
+NFL RedZone (255)
+Guardians.TV (447)
+TUDN (1008)
+ESPN Deportes (1005)
+FOX Deportes (1006)
+beIN SPORTS Español (1007)
+Racer Network (266)
+Outdoor Channel (264)
+
+# ── STREAMING (no Spectrum channel number) ────────────────────────────────────
+ESPN Select
+ESPN Unlimited
+Paramount+
+Peacock
+Prime Video
+Apple TV+
+Max
+Fubo
