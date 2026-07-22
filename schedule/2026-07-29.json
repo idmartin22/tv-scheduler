@@ -82,11 +82,11 @@
     },
     {
       "id": 4,
-      "time": "20:00",
-      "name": "Atlanta Dream @ Dallas Wings",
+      "time": "22:00",
+      "name": "Golden State Valkyries @ Phoenix Mercury",
       "sport": "Basketball",
       "league": "WNBA",
-      "ch": "USA",
+      "ch": "CNBC",
       "dur": 150,
       "_st": {
         "v": 3,
@@ -102,64 +102,12 @@
       },
       "_mq": {
         "v": 1,
-        "l": "WNBA on USA +1"
+        "l": "WNBA on CNBC +1"
       },
       "_score": 8
     },
     {
       "id": 5,
-      "time": "22:00",
-      "name": "Golden State Valkyries @ Phoenix Mercury",
-      "sport": "Basketball",
-      "league": "WNBA",
-      "ch": "USA",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "WNBA +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "WNBA on USA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 6,
-      "time": "19:00",
-      "name": "Alumni Bracket Tournament (Championship)",
-      "sport": "Basketball",
-      "league": "The Basketball Tournament (TBT)",
-      "ch": "FS1",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) +3"
-      },
-      "_sk": {
-        "v": 9,
-        "l": "Championship/Final +9"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) on FS1 +3"
-      },
-      "_score": 17
-    },
-    {
-      "id": 7,
       "time": "20:00",
       "name": "Kansas City Current @ Racing Louisville",
       "sport": "Soccer",
@@ -185,7 +133,7 @@
       "_score": 8
     },
     {
-      "id": 8,
+      "id": 6,
       "time": "22:00",
       "name": "Bay @ Gotham FC",
       "sport": "Soccer",
@@ -211,12 +159,12 @@
       "_score": 8
     },
     {
-      "id": 9,
+      "id": 7,
       "time": "19:00",
       "name": "Pittsburgh Riverhounds @ FC Tulsa",
       "sport": "Soccer",
       "league": "USL Championship",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -232,21 +180,73 @@
       },
       "_mq": {
         "v": 1,
-        "l": "USL Championship on ESPN Select +1"
+        "l": "USL Championship on ESPN Unlimited +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 8,
+      "time": "19:00",
+      "name": "Greenville Triumph @ Boise",
+      "sport": "Soccer",
+      "league": "USL League One",
+      "ch": "ESPN Unlimited",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "USL League One +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "USL League One on ESPN Unlimited +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 9,
+      "time": "20:00",
+      "name": "Forward Madison @ Chattanooga Red Wolves",
+      "sport": "Soccer",
+      "league": "USL League One",
+      "ch": "ESPN Unlimited",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "USL League One +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "USL League One on ESPN Unlimited +1"
       },
       "_score": 8
     },
     {
       "id": 10,
-      "time": "19:00",
-      "name": "Greenville Triumph @ Boise",
+      "time": "18:15",
+      "name": "Gimnasia La Plata @ River Plate",
       "sport": "Soccer",
-      "league": "USL League One",
-      "ch": "ESPN Select",
+      "league": "Primera Division",
+      "ch": "FOX DEPORTES",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "USL League One +3"
+        "l": "Primera Division +3"
       },
       "_sk": {
         "v": 2,
@@ -258,38 +258,12 @@
       },
       "_mq": {
         "v": 1,
-        "l": "USL League One on ESPN Select +1"
+        "l": "Primera Division on FOX DEPORTES +1"
       },
       "_score": 8
     },
     {
       "id": 11,
-      "time": "20:00",
-      "name": "Forward Madison @ Chattanooga Red Wolves",
-      "sport": "Soccer",
-      "league": "USL League One",
-      "ch": "ESPN Select",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "USL League One +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "USL League One on ESPN Select +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 12,
       "time": "16:00",
       "name": "Jamaica U20 @ Panama U20",
       "sport": "Soccer",
@@ -315,33 +289,7 @@
       "_score": 8
     },
     {
-      "id": 13,
-      "time": "21:00",
-      "name": "Canada U20 @ Honduras U20",
-      "sport": "Soccer",
-      "league": "CONCACAF U20",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "CONCACAF U20 +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "CONCACAF U20 on FS2 +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 14,
+      "id": 12,
       "time": "19:30",
       "name": "Liverpool FC @ Wrexham",
       "sport": "Soccer",
@@ -365,58 +313,6 @@
         "l": "Football Club Friendlies on ESPN +4"
       },
       "_score": 11
-    },
-    {
-      "id": 15,
-      "time": "13:00",
-      "name": "Saratoga Live",
-      "sport": "Equestrian",
-      "league": "Horse Racing",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Horse Racing +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Horse Racing on FS2 +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 16,
-      "time": "21:00",
-      "name": "America's Day at the Races",
-      "sport": "Equestrian",
-      "league": "Horse Racing",
-      "ch": "FS1",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Horse Racing +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "Horse Racing on FS1 +3"
-      },
-      "_score": 10
     }
   ]
 }
