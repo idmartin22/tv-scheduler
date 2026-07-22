@@ -8,7 +8,7 @@
       "name": "Cleveland Guardians @ Cincinnati Reds",
       "sport": "Baseball",
       "league": "MLB",
-      "ch": "Guardians.TV",
+      "ch": "GUARDIANS.TV",
       "dur": 180,
       "_st": {
         "v": 6,
@@ -24,7 +24,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "MLB on Guardians.TV +1"
+        "l": "MLB on GUARDIANS.TV +1"
       },
       "_score": 11
     },
@@ -60,7 +60,7 @@
       "name": "Milwaukee Brewers @ San Francisco Giants",
       "sport": "Baseball",
       "league": "MLB",
-      "ch": "MLB Network",
+      "ch": "MLB NETWORK",
       "dur": 180,
       "_st": {
         "v": 6,
@@ -75,10 +75,10 @@
         "l": "Standard matchup +2"
       },
       "_mq": {
-        "v": 3,
-        "l": "MLB on MLB Network +3"
+        "v": 1,
+        "l": "MLB on MLB NETWORK +1"
       },
-      "_score": 13
+      "_score": 11
     },
     {
       "id": 4,
@@ -112,7 +112,7 @@
       "name": "Hearts @ Sturm Graz",
       "sport": "Soccer",
       "league": "UEFA Champions League",
-      "ch": "ESPN Unlimited",
+      "ch": "ESPN UNLIMITED",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -128,7 +128,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "UEFA Champions League on ESPN Unlimited +1"
+        "l": "UEFA Champions League on ESPN UNLIMITED +1"
       },
       "_score": 8
     },
@@ -164,7 +164,7 @@
       "name": "Cavalry @ Supra du Quebec",
       "sport": "Soccer",
       "league": "Canadian Premier League",
-      "ch": "FOX Soccer Plus",
+      "ch": "FOX SOCCER PLUS",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -180,7 +180,59 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Canadian Premier League on FOX Soccer Plus +1"
+        "l": "Canadian Premier League on FOX SOCCER PLUS +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 8,
+      "time": "17:00",
+      "name": "Haiti U20 @ Cuba U20",
+      "sport": "Soccer",
+      "league": "CONCACAF U20",
+      "ch": "FOX SPORTS 2",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "CONCACAF U20 +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "CONCACAF U20 on FOX SPORTS 2 +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 9,
+      "time": "22:00",
+      "name": "El Salvador U20 @ United States U20",
+      "sport": "Soccer",
+      "league": "CONCACAF U20",
+      "ch": "FOX SPORTS 2",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "CONCACAF U20 +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "CONCACAF U20 on FOX SPORTS 2 +1"
       },
       "_score": 8
     }
