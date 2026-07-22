@@ -213,14 +213,14 @@
       "sport": "Lacrosse",
       "gc": "#374151",
       "gtc": "#9ca3af",
-      "isUnknown": true
+      "isUnknown": false
     },
     "football-club-friendlies": {
       "n": "Football Club Friendlies",
       "sport": "Soccer",
       "gc": "#374151",
       "gtc": "#9ca3af",
-      "isUnknown": false
+      "isUnknown": true
     },
     "super-league": {
       "n": "Super League",
@@ -257,7 +257,8 @@
     "arca-menards-series": false,
     "indycar": false,
     "motogp": false,
-    "nbl": false
+    "nbl": false,
+    "pll": false
   },
   "tvNames": {
     "0": "TV 1",
@@ -283,5 +284,5 @@
     "8": "NFL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-07-22"
+  "lastDate": "2026-07-21"
 }
