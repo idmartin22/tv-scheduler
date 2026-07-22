@@ -112,7 +112,7 @@
       "name": "Hearts @ Sturm Graz",
       "sport": "Soccer",
       "league": "UEFA Champions League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -128,12 +128,38 @@
       },
       "_mq": {
         "v": 1,
-        "l": "UEFA Champions League on ESPN Select +1"
+        "l": "UEFA Champions League on ESPN Unlimited +1"
       },
       "_score": 8
     },
     {
       "id": 6,
+      "time": "20:15",
+      "name": "Rosario Central @ Racing Club",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": "FOX DEPORTES",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Primera Division +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Primera Division on FOX DEPORTES +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 7,
       "time": "21:00",
       "name": "Cavalry @ Supra du Quebec",
       "sport": "Soccer",
@@ -155,58 +181,6 @@
       "_mq": {
         "v": 1,
         "l": "Canadian Premier League on FOX Soccer Plus +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 7,
-      "time": "17:00",
-      "name": "Haiti U20 @ Cuba U20",
-      "sport": "Soccer",
-      "league": "CONCACAF U20",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "CONCACAF U20 +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "CONCACAF U20 on FS2 +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 8,
-      "time": "22:00",
-      "name": "El Salvador U20 @ United States U20",
-      "sport": "Soccer",
-      "league": "CONCACAF U20",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "CONCACAF U20 +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "CONCACAF U20 on FS2 +1"
       },
       "_score": 8
     }
