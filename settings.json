@@ -290,7 +290,7 @@
       "sport": "Cycling",
       "gc": "#374151",
       "gtc": "#9ca3af",
-      "isUnknown": true
+      "isUnknown": false
     },
     "high-school-softball": {
       "n": "High School Softball",
@@ -302,7 +302,8 @@
   },
   "leagueEnabled": {
     "usatf-outdoor-championships": true,
-    "high-school-softball": false
+    "high-school-softball": false,
+    "women-s-road-cycling": false
   },
   "tvNames": {
     "0": "TV 1",
