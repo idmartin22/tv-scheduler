@@ -1130,42 +1130,45 @@ function App(){
             </div>
             <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
-            {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
-          </div>
-          {[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:v.isUnknown!==false}))].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
-            const leagueId=lg.id;
-            const mod=leagueMods[leagueId]??0;
-            const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
-            const fv=favTeams[leagueId]||"";
-            const hasFave=fv.trim().length>0;
-            const enabled=leagueEnabled[leagueId]!==false;
-            return(
-              <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
-                <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
-                <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
-                <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
-                <button
-                  onClick={()=>toggleLeague(leagueId)}
-                  style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}
-                >{lg.isUnknown&&enabled?"⚠️ ON":enabled?"ON":"OFF"}</button>
-                <input
-                  type="number"
-                  min="0"
-                  max={MAX_MOD}
-                  value={mod}
-                  onChange={ev=>updateMod(leagueId,ev.target.value)}
-                  style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}
-                />
-                <input
-                  value={fv}
-                  onChange={ev=>updateFave(leagueId,ev.target.value)}
-                  placeholder="Guardians, Cubs..."
-                  style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}
-                />
+          {(()=>{
+            const allLgs=[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:v.isUnknown!==false}))];
+            const activeLgs=allLgs.filter(lg=>leagueEnabled[lg.id]!==false).sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
+            const disabledLgs=allLgs.filter(lg=>leagueEnabled[lg.id]===false).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const LeagueRow=({lg,i,enabled})=>{
+              const leagueId=lg.id;
+              const mod=leagueMods[leagueId]??0;
+              const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
+              const fv=favTeams[leagueId]||"";
+              const hasFave=fv.trim().length>0;
+              return(
+                <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
+                  <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{enabled?i+1:"—"}</div>
+                  <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+                  <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+                  <button onClick={()=>toggleLeague(leagueId)} style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}>{lg.isUnknown&&enabled?"⚠️ ON":enabled?"ON":"OFF"}</button>
+                  <input type="number" min="0" max={MAX_MOD} value={mod} onChange={ev=>updateMod(leagueId,ev.target.value)} style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                  <input value={fv} onChange={ev=>updateFave(leagueId,ev.target.value)} placeholder="Guardians, Cubs..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}/>
+                </div>
+              );
+            };
+            return(<>
+              {/* Active leagues header */}
+              <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+                {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
               </div>
-            );
-          })}
+              {activeLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true}/>)}
+              {/* Disabled leagues sub-list */}
+              {disabledLgs.length>0&&(<>
+                <div style={{padding:"12px 16px 6px",marginTop:8,borderTop:`2px solid ${C.BD2}`}}>
+                  <span style={{fontSize:10,fontWeight:700,color:"#f87171",letterSpacing:"0.08em"}}>DISABLED LEAGUES ({disabledLgs.length})</span>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+                  {["","","LEAGUE","ON/OFF","MOD",""].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                </div>
+                {disabledLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={false}/>)}
+              </>)}
+            </>);
+          })()}
         </div>
       )}
 
