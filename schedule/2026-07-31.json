@@ -181,8 +181,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 26,
-        "l": "Competitive spread (5.5) +8, Late season stakes +3"
+        "v": 15,
+        "l": "Regular season game"
       },
       "_sk": {
         "v": 0,
@@ -196,7 +196,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 26
+      "_score": 15
     },
     {
       "id": 8,
@@ -453,65 +453,6 @@
     },
     {
       "id": 17,
-      "time": "16:00",
-      "name": "Professional Fighters League",
-      "sport": "Fighting",
-      "league": "MMA",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 18,
-      "time": "19:00",
-      "name": "Professional Fighters League",
-      "sport": "Fighting",
-      "league": "MMA",
-      "ch": [
-        "ESPN",
-        "ESPN UNLIMITED",
-        "ESPN DEPORTES"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 19,
       "time": "06:10",
       "name": "Western Bulldogs @ Fremantle Dockers",
       "sport": "Aus Football",
@@ -539,7 +480,7 @@
       "_score": 15
     },
     {
-      "id": 20,
+      "id": 18,
       "time": "23:05",
       "name": "Sydney Swans @ St. Kilda Saints",
       "sport": "Aus Football",
@@ -567,7 +508,7 @@
       "_score": 15
     },
     {
-      "id": 21,
+      "id": 19,
       "time": "13:00",
       "name": "Saratoga Live",
       "sport": "Equestrian",
@@ -595,7 +536,7 @@
       "_score": 15
     },
     {
-      "id": 22,
+      "id": 20,
       "time": "18:00",
       "name": "California Redwoods @ Carolina Chaos",
       "sport": "Lacrosse",
@@ -624,7 +565,7 @@
       "_score": 15
     },
     {
-      "id": 23,
+      "id": 21,
       "time": "20:30",
       "name": "Boston Cannons @ Utah Archers",
       "sport": "Lacrosse",
@@ -653,7 +594,7 @@
       "_score": 15
     },
     {
-      "id": 24,
+      "id": 22,
       "time": "06:00",
       "name": "Canterbury Bulldogs @ Melbourne Storm",
       "sport": "Rugby League",
@@ -681,7 +622,7 @@
       "_score": 15
     },
     {
-      "id": 25,
+      "id": 23,
       "time": "22:15",
       "name": "Wests Tigers W @ Cronulla Sharks W",
       "sport": "Rugby League",
@@ -693,6 +634,35 @@
       "_st": {
         "v": 15,
         "l": "Regular season game"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 24,
+      "time": "16:00",
+      "name": "MMA: Professional Fighters League",
+      "sport": "Fighting",
+      "league": "MMA",
+      "ch": [
+        "ESPN UNLIMITED",
+        "ESPN SELECT"
+      ],
+      "dur": 270,
+      "_st": {
+        "v": 15,
+        "l": "Boxing event +15"
       },
       "_sk": {
         "v": 0,
