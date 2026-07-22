@@ -58,12 +58,8 @@
     "nba": "Cavaliers, Cavs",
     "mls": ""
   },
-  "prioOvr": {
-    "6": 65
-  },
-  "mirrors": {
-    "8": []
-  },
+  "prioOvr": {},
+  "mirrors": {},
   "unknownLeagues": {
     "mixed-coverage": {
       "n": "Mixed Coverage",
@@ -228,7 +224,28 @@
     },
     "softball": {
       "n": "Softball",
-      "sport": "Other",
+      "sport": "Softball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "baseball": {
+      "n": "Baseball",
+      "sport": "Baseball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "basketball": {
+      "n": "Basketball",
+      "sport": "Basketball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "soccer": {
+      "n": "Soccer",
+      "sport": "Soccer",
       "gc": "#374151",
       "gtc": "#9ca3af",
       "isUnknown": true
@@ -258,5 +275,5 @@
     "8": "NFL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-06-29"
+  "lastDate": "2026-07-21"
 }
