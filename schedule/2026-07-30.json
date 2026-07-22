@@ -134,37 +134,11 @@
     },
     {
       "id": 6,
-      "time": "19:00",
-      "name": "Non-Alumni Bracket Tournament (Championship)",
-      "sport": "Basketball",
-      "league": "The Basketball Tournament (TBT)",
-      "ch": "FS1",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) +3"
-      },
-      "_sk": {
-        "v": 9,
-        "l": "Championship/Final +9"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) on FS1 +3"
-      },
-      "_score": 17
-    },
-    {
-      "id": 7,
       "time": "13:00",
       "name": "FC Midtjylland @ Be\u015fikta\u015f",
       "sport": "Soccer",
       "league": "UEFA Europa League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -180,7 +154,33 @@
       },
       "_mq": {
         "v": 1,
-        "l": "UEFA Europa League on ESPN Select +1"
+        "l": "UEFA Europa League on ESPN Unlimited +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 7,
+      "time": "20:15",
+      "name": "Independiente @ Newell's Old Boys",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": "FOX DEPORTES",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Primera Division +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Primera Division on FOX DEPORTES +1"
       },
       "_score": 8
     },
@@ -212,32 +212,6 @@
     },
     {
       "id": 9,
-      "time": "21:00",
-      "name": "Mexico U20 @ Guatemala U20",
-      "sport": "Soccer",
-      "league": "CONCACAF U20",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "CONCACAF U20 +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "CONCACAF U20 on FS2 +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 10,
       "time": "19:30",
       "name": "Leeds United @ Sunderland",
       "sport": "Soccer",
@@ -263,12 +237,12 @@
       "_score": 8
     },
     {
-      "id": 11,
+      "id": 10,
       "time": "19:00",
       "name": "Professional Fighters League",
       "sport": "Fighting",
       "league": "MMA",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 180,
       "_st": {
         "v": 3,
@@ -284,33 +258,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "MMA on ESPN Select +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 12,
-      "time": "13:00",
-      "name": "Saratoga Live",
-      "sport": "Equestrian",
-      "league": "Horse Racing",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Horse Racing +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Horse Racing on FS2 +1"
+        "l": "MMA on ESPN Unlimited +1"
       },
       "_score": 8
     }
