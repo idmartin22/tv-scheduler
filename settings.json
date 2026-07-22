@@ -220,7 +220,7 @@
       "sport": "Soccer",
       "gc": "#374151",
       "gtc": "#9ca3af",
-      "isUnknown": true
+      "isUnknown": false
     },
     "super-league": {
       "n": "Super League",
@@ -244,7 +244,9 @@
       "isUnknown": true
     }
   },
-  "leagueEnabled": {},
+  "leagueEnabled": {
+    "football-club-friendlies": false
+  },
   "tvNames": {
     "0": "TV 1",
     "1": "TV 2",
@@ -269,5 +271,5 @@
     "8": "NFL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-07-26"
+  "lastDate": "2026-07-21"
 }
