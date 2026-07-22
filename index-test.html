@@ -577,9 +577,13 @@ function App(){
         const today=new Date();
         const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
         if(active)setScheduleDate(dateStr);
+        if(active)setScheduleStatus("loading");
         const sched=await githubLoadSchedule(dateStr);
         if(sched?.events&&active){
           setDynamicEvents(sched.events);
+          setScheduleStatus("loaded");
+        } else if(active) {
+          setScheduleStatus("none");
         }
         settingsLoaded.current=true;
         if(active)setSyncStatus("saved");
