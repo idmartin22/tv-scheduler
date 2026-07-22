@@ -8,33 +8,7 @@
       "name": "Atlanta Braves @ New York Mets",
       "sport": "Baseball",
       "league": "MLB",
-      "ch": "MLB Network",
-      "dur": 180,
-      "_st": {
-        "v": 6,
-        "l": "MLB +6"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "MLB on MLB Network +3"
-      },
-      "_score": 13
-    },
-    {
-      "id": 2,
-      "time": "19:10",
-      "name": "Cleveland Guardians @ Cincinnati Reds",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": "Guardians.TV",
+      "ch": "MLB NETWORK",
       "dur": 180,
       "_st": {
         "v": 6,
@@ -50,17 +24,17 @@
       },
       "_mq": {
         "v": 1,
-        "l": "MLB on Guardians.TV +1"
+        "l": "MLB on MLB NETWORK +1"
       },
       "_score": 11
     },
     {
-      "id": 3,
-      "time": "19:40",
-      "name": "New York Yankees @ Chicago White Sox",
+      "id": 2,
+      "time": "19:10",
+      "name": "Cleveland Guardians @ Cincinnati Reds",
       "sport": "Baseball",
       "league": "MLB",
-      "ch": "MLB Network",
+      "ch": "GUARDIANS.TV",
       "dur": 180,
       "_st": {
         "v": 6,
@@ -75,18 +49,44 @@
         "l": "Standard matchup +2"
       },
       "_mq": {
-        "v": 3,
-        "l": "MLB on MLB Network +3"
+        "v": 1,
+        "l": "MLB on GUARDIANS.TV +1"
       },
-      "_score": 13
+      "_score": 11
+    },
+    {
+      "id": 3,
+      "time": "19:40",
+      "name": "New York Yankees @ Chicago White Sox",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": "MLB NETWORK",
+      "dur": 180,
+      "_st": {
+        "v": 6,
+        "l": "MLB +6"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "MLB on MLB NETWORK +1"
+      },
+      "_score": 11
     },
     {
       "id": 4,
-      "time": "22:00",
-      "name": "Golden State Valkyries @ Phoenix Mercury",
+      "time": "20:00",
+      "name": "Atlanta Dream @ Dallas Wings",
       "sport": "Basketball",
       "league": "WNBA",
-      "ch": "CNBC",
+      "ch": "USA NETWORK",
       "dur": 150,
       "_st": {
         "v": 3,
@@ -102,21 +102,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "WNBA on CNBC +1"
+        "l": "WNBA on USA NETWORK +1"
       },
       "_score": 8
     },
     {
       "id": 5,
-      "time": "20:00",
-      "name": "Kansas City Current @ Racing Louisville",
-      "sport": "Soccer",
-      "league": "NWSL",
-      "ch": "CBS Sports Network",
-      "dur": 120,
+      "time": "22:00",
+      "name": "Golden State Valkyries @ Phoenix Mercury",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": "USA NETWORK",
+      "dur": 150,
       "_st": {
         "v": 3,
-        "l": "NWSL +3"
+        "l": "WNBA +3"
       },
       "_sk": {
         "v": 2,
@@ -128,25 +128,25 @@
       },
       "_mq": {
         "v": 1,
-        "l": "NWSL on CBS Sports Network +1"
+        "l": "WNBA on USA NETWORK +1"
       },
       "_score": 8
     },
     {
       "id": 6,
-      "time": "22:00",
-      "name": "Bay @ Gotham FC",
-      "sport": "Soccer",
-      "league": "NWSL",
-      "ch": "CBS Sports Network",
-      "dur": 120,
+      "time": "19:00",
+      "name": "Alumni Bracket Tournament (Championship)",
+      "sport": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
+      "ch": "FOX SPORTS 1",
+      "dur": 150,
       "_st": {
         "v": 3,
-        "l": "NWSL +3"
+        "l": "The Basketball Tournament (TBT) +3"
       },
       "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
+        "v": 9,
+        "l": "Championship/Final +9"
       },
       "_rv": {
         "v": 2,
@@ -154,9 +154,9 @@
       },
       "_mq": {
         "v": 1,
-        "l": "NWSL on CBS Sports Network +1"
+        "l": "The Basketball Tournament (TBT) on FOX SPORTS 1 +1"
       },
-      "_score": 8
+      "_score": 15
     },
     {
       "id": 7,
@@ -164,7 +164,7 @@
       "name": "Pittsburgh Riverhounds @ FC Tulsa",
       "sport": "Soccer",
       "league": "USL Championship",
-      "ch": "ESPN Unlimited",
+      "ch": "ESPN UNLIMITED",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -180,7 +180,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "USL Championship on ESPN Unlimited +1"
+        "l": "USL Championship on ESPN UNLIMITED +1"
       },
       "_score": 8
     },
@@ -190,7 +190,7 @@
       "name": "Greenville Triumph @ Boise",
       "sport": "Soccer",
       "league": "USL League One",
-      "ch": "ESPN Unlimited",
+      "ch": "ESPN UNLIMITED",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -206,7 +206,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "USL League One on ESPN Unlimited +1"
+        "l": "USL League One on ESPN UNLIMITED +1"
       },
       "_score": 8
     },
@@ -216,7 +216,7 @@
       "name": "Forward Madison @ Chattanooga Red Wolves",
       "sport": "Soccer",
       "league": "USL League One",
-      "ch": "ESPN Unlimited",
+      "ch": "ESPN UNLIMITED",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -232,7 +232,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "USL League One on ESPN Unlimited +1"
+        "l": "USL League One on ESPN UNLIMITED +1"
       },
       "_score": 8
     },
@@ -268,7 +268,7 @@
       "name": "Jamaica U20 @ Panama U20",
       "sport": "Soccer",
       "league": "CONCACAF U20",
-      "ch": "FOX Soccer Plus",
+      "ch": "FOX SOCCER PLUS",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -284,12 +284,38 @@
       },
       "_mq": {
         "v": 1,
-        "l": "CONCACAF U20 on FOX Soccer Plus +1"
+        "l": "CONCACAF U20 on FOX SOCCER PLUS +1"
       },
       "_score": 8
     },
     {
       "id": 12,
+      "time": "21:00",
+      "name": "Canada U20 @ Honduras U20",
+      "sport": "Soccer",
+      "league": "CONCACAF U20",
+      "ch": "FOX SPORTS 2",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "CONCACAF U20 +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "CONCACAF U20 on FOX SPORTS 2 +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 13,
       "time": "19:30",
       "name": "Liverpool FC @ Wrexham",
       "sport": "Soccer",
@@ -313,6 +339,58 @@
         "l": "Football Club Friendlies on ESPN +4"
       },
       "_score": 11
+    },
+    {
+      "id": 14,
+      "time": "13:00",
+      "name": "Saratoga Live",
+      "sport": "Equestrian",
+      "league": "Horse Racing",
+      "ch": "FOX SPORTS 2",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Horse Racing +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Horse Racing on FOX SPORTS 2 +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 15,
+      "time": "21:00",
+      "name": "America's Day at the Races",
+      "sport": "Equestrian",
+      "league": "Horse Racing",
+      "ch": "FOX SPORTS 1",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Horse Racing +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Horse Racing on FOX SPORTS 1 +1"
+      },
+      "_score": 8
     }
   ]
 }
