@@ -4,15 +4,15 @@
   "events": [
     {
       "id": 1,
-      "time": "12:10",
-      "name": "Philadelphia Phillies @ Miami Marlins",
+      "time": "13:10",
+      "name": "Atlanta Braves @ New York Mets",
       "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "NBCS PHL",
+      "league": "MLB",
+      "ch": "MLB Network",
       "dur": 180,
       "_st": {
-        "v": 3,
-        "l": "Baseball +3"
+        "v": 6,
+        "l": "MLB +6"
       },
       "_sk": {
         "v": 2,
@@ -23,22 +23,22 @@
         "l": "Standard matchup +2"
       },
       "_mq": {
-        "v": 1,
-        "l": "Baseball on NBCS PHL +1"
+        "v": 3,
+        "l": "MLB on MLB Network +3"
       },
-      "_score": 8
+      "_score": 13
     },
     {
       "id": 2,
-      "time": "12:35",
-      "name": "Arizona Diamondbacks @ Pittsburgh Pirates",
+      "time": "19:10",
+      "name": "Cleveland Guardians @ Cincinnati Reds",
       "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "SPORTSNET PITTSBURGH",
+      "league": "MLB",
+      "ch": "Guardians.TV",
       "dur": 180,
       "_st": {
-        "v": 3,
-        "l": "Baseball +3"
+        "v": 6,
+        "l": "MLB +6"
       },
       "_sk": {
         "v": 2,
@@ -50,21 +50,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Baseball on SPORTSNET PITTSBURGH +1"
+        "l": "MLB on Guardians.TV +1"
       },
-      "_score": 8
+      "_score": 11
     },
     {
       "id": 3,
-      "time": "13:05",
-      "name": "Toronto Blue Jays @ Washington Nationals",
+      "time": "19:40",
+      "name": "New York Yankees @ Chicago White Sox",
       "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "NATIONALS.TV",
+      "league": "MLB",
+      "ch": "MLB Network",
       "dur": 180,
       "_st": {
-        "v": 3,
-        "l": "Baseball +3"
+        "v": 6,
+        "l": "MLB +6"
       },
       "_sk": {
         "v": 2,
@@ -75,22 +75,22 @@
         "l": "Standard matchup +2"
       },
       "_mq": {
-        "v": 1,
-        "l": "Baseball on NATIONALS.TV +1"
+        "v": 3,
+        "l": "MLB on MLB Network +3"
       },
-      "_score": 8
+      "_score": 13
     },
     {
       "id": 4,
-      "time": "13:10",
-      "name": "Baltimore Orioles @ Detroit Tigers",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "DETROIT SPORTSNET",
-      "dur": 180,
+      "time": "20:00",
+      "name": "Atlanta Dream @ Dallas Wings",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": "USA",
+      "dur": 150,
       "_st": {
         "v": 3,
-        "l": "Baseball +3"
+        "l": "WNBA +3"
       },
       "_sk": {
         "v": 2,
@@ -102,723 +102,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Baseball on DETROIT SPORTSNET +1"
+        "l": "WNBA on USA +1"
       },
       "_score": 8
     },
     {
       "id": 5,
-      "time": "13:10",
-      "name": "Atlanta Braves @ New York Mets",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "MLB Network",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "Baseball on MLB Network +3"
-      },
-      "_score": 10
-    },
-    {
-      "id": 6,
-      "time": "15:45",
-      "name": "Milwaukee Brewers @ San Francisco Giants",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "NBCS BAY AREA",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on NBCS BAY AREA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 7,
-      "time": "16:10",
-      "name": "Colorado Rockies @ San Diego Padres",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "PADRES.TV",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on PADRES.TV +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 8,
-      "time": "18:40",
-      "name": "Texas Rangers @ Tampa Bay Rays",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "RSN",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on RSN +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 9,
-      "time": "19:10",
-      "name": "Cleveland Guardians @ Cincinnati Reds",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "Guardians.TV",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on Guardians.TV +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 10,
-      "time": "19:40",
-      "name": "Kansas City Royals @ Minnesota Twins",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "GRAY MEDIA",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on GRAY MEDIA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 11,
-      "time": "19:40",
-      "name": "New York Yankees @ Chicago White Sox",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "MLB Network",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "Baseball on MLB Network +3"
-      },
-      "_score": 10
-    },
-    {
-      "id": 12,
-      "time": "19:45",
-      "name": "Chicago Cubs @ St. Louis Cardinals",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "MARQUEE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on MARQUEE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 13,
-      "time": "21:38",
-      "name": "Houston Astros @ Los Angeles Angels",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "SPACE CITY HN",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on SPACE CITY HN +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 14,
-      "time": "21:40",
-      "name": "Boston Red Sox @ Athletics",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "NBCS CA",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on NBCS CA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 15,
-      "time": "22:10",
-      "name": "Seattle Mariners @ Los Angeles Dodgers",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "SPORTSNET LA",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on SPORTSNET LA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 16,
-      "time": "11:05",
-      "name": "Syracuse Mets @ Rochester Red Wings",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 17,
-      "time": "13:05",
-      "name": "St. Paul @ Omaha Storm Chasers",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 18,
-      "time": "13:08",
-      "name": "Scranton/WB @ Iowa Cubs",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "MARQUEE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on MARQUEE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 19,
-      "time": "18:35",
-      "name": "Indianapolis Indians @ Louisville Bats",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 20,
-      "time": "18:35",
-      "name": "Worcester @ Norfolk Tides",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "MASN",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on MASN +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 21,
-      "time": "18:45",
-      "name": "Gwinnett Stripers @ Durham Bulls",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 22,
-      "time": "18:45",
-      "name": "Buffalo Bisons @ Lehigh Valley IronPigs",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 23,
-      "time": "19:05",
-      "name": "Toledo Mud Hens @ Columbus Clippers",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 24,
-      "time": "19:05",
-      "name": "Memphis Redbirds @ Jacksonville Jumbo Shrimp",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 25,
-      "time": "19:35",
-      "name": "Charlotte Knights @ Nashville Sounds",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 26,
-      "time": "19:45",
-      "name": "Reno Aces @ Round Rock Express",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 27,
-      "time": "20:05",
-      "name": "Las Vegas Aviators @ Oklahoma City Baseball Club",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 28,
-      "time": "20:05",
-      "name": "Salt Lake Bees @ Sugar Land Space Cowboys",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 29,
-      "time": "20:35",
-      "name": "Albuquerque Isotopes @ El Paso Chihuahuas",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 30,
-      "time": "22:05",
-      "name": "Sacramento River Cats @ Tacoma Rainiers",
-      "sport": "Baseball",
-      "league": "Baseball",
-      "ch": "BALLY SPORTS LIVE",
-      "dur": 180,
-      "_st": {
-        "v": 3,
-        "l": "Baseball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Baseball on BALLY SPORTS LIVE +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 31,
-      "time": "20:00",
-      "name": "Atlanta Dream @ Dallas Wings",
-      "sport": "Basketball",
-      "league": "Basketball",
-      "ch": "USA",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "Basketball +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Basketball on USA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 32,
       "time": "22:00",
       "name": "Golden State Valkyries @ Phoenix Mercury",
       "sport": "Basketball",
-      "league": "Basketball",
+      "league": "WNBA",
       "ch": "USA",
       "dur": 150,
       "_st": {
         "v": 3,
-        "l": "Basketball +3"
+        "l": "WNBA +3"
       },
       "_sk": {
         "v": 2,
@@ -830,21 +128,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Basketball on USA +1"
+        "l": "WNBA on USA +1"
       },
       "_score": 8
     },
     {
-      "id": 33,
+      "id": 6,
       "time": "19:00",
       "name": "Alumni Bracket Tournament (Championship)",
       "sport": "Basketball",
-      "league": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
       "ch": "FS1",
       "dur": 150,
       "_st": {
         "v": 3,
-        "l": "Basketball +3"
+        "l": "The Basketball Tournament (TBT) +3"
       },
       "_sk": {
         "v": 9,
@@ -856,21 +154,21 @@
       },
       "_mq": {
         "v": 3,
-        "l": "Basketball on FS1 +3"
+        "l": "The Basketball Tournament (TBT) on FS1 +3"
       },
       "_score": 17
     },
     {
-      "id": 34,
+      "id": 7,
       "time": "20:00",
       "name": "Kansas City Current @ Racing Louisville",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "NWSL",
       "ch": "CBS Sports Network",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "NWSL +3"
       },
       "_sk": {
         "v": 2,
@@ -882,47 +180,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on CBS Sports Network +1"
+        "l": "NWSL on CBS Sports Network +1"
       },
       "_score": 8
     },
     {
-      "id": 35,
-      "time": "21:00",
-      "name": "Utah Royals @ Washington Spirit",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "NWSL+",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on NWSL+ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 36,
+      "id": 8,
       "time": "22:00",
       "name": "Bay @ Gotham FC",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "NWSL",
       "ch": "CBS Sports Network",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "NWSL +3"
       },
       "_sk": {
         "v": 2,
@@ -934,21 +206,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on CBS Sports Network +1"
+        "l": "NWSL on CBS Sports Network +1"
       },
       "_score": 8
     },
     {
-      "id": 37,
+      "id": 9,
       "time": "19:00",
       "name": "Pittsburgh Riverhounds @ FC Tulsa",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "USL Championship",
       "ch": "ESPN Select",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "USL Championship +3"
       },
       "_sk": {
         "v": 2,
@@ -960,47 +232,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on ESPN Select +1"
+        "l": "USL Championship on ESPN Select +1"
       },
       "_score": 8
     },
     {
-      "id": 38,
-      "time": "19:30",
-      "name": "Louisville City @ Birmingham Legion",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "CBS GOLAZO NETWORK",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on CBS GOLAZO NETWORK +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 39,
+      "id": 10,
       "time": "19:00",
       "name": "Greenville Triumph @ Boise",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "USL League One",
       "ch": "ESPN Select",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "USL League One +3"
       },
       "_sk": {
         "v": 2,
@@ -1012,21 +258,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on ESPN Select +1"
+        "l": "USL League One on ESPN Select +1"
       },
       "_score": 8
     },
     {
-      "id": 40,
+      "id": 11,
       "time": "20:00",
       "name": "Forward Madison @ Chattanooga Red Wolves",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "USL League One",
       "ch": "ESPN Select",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "USL League One +3"
       },
       "_sk": {
         "v": 2,
@@ -1038,125 +284,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on ESPN Select +1"
+        "l": "USL League One on ESPN Select +1"
       },
       "_score": 8
     },
     {
-      "id": 41,
-      "time": "13:30",
-      "name": "Barracas Central @ Aldosivi",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 42,
-      "time": "16:00",
-      "name": "Defensa y Justicia @ Deportivo Riestra",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 43,
-      "time": "18:15",
-      "name": "Gimnasia La Plata @ River Plate",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 44,
-      "time": "20:30",
-      "name": "Instituto @ Platense",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 45,
+      "id": 12,
       "time": "16:00",
       "name": "Jamaica U20 @ Panama U20",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "CONCACAF U20",
       "ch": "FOX Soccer Plus",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "CONCACAF U20 +3"
       },
       "_sk": {
         "v": 2,
@@ -1168,21 +310,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on FOX Soccer Plus +1"
+        "l": "CONCACAF U20 on FOX Soccer Plus +1"
       },
       "_score": 8
     },
     {
-      "id": 46,
+      "id": 13,
       "time": "21:00",
       "name": "Canada U20 @ Honduras U20",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "CONCACAF U20",
       "ch": "FS2",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "CONCACAF U20 +3"
       },
       "_sk": {
         "v": 2,
@@ -1194,99 +336,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Soccer on FS2 +1"
+        "l": "CONCACAF U20 on FS2 +1"
       },
       "_score": 8
     },
     {
-      "id": 47,
-      "time": "18:00",
-      "name": "Vasco da Gama @ Independiente Medell\u00edn",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 48,
-      "time": "20:30",
-      "name": "RB Bragantino @ Sporting Cristal",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 49,
-      "time": "20:30",
-      "name": "Cienciano @ Lan\u00fas",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 50,
+      "id": 14,
       "time": "19:30",
       "name": "Liverpool FC @ Wrexham",
       "sport": "Soccer",
-      "league": "Soccer",
+      "league": "Football Club Friendlies",
       "ch": "ESPN",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Soccer +3"
+        "l": "Football Club Friendlies +3"
       },
       "_sk": {
         "v": 2,
@@ -1298,151 +362,21 @@
       },
       "_mq": {
         "v": 4,
-        "l": "Soccer on ESPN +4"
+        "l": "Football Club Friendlies on ESPN +4"
       },
       "_score": 11
     },
     {
-      "id": 51,
-      "time": "18:30",
-      "name": "Mirassol @ Remo",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 52,
-      "time": "18:30",
-      "name": "Internacional @ Flamengo",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 53,
-      "time": "20:30",
-      "name": "Fluminense @ Bahia",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 54,
-      "time": "20:30",
-      "name": "Vit\u00f3ria @ Palmeiras",
-      "sport": "Soccer",
-      "league": "Soccer",
-      "ch": "FANATIZ",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Soccer +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Soccer on FANATIZ +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 55,
-      "time": "11:00",
-      "name": "Mubadala Citi DC Open",
-      "sport": "Tennis",
-      "league": "Tennis",
-      "ch": "DAZN CANADA",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "Tennis +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Tennis on DAZN CANADA +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 56,
+      "id": 15,
       "time": "13:00",
       "name": "Saratoga Live",
       "sport": "Equestrian",
-      "league": "Equestrian",
+      "league": "Horse Racing",
       "ch": "FS2",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Equestrian +3"
+        "l": "Horse Racing +3"
       },
       "_sk": {
         "v": 2,
@@ -1454,21 +388,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Equestrian on FS2 +1"
+        "l": "Horse Racing on FS2 +1"
       },
       "_score": 8
     },
     {
-      "id": 57,
+      "id": 16,
       "time": "21:00",
       "name": "America's Day at the Races",
       "sport": "Equestrian",
-      "league": "Equestrian",
+      "league": "Horse Racing",
       "ch": "FS1",
       "dur": 120,
       "_st": {
         "v": 3,
-        "l": "Equestrian +3"
+        "l": "Horse Racing +3"
       },
       "_sk": {
         "v": 2,
@@ -1480,7 +414,7 @@
       },
       "_mq": {
         "v": 3,
-        "l": "Equestrian on FS1 +3"
+        "l": "Horse Racing on FS1 +3"
       },
       "_score": 10
     }
