@@ -55,7 +55,10 @@ function ChBadges({channel,style={}}){
   const chs=chArr(channel);
   return chs.map((ch,i)=>{
     const num=getSpectrumCh(ch);
-    return <span key={i} style={style}>{ch}{num!==null?<span style={{color:"#67e8f9",marginLeft:2}}>#{num}</span>:null}{i<chs.length-1?<span style={{color:"#64748b",margin:"0 4px"}}>·</span>:null}</span>;
+    let badge=null;
+    if(num!==null&&typeof num==="number") badge=<span style={{color:"#67e8f9",marginLeft:2}}>#{num}</span>;
+    else if(num!==null&&typeof num==="string") badge=<span style={{color:"#c084fc",marginLeft:2}}>📱{num}</span>;
+    return <span key={i} style={style}>{ch}{badge}{i<chs.length-1?<span style={{color:"#64748b",margin:"0 4px"}}>·</span>:null}</span>;
   });
 }
 const MAX_MOD = 100;
@@ -192,12 +195,13 @@ async function loadChannels() {
     for (let line of lines) {
       line = line.trim();
       if (!line || line.startsWith("#")) continue;
-      const m = line.match(/^(.+?)\s*\((\d+)\)\s*$/);
+      const m = line.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
       if (m) {
         const name = m[1].trim();
-        const num  = parseInt(m[2]);
+        const label = m[2].trim();
         priority.push(name);
-        spectrum[name] = num;
+        // digits = Spectrum channel number, text = app availability label
+        spectrum[name] = /^\d+$/.test(label) ? parseInt(label) : label;
       } else {
         priority.push(line);
       }
