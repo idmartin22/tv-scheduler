@@ -505,19 +505,20 @@ function App(){
   },[]);
 
   const navigateDate=React.useCallback((delta)=>{
-    setScheduleDate(prev=>{
-      const d=strToDate(prev);
-      d.setDate(d.getDate()+delta);
-      const today=new Date(); today.setHours(0,0,0,0);
-      const maxFuture=new Date(today); maxFuture.setDate(today.getDate()+6);
-      if(d<today){d.setTime(today.getTime());}
-      if(d>maxFuture){d.setTime(maxFuture.getTime());}
-      const newStr=dateToStr(d);
-      // Call outside setState to avoid batching issues
-      setTimeout(()=>loadScheduleForDate(newStr),0);
-      return newStr;
-    });
-  },[loadScheduleForDate]);
+    const d=strToDate(scheduleDate);
+    d.setDate(d.getDate()+delta);
+    const today=new Date(); today.setHours(0,0,0,0);
+    const maxFuture=new Date(today); maxFuture.setDate(today.getDate()+6);
+    if(d<today){d.setTime(today.getTime());}
+    if(d>maxFuture){d.setTime(maxFuture.getTime());}
+    const newStr=dateToStr(d);
+    // Call synchronously in the same batch as setScheduleDate — matches goToToday's
+    // pattern below. The old setTimeout(...,0) deferral let React commit one render
+    // with the NEW scheduleDate but the OLD (not-yet-cleared) dynamicEvents, which
+    // painted a flash of stale events before the deferred load caught up.
+    setScheduleDate(newStr);
+    loadScheduleForDate(newStr);
+  },[scheduleDate,loadScheduleForDate]);
 
   const goToToday=React.useCallback(()=>{
     const t=todayStr();
