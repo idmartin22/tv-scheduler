@@ -482,6 +482,7 @@ function App(){
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
+    console.log('[DIAG] loadScheduleForDate CALLED for', dateStr, 'at', Date.now());
     latestDateRequest.current=dateStr;
     setScheduleStatus("loading");
     setDynamicEvents(null);
@@ -490,9 +491,9 @@ function App(){
     setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
-      if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
-      if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
-      else {setDynamicEvents([]);setScheduleStatus("none");}
+      if(latestDateRequest.current!==dateStr){console.log('[DIAG] DISCARDING stale response for',dateStr,'— latest is now',latestDateRequest.current);return;}
+      if(sched?.events){console.log('[DIAG] APPLYING',sched.events.length,'events for',dateStr,sched.events.map(e=>e.name));setDynamicEvents(sched.events);setScheduleStatus("loaded");}
+      else {console.log('[DIAG] no events for',dateStr,'— clearing');setDynamicEvents([]);setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
       if(latestDateRequest.current!==dateStr)return;
       setTvOverrides(ovr.overrides||[]);
@@ -755,6 +756,7 @@ function App(){
   };
 
   const ewp=useMemo(()=>{
+    console.log('[DIAG] ewp recompute — activeEvents count:',activeEvents.length,'names:',activeEvents.map(e=>`${e.name}@${e.time}`));
     const base=activeEvents.map(e=>{
       const lm=leagueMods[e.leagueId]??0;
       const fb=getFaveBoost(e.name,e.leagueId,favTeams);
