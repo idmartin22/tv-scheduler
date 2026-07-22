@@ -93,6 +93,33 @@ async function githubLoadSchedule(date) {
   } catch(e) { console.error('githubLoadSchedule error:', e); return null; }
 }
 
+async function githubLoadOverrides(date) {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return { overrides: [], sha: null };
+    const meta = await r.json();
+    const json = atob(meta.content.split('\n').join(''));
+    const parsed=JSON.parse(json);
+    return { overrides: parsed.overrides||[], removed: parsed.removed||[], sha: meta.sha };
+  } catch(e) { return { overrides: [], sha: null }; }
+}
+
+async function githubSaveOverrides(date, ovrs, removed, sha) {
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ date, overrides: ovrs, removed: removed||[] }, null, 2))));
+    const body = { message: `Update overrides for ${date}`, content };
+    if (sha) body.sha = sha;
+    const r = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json`,
+      { method: 'PUT', headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+    if (!r.ok) return null;
+    const j = await r.json();
+    return j.content?.sha || null;
+  } catch(e) { return null; }
+}
+
 async function githubSave(data, sha) {
   // Safe base64 encoding that handles unicode
   const json = JSON.stringify(data, null, 2);
@@ -175,7 +202,6 @@ function getSpectrumCh(ch) {
   if (!ch) return null;
   const key = ch.trim();
   if (SPECTRUM[key] !== undefined) return SPECTRUM[key];
-  // Case-insensitive fallback
   const kl = key.toLowerCase();
   for (const [k, v] of Object.entries(SPECTRUM)) {
     if (k.toLowerCase() === kl) return v;
@@ -324,18 +350,20 @@ const EVENTS = [
 ];
 
 const TVS=[
-  {id:0,name:"TV 1",sz:75,loc:"Living Room — Center",zone:"living",ord:0},
-  {id:1,name:"TV 2",sz:55,loc:"Living Room — Left",zone:"living",ord:1},
-  {id:2,name:"TV 3",sz:55,loc:"Living Room — Right",zone:"living",ord:2},
-  {id:3,name:"TV 4",sz:42,loc:"Living Room — Corner",zone:"living",ord:7},
-  {id:4,name:"TV 5",sz:55,loc:"Bar — Right Corner",zone:"bar",ord:4},
-  {id:5,name:"TV 6",sz:40,loc:"Bar — Right Side",zone:"bar",ord:8},
-  {id:6,name:"TV 7",sz:50,loc:"Bar — Center",zone:"bar",ord:3},
-  {id:7,name:"TV 8",sz:40,loc:"Bar — Left Side",zone:"bar",ord:9},
-  {id:8,name:"TV 9",sz:55,loc:"Bar — Left Corner",zone:"bar",ord:5},
-  {id:9,name:"TV 10",sz:55,loc:"Bar — Opposite Wall",zone:"bar",ord:6},
+  {id:0,name:"TV 1",sz:75,loc:"Basement — Center",zone:"basement",brand:"Vizio",input:"SmartCast",ord:0},
+  {id:1,name:"TV 2",sz:55,loc:"Basement — Left",zone:"basement",brand:"Vizio",input:"SmartCast",ord:1},
+  {id:2,name:"TV 3",sz:55,loc:"Basement — Right",zone:"basement",brand:"Vizio",input:"SmartCast",ord:2},
+  {id:3,name:"TV 4",sz:55,loc:"Bar — Right Corner",zone:"bar",brand:"Philips",input:"Firestick",ord:4},
+  {id:4,name:"TV 5",sz:32,loc:"Bar — Right Side",zone:"bar",brand:"Vizio",input:"SmartCast",ord:8},
+  {id:5,name:"TV 6",sz:47,loc:"Bar — Center Right",zone:"bar",brand:"Vizio",input:"Roku",ord:3},
+  {id:6,name:"TV 7",sz:32,loc:"Bar — Center Left",zone:"bar",brand:"Vizio",input:"Roku",ord:9},
+  {id:7,name:"TV 8",sz:55,loc:"Bar — Left Side",zone:"bar",brand:"LG",input:"Firestick",ord:5},
+  {id:8,name:"TV 9",sz:60,loc:"Bar — Left Corner",zone:"bar",brand:"Sharp",input:"Roku",ord:6},
+  {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+// Grid display order: basement TVs first (1,2,3,10) then bar TVs in sequence (4-9)
+const TV_DISPLAY=[0,1,2,9,3,4,5,6,7,8];
 
 const FILLS=[
   {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
@@ -350,19 +378,23 @@ const FILLS=[
   {name:"Fox News",c:{bg:"#1e3a8a",tx:"#fed7aa",br:"#f97316"}},
 ];
 
-function getFill(tvId,ach){
+function getFill(tvId,ach,tvFillChMap){
+  if(tvFillChMap&&tvFillChMap[tvId]){
+    const preferred=FILLS.find(f=>f.name===tvFillChMap[tvId]);
+    if(preferred&&!ach.has(preferred.name.toLowerCase().replace(/\s+/g,"")))return preferred;
+  }
   const i=TV_PRIO.indexOf(tvId);
   for(let x=0;x<FILLS.length;x++){const f=FILLS[(i+x)%FILLS.length];if(!ach.has(f.name.toLowerCase().replace(/\s+/g,"")))return f;}
   return FILLS[i%FILLS.length];
 }
-function fillBlocks(tvId,assigned){
+function fillBlocks(tvId,assigned,tvFillChMap){
   const evts=assigned.filter(a=>a&&a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
   const out=[];let ptr=BAR_OPEN;
   const cps=[...evts.map(e=>({s:e.startMin,e:e.endMin})),{s:BAR_CLOSE,e:BAR_CLOSE}];
   for(const cp of cps){
     if(cp.s-ptr>=DEAD_MIN){
       const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>(a.channel||"").toLowerCase().replace(/\s+/g,"")));
-      const f=getFill(tvId,ach);
+      const f=getFill(tvId,ach,tvFillChMap);
       out.push({isFill:true,tv:tvId,startMin:ptr,endMin:cp.s,dur:cp.s-ptr,name:f.name,fc:f.c});
     }
     ptr=cp.e;
@@ -435,10 +467,17 @@ function App(){
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
     setScheduleStatus("loading");
     setDynamicEvents(null);
+    setTvOverrides([]);
+    setRemovedEvents([]);
+    setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
       else setScheduleStatus("none");
+      const ovr=await githubLoadOverrides(dateStr);
+      setTvOverrides(ovr.overrides||[]);
+      setRemovedEvents(ovr.removed||[]);
+      setOverridesSha(ovr.sha);
     }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
   },[]);
 
@@ -468,6 +507,11 @@ function App(){
     setTvNames(n);
     debouncedSave(buildSavePayload({tvNames:n}));
   };
+  const updateFillCh=(id,val)=>{
+    const n={...tvFillCh,[id]:val};
+    setTvFillCh(n);
+    debouncedSave(buildSavePayload({tvFillCh:n}));
+  };
   // Mirror presets: source TV index -> array of mirror TV indices (0-based)
   const MIRROR_PRESETS={"Mirror 1":[[0,[6,9]],[1,[8]],[2,[4]]]};
   const [activePreset,setActivePreset]=useState(null);
@@ -479,6 +523,11 @@ function App(){
   };
   const [mirrors,setMirrors]=useState({});
   const [sel,setSel]=useState(null);
+  const [tvOverrides,setTvOverrides]=useState([]);
+  const [removedEvents,setRemovedEvents]=useState([]);
+  const [overridesSha,setOverridesSha]=useState(null);
+  const [ovrForm,setOvrForm]=useState(null);
+  const [ovrSaving,setOvrSaving]=useState(false);
   const [tab,setTab]=useState("grid");
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
@@ -489,6 +538,7 @@ function App(){
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = use hardcoded EVENTS
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
   const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
   const [ready,setReady]=useState(false);
   const [favTeams,setFavTeams]=useState({...DEF_FAVES});
@@ -512,6 +562,7 @@ function App(){
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
+          if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
           lastKnownGood.current = data;
           // Overwrite DEF_MODS so any fallback uses real settings
@@ -598,6 +649,49 @@ function App(){
     },500);
   },[ghaSha]);
 
+  const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
+    setOvrSaving(true);
+    const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
+    const updated=[...tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
+    setTvOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setOvrSaving(false);
+    setOvrForm(null);
+    setSel(null);
+  },[tvOverrides,overridesSha,scheduleDate]);
+
+  const removeOverride=React.useCallback(async(eventId,tvId)=>{
+    const updated=tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId));
+    setTvOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[tvOverrides,removedEvents,overridesSha,scheduleDate]);
+
+  const removeFromGrid=React.useCallback(async(eventId)=>{
+    if(removedEvents.includes(eventId)) return;
+    const updated=[...removedEvents,eventId];
+    setRemovedEvents(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setSel(null);
+  },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
+
+  const restoreToGrid=React.useCallback(async(eventId)=>{
+    const updated=removedEvents.filter(id=>id!==eventId);
+    setRemovedEvents(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
+
+  const resetAllOverrides=React.useCallback(async()=>{
+    if(!window.confirm('Reset all manual changes? This will restore the original schedule assignments.')) return;
+    setTvOverrides([]);
+    setRemovedEvents([]);
+    const newSha=await githubSaveOverrides(scheduleDate,[],[],overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[overridesSha,scheduleDate]);
+
   const buildSavePayload=React.useCallback((overrides={})=>{
     return {
       leagueMods: overrides.leagueMods ?? leagueMods,
@@ -606,9 +700,10 @@ function App(){
       mirrors:    overrides.mirrors    ?? mirrors,
       unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
       tvNames:    overrides.tvNames    ?? tvNames,
+      tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -681,8 +776,18 @@ function App(){
     return{final:w.filter(Boolean),mblocks:mb};
   },[asgn0,mirrors,activeTVs,presetPairs]);
 
-  const asgnd=useMemo(()=>final.filter(a=>a.tv!==-1),[final]);
-  const unasgd=useMemo(()=>final.filter(a=>a.tv===-1),[final]);
+  // Apply TV overrides on top of the scored final array
+  const finalWithOverrides=useMemo(()=>{
+    return final
+      .filter(evt=>!removedEvents.includes(evt.id))
+      .map(evt=>{
+        const ovr=tvOverrides.find(o=>o.eventId===evt.id);
+        if(!ovr) return evt;
+        return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
+      });
+  },[final,tvOverrides,removedEvents]);
+  const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
+  const unasgd=useMemo(()=>finalWithOverrides.filter(a=>a.tv===-1),[finalWithOverrides]);
 
   const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave({leagueMods,favTeams,prioOvr,mirrors:n,unknownLeagues});return n;});
   const bumpAndAssign=e=>{
@@ -691,12 +796,25 @@ function App(){
     if(!b)return;
     setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});setSel(null);
   };
-  const selEv=sel?final.find(a=>a&&a.id===sel):null;
+  const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
 
-  const TMINS=BAR_CLOSE-BAR_OPEN;
-  const pct=m=>((m-BAR_OPEN)/TMINS*100).toFixed(2)+"%";
+  // Dynamic time window based on actual events + current time trimming
+  const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
+  const earliestEvt=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
+  const latestEvt=allEvtMins.length?Math.ceil(Math.max(...allEvtMins)/60)*60:BAR_CLOSE;
+  // On today's view, trim left edge to current hour but never clip still-active events
+  const activeEvts=[...final].filter(Boolean).filter(a=>a.endMin>nowMin);
+  const earliestActive=activeEvts.length?Math.floor(Math.min(...activeEvts.map(a=>a.startMin))/60)*60:earliestEvt;
+  const GRID_START=isToday?Math.max(earliestEvt,Math.min(earliestActive,Math.floor(nowMin/60)*60)):earliestEvt;
+  const GRID_END=latestEvt;
+  const TMINS=GRID_END-GRID_START;
+  const pct=m=>((m-GRID_START)/TMINS*100).toFixed(2)+"%";
   const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
-  const hrs=Array.from({length:18},(_,i)=>7+i);
+  // Clamped positioning: events that started before GRID_START are clipped at left edge
+  const clampedLeft=m=>((Math.max(m,GRID_START)-GRID_START)/TMINS*100).toFixed(2)+"%";
+  const clampedWidth=(startMin,dur)=>{const visStart=Math.max(startMin,GRID_START);const visEnd=startMin+dur;return Math.max(0,(visEnd-visStart)/TMINS*100).toFixed(2)+"%";};
+  const hrsCount=Math.round(TMINS/60);
+  const hrs=Array.from({length:hrsCount},(_,i)=>GRID_START/60+i);
   const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
 
   const C={
@@ -732,6 +850,14 @@ function App(){
                 <span style={{marginLeft:8,color:syncStatus==="saved"?C.GRN:syncStatus==="saving"?"#fbbf24":syncStatus==="error"?"#ef4444":C.MT}}>
                   {syncStatus==="saved"?"✓":syncStatus==="saving"?"↑":syncStatus==="error"?"✗":""}
                 </span>
+                {(tvOverrides.length>0||removedEvents.length>0)&&(
+                  <button onClick={resetAllOverrides}
+                    style={{marginLeft:8,fontSize:9,padding:"1px 6px",borderRadius:4,cursor:"pointer",
+                      background:"rgba(239,68,68,0.1)",color:"#ef4444",
+                      border:"1px solid rgba(239,68,68,0.3)",fontFamily:"monospace"}}>
+                    ↺ RESET
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -752,10 +878,10 @@ function App(){
         <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
           <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#f97316":C.BD2}`,background:activePreset==="Mirror 1"?"rgba(249,115,22,0.15)":"transparent",color:activePreset==="Mirror 1"?"#f97316":C.MT}}>Mirror 1</button>
           <button onClick={()=>{
-            const tv14=new Set([0,1,2,3]);
-            const isActive=[...activeTVs].sort().join()==='0,1,2,3';
+            const tv14=new Set([0,1,2,9]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,9';
             setActiveTVs(isActive?new Set(TV_PRIO):tv14);
-          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,9'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.MT}}>TVs 1–4</button>
           <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
             {TV_PRIO.map(id=>{
               const on=activeTVs.has(id);
@@ -784,27 +910,35 @@ function App(){
         <div style={{overflowX:"auto",paddingBottom:120}}>
           <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
+
           </div>
-          {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+          {TV_DISPLAY.filter(id=>activeTVs.has(id)).map(tvId=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
             const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
-            const fb=fillBlocks(tvId,asgnd);
+            const fb=fillBlocks(tvId,asgnd,tvFillCh);
             const mb=mblocks.filter(m=>m&&m.tv===tvId);
             return(
               <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?"#f97316":tvId<=2?"#3b82f6":"#1e2d45"}`}}>
                 <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
                   <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
-                  <div style={{fontSize:9,color:C.MT,marginTop:1}}>{tv.sz}"</div>
+                  <div style={{fontSize:8,color:C.MT,marginTop:1,lineHeight:1.4}}>{tv.brand}</div><div style={{fontSize:8,color:C.MT,lineHeight:1.4}}>{tv.sz}"</div><div style={{fontSize:8,color:"#67e8f9",lineHeight:1.4}}>{tv.input}</div>
                 </div>
                 <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
                   {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
+                  {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
+                    <div style={{position:"absolute",left:pct(nowMin),top:0,bottom:0,width:2,
+                      background:"#ef4444",zIndex:10,pointerEvents:"none",borderRadius:1}}>
+                      <div style={{position:"absolute",top:-4,left:-3,width:8,height:8,
+                        borderRadius:"50%",background:"#ef4444"}}/>
+                    </div>
+                  )}
                   {fb.map((f,i)=>(
-                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:pct(f.startMin),width:wpct(f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
+                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:clampedLeft(f.startMin),width:clampedWidth(f.startMin,f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:pct(m.startMin),width:wpct(m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:pct(a.startMin),width:wpct(a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
@@ -824,18 +958,40 @@ function App(){
           {[...final].filter(Boolean).sort((a,b)=>a.startMin-b.startMin).map(a=>{
             const c=sc(a);
             const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
+            const isRemoved=removedEvents.includes(a.id);
             return(
-            <div key={a.id} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",background:isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+            <div key={a.id} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
               <div>
                 <div style={{fontSize:12,fontWeight:600,color:isNow?C.GRN:"#f1f5f9"}}>{m2t(a.startMin)}</div>
                 <div style={{fontSize:9,color:C.MT,marginTop:1}}>{m2t(a.endMin)}</div>
               </div>
               <div style={{minWidth:0}}>
-                <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.isFave?"⭐ ":""}{a.name}</div>
+                <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{a.name}</div>
                 <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
               </div>
               <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}{getSpectrumCh(a.channel)!==null&&<span style={{color:"#67e8f9",marginLeft:3,fontSize:9}}>#{getSpectrumCh(a.channel)}</span>}</div>
-              <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 0"}}>{a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}</div>
+              <div style={{display:"flex",flexDirection:"column",gap:3,alignItems:"center"}}>
+                {isRemoved?(
+                  <>
+                    <div style={{fontSize:9,fontWeight:800,color:"#ef4444",textAlign:"center",
+                      background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.4)",
+                      borderRadius:4,padding:"2px 5px",letterSpacing:"0.05em"}}>
+                      🚫 OFF
+                    </div>
+                    <button onClick={()=>restoreToGrid(a.id)}
+                      style={{fontSize:8,padding:"2px 5px",borderRadius:3,background:"rgba(34,197,94,0.12)",
+                        color:"#22c55e",border:"1px solid rgba(34,197,94,0.4)",cursor:"pointer",
+                        fontFamily:"monospace",fontWeight:700,whiteSpace:"nowrap"}}>
+                      ↩ RESTORE
+                    </button>
+                  </>
+                ):(
+                  <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",
+                    background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 4px"}}>
+                    {a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}
+                  </div>
+                )}
+              </div>
             </div>
           );})}
         </div>
@@ -918,6 +1074,33 @@ function App(){
               ))}
             </div>
           </div>
+
+          {/* Dead Time Channels */}
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>Dead Time Channels</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>Channel shown on each TV when no event is scheduled</div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>
+              {TV_PRIO.map(id=>{
+                const tv=TVS[id];
+                const tvLabel=tvNames[id]||tv.name;
+                return(
+                  <div key={id} style={{display:"flex",flexDirection:"column",gap:3}}>
+                    <div style={{fontSize:9,fontWeight:600,color:C.DM}}>{tvLabel} · {tv.sz}"</div>
+                    <select
+                      value={tvFillCh[id]||FILLS[TV_PRIO.indexOf(id)%FILLS.length].name}
+                      onChange={ev=>updateFillCh(id,ev.target.value)}
+                      style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",
+                        fontSize:11,padding:"4px 8px",cursor:"pointer"}}>
+                      {FILLS.map(f=>(
+                        <option key={f.name} value={f.name}>{f.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 16px 6px"}}>
             <div>
               <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>League Modifiers</div>
@@ -1038,7 +1221,7 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
       )}
 
       {selEv&&(
-        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
+        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",maxHeight:"70vh",overflowY:"auto",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
               <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
@@ -1064,13 +1247,101 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
             <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
               {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
                 if(tvId===selEv.tv)return null;
-                const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;const mir=mirrors[selEv.id]?.has(tvId);
+                const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;const mirSet=mirrors[selEv.id] instanceof Set?mirrors[selEv.id]:new Set(mirrors[selEv.id]||[]);const mir=mirSet.has(tvId);
                 const disp=final.find(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
                 return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:"pointer",background:mir?"#164e63":disp?"#2d1a0a":"#1f2937",color:mir?"#a5f3fc":disp?"#fb923c":C.MT,border:`1px solid ${mir?"#22d3ee":disp?"#c2410c":C.BD2}`}} onClick={()=>toggleMirror(selEv.id,tvId)}>{mir?"📡 ":disp?"⚡ ":""}{tv.name}{mir?" ✓":""}</button>);
               })}
             </div>
-            {mirrors[selEv.id]?.size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
+            {(mirrors[selEv.id] instanceof Set?mirrors[selEv.id]:new Set(mirrors[selEv.id]||[])).size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
           </>)}
+
+          {/* ── OVERRIDE ASSIGNMENT ── */}
+          <div style={{marginTop:10,borderTop:`1px solid ${C.BD}`,paddingTop:8}}>
+            <div style={{fontFamily:"monospace",fontSize:10,color:"#f59e0b",marginBottom:6}}>⏱ OVERRIDE ASSIGNMENT</div>
+            {ovrForm&&ovrForm.eventId===selEv.id?(
+              <div style={{background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.3)",borderRadius:6,padding:"8px"}}>
+                <div style={{display:"flex",gap:4,alignItems:"center",marginBottom:6,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TV:</span>
+                  {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                    const tvLabel=tvNames[tvId]||TVS[tvId].name;
+                    const isActive=ovrForm.tvId===tvId;
+                    return(<button key={tvId} onClick={()=>setOvrForm(f=>({...f,tvId}))}
+                      style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,cursor:"pointer",
+                        background:isActive?"#f59e0b":"transparent",color:isActive?"#000":C.MT,
+                        border:`1px solid ${isActive?"#f59e0b":C.BD2}`}}>{tvLabel}</button>);
+                  })}
+                </div>
+                <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,flexWrap:"wrap"}}>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FROM:</span>
+                    <input type="time"
+                      value={`${String(Math.floor(ovrForm.fromMin/60)).padStart(2,'0')}:${String(ovrForm.fromMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,fromMin:+h*60+ +m}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TO:</span>
+                    <input type="time"
+                      value={`${String(Math.floor(ovrForm.toMin/60)).padStart(2,'0')}:${String(ovrForm.toMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,toMin:+h*60+ +m}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                </div>
+                <div style={{display:"flex",gap:6}}>
+                  <button disabled={ovrSaving} onClick={()=>{
+                    if(ovrForm.tvId===null){alert("Pick a TV first");return;}
+                    if(ovrForm.toMin<=ovrForm.fromMin){alert("End time must be after start");return;}
+                    const conflict=final.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
+                      !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin));
+                    if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||TVS[ovrForm.tvId].name} already has "${conflict.name}" in that window. Override anyway?`))return;
+                    saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
+                  }} style={{padding:"4px 12px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                    background:"#f59e0b",color:"#000",border:"none",cursor:"pointer",fontWeight:700}}>
+                    {ovrSaving?"SAVING...":"SAVE OVERRIDE"}
+                  </button>
+                  <button onClick={()=>setOvrForm(null)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"transparent",color:C.MT,border:`1px solid ${C.BD}`,cursor:"pointer"}}>
+                    CANCEL
+                  </button>
+                  <button onClick={()=>removeFromGrid(selEv.id)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"rgba(239,68,68,0.1)",color:"#ef4444",
+                      border:"1px solid rgba(239,68,68,0.4)",cursor:"pointer",marginLeft:"auto"}}>
+                    🚫 REMOVE FROM GRID
+                  </button>
+                </div>
+              </div>
+            ):(
+              <div style={{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}}>
+                <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:null,fromMin:selEv.startMin,toMin:selEv.endMin})}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
+                    background:"rgba(245,158,11,0.1)",color:"#f59e0b",border:"1px solid rgba(245,158,11,0.4)"}}>
+                  + SET OVERRIDE
+                </button>
+                <button onClick={()=>removeFromGrid(selEv.id)}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
+                    background:"rgba(239,68,68,0.1)",color:"#ef4444",border:"1px solid rgba(239,68,68,0.4)"}}>
+                  🚫 REMOVE FROM GRID
+                </button>
+                {tvOverrides.filter(o=>o.eventId===selEv.id).map(o=>(
+                  <div key={`${o.eventId}-${o.tvId}`} style={{display:"flex",gap:4,alignItems:"center",
+                    background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.2)",
+                    borderRadius:4,padding:"2px 6px"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:"#f59e0b"}}>
+                      {tvNames[o.tvId]||TVS[o.tvId].name} {String(Math.floor(o.startMin/60)).padStart(2,'0')}:{String(o.startMin%60).padStart(2,'0')}–{String(Math.floor(o.endMin/60)).padStart(2,'0')}:{String(o.endMin%60).padStart(2,'0')}
+                    </span>
+                    <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:o.tvId,fromMin:o.startMin,toMin:o.endMin})}
+                      style={{background:"none",border:"none",color:"#f59e0b",cursor:"pointer",fontSize:10,padding:0,lineHeight:1}}
+                      title="Edit override">✏️</button>
+                    <button onClick={()=>removeOverride(selEv.id,o.tvId)}
+                      style={{background:"none",border:"none",color:"#ef4444",cursor:"pointer",fontSize:11,padding:0,lineHeight:1}}
+                      title="Remove override">✕</button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
