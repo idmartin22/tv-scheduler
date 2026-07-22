@@ -4,12 +4,12 @@
   "events": [
     {
       "id": 1,
-      "time": "13:10",
-      "name": "Kansas City Royals @ Detroit Tigers",
+      "time": "16:10",
+      "name": "Colorado Rockies @ Milwaukee Brewers",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "ESPN UNLIMITED"
+        "MLB Network"
       ],
       "dur": 180,
       "_st": {
@@ -32,13 +32,12 @@
     },
     {
       "id": 2,
-      "time": "16:10",
-      "name": "San Diego Padres @ Miami Marlins",
+      "time": "18:40",
+      "name": "Kansas City Royals @ Detroit Tigers",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "FOX SPORTS 1",
-        "FOX DEPORTES"
+        "FOX"
       ],
       "dur": 180,
       "_st": {
@@ -61,12 +60,12 @@
     },
     {
       "id": 3,
-      "time": "18:10",
-      "name": "Cleveland Guardians @ Tampa Bay Rays",
+      "time": "18:45",
+      "name": "New York Yankees @ Philadelphia Phillies",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "GUARDIANS.TV"
+        "Apple TV"
       ],
       "dur": 180,
       "_st": {
@@ -89,13 +88,12 @@
     },
     {
       "id": 4,
-      "time": "19:15",
-      "name": "Los Angeles Dodgers @ New York Mets",
+      "time": "18:45",
+      "name": "Arizona Diamondbacks @ Washington Nationals",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "FOX",
-        "FOX DEPORTES"
+        "FOX"
       ],
       "dur": 180,
       "_st": {
@@ -118,12 +116,14 @@
     },
     {
       "id": 5,
-      "time": "19:15",
-      "name": "Seattle Mariners @ Texas Rangers",
+      "time": "19:10",
+      "name": "Los Angeles Dodgers @ New York Mets",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "FOX"
+        "CBS",
+        "ESPN Unlimited",
+        "Paramount+"
       ],
       "dur": 180,
       "_st": {
@@ -146,12 +146,13 @@
     },
     {
       "id": 6,
-      "time": "05:00",
-      "name": "Fukuoka @ Seibu Lions",
+      "time": "19:10",
+      "name": "Cleveland Guardians @ Tampa Bay Rays",
       "sport": "Baseball",
-      "league": "NPB",
+      "league": "MLB",
       "ch": [
-        "PRIME VIDEO"
+        "Guardians.TV",
+        "MLB Network"
       ],
       "dur": 180,
       "_st": {
@@ -174,13 +175,70 @@
     },
     {
       "id": 7,
-      "time": "23:00",
-      "name": "Taranaki Mountainairs @ Auckland Tuatara",
-      "sport": "Basketball",
-      "league": "NBL",
+      "time": "19:15",
+      "name": "Toronto Blue Jays @ Boston Red Sox",
+      "sport": "Baseball",
+      "league": "MLB",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "Apple TV"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 15,
+        "l": "Regular season game"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 8,
+      "time": "22:15",
+      "name": "Los Angeles Angels @ San Francisco Giants",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 15,
+        "l": "Regular season game"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 9,
+      "time": "20:00",
+      "name": "WNBA Shooting Stars and 3-Point Contest",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": [
+        "ESPN",
+        "Disney+",
+        "ESPN Select"
       ],
       "dur": 150,
       "_st": {
@@ -202,72 +260,15 @@
       "_score": 15
     },
     {
-      "id": 8,
-      "time": "18:30",
-      "name": "New York Red Bulls @ Charlotte FC",
-      "sport": "Soccer",
-      "league": "MLS",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 9,
-      "time": "19:00",
-      "name": "Columbus Crew @ FC Cincinnati",
-      "sport": "Soccer",
-      "league": "MLS",
-      "ch": [
-        "FOX SPORTS 1",
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 30,
-        "l": "Rivalry +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 30
-    },
-    {
       "id": 10,
-      "time": "19:30",
-      "name": "D.C. United @ Toronto FC",
-      "sport": "Soccer",
-      "league": "MLS",
+      "time": "19:00",
+      "name": "Boeheim's Army - Hall In",
+      "sport": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
       "ch": [
-        "APPLE TV"
+        "FOX Sports 2"
       ],
-      "dur": 120,
+      "dur": 150,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -288,14 +289,14 @@
     },
     {
       "id": 11,
-      "time": "19:30",
-      "name": "CF Montreal @ Inter Miami",
-      "sport": "Soccer",
-      "league": "MLS",
+      "time": "21:00",
+      "name": "AfterShocks - The Enchantment",
+      "sport": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
       "ch": [
-        "APPLE TV"
+        "FOX Sports 2"
       ],
-      "dur": 120,
+      "dur": 150,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -316,12 +317,12 @@
     },
     {
       "id": 12,
-      "time": "19:30",
-      "name": "New England Revolution @ Atlanta United",
+      "time": "22:00",
+      "name": "Portland Thorns @ Gotham FC",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "NWSL",
       "ch": [
-        "APPLE TV"
+        "Prime Video"
       ],
       "dur": 120,
       "_st": {
@@ -344,12 +345,13 @@
     },
     {
       "id": 13,
-      "time": "19:30",
-      "name": "New York City @ Chicago Fire",
+      "time": "20:00",
+      "name": "Birmingham Legion @ New Mexico United",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "USL Championship",
       "ch": [
-        "APPLE TV"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 120,
       "_st": {
@@ -372,12 +374,12 @@
     },
     {
       "id": 14,
-      "time": "19:30",
-      "name": "Orlando City @ Nashville SC",
+      "time": "23:00",
+      "name": "Atlante @ Am\u00e9rica",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Liga MX",
       "ch": [
-        "APPLE TV"
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -400,12 +402,12 @@
     },
     {
       "id": 15,
-      "time": "19:30",
-      "name": "Philadelphia Union @ Seattle Sounders",
+      "time": "18:00",
+      "name": "Racing Club @ Gimnasia La Plata",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Primera Division",
       "ch": [
-        "APPLE TV"
+        "FOX Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -428,12 +430,12 @@
     },
     {
       "id": 16,
-      "time": "20:30",
-      "name": "Houston Dynamo @ Austin",
+      "time": "18:00",
+      "name": "HFX Wanderers @ Supra du Quebec",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Canadian Premier League",
       "ch": [
-        "APPLE TV"
+        "FOX Soccer Plus"
       ],
       "dur": 120,
       "_st": {
@@ -456,12 +458,12 @@
     },
     {
       "id": 17,
-      "time": "20:30",
-      "name": "Minnesota United @ Vancouver Whitecaps",
+      "time": "22:00",
+      "name": "Vancouver FC @ Cavalry",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Canadian Premier League",
       "ch": [
-        "APPLE TV"
+        "FOX Soccer Plus"
       ],
       "dur": 120,
       "_st": {
@@ -484,12 +486,12 @@
     },
     {
       "id": 18,
-      "time": "20:30",
-      "name": "St. Louis City @ Colorado Rapids",
+      "time": "16:00",
+      "name": "Guatemala U20 @ Costa Rica U20",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "CONCACAF U20",
       "ch": [
-        "APPLE TV"
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -512,13 +514,12 @@
     },
     {
       "id": 19,
-      "time": "21:30",
-      "name": "San Diego @ FC Dallas",
+      "time": "19:00",
+      "name": "Mexico U20 @ Antigua and Barbuda U20",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "CONCACAF U20",
       "ch": [
-        "FOX SPORTS 1",
-        "APPLE TV"
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -541,12 +542,12 @@
     },
     {
       "id": 20,
-      "time": "22:30",
-      "name": "Los Angeles FC @ Sporting Kansas City",
+      "time": "12:00",
+      "name": "Radomiak Radom @ Wieczysta Krak\u00f3w",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Ekstraklasa",
       "ch": [
-        "APPLE TV"
+        "beIN SPORTS Xtra"
       ],
       "dur": 120,
       "_st": {
@@ -569,12 +570,12 @@
     },
     {
       "id": 21,
-      "time": "22:30",
-      "name": "Portland Timbers @ Real Salt Lake",
+      "time": "14:30",
+      "name": "Pogo\u0144 Szczecin @ Legia Warszawa",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Ekstraklasa",
       "ch": [
-        "APPLE TV"
+        "beIN SPORTS Xtra"
       ],
       "dur": 120,
       "_st": {
@@ -597,12 +598,12 @@
     },
     {
       "id": 22,
-      "time": "22:30",
-      "name": "San Jose Earthquakes @ Los Angeles Galaxy",
+      "time": "21:15",
+      "name": "Deportivo Cali @ Jaguares de C\u00f3rdoba",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Primera A",
       "ch": [
-        "APPLE TV"
+        "FOX Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -625,14 +626,14 @@
     },
     {
       "id": 23,
-      "time": "17:00",
-      "name": "Boston Legacy FC @ Kansas City Current",
-      "sport": "Soccer",
-      "league": "NWSL",
+      "time": "10:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ION"
+        "NFL Network"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -653,14 +654,15 @@
     },
     {
       "id": 24,
-      "time": "19:45",
-      "name": "North Carolina Courage @ Utah Royals",
-      "sport": "Soccer",
-      "league": "NWSL",
+      "time": "11:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ION"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -681,15 +683,16 @@
     },
     {
       "id": 25,
-      "time": "19:00",
-      "name": "Detroit City @ Las Vegas Lights",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "12:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ESPN2",
-        "ESPN UNLIMITED"
+        "NFL Network",
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -710,15 +713,16 @@
     },
     {
       "id": 26,
-      "time": "19:00",
-      "name": "Indy Eleven @ Loudoun United",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "15:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "ESPN2",
+        "NFL Network",
+        "ESPN Unlimited"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -739,15 +743,16 @@
     },
     {
       "id": 27,
-      "time": "19:00",
-      "name": "Miami FC @ Tampa Bay Rowdies",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "16:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "NFL Network",
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -768,15 +773,16 @@
     },
     {
       "id": 28,
-      "time": "19:00",
-      "name": "Pittsburgh Riverhounds @ Rhode Island",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "17:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "ESPN",
+        "NFL Network",
+        "ESPN Unlimited"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -797,15 +803,16 @@
     },
     {
       "id": 29,
-      "time": "19:00",
-      "name": "Brooklyn FC @ San Antonio FC",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "18:00",
+      "name": "NFL Flag Championship",
+      "sport": "Football",
+      "league": "Other",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "ESPN2",
+        "NFL Network",
+        "ESPN Unlimited"
       ],
-      "dur": 120,
+      "dur": 210,
       "_st": {
         "v": 15,
         "l": "Regular season game"
@@ -826,18 +833,18 @@
     },
     {
       "id": 30,
-      "time": "20:30",
-      "name": "FC Tulsa @ Lexington",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "07:45",
+      "name": "3M Open",
+      "sport": "Golf",
+      "league": "PGA Tour",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
         "v": 15,
-        "l": "Regular season game"
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -855,18 +862,17 @@
     },
     {
       "id": 31,
-      "time": "21:00",
-      "name": "El Paso Locomotive @ Sporting JAX",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "16:00",
+      "name": "3M Open",
+      "sport": "Golf",
+      "league": "PGA Tour",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "Golf Channel USA"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
         "v": 15,
-        "l": "Regular season game"
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -884,18 +890,17 @@
     },
     {
       "id": 32,
-      "time": "22:00",
-      "name": "Monterey Bay @ Orange County SC",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "08:00",
+      "name": "LIV Golf UK",
+      "sport": "Golf",
+      "league": "LIV Golf",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "FOX Sports 2"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
         "v": 15,
-        "l": "Regular season game"
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -913,19 +918,17 @@
     },
     {
       "id": 33,
-      "time": "22:00",
-      "name": "Oakland Roots @ Sacramento Republic",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "08:30",
+      "name": "The Senior Open",
+      "sport": "Golf",
+      "league": "PGA Tour Champions",
       "ch": [
-        "FOX",
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "Golf Channel USA"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
         "v": 15,
-        "l": "Regular season game"
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -943,18 +946,18 @@
     },
     {
       "id": 34,
-      "time": "22:30",
-      "name": "Phoenix Rising @ Hartford Athletic",
-      "sport": "Soccer",
-      "league": "USL Championship",
+      "time": "13:00",
+      "name": "Brickyard 400",
+      "sport": "Motorsports",
+      "league": "NASCAR Cup Series",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "truTV",
+        "HBO Max"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 41,
+        "l": "NASCAR: brickyard +41"
       },
       "_sk": {
         "v": 0,
@@ -968,22 +971,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 41
     },
     {
       "id": 35,
-      "time": "19:00",
-      "name": "Charlotte Independence @ Richmond Kickers",
-      "sport": "Soccer",
-      "league": "USL League One",
+      "time": "12:00",
+      "name": "Pennzoil 250",
+      "sport": "Motorsports",
+      "league": "NASCAR O'Reilly Auto Parts Series",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "CW"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -997,22 +999,22 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 36,
-      "time": "19:00",
-      "name": "Chattanooga Red Wolves @ One Knoxville",
-      "sport": "Soccer",
-      "league": "USL League One",
+      "time": "15:00",
+      "name": "NCTS Race at IRP",
+      "sport": "Motorsports",
+      "league": "NASCAR Craftsman Truck Series",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "FOX Sports 1",
+        "FOX One"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -1026,22 +1028,22 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 37,
-      "time": "19:00",
-      "name": "NY Cosmos @ Boise",
-      "sport": "Soccer",
-      "league": "USL League One",
+      "time": "16:05",
+      "name": "NCTS Race at IRP",
+      "sport": "Motorsports",
+      "league": "NASCAR Craftsman Truck Series",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "FOX Sports 1",
+        "FOX One"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -1055,22 +1057,22 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 38,
-      "time": "20:30",
-      "name": "Corpus Christi @ Greenville Triumph",
-      "sport": "Soccer",
-      "league": "USL League One",
+      "time": "20:00",
+      "name": "NCTS Race at IRP",
+      "sport": "Motorsports",
+      "league": "NASCAR Craftsman Truck Series",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "FOX Sports 1",
+        "FOX One"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -1084,22 +1086,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 39,
-      "time": "21:00",
-      "name": "Spokane Velocity @ Fort Wayne",
-      "sport": "Soccer",
-      "league": "USL League One",
+      "time": "07:30",
+      "name": "Hungarian Grand Prix",
+      "sport": "Motorsports",
+      "league": "Formula 1",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "Apple TV"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -1113,22 +1114,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 40,
-      "time": "23:00",
-      "name": "Alta @ Westchester SC",
-      "sport": "Soccer",
-      "league": "USL League One",
+      "time": "11:00",
+      "name": "Hungarian Grand Prix",
+      "sport": "Motorsports",
+      "league": "Formula 1",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "Apple TV"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -1142,23 +1142,22 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 41,
-      "time": "19:07",
-      "name": "Guadalajara @ Ju\u00e1rez",
-      "sport": "Soccer",
-      "league": "Liga MX",
+      "time": "17:30",
+      "name": "LiUNA! 150",
+      "sport": "Motorsports",
+      "league": "ARCA Menards Series",
       "ch": [
-        "PEACOCK",
-        "NBC UNIVERSO",
-        "TELEMUNDO"
+        "FOX Sports 1",
+        "FOX One"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 25,
+        "l": "NASCAR regular race +25"
       },
       "_sk": {
         "v": 0,
@@ -1172,24 +1171,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 25
     },
     {
       "id": 42,
-      "time": "23:00",
-      "name": "Tigres UANL @ Atl\u00e9tico San Luis",
-      "sport": "Soccer",
-      "league": "Liga MX",
+      "time": "05:00",
+      "name": "Hamburg Open",
+      "sport": "Tennis",
+      "league": "WTA",
       "ch": [
-        "PEACOCK",
-        "FOX DEPORTES",
-        "NBC UNIVERSO",
-        "TELEMUNDO"
+        "Tennis Channel"
       ],
-      "dur": 120,
+      "dur": 150,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -1203,21 +1199,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 10
     },
     {
       "id": 43,
-      "time": "17:00",
-      "name": "Cuba U20 @ El Salvador U20",
-      "sport": "Soccer",
-      "league": "CONCACAF U20",
+      "time": "06:00",
+      "name": "Hamburg Open",
+      "sport": "Tennis",
+      "league": "WTA",
       "ch": [
-        "FOX SOCCER PLUS"
+        "Tennis Channel"
       ],
-      "dur": 120,
+      "dur": 150,
       "_st": {
-        "v": 15,
-        "l": "Regular season game"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -1231,21 +1227,22 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15
+      "_score": 10
     },
     {
       "id": 44,
-      "time": "22:00",
-      "name": "United States U20 @ Haiti U20",
-      "sport": "Soccer",
-      "league": "CONCACAF U20",
+      "time": "20:00",
+      "name": "Professional Fighters League",
+      "sport": "Fighting",
+      "league": "MMA",
       "ch": [
-        "FOX SPORTS 2"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 180,
       "_st": {
         "v": 15,
-        "l": "Regular season game"
+        "l": "Boxing event +15"
       },
       "_sk": {
         "v": 0,
@@ -1263,12 +1260,12 @@
     },
     {
       "id": 45,
-      "time": "11:30",
-      "name": "G\u00f3rnik Zabrze @ \u015al\u0105sk Wroc\u0142aw",
-      "sport": "Soccer",
-      "league": "Ekstraklasa",
+      "time": "06:10",
+      "name": "West Coast Eagles @ Fremantle Dockers",
+      "sport": "Aus Football",
+      "league": "AFL",
       "ch": [
-        "BEIN SPORTS XTRA"
+        "FOX Soccer Plus"
       ],
       "dur": 120,
       "_st": {
@@ -1291,12 +1288,12 @@
     },
     {
       "id": 46,
-      "time": "14:15",
-      "name": "Lech Pozna\u0144 @ Cracovia Krak\u00f3w",
-      "sport": "Soccer",
-      "league": "Ekstraklasa",
+      "time": "23:05",
+      "name": "Gold Coast Suns @ Carlton Blues",
+      "sport": "Aus Football",
+      "league": "AFL",
       "ch": [
-        "BEIN SPORTS XTRA"
+        "FOX Sports 2"
       ],
       "dur": 120,
       "_st": {
@@ -1319,1036 +1316,13 @@
     },
     {
       "id": 47,
-      "time": "18:00",
-      "name": "Liverpool FC @ Sunderland",
-      "sport": "Soccer",
-      "league": "Football Club Friendlies",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN DEPORTES"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 48,
-      "time": "19:30",
-      "name": "Leeds United @ Wrexham",
-      "sport": "Soccer",
-      "league": "Football Club Friendlies",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN DEPORTES"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 49,
-      "time": "12:00",
-      "name": "NFL Flag Championship",
-      "sport": "Football",
-      "league": "Other",
-      "ch": [
-        "ESPN",
-        "NFL NETWORK",
-        "ESPN UNLIMITED"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 50,
-      "time": "14:00",
-      "name": "NFL Flag Championship",
-      "sport": "Football",
-      "league": "Other",
-      "ch": [
-        "ESPN",
-        "NFL NETWORK",
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 51,
-      "time": "16:00",
-      "name": "NFL Flag Championship",
-      "sport": "Football",
-      "league": "Other",
-      "ch": [
-        "ESPN",
-        "NFL NETWORK",
-        "ESPN UNLIMITED"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 52,
-      "time": "17:00",
-      "name": "NFL Flag Championship",
-      "sport": "Football",
-      "league": "Other",
-      "ch": [
-        "ABC",
-        "NFL NETWORK",
-        "ESPN UNLIMITED"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 53,
-      "time": "13:00",
-      "name": "3M Open",
-      "sport": "Golf",
-      "league": "PGA Tour",
-      "ch": [
-        "GOLF CHANNEL USA"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 15,
-        "l": "Golf event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 54,
-      "time": "15:00",
-      "name": "3M Open",
-      "sport": "Golf",
-      "league": "PGA Tour",
-      "ch": [
-        "CBS",
-        "PARAMOUNT+"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 15,
-        "l": "Golf event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 55,
       "time": "08:00",
-      "name": "LIV Golf UK",
-      "sport": "Golf",
-      "league": "LIV Golf",
-      "ch": [
-        "FOX"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 15,
-        "l": "Golf event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 56,
-      "time": "09:00",
-      "name": "LIV Golf UK",
-      "sport": "Golf",
-      "league": "LIV Golf",
-      "ch": [
-        "FOX"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 15,
-        "l": "Golf event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 57,
-      "time": "13:30",
-      "name": "Brickyard 400",
-      "sport": "Motorsports",
-      "league": "NASCAR Cup Series",
-      "ch": [
-        "TRUTV",
-        "HBO MAX"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 41,
-        "l": "NASCAR: brickyard +41"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 41
-    },
-    {
-      "id": 58,
-      "time": "12:00",
-      "name": "Pennzoil 250",
-      "sport": "Motorsports",
-      "league": "NASCAR O'Reilly Auto Parts Series",
-      "ch": [
-        "CW"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 59,
-      "time": "16:00",
-      "name": "Pennzoil 250",
-      "sport": "Motorsports",
-      "league": "NASCAR O'Reilly Auto Parts Series",
-      "ch": [
-        "CW"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 60,
-      "time": "06:30",
-      "name": "Hungarian Grand Prix",
-      "sport": "Motorsports",
-      "league": "Formula 1",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 61,
-      "time": "10:00",
-      "name": "Hungarian Grand Prix",
-      "sport": "Motorsports",
-      "league": "Formula 1",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 62,
-      "time": "08:00",
-      "name": "Hamburg Open",
-      "sport": "Tennis",
-      "league": "WTA",
-      "ch": [
-        "TENNIS CHANNEL"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 10,
-        "l": "Tennis event +10"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 10
-    },
-    {
-      "id": 63,
-      "time": "09:30",
-      "name": "Hamburg Open",
-      "sport": "Tennis",
-      "league": "WTA",
-      "ch": [
-        "TENNIS CHANNEL"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 10,
-        "l": "Tennis event +10"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 10
-    },
-    {
-      "id": 64,
-      "time": "19:30",
-      "name": "Professional Fighters League",
-      "sport": "Fighting",
-      "league": "MMA",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 65,
-      "time": "22:00",
-      "name": "Professional Fighters League",
-      "sport": "Fighting",
-      "league": "MMA",
-      "ch": [
-        "ESPN",
-        "ESPN UNLIMITED",
-        "ESPN DEPORTES"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 66,
-      "time": "11:00",
-      "name": "Khalil Rountree @ Magomed Ankalaev",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 67,
-      "time": "11:00",
-      "name": "David Martinez @ Umar Nurmagomedov",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 68,
-      "time": "11:00",
-      "name": "Ramazan Temirov @ Stephen Erceg",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 69,
-      "time": "11:00",
-      "name": "Tyrell Fortune @ Rizvan Kuniev",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 70,
-      "time": "11:00",
-      "name": "Thomas Petersen @ Valter Walker",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 71,
-      "time": "11:00",
-      "name": "Uran Satybaldiev @ Dustin Jacoby",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 72,
-      "time": "11:00",
-      "name": "Axel Sola @ Ismael Bonfim",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 73,
-      "time": "11:00",
-      "name": "Magomed Tuchalov @ Brendson Ribeiro",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 74,
-      "time": "11:00",
-      "name": "Wellington Turman @ Islam Dulatov",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 75,
-      "time": "11:00",
-      "name": "Abubakar Vagaev @ Magomedrasul Gasanov",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 76,
-      "time": "11:00",
-      "name": "Abdul Hussein @ Muin Gafurov",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 77,
-      "time": "11:00",
-      "name": "Mike Davis @ Nurullo Aliev",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 78,
-      "time": "11:00",
-      "name": "Sam Patterson @ Santiago Ponzinibbio",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 79,
-      "time": "11:00",
-      "name": "Magomed Zaynukov @ Damian Rzepecki",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 80,
-      "time": "12:00",
-      "name": "Bogdan Guskov @ Magomed Ankalaev",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
-      "id": 81,
-      "time": "05:40",
-      "name": "Richmond Tigers @ Western Bulldogs",
-      "sport": "Aus Football",
-      "league": "AFL",
-      "ch": [
-        "FOX SOCCER PLUS"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 82,
-      "time": "23:10",
-      "name": "Port Adelaide Power @ Brisbane Lions",
-      "sport": "Aus Football",
-      "league": "AFL",
-      "ch": [
-        "FOX SOCCER PLUS"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 83,
-      "time": "05:20",
-      "name": "Le Bourg-d'Oisans - Alpe d'Huez",
+      "name": "Gap - Alpe d'Huez",
       "sport": "Cycling",
       "league": "Tour de France",
       "ch": [
-        "PEACOCK"
+        "NBC",
+        "Peacock"
       ],
       "dur": 120,
       "_st": {
@@ -2370,13 +1344,13 @@
       "_score": 15
     },
     {
-      "id": 84,
-      "time": "12:30",
+      "id": 48,
+      "time": "13:00",
       "name": "Saratoga Live",
       "sport": "Equestrian",
       "league": "Horse Racing",
       "ch": [
-        "FOX SPORTS 1"
+        "FOX Sports 2"
       ],
       "dur": 120,
       "_st": {
@@ -2398,212 +1372,99 @@
       "_score": 15
     },
     {
-      "id": 85,
+      "id": 49,
+      "time": "20:00",
+      "name": "Utah Archers @ Denver Outlaws",
+      "sport": "Lacrosse",
+      "league": "PLL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Regular season game"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 50,
+      "time": "22:30",
+      "name": "Philadelphia Waterdogs @ New York Atlas",
+      "sport": "Lacrosse",
+      "league": "PLL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Regular season game"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 51,
+      "time": "06:00",
+      "name": "Melbourne Storm @ South Sydney Rabbitohs",
+      "sport": "Rugby League",
+      "league": "NRL",
+      "ch": [
+        "FOX Sports 2"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Regular season game"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 52,
       "time": "15:00",
-      "name": "Saratoga Saturday",
-      "sport": "Equestrian",
-      "league": "Horse Racing",
-      "ch": [
-        "FOX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Equestrian event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 86,
-      "time": "18:00",
-      "name": "Saratoga Live",
-      "sport": "Equestrian",
-      "league": "Horse Racing",
-      "ch": [
-        "FOX SPORTS 2"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Equestrian event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 87,
-      "time": "14:00",
-      "name": "Boston Cannons @ Carolina Chaos",
-      "sport": "Lacrosse",
-      "league": "PLL",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 88,
-      "time": "18:30",
-      "name": "Maryland Whipsnakes @ Utah Archers",
-      "sport": "Lacrosse",
-      "league": "PLL",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 89,
-      "time": "21:00",
-      "name": "Philadelphia Waterdogs @ Denver Outlaws",
-      "sport": "Lacrosse",
-      "league": "PLL",
-      "ch": [
-        "ESPN2",
-        "ESPN UNLIMITED"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 90,
-      "time": "10:00",
-      "name": "Huddersfield Giants @ York RLFC",
+      "name": "St Helens @ Wigan",
       "sport": "Rugby League",
       "league": "Super League",
       "ch": [
-        "FOX SOCCER PLUS"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 91,
-      "time": "15:00",
-      "name": "Catalans Dragons @ Toulouse Olympique",
-      "sport": "Rugby League",
-      "league": "Super League",
-      "ch": [
-        "FOX SOCCER PLUS"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Regular season game"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 92,
-      "time": "14:00",
-      "name": "USATF Outdoor Championships",
-      "sport": "Athletics",
-      "league": "USATF Outdoor Championships",
-      "ch": [
-        "NBC"
+        "FOX Soccer Plus"
       ],
       "dur": 120,
       "_st": {
