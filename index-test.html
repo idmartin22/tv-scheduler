@@ -289,7 +289,7 @@ function matchLid(league) {
   const l=(league||"").toLowerCase();
   if(l.includes("world cup")) return "world-cup";
   if(l.includes("champions league")) return "ucl";
-  if(l.includes("premier league")) return "premier-league";
+  if(l.includes("premier league")&&!l.includes("canadian")&&!l.includes("scottish")&&!l.includes("welsh")&&!l.includes("irish")) return "premier-league";
   if(l.includes("la liga")) return "la-liga";
   if(l.includes("bundesliga")) return "bundesliga";
   if(l.includes("serie a")) return "serie-a";
