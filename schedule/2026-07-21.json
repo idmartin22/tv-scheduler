@@ -8,7 +8,7 @@
       "name": "Cincinnati Reds @ Seattle Mariners",
       "sport": "Baseball",
       "league": "MLB",
-      "ch": "MLB Network",
+      "ch": "MLB NETWORK",
       "dur": 180,
       "_st": {
         "v": 6,
@@ -23,13 +23,39 @@
         "l": "Standard matchup +2"
       },
       "_mq": {
-        "v": 3,
-        "l": "MLB on MLB Network +3"
+        "v": 1,
+        "l": "MLB on MLB NETWORK +1"
       },
-      "_score": 13
+      "_score": 11
     },
     {
       "id": 2,
+      "time": "21:00",
+      "name": "Purple Reign - JHX Hoops",
+      "sport": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
+      "ch": "FOX SPORTS 1",
+      "dur": 150,
+      "_st": {
+        "v": 3,
+        "l": "The Basketball Tournament (TBT) +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "The Basketball Tournament (TBT) on FOX SPORTS 1 +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 3,
       "time": "21:00",
       "name": "Cruz Azul @ Puebla",
       "sport": "Soccer",
@@ -55,7 +81,7 @@
       "_score": 8
     },
     {
-      "id": 3,
+      "id": 4,
       "time": "23:05",
       "name": "Toluca @ Pumas UNAM",
       "sport": "Soccer",
@@ -81,38 +107,12 @@
       "_score": 8
     },
     {
-      "id": 4,
-      "time": "20:30",
-      "name": "UCV @ Santos",
-      "sport": "Soccer",
-      "league": "Copa Sudamericana",
-      "ch": "BEIN USA",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Copa Sudamericana +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Copa Sudamericana on BEIN USA +1"
-      },
-      "_score": 8
-    },
-    {
       "id": 5,
       "time": "21:00",
       "name": "Little League Softball Regionals",
       "sport": "Softball",
       "league": "Little League Softball",
-      "ch": "ESPN Unlimited",
+      "ch": "ESPN UNLIMITED",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -128,7 +128,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Little League Softball on ESPN Unlimited +1"
+        "l": "Little League Softball on ESPN UNLIMITED +1"
       },
       "_score": 8
     }
