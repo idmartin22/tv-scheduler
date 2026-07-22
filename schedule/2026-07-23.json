@@ -138,7 +138,7 @@
       "name": "Ocean State Waves - North Adams SteepleCATS",
       "sport": "Baseball",
       "league": "Collegiate Baseball League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 180,
       "_st": {
         "v": 3,
@@ -154,7 +154,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Collegiate Baseball League on ESPN Select +1"
+        "l": "Collegiate Baseball League on ESPN Unlimited +1"
       },
       "_score": 8
     },
@@ -164,7 +164,7 @@
       "name": "Valley Blue Sox - Vermont Mountaineers",
       "sport": "Baseball",
       "league": "Collegiate Baseball League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 180,
       "_st": {
         "v": 3,
@@ -180,7 +180,7 @@
       },
       "_mq": {
         "v": 1,
-        "l": "Collegiate Baseball League on ESPN Select +1"
+        "l": "Collegiate Baseball League on ESPN Unlimited +1"
       },
       "_score": 8
     },
@@ -212,63 +212,11 @@
     },
     {
       "id": 9,
-      "time": "19:00",
-      "name": "Hall In - Boeheim's Army",
-      "sport": "Basketball",
-      "league": "The Basketball Tournament (TBT)",
-      "ch": "FS1",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) on FS1 +3"
-      },
-      "_score": 10
-    },
-    {
-      "id": 10,
-      "time": "21:00",
-      "name": "The Enchantment - AfterShocks",
-      "sport": "Basketball",
-      "league": "The Basketball Tournament (TBT)",
-      "ch": "FS1",
-      "dur": 150,
-      "_st": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 3,
-        "l": "The Basketball Tournament (TBT) on FS1 +3"
-      },
-      "_score": 10
-    },
-    {
-      "id": 11,
       "time": "14:00",
       "name": "Be\u015fikta\u015f @ FC Midtjylland",
       "sport": "Soccer",
       "league": "UEFA Europa League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -284,17 +232,17 @@
       },
       "_mq": {
         "v": 1,
-        "l": "UEFA Europa League on ESPN Select +1"
+        "l": "UEFA Europa League on ESPN Unlimited +1"
       },
       "_score": 8
     },
     {
-      "id": 12,
+      "id": 10,
       "time": "15:00",
       "name": "Hajduk Split @ Pafos FC",
       "sport": "Soccer",
       "league": "UEFA Europa League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -310,17 +258,17 @@
       },
       "_mq": {
         "v": 1,
-        "l": "UEFA Europa League on ESPN Select +1"
+        "l": "UEFA Europa League on ESPN Unlimited +1"
       },
       "_score": 8
     },
     {
-      "id": 13,
+      "id": 11,
       "time": "14:00",
       "name": "Paksi SE @ Panathinaikos",
       "sport": "Soccer",
       "league": "UEFA Conference League",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 120,
       "_st": {
         "v": 3,
@@ -336,12 +284,90 @@
       },
       "_mq": {
         "v": 1,
-        "l": "UEFA Conference League on ESPN Select +1"
+        "l": "UEFA Conference League on ESPN Unlimited +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 12,
+      "time": "18:30",
+      "name": "Belgrano @ Rosario Central",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": "FOX DEPORTES",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Primera Division +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Primera Division on FOX DEPORTES +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 13,
+      "time": "18:00",
+      "name": "Bol\u00edvar @ Gr\u00eamio",
+      "sport": "Soccer",
+      "league": "Copa Sudamericana",
+      "ch": "BEIN USA",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Copa Sudamericana +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Copa Sudamericana on BEIN USA +1"
       },
       "_score": 8
     },
     {
       "id": 14,
+      "time": "20:30",
+      "name": "Boca Juniors @ O'Higgins",
+      "sport": "Soccer",
+      "league": "Copa Sudamericana",
+      "ch": "BEIN USA",
+      "dur": 120,
+      "_st": {
+        "v": 3,
+        "l": "Copa Sudamericana +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "Copa Sudamericana on BEIN USA +1"
+      },
+      "_score": 8
+    },
+    {
+      "id": 15,
       "time": "21:00",
       "name": "Edmonton Elks @ Saskatchewan Roughriders",
       "sport": "Football",
@@ -367,12 +393,12 @@
       "_score": 8
     },
     {
-      "id": 15,
+      "id": 16,
       "time": "07:45",
       "name": "3M Open",
       "sport": "Golf",
       "league": "PGA Tour",
-      "ch": "ESPN Select",
+      "ch": "ESPN Unlimited",
       "dur": 240,
       "_st": {
         "v": 5,
@@ -388,21 +414,21 @@
       },
       "_mq": {
         "v": 1,
-        "l": "PGA Tour on ESPN Select +1"
+        "l": "PGA Tour on ESPN Unlimited +1"
       },
       "_score": 10
     },
     {
-      "id": 16,
-      "time": "08:00",
-      "name": "LIV Golf UK",
+      "id": 17,
+      "time": "16:00",
+      "name": "3M Open",
       "sport": "Golf",
-      "league": "LIV Golf",
-      "ch": "FS2",
+      "league": "PGA Tour",
+      "ch": "GOLF CHANNEL USA",
       "dur": 240,
       "_st": {
-        "v": 3,
-        "l": "LIV Golf +3"
+        "v": 5,
+        "l": "PGA Tour +5"
       },
       "_sk": {
         "v": 2,
@@ -414,12 +440,38 @@
       },
       "_mq": {
         "v": 1,
-        "l": "LIV Golf on FS2 +1"
+        "l": "PGA Tour on GOLF CHANNEL USA +1"
+      },
+      "_score": 10
+    },
+    {
+      "id": 18,
+      "time": "08:30",
+      "name": "The Senior Open",
+      "sport": "Golf",
+      "league": "PGA Tour Champions",
+      "ch": "GOLF CHANNEL USA",
+      "dur": 240,
+      "_st": {
+        "v": 3,
+        "l": "PGA Tour Champions +3"
+      },
+      "_sk": {
+        "v": 2,
+        "l": "Regular season +2"
+      },
+      "_rv": {
+        "v": 2,
+        "l": "Standard matchup +2"
+      },
+      "_mq": {
+        "v": 1,
+        "l": "PGA Tour Champions on GOLF CHANNEL USA +1"
       },
       "_score": 8
     },
     {
-      "id": 17,
+      "id": 19,
       "time": "09:00",
       "name": "Austrian Open",
       "sport": "Tennis",
@@ -445,7 +497,7 @@
       "_score": 8
     },
     {
-      "id": 18,
+      "id": 20,
       "time": "10:00",
       "name": "Prague Open",
       "sport": "Tennis",
@@ -471,33 +523,7 @@
       "_score": 8
     },
     {
-      "id": 19,
-      "time": "13:00",
-      "name": "Saratoga Live",
-      "sport": "Equestrian",
-      "league": "Horse Racing",
-      "ch": "FS2",
-      "dur": 120,
-      "_st": {
-        "v": 3,
-        "l": "Horse Racing +3"
-      },
-      "_sk": {
-        "v": 2,
-        "l": "Regular season +2"
-      },
-      "_rv": {
-        "v": 2,
-        "l": "Standard matchup +2"
-      },
-      "_mq": {
-        "v": 1,
-        "l": "Horse Racing on FS2 +1"
-      },
-      "_score": 8
-    },
-    {
-      "id": 20,
+      "id": 21,
       "time": "21:00",
       "name": "Portland Cascade - Chicago Bandits",
       "sport": "Softball",
@@ -523,7 +549,7 @@
       "_score": 11
     },
     {
-      "id": 21,
+      "id": 22,
       "time": "12:00",
       "name": "New England Region",
       "sport": "Softball",
@@ -549,7 +575,7 @@
       "_score": 11
     },
     {
-      "id": 22,
+      "id": 23,
       "time": "13:45",
       "name": "Northwest Region",
       "sport": "Softball",
@@ -575,7 +601,7 @@
       "_score": 11
     },
     {
-      "id": 23,
+      "id": 24,
       "time": "15:30",
       "name": "Mid-Atlantic Region",
       "sport": "Softball",
@@ -601,7 +627,7 @@
       "_score": 11
     },
     {
-      "id": 24,
+      "id": 25,
       "time": "17:15",
       "name": "West Region",
       "sport": "Softball",
