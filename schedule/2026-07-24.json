@@ -321,15 +321,15 @@
       "time": "18:00",
       "name": "Upper Valley Nighthawks - Sanford Mainers",
       "sport": "Baseball",
-      "league": "Collegiate Baseball League",
+      "league": "Collegiate Summer Baseball",
       "ch": [
         "ESPN UNLIMITED",
         "ESPN SELECT"
       ],
       "dur": 180,
       "_st": {
-        "v": 15,
-        "l": "League off \u2014 no data (skipped)"
+        "v": 21,
+        "l": "Quality 15.0 (no data), Competitiveness 6.0 (no odds)"
       },
       "_sk": {
         "v": 0,
@@ -350,15 +350,15 @@
       "time": "18:30",
       "name": "Newport Gulls - Bristol Blues",
       "sport": "Baseball",
-      "league": "Collegiate Baseball League",
+      "league": "Collegiate Summer Baseball",
       "ch": [
         "ESPN UNLIMITED",
         "ESPN SELECT"
       ],
       "dur": 180,
       "_st": {
-        "v": 15,
-        "l": "League off \u2014 no data (skipped)"
+        "v": 21,
+        "l": "Quality 15.0 (no data), Competitiveness 6.0 (no odds)"
       },
       "_sk": {
         "v": 0,
@@ -379,15 +379,15 @@
       "time": "18:30",
       "name": "Keene Swamp Bats - Vermont Mountaineers",
       "sport": "Baseball",
-      "league": "Collegiate Baseball League",
+      "league": "Collegiate Summer Baseball",
       "ch": [
         "ESPN UNLIMITED",
         "ESPN SELECT"
       ],
       "dur": 180,
       "_st": {
-        "v": 15,
-        "l": "League off \u2014 no data (skipped)"
+        "v": 21,
+        "l": "Quality 15.0 (no data), Competitiveness 6.0 (no odds)"
       },
       "_sk": {
         "v": 0,
@@ -559,7 +559,7 @@
       "dur": 120,
       "_st": {
         "v": 25,
-        "l": "Quality 15.0 (0-1 vs 1-0), Competitiveness 10.5 (ml -140.0/120.0)"
+        "l": "Quality 15.0 (0-1 vs 1-0), Competitiveness 10.0 (ml -150.0/130.0)"
       },
       "_sk": {
         "v": 0,
@@ -776,7 +776,7 @@
       "time": "12:00",
       "name": "Rosenborg @ Manchester United",
       "sport": "Soccer",
-      "league": "Football Club Friendlies",
+      "league": "Soccer Club Friendlies",
       "ch": [
         "CBSSN"
       ],
@@ -1208,6 +1208,62 @@
       "_score": 25
     },
     {
+      "id": 21627539,
+      "time": "06:30",
+      "name": "Austrian Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 61708415,
+      "time": "07:00",
+      "name": "Estoril Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 30006110,
       "time": "05:00",
       "name": "Hamburg Open",
@@ -1382,6 +1438,7 @@
       "sport": "Cycling",
       "league": "Tour de France",
       "ch": [
+        "NBC",
         "PEACOCK"
       ],
       "dur": 120,
