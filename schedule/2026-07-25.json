@@ -213,7 +213,7 @@
       "dur": 120,
       "_st": {
         "v": 21,
-        "l": "Quality 15.0 (6-6-4), Competitiveness 6.0 (no odds)"
+        "l": "Top MLS game today \u2014 Quality 15.0 (6-6-4), Competitiveness 6.0 (no odds)"
       },
       "_sk": {
         "v": 0,
@@ -237,6 +237,7 @@
       "league": "MLS",
       "ch": [
         "FOX SPORTS 1",
+        "FOX SPORTS 2",
         "APPLE TV",
         "FOX DEPORTES"
       ],
@@ -494,8 +495,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 16,
-        "l": "Quality 10.1 (5-6-4 vs 5-9-1), Competitiveness 6.0 (no odds)"
+        "v": 18,
+        "l": "Quality 12.2 (6-6-4 vs 6-9-1), Competitiveness 6.0 (no odds)"
       },
       "_sk": {
         "v": 0,
@@ -509,7 +510,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16
+      "_score": 18
     },
     {
       "id": 14646381,
@@ -523,8 +524,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 22,
-        "l": "Top MLS game today \u2014 Quality 16.0 (4-6-5 vs 7-4-4), Competitiveness 6.0 (no odds)"
+        "v": 21,
+        "l": "Quality 15.0 (4-7-5 vs 7-4-5), Competitiveness 6.0 (no odds)"
       },
       "_sk": {
         "v": 0,
@@ -538,7 +539,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 22
+      "_score": 21
     },
     {
       "id": 56960635,
@@ -579,7 +580,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 14,
+        "v": 13,
         "l": "Quality 2.5 (Elo 1354 vs 1379 avg 1366), Competitiveness 11.0 (gap 25)"
       },
       "_sk": {
@@ -594,7 +595,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14
+      "_score": 13
     },
     {
       "id": 38024200,
@@ -607,7 +608,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 14,
+        "v": 13,
         "l": "Quality 2.6 (Elo 1354 vs 1384 avg 1369), Competitiveness 10.8 (gap 30)"
       },
       "_sk": {
@@ -622,7 +623,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14
+      "_score": 13
     },
     {
       "id": 22258988,
@@ -1218,7 +1219,7 @@
       "dur": 120,
       "_st": {
         "v": 15,
-        "l": "Quality 7.5 (0-1), Competitiveness 7.3 (ml -240.0/220.0)"
+        "l": "Quality 7.5 (0-1), Competitiveness 7.2 (ml -245.0/225.0)"
       },
       "_sk": {
         "v": 0,
@@ -1351,7 +1352,7 @@
       "time": "18:00",
       "name": "Liverpool FC @ Sunderland",
       "sport": "Soccer",
-      "league": "Football Club Friendlies",
+      "league": "Soccer Club Friendlies",
       "ch": [
         "ESPN UNLIMITED",
         "ESPN DEPORTES"
@@ -1359,7 +1360,7 @@
       "dur": 120,
       "_st": {
         "v": 23,
-        "l": "Top Football Club Friendlies game today \u2014 Quality 16.8 (Elo 1817 vs 1680 avg 1748), Competitiveness 6.5 (gap 137)"
+        "l": "Top Soccer Club Friendlies game today \u2014 Quality 16.8 (Elo 1817 vs 1680 avg 1748), Competitiveness 6.5 (gap 137)"
       },
       "_sk": {
         "v": 0,
@@ -1380,7 +1381,7 @@
       "time": "19:30",
       "name": "Leeds United @ Wrexham",
       "sport": "Soccer",
-      "league": "Football Club Friendlies",
+      "league": "Soccer Club Friendlies",
       "ch": [
         "ESPN UNLIMITED",
         "ESPN DEPORTES"
@@ -1729,6 +1730,34 @@
       "_score": 15
     },
     {
+      "id": 79451954,
+      "time": "08:00",
+      "name": "Women's Scottish Open",
+      "sport": "Golf",
+      "league": "LPGA Tour",
+      "ch": [
+        "CNBC"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 2203063,
       "time": "08:30",
       "name": "The Senior Open",
@@ -1811,6 +1840,34 @@
         "l": ""
       },
       "_score": 25
+    },
+    {
+      "id": 52506272,
+      "time": "08:30",
+      "name": "Austrian Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 56531843,
@@ -1990,6 +2047,35 @@
       "sport": "Cycling",
       "league": "Tour de France",
       "ch": [
+        "PEACOCK"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 13750327,
+      "time": "08:00",
+      "name": "Le Bourg-d'Oisans - Alpe d'Huez",
+      "sport": "Cycling",
+      "league": "Tour de France",
+      "ch": [
+        "NBC",
         "PEACOCK"
       ],
       "dur": 120,
@@ -2239,8 +2325,8 @@
       "_score": 21
     },
     {
-      "id": 45557494,
-      "time": "11:00",
+      "id": 67537321,
+      "time": "09:00",
       "name": "UFC: Bogdan Guskov @ Magomed Ankalaev",
       "sport": "Fighting",
       "league": "UFC",
