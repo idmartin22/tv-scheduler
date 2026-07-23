@@ -649,7 +649,7 @@ function App(){
     const now=new Date();
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
   });
-  const [dynamicEvents,setDynamicEvents]=useState(null); // null = use hardcoded EVENTS
+  const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
   const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
   const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
@@ -721,9 +721,10 @@ function App(){
     return()=>{active=false;};
   },[]);
 
-  // Compute active events — use GitHub schedule if loaded, else hardcoded EVENTS
+  // Compute active events — use GitHub schedule once loaded, empty while loading
+  // (no hardcoded placeholder fallback — that caused a flash of stale content)
   const activeEvents=useMemo(()=>{
-    const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):EVENTS;
+    const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
     return evs.filter(e=>leagueEnabled[e.leagueId]!==false);
   },[dynamicEvents,scheduleDate,leagueEnabled]);
 
