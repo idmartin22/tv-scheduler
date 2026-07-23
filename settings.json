@@ -185,7 +185,7 @@
       "sport": "Soccer",
       "gc": "#374151",
       "gtc": "#9ca3af",
-      "isUnknown": false
+      "isUnknown": true
     },
     "flag-football": {
       "n": "Flag Football",
@@ -196,7 +196,7 @@
     },
     "other": {
       "n": "Other",
-      "sport": "Football",
+      "sport": "Athletics",
       "gc": "#374151",
       "gtc": "#9ca3af",
       "isUnknown": true
@@ -304,7 +304,7 @@
       "sport": "Baseball",
       "gc": "#374151",
       "gtc": "#9ca3af",
-      "isUnknown": true
+      "isUnknown": false
     },
     "soccer-club-friendlies": {
       "n": "Soccer Club Friendlies",
@@ -342,7 +342,8 @@
     "kickboxing": false,
     "mma": false,
     "nrl": false,
-    "au-softball": false
+    "au-softball": false,
+    "collegiate-summer-baseball": false
   },
   "tvNames": {
     "0": "TV 1",
@@ -368,5 +369,5 @@
     "8": "NHL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-07-27"
+  "lastDate": "2026-07-24"
 }
