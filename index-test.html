@@ -47,6 +47,10 @@ const STORAGE_KEY = "barsched-league-order-v3";
 const FAVE_KEY = "barsched-fave-teams-v1";
 const MOD_KEY = "barsched-league-mods-v1";
 const FAVE_BOOST = 20;
+// Max possible in-game quality(0-30)+competitiveness(0-12) bonus a single event
+// can earn on top of its league's mod — used to compute each sport's ceiling
+// (highest mod in that sport group + this bonus) for cross-sport comparison.
+const MAX_EVENT_BONUS = 42;
 
 // Helper: normalize ch to array
 function chArr(channel){return Array.isArray(channel)?channel:(channel&&channel!=="TBD"?[channel]:[]);}
@@ -283,11 +287,21 @@ const sportIcon = s => {
   }
 };
 
-function normalize(evs) {
-  const sc2=evs.map(e=>e.priority||0);
-  const mn=Math.min(...sc2),mx=Math.max(...sc2);
-  if(mx===mn) return evs.map(e=>({...e,ds:mn>0?100:0}));
-  return evs.map(e=>({...e,ds:Math.round(((e.priority-mn)/(mx-mn))*100)}));
+function normalize(evs, sportCeilings) {
+  // Each event is scored as a % of its OWN sport's ceiling (highest mod in
+  // that sport group + MAX_EVENT_BONUS) rather than relative to just today's
+  // min/max. This is what lets a genuinely great EPL game beat a mediocre CFB
+  // game while a solid CFB game still beats a weak lower-tier soccer match —
+  // each sport is judged against what IT can produce at its best, not against
+  // an arbitrary day-specific range.
+  return evs.map(e=>{
+    const ceiling = sportCeilings?.[e.sport] ?? ((e.lm??0)+MAX_EVENT_BONUS);
+    const pct = ceiling>0 ? (e.priority/ceiling)*100 : 0;
+    // sortPct is unclipped so a fave-boosted event that pushes past 100% of
+    // its sport's normal ceiling still correctly outranks one merely AT the
+    // ceiling — ds is the clipped 0-100 value actually shown to the user.
+    return {...e, sortPct: pct, ds: Math.max(0, Math.min(100, Math.round(pct)))};
+  });
 }
 
 function matchLid(league) {
@@ -450,7 +464,11 @@ function fillBlocks(tvId,assigned,tvFillChMap){
 
 function runSchedule(events,activeTVs){
   const active=TV_PRIO.filter(id=>activeTVs.has(id));
-  const sorted=[...events].sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
+  // Sort by sortPct (each event's % of its own sport's ceiling), not raw
+  // priority — this is what makes cross-sport comparison fair rather than
+  // letting a high-mod sport with many mediocre games flood every TV just by
+  // volume of raw score. Falls back to priority if sortPct is somehow absent.
+  const sorted=[...events].sort((a,b)=>(b.sortPct??b.priority)-(a.sortPct??a.priority)||a.startMin-b.startMin);
   const asgn=[];
   for(const e of sorted){
     const avail=[];
@@ -825,6 +843,15 @@ function App(){
     }
   };
 
+  const sportCeilings=useMemo(()=>{
+    const ceilings={};
+    ALL_LEAGUES.forEach(group=>{
+      const maxMod=Math.max(0,...group.ls.map(l=>leagueMods[l.id]??0));
+      ceilings[group.sport]=maxMod+MAX_EVENT_BONUS;
+    });
+    return ceilings;
+  },[leagueMods]);
+
   const ewp=useMemo(()=>{
     const base=activeEvents.map(e=>{
       const lm=leagueMods[e.leagueId]??0;
@@ -839,8 +866,8 @@ function App(){
       ].filter(Boolean);
       return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
     });
-    return normalize(base);
-  },[leagueMods,prioOvr,favTeams,activeEvents]);
+    return normalize(base,sportCeilings);
+  },[leagueMods,prioOvr,favTeams,activeEvents,sportCeilings]);
 
   // Current time in minutes for "What's on Now"
   const [nowMin,setNowMin]=useState(()=>{const n=new Date();return n.getHours()*60+n.getMinutes();});
@@ -1119,12 +1146,12 @@ function App(){
             <div style={{fontSize:11,color:C.MT}}>Tap a game for score breakdown</div>
             <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave(buildSavePayload({prioOvr:{},lastDate:scheduleDate}));}}>Reset</button>
           </div>
-          {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
+          {[...ewp].sort((a,b)=>(b.sortPct??b.ds??0)-(a.sortPct??a.ds??0)).map((e,i,arr)=>{
             if(!e)return null;const c=sc(e);
             const asgn=final.find(a=>a&&a.id===e.id);
             const tvLbl=asgn?.tv===-1?"⚠":asgn?`T${asgn.tv+1}`:"—";
             const scoreColor=(e.ds??0)>=75?"#22c55e":(e.ds??0)>=50?"#f59e0b":"#94a3b8";
-            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});};
+            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.sortPct??b.ds??0)-(a.sortPct??a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});};
             return(
               <div key={e.id} className="fade-in" style={{margin:"4px 10px",borderRadius:12,overflow:"hidden",border:`1px solid ${sel===e.id?c.br:C.BD}`,background:sel===e.id?`${c.bg}44`:C.SUR2,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
                 <div style={{display:"grid",gridTemplateColumns:"36px 32px 1fr 52px 36px",gap:8,padding:"10px 12px",alignItems:"center"}}>
