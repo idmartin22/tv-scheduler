@@ -845,11 +845,13 @@ function App(){
   };
 
   const sportCeilings=useMemo(()=>{
-    const ceilings={};
-    ALL_LEAGUES.forEach(group=>{
-      const maxMod=Math.max(0,...group.ls.map(l=>leagueMods[l.id]??0));
-      ceilings[group.sport]=maxMod+MAX_EVENT_BONUS;
+    const maxBySport={};
+    ALL_LEAGUES.forEach(lg=>{
+      const mod=leagueMods[lg.id]??0;
+      if(mod>(maxBySport[lg.sport]??0)) maxBySport[lg.sport]=mod;
     });
+    const ceilings={};
+    Object.keys(maxBySport).forEach(sport=>{ceilings[sport]=maxBySport[sport]+MAX_EVENT_BONUS;});
     return ceilings;
   },[leagueMods]);
 
