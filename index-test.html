@@ -295,7 +295,12 @@ function normalize(evs, sportCeilings) {
   // each sport is judged against what IT can produce at its best, not against
   // an arbitrary day-specific range.
   return evs.map(e=>{
-    const ceiling = sportCeilings?.[e.sport] ?? ((e.lm??0)+MAX_EVENT_BONUS);
+    // Sports with no defined group (Athletics, Rugby League, Cycling, etc.)
+    // fall back to the GLOBAL ceiling, not their own mod — using an event's
+    // own (often very low) mod as its own ceiling was the bug that let a
+    // decent-but-unremarkable game in a nearly-irrelevant league nearly max
+    // out its own tiny ceiling and look like top-tier content.
+    const ceiling = sportCeilings?.[e.sport] ?? sportCeilings?.__global ?? ((e.lm??0)+MAX_EVENT_BONUS);
     const pct = ceiling>0 ? (e.priority/ceiling)*100 : 0;
     // sortPct is unclipped so a fave-boosted event that pushes past 100% of
     // its sport's normal ceiling still correctly outranks one merely AT the
@@ -852,6 +857,15 @@ function App(){
     });
     const ceilings={};
     Object.keys(maxBySport).forEach(sport=>{ceilings[sport]=maxBySport[sport]+MAX_EVENT_BONUS;});
+    // Fallback ceiling for sports with no defined group at all (Athletics,
+    // Rugby League, Cycling, etc.) — the single highest ceiling across every
+    // DEFINED sport, not that event's own mod. Using the event's own (often
+    // very low, e.g. mod=1) mod as its own ceiling was the actual bug: a
+    // decent-but-unremarkable game in a nearly-irrelevant league could nearly
+    // max out its own tiny ceiling and look like top-tier content, which
+    // defeats the entire point of comparing against what's actually good.
+    const allCeilingValues=Object.values(ceilings);
+    ceilings.__global=allCeilingValues.length?Math.max(...allCeilingValues):100+MAX_EVENT_BONUS;
     return ceilings;
   },[leagueMods]);
 
