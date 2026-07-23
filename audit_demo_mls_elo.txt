@@ -1,0 +1,43 @@
+AUDIT DEMO — MLS Elo coverage (manually verified from live ESPN + footballdatabase.com data)
+Run: 2026-07-23 23:43
+IMPORTANT: This is a MANUAL demonstration built from live public web data (ESPN standings page,
+footballdatabase.com ranking page 1 only), NOT an actual scraper run. Page 2 of footballdatabase's
+US rankings was not fetched, so several teams below are "unverified" rather than confirmed-missing.
+============================================================
+
+Standings source: https://www.espn.com/soccer/standings/_/league/usa.1  (fetched live, 2026 season)
+Elo source: https://footballdatabase.com/ranking/united-states/1  (rank 1-24 only — page 2 not fetched)
+
+MATCHED (21/30 — real Elo values from footballdatabase.com):
+  Inter Miami CF               1528
+  Seattle Sounders FC          1471
+  Nashville SC                 1453
+  FC Cincinnati                1443
+  Columbus Crew                1442
+  Philadelphia Union           1424
+  New York City FC             1412
+  Minnesota United FC          1403
+  Orlando City SC              1388
+  FC Dallas                    1385
+  LA Galaxy                    1384
+  Real Salt Lake               1379
+  Chicago Fire FC              1372
+  Houston Dynamo FC            1358
+  San Jose Earthquakes         1354
+  Portland Timbers             1354
+  New England Revolution       1343
+  Colorado Rapids              1321
+  Atlanta United FC            1295
+  D.C. United                  1261
+  Sporting Kansas City         1247
+
+NOT MATCHED (9/30):
+  Red Bull New York   -> ALIAS GAP: footballdatabase lists as 'New York Red Bulls' (1369) — needs alias
+  LAFC                -> ALIAS GAP: footballdatabase lists as 'Los Angeles FC' (1536) — needs alias
+  Charlotte FC        -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
+  CF Montréal         -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
+  Toronto FC          -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
+  Vancouver Whitecaps -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
+  San Diego FC        -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
+  St. Louis CITY SC   -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
+  Austin FC           -> UNVERIFIED: not found on ranking page 1 (top 24) — likely on page 2, not fetched
