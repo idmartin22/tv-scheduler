@@ -570,6 +570,7 @@ function App(){
       try{
         // Load settings
         const data=await githubLoad();
+        let migratedStatus=null;
         if(data&&active){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
@@ -580,7 +581,7 @@ function App(){
           if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(data.leagueStatus);
-          else setLeagueStatus(migrateToLeagueStatus(data));
+          else{migratedStatus=migrateToLeagueStatus(data);setLeagueStatus(migratedStatus);}
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
           if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
@@ -589,10 +590,21 @@ function App(){
           if(data.leagueMods) DEF_MODS={...DEF_MODS,...data.leagueMods};
         }
         // fetch SHA for saving
+        let freshSha=null;
         try{
           const r=await fetch(GITHUB_API,{headers:{'Accept':'application/vnd.github+json'}});
-          if(r.ok){const j=await r.json();if(active)setGhaSha(j.sha);}
+          if(r.ok){const j=await r.json();freshSha=j.sha;if(active)setGhaSha(j.sha);}
         }catch(e){}
+        // If this load required migrating to the new leagueStatus format,
+        // persist it right away — otherwise it would only exist in this
+        // browser's local state until something else happened to trigger a
+        // save, which could be a while (or never, if nothing new shows up).
+        if(migratedStatus&&data){
+          try{
+            const newSha=await githubSave({...data,leagueStatus:migratedStatus},freshSha);
+            if(active)setGhaSha(newSha);
+          }catch(e){}
+        }
         // Load today's schedule
         const today=new Date();
         const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
