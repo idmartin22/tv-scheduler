@@ -290,37 +290,19 @@ function normalize(evs) {
   return evs.map(e=>({...e,ds:Math.round(((e.priority-mn)/(mx-mn))*100)}));
 }
 
-function matchLid(league) {
-  const l=(league||"").toLowerCase();
-  if(l.includes("nfl")) return "nfl";
-  if(l.includes("college football")) return "college-fb";
-  if(l.includes("ufl")) return "ufl";
-  if(l.includes("cfl")) return "cfl";
-  if(l.includes("ifl")) return "ifl";
-  if(l.includes("mlb")) return "mlb";
-  if(l.includes("college baseball")||l.includes("cws")) return "college-bb";
-  if(l.includes("banana ball")) return "banana-ball";
-  if(l.includes("aapb")) return "aapb";
-  if(l.includes("collegiate baseball")) return "cbl";
-  if(l.includes("wnba")) return "wnba";
-  if(l.includes("nbl")) return "nbl";
-  if(l.includes("nba")&&!l.includes("g league")) return "nba";
-  if(l.includes("nhl")) return "nhl";
-  if(l.includes("u.s. open championship")||l.includes("masters")||l.includes("pga championship")) return "golf-majors";
-  if(l.includes("lpga")) return "lpga-tour";
-  if(l.includes("pga tour")) return "pga-tour";
-  if(l.includes("nascar cup")) return "nascar-cup";
-  if(l.includes("formula 1")||l.includes("f1 ")) return "f1";
-  if(l.includes("indycar")) return "indycar";
-  if(l.includes("wimbledon")) return "wimbledon";
-  if(l.includes("atp")) return "atp";
-  if(l.includes("wta")) return "wta";
-  if(l.includes("ufc")) return "ufc";
-  if(l.includes("kickboxing")) return "kickboxing";
-  if(l.includes("boxing")) return "boxing";
-  if(l.includes("major league rugby")||l.includes("mlr")) return "mlr";
-  if(l.includes("athletes unlimited")) return "au-softball";
-  return "other";
+// Exact (case-insensitive) name -> id lookup, built directly from the
+// catalog — not a hand-maintained parallel list that can drift out of sync
+// like the old matchLid() did. Handles every league whose id doesn't match
+// plain slugify of its own name (college-fb, nascar-cup, usl-champ, etc.)
+// via an unambiguous exact match instead of matchLid's old substring
+// .includes() checks, which is what let things like "Scottish Premiership"
+// accidentally match a "premier league" check.
+const NAME_TO_ID=Object.fromEntries(LG.flatMap(g=>g.ls.map(l=>[l.n.toLowerCase(),l.id])));
+
+function computeLeagueId(leagueName) {
+  const exact=NAME_TO_ID[(leagueName||"").toLowerCase()];
+  if(exact) return exact;
+  return makeLeagueId(leagueName);
 }
 
 function makeLeagueId(leagueName) {
@@ -331,12 +313,26 @@ function makeEvent(o) {
   const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
   const raw=FLAT_BASE+st.v+sk.v+rv.v+mq.v;
   const bd=[{l:"Flat base",v:FLAT_BASE},st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
-  const lid=matchLid(o.league);
-  const isUnknown=lid==="other";
-  const finalLid=isUnknown?makeLeagueId(o.league):lid;
+  const leagueId=computeLeagueId(o.league);
   const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
-  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:finalLid,isUnknown,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
 }
+
+function migrateToLeagueStatus(data) {
+  const status={};
+  ALL_LEAGUES.forEach(lg=>{
+    const wasEnabled=data.leagueEnabled?.[lg.id]!==false;
+    status[lg.id]={name:lg.n,sport:lg.sport,status:wasEnabled?"active":"off"};
+  });
+  Object.entries(data.unknownLeagues||{}).forEach(([id,v])=>{
+    const wasResolved=v.isUnknown===false;
+    const wasEnabled=data.leagueEnabled?.[id]!==false;
+    status[id]={name:v.n,sport:v.sport,status:!wasResolved?"pending":(wasEnabled?"active":"off")};
+  });
+  return status;
+}
+
+
 
 const EVENTS = [
   // WORLD CUP 2026
@@ -448,6 +444,11 @@ const LG=[
   {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
 ];
 const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
+// Sport -> {gc,gtc} color lookup, purely cosmetic — used for any league not
+// yet in ALL_LEAGUES (pending, or resolved-but-not-formally-catalogued) so
+// it still gets a sensible color instead of flat gray. LG stays useful for
+// this even though it no longer decides what's "known" vs "pending".
+const SPORT_COLORS=Object.fromEntries(LG.map(g=>[g.sport,{gc:g.c,gtc:g.tc}]));
 
 function parseScheduleEvents(rawEvents) {
   return rawEvents.map(o=>makeEvent(o));
@@ -548,8 +549,7 @@ function App(){
   const [tab,setTab]=useState("grid");
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
-  const [unknownLeagues,setUnknownLeagues]=useState({}); // leagueId -> {n, sport, gc, gtc}
-  const [leagueEnabled,setLeagueEnabled]=useState({}); // leagueId -> true/false (default true)
+  const [leagueStatus,setLeagueStatus]=useState({}); // leagueId -> {name, sport, status: "pending"|"active"|"off"} — SINGLE source of truth, replaces the old unknownLeagues+leagueEnabled split
   const [modDrafts,setModDrafts]=useState({}); // leagueId -> in-progress typed mod value, not yet committed (avoids live re-sort while typing a 2-digit number)
   const [scheduleDate,setScheduleDate]=useState(()=>{
     const now=new Date();
@@ -579,8 +579,8 @@ function App(){
           const isNewDay=data.lastDate&&data.lastDate!==todayStr;
           if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
-          if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
-          if(data.leagueEnabled&&typeof data.leagueEnabled==="object") setLeagueEnabled(data.leagueEnabled);
+          if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(data.leagueStatus);
+          else setLeagueStatus(migrateToLeagueStatus(data));
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
           if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
@@ -617,8 +617,8 @@ function App(){
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
           if(d.mirrors) setMirrors(d.mirrors);
-          if(d.unknownLeagues) setUnknownLeagues(d.unknownLeagues);
-          if(d.leagueEnabled) setLeagueEnabled(d.leagueEnabled);
+          if(d.leagueStatus) setLeagueStatus(d.leagueStatus);
+          else setLeagueStatus(migrateToLeagueStatus(d));
         }
         if(active)setSyncStatus("error");
       }
@@ -631,26 +631,26 @@ function App(){
   // (no hardcoded placeholder fallback — that caused a flash of stale content)
   const activeEvents=useMemo(()=>{
     const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
-    return evs.filter(e=>leagueEnabled[e.leagueId]!==false);
-  },[dynamicEvents,scheduleDate,leagueEnabled]);
+    return evs.filter(e=>leagueStatus[e.leagueId]?.status!=="off");
+  },[dynamicEvents,scheduleDate,leagueStatus]);
 
-  // Auto-register unknown leagues found in today's events
+  // Auto-register genuinely new leagues found in today's events. "New" now
+  // means exactly one thing: this leagueId has never been seen before (not
+  // in leagueStatus at all) — no re-derivation from name-matching, no
+  // ALL_LEAGUES lookup, nothing that can silently disagree with a prior
+  // decision. Once a league exists in leagueStatus, this effect never
+  // touches it again.
   useEffect(()=>{
-    setUnknownLeagues(prev=>{
+    setLeagueStatus(prev=>{
       const found={};
       activeEvents.forEach(e=>{
-        // Only add if genuinely new — never re-flag a league that's already
-        // been resolved (isUnknown:false), even though it'll never be back
-        // in ALL_LEAGUES either (resolved leagues are deliberately kept out
-        // of the static catalog, not re-added). Without this check, every
-        // reload re-overwrote any prior decision back to Pending.
-        if(e.isUnknown&&!ALL_LEAGUES.find(l=>l.id===e.leagueId)&&prev[e.leagueId]?.isUnknown!==false){
-          found[e.leagueId]={n:e.league,sport:e.sport||"Other",gc:"#374151",gtc:"#9ca3af",isUnknown:true};
+        if(!prev[e.leagueId]){
+          found[e.leagueId]={name:e.league,sport:e.sport||"Other",status:"pending"};
         }
       });
       if(Object.keys(found).length===0) return prev;
       const merged={...prev,...found};
-      debouncedSave(buildSavePayload({unknownLeagues:merged}));
+      immediateSave(buildSavePayload({leagueStatus:merged}));
       return merged;
     });
   },[activeEvents]);
@@ -676,6 +676,26 @@ function App(){
       }
     },500);
   },[ghaSha]);
+
+  // For discrete, deliberate decisions (resolving a pending league, toggling
+  // on/off) — NOT for continuous typing. Cancels any pending debounced timer
+  // first, so a stale debounced save (e.g. from a mod value someone was mid-
+  // typing) can't fire afterward and silently overwrite this decision — that
+  // shared-timer collision was the actual root cause of leagues reverting to
+  // Pending on refresh.
+  const immediateSave=React.useCallback(async(payload)=>{
+    if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
+    if(saveTimerRef.current){clearTimeout(saveTimerRef.current);saveTimerRef.current=null;}
+    setSyncStatus("saving");
+    try{
+      const newSha=await githubSave(payload,ghaSha);
+      setGhaSha(newSha);
+      setSyncStatus("saved");
+    }catch(e){
+      setSyncStatus("error");
+    }
+  },[ghaSha]);
+
 
   const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
     setOvrSaving(true);
@@ -726,37 +746,34 @@ function App(){
       favTeams:   overrides.favTeams   ?? favTeams,
       prioOvr:    overrides.prioOvr    ?? prioOvr,
       mirrors:    overrides.mirrors    ?? mirrors,
-      unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
-      leagueEnabled: overrides.leagueEnabled ?? leagueEnabled,
+      leagueStatus: overrides.leagueStatus ?? leagueStatus,
       tvNames:    overrides.tvNames    ?? tvNames,
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,leagueEnabled,tvNames,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
   const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
   const toggleLeague=(leagueId)=>{
-    // Already-decided leagues only (not pending) — simple flip, no isUnknown
-    // concern here since a league can't reach the active/disabled lists while
-    // still pending (see resolvePendingLeague for that transition).
-    const enabled=leagueEnabled[leagueId]!==false; // default true
-    const newEnabled={...leagueEnabled,[leagueId]:!enabled};
-    setLeagueEnabled(newEnabled);
-    debouncedSave(buildSavePayload({leagueEnabled:newEnabled}));
+    // Already-decided leagues only (never pending — a league can't reach the
+    // active/off lists while still pending, see resolvePendingLeague).
+    const current=leagueStatus[leagueId]?.status;
+    const newStatus=current==="off"?"active":"off";
+    const updated={...leagueStatus,[leagueId]:{...leagueStatus[leagueId],status:newStatus}};
+    setLeagueStatus(updated);
+    immediateSave(buildSavePayload({leagueStatus:updated}));
   };
   const resolvePendingLeague=(leagueId,turnOn)=>{
-    // The ONLY way a pending league leaves the pending list: an explicit,
-    // single-direction decision (not a toggle/flip). Sets enabled state AND
-    // clears isUnknown in the same write, so it moves straight to Active or
-    // Off — never back through pending, never requiring a second click.
-    const newEnabled={...leagueEnabled,[leagueId]:turnOn};
-    setLeagueEnabled(newEnabled);
-    const newUnknown={...unknownLeagues,[leagueId]:{...unknownLeagues[leagueId],isUnknown:false}};
-    setUnknownLeagues(newUnknown);
-    debouncedSave(buildSavePayload({leagueEnabled:newEnabled,unknownLeagues:newUnknown}));
+    // The ONLY way a pending league leaves Pending: an explicit, single-
+    // direction decision, saved immediately — never a toggle/flip, never
+    // sharing the debounce timer with anything else that could clobber it.
+    const updated={...leagueStatus,[leagueId]:{...leagueStatus[leagueId],status:turnOn?"active":"off"}};
+    setLeagueStatus(updated);
+    immediateSave(buildSavePayload({leagueStatus:updated}));
   };
+
 
   const ewp=useMemo(()=>{
     const base=activeEvents.map(e=>{
@@ -1158,15 +1175,18 @@ function App(){
             <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
           </div>
           {(()=>{
-            const allLgs=[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:v.isUnknown!==false}))];
-            // Three genuinely separate lists now, not two lists plus a badge
-            // hack. A league sits in Pending until an explicit decision is
-            // made — it never defaults into Active just because no decision
-            // exists yet, and clearing it never requires a toggle-off-then-
-            // on dance.
-            const pendingLgs=allLgs.filter(lg=>lg.isUnknown).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
-            const activeLgs=allLgs.filter(lg=>!lg.isUnknown&&leagueEnabled[lg.id]!==false).sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
-            const disabledLgs=allLgs.filter(lg=>!lg.isUnknown&&leagueEnabled[lg.id]===false).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const allLgs=Object.entries(leagueStatus).map(([id,v])=>{
+              const colors=SPORT_COLORS[v.sport]||{gc:"#374151",gtc:"#9ca3af"};
+              return {id,n:v.name,sport:v.sport,gc:colors.gc,gtc:colors.gtc,status:v.status};
+            });
+            // Three genuinely separate lists, driven by ONE field (status)
+            // on ONE object (leagueStatus) — not two objects that have to
+            // agree with each other. A league sits in Pending until an
+            // explicit decision is made; nothing ever re-derives its status
+            // from name-matching on every render.
+            const pendingLgs=allLgs.filter(lg=>lg.status==="pending").sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const activeLgs=allLgs.filter(lg=>lg.status==="active").sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
+            const disabledLgs=allLgs.filter(lg=>lg.status==="off").sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
             const LeagueRow=({lg,i,enabled,pending})=>{
               const leagueId=lg.id;
               const committedMod=leagueMods[leagueId]??0;
