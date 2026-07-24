@@ -299,8 +299,23 @@ function normalize(evs) {
 // accidentally match a "premier league" check.
 const NAME_TO_ID=Object.fromEntries(LG.flatMap(g=>g.ls.map(l=>[l.n.toLowerCase(),l.id])));
 
+// Mirrors daily_scrape.py's GFR_SETTINGS_SLUG_OVERRIDE exactly — these 5 of
+// the 13 scored leagues have ids that don't match plain slugify of their own
+// name (accented characters, deliberately-shortened ids). Without this, the
+// app would compute a different leagueId than what daily_scrape.py actually
+// writes GFR-computed mods to, and the mod would never be found.
+const SCORED_LEAGUE_ID_OVERRIDES={
+  "dutch eredivisie":"eredivisie",
+  "usl championship":"usl-champ",
+  "argentina primera división":"primera-division",
+  "brazilian serie a":"brazil-serie-a",
+  "english championship":"efl-championship",
+};
+
 function computeLeagueId(leagueName) {
-  const exact=NAME_TO_ID[(leagueName||"").toLowerCase()];
+  const l=(leagueName||"").toLowerCase();
+  if(SCORED_LEAGUE_ID_OVERRIDES[l]) return SCORED_LEAGUE_ID_OVERRIDES[l];
+  const exact=NAME_TO_ID[l];
   if(exact) return exact;
   return makeLeagueId(leagueName);
 }
@@ -309,6 +324,27 @@ function makeLeagueId(leagueName) {
   return leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 }
 
+// The ONLY leagues that start pre-populated — the 12 GFR-active soccer
+// leagues plus MLB, since these are the only ones with real defined scoring
+// right now. Every other league, including NFL/NBA/NHL/anything else, is
+// deliberately absent — it'll show up as Pending the first time it's
+// actually scraped, exactly like a brand-new league would.
+const INITIAL_LEAGUE_STATUS={
+  "premier-league":{name:"Premier League",sport:"Soccer",status:"active"},
+  "la-liga":{name:"La Liga",sport:"Soccer",status:"active"},
+  "bundesliga":{name:"Bundesliga",sport:"Soccer",status:"active"},
+  "eredivisie":{name:"Dutch Eredivisie",sport:"Soccer",status:"active"},
+  "usl-champ":{name:"USL Championship",sport:"Soccer",status:"active"},
+  "serie-a":{name:"Serie A",sport:"Soccer",status:"active"},
+  "primera-division":{name:"Argentina Primera División",sport:"Soccer",status:"active"},
+  "brazil-serie-a":{name:"Brazilian Serie A",sport:"Soccer",status:"active"},
+  "efl-championship":{name:"English Championship",sport:"Soccer",status:"active"},
+  "scottish-premiership":{name:"Scottish Premiership",sport:"Soccer",status:"active"},
+  "mls":{name:"MLS",sport:"Soccer",status:"active"},
+  "liga-mx":{name:"Liga MX",sport:"Soccer",status:"active"},
+  "mlb":{name:"MLB",sport:"Baseball",status:"active"},
+};
+
 function makeEvent(o) {
   const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
   const raw=FLAT_BASE+st.v+sk.v+rv.v+mq.v;
@@ -316,20 +352,6 @@ function makeEvent(o) {
   const leagueId=computeLeagueId(o.league);
   const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
   return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
-}
-
-function migrateToLeagueStatus(data) {
-  const status={};
-  ALL_LEAGUES.forEach(lg=>{
-    const wasEnabled=data.leagueEnabled?.[lg.id]!==false;
-    status[lg.id]={name:lg.n,sport:lg.sport,status:wasEnabled?"active":"off"};
-  });
-  Object.entries(data.unknownLeagues||{}).forEach(([id,v])=>{
-    const wasResolved=v.isUnknown===false;
-    const wasEnabled=data.leagueEnabled?.[id]!==false;
-    status[id]={name:v.n,sport:v.sport,status:!wasResolved?"pending":(wasEnabled?"active":"off")};
-  });
-  return status;
 }
 
 
@@ -570,7 +592,7 @@ function App(){
       try{
         // Load settings
         const data=await githubLoad();
-        let migratedStatus=null;
+        let seededStatus=null;
         if(data&&active){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
@@ -581,7 +603,7 @@ function App(){
           if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(data.leagueStatus);
-          else{migratedStatus=migrateToLeagueStatus(data);setLeagueStatus(migratedStatus);}
+          else{seededStatus=INITIAL_LEAGUE_STATUS;setLeagueStatus(seededStatus);}
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
           if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
@@ -595,13 +617,13 @@ function App(){
           const r=await fetch(GITHUB_API,{headers:{'Accept':'application/vnd.github+json'}});
           if(r.ok){const j=await r.json();freshSha=j.sha;if(active)setGhaSha(j.sha);}
         }catch(e){}
-        // If this load required migrating to the new leagueStatus format,
-        // persist it right away — otherwise it would only exist in this
-        // browser's local state until something else happened to trigger a
-        // save, which could be a while (or never, if nothing new shows up).
-        if(migratedStatus&&data){
+        // First time settings.json has ever had a leagueStatus key — persist
+        // the starting 13-league seed right away, otherwise it would only
+        // exist in this browser's local state until something else happened
+        // to trigger a save.
+        if(seededStatus&&data){
           try{
-            const newSha=await githubSave({...data,leagueStatus:migratedStatus},freshSha);
+            const newSha=await githubSave({...data,leagueStatus:seededStatus},freshSha);
             if(active)setGhaSha(newSha);
           }catch(e){}
         }
@@ -630,7 +652,7 @@ function App(){
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
           if(d.mirrors) setMirrors(d.mirrors);
           if(d.leagueStatus) setLeagueStatus(d.leagueStatus);
-          else setLeagueStatus(migrateToLeagueStatus(d));
+          else setLeagueStatus(INITIAL_LEAGUE_STATUS);
         }
         if(active)setSyncStatus("error");
       }
