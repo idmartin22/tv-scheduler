@@ -627,6 +627,7 @@ function App(){
   const [order,setOrder]=useState([...DEF_ORDER]);
   const [unknownLeagues,setUnknownLeagues]=useState({}); // leagueId -> {n, sport, gc, gtc}
   const [leagueEnabled,setLeagueEnabled]=useState({}); // leagueId -> true/false (default true)
+  const [modDrafts,setModDrafts]=useState({}); // leagueId -> in-progress typed mod value, not yet committed (avoids live re-sort while typing a 2-digit number)
   const [scheduleDate,setScheduleDate]=useState(()=>{
     const now=new Date();
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -812,18 +813,24 @@ function App(){
 
   const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
   const toggleLeague=(leagueId)=>{
-    // Toggle on/off and clear the isUnknown flag (acknowledges the league)
+    // Already-decided leagues only (not pending) — simple flip, no isUnknown
+    // concern here since a league can't reach the active/disabled lists while
+    // still pending (see resolvePendingLeague for that transition).
     const enabled=leagueEnabled[leagueId]!==false; // default true
     const newEnabled={...leagueEnabled,[leagueId]:!enabled};
     setLeagueEnabled(newEnabled);
-    // Clear unknown badge by marking it as acknowledged
-    if(unknownLeagues[leagueId]){
-      const newUnknown={...unknownLeagues,[leagueId]:{...unknownLeagues[leagueId],isUnknown:false}};
-      setUnknownLeagues(newUnknown);
-      debouncedSave(buildSavePayload({leagueEnabled:newEnabled,unknownLeagues:newUnknown}));
-    } else {
-      debouncedSave(buildSavePayload({leagueEnabled:newEnabled}));
-    }
+    debouncedSave(buildSavePayload({leagueEnabled:newEnabled}));
+  };
+  const resolvePendingLeague=(leagueId,turnOn)=>{
+    // The ONLY way a pending league leaves the pending list: an explicit,
+    // single-direction decision (not a toggle/flip). Sets enabled state AND
+    // clears isUnknown in the same write, so it moves straight to Active or
+    // Off — never back through pending, never requiring a second click.
+    const newEnabled={...leagueEnabled,[leagueId]:turnOn};
+    setLeagueEnabled(newEnabled);
+    const newUnknown={...unknownLeagues,[leagueId]:{...unknownLeagues[leagueId],isUnknown:false}};
+    setUnknownLeagues(newUnknown);
+    debouncedSave(buildSavePayload({leagueEnabled:newEnabled,unknownLeagues:newUnknown}));
   };
 
   const ewp=useMemo(()=>{
@@ -1227,28 +1234,71 @@ function App(){
           </div>
           {(()=>{
             const allLgs=[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:v.isUnknown!==false}))];
-            const activeLgs=allLgs.filter(lg=>leagueEnabled[lg.id]!==false).sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
-            const disabledLgs=allLgs.filter(lg=>leagueEnabled[lg.id]===false).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
-            const LeagueRow=({lg,i,enabled})=>{
+            // Three genuinely separate lists now, not two lists plus a badge
+            // hack. A league sits in Pending until an explicit decision is
+            // made — it never defaults into Active just because no decision
+            // exists yet, and clearing it never requires a toggle-off-then-
+            // on dance.
+            const pendingLgs=allLgs.filter(lg=>lg.isUnknown).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const activeLgs=allLgs.filter(lg=>!lg.isUnknown&&leagueEnabled[lg.id]!==false).sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
+            const disabledLgs=allLgs.filter(lg=>!lg.isUnknown&&leagueEnabled[lg.id]===false).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const LeagueRow=({lg,i,enabled,pending})=>{
               const leagueId=lg.id;
-              const mod=leagueMods[leagueId]??0;
-              const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
+              const committedMod=leagueMods[leagueId]??0;
+              // Show the in-progress typed value while editing; only the
+              // committed value drives sort order / saving, so the row can't
+              // jump out from under a half-typed 2-digit number.
+              const draftVal=modDrafts[leagueId];
+              const displayMod=draftVal!==undefined?draftVal:committedMod;
+              const mc=committedMod>=40?"#86efac":committedMod>=25?"#a7f3d0":committedMod>=10?"#fde68a":committedMod>=1?"#fed7aa":"#9ca3af";
               const fv=favTeams[leagueId]||"";
               const hasFave=fv.trim().length>0;
+              const commitMod=(val)=>{
+                updateMod(leagueId,val);
+                setModDrafts(d=>{const n={...d};delete n[leagueId];return n;});
+              };
+              const modInput=(
+                <input type="number" min="0" max={MAX_MOD} value={displayMod}
+                  onChange={ev=>setModDrafts(d=>({...d,[leagueId]:ev.target.value}))}
+                  onBlur={ev=>commitMod(ev.target.value)}
+                  onKeyDown={ev=>{if(ev.key==="Enter")commitMod(ev.target.value);}}
+                  style={{background:C.SUR,border:`1px solid ${committedMod>0?mc:C.BD2}`,borderRadius:8,color:committedMod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+              );
+              if(pending){
+                return(
+                  <div key={leagueId} style={{display:"grid",gridTemplateColumns:"24px 1fr 60px 62px 62px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(251,191,36,0.06)"}}>
+                    <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+                    <div style={{fontSize:13,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}</div>
+                    {modInput}
+                    <button onClick={()=>resolvePendingLeague(leagueId,true)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:10,fontWeight:700,padding:"3px 4px",cursor:"pointer"}}>Turn ON</button>
+                    <button onClick={()=>resolvePendingLeague(leagueId,false)} style={{background:"rgba(239,68,68,0.15)",border:"1px solid #ef4444",borderRadius:8,color:"#f87171",fontSize:10,fontWeight:700,padding:"3px 4px",cursor:"pointer"}}>Turn OFF</button>
+                  </div>
+                );
+              }
               return(
                 <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
                   <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{enabled?i+1:"—"}</div>
                   <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
                   <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
-                  <button onClick={()=>toggleLeague(leagueId)} style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}>{lg.isUnknown&&enabled?"⚠️ ON":enabled?"ON":"OFF"}</button>
-                  <input type="number" min="0" max={MAX_MOD} value={mod} onChange={ev=>updateMod(leagueId,ev.target.value)} style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                  <button onClick={()=>toggleLeague(leagueId)} style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}>{enabled?"ON":"OFF"}</button>
+                  {modInput}
                   <input value={fv} onChange={ev=>updateFave(leagueId,ev.target.value)} placeholder="Guardians, Cubs..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}/>
                 </div>
               );
             };
             return(<>
+              {/* Pending leagues — need a decision before they'll ever score or show up anywhere else */}
+              {pendingLgs.length>0&&(<>
+                <div style={{padding:"8px 16px 6px"}}>
+                  <span style={{fontSize:10,fontWeight:700,color:"#fbbf24",letterSpacing:"0.08em"}}>⚠️ PENDING LEAGUES ({pendingLgs.length}) — NEEDS A DECISION</span>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"24px 1fr 60px 62px 62px",gap:8,padding:"4px 16px 6px"}}>
+                  {["","LEAGUE","MOD",""," "].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                </div>
+                {pendingLgs.map((lg)=><LeagueRow key={lg.id} lg={lg} pending={true}/>)}
+              </>)}
               {/* Active leagues header */}
-              <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+              <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
                 {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
               </div>
               {activeLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true}/>)}
