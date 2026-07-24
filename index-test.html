@@ -663,12 +663,20 @@ function App(){
     return()=>{active=false;};
   },[]);
 
-  // Compute active events — use GitHub schedule once loaded, empty while loading
-  // (no hardcoded placeholder fallback — that caused a flash of stale content)
+  // ALL parsed events, regardless of league status — used specifically for
+  // discovering new leagues (see the auto-detect effect below). Must stay
+  // unfiltered, since a brand-new league's events need to be SEEN before
+  // they can be marked pending in the first place.
+  const parsedEvents=useMemo(()=>{
+    return dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
+  },[dynamicEvents,scheduleDate]);
+
+  // What actually reaches the grid and the scored listing — ONLY leagues
+  // explicitly turned on. Pending leagues show up in the Leagues tab needing
+  // a decision, but their games don't appear anywhere else until resolved.
   const activeEvents=useMemo(()=>{
-    const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
-    return evs.filter(e=>leagueStatus[e.leagueId]?.status!=="off");
-  },[dynamicEvents,scheduleDate,leagueStatus]);
+    return parsedEvents.filter(e=>leagueStatus[e.leagueId]?.status==="active");
+  },[parsedEvents,leagueStatus]);
 
   // Auto-register genuinely new leagues found in today's events. "New" now
   // means exactly one thing: this leagueId has never been seen before (not
@@ -679,7 +687,7 @@ function App(){
   useEffect(()=>{
     setLeagueStatus(prev=>{
       const found={};
-      activeEvents.forEach(e=>{
+      parsedEvents.forEach(e=>{
         if(!prev[e.leagueId]){
           found[e.leagueId]={name:e.league,sport:e.sport||"Other",status:"pending"};
         }
@@ -689,7 +697,7 @@ function App(){
       immediateSave(buildSavePayload({leagueStatus:merged}));
       return merged;
     });
-  },[activeEvents]);
+  },[parsedEvents]);
 
   const debouncedSave=React.useCallback((payload)=>{
     if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
