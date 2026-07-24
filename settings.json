@@ -1,324 +1,391 @@
 {
- "leagueMods": {
-  "nfl": 100,
-  "college-fb": 65,
-  "nascar-cup": 63,
-  "ufc": 60,
-  "nba": 48,
-  "mlb": 46,
-  "nhl": 44,
-  "golf-majors": 42,
-  "ryder-cup": 40,
-  "pga-tour": 22,
-  "boxing": 14,
-  "liv-golf": 12,
-  "college-bball": 7,
-  "six-nations": 7,
-  "wnba": 6,
-  "horse-racing": 6,
-  "lpga-tour": 5,
-  "nascar-o-reilly-auto-parts-series": 5,
-  "nascar-craftsman-truck-series": 4,
-  "f1": 3,
-  "wimbledon": 3,
-  "us-open-tennis": 3,
-  "ufl": 2,
-  "cfl": 2,
-  "banana-ball": 2,
-  "french-open": 2,
-  "aus-open": 2,
-  "mlr": 2,
-  "tour-de-france": 2,
-  "big3": 2,
-  "ifl": 1,
-  "football-club-friendlies": 1,
-  "the-basketball-tournament-tbt": 1,
-  "flag-football": 1,
-  "super-league": 1,
-  "usatf-outdoor-championships": 1,
-  "other": 1,
-  "soccer-club-friendlies": 1,
-  "college-bb": 0,
-  "aapb": 0,
-  "cbl": 0,
-  "nbl": 0,
-  "pwhl": 0,
-  "indycar": 0,
-  "motogp": 0,
-  "atp": 0,
-  "wta": 0,
-  "kickboxing": 0,
-  "mma": 0,
-  "nrl": 0,
-  "au-softball": 0,
-  "premier-league": 50,
-  "la-liga": 44,
-  "bundesliga": 44,
-  "dutch-eredivisie": 37,
-  "usl-champ": 22,
-  "serie-a": 44,
-  "argentina-primera-divisi-n": 36,
-  "brazilian-serie-a": 38,
-  "english-championship": 39,
-  "scottish-premiership": 34,
-  "mls": 37,
-  "liga-mx": 35,
-  "eredivisie": 37,
-  "primera-division": 36,
-  "brazil-serie-a": 38,
-  "efl-championship": 39
- },
- "favTeams": {
-  "mlb": "Guardians",
-  "nfl": "Browns",
-  "nba": "Cavaliers, Cavs",
-  "mls": "Inter Miami, Columbus Crew ",
-  "nhl": "Blue Jackets",
-  "premier-league": "Manchester City, Bournemouth, Crystal Palace, Fulham, Chelsea",
-  "la-liga": "Real Madrid, Barcelona, Atletico Madrid, Villarreal",
-  "serie-a": "AC Milan",
-  "liga-mx": "Club America, Chivas, Tigres"
- },
- "prioOvr": {},
- "mirrors": {},
- "unknownLeagues": {
-  "the-basketball-tournament-tbt": {
-   "n": "The Basketball Tournament (TBT)",
-   "sport": "Basketball",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
+  "leagueMods": {
+    "nfl": 100,
+    "college-fb": 65,
+    "nascar-cup": 63,
+    "ufc": 60,
+    "nba": 48,
+    "mlb": 46,
+    "nhl": 44,
+    "golf-majors": 42,
+    "ryder-cup": 40,
+    "pga-tour": 22,
+    "boxing": 14,
+    "liv-golf": 12,
+    "college-bball": 7,
+    "six-nations": 7,
+    "wnba": 6,
+    "horse-racing": 6,
+    "lpga-tour": 5,
+    "nascar-o-reilly-auto-parts-series": 5,
+    "nascar-craftsman-truck-series": 4,
+    "f1": 3,
+    "wimbledon": 3,
+    "us-open-tennis": 3,
+    "ufl": 2,
+    "cfl": 2,
+    "banana-ball": 2,
+    "french-open": 2,
+    "aus-open": 2,
+    "mlr": 2,
+    "tour-de-france": 2,
+    "big3": 2,
+    "ifl": 1,
+    "football-club-friendlies": 1,
+    "the-basketball-tournament-tbt": 1,
+    "flag-football": 1,
+    "super-league": 1,
+    "usatf-outdoor-championships": 1,
+    "other": 1,
+    "soccer-club-friendlies": 1,
+    "college-bb": 0,
+    "aapb": 0,
+    "cbl": 0,
+    "nbl": 0,
+    "pwhl": 0,
+    "indycar": 0,
+    "motogp": 0,
+    "atp": 0,
+    "wta": 0,
+    "kickboxing": 0,
+    "mma": 0,
+    "nrl": 0,
+    "au-softball": 0,
+    "premier-league": 50,
+    "la-liga": 44,
+    "bundesliga": 44,
+    "dutch-eredivisie": 37,
+    "usl-champ": 22,
+    "serie-a": 44,
+    "argentina-primera-divisi-n": 36,
+    "brazilian-serie-a": 38,
+    "english-championship": 39,
+    "scottish-premiership": 34,
+    "mls": 37,
+    "liga-mx": 35,
+    "eredivisie": 37,
+    "primera-division": 36,
+    "brazil-serie-a": 38,
+    "efl-championship": 39
   },
-  "little-league-softball": {
-   "n": "Little League Softball",
-   "sport": "Softball",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
+  "favTeams": {
+    "mlb": "Guardians",
+    "nfl": "Browns",
+    "nba": "Cavaliers, Cavs",
+    "mls": "Inter Miami, Columbus Crew ",
+    "nhl": "Blue Jackets",
+    "premier-league": "Manchester City, Bournemouth, Crystal Palace, Fulham, Chelsea",
+    "la-liga": "Real Madrid, Barcelona, Atletico Madrid, Villarreal",
+    "serie-a": "AC Milan",
+    "liga-mx": "Club America, Chivas, Tigres"
   },
-  "usl-league-one": {
-   "n": "USL League One",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
+  "prioOvr": {},
+  "mirrors": {},
+  "unknownLeagues": {
+    "the-basketball-tournament-tbt": {
+      "n": "The Basketball Tournament (TBT)",
+      "sport": "Basketball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "little-league-softball": {
+      "n": "Little League Softball",
+      "sport": "Softball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "usl-league-one": {
+      "n": "USL League One",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "northern-super-league": {
+      "n": "Northern Super League",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "tour-de-france": {
+      "n": "Tour de France",
+      "sport": "Cycling",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "horse-racing": {
+      "n": "Horse Racing",
+      "sport": "Equestrian",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "nwsl": {
+      "n": "NWSL",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "concacaf-u20": {
+      "n": "CONCACAF U20",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "flag-football": {
+      "n": "Flag Football",
+      "sport": "Football",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "other": {
+      "n": "Other",
+      "sport": "Athletics",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "nascar-o-reilly-auto-parts-series": {
+      "n": "NASCAR O'Reilly Auto Parts Series",
+      "sport": "Motorsports",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "nascar-craftsman-truck-series": {
+      "n": "NASCAR Craftsman Truck Series",
+      "sport": "Motorsports",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "arca-menards-series": {
+      "n": "ARCA Menards Series",
+      "sport": "Motorsports",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "afl": {
+      "n": "AFL",
+      "sport": "Aus Football",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "pll": {
+      "n": "PLL",
+      "sport": "Lacrosse",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "football-club-friendlies": {
+      "n": "Football Club Friendlies",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "super-league": {
+      "n": "Super League",
+      "sport": "Rugby League",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "usatf-outdoor-championships": {
+      "n": "USATF Outdoor Championships",
+      "sport": "Athletics",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "big3": {
+      "n": "BIG3",
+      "sport": "Basketball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    },
+    "canadian-premier-league": {
+      "n": "Canadian Premier League",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "npb": {
+      "n": "NPB",
+      "sport": "Baseball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "motocross-world-championship": {
+      "n": "Motocross World Championship",
+      "sport": "Motorsports",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "women-s-road-cycling": {
+      "n": "Women's Road Cycling",
+      "sport": "Cycling",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "high-school-softball": {
+      "n": "High School Softball",
+      "sport": "Softball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "collegiate-summer-baseball": {
+      "n": "Collegiate Summer Baseball",
+      "sport": "Baseball",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": false
+    },
+    "soccer-club-friendlies": {
+      "n": "Soccer Club Friendlies",
+      "sport": "Soccer",
+      "gc": "#374151",
+      "gtc": "#9ca3af",
+      "isUnknown": true
+    }
   },
-  "northern-super-league": {
-   "n": "Northern Super League",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
+  "leagueEnabled": {
+    "usatf-outdoor-championships": true,
+    "high-school-softball": false,
+    "women-s-road-cycling": false,
+    "college-bb": false,
+    "motocross-world-championship": false,
+    "npb": false,
+    "canadian-premier-league": false,
+    "afl": false,
+    "arca-menards-series": false,
+    "concacaf-u20": false,
+    "usl-league-one": false,
+    "little-league-softball": false,
+    "pwhl": false,
+    "pll": false,
+    "northern-super-league": false,
+    "primera-a": true,
+    "usl-champ": false,
+    "aapb": false,
+    "cbl": false,
+    "nbl": false,
+    "indycar": false,
+    "motogp": false,
+    "atp": false,
+    "wta": false,
+    "kickboxing": false,
+    "mma": false,
+    "nrl": false,
+    "au-softball": false,
+    "collegiate-summer-baseball": false
   },
-  "tour-de-france": {
-   "n": "Tour de France",
-   "sport": "Cycling",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
+  "tvNames": {
+    "0": "TV 1",
+    "1": "TV 2",
+    "2": "TV 3",
+    "3": "TV 4",
+    "4": "TV 5",
+    "5": "TV 6",
+    "6": "TV 7",
+    "7": "TV 8",
+    "8": "TV 9",
+    "9": "TV 10"
   },
-  "horse-racing": {
-   "n": "Horse Racing",
-   "sport": "Equestrian",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
+  "tvFillCh": {
+    "0": "ESPN",
+    "1": "ESPN2",
+    "2": "FS1",
+    "3": "NBA TV",
+    "4": "ESPNews",
+    "5": "NFL Network",
+    "6": "Fox News",
+    "7": "MLB Network",
+    "8": "NHL Network",
+    "9": "Golf Channel"
   },
-  "nwsl": {
-   "n": "NWSL",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "concacaf-u20": {
-   "n": "CONCACAF U20",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "flag-football": {
-   "n": "Flag Football",
-   "sport": "Football",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "other": {
-   "n": "Other",
-   "sport": "Athletics",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "nascar-o-reilly-auto-parts-series": {
-   "n": "NASCAR O'Reilly Auto Parts Series",
-   "sport": "Motorsports",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "nascar-craftsman-truck-series": {
-   "n": "NASCAR Craftsman Truck Series",
-   "sport": "Motorsports",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "arca-menards-series": {
-   "n": "ARCA Menards Series",
-   "sport": "Motorsports",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "afl": {
-   "n": "AFL",
-   "sport": "Aus Football",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "pll": {
-   "n": "PLL",
-   "sport": "Lacrosse",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "football-club-friendlies": {
-   "n": "Football Club Friendlies",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "super-league": {
-   "n": "Super League",
-   "sport": "Rugby League",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "usatf-outdoor-championships": {
-   "n": "USATF Outdoor Championships",
-   "sport": "Athletics",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "big3": {
-   "n": "BIG3",
-   "sport": "Basketball",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
-  },
-  "canadian-premier-league": {
-   "n": "Canadian Premier League",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "npb": {
-   "n": "NPB",
-   "sport": "Baseball",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "motocross-world-championship": {
-   "n": "Motocross World Championship",
-   "sport": "Motorsports",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "women-s-road-cycling": {
-   "n": "Women's Road Cycling",
-   "sport": "Cycling",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "high-school-softball": {
-   "n": "High School Softball",
-   "sport": "Softball",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "collegiate-summer-baseball": {
-   "n": "Collegiate Summer Baseball",
-   "sport": "Baseball",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": false
-  },
-  "soccer-club-friendlies": {
-   "n": "Soccer Club Friendlies",
-   "sport": "Soccer",
-   "gc": "#374151",
-   "gtc": "#9ca3af",
-   "isUnknown": true
+  "lastDate": "2026-07-23",
+  "leagueStatus": {
+    "premier-league": {
+      "name": "Premier League",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "la-liga": {
+      "name": "La Liga",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "bundesliga": {
+      "name": "Bundesliga",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "eredivisie": {
+      "name": "Dutch Eredivisie",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "usl-champ": {
+      "name": "USL Championship",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "serie-a": {
+      "name": "Serie A",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "primera-division": {
+      "name": "Argentina Primera División",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "brazil-serie-a": {
+      "name": "Brazilian Serie A",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "efl-championship": {
+      "name": "English Championship",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "scottish-premiership": {
+      "name": "Scottish Premiership",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "mls": {
+      "name": "MLS",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "liga-mx": {
+      "name": "Liga MX",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "mlb": {
+      "name": "MLB",
+      "sport": "Baseball",
+      "status": "active"
+    }
   }
- },
- "leagueEnabled": {
-  "usatf-outdoor-championships": true,
-  "high-school-softball": false,
-  "women-s-road-cycling": false,
-  "college-bb": false,
-  "motocross-world-championship": false,
-  "npb": false,
-  "canadian-premier-league": false,
-  "afl": false,
-  "arca-menards-series": false,
-  "concacaf-u20": false,
-  "usl-league-one": false,
-  "little-league-softball": false,
-  "pwhl": false,
-  "pll": false,
-  "northern-super-league": false,
-  "primera-a": true,
-  "usl-champ": false,
-  "aapb": false,
-  "cbl": false,
-  "nbl": false,
-  "indycar": false,
-  "motogp": false,
-  "atp": false,
-  "wta": false,
-  "kickboxing": false,
-  "mma": false,
-  "nrl": false,
-  "au-softball": false,
-  "collegiate-summer-baseball": false
- },
- "tvNames": {
-  "0": "TV 1",
-  "1": "TV 2",
-  "2": "TV 3",
-  "3": "TV 4",
-  "4": "TV 5",
-  "5": "TV 6",
-  "6": "TV 7",
-  "7": "TV 8",
-  "8": "TV 9",
-  "9": "TV 10"
- },
- "tvFillCh": {
-  "0": "ESPN",
-  "1": "ESPN2",
-  "2": "FS1",
-  "3": "NBA TV",
-  "4": "ESPNews",
-  "5": "NFL Network",
-  "6": "Fox News",
-  "7": "MLB Network",
-  "8": "NHL Network",
-  "9": "Golf Channel"
- },
- "lastDate": "2026-07-23"
 }
