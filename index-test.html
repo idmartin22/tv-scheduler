@@ -640,6 +640,7 @@ function App(){
   const [ready,setReady]=useState(false);
   const [favTeams,setFavTeams]=useState({...DEF_FAVES});
   const [leagueMods,setLeagueMods]=useState({...DEF_MODS});
+  const [soccerAdjustment,setSoccerAdjustment]=useState(0); // flat shift applied to every AUTO-scored (GFR) soccer game's score; manual-mod soccer leagues are untouched by this entirely
 
   useEffect(()=>{
     let active=true;
@@ -652,6 +653,7 @@ function App(){
         if(data&&active){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
+          if(typeof data.soccerAdjustment==="number") setSoccerAdjustment(data.soccerAdjustment);
           // Auto-clear prioOvr and mirrors if it's a new day
           const today=new Date();
           const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
@@ -703,6 +705,7 @@ function App(){
         if(lastKnownGood.current&&active){
           const d=lastKnownGood.current;
           if(d.leagueMods) setLeagueMods(d.leagueMods);
+          if(typeof d.soccerAdjustment==="number") setSoccerAdjustment(d.soccerAdjustment);
           if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
@@ -863,15 +866,20 @@ function App(){
       prioOvr:    overrides.prioOvr    ?? prioOvr,
       mirrors:    overrides.mirrors    ?? mirrors,
       leagueStatus: overrides.leagueStatus ?? leagueStatus,
+      soccerAdjustment: overrides.soccerAdjustment ?? soccerAdjustment,
       tvNames:    overrides.tvNames    ?? tvNames,
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,tvNames,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
   const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
+  // Takes the DISPLAYED baseline value (e.g. user types 55) and stores it as
+  // a delta from 50, since 50 is the fixed reference point the whole GFR mod
+  // scale is anchored to (EPL always computes to exactly 50).
+  const updateSoccerAdjustment=(val)=>{const displayed=Number(val)||50;const adj=displayed-50;setSoccerAdjustment(adj);debouncedSave(buildSavePayload({soccerAdjustment:adj}));};
   const toggleLeague=(leagueId)=>{
     // Already-decided leagues only (never pending — a league can't reach the
     // active/off lists while still pending, see resolvePendingLeague).
@@ -896,17 +904,23 @@ function App(){
       const lm=leagueMods[e.leagueId]??0;
       const fb=getFaveBoost(e.name,e.leagueId,favTeams);
       const fm=fb.match?FAVE_BOOST:0;
-      const raw=e.rawBase+lm+fm;
+      // Only applies to auto-scored (GFR) soccer - manual-mod soccer leagues
+      // (NWSL, USL League One, etc.) get their entire score from their own
+      // individually-typed mod, same mechanism as MLB/NFL, with nothing
+      // underneath to shift - so they're deliberately excluded here.
+      const sa=(e.sport==="Soccer"&&leagueStatus[e.leagueId]?.scoring!=="manual")?soccerAdjustment:0;
+      const raw=e.rawBase+lm+fm+sa;
       const ov=prioOvr[e.id]??prioOvr[String(e.id)];
       const bd=[
-        ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")),
+        ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")&&!b.l?.includes("Soccer adjustment")),
         lm>0&&{l:`League mod +${lm}`,v:lm},
+        sa!==0&&{l:`Soccer adjustment ${sa>0?"+":""}${sa}`,v:sa},
         fm>0&&{l:`⭐ Fave team match +${fm}`,v:fm},
       ].filter(Boolean);
       return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
     });
     return normalize(base);
-  },[leagueMods,prioOvr,favTeams,activeEvents]);
+  },[leagueMods,prioOvr,favTeams,activeEvents,leagueStatus,soccerAdjustment]);
 
   // Current time in minutes for "What's on Now"
   const [nowMin,setNowMin]=useState(()=>{const n=new Date();return n.getHours()*60+n.getMinutes();});
@@ -1339,8 +1353,14 @@ function App(){
                       <div style={{fontSize:16,textAlign:"center"}}>{sportIcon("Soccer")}</div>
                       <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Soccer ({activeSoccer.length} leagues — click to {soccerExpanded?"collapse":"expand"})</div>
                       <div/>
-                      <div style={{fontSize:12,fontWeight:700,color:"#86efac",textAlign:"center"}}>50</div>
-                      <div style={{fontSize:9,color:C.DM}}>every matchup scores its own mod</div>
+                      <div onClick={ev=>ev.stopPropagation()}>
+                        <input type="number" defaultValue={50+soccerAdjustment}
+                          key={`soccer-adj-${soccerAdjustment}`}
+                          onBlur={ev=>updateSoccerAdjustment(ev.target.value)}
+                          onKeyDown={ev=>{if(ev.key==="Enter")updateSoccerAdjustment(ev.target.value);}}
+                          style={{background:C.SUR,border:"1px solid #4ade80",borderRadius:8,color:"#86efac",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                      </div>
+                      <div style={{fontSize:9,color:C.DM}}>{soccerAdjustment!==0?`shifted ${soccerAdjustment>0?"+":""}${soccerAdjustment} from EPL's 50`:"every matchup scores its own mod"}</div>
                     </div>
                     {soccerExpanded&&(<>
                       {sortedAutoSoccer.length>0&&(<div style={{padding:"6px 16px 4px 40px"}}><span style={{fontSize:9,fontWeight:700,color:"#86efac",letterSpacing:"0.05em"}}>GFR-SCORED (men's soccer — GFR has no women's data)</span></div>)}
