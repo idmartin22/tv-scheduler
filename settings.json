@@ -72,62 +72,74 @@
   "premier-league": {
    "name": "Premier League",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "la-liga": {
    "name": "La Liga",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "bundesliga": {
    "name": "Bundesliga",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "eredivisie": {
    "name": "Dutch Eredivisie",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "usl-champ": {
    "name": "USL Championship",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "serie-a": {
    "name": "Serie A",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "primera-division": {
    "name": "Argentina Primera Division",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "brazil-serie-a": {
    "name": "Brazilian Serie A",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "efl-championship": {
    "name": "English Championship",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "scottish-premiership": {
    "name": "Scottish Premiership",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "mls": {
    "name": "MLS",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "liga-mx": {
    "name": "Liga MX",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "mlb": {
    "name": "MLB",
@@ -162,32 +174,39 @@
   "nwsl": {
    "name": "NWSL",
    "sport": "Soccer",
-   "status": "off"
+   "status": "active",
+   "scoring": "manual",
+   "gender": "women"
   },
   "canadian-premier-league": {
    "name": "Canadian Premier League",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "concacaf-u20": {
    "name": "CONCACAF U20",
    "sport": "Soccer",
-   "status": "off"
+   "status": "active",
+   "scoring": "manual"
   },
   "ekstraklasa": {
    "name": "Ekstraklasa",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "soccer-club-friendlies": {
    "name": "Soccer Club Friendlies",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "primera-a": {
    "name": "Primera A",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "other": {
    "name": "Other",
@@ -277,7 +296,8 @@
   "liga-nacional": {
    "name": "Liga Nacional",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "npb": {
    "name": "NPB",
@@ -292,22 +312,28 @@
   "usl-league-one": {
    "name": "USL League One",
    "sport": "Soccer",
-   "status": "off"
+   "status": "active",
+   "scoring": "manual",
+   "gender": "men"
   },
   "campe-n-de-campeones": {
    "name": "Campe\u00c3\u00b3n De Campeones",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "international-friendly": {
    "name": "International Friendly",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "northern-super-league": {
    "name": "Northern Super League",
    "sport": "Soccer",
-   "status": "off"
+   "status": "active",
+   "scoring": "manual",
+   "gender": "women"
   },
   "cfl": {
    "name": "CFL",
@@ -362,7 +388,8 @@
   "scottish-league-cup": {
    "name": "Scottish League Cup",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "nascar-cup": {
    "name": "NASCAR Cup Series",
@@ -382,12 +409,14 @@
   "uefa-champions-league": {
    "name": "UEFA Champions League",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   },
   "copa-sudamericana": {
    "name": "Copa Sudamericana",
    "sport": "Soccer",
-   "status": "active"
+   "status": "active",
+   "scoring": "auto"
   }
  },
  "tvNames": {
