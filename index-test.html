@@ -6,7 +6,7 @@
   <title>Bar Scheduler</title>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <meta name="theme-color" content="#fb923c">
+  <meta name="theme-color" content="#DC1E28">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Bar Scheduler">
@@ -14,10 +14,10 @@
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #080b12; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { background: #0A0A0C; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     ::-webkit-scrollbar { height: 4px; width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 4px; }
@@ -25,6 +25,7 @@
     @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
     .now-playing { animation: pulse-now 2s infinite; }
     .fade-in { animation: fadeIn 0.2s ease; }
+    .espn-display { font-family: 'Oswald', 'Inter', system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.02em; }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
     input[type=number] { -moz-appearance: textfield; }
@@ -1014,17 +1015,18 @@ function App(){
   const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
 
   const C={
-  A:"#f97316",        // orange accent
-  A2:"#fb923c",       // orange light
-  BG:"#080b12",       // deep background
-  SUR:"#0f1520",      // surface
-  SUR2:"#141d2b",     // elevated surface
-  BD:"#1a2640",       // border subtle
-  BD2:"#243350",      // border visible
-  MT:"#7c92b0",       // muted text
-  DM:"#3d5070",       // dim text
-  GRN:"#22c55e",      // green
-  BLU:"#3b82f6",      // blue
+  A:"#DC1E28",        // ESPN red — primary accent
+  A2:"#E8434B",        // red light (hover states)
+  BG:"#0A0A0C",        // near-black background
+  SUR:"#141417",       // surface
+  SUR2:"#1C1D22",      // elevated surface
+  BD:"#232428",        // border subtle
+  BD2:"#333438",       // border visible
+  MT:"#8B8D93",        // muted text (steel)
+  DM:"#4A4B50",        // dim text
+  GRN:"#22c55e",       // green (live/positive status only, distinct from brand red)
+  BLU:"#3b82f6",       // blue
+  GLD:"#FFB81C",       // gold — reserved for the score-bug treatment
 };
   const tabStyle=a=>({background:a?C.A:"transparent",border:"none",borderRadius:20,color:a?"#fff":C.MT,fontSize:11,fontWeight:a?700:500,padding:"6px 14px",cursor:"pointer",letterSpacing:a?"0.02em":0});
   const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:40,top:2,borderRadius:6,background:c.bg,border:`1.5px solid ${isNow?"#22c55e":isSel?"rgba(255,255,255,0.9)":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #22c55e,0 2px 8px rgba(0,0,0,0.4)":isSel?"0 0 0 2px rgba(255,255,255,0.6),0 2px 8px rgba(0,0,0,0.4)":"0 1px 4px rgba(0,0,0,0.3)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 7px",minWidth:4,transition:"box-shadow 0.15s ease"});
@@ -1034,13 +1036,14 @@ function App(){
       <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
 
       {/* ── HEADER ── */}
-      <div style={{background:"rgba(8,11,18,0.92)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderBottom:`1px solid ${C.BD}`,padding:"12px 16px 0",position:"sticky",top:0,zIndex:30}}>
+      <div style={{height:3,background:`linear-gradient(90deg, ${C.A}, ${C.A2})`}}/>
+      <div style={{background:"rgba(10,10,12,0.94)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderBottom:`1px solid ${C.BD}`,padding:"12px 16px 0",position:"sticky",top:0,zIndex:30}}>
         {/* Top row: logo + date nav + status */}
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
           <div style={{display:"flex",alignItems:"center",gap:8}}>
             <span style={{fontSize:18}}>🍺</span>
             <div>
-              <div style={{fontSize:15,fontWeight:800,color:"#f1f5f9",letterSpacing:"-0.02em",lineHeight:1}}>Bar Scheduler</div>
+              <div className="espn-display" style={{fontSize:17,fontWeight:700,color:"#f1f5f9",lineHeight:1}}>Bar Scheduler</div>
               <div style={{fontSize:10,color:C.MT,marginTop:1}}>
                 {asgnd.length} events · {schedulableTVs.size} TVs active
                 <span style={{marginLeft:8,color:syncStatus==="saved"?C.GRN:syncStatus==="saving"?"#fbbf24":syncStatus==="error"?"#ef4444":C.MT}}>
@@ -1061,7 +1064,7 @@ function App(){
           <div style={{display:"flex",alignItems:"center",gap:4}}>
             <button onClick={()=>navigateDate(-1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>‹</button>
             <div style={{textAlign:"center",minWidth:96}}>
-              <div style={{fontSize:13,fontWeight:700,color:isToday?"#f1f5f9":"#f97316",letterSpacing:"0.02em"}}>{formatDateLabel(scheduleDate)}</div>
+              <div style={{fontSize:13,fontWeight:700,color:isToday?"#f1f5f9":C.A,letterSpacing:"0.02em"}}>{formatDateLabel(scheduleDate)}</div>
               <div style={{fontSize:9,color:scheduleStatus==="loaded"?C.GRN:scheduleStatus==="loading"?"#fbbf24":C.DM,marginTop:1}}>
                 {isToday?"TODAY · ":""}{scheduleStatus==="loaded"?"LOADED":scheduleStatus==="loading"?"LOADING...":"NO SCHEDULE"}
               </div>
@@ -1072,7 +1075,7 @@ function App(){
         </div>
         {/* TV toggles + Mirror */}
         <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
-          <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?"#f97316":C.BD2}`,background:activePreset==="Mirror 1"?"rgba(249,115,22,0.15)":"transparent",color:activePreset==="Mirror 1"?"#f97316":C.MT}}>Mirror 1</button>
+          <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?C.A:C.BD2}`,background:activePreset==="Mirror 1"?`${C.A}26`:"transparent",color:activePreset==="Mirror 1"?C.A:C.MT}}>Mirror 1</button>
           <button onClick={()=>{
             const tv14=new Set([0,1,2,9]);
             const isActive=[...activeTVs].sort().join()==='0,1,2,9';
@@ -1085,8 +1088,8 @@ function App(){
               const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));
               const lbl=tvNames[id]||`TV ${id+1}`;
               const bg=isMirrorSrc?"rgba(249,115,22,0.2)":isMirrorTgt?"rgba(249,115,22,0.08)":on?TVS[id].sz>=55?"rgba(59,130,246,0.2)":"rgba(34,197,94,0.12)":"transparent";
-              const bc=isMirrorSrc?"#f97316":isMirrorTgt?"rgba(249,115,22,0.4)":on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
-              const tc=isMirrorSrc?"#f97316":on?"#f1f5f9":C.DM;
+              const bc=isMirrorSrc?C.A:isMirrorTgt?`${C.A}66`:on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
+              const tc=isMirrorSrc?C.A:on?"#f1f5f9":C.DM;
               return(<button key={id} onClick={()=>toggleTV(id)} title={lbl} style={{fontSize:10,fontWeight:600,padding:"3px 7px",borderRadius:6,cursor:"pointer",border:`1px solid ${bc}`,background:bg,color:tc,minWidth:28}}>{id+1}</button>);
             })}
           </div>
@@ -1094,7 +1097,7 @@ function App(){
         {/* Tab bar */}
         <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
           {["grid","list","rank","league","schedule"].map(t=>(
-            <button key={t} style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
+            <button key={t} className="espn-display" style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
               {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Schedule"}
             </button>
           ))}
@@ -1114,7 +1117,7 @@ function App(){
             const fb=fillBlocks(tvId,asgnd,tvFillCh);
             const mb=mblocks.filter(m=>m&&m.tv===tvId);
             return(
-              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?"#f97316":tvId<=2?"#3b82f6":"#1e2d45"}`}}>
+              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?C.A:tvId<=2?"#3b82f6":"#1e2d45"}`}}>
                 <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
                   <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
                   <div style={{fontSize:8,color:C.MT,marginTop:1,lineHeight:1.4}}>{tv.brand}</div><div style={{fontSize:8,color:C.MT,lineHeight:1.4}}>{tv.sz}"</div><div style={{fontSize:8,color:"#67e8f9",lineHeight:1.4}}>{tv.input}</div>
@@ -1179,11 +1182,12 @@ function App(){
                     const c=sc(a);
                     const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
                     const isRemoved=removedEvents.includes(a.id);
+                    const sColor=(a.ds??0)>=75?"#22c55e":(a.ds??0)>=50?"#f59e0b":"#94a3b8";
                     return(
                     <div key={a.id} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
-                      <div>
-                        <div style={{fontSize:12,fontWeight:700,color:"#86efac"}}>{a.ds?.toFixed(1)??"—"}</div>
-                        <div style={{fontSize:9,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
+                      <div className="espn-display" style={{background:`${sColor}18`,border:`1.5px solid ${sColor}`,borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
+                        <div style={{fontSize:12,fontWeight:700,color:sColor}}>{a.ds?.toFixed(1)??"—"}</div>
+                        <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
                       </div>
                       <div style={{minWidth:0}}>
                         <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{a.name}</div>
@@ -1249,9 +1253,9 @@ function App(){
                     <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · <ChBadges channel={e.channel}/></div>
                   </div>
                   {/* Score */}
-                  <div style={{textAlign:"center"}}>
-                    <div style={{fontSize:20,fontWeight:800,color:scoreColor,lineHeight:1}}>{e.ds?.toFixed(1)??0}</div>
-                    <div style={{fontSize:9,color:C.DM,marginTop:1}}>/100</div>
+                  <div className="espn-display" style={{textAlign:"center",background:`${scoreColor}18`,border:`1.5px solid ${scoreColor}`,borderRadius:6,padding:"3px 8px",minWidth:44}}>
+                    <div style={{fontSize:19,fontWeight:700,color:scoreColor,lineHeight:1}}>{e.ds?.toFixed(1)??0}</div>
+                    <div style={{fontSize:8,color:scoreColor,marginTop:1,opacity:0.75}}>/100</div>
                   </div>
                   {/* TV */}
                   <div style={{textAlign:"center",fontSize:12,fontWeight:700,color:asgn?.tv===-1?"#ef4444":"#f1f5f9",background:C.SUR,borderRadius:6,padding:"4px 0",border:`1px solid ${C.BD}`}}>{tvLbl}</div>
