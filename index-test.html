@@ -578,6 +578,7 @@ function App(){
   const [order,setOrder]=useState([...DEF_ORDER]);
   const [leagueStatus,setLeagueStatus]=useState({}); // leagueId -> {name, sport, status: "pending"|"active"|"off"} — SINGLE source of truth, replaces the old unknownLeagues+leagueEnabled split
   const [modDrafts,setModDrafts]=useState({}); // leagueId -> in-progress typed mod value, not yet committed (avoids live re-sort while typing a 2-digit number)
+  const [soccerExpanded,setSoccerExpanded]=useState(false); // collapsed "Soccer" category in the Leagues tab, expands to show individual leagues
   const [scheduleDate,setScheduleDate]=useState(()=>{
     const now=new Date();
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -673,6 +674,24 @@ function App(){
   const parsedEvents=useMemo(()=>{
     return dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
   },[dynamicEvents,scheduleDate]);
+
+  // The app can't call GFR directly (CORS blocks it from the browser, same
+  // restriction that showed up trying this from the sandbox tonight) - so
+  // "how does this league currently grade in GFR" has to come from what
+  // daily_scrape.py already computed for today's actual games, extracted
+  // from each event's own score label rather than a live lookup. Leagues
+  // with no game today simply have no current mod to show.
+  const soccerCurrentMods=useMemo(()=>{
+    const mods={};
+    parsedEvents.forEach(e=>{
+      if(e.sport!=="Soccer") return;
+      if(mods[e.leagueId]!==undefined) return; // keep the first one seen
+      const text=(e.breakdown||[]).map(b=>b.l).join(" ");
+      const m=text.match(/Mod ([+-]?[\d.]+)/);
+      if(m) mods[e.leagueId]=parseFloat(m[1]);
+    });
+    return mods;
+  },[parsedEvents]);
 
   // What actually reaches the grid and the scored listing — ONLY leagues
   // explicitly turned on. Pending leagues show up in the Leagues tab needing
@@ -1289,11 +1308,47 @@ function App(){
                 </div>
                 {pendingLgs.map((lg)=><LeagueRow key={lg.id} lg={lg} pending={true}/>)}
               </>)}
-              {/* Active leagues header */}
-              <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
-                {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
-              </div>
-              {activeLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true}/>)}
+              {(()=>{
+                const activeSoccer=activeLgs.filter(lg=>lg.sport==="Soccer");
+                const activeNonSoccer=activeLgs.filter(lg=>lg.sport!=="Soccer");
+                const sortedSoccer=[...activeSoccer].sort((a,b)=>{
+                  const ma=soccerCurrentMods[a.id], mb=soccerCurrentMods[b.id];
+                  if(ma!==undefined&&mb!==undefined) return mb-ma;
+                  if(ma!==undefined) return -1;
+                  if(mb!==undefined) return 1;
+                  return a.n.localeCompare(b.n);
+                });
+                return(<>
+                  {/* Active leagues header */}
+                  <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
+                    {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                  </div>
+                  {activeNonSoccer.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true}/>)}
+                  {activeSoccer.length>0&&(<>
+                    <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}} onClick={()=>setSoccerExpanded(x=>!x)}>
+                      <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{soccerExpanded?"▾":"▸"}</div>
+                      <div style={{fontSize:16,textAlign:"center"}}>{sportIcon("Soccer")}</div>
+                      <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Soccer ({activeSoccer.length} leagues — click to {soccerExpanded?"collapse":"expand"})</div>
+                      <div/>
+                      <div style={{fontSize:12,fontWeight:700,color:"#86efac",textAlign:"center"}}>50</div>
+                      <div style={{fontSize:9,color:C.DM}}>every matchup scores its own mod</div>
+                    </div>
+                    {soccerExpanded&&sortedSoccer.map(lg=>{
+                      const mod=soccerCurrentMods[lg.id];
+                      return(
+                        <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(255,255,255,0.02)"}}>
+                          <div/>
+                          <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
+                          <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}</div>
+                          <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
+                          <div style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"—"}</div>
+                          <div style={{fontSize:9,color:C.DM}}>{mod!==undefined?"live from today's games":"no game today"}</div>
+                        </div>
+                      );
+                    })}
+                  </>)}
+                </>);
+              })()}
               {/* Disabled leagues sub-list */}
               {disabledLgs.length>0&&(<>
                 <div style={{padding:"12px 16px 6px",marginTop:8,borderTop:`2px solid ${C.BD2}`}}>
