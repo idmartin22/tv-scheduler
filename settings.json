@@ -1,434 +1,433 @@
 {
- "leagueMods": {
-  "nfl": 100,
-  "college-fb": 65,
-  "ufl": 2,
-  "cfl": 2,
-  "ifl": 1,
-  "mlb": 46,
-  "college-bb": 0,
-  "banana-ball": 2,
-  "aapb": 0,
-  "cbl": 0,
-  "nba": 48,
-  "college-bball": 7,
-  "wnba": 6,
-  "nbl": 0,
-  "nhl": 44,
-  "pwhl": 0,
-  "golf-majors": 42,
-  "pga-tour": 22,
-  "lpga-tour": 5,
-  "liv-golf": 12,
-  "ryder-cup": 40,
-  "f1": 3,
-  "nascar-cup": 63,
-  "indycar": 0,
-  "motogp": 0,
-  "wimbledon": 3,
-  "us-open-tennis": 3,
-  "french-open": 2,
-  "aus-open": 2,
-  "atp": 0,
-  "wta": 0,
-  "ufc": 60,
-  "boxing": 14,
-  "kickboxing": 0,
-  "mma": 0,
-  "mlr": 2,
-  "six-nations": 7,
-  "nrl": 0,
-  "au-softball": 0,
-  "horse-racing": 6,
-  "nascar-o-reilly-auto-parts-series": 5,
-  "nascar-craftsman-truck-series": 4,
-  "tour-de-france": 2,
-  "big3": 2,
-  "football-club-friendlies": 1,
-  "the-basketball-tournament-tbt": 1,
-  "flag-football": 1,
-  "super-league": 1,
-  "usatf-outdoor-championships": 1,
-  "other": 1,
-  "soccer-club-friendlies": 1,
-  "premier-league": 50,
-  "la-liga": 44,
-  "bundesliga": 44,
-  "dutch-eredivisie": 37,
-  "usl-champ": 22,
-  "serie-a": 44,
-  "argentina-primera-divisi-n": 36,
-  "brazilian-serie-a": 38,
-  "english-championship": 39,
-  "scottish-premiership": 34,
-  "mls": 37,
-  "liga-mx": 35,
-  "eredivisie": 37,
-  "primera-division": 36,
-  "brazil-serie-a": 38,
-  "efl-championship": 39,
-  "primera-a": 34,
-  "ekstraklasa": 36,
-  "canadian-premier-league": 22
- },
- "favTeams": {
-  "mlb": "Guardians",
-  "nfl": "Browns",
-  "nba": "Cavaliers, Cavs",
-  "mls": "Inter Miami, Columbus Crew ",
-  "nhl": "Blue Jackets",
-  "premier-league": "Manchester City, Bournemouth, Crystal Palace, Fulham, Chelsea",
-  "la-liga": "Real Madrid, Barcelona, Atletico Madrid, Villarreal",
-  "serie-a": "AC Milan",
-  "liga-mx": "Club America, Chivas, Tigres"
- },
- "prioOvr": {},
- "mirrors": {},
- "leagueStatus": {
-  "premier-league": {
-   "name": "Premier League",
-   "sport": "Soccer",
-   "status": "active"
+  "leagueMods": {
+    "nfl": 100,
+    "college-fb": 65,
+    "ufl": 2,
+    "cfl": 2,
+    "ifl": 1,
+    "mlb": 46,
+    "college-bb": 0,
+    "banana-ball": 2,
+    "aapb": 0,
+    "cbl": 0,
+    "nba": 48,
+    "college-bball": 7,
+    "wnba": 6,
+    "nbl": 0,
+    "nhl": 44,
+    "pwhl": 0,
+    "golf-majors": 42,
+    "pga-tour": 22,
+    "lpga-tour": 5,
+    "liv-golf": 12,
+    "ryder-cup": 40,
+    "f1": 3,
+    "nascar-cup": 63,
+    "indycar": 0,
+    "motogp": 0,
+    "wimbledon": 3,
+    "us-open-tennis": 3,
+    "french-open": 2,
+    "aus-open": 2,
+    "atp": 0,
+    "wta": 0,
+    "ufc": 60,
+    "boxing": 14,
+    "kickboxing": 0,
+    "mma": 0,
+    "mlr": 2,
+    "six-nations": 7,
+    "nrl": 0,
+    "au-softball": 0,
+    "horse-racing": 6,
+    "nascar-o-reilly-auto-parts-series": 5,
+    "nascar-craftsman-truck-series": 4,
+    "tour-de-france": 2,
+    "big3": 2,
+    "football-club-friendlies": 1,
+    "the-basketball-tournament-tbt": 1,
+    "flag-football": 1,
+    "super-league": 1,
+    "usatf-outdoor-championships": 1,
+    "other": 1,
+    "soccer-club-friendlies": 1,
+    "premier-league": 50,
+    "la-liga": 44,
+    "bundesliga": 44,
+    "dutch-eredivisie": 37,
+    "usl-champ": 22,
+    "serie-a": 44,
+    "argentina-primera-divisi-n": 36,
+    "brazilian-serie-a": 38,
+    "english-championship": 39,
+    "scottish-premiership": 34,
+    "mls": 37,
+    "liga-mx": 35,
+    "eredivisie": 37,
+    "primera-division": 36,
+    "brazil-serie-a": 38,
+    "efl-championship": 39,
+    "primera-a": 34,
+    "ekstraklasa": 36
   },
-  "la-liga": {
-   "name": "La Liga",
-   "sport": "Soccer",
-   "status": "active"
+  "favTeams": {
+    "mlb": "Guardians",
+    "nfl": "Browns",
+    "nba": "Cavaliers, Cavs",
+    "mls": "Inter Miami, Columbus Crew ",
+    "nhl": "Blue Jackets",
+    "premier-league": "Manchester City, Bournemouth, Crystal Palace, Fulham, Chelsea",
+    "la-liga": "Real Madrid, Barcelona, Atletico Madrid, Villarreal",
+    "serie-a": "AC Milan",
+    "liga-mx": "Club America, Chivas, Tigres"
   },
-  "bundesliga": {
-   "name": "Bundesliga",
-   "sport": "Soccer",
-   "status": "active"
+  "prioOvr": {},
+  "mirrors": {},
+  "leagueStatus": {
+    "premier-league": {
+      "name": "Premier League",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "la-liga": {
+      "name": "La Liga",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "bundesliga": {
+      "name": "Bundesliga",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "eredivisie": {
+      "name": "Dutch Eredivisie",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "usl-champ": {
+      "name": "USL Championship",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "serie-a": {
+      "name": "Serie A",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "primera-division": {
+      "name": "Argentina Primera DivisiÃ³n",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "brazil-serie-a": {
+      "name": "Brazilian Serie A",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "efl-championship": {
+      "name": "English Championship",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "scottish-premiership": {
+      "name": "Scottish Premiership",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "mls": {
+      "name": "MLS",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "liga-mx": {
+      "name": "Liga MX",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "mlb": {
+      "name": "MLB",
+      "sport": "Baseball",
+      "status": "active"
+    },
+    "aapb": {
+      "name": "AAPB",
+      "sport": "Baseball",
+      "status": "off"
+    },
+    "banana-ball": {
+      "name": "Banana Ball World Tour",
+      "sport": "Baseball",
+      "status": "pending"
+    },
+    "collegiate-summer-baseball": {
+      "name": "Collegiate Summer Baseball",
+      "sport": "Baseball",
+      "status": "off"
+    },
+    "wnba": {
+      "name": "WNBA",
+      "sport": "Basketball",
+      "status": "pending"
+    },
+    "the-basketball-tournament-tbt": {
+      "name": "The Basketball Tournament (TBT)",
+      "sport": "Basketball",
+      "status": "active"
+    },
+    "nwsl": {
+      "name": "NWSL",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "canadian-premier-league": {
+      "name": "Canadian Premier League",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "concacaf-u20": {
+      "name": "CONCACAF U20",
+      "sport": "Soccer",
+      "status": "off"
+    },
+    "ekstraklasa": {
+      "name": "Ekstraklasa",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "soccer-club-friendlies": {
+      "name": "Soccer Club Friendlies",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "primera-a": {
+      "name": "Primera A",
+      "sport": "Soccer",
+      "status": "active"
+    },
+    "other": {
+      "name": "Other",
+      "sport": "Athletics",
+      "status": "pending"
+    },
+    "pga-tour": {
+      "name": "PGA Tour",
+      "sport": "Golf",
+      "status": "pending"
+    },
+    "liv-golf": {
+      "name": "LIV Golf",
+      "sport": "Golf",
+      "status": "pending"
+    },
+    "pga-tour-champions": {
+      "name": "PGA Tour Champions",
+      "sport": "Golf",
+      "status": "pending"
+    },
+    "nascar-craftsman-truck-series": {
+      "name": "NASCAR Craftsman Truck Series",
+      "sport": "Motorsports",
+      "status": "active"
+    },
+    "arca-menards-series": {
+      "name": "ARCA Menards Series",
+      "sport": "Motorsports",
+      "status": "off"
+    },
+    "atp": {
+      "name": "ATP",
+      "sport": "Tennis",
+      "status": "pending"
+    },
+    "wta": {
+      "name": "WTA",
+      "sport": "Tennis",
+      "status": "pending"
+    },
+    "boxing": {
+      "name": "Boxing",
+      "sport": "Fighting",
+      "status": "pending"
+    },
+    "mma": {
+      "name": "MMA",
+      "sport": "Fighting",
+      "status": "off"
+    },
+    "afl": {
+      "name": "AFL",
+      "sport": "Aus Football",
+      "status": "pending"
+    },
+    "tour-de-france": {
+      "name": "Tour de France",
+      "sport": "Cycling",
+      "status": "pending"
+    },
+    "women-s-road-cycling": {
+      "name": "Women's Road Cycling",
+      "sport": "Cycling",
+      "status": "off"
+    },
+    "pll": {
+      "name": "PLL",
+      "sport": "Lacrosse",
+      "status": "off"
+    },
+    "nrl": {
+      "name": "NRL",
+      "sport": "Rugby League",
+      "status": "pending"
+    },
+    "super-league": {
+      "name": "Super League",
+      "sport": "Rugby League",
+      "status": "pending"
+    },
+    "high-school-softball": {
+      "name": "High School Softball",
+      "sport": "Softball",
+      "status": "off"
+    },
+    "liga-nacional": {
+      "name": "Liga Nacional",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "npb": {
+      "name": "NPB",
+      "sport": "Baseball",
+      "status": "off"
+    },
+    "nbl": {
+      "name": "NBL",
+      "sport": "Basketball",
+      "status": "off"
+    },
+    "usl-league-one": {
+      "name": "USL League One",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "campe-n-de-campeones": {
+      "name": "Campeón De Campeones",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "international-friendly": {
+      "name": "International Friendly",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "northern-super-league": {
+      "name": "Northern Super League",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "cfl": {
+      "name": "CFL",
+      "sport": "Football",
+      "status": "active"
+    },
+    "wfa": {
+      "name": "WFA",
+      "sport": "Football",
+      "status": "off"
+    },
+    "lpga-tour": {
+      "name": "LPGA Tour",
+      "sport": "Golf",
+      "status": "pending"
+    },
+    "u-s-junior-amateur-championship": {
+      "name": "U.S. Junior Amateur Championship",
+      "sport": "Golf",
+      "status": "off"
+    },
+    "nascar-o-reilly-auto-parts-series": {
+      "name": "NASCAR O'Reilly Auto Parts Series",
+      "sport": "Motorsports",
+      "status": "pending"
+    },
+    "pro-motocross-championship": {
+      "name": "Pro Motocross Championship",
+      "sport": "Motorsports",
+      "status": "off"
+    },
+    "high-school-lacrosse": {
+      "name": "High School Lacrosse",
+      "sport": "Lacrosse",
+      "status": "off"
+    },
+    "usatf-outdoor-championships": {
+      "name": "USATF Outdoor Championships",
+      "sport": "Athletics",
+      "status": "pending"
+    },
+    "ufc": {
+      "name": "UFC",
+      "sport": "Fighting",
+      "status": "active"
+    },
+    "big3": {
+      "name": "BIG3",
+      "sport": "Basketball",
+      "status": "pending"
+    },
+    "scottish-league-cup": {
+      "name": "Scottish League Cup",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "nascar-cup": {
+      "name": "NASCAR Cup Series",
+      "sport": "Motorsports",
+      "status": "active"
+    },
+    "f1": {
+      "name": "Formula 1",
+      "sport": "Motorsports",
+      "status": "active"
+    },
+    "motocross-world-championship": {
+      "name": "Motocross World Championship",
+      "sport": "Motorsports",
+      "status": "off"
+    },
+    "uefa-champions-league": {
+      "name": "UEFA Champions League",
+      "sport": "Soccer",
+      "status": "pending"
+    },
+    "copa-sudamericana": {
+      "name": "Copa Sudamericana",
+      "sport": "Soccer",
+      "status": "pending"
+    }
   },
-  "eredivisie": {
-   "name": "Dutch Eredivisie",
-   "sport": "Soccer",
-   "status": "active"
+  "tvNames": {
+    "0": "TV 1",
+    "1": "TV 2",
+    "2": "TV 3",
+    "3": "TV 4",
+    "4": "TV 5",
+    "5": "TV 6",
+    "6": "TV 7",
+    "7": "TV 8",
+    "8": "TV 9",
+    "9": "TV 10"
   },
-  "usl-champ": {
-   "name": "USL Championship",
-   "sport": "Soccer",
-   "status": "active"
+  "tvFillCh": {
+    "0": "ESPN",
+    "1": "ESPN2",
+    "2": "FS1",
+    "3": "NBA TV",
+    "4": "ESPNews",
+    "5": "NFL Network",
+    "6": "Fox News",
+    "7": "MLB Network",
+    "8": "NHL Network",
+    "9": "Golf Channel"
   },
-  "serie-a": {
-   "name": "Serie A",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "primera-division": {
-   "name": "Argentina Primera Divisi\u00c3\u00b3n",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "brazil-serie-a": {
-   "name": "Brazilian Serie A",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "efl-championship": {
-   "name": "English Championship",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "scottish-premiership": {
-   "name": "Scottish Premiership",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "mls": {
-   "name": "MLS",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "liga-mx": {
-   "name": "Liga MX",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "mlb": {
-   "name": "MLB",
-   "sport": "Baseball",
-   "status": "active"
-  },
-  "aapb": {
-   "name": "AAPB",
-   "sport": "Baseball",
-   "status": "off"
-  },
-  "banana-ball": {
-   "name": "Banana Ball World Tour",
-   "sport": "Baseball",
-   "status": "pending"
-  },
-  "collegiate-summer-baseball": {
-   "name": "Collegiate Summer Baseball",
-   "sport": "Baseball",
-   "status": "off"
-  },
-  "wnba": {
-   "name": "WNBA",
-   "sport": "Basketball",
-   "status": "pending"
-  },
-  "the-basketball-tournament-tbt": {
-   "name": "The Basketball Tournament (TBT)",
-   "sport": "Basketball",
-   "status": "pending"
-  },
-  "nwsl": {
-   "name": "NWSL",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "canadian-premier-league": {
-   "name": "Canadian Premier League",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "concacaf-u20": {
-   "name": "CONCACAF U20",
-   "sport": "Soccer",
-   "status": "off"
-  },
-  "ekstraklasa": {
-   "name": "Ekstraklasa",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "soccer-club-friendlies": {
-   "name": "Soccer Club Friendlies",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "primera-a": {
-   "name": "Primera A",
-   "sport": "Soccer",
-   "status": "active"
-  },
-  "other": {
-   "name": "Other",
-   "sport": "Athletics",
-   "status": "pending"
-  },
-  "pga-tour": {
-   "name": "PGA Tour",
-   "sport": "Golf",
-   "status": "pending"
-  },
-  "liv-golf": {
-   "name": "LIV Golf",
-   "sport": "Golf",
-   "status": "pending"
-  },
-  "pga-tour-champions": {
-   "name": "PGA Tour Champions",
-   "sport": "Golf",
-   "status": "pending"
-  },
-  "nascar-craftsman-truck-series": {
-   "name": "NASCAR Craftsman Truck Series",
-   "sport": "Motorsports",
-   "status": "active"
-  },
-  "arca-menards-series": {
-   "name": "ARCA Menards Series",
-   "sport": "Motorsports",
-   "status": "off"
-  },
-  "atp": {
-   "name": "ATP",
-   "sport": "Tennis",
-   "status": "pending"
-  },
-  "wta": {
-   "name": "WTA",
-   "sport": "Tennis",
-   "status": "pending"
-  },
-  "boxing": {
-   "name": "Boxing",
-   "sport": "Fighting",
-   "status": "pending"
-  },
-  "mma": {
-   "name": "MMA",
-   "sport": "Fighting",
-   "status": "off"
-  },
-  "afl": {
-   "name": "AFL",
-   "sport": "Aus Football",
-   "status": "pending"
-  },
-  "tour-de-france": {
-   "name": "Tour de France",
-   "sport": "Cycling",
-   "status": "pending"
-  },
-  "women-s-road-cycling": {
-   "name": "Women's Road Cycling",
-   "sport": "Cycling",
-   "status": "off"
-  },
-  "pll": {
-   "name": "PLL",
-   "sport": "Lacrosse",
-   "status": "off"
-  },
-  "nrl": {
-   "name": "NRL",
-   "sport": "Rugby League",
-   "status": "pending"
-  },
-  "super-league": {
-   "name": "Super League",
-   "sport": "Rugby League",
-   "status": "pending"
-  },
-  "high-school-softball": {
-   "name": "High School Softball",
-   "sport": "Softball",
-   "status": "off"
-  },
-  "liga-nacional": {
-   "name": "Liga Nacional",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "npb": {
-   "name": "NPB",
-   "sport": "Baseball",
-   "status": "off"
-  },
-  "nbl": {
-   "name": "NBL",
-   "sport": "Basketball",
-   "status": "off"
-  },
-  "usl-league-one": {
-   "name": "USL League One",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "campe-n-de-campeones": {
-   "name": "Campe\u00f3n De Campeones",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "international-friendly": {
-   "name": "International Friendly",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "northern-super-league": {
-   "name": "Northern Super League",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "cfl": {
-   "name": "CFL",
-   "sport": "Football",
-   "status": "active"
-  },
-  "wfa": {
-   "name": "WFA",
-   "sport": "Football",
-   "status": "off"
-  },
-  "lpga-tour": {
-   "name": "LPGA Tour",
-   "sport": "Golf",
-   "status": "pending"
-  },
-  "u-s-junior-amateur-championship": {
-   "name": "U.S. Junior Amateur Championship",
-   "sport": "Golf",
-   "status": "off"
-  },
-  "nascar-o-reilly-auto-parts-series": {
-   "name": "NASCAR O'Reilly Auto Parts Series",
-   "sport": "Motorsports",
-   "status": "pending"
-  },
-  "pro-motocross-championship": {
-   "name": "Pro Motocross Championship",
-   "sport": "Motorsports",
-   "status": "off"
-  },
-  "high-school-lacrosse": {
-   "name": "High School Lacrosse",
-   "sport": "Lacrosse",
-   "status": "off"
-  },
-  "usatf-outdoor-championships": {
-   "name": "USATF Outdoor Championships",
-   "sport": "Athletics",
-   "status": "pending"
-  },
-  "ufc": {
-   "name": "UFC",
-   "sport": "Fighting",
-   "status": "active"
-  },
-  "big3": {
-   "name": "BIG3",
-   "sport": "Basketball",
-   "status": "pending"
-  },
-  "scottish-league-cup": {
-   "name": "Scottish League Cup",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "nascar-cup": {
-   "name": "NASCAR Cup Series",
-   "sport": "Motorsports",
-   "status": "active"
-  },
-  "f1": {
-   "name": "Formula 1",
-   "sport": "Motorsports",
-   "status": "active"
-  },
-  "motocross-world-championship": {
-   "name": "Motocross World Championship",
-   "sport": "Motorsports",
-   "status": "off"
-  },
-  "uefa-champions-league": {
-   "name": "UEFA Champions League",
-   "sport": "Soccer",
-   "status": "pending"
-  },
-  "copa-sudamericana": {
-   "name": "Copa Sudamericana",
-   "sport": "Soccer",
-   "status": "pending"
-  }
- },
- "tvNames": {
-  "0": "TV 1",
-  "1": "TV 2",
-  "2": "TV 3",
-  "3": "TV 4",
-  "4": "TV 5",
-  "5": "TV 6",
-  "6": "TV 7",
-  "7": "TV 8",
-  "8": "TV 9",
-  "9": "TV 10"
- },
- "tvFillCh": {
-  "0": "ESPN",
-  "1": "ESPN2",
-  "2": "FS1",
-  "3": "NBA TV",
-  "4": "ESPNews",
-  "5": "NFL Network",
-  "6": "Fox News",
-  "7": "MLB Network",
-  "8": "NHL Network",
-  "9": "Golf Channel"
- },
- "lastDate": "2026-07-24"
+  "lastDate": "2026-07-24"
 }
