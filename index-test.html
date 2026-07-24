@@ -577,7 +577,9 @@ function App(){
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
   const [leagueStatus,setLeagueStatus]=useState({}); // leagueId -> {name, sport, status: "pending"|"active"|"off"} — SINGLE source of truth, replaces the old unknownLeagues+leagueEnabled split
-  const [modDrafts,setModDrafts]=useState({}); // leagueId -> in-progress typed mod value, not yet committed (avoids live re-sort while typing a 2-digit number)
+  // modDrafts removed - mod inputs are now uncontrolled (see LeagueRow),
+  // eliminating the full-app re-render on every keystroke that was causing
+  // dropped characters when typing a 2-digit mod value.
   const [soccerExpanded,setSoccerExpanded]=useState(false); // collapsed "Soccer" category in the Leagues tab, expands to show individual leagues
   const [scheduleDate,setScheduleDate]=useState(()=>{
     const now=new Date();
@@ -1259,20 +1261,23 @@ function App(){
               // Show the in-progress typed value while editing; only the
               // committed value drives sort order / saving, so the row can't
               // jump out from under a half-typed 2-digit number.
-              const draftVal=modDrafts[leagueId];
-              const displayMod=draftVal!==undefined?draftVal:committedMod;
               const mc=committedMod>=40?"#86efac":committedMod>=25?"#a7f3d0":committedMod>=10?"#fde68a":committedMod>=1?"#fed7aa":"#9ca3af";
               const fv=favTeams[leagueId]||"";
               const hasFave=fv.trim().length>0;
-              const commitMod=(val)=>{
-                updateMod(leagueId,val);
-                setModDrafts(d=>{const n={...d};delete n[leagueId];return n;});
-              };
+              // Uncontrolled input — the DOM manages the in-progress typed
+              // value natively, with zero React state changes (and zero
+              // re-renders) per keystroke. Committing only touches state
+              // once, on blur/Enter. This replaced a controlled input that
+              // stored every keystroke in top-level state, which re-rendered
+              // the entire app (including the full schedule grid) on every
+              // character typed — confirmed via browser console showing a
+              // 380ms 'input' handler violation, slow enough that React's
+              // own re-render could race the DOM and silently drop a digit.
               const modInput=(
-                <input type="number" min="0" max={MAX_MOD} value={displayMod}
-                  onChange={ev=>setModDrafts(d=>({...d,[leagueId]:ev.target.value}))}
-                  onBlur={ev=>commitMod(ev.target.value)}
-                  onKeyDown={ev=>{if(ev.key==="Enter")commitMod(ev.target.value);}}
+                <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
+                  key={`mod-${leagueId}-${committedMod}`}
+                  onBlur={ev=>updateMod(leagueId,ev.target.value)}
+                  onKeyDown={ev=>{if(ev.key==="Enter")updateMod(leagueId,ev.target.value);}}
                   style={{background:C.SUR,border:`1px solid ${committedMod>0?mc:C.BD2}`,borderRadius:8,color:committedMod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
               );
               if(pending){
@@ -1354,19 +1359,16 @@ function App(){
                       {manualSoccer.length>0&&(<div style={{padding:"10px 16px 4px 40px",marginTop:6,borderTop:`1px solid ${C.BD2}`}}><span style={{fontSize:9,fontWeight:700,color:"#fbbf24",letterSpacing:"0.05em"}}>NEEDS MANUAL MOD (GFR can't score these — no real team coverage)</span></div>)}
                       {manualSoccer.map(lg=>{
                         const committedMod=leagueMods[lg.id]??0;
-                        const draftVal=modDrafts[lg.id];
-                        const displayMod=draftVal!==undefined?draftVal:committedMod;
-                        const commitMod=(val)=>{updateMod(lg.id,val);setModDrafts(d=>{const n={...d};delete n[lg.id];return n;});};
                         return(
                           <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(251,191,36,0.03)"}}>
                             <div/>
                             <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
                             <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{genderBadge(lg.gender)}</div>
                             <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
-                            <input type="number" min="0" max={MAX_MOD} value={displayMod}
-                              onChange={ev=>setModDrafts(d=>({...d,[lg.id]:ev.target.value}))}
-                              onBlur={ev=>commitMod(ev.target.value)}
-                              onKeyDown={ev=>{if(ev.key==="Enter")commitMod(ev.target.value);}}
+                            <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
+                              key={`mod-${lg.id}-${committedMod}`}
+                              onBlur={ev=>updateMod(lg.id,ev.target.value)}
+                              onKeyDown={ev=>{if(ev.key==="Enter")updateMod(lg.id,ev.target.value);}}
                               style={{background:C.SUR,border:`1px solid ${committedMod>0?"#fbbf24":C.BD2}`,borderRadius:8,color:committedMod>0?"#fde68a":"#94a3b8",fontSize:11,fontWeight:700,padding:"3px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
                             <div style={{fontSize:9,color:C.DM}}>manually set</div>
                           </div>
