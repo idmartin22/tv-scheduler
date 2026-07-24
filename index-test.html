@@ -38,7 +38,10 @@
     const { useState, useMemo, useEffect } = React;
 
 
-const FLAT_BASE = 20;
+// FLAT_BASE removed - was an arbitrary constant added to every event regardless
+// of sport; mathematically irrelevant to normalization (a constant offset
+// applied to every event doesn't change relative ranking or the final 0-100
+// scale), so it was pure display clutter, not a functional component.
 const BAR_OPEN  = 7  * 60;
 const BAR_CLOSE = 24 * 60;
 const DEAD_MIN  = 60;
@@ -369,8 +372,8 @@ const INITIAL_LEAGUE_STATUS={
 
 function makeEvent(o) {
   const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
-  const raw=FLAT_BASE+st.v+sk.v+rv.v+mq.v;
-  const bd=[{l:"Flat base",v:FLAT_BASE},st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
+  const raw=st.v+sk.v+rv.v+mq.v;
+  const bd=[st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
   const leagueId=computeLeagueId(o.league);
   const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
   return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
