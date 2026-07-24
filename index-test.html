@@ -290,6 +290,28 @@ function normalize(evs) {
   return evs.map(e=>({...e,ds:Math.round(((e.priority-mn)/(mx-mn))*100)}));
 }
 
+
+const LG=[
+  {sport:"Football",c:"#1a3a1a",tc:"#86efac",ls:[{id:"nfl",n:"NFL"},{id:"college-fb",n:"College Football"},{id:"ufl",n:"UFL"},{id:"cfl",n:"CFL"},{id:"ifl",n:"IFL"}]},
+  {sport:"Soccer",c:"#14532d",tc:"#bbf7d0",ls:[
+  ]},
+  {sport:"Baseball",c:"#1e3a5f",tc:"#93c5fd",ls:[{id:"mlb",n:"MLB"},{id:"college-bb",n:"College Baseball"},{id:"banana-ball",n:"Banana Ball World Tour"},{id:"aapb",n:"AAPB"},{id:"cbl",n:"Collegiate Baseball League"}]},
+  {sport:"Basketball",c:"#7c2d12",tc:"#fdba74",ls:[{id:"nba",n:"NBA"},{id:"college-bball",n:"College Basketball"},{id:"wnba",n:"WNBA"},{id:"nbl",n:"NBL"}]},
+  {sport:"Ice Hockey",c:"#164e63",tc:"#a5f3fc",ls:[{id:"nhl",n:"NHL"},{id:"pwhl",n:"PWHL"}]},
+  {sport:"Golf",c:"#064e3b",tc:"#6ee7b7",ls:[{id:"golf-majors",n:"Golf Majors"},{id:"pga-tour",n:"PGA Tour"},{id:"lpga-tour",n:"LPGA Tour"},{id:"liv-golf",n:"LIV Golf"},{id:"ryder-cup",n:"Ryder Cup"}]},
+  {sport:"Motorsports",c:"#374151",tc:"#e5e7eb",ls:[{id:"f1",n:"Formula 1"},{id:"nascar-cup",n:"NASCAR Cup Series"},{id:"indycar",n:"IndyCar"},{id:"motogp",n:"MotoGP"}]},
+  {sport:"Tennis",c:"#92400e",tc:"#fef08a",ls:[{id:"wimbledon",n:"Wimbledon"},{id:"us-open-tennis",n:"US Open Tennis"},{id:"french-open",n:"French Open"},{id:"aus-open",n:"Australian Open"},{id:"atp",n:"ATP Tour"},{id:"wta",n:"WTA Tour"}]},
+  {sport:"Fighting",c:"#7f1d1d",tc:"#fca5a5",ls:[{id:"ufc",n:"UFC"},{id:"boxing",n:"Boxing"},{id:"kickboxing",n:"Kickboxing"},{id:"mma",n:"MMA"}]},
+  {sport:"Rugby",c:"#312e81",tc:"#c7d2fe",ls:[{id:"mlr",n:"Major League Rugby"},{id:"six-nations",n:"Six Nations"},{id:"nrl",n:"NRL"}]},
+  {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
+];
+const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
+// Sport -> {gc,gtc} color lookup, purely cosmetic — used for any league not
+// yet in ALL_LEAGUES (pending, or resolved-but-not-formally-catalogued) so
+// it still gets a sensible color instead of flat gray. LG stays useful for
+// this even though it no longer decides what's "known" vs "pending".
+const SPORT_COLORS=Object.fromEntries(LG.map(g=>[g.sport,{gc:g.c,gtc:g.tc}]));
+
 // Exact (case-insensitive) name -> id lookup, built directly from the
 // catalog — not a hand-maintained parallel list that can drift out of sync
 // like the old matchLid() did. Handles every league whose id doesn't match
@@ -451,26 +473,6 @@ function runSchedule(events,activeTVs){
   return asgn;
 }
 
-const LG=[
-  {sport:"Football",c:"#1a3a1a",tc:"#86efac",ls:[{id:"nfl",n:"NFL"},{id:"college-fb",n:"College Football"},{id:"ufl",n:"UFL"},{id:"cfl",n:"CFL"},{id:"ifl",n:"IFL"}]},
-  {sport:"Soccer",c:"#14532d",tc:"#bbf7d0",ls:[
-  ]},
-  {sport:"Baseball",c:"#1e3a5f",tc:"#93c5fd",ls:[{id:"mlb",n:"MLB"},{id:"college-bb",n:"College Baseball"},{id:"banana-ball",n:"Banana Ball World Tour"},{id:"aapb",n:"AAPB"},{id:"cbl",n:"Collegiate Baseball League"}]},
-  {sport:"Basketball",c:"#7c2d12",tc:"#fdba74",ls:[{id:"nba",n:"NBA"},{id:"college-bball",n:"College Basketball"},{id:"wnba",n:"WNBA"},{id:"nbl",n:"NBL"}]},
-  {sport:"Ice Hockey",c:"#164e63",tc:"#a5f3fc",ls:[{id:"nhl",n:"NHL"},{id:"pwhl",n:"PWHL"}]},
-  {sport:"Golf",c:"#064e3b",tc:"#6ee7b7",ls:[{id:"golf-majors",n:"Golf Majors"},{id:"pga-tour",n:"PGA Tour"},{id:"lpga-tour",n:"LPGA Tour"},{id:"liv-golf",n:"LIV Golf"},{id:"ryder-cup",n:"Ryder Cup"}]},
-  {sport:"Motorsports",c:"#374151",tc:"#e5e7eb",ls:[{id:"f1",n:"Formula 1"},{id:"nascar-cup",n:"NASCAR Cup Series"},{id:"indycar",n:"IndyCar"},{id:"motogp",n:"MotoGP"}]},
-  {sport:"Tennis",c:"#92400e",tc:"#fef08a",ls:[{id:"wimbledon",n:"Wimbledon"},{id:"us-open-tennis",n:"US Open Tennis"},{id:"french-open",n:"French Open"},{id:"aus-open",n:"Australian Open"},{id:"atp",n:"ATP Tour"},{id:"wta",n:"WTA Tour"}]},
-  {sport:"Fighting",c:"#7f1d1d",tc:"#fca5a5",ls:[{id:"ufc",n:"UFC"},{id:"boxing",n:"Boxing"},{id:"kickboxing",n:"Kickboxing"},{id:"mma",n:"MMA"}]},
-  {sport:"Rugby",c:"#312e81",tc:"#c7d2fe",ls:[{id:"mlr",n:"Major League Rugby"},{id:"six-nations",n:"Six Nations"},{id:"nrl",n:"NRL"}]},
-  {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
-];
-const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
-// Sport -> {gc,gtc} color lookup, purely cosmetic — used for any league not
-// yet in ALL_LEAGUES (pending, or resolved-but-not-formally-catalogued) so
-// it still gets a sensible color instead of flat gray. LG stays useful for
-// this even though it no longer decides what's "known" vs "pending".
-const SPORT_COLORS=Object.fromEntries(LG.map(g=>[g.sport,{gc:g.c,gtc:g.tc}]));
 
 function parseScheduleEvents(rawEvents) {
   return rawEvents.map(o=>makeEvent(o));
