@@ -1365,7 +1365,8 @@ function App(){
                     {soccerExpanded&&(<>
                       {sortedAutoSoccer.length>0&&(<div style={{padding:"6px 16px 4px 40px"}}><span style={{fontSize:9,fontWeight:700,color:"#86efac",letterSpacing:"0.05em"}}>GFR-SCORED (men's soccer — GFR has no women's data)</span></div>)}
                       {sortedAutoSoccer.map(lg=>{
-                        const mod=soccerCurrentMods[lg.id];
+                        const rawMod=soccerCurrentMods[lg.id];
+                        const mod=rawMod!==undefined?rawMod+soccerAdjustment:undefined;
                         return(
                           <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(255,255,255,0.02)"}}>
                             <div/>
