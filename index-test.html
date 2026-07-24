@@ -292,46 +292,6 @@ function normalize(evs) {
 
 function matchLid(league) {
   const l=(league||"").toLowerCase();
-  // Most-specific checks first — several of these would otherwise get caught
-  // by broader existing patterns below (e.g. "FIFA Club World Cup" contains
-  // "world cup"; "AFC/CAF Champions League" contain "champions league").
-  if(l.includes("fifa club world cup")||l.includes("club world cup")) return "fifa-club-world-cup";
-  if(l.includes("afc champions league")) return "afc-champions-league-elite";
-  if(l.includes("caf champions league")) return "caf-champions-league";
-  if(l.includes("concacaf champions cup")) return "concacaf-champions-cup";
-  if(l.includes("leagues cup")) return "leagues-cup";
-  if(l.includes("concacaf gold cup")||l.includes("gold cup")) return "concacaf-gold-cup";
-  if(l.includes("copa libertadores")) return "copa-libertadores";
-  if(l.includes("copa sudamericana")) return "copa-sudamericana";
-  if(l.includes("copa américa")||l.includes("copa america")) return "copa-america";
-  if(l.includes("uefa nations league")||l.includes("nations league")) return "uefa-nations-league";
-  if(l.includes("europa league")) return "uefa-europa-league";
-  if(l.includes("conference league")) return "uefa-conference-league";
-  if(l.includes("european championship")||l.includes("uefa euro ")) return "euros";
-  if(l.includes("africa cup of nations")||l.includes("afcon")) return "afcon";
-  if(l.includes("afc asian cup")||l.includes("asian cup")) return "afc-asian-cup";
-  if(l.includes("olympic")&&(l.includes("soccer")||l.includes("football"))) return "olympics-football";
-  if(l.includes("brasileirão")||l.includes("brazil serie a")||l.includes("brazilian serie a")) return "brazil-serie-a";
-  if(l.includes("primeira liga")||l.includes("liga portugal")) return "portugal-primeira-liga";
-  if(l.includes("jupiler pro league")||l.includes("belgian pro league")) return "belgian-pro-league";
-  if(l.includes("eredivisie")) return "eredivisie";
-  if(l.includes("eliteserien")) return "norwegian-eliteserien";
-  if(l.includes("j1 league")) return "j1-league";
-  if(l.includes("ekstraklasa")) return "ekstraklasa";
-  if(l.includes("primera división")||l.includes("primera division")||l.includes("liga profesional")) return "primera-division";
-  if(l.includes("primera a")) return "colombia-primera-a";
-  if(l.includes("efl championship")||l.includes("english championship")) return "efl-championship";
-  if(l.includes("scottish league cup")) return "scottish-league-cup";
-  if(l.includes("world cup")) return "world-cup";
-  if(l.includes("champions league")) return "ucl";
-  if(l.includes("premier league")&&!l.includes("canadian")&&!l.includes("scottish")&&!l.includes("welsh")&&!l.includes("irish")) return "premier-league";
-  if(l.includes("la liga")) return "la-liga";
-  if(l.includes("bundesliga")) return "bundesliga";
-  if(l.includes("serie a")) return "serie-a";
-  if(l.includes("ligue 1")) return "ligue-1";
-  if(l.includes("liga mx")) return "liga-mx";
-  if(l.includes("mls")&&!l.includes("next")) return "mls";
-  if(l.includes("usl championship")||l.includes("usl cup")) return "usl-champ";
   if(l.includes("nfl")) return "nfl";
   if(l.includes("college football")) return "college-fb";
   if(l.includes("ufl")) return "ufl";
