@@ -676,21 +676,23 @@ function App(){
 
   // Auto-register unknown leagues found in today's events
   useEffect(()=>{
-    const found={};
-    activeEvents.forEach(e=>{
-      if(e.isUnknown&&!ALL_LEAGUES.find(l=>l.id===e.leagueId)){
-        found[e.leagueId]={n:e.league,sport:e.sport||"Other",gc:"#374151",gtc:"#9ca3af",isUnknown:true};
-      }
-    });
-    if(Object.keys(found).length>0){
-      setUnknownLeagues(prev=>{
-        const merged={...prev,...found};
-        // Only save if there are new ones
-        const hasNew=Object.keys(found).some(k=>!prev[k]);
-        if(hasNew) debouncedSave(buildSavePayload({unknownLeagues:merged}));
-        return merged;
+    setUnknownLeagues(prev=>{
+      const found={};
+      activeEvents.forEach(e=>{
+        // Only add if genuinely new — never re-flag a league that's already
+        // been resolved (isUnknown:false), even though it'll never be back
+        // in ALL_LEAGUES either (resolved leagues are deliberately kept out
+        // of the static catalog, not re-added). Without this check, every
+        // reload re-overwrote any prior decision back to Pending.
+        if(e.isUnknown&&!ALL_LEAGUES.find(l=>l.id===e.leagueId)&&prev[e.leagueId]?.isUnknown!==false){
+          found[e.leagueId]={n:e.league,sport:e.sport||"Other",gc:"#374151",gtc:"#9ca3af",isUnknown:true};
+        }
       });
-    }
+      if(Object.keys(found).length===0) return prev;
+      const merged={...prev,...found};
+      debouncedSave(buildSavePayload({unknownLeagues:merged}));
+      return merged;
+    });
   },[activeEvents]);
 
   const debouncedSave=React.useCallback((payload)=>{
