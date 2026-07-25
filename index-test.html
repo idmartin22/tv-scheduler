@@ -297,11 +297,12 @@ const sportIcon = s => {
 // the value — it drops keyboard FOCUS, so a keystroke typed right after
 // such a remount goes nowhere. Defining it once, here, at module level,
 // keeps its identity stable across every render regardless of cause.
-function LeagueRow({lg,i,enabled,pending,committedMod,favValue,C,onToggle,onResolveOn,onResolveOff,onUpdateMod,onUpdateFave}) {
+function LeagueRow({lg,i,enabled,pending,committedMod,favValue,faveBoost,C,onToggle,onResolveOn,onResolveOff,onUpdateMod,onUpdateFave,onUpdateFaveBoost}) {
   const leagueId=lg.id;
   const mc=committedMod>=40?"#86efac":committedMod>=25?"#a7f3d0":committedMod>=10?"#fde68a":committedMod>=1?"#fed7aa":"#9ca3af";
   const fv=favValue||"";
   const hasFave=fv.trim().length>0;
+  const fBoost=faveBoost??FAVE_BOOST;
   // Uncontrolled input — the DOM manages the in-progress typed value
   // natively, with zero React state changes per keystroke. Committing only
   // touches state once, on blur/Enter.
@@ -330,7 +331,14 @@ function LeagueRow({lg,i,enabled,pending,committedMod,favValue,C,onToggle,onReso
       <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
       <button onClick={()=>onToggle(leagueId)} style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}>{enabled?"ON":"OFF"}</button>
       {modInput}
-      <input defaultValue={fv} onBlur={ev=>onUpdateFave(leagueId,ev.target.value)} placeholder="Guardians, Cubs..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}/>
+      <div style={{display:"flex",gap:4,alignItems:"center"}}>
+        <input defaultValue={fv} onBlur={ev=>onUpdateFave(leagueId,ev.target.value)} placeholder="Guardians, Cubs..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+        <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+          key={`faveboost-${leagueId}-${fBoost}`}
+          onBlur={ev=>onUpdateFaveBoost(leagueId,ev.target.value)}
+          onKeyDown={ev=>{if(ev.key==="Enter")onUpdateFaveBoost(leagueId,ev.target.value);}}
+          style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+      </div>
     </div>
   );
 }
@@ -642,6 +650,7 @@ function App(){
   const [favTeams,setFavTeams]=useState({...DEF_FAVES});
   const [leagueMods,setLeagueMods]=useState({...DEF_MODS});
   const [soccerAdjustment,setSoccerAdjustment]=useState(0); // flat shift applied to every AUTO-scored (GFR) soccer game's score; manual-mod soccer leagues are untouched by this entirely
+  const [faveBoosts,setFaveBoosts]=useState({}); // leagueId -> favorite-team boost amount; falls back to FAVE_BOOST (20) if a league hasn't set its own
 
   useEffect(()=>{
     let active=true;
@@ -655,6 +664,7 @@ function App(){
           if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
           if(typeof data.soccerAdjustment==="number") setSoccerAdjustment(data.soccerAdjustment);
+          if(data.faveBoosts&&typeof data.faveBoosts==="object") setFaveBoosts(data.faveBoosts);
           // Auto-clear prioOvr and mirrors if it's a new day
           const today=new Date();
           const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
@@ -707,6 +717,7 @@ function App(){
           const d=lastKnownGood.current;
           if(d.leagueMods) setLeagueMods(d.leagueMods);
           if(typeof d.soccerAdjustment==="number") setSoccerAdjustment(d.soccerAdjustment);
+          if(d.faveBoosts&&typeof d.faveBoosts==="object") setFaveBoosts(d.faveBoosts);
           if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
@@ -868,11 +879,12 @@ function App(){
       mirrors:    overrides.mirrors    ?? mirrors,
       leagueStatus: overrides.leagueStatus ?? leagueStatus,
       soccerAdjustment: overrides.soccerAdjustment ?? soccerAdjustment,
+      faveBoosts: overrides.faveBoosts ?? faveBoosts,
       tvNames:    overrides.tvNames    ?? tvNames,
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,tvNames,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -881,6 +893,7 @@ function App(){
   // a delta from 50, since 50 is the fixed reference point the whole GFR mod
   // scale is anchored to (EPL always computes to exactly 50).
   const updateSoccerAdjustment=(val)=>{const displayed=Number(val)||50;const adj=displayed-50;setSoccerAdjustment(adj);debouncedSave(buildSavePayload({soccerAdjustment:adj}));};
+  const updateFaveBoost=(leagueId,val)=>{const v=Math.max(0,Number(val)||0);const b={...faveBoosts,[leagueId]:v};setFaveBoosts(b);debouncedSave(buildSavePayload({faveBoosts:b}));};
   const toggleLeague=(leagueId)=>{
     // Already-decided leagues only (never pending — a league can't reach the
     // active/off lists while still pending, see resolvePendingLeague).
@@ -904,7 +917,7 @@ function App(){
     const base=activeEvents.map(e=>{
       const lm=leagueMods[e.leagueId]??0;
       const fb=getFaveBoost(e.name,e.leagueId,favTeams);
-      const fm=fb.match?FAVE_BOOST:0;
+      const fm=fb.match?(faveBoosts[e.leagueId]??FAVE_BOOST):0;
       // Only applies to auto-scored (GFR) soccer - manual-mod soccer leagues
       // (NWSL, USL League One, etc.) get their entire score from their own
       // individually-typed mod, same mechanism as MLB/NFL, with nothing
@@ -921,7 +934,7 @@ function App(){
       return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
     });
     return normalize(base);
-  },[leagueMods,prioOvr,favTeams,activeEvents,leagueStatus,soccerAdjustment]);
+  },[leagueMods,prioOvr,favTeams,activeEvents,leagueStatus,soccerAdjustment,faveBoosts]);
 
   // Current time in minutes for "What's on Now"
   const [nowMin,setNowMin]=useState(()=>{const n=new Date();return n.getHours()*60+n.getMinutes();});
@@ -1332,7 +1345,7 @@ function App(){
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 16px 6px"}}>
             <div>
               <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>League Modifiers</div>
-              <div style={{fontSize:10,color:C.MT,marginTop:2}}>0–{MAX_MOD} · auto-sorts · fave team +{FAVE_BOOST}</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:2}}>0–{MAX_MOD} · auto-sorts · fave team boost set per league (default +{FAVE_BOOST})</div>
             </div>
             <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
           </div>
@@ -1378,7 +1391,7 @@ function App(){
                   <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
                     {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
                   </div>
-                  {activeNonSoccer.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave}/>)}
+                  {activeNonSoccer.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
                   {activeSoccer.length>0&&(<>
                     <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}} onClick={()=>setSoccerExpanded(x=>!x)}>
                       <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{soccerExpanded?"▾":"▸"}</div>
@@ -1440,7 +1453,7 @@ function App(){
                 <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
                   {["","","LEAGUE","ON/OFF","MOD",""].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
                 </div>
-                {disabledLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={false} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave}/>)}
+                {disabledLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={false} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
               </>)}
             </>);
           })()}
@@ -1530,7 +1543,7 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
               <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
-              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · <ChBadges channel={selEv.channel}/> · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds?.toFixed(1)??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
+              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · <ChBadges channel={selEv.channel}/> · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds?.toFixed(1)??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{faveBoosts[selEv.leagueId]??FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
             </div>
             <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
           </div>
