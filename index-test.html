@@ -1412,32 +1412,53 @@ function App(){
                       {sortedAutoSoccer.map(lg=>{
                         const rawMod=soccerCurrentMods[lg.id];
                         const mod=rawMod!==undefined?rawMod+soccerAdjustment:undefined;
+                        const fv=favTeams[lg.id]||"";
+                        const hasFave=fv.trim().length>0;
+                        const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
                         return(
-                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(255,255,255,0.02)"}}>
+                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
                             <div/>
                             <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
-                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}</div>
+                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
                             <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
-                            <div style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"—"}</div>
-                            <div style={{fontSize:9,color:C.DM}}>{mod!==undefined?"live from today's games":"no game today"}</div>
+                            <div title={mod!==undefined?"live from today's games":"no game today"} style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"—"}</div>
+                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                              <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+                              <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+                                key={`faveboost-${lg.id}-${fBoost}`}
+                                onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
+                                onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
+                                style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+                            </div>
                           </div>
                         );
                       })}
                       {manualSoccer.length>0&&(<div style={{padding:"10px 16px 4px 40px",marginTop:6,borderTop:`1px solid ${C.BD2}`}}><span style={{fontSize:9,fontWeight:700,color:"#fbbf24",letterSpacing:"0.05em"}}>NEEDS MANUAL MOD (GFR can't score these — no real team coverage)</span></div>)}
                       {manualSoccer.map(lg=>{
                         const committedMod=leagueMods[lg.id]??0;
+                        const fv=favTeams[lg.id]||"";
+                        const hasFave=fv.trim().length>0;
+                        const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
                         return(
-                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(251,191,36,0.03)"}}>
+                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.06)":"rgba(251,191,36,0.03)"}}>
                             <div/>
                             <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
-                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{genderBadge(lg.gender)}</div>
+                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{genderBadge(lg.gender)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
                             <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
                             <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
                               key={`mod-${lg.id}-${committedMod}`}
+                              title="manually set"
                               onBlur={ev=>updateMod(lg.id,ev.target.value)}
                               onKeyDown={ev=>{if(ev.key==="Enter")updateMod(lg.id,ev.target.value);}}
                               style={{background:C.SUR,border:`1px solid ${committedMod>0?"#fbbf24":C.BD2}`,borderRadius:8,color:committedMod>0?"#fde68a":"#94a3b8",fontSize:11,fontWeight:700,padding:"3px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
-                            <div style={{fontSize:9,color:C.DM}}>manually set</div>
+                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                              <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Team name..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+                              <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+                                key={`faveboost-${lg.id}-${fBoost}`}
+                                onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
+                                onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
+                                style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+                            </div>
                           </div>
                         );
                       })}
