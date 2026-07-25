@@ -47,7 +47,21 @@ const STORAGE_KEY = "barsched-league-order-v3";
 const FAVE_KEY = "barsched-fave-teams-v1";
 const MOD_KEY = "barsched-league-mods-v1";
 const FAVE_BOOST = 20;
-const MAX_MOD = 50;
+
+// Helper: normalize ch to array
+function chArr(channel){return Array.isArray(channel)?channel:(channel&&channel!=="TBD"?[channel]:[]);}
+function chPrimary(channel){return chArr(channel)[0]||"";}
+function ChBadges({channel,style={}}){
+  const chs=chArr(channel);
+  return chs.map((ch,i)=>{
+    const num=getSpectrumCh(ch);
+    let badge=null;
+    if(num!==null&&typeof num==="number") badge=<span style={{color:"#67e8f9",marginLeft:2}}>#{num}</span>;
+    else if(num!==null&&typeof num==="string") badge=<span style={{color:"#c084fc",marginLeft:2}}>📱{num}</span>;
+    return <span key={i} style={style}>{ch}{badge}{i<chs.length-1?<span style={{color:"#64748b",margin:"0 4px"}}>·</span>:null}</span>;
+  });
+}
+const MAX_MOD = 100;
 
 const GITHUB_PAT  = 'ghp_uCQAATKH' + '1vsNTPGdLZtBJjG' + 'FUY7lMp3acy8a';
 const GITHUB_REPO = 'idmartin22/tv-scheduler';
@@ -167,47 +181,42 @@ async function githubSave(data, sha) {
 }
 
 // Spectrum Cleveland/Elyria channel lineup
-const SPECTRUM = {
-  // Broadcast locals
-  "NBC": 3, "CBS": 4, "ABC": 5, "FOX": 8, "PBS": 9,
-  "WJW": 8, "WKYC": 3, "WOIO": 4, "WEWS": 5,
-  "CW": 7, "ION": 23,
-  "Univision": 11, "Telemundo": 13,
-  // Sports tier
-  "ESPN": 250, "ESPN2": 251, "FS1": 252, "FS2": 253,
-  "FOX Sports 1": 252, "FOX Sports 2": 253,
-  "NFL Network": 254, "NFL RedZone": 255,
-  "Golf Channel": 257, "MLB Network": 258,
-  "ESPNews": 259, "ESPNU": 260,
-  "CBS Sports Network": 261, "CBSSN": 261,
-  "NBA TV": 262, "Tennis Channel": 263,
-  "Outdoor Channel": 264, "NHL Network": 265,
-  "Racer Network": 266, "SEC Network": 269,
-  "BTN": 271, "Big Ten Network": 271,
-  "ACC Network": 278, "BTN Extra": 287,
-  "MLB Cleveland Guardians": 447, "Guardians.TV": 447,
-  "BeIN Sports": 449, "beIN Sports": 449, "beIN SPORTS": 449,
-  "FOX Soccer Plus": 450,
-  "FanDuel TV": 453,
-  "MLB Strike Zone": 459,
-  // 4K / IP
-  "FOX 4K": 470, "FS1 4K": 471,
-  "NBC Sports 4K": 474,
-  "ESPN 4K": 477,
-  // Cable sports carry
-  "USA Network": 500, "USA": 500,
-  "TNT": 502, "TBS": 504,
-  "truTV": 528,
-  // Spanish sports
-  "ESPN Deportes": 1005, "FOX Deportes": 1006,
-  "beIN SPORTS Español": 1007, "TUDN": 1008,
-};
+// SPECTRUM map and channel priority loaded dynamically from channels.txt
+let SPECTRUM = {};
+let CHANNEL_PRIORITY = [];
+
+async function loadChannels() {
+  try {
+    const r = await fetch("channels.txt?_=" + Date.now());
+    const text = await r.text();
+    const lines = text.split("\n");
+    const priority = [];
+    const spectrum = {};
+    for (let line of lines) {
+      line = line.trim();
+      if (!line || line.startsWith("#")) continue;
+      const m = line.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+      if (m) {
+        const name = m[1].trim();
+        const label = m[2].trim();
+        priority.push(name);
+        // digits = Spectrum channel number, text = app availability label
+        spectrum[name] = /^\d+$/.test(label) ? parseInt(label) : label;
+      } else {
+        priority.push(line);
+      }
+    }
+    SPECTRUM = spectrum;
+    CHANNEL_PRIORITY = priority;
+  } catch(e) {
+    console.warn("channels.txt not found, using empty spectrum map", e);
+  }
+}
 
 function getSpectrumCh(ch) {
   if (!ch) return null;
-  const key = (ch || "").trim();
+  const key = ch.trim();
   if (SPECTRUM[key] !== undefined) return SPECTRUM[key];
-  // Fuzzy: case-insensitive partial match
   const kl = key.toLowerCase();
   for (const [k, v] of Object.entries(SPECTRUM)) {
     if (k.toLowerCase() === kl) return v;
@@ -285,7 +294,7 @@ function matchLid(league) {
   const l=(league||"").toLowerCase();
   if(l.includes("world cup")) return "world-cup";
   if(l.includes("champions league")) return "ucl";
-  if(l.includes("premier league")) return "premier-league";
+  if(l.includes("premier league")&&!l.includes("canadian")&&!l.includes("scottish")&&!l.includes("welsh")&&!l.includes("irish")) return "premier-league";
   if(l.includes("la liga")) return "la-liga";
   if(l.includes("bundesliga")) return "bundesliga";
   if(l.includes("serie a")) return "serie-a";
@@ -335,7 +344,8 @@ function makeEvent(o) {
   const lid=matchLid(o.league);
   const isUnknown=lid==="other";
   const finalLid=isUnknown?makeLeagueId(o.league):lid;
-  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:o.ch,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:finalLid,isUnknown,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+  const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId:finalLid,isUnknown,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
 }
 
 const EVENTS = [
@@ -399,7 +409,7 @@ function fillBlocks(tvId,assigned,tvFillChMap){
   const cps=[...evts.map(e=>({s:e.startMin,e:e.endMin})),{s:BAR_CLOSE,e:BAR_CLOSE}];
   for(const cp of cps){
     if(cp.s-ptr>=DEAD_MIN){
-      const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>(a.channel||"").toLowerCase().replace(/\s+/g,"")));
+      const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>chPrimary(a.channel).toLowerCase().replace(/\s+/g,"")));
       const f=getFill(tvId,ach,tvFillChMap);
       out.push({isFill:true,tv:tvId,startMin:ptr,endMin:cp.s,dur:cp.s-ptr,name:f.name,fc:f.c});
     }
@@ -468,9 +478,11 @@ function App(){
   const saveTimerRef=React.useRef(null);
   const settingsLoaded=React.useRef(false);
   const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
+  const latestDateRequest=React.useRef(null); // guards against out-of-order date-navigation fetches
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
+    latestDateRequest.current=dateStr;
     setScheduleStatus("loading");
     setDynamicEvents(null);
     setTvOverrides([]);
@@ -478,13 +490,18 @@ function App(){
     setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
+      if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
       if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
-      else setScheduleStatus("none");
+      else {setDynamicEvents([]);setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
+      if(latestDateRequest.current!==dateStr)return;
       setTvOverrides(ovr.overrides||[]);
       setRemovedEvents(ovr.removed||[]);
       setOverridesSha(ovr.sha);
-    }catch(e){console.error('loadScheduleForDate error:', e);setScheduleStatus("error");}
+    }catch(e){
+      if(latestDateRequest.current!==dateStr)return;
+      console.error('loadScheduleForDate error:', e);setScheduleStatus("error");
+    }
   },[]);
 
   const navigateDate=React.useCallback((delta)=>{
@@ -496,8 +513,11 @@ function App(){
       if(d<today){d.setTime(today.getTime());}
       if(d>maxFuture){d.setTime(maxFuture.getTime());}
       const newStr=dateToStr(d);
-      // Call outside setState to avoid batching issues
-      setTimeout(()=>loadScheduleForDate(newStr),0);
+      // Functional updater form so rapid repeated clicks correctly chain off each
+      // other (each invocation gets the previous one's result as `prev`) — but the
+      // call itself is synchronous now, not deferred via setTimeout, so it lands in
+      // the same batch as this date change instead of painting one stale frame first.
+      loadScheduleForDate(newStr);
       return newStr;
     });
   },[loadScheduleForDate]);
@@ -538,6 +558,7 @@ function App(){
   const [prioOvr,setPrioOvr]=useState({});
   const [order,setOrder]=useState([...DEF_ORDER]);
   const [unknownLeagues,setUnknownLeagues]=useState({}); // leagueId -> {n, sport, gc, gtc}
+  const [leagueEnabled,setLeagueEnabled]=useState({}); // leagueId -> true/false (default true)
   const [scheduleDate,setScheduleDate]=useState(()=>{
     const now=new Date();
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -567,6 +588,7 @@ function App(){
           if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
           if(data.unknownLeagues&&typeof data.unknownLeagues==="object") setUnknownLeagues(data.unknownLeagues);
+          if(data.leagueEnabled&&typeof data.leagueEnabled==="object") setLeagueEnabled(data.leagueEnabled);
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
           if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
@@ -583,9 +605,13 @@ function App(){
         const today=new Date();
         const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
         if(active)setScheduleDate(dateStr);
+        if(active)setScheduleStatus("loading");
         const sched=await githubLoadSchedule(dateStr);
         if(sched?.events&&active){
           setDynamicEvents(sched.events);
+          setScheduleStatus("loaded");
+        } else if(active) {
+          setScheduleStatus("none");
         }
         settingsLoaded.current=true;
         if(active)setSyncStatus("saved");
@@ -600,6 +626,7 @@ function App(){
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
           if(d.mirrors) setMirrors(d.mirrors);
           if(d.unknownLeagues) setUnknownLeagues(d.unknownLeagues);
+          if(d.leagueEnabled) setLeagueEnabled(d.leagueEnabled);
         }
         if(active)setSyncStatus("error");
       }
@@ -611,8 +638,8 @@ function App(){
   // Compute active events — use GitHub schedule if loaded, else hardcoded EVENTS
   const activeEvents=useMemo(()=>{
     const evs=dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):EVENTS;
-    return evs;
-  },[dynamicEvents,scheduleDate]);
+    return evs.filter(e=>leagueEnabled[e.leagueId]!==false);
+  },[dynamicEvents,scheduleDate,leagueEnabled]);
 
   // Auto-register unknown leagues found in today's events
   useEffect(()=>{
@@ -705,15 +732,30 @@ function App(){
       prioOvr:    overrides.prioOvr    ?? prioOvr,
       mirrors:    overrides.mirrors    ?? mirrors,
       unknownLeagues: overrides.unknownLeagues ?? unknownLeagues,
+      leagueEnabled: overrides.leagueEnabled ?? leagueEnabled,
       tvNames:    overrides.tvNames    ?? tvNames,
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,tvNames,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,unknownLeagues,leagueEnabled,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
   const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
+  const toggleLeague=(leagueId)=>{
+    // Toggle on/off and clear the isUnknown flag (acknowledges the league)
+    const enabled=leagueEnabled[leagueId]!==false; // default true
+    const newEnabled={...leagueEnabled,[leagueId]:!enabled};
+    setLeagueEnabled(newEnabled);
+    // Clear unknown badge by marking it as acknowledged
+    if(unknownLeagues[leagueId]){
+      const newUnknown={...unknownLeagues,[leagueId]:{...unknownLeagues[leagueId],isUnknown:false}};
+      setUnknownLeagues(newUnknown);
+      debouncedSave(buildSavePayload({leagueEnabled:newEnabled,unknownLeagues:newUnknown}));
+    } else {
+      debouncedSave(buildSavePayload({leagueEnabled:newEnabled}));
+    }
+  };
 
   const ewp=useMemo(()=>{
     const base=activeEvents.map(e=>{
@@ -795,12 +837,12 @@ function App(){
   const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
   const unasgd=useMemo(()=>finalWithOverrides.filter(a=>a.tv===-1),[finalWithOverrides]);
 
-  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave({leagueMods,favTeams,prioOvr,mirrors:n,unknownLeagues});return n;});
+  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave(buildSavePayload({mirrors:n}));return n;});
   const bumpAndAssign=e=>{
     if(!e.bumpTgt)return;
     const b=final.find(a=>a.name===e.bumpTgt.name&&a.tv===e.bumpTgt.tv);
     if(!b)return;
-    setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});setSel(null);
+    setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave(buildSavePayload({prioOvr:n}));return n;});setSel(null);
   };
   const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
 
@@ -913,7 +955,7 @@ function App(){
       </div>
 
       {tab==="grid"&&(
-        <div style={{overflowX:"auto",paddingBottom:120}}>
+        <div key={scheduleDate} style={{overflowX:"auto",paddingBottom:120}}>
           <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
 
@@ -943,21 +985,21 @@ function App(){
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · {m.channel}{getSpectrumCh(m.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(m.channel)}</span>:null}</div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={i} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
           })}
           {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
             <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
-            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · {a.channel}{getSpectrumCh(a.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(a.channel)}</span>:null} · {a.ds??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · <ChBadges channel={a.channel}/> · {a.ds??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
           </div>)}
         </div>
       )}
 
       {tab==="list"&&(
-        <div style={{paddingBottom:120,maxWidth:700,margin:"0 auto"}}>
+        <div key={scheduleDate} style={{paddingBottom:120,maxWidth:700,margin:"0 auto"}}>
           <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
             {["TIME","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
           </div>
@@ -975,7 +1017,7 @@ function App(){
                 <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{a.name}</div>
                 <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
               </div>
-              <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.channel}{getSpectrumCh(a.channel)!==null&&<span style={{color:"#67e8f9",marginLeft:3,fontSize:9}}>#{getSpectrumCh(a.channel)}</span>}</div>
+              <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><ChBadges channel={a.channel}/></div>
               <div style={{display:"flex",flexDirection:"column",gap:3,alignItems:"center"}}>
                 {isRemoved?(
                   <>
@@ -1004,17 +1046,17 @@ function App(){
       )}
 
       {tab==="rank"&&(
-        <div style={{paddingBottom:20,maxWidth:700,margin:"0 auto"}}>
+        <div key={scheduleDate} style={{paddingBottom:20,maxWidth:700,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 16px 8px"}}>
             <div style={{fontSize:11,color:C.MT}}>Tap a game for score breakdown</div>
-            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave({leagueMods,favTeams,prioOvr:{},mirrors,unknownLeagues,lastDate:scheduleDate});}}>Reset</button>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave(buildSavePayload({prioOvr:{},lastDate:scheduleDate}));}}>Reset</button>
           </div>
           {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
             if(!e)return null;const c=sc(e);
             const asgn=final.find(a=>a&&a.id===e.id);
             const tvLbl=asgn?.tv===-1?"⚠":asgn?`T${asgn.tv+1}`:"—";
             const scoreColor=(e.ds??0)>=75?"#22c55e":(e.ds??0)>=50?"#f59e0b":"#94a3b8";
-            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave({leagueMods,favTeams,prioOvr:n,mirrors,unknownLeagues});return n;});};
+            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});};
             return(
               <div key={e.id} className="fade-in" style={{margin:"4px 10px",borderRadius:12,overflow:"hidden",border:`1px solid ${sel===e.id?c.br:C.BD}`,background:sel===e.id?`${c.bg}44`:C.SUR2,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
                 <div style={{display:"grid",gridTemplateColumns:"36px 32px 1fr 52px 36px",gap:8,padding:"10px 12px",alignItems:"center"}}>
@@ -1028,7 +1070,7 @@ function App(){
                   {/* Event info */}
                   <div style={{minWidth:0}}>
                     <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
-                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · {e.channel}{getSpectrumCh(e.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3}}>#{getSpectrumCh(e.channel)}</span>:null}</div>
+                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · <ChBadges channel={e.channel}/></div>
                   </div>
                   {/* Score */}
                   <div style={{textAlign:"center"}}>
@@ -1114,37 +1156,45 @@ function App(){
             </div>
             <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 60px 150px",gap:8,padding:"4px 16px 6px"}}>
-            {["#","","LEAGUE","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
-          </div>
-          {[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:true}))].sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0)).map((lg,i)=>{
-            const leagueId=lg.id;
-            const mod=leagueMods[leagueId]??0;
-            const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
-            const fv=favTeams[leagueId]||"";
-            const hasFave=fv.trim().length>0;
-            return(
-              <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?`${lg.gc}20`:`${lg.gc}10`}}>
-                <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
-                <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
-                <div style={{fontSize:13,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}{lg.isUnknown&&<span style={{marginLeft:5,fontSize:10,color:"#f97316"}}>⚠️</span>}</div>
-                <input
-                  type="number"
-                  min="0"
-                  max={MAX_MOD}
-                  value={mod}
-                  onChange={ev=>updateMod(leagueId,ev.target.value)}
-                  style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}
-                />
-                <input
-                  value={fv}
-                  onChange={ev=>updateFave(leagueId,ev.target.value)}
-                  placeholder="Guardians, Cubs..."
-                  style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}
-                />
+          {(()=>{
+            const allLgs=[...ALL_LEAGUES,...Object.entries(unknownLeagues).map(([id,v])=>({id,n:v.n,sport:v.sport,gc:v.gc||"#374151",gtc:v.gtc||"#9ca3af",isUnknown:v.isUnknown!==false}))];
+            const activeLgs=allLgs.filter(lg=>leagueEnabled[lg.id]!==false).sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
+            const disabledLgs=allLgs.filter(lg=>leagueEnabled[lg.id]===false).sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const LeagueRow=({lg,i,enabled})=>{
+              const leagueId=lg.id;
+              const mod=leagueMods[leagueId]??0;
+              const mc=mod>=40?"#86efac":mod>=25?"#a7f3d0":mod>=10?"#fde68a":mod>=1?"#fed7aa":"#9ca3af";
+              const fv=favTeams[leagueId]||"";
+              const hasFave=fv.trim().length>0;
+              return(
+                <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
+                  <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{enabled?i+1:"—"}</div>
+                  <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+                  <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+                  <button onClick={()=>toggleLeague(leagueId)} style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}>{lg.isUnknown&&enabled?"⚠️ ON":enabled?"ON":"OFF"}</button>
+                  <input type="number" min="0" max={MAX_MOD} value={mod} onChange={ev=>updateMod(leagueId,ev.target.value)} style={{background:C.SUR,border:`1px solid ${mod>0?mc:C.BD2}`,borderRadius:8,color:mod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                  <input value={fv} onChange={ev=>updateFave(leagueId,ev.target.value)} placeholder="Guardians, Cubs..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none"}}/>
+                </div>
+              );
+            };
+            return(<>
+              {/* Active leagues header */}
+              <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+                {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
               </div>
-            );
-          })}
+              {activeLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true}/>)}
+              {/* Disabled leagues sub-list */}
+              {disabledLgs.length>0&&(<>
+                <div style={{padding:"12px 16px 6px",marginTop:8,borderTop:`2px solid ${C.BD2}`}}>
+                  <span style={{fontSize:10,fontWeight:700,color:"#f87171",letterSpacing:"0.08em"}}>DISABLED LEAGUES ({disabledLgs.length})</span>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+                  {["","","LEAGUE","ON/OFF","MOD",""].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                </div>
+                {disabledLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={false}/>)}
+              </>)}
+            </>);
+          })()}
         </div>
       )}
 
@@ -1231,7 +1281,7 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
               <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
-              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · {selEv.channel}{getSpectrumCh(selEv.channel)!==null?<span style={{color:"#67e8f9",marginLeft:3,fontWeight:700}}>ch {getSpectrumCh(selEv.channel)}</span>:null} · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
+              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · <ChBadges channel={selEv.channel}/> · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
             </div>
             <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
           </div>
@@ -1354,8 +1404,10 @@ Please confirm you understand and are ready for me to upload the screenshots.`;
   );
 }
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App/>);
+    loadChannels().then(() => {
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App/>);
+    });
   </script>
 </body>
 </html>
