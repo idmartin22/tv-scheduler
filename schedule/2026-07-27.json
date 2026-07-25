@@ -13,8 +13,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 1.7045454545454137,
-        "l": "Quality -3.8 (Seattle Mariners 0.491 vs Texas Rangers 0.494), Competitiveness +5.5 (RPI gap 0.003 vs league spread 0.066)"
+        "v": 0.8558113419427249,
+        "l": "Quality -4.0 (Seattle Mariners 0.489 vs Texas Rangers 0.495), Competitiveness +4.9 (RPI gap 0.006 vs league spread 0.065)"
       },
       "_sk": {
         "v": 0,
@@ -28,7 +28,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.7045454545454137
+      "_score": 0.8558113419427249
     },
     {
       "id": 2983577,
@@ -42,8 +42,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 3.022727272727218,
-        "l": "Quality -0.3 (Cleveland Guardians 0.507 vs Cincinnati Reds 0.492), Competitiveness +3.3 (RPI gap 0.015 vs league spread 0.066)"
+        "v": 3.324761370016839,
+        "l": "Quality -0.5 (Cleveland Guardians 0.505 vs Cincinnati Reds 0.493), Competitiveness +3.8 (RPI gap 0.012 vs league spread 0.065)"
       },
       "_sk": {
         "v": 0,
@@ -57,7 +57,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.022727272727218
+      "_score": 3.324761370016839
     },
     {
       "id": 14323511,
@@ -70,8 +70,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.818181818181854,
-        "l": "Quality -5.0 (Boston Red Sox 0.506 vs Athletics Athletics 0.474), Competitiveness +0.2 (RPI gap 0.032 vs league spread 0.066)"
+        "v": -4.4551375631667645,
+        "l": "Quality -4.5 (Boston Red Sox 0.507 vs Athletics Athletics 0.475), Competitiveness +0.1 (RPI gap 0.032 vs league spread 0.065)"
       },
       "_sk": {
         "v": 0,
@@ -85,7 +85,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.818181818181854
+      "_score": -4.4551375631667645
     },
     {
       "id": 70179280,
@@ -200,6 +200,92 @@
         "l": ""
       },
       "_score": 36.68196141900962
+    },
+    {
+      "id": 47937236,
+      "time": "20:00",
+      "name": "Los Cabos",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 37134175,
+      "time": "22:00",
+      "name": "Los Cabos",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 9156503,
+      "time": "19:00",
+      "name": "Utah Talons - Chicago Bandits",
+      "sport": "Softball",
+      "league": "Athletes Unlimited Softball",
+      "ch": [
+        "ESPN2",
+        "ESPN UNLIMITED",
+        "ESPN DEPORTES"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Athletes Unlimited Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     }
   ]
 }
