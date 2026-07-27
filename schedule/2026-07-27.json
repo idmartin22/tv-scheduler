@@ -13,8 +13,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.8558113419427249,
-        "l": "Quality -4.0 (Seattle Mariners 0.489 vs Texas Rangers 0.495), Competitiveness +4.9 (RPI gap 0.006 vs league spread 0.065)"
+        "v": -5.630841121495326,
+        "l": "Quality -5.6 (Seattle Mariners 0.488 vs Texas Rangers 0.496)"
       },
       "_sk": {
         "v": 0,
@@ -28,7 +28,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.8558113419427249
+      "_score": -5.630841121495326
     },
     {
       "id": 2983577,
@@ -42,8 +42,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 3.324761370016839,
-        "l": "Quality -0.5 (Cleveland Guardians 0.505 vs Cincinnati Reds 0.493), Competitiveness +3.8 (RPI gap 0.012 vs league spread 0.065)"
+        "v": -1.0747663551401845,
+        "l": "Quality -1.1 (Cleveland Guardians 0.505 vs Cincinnati Reds 0.492)"
       },
       "_sk": {
         "v": 0,
@@ -57,7 +57,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.324761370016839
+      "_score": -1.0747663551401845
     },
     {
       "id": 14323511,
@@ -70,8 +70,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.4551375631667645,
-        "l": "Quality -4.5 (Boston Red Sox 0.507 vs Athletics Athletics 0.475), Competitiveness +0.1 (RPI gap 0.032 vs league spread 0.065)"
+        "v": -7.032710280373831,
+        "l": "Quality -7.0 (Boston Red Sox 0.506 vs Athletics Athletics 0.474)"
       },
       "_sk": {
         "v": 0,
@@ -85,7 +85,93 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.4551375631667645
+      "_score": -7.032710280373831
+    },
+    {
+      "id": 73509891,
+      "time": "18:30",
+      "name": "Newport Gulls - North Adams SteepleCATS",
+      "sport": "Baseball",
+      "league": "Collegiate Summer Baseball",
+      "ch": [
+        "ESPN UNLIMITED",
+        "ESPN SELECT"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 7396223,
+      "time": "19:00",
+      "name": "Martha's Vineyard Sharks - Valley Blue Sox",
+      "sport": "Baseball",
+      "league": "Collegiate Summer Baseball",
+      "ch": [
+        "ESPN UNLIMITED",
+        "ESPN SELECT"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 84662964,
+      "time": "19:00",
+      "name": "Non-Alumni Bracket Tournament",
+      "sport": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
+      "ch": [
+        "FOX SPORTS 1"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "The Basketball Tournament (TBT) not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 70179280,
@@ -184,8 +270,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 36.68196141900962,
-        "l": "Quality -4.5 (GFR 77.6-76.9 vs tier1 baseline 156.5 (Ekstraklasa (Poland)), mod +36.4), Competitiveness +4.8 (gap 0.7 vs spread 7.5), Mod +36.4"
+        "v": 29.955468029812657,
+        "l": "Quality -6.5 (GFR 77.6-76.9 vs tier1 baseline 156.5 (Ekstraklasa (Poland)), mod +36.4), Mod +36.4"
       },
       "_sk": {
         "v": 0,
@@ -199,7 +285,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 36.68196141900962
+      "_score": 29.955468029812657
+    },
+    {
+      "id": 8954480,
+      "time": "11:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 47937236,
@@ -235,6 +349,146 @@
       "name": "Los Cabos",
       "sport": "Tennis",
       "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 16335438,
+      "time": "22:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 72145253,
+      "time": "09:00",
+      "name": "Prague Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 8954480,
+      "time": "11:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 84337849,
+      "time": "11:00",
+      "name": "Hamburg Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "TENNIS CHANNEL"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 20273402,
+      "time": "18:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "WTA",
       "ch": [
         "TENNIS CHANNEL"
       ],
