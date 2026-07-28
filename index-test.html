@@ -1485,7 +1485,7 @@ function App(){
       )}
 
       {tab==="missed"&&(
-        <div style={{paddingBottom:80}}>
+        <div style={{paddingBottom:80,maxWidth:860,margin:"0 auto"}}>
           {(()=>{
             // Two independent sources of "didn't make the cut":
             //  1. scraper-side  — pushed in the schedule JSON as `dropped`
@@ -1538,7 +1538,9 @@ function App(){
               </div>
               {order.map(k=>{
                 const meta=REASONS[k]||{label:k,color:"#94a3b8",hint:""};
-                const grp=[...byReason[k]].sort((a,b)=>(a.time||"").localeCompare(b.time||""));
+                const grp=[...byReason[k]].sort((a,b)=>
+                  (a.sport||"Other").localeCompare(b.sport||"Other")
+                  || (a.time||"").localeCompare(b.time||""));
                 return(
                   <div key={k}>
                     <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px"}}>
@@ -1547,7 +1549,7 @@ function App(){
                     </div>
                     {grp.map(r=>(
                       <div key={r.key} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",
-                        display:"grid",gridTemplateColumns:"52px 1fr 150px",gap:8,alignItems:"center",
+                        display:"grid",gridTemplateColumns:"52px minmax(0,1fr) 230px",gap:10,alignItems:"center",
                         background:`${meta.color}0d`,border:`1px solid ${meta.color}33`}}>
                         <div className="espn-display" style={{background:`${meta.color}18`,border:`1.5px solid ${meta.color}`,
                           borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
