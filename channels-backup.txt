@@ -1,0 +1,117 @@
+# Bar Scheduler - Channel Priority List
+# Channels listed top-to-bottom = highest to lowest priority
+# When an event airs on multiple channels, the highest channel on this list wins
+# Format: Channel Name (SpectrumCh#) — omit number for streaming-only
+# Lines starting with # are comments and are ignored
+
+# ── BROADCAST LOCALS ──────────────────────────────────────────────────────────
+FOX (8)
+FOX 4K (470)
+NBC (3)
+CBS (4)
+ABC (5)
+News 5 Cleveland (5)
+
+
+# ── PREMIUM SPORTS CABLE ──────────────────────────────────────────────────────
+Guardians.TV (447)
+FanDuel Sports Network Ohio
+FanDuel Sports Network Ohio Cleveland
+FanDuel Sports Network Ohio Extra
+FanDuel TV (453)
+
+ESPN (250)
+ESPN 4K (477)
+ESPN2 (251)
+ESPNews (259)
+ESPNU (260)
+ESPN College Extra 1
+ESPN College Extra 2
+ESPN College Extra 3
+ESPN College Extra 4
+
+FOX Sports 1 (252)
+FOX Sports 1 4K (471)
+FOX Sports 2 (253)
+FOX Sports 4K (470)
+FOX Sports Plus 4K
+FOX Soccer Plus (450)
+FOX Business Network (212)
+
+NFL Network (254)
+NFL RedZone (255)
+MLB Network (258)
+NBA TV (262)
+NHL Network (265)
+NHL Network USA Alternate
+
+TNT (502)
+TBS (504)
+truTV (528)
+USA Network (500)
+ION (23)
+CW (7)
+beIN USA (449)
+CBSSN (261)
+Big Ten Network (271)
+ACC Network (278)
+SEC Network (269)
+FX (514)
+FXX (516)
+Racer Network (266)
+Outdoor Channel (264)
+CNBC (211)
+E! (578)
+Nickelodeon (702)
+ViceTV (222)
+DISNEY XD (721)
+
+Golf Channel USA (257)
+Tennis Channel (263)
+
+
+NBC Sports 4K
+NBC Sports 4K2
+
+SEC Network Alternate
+
+# ── STREAMING (no Spectrum channel number) ────────────────────────────────────
+NFL Sunday Ticket (YouTube)
+ESPN Unlimited
+Paramount+
+CBS GOLAZO NETWORK (Paramount+)
+Peacock
+NBC Sports Network (Peacock)
+NBCSN (Peacock)
+NBC Sports Network Extra
+Prime Video
+Apple TV
+HBO MAX
+FOX One
+ViX
+beIN Sports Xtra (ViX)
+Netflix
+Hulu
+Disney+
+Roku
+
+ESPN Select
+ESPN+ PPV
+ESPN3 (ESPN Unlimited)
+
+ACC Network X (ESPN Unlimited)
+ACC Network Extra (ESPN Unlimited)
+SEC Network+ (ESPN Unlimited)
+Big Ten Plus
+
+# ── SPANISH CHANNELS ──────────────────────────────────────────────────────
+FOX Deportes (1006)
+ESPN Deportes (1005)
+TUDN (1008)
+BEIN USA ESPANOL (1007)
+NBC Universo (944)
+Telemundo (13)
+Telemundo 4K (480)
+UniMas (904)
+Galavision (908)
+
