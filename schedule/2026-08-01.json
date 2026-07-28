@@ -2269,7 +2269,7 @@
       "sport": "Baseball",
       "time": "01:00",
       "date": "2026-08-01",
-      "channel": "Next Level Sports",
+      "channel": "Prime Video (US), Next Level Sports, Ryz Sports Network",
       "reason": "cutoff",
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
@@ -2397,19 +2397,9 @@
       "name": "Saratoga Live",
       "league": "Horse Racing",
       "sport": "Equestrian",
-      "time": "12:00",
-      "date": "2026-08-01",
-      "channel": "FOX Sports Racing",
-      "reason": "marquee",
-      "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
-    },
-    {
-      "name": "Saratoga Live",
-      "league": "Horse Racing",
-      "sport": "Equestrian",
       "time": "12:30",
       "date": "2026-08-01",
-      "channel": "Fubo Sports, FOX Sports 1",
+      "channel": "Fubo Sports, FOX Sports 1, FOX Sports Racing",
       "reason": "marquee",
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
@@ -2582,6 +2572,16 @@
       "channel": "Peacock",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
+    },
+    {
+      "name": "Binghamton Rumble Ponies @ Reading Fightin Phils",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "16:30",
+      "date": "2026-08-01",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Rome Emperors @ Hub City Spartanburgers",
@@ -2874,16 +2874,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Binghamton Rumble Ponies @ Reading Fightin Phils",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "18:45",
-      "date": "2026-08-01",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
       "name": "Saskatchewan Roughriders @ Edmonton Elks",
       "league": "CFL",
       "sport": "Football",
@@ -2932,6 +2922,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Pachuca @ Ju\u00e1rez",
+      "league": "Liga MX Femenil",
+      "sport": "Soccer",
+      "time": "19:00",
+      "date": "2026-08-01",
+      "channel": "Estrella TV",
+      "reason": "channel",
+      "detail": "airs on Estrella TV \u2014 none in channels.txt"
     },
     {
       "name": "Toledo Mud Hens @ Columbus Clippers",
@@ -3102,6 +3102,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Binghamton Rumble Ponies @ Reading Fightin Phils",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:30",
+      "date": "2026-08-01",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Chattanooga Lookouts @ Birmingham Barons",
@@ -3314,6 +3324,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Puebla @ Tigres UANL",
+      "league": "Liga MX Femenil",
+      "sport": "Soccer",
+      "time": "21:06",
+      "date": "2026-08-01",
+      "channel": "Estrella TV",
+      "reason": "channel",
+      "detail": "airs on Estrella TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Millonarios @ Junior",
       "league": "Primera A",
       "sport": "Soccer",
@@ -3362,16 +3382,6 @@
       "channel": "Detroit SportsNet, NBC Sports California, MLB.TV",
       "reason": "channel",
       "detail": "airs on Detroit SportsNet, NBC Sports California, MLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Binghamton Rumble Ponies @ Reading Fightin Phils",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "21:45",
-      "date": "2026-08-01",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Lake Elsinore Storm @ Stockton Ports",
