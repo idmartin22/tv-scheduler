@@ -561,14 +561,15 @@ function App(){
     latestDateRequest.current=dateStr;
     setScheduleStatus("loading");
     setDynamicEvents(null);
+    setDroppedEvents([]);
     setTvOverrides([]);
     setRemovedEvents([]);
     setOverridesSha(null);
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
-      if(sched?.events){setDynamicEvents(sched.events);setScheduleStatus("loaded");}
-      else {setDynamicEvents([]);setScheduleStatus("none");}
+      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setScheduleStatus("loaded");}
+      else {setDynamicEvents([]);setDroppedEvents([]);setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
       if(latestDateRequest.current!==dateStr)return;
       setTvOverrides(ovr.overrides||[]);
@@ -643,6 +644,7 @@ function App(){
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
+  const [droppedEvents,setDroppedEvents]=useState([]); // scraper-side drops for this date (see Missed tab)
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
   const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
   const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
@@ -704,6 +706,7 @@ function App(){
         const sched=await githubLoadSchedule(dateStr);
         if(sched?.events&&active){
           setDynamicEvents(sched.events);
+          setDroppedEvents(sched.dropped||[]);
           setScheduleStatus("loaded");
         } else if(active) {
           setScheduleStatus("none");
@@ -1109,9 +1112,9 @@ function App(){
         </div>
         {/* Tab bar */}
         <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
-          {["grid","list","rank","league","schedule"].map(t=>(
+          {["grid","list","rank","league","missed"].map(t=>(
             <button key={t} className="espn-display" style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
-              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Schedule"}
+              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Missed"}
             </button>
           ))}
         </div>
@@ -1481,81 +1484,90 @@ function App(){
         </div>
       )}
 
-      {tab==="schedule"&&(
-        <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
-          <div style={{padding:"8px 14px",borderBottom:`1px solid ${C.BD}`,display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-            <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Schedule — {formatDateLabel(scheduleDate)}{isToday&&<span style={{color:C.GRN,marginLeft:6,fontSize:10}}>Today</span>}</div>
-            <div style={{fontFamily:"monospace",fontSize:9,color:scheduleStatus==="loaded"?"#4ade80":scheduleStatus==="none"?"#f87171":"#fbbf24"}}>{scheduleStatus==="loaded"?"● SCHEDULE LOADED":scheduleStatus==="loading"?"⟳ LOADING...":"○ NO SCHEDULE FOR THIS DATE"}</div>
-          </div>
+      {tab==="missed"&&(
+        <div style={{paddingBottom:80}}>
+          {(()=>{
+            // Two independent sources of "didn't make the cut":
+            //  1. scraper-side  — pushed in the schedule JSON as `dropped`
+            //  2. app-side      — scraped fine, but its league is off/pending here
+            const REASONS={
+              channel:{label:"NO CHANNEL YOU GET",  color:"#f87171", hint:"airs only on services not in channels.txt"},
+              cutoff: {label:"BEFORE 5AM CUTOFF",   color:"#a78bfa", hint:"starts before the 5am day boundary"},
+              practice:{label:"PRACTICE / QUALIFYING",color:"#fbbf24",hint:"session, not the actual event"},
+              marquee:{label:"NOT MARQUEE",         color:"#60a5fa", hint:"league is marquee-only"},
+              leagueOff:{label:"LEAGUE TURNED OFF", color:"#94a3b8", hint:"you switched this league off"},
+              leaguePending:{label:"LEAGUE PENDING",color:"#fb923c", hint:"new league awaiting a decision"},
+            };
+            const rows=[];
+            (droppedEvents||[]).forEach((d,i)=>rows.push({
+              key:`s${i}`, reason:d.reason||"channel", time:d.time||"", name:d.name||"",
+              league:d.league||"", sport:d.sport||"Other", detail:d.detail||d.channel||"",
+            }));
+            (parsedEvents||[]).forEach((e,i)=>{
+              const st=leagueStatus[e.leagueId]?.status;
+              if(st==="active") return;
+              rows.push({
+                key:`a${i}`, reason: st==="off"?"leagueOff":"leaguePending",
+                time:e.time||"", name:e.name||"", league:e.league||"", sport:e.sport||"Other",
+                detail: st==="off" ? "league is switched off in the League tab"
+                                   : "league hasn't been turned on or off yet",
+              });
+            });
 
-          {/* Open in Claude button */}
-          <div style={{padding:"20px 14px"}}>
-            <div style={{fontSize:12,color:C.MT,marginBottom:16,lineHeight:1.5}}>
-              To add a schedule for this date, take screenshots from livesportsontv.com and open Claude to parse and push them.
-            </div>
-            <button
-              onClick={()=>{
-                const prompt = `You are helping manage the Bar Scheduler app at idmartin22.github.io/tv-scheduler/
+            if(!rows.length) return (
+              <div style={{padding:"40px 20px",textAlign:"center",color:C.MT,fontSize:12}}>
+                Nothing was dropped for {formatDateLabel(scheduleDate)} — everything scraped made it through.
+              </div>
+            );
 
-I need you to parse livesportsontv.com screenshots for ${scheduleDate} and push the schedule JSON to GitHub.
+            const byReason={};
+            rows.forEach(r=>{(byReason[r.reason]=byReason[r.reason]||[]).push(r);});
+            const order=Object.keys(byReason).sort((a,b)=>byReason[b].length-byReason[a].length);
 
-GITHUB DETAILS:
-- Repo: idmartin22/tv-scheduler
-- File path: schedule/${scheduleDate}.json
-- PAT: ${GITHUB_PAT}
-
-INSTRUCTIONS:
-1. I will upload screenshots from livesportsontv.com showing sports events for ${scheduleDate}
-2. Parse ALL visible events (all times are Eastern Time)
-3. Convert to this exact JSON format and push to GitHub:
-{"date":"${scheduleDate}","label":"${formatDateLabel(scheduleDate)}","events":[{"id":1,"time":"HH:MM","name":"Team A vs Team B","sport":"Soccer","league":"World Cup 2026","ch":"FOX","dur":120,"_st":{"v":0,"l":""},"_sk":{"v":0,"l":""},"_rv":{"v":0,"l":""},"_mq":{"v":0,"l":""}}]}
-
-RULES:
-- time: 24hr ET format (1:00 PM = "13:00")
-- sport: Soccer, Baseball, Basketball, Football, Golf, Hockey, Tennis, Motorsports, Softball, Rugby, Fighting
-- dur: soccer=120, baseball=180, basketball=150, football=210, golf=240
-- Skip events before 7:00 AM ET
-- id: sequential from 1
-- Push the JSON file to GitHub using the Contents API PUT method
-- Confirm when done
-
-CRITICAL — STREAMING vs BROADCAST CHANNEL RULES:
-livesportsontv.com often shows both a streaming badge and a broadcast badge. Always use the PRIMARY carrier as "ch". Follow these rules exactly:
-
-CHANNEL NAME MAPPING:
-- ESPN+ → use "ESPN Unlimited" (ESPN+ was rebranded; it is streaming only, NOT the ESPN cable channel)
-- ESPN (cable) → use "ESPN" only if it is the actual ESPN cable channel, not a streaming exclusive
-- Paramount+ with a CBS badge → use "Paramount+" (the game is NOT airing on the local CBS broadcast channel)
-- Peacock with an NBC badge → use "Peacock" (not on NBC broadcast)
-- Apple TV+ or MLS Season Pass → use "Apple TV+"
-- Amazon Prime Video / Thursday Night Football → use "Prime Video" (unless NFL Network simulcast is confirmed, then use "NFL Network")
-- Max (HBO Max) → use "Max"
-- Fubo → use "Fubo"
-
-SPECTRUM CABLE CHANNELS (these ARE on cable, use the short name):
-ESPN=250, ESPN2=251, FS1=252, FS2=253, FOX=8, CBS=4, NBC=3, ABC=5, TNT=502, TBS=504, truTV=528, USA=500, MLB Network=258, NFL Network=254, NBA TV=262, NHL Network=265, Golf Channel=257, BTN=271, SEC Network=269, ACC Network=278, beIN Sports=449, Guardians.TV=447, TUDN=1008
-
-If a game shows ONLY a streaming service badge with no cable channel, set "ch" to the streaming service name. Never use "CBS", "NBC", "ABC", or "FOX" for a game that is streaming-only.
-
-Please confirm you understand and are ready for me to upload the screenshots.`;
-                window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
-              }}
-              style={{display:"flex",alignItems:"center",gap:10,background:"linear-gradient(135deg,#7c3aed,#6d28d9)",border:"none",borderRadius:12,color:"#fff",fontSize:13,fontWeight:700,padding:"14px 20px",cursor:"pointer",width:"100%",justifyContent:"center",boxShadow:"0 4px 15px rgba(124,58,237,0.3)"}}
-            >
-              <span style={{fontSize:16}}>🤖</span> OPEN CLAUDE TO PARSE SCREENSHOTS
-            </button>
-            <div style={{fontFamily:"monospace",fontSize:8,color:C.DM,marginTop:8,textAlign:"center"}}>
-              Opens Claude in a new tab preloaded with all context · upload screenshots there · schedule auto-loads here when done
-            </div>
-            {scheduleStatus==="none"&&(
-              <button
-                onClick={()=>loadScheduleForDate(scheduleDate)}
-                style={{display:"block",margin:"12px auto 0",background:"none",border:`1px solid ${C.BD2}`,borderRadius:6,color:C.MT,fontFamily:"monospace",fontSize:9,padding:"6px 14px",cursor:"pointer"}}
-              >
-                ↻ CHECK FOR SCHEDULE
-              </button>
-            )}
-          </div>
+            return(<>
+              <div style={{display:"flex",gap:6,flexWrap:"wrap",padding:"10px 12px 4px"}}>
+                {order.map(k=>(
+                  <div key={k} style={{fontSize:9,fontWeight:700,padding:"3px 8px",borderRadius:20,
+                    background:`${(REASONS[k]||{}).color||"#94a3b8"}18`,
+                    border:`1px solid ${(REASONS[k]||{}).color||"#94a3b8"}`,
+                    color:(REASONS[k]||{}).color||"#94a3b8"}}>
+                    {(REASONS[k]||{}).label||k} {byReason[k].length}
+                  </div>
+                ))}
+                <div style={{fontSize:9,color:C.DM,alignSelf:"center",marginLeft:4}}>{rows.length} total</div>
+              </div>
+              {order.map(k=>{
+                const meta=REASONS[k]||{label:k,color:"#94a3b8",hint:""};
+                const grp=[...byReason[k]].sort((a,b)=>(a.time||"").localeCompare(b.time||""));
+                return(
+                  <div key={k}>
+                    <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px"}}>
+                      <span className="espn-display" style={{fontSize:12,fontWeight:700,color:meta.color,letterSpacing:"0.03em"}}>{meta.label}</span>
+                      <span style={{fontSize:10,color:C.DM}}>({grp.length}) · {meta.hint}</span>
+                    </div>
+                    {grp.map(r=>(
+                      <div key={r.key} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",
+                        display:"grid",gridTemplateColumns:"52px 1fr 150px",gap:8,alignItems:"center",
+                        background:`${meta.color}0d`,border:`1px solid ${meta.color}33`}}>
+                        <div className="espn-display" style={{background:`${meta.color}18`,border:`1.5px solid ${meta.color}`,
+                          borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
+                          <div style={{fontSize:11,fontWeight:700,color:meta.color}}>{sportIcon(r.sport)}</div>
+                          <div style={{fontSize:8,color:C.MT,marginTop:1}}>{r.time?m2t(t2m(r.time)):"—"}</div>
+                        </div>
+                        <div style={{minWidth:0}}>
+                          <div style={{fontSize:13,fontWeight:600,color:"#cbd5e1",overflow:"hidden",
+                            textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div>
+                          <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",
+                            textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.league}</div>
+                        </div>
+                        <div style={{fontSize:9,color:C.DM,lineHeight:1.35}}>{r.detail}</div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </>);
+          })()}
         </div>
       )}
 
