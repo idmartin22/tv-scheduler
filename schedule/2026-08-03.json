@@ -3,19 +3,18 @@
   "label": "Monday, August 3",
   "events": [
     {
-      "id": 19876732,
-      "time": "20:05",
-      "name": "San Francisco Giants @ Texas Rangers",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 85218066,
+      "time": "18:00",
+      "name": "Independiente @ V\u00e9lez Sarsfield",
+      "sport": "Soccer",
+      "league": "Primera Division",
       "ch": [
-        "ESPN",
-        "ESPN UNLIMITED"
+        "FOX Deportes"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": -8.633754305396051,
-        "l": "Quality -8.6 (San Francisco Giants 0.480 vs Texas Rangers 0.495)"
+        "v": 38.48496860891037,
+        "l": "Quality +2.2 (GFR 80.7-76.7 vs tier1 baseline 156.3 (Liga Profesional (Argentina)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -29,7 +28,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.633754305396051
+      "_score": 38.48496860891037
     },
     {
       "id": 80030680,
@@ -38,7 +37,8 @@
       "sport": "Basketball",
       "league": "WNBA",
       "ch": [
-        "PEACOCK"
+        "Peacock",
+        "NBC Sports Network"
       ],
       "dur": 150,
       "_st": {
@@ -60,18 +60,47 @@
       "_score": 17.108433734939755
     },
     {
+      "id": 19876732,
+      "time": "20:05",
+      "name": "San Francisco Giants @ Texas Rangers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -8.633754305396051,
+        "l": "Quality -8.6 (San Francisco Giants 0.480 vs Texas Rangers 0.495)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.633754305396051
+    },
+    {
       "id": 69031899,
       "time": "21:00",
       "name": "Phoenix Mercury @ Chicago Sky",
       "sport": "Basketball",
       "league": "WNBA",
       "ch": [
-        "USA NETWORK"
+        "USA Network"
       ],
       "dur": 150,
       "_st": {
-        "v": -2.745098039215687,
-        "l": "Quality -2.7 (Phoenix Mercury 0.000 vs Chicago Sky -1.400)"
+        "v": -2.524271844660195,
+        "l": "Quality -2.5 (Phoenix Mercury 0.100 vs Chicago Sky -1.400)"
       },
       "_sk": {
         "v": 0,
@@ -85,63 +114,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.745098039215687
-    },
-    {
-      "id": 42594262,
-      "time": "14:30",
-      "name": "York City @ Crawley Town",
-      "sport": "Soccer",
-      "league": "English League Cup",
-      "ch": [
-        "PARAMOUNT+"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 6.379583333333329,
-        "l": "Quality -20.0 (GFR 47.8 (not rated yet)-65.9 vs tier1 baseline 136.5 (League Two (England) \u2014 opponent not in GFR), mod +26.4), Mod +26.4"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 6.379583333333329
-    },
-    {
-      "id": 23209064,
-      "time": "18:00",
-      "name": "V\u00e9lez Sarsfield @ Independiente",
-      "sport": "Soccer",
-      "league": "Primera Division",
-      "ch": [
-        "FOX DEPORTES"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 38.48496860891037,
-        "l": "Quality +2.2 (GFR 76.7-80.7 vs tier1 baseline 156.3 (Liga Profesional (Argentina)), mod +36.3), Mod +36.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 38.48496860891037
+      "_score": -2.524271844660195
     }
   ]
 }
