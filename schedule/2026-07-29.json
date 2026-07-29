@@ -59,6 +59,34 @@
       "_score": 15
     },
     {
+      "id": 8954480,
+      "time": "11:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 5467500,
       "time": "12:00",
       "name": "Memphis Open",
@@ -126,8 +154,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.3329864724245208,
-        "l": "Quality +0.3 (Atlanta Braves 0.519 vs New York Mets 0.482)"
+        "v": -7.526935760170531e-14,
+        "l": "Quality -0.0 (Atlanta Braves 0.518 vs New York Mets 0.482)"
       },
       "_sk": {
         "v": 0,
@@ -141,7 +169,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.3329864724245208
+      "_score": -7.526935760170531e-14
     },
     {
       "id": 98620151,
@@ -154,8 +182,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 5.0156087408948995,
-        "l": "Quality +5.0 (Milwaukee Brewers 0.534 vs San Francisco Giants 0.482)"
+        "v": 4.838709677419336,
+        "l": "Quality +4.8 (Milwaukee Brewers 0.534 vs San Francisco Giants 0.481)"
       },
       "_sk": {
         "v": 0,
@@ -169,7 +197,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.0156087408948995
+      "_score": 4.838709677419336
     },
     {
       "id": 91358520,
@@ -264,6 +292,7 @@
       "sport": "Soccer",
       "league": "Primera Division",
       "ch": [
+        "ViX",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -498,8 +527,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.645161290322583,
-        "l": "Quality -0.6 (Cleveland Guardians 0.504 vs Cincinnati Reds 0.494)"
+        "v": -0.6779661016949892,
+        "l": "Quality -0.7 (Cleveland Guardians 0.504 vs Cincinnati Reds 0.494)"
       },
       "_sk": {
         "v": 0,
@@ -513,7 +542,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.645161290322583
+      "_score": -0.6779661016949892
     },
     {
       "id": 43644510,
@@ -585,8 +614,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 5.327783558792888,
-        "l": "Quality +5.3 (New York Yankees 0.515 vs Chicago White Sox 0.502)"
+        "v": 5.806451612903175,
+        "l": "Quality +5.8 (New York Yankees 0.516 vs Chicago White Sox 0.502)"
       },
       "_sk": {
         "v": 0,
@@ -600,7 +629,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.327783558792888
+      "_score": 5.806451612903175
     },
     {
       "id": 34494957,
@@ -670,7 +699,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 10.63250600480384,
+        "v": 10.587288817377313,
         "l": "Quality +10.6 (Atlanta Dream 3.300 vs Dallas Wings 1.100)"
       },
       "_sk": {
@@ -685,7 +714,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.63250600480384
+      "_score": 10.587288817377313
     },
     {
       "id": 47937236,
@@ -867,8 +896,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.5052041633306643,
-        "l": "Quality +1.5 (Golden State Valkyries 0.600 vs Phoenix Mercury 0.000)"
+        "v": 1.6572807723250205,
+        "l": "Quality +1.7 (Golden State Valkyries 0.800 vs Phoenix Mercury -0.100)"
       },
       "_sk": {
         "v": 0,
@@ -882,7 +911,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.5052041633306643
+      "_score": 1.6572807723250205
     },
     {
       "id": 86063004,
@@ -960,9 +989,9 @@
       "sport": "Tennis",
       "time": "11:00",
       "date": "2026-07-29",
-      "channel": "DAZN Canada",
+      "channel": "TSN+, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on TSN+, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Wilmington Blue Rocks @ Frederick Keys",
@@ -1090,9 +1119,9 @@
       "sport": "Tennis",
       "time": "13:00",
       "date": "2026-07-29",
-      "channel": "TSN3",
+      "channel": "TSN+, TSN3",
       "reason": "channel",
-      "detail": "airs on TSN3 \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN3 \u2014 none in channels.txt"
     },
     {
       "name": "St. Paul @ Omaha Storm Chasers",
@@ -1165,6 +1194,16 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
+      "name": "Wilmington Blue Rocks @ Frederick Keys",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "14:00",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Sportivo Trinidense @ Sportivo Luque\u00f1o",
       "league": "Divisi\u00f3n Profesional",
       "sport": "Soccer",
@@ -1215,10 +1254,30 @@
       "detail": "airs on Padres.TV, Rockies.TV, MLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Salem RidgeYaks @ Kannapolis Cannon Ballers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:00",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Lakeland Flying Tigers @ Tampa Tarpons",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "17:00",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hickory Crawdads @ Delmarva Shorebirds",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:05",
       "date": "2026-07-29",
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
@@ -1233,6 +1292,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Gwinnett Stripers @ Durham Bulls",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:30",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Akron RubberDucks @ Erie SeaWolves",
@@ -1435,16 +1504,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Salem RidgeYaks @ Kannapolis Cannon Ballers",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "19:00",
-      "date": "2026-07-29",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
       "name": "Binghamton Rumble Ponies @ Reading Fightin Phils",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1463,6 +1522,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sweden U20 @ Canada U20",
+      "league": "International Friendly",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-07-29",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
       "name": "Toledo Mud Hens @ Columbus Clippers",
@@ -1486,16 +1555,6 @@
     },
     {
       "name": "Charleston RiverDogs @ Myrtle Beach Pelicans",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "19:05",
-      "date": "2026-07-29",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Hickory Crawdads @ Delmarva Shorebirds",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "19:05",
@@ -1635,6 +1694,16 @@
       "detail": "airs on Fanatiz, Marquee Sports Network, MLB.TV, Cardinals.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Salem RidgeYaks @ Kannapolis Cannon Ballers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:00",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Chattanooga Lookouts @ Birmingham Barons",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1655,6 +1724,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "AEW Dynamite",
+      "league": "Wrestling",
+      "sport": "Fighting",
+      "time": "20:00",
+      "date": "2026-07-29",
+      "channel": "TSN2",
+      "reason": "channel",
+      "detail": "airs on TSN2 \u2014 none in channels.txt"
+    },
+    {
       "name": "Las Vegas Aviators @ Oklahoma City Baseball Club",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1666,6 +1745,16 @@
     },
     {
       "name": "Salt Lake Bees @ Sugar Land Space Cowboys",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:05",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hickory Crawdads @ Delmarva Shorebirds",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "20:05",
@@ -1733,6 +1822,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Gwinnett Stripers @ Durham Bulls",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:30",
+      "date": "2026-07-29",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Albuquerque Isotopes @ El Paso Chihuahuas",
@@ -1840,9 +1939,9 @@
       "sport": "Soccer",
       "time": "22:00",
       "date": "2026-07-29",
-      "channel": "RDS",
+      "channel": "TSN+, RDS",
       "reason": "channel",
-      "detail": "airs on RDS \u2014 none in channels.txt"
+      "detail": "airs on TSN+, RDS \u2014 none in channels.txt"
     },
     {
       "name": "Sacramento River Cats @ Tacoma Rainiers",
