@@ -1388,6 +1388,43 @@ function App(){
                   if(mb!==undefined) return 1;
                   return a.n.localeCompare(b.n);
                 });
+                // Country / confederation tag. The TEXT is the country (or the
+                // confederation itself for continental competitions); the COLOUR
+                // is always the confederation - so one small badge carries both.
+                // Deliberately text codes rather than flag emoji: the England and
+                // Scotland flags are tag sequences that render inconsistently on
+                // Windows, which is what the bar PC runs.
+                const CONFED_COLOR={UEFA:"#3b82f6",CONMEBOL:"#fbbf24",CONCACAF:"#22c55e",CAF:"#ef4444",AFC:"#f97316"};
+                const LEAGUE_ORIGIN={
+                  "premier-league":["ENG","UEFA"], "efl-championship":["ENG","UEFA"],
+                  "english-league-cup":["ENG","UEFA"], "la-liga":["ESP","UEFA"],
+                  "bundesliga":["GER","UEFA"], "serie-a":["ITA","UEFA"],
+                  "eredivisie":["NED","UEFA"], "ekstraklasa":["POL","UEFA"],
+                  "scottish-premiership":["SCO","UEFA"], "scottish-league-cup":["SCO","UEFA"],
+                  "uefa-champions-league":["UEFA","UEFA"], "uefa-europa-league":["UEFA","UEFA"],
+                  "uefa-conference-league":["UEFA","UEFA"],
+                  "brazil-serie-a":["BRA","CONMEBOL"], "copa-do-brasil":["BRA","CONMEBOL"],
+                  "primera-division":["ARG","CONMEBOL"], "primera-a":["COL","CONMEBOL"],
+                  "copa-sudamericana":["CONMEBOL","CONMEBOL"],
+                  "mls":["USA","CONCACAF"], "usl-champ":["USA","CONCACAF"],
+                  "usl-league-one":["USA","CONCACAF"], "nwsl":["USA","CONCACAF"],
+                  "liga-mx":["MEX","CONCACAF"], "campe-n-de-campeones":["MEX","CONCACAF"],
+                  "canadian-premier-league":["CAN","CONCACAF"], "northern-super-league":["CAN","CONCACAF"],
+                  "liga-nacional":["C.AM","CONCACAF"],
+                  "concacaf-central-american-cup":["CONCACAF","CONCACAF"],
+                  "concacaf-u20":["CONCACAF","CONCACAF"],
+                  "women-s-africa-cup-of-nations":["CAF","CAF"],
+                  "international-friendly":["INTL",null], "soccer-club-friendlies":["CLUB",null],
+                };
+                const originBadge=id=>{
+                  const o=LEAGUE_ORIGIN[id]; if(!o) return null;
+                  const [code,confed]=o;
+                  const c=CONFED_COLOR[confed]||"#94a3b8";
+                  return <span title={confed?`${code} — ${confed}`:code}
+                    style={{marginLeft:6,fontSize:8,fontWeight:700,letterSpacing:"0.04em",
+                      padding:"1px 5px",borderRadius:4,whiteSpace:"nowrap",
+                      color:c,background:`${c}1a`,border:`1px solid ${c}55`}}>{code}</span>;
+                };
                 const genderBadge=g=>g==="women"?<span style={{color:"#f472b6",fontSize:10,marginLeft:6}}>♀ Women's</span>:g==="men"?<span style={{color:"#60a5fa",fontSize:10,marginLeft:6}}>♂ Men's</span>:null;
                 return(<>
                   {/* Active leagues header */}
@@ -1422,7 +1459,7 @@ function App(){
                           <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
                             <div/>
                             <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
-                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
                             <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
                             <div title={mod!==undefined?"live from today's games":"no game today"} style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"—"}</div>
                             <div style={{display:"flex",gap:4,alignItems:"center"}}>
@@ -1446,7 +1483,7 @@ function App(){
                           <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.06)":"rgba(251,191,36,0.03)"}}>
                             <div/>
                             <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
-                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{genderBadge(lg.gender)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{originBadge(lg.id)}{genderBadge(lg.gender)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
                             <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
                             <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
                               key={`mod-${lg.id}-${committedMod}`}
