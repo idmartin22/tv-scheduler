@@ -3,6 +3,62 @@
   "label": "Monday, August 3",
   "events": [
     {
+      "id": 40524423,
+      "time": "09:45",
+      "name": "Tour de France",
+      "sport": "Cycling",
+      "league": "Women's Road Cycling",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 69160132,
+      "time": "11:00",
+      "name": "National Bank Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 52280714,
       "time": "13:00",
       "name": "Pogo\u0144 Szczecin @ Cracovia Krak\u00f3w",
@@ -60,6 +116,35 @@
       "_score": 6.379583333333329
     },
     {
+      "id": 30453741,
+      "time": "16:00",
+      "name": "Morocco @ Senegal",
+      "sport": "Soccer",
+      "league": "Women's Africa Cup of Nations",
+      "ch": [
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
       "id": 85218066,
       "time": "18:00",
       "name": "Independiente @ V\u00e9lez Sarsfield",
@@ -99,7 +184,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 17.117694155324255,
+        "v": 17.103781174577634,
         "l": "Quality +17.1 (Las Vegas Aces 3.800 vs Atlanta Dream 3.300)"
       },
       "_sk": {
@@ -114,7 +199,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 17.117694155324255
+      "_score": 17.103781174577634
     },
     {
       "id": 19876732,
@@ -129,8 +214,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -7.31924360400445,
-        "l": "Quality -7.3 (San Francisco Giants 0.482 vs Texas Rangers 0.496)"
+        "v": -7.118644067796672,
+        "l": "Quality -7.1 (San Francisco Giants 0.481 vs Texas Rangers 0.498)"
       },
       "_sk": {
         "v": 0,
@@ -144,7 +229,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.31924360400445
+      "_score": -7.118644067796672
     },
     {
       "id": 69031899,
@@ -157,8 +242,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.868267358857884,
-        "l": "Quality -2.9 (Phoenix Mercury 0.000 vs Chicago Sky -1.500)"
+        "v": -3.12863606981254,
+        "l": "Quality -3.1 (Phoenix Mercury -0.100 vs Chicago Sky -1.500)"
       },
       "_sk": {
         "v": 0,
@@ -172,7 +257,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.868267358857884
+      "_score": -3.12863606981254
     },
     {
       "id": 47718667,
@@ -213,16 +298,6 @@
       "channel": "Next Level Sports",
       "reason": "channel",
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
-    },
-    {
-      "name": "National Bank Open",
-      "league": "ATP",
-      "sport": "Tennis",
-      "time": "11:00",
-      "date": "2026-08-03",
-      "channel": "Sportsnet, Sportsnet NOW",
-      "reason": "channel",
-      "detail": "airs on Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
     },
     {
       "name": "National Bank Open",
@@ -360,9 +435,9 @@
       "sport": "Baseball",
       "time": "20:40",
       "date": "2026-08-03",
-      "channel": "Rockies.TV, Rays.TV",
+      "channel": "Rockies.TV, MLB.TV, Rays.TV",
       "reason": "channel",
-      "detail": "airs on Rockies.TV, Rays.TV \u2014 none in channels.txt"
+      "detail": "airs on Rockies.TV, MLB.TV, Rays.TV \u2014 none in channels.txt"
     },
     {
       "name": "San Diego Padres @ Arizona Diamondbacks",
@@ -370,9 +445,9 @@
       "sport": "Baseball",
       "time": "21:40",
       "date": "2026-08-03",
-      "channel": "Padres.TV, Dbacks.TV",
+      "channel": "Padres.TV, Dbacks.TV, MLB.TV",
       "reason": "channel",
-      "detail": "airs on Padres.TV, Dbacks.TV \u2014 none in channels.txt"
+      "detail": "airs on Padres.TV, Dbacks.TV, MLB.TV \u2014 none in channels.txt"
     }
   ]
 }
