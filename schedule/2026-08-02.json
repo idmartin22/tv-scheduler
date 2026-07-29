@@ -3,6 +3,35 @@
   "label": "Sunday, August 2",
   "events": [
     {
+      "id": 65145386,
+      "time": "07:00",
+      "name": "Rocket Classic",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 76111111,
       "time": "09:00",
       "name": "Kilmarnock @ St. Johnstone",
@@ -31,8 +60,36 @@
       "_score": 33.359062996764614
     },
     {
-      "id": 52949442,
-      "time": "10:00",
+      "id": 40524423,
+      "time": "09:45",
+      "name": "Tour de France",
+      "sport": "Cycling",
+      "league": "Women's Road Cycling",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 37012355,
+      "time": "10:10",
       "name": "MX2",
       "sport": "Motorsports",
       "league": "Motocross World Championship",
@@ -143,6 +200,34 @@
       "_score": 37.25282828282825
     },
     {
+      "id": 66975054,
+      "time": "11:30",
+      "name": "Motul SportsCar Endurance Grand Prix",
+      "sport": "Motorsports",
+      "league": "IMSA SportsCar Championship",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
+    },
+    {
       "id": 87096194,
       "time": "12:00",
       "name": "Wrexham @ Sunderland",
@@ -201,20 +286,18 @@
       "_score": 15
     },
     {
-      "id": 34948480,
-      "time": "13:00",
-      "name": "Indiana Fever @ Minnesota Lynx",
-      "sport": "Basketball",
-      "league": "WNBA",
+      "id": 62845598,
+      "time": "12:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "ATP",
       "ch": [
-        "ABC",
-        "ESPN Unlimited",
-        "ESPN Deportes"
+        "Tennis Channel"
       ],
       "dur": 150,
       "_st": {
-        "v": 17.838270616493194,
-        "l": "Quality +17.8 (Indiana Fever 4.500 vs Minnesota Lynx 2.900)"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -228,7 +311,65 @@
         "v": 0,
         "l": ""
       },
-      "_score": 17.838270616493194
+      "_score": 10
+    },
+    {
+      "id": 39592425,
+      "time": "12:30",
+      "name": "National Bank Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 34948480,
+      "time": "13:00",
+      "name": "Indiana Fever @ Minnesota Lynx",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 18.31053901850362,
+        "l": "Quality +18.3 (Indiana Fever 4.500 vs Minnesota Lynx 3.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 18.31053901850362
     },
     {
       "id": 37494969,
@@ -258,6 +399,34 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 56702413,
+      "time": "13:00",
+      "name": "Rocket Classic",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 150730,
@@ -298,7 +467,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 3.454734651404819,
+        "v": 3.5483870967741704,
         "l": "Quality +3.5 (Arizona Diamondbacks 0.507 vs Cleveland Guardians 0.504)"
       },
       "_sk": {
@@ -313,7 +482,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.454734651404819
+      "_score": 3.5483870967741704
     },
     {
       "id": 82720125,
@@ -326,8 +495,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.449531737773185,
-        "l": "Quality +8.4 (Chicago White Sox 0.502 vs Tampa Bay Rays 0.525)"
+        "v": 8.387096774193507,
+        "l": "Quality +8.4 (Chicago White Sox 0.502 vs Tampa Bay Rays 0.524)"
       },
       "_sk": {
         "v": 0,
@@ -341,7 +510,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.449531737773185
+      "_score": 8.387096774193507
     },
     {
       "id": 17682537,
@@ -430,19 +599,19 @@
       "_score": 0
     },
     {
-      "id": 94333702,
-      "time": "15:15",
-      "name": "Milwaukee Brewers @ Los Angeles Angels",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 62462993,
+      "time": "15:00",
+      "name": "Rocket Classic",
+      "sport": "Golf",
+      "league": "PGA Tour",
       "ch": [
-        "Peacock",
-        "NBC Sports Network"
+        "CBS",
+        "Paramount+ (US)"
       ],
-      "dur": 180,
+      "dur": 240,
       "_st": {
-        "v": 0.6451612903225784,
-        "l": "Quality +0.6 (Milwaukee Brewers 0.534 vs Los Angeles Angels 0.468)"
+        "v": 15,
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -456,7 +625,36 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.6451612903225784
+      "_score": 15
+    },
+    {
+      "id": 94333702,
+      "time": "15:15",
+      "name": "Milwaukee Brewers @ Los Angeles Angels",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "Peacock",
+        "NBC Sports Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0.3225806451612557,
+        "l": "Quality +0.3 (Milwaukee Brewers 0.534 vs Los Angeles Angels 0.467)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.3225806451612557
     },
     {
       "id": 10995941,
@@ -470,8 +668,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -7.929915639195327,
-        "l": "Quality -7.9 (Los Angeles Sparks 0.900 vs Portland Fire -5.000)"
+        "v": -8.364576599870716,
+        "l": "Quality -8.4 (Los Angeles Sparks 0.700 vs Portland Fire -5.000)"
       },
       "_sk": {
         "v": 0,
@@ -485,7 +683,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.929915639195327
+      "_score": -8.364576599870716
     },
     {
       "id": 68325667,
@@ -494,6 +692,7 @@
       "sport": "Soccer",
       "league": "Primera Division",
       "ch": [
+        "ViX",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -601,6 +800,62 @@
       "_score": 28.23533090297248
     },
     {
+      "id": 82871546,
+      "time": "18:00",
+      "name": "Mankato MoonDogs - Rochester Honkers",
+      "sport": "Baseball",
+      "league": "Collegiate Summer Baseball",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 83636363,
+      "time": "18:15",
+      "name": "Rosario Central @ River Plate",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 42.989185322429485,
+        "l": "Quality +6.7 (GFR 80.6-79.2 vs tier1 baseline 156.3 (Liga Profesional (Argentina)), mod +36.3), Mod +36.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 42.989185322429485
+    },
+    {
       "id": 14355161,
       "time": "18:30",
       "name": "Corinthians @ Internacional",
@@ -641,8 +896,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.124594419208305,
-        "l": "Quality -8.1 (Connecticut Sun -5.300 vs Dallas Wings 1.100)"
+        "v": -8.170652876535225,
+        "l": "Quality -8.2 (Connecticut Sun -5.300 vs Dallas Wings 1.100)"
       },
       "_sk": {
         "v": 0,
@@ -656,7 +911,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.124594419208305
+      "_score": -8.170652876535225
     },
     {
       "id": 39991080,
@@ -665,6 +920,7 @@
       "sport": "Soccer",
       "league": "Liga MX",
       "ch": [
+        "ViX",
         "TUDN"
       ],
       "dur": 120,
@@ -687,20 +943,18 @@
       "_score": 31.1512258687259
     },
     {
-      "id": 80548355,
-      "time": "19:20",
-      "name": "Boston Red Sox @ Los Angeles Dodgers",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 35393323,
+      "time": "19:00",
+      "name": "National Bank Open",
+      "sport": "Tennis",
+      "league": "WTA",
       "ch": [
-        "NBC",
-        "Peacock",
-        "NBC Universo"
+        "Tennis Channel"
       ],
-      "dur": 180,
+      "dur": 150,
       "_st": {
-        "v": 11.883454734651405,
-        "l": "Quality +11.9 (Boston Red Sox 0.508 vs Los Angeles Dodgers 0.530)"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -714,7 +968,65 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.883454734651405
+      "_score": 10
+    },
+    {
+      "id": 35393323,
+      "time": "19:00",
+      "name": "National Bank Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 80548355,
+      "time": "19:20",
+      "name": "Boston Red Sox @ Los Angeles Dodgers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "NBC",
+        "Peacock",
+        "NBC Universo"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 10.96774193548384,
+        "l": "Quality +11.0 (Boston Red Sox 0.506 vs Los Angeles Dodgers 0.528)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.96774193548384
     },
     {
       "id": 16041055,
@@ -754,6 +1066,7 @@
       "sport": "Soccer",
       "league": "Liga MX",
       "ch": [
+        "ViX",
         "TUDN"
       ],
       "dur": 120,
@@ -843,9 +1156,9 @@
       "sport": "Tennis",
       "time": "11:00",
       "date": "2026-08-02",
-      "channel": "Sportsnet One, Sportsnet NOW",
+      "channel": "Sportsnet One, Sportsnet NOW, TVA Sports",
       "reason": "channel",
-      "detail": "airs on Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet One, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
     },
     {
       "name": "St. Lucie Mets @ Dunedin Blue Jays",
@@ -1056,6 +1369,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "New Britain Bees - Worcester Bravehearts",
+      "league": "Collegiate Summer Baseball",
+      "sport": "Baseball",
+      "time": "13:30",
+      "date": "2026-08-02",
+      "channel": "WWAX",
+      "reason": "channel",
+      "detail": "airs on WWAX \u2014 none in channels.txt"
     },
     {
       "name": "Philadelphia Phillies @ Baltimore Orioles",
@@ -1408,6 +1731,16 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
+      "name": "Mubadala Citi DC Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "17:00",
+      "date": "2026-08-02",
+      "channel": "WJLA 24/7 News, TSN2, RDS 2",
+      "reason": "channel",
+      "detail": "airs on WJLA 24/7 News, TSN2, RDS 2 \u2014 none in channels.txt"
+    },
+    {
       "name": "Gwinnett Stripers @ Durham Bulls",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1506,16 +1839,6 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Rosario Central @ River Plate",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "18:15",
-      "date": "2026-08-02",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Charleston RiverDogs @ Myrtle Beach Pelicans",
