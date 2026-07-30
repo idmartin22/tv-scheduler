@@ -3,18 +3,18 @@
   "label": "Wednesday, August 5",
   "events": [
     {
-      "id": 92152427,
-      "time": "14:20",
-      "name": "Los Angeles Dodgers @ Chicago Cubs",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 18315004,
+      "time": "07:30",
+      "name": "Tour de France",
+      "sport": "Cycling",
+      "league": "Women's Road Cycling",
       "ch": [
-        "MLB NETWORK"
+        "Peacock"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 13.933265925176968,
-        "l": "Quality +13.9 (Los Angeles Dodgers 0.530 vs Chicago Cubs 0.516)"
+        "v": 15,
+        "l": "Cycling event +15"
       },
       "_sk": {
         "v": 0,
@@ -28,7 +28,121 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.933265925176968
+      "_score": 15
+    },
+    {
+      "id": 92152427,
+      "time": "14:20",
+      "name": "Los Angeles Dodgers @ Chicago Cubs",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 14.754098360655728,
+        "l": "Quality +14.8 (Los Angeles Dodgers 0.529 vs Chicago Cubs 0.516)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.754098360655728
+    },
+    {
+      "id": 13306706,
+      "time": "14:30",
+      "name": "Real Betis @ Arsenal FC",
+      "sport": "Soccer",
+      "league": "Soccer Club Friendlies",
+      "ch": [
+        "CBS Sports Network",
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 49.590057937606545,
+        "l": "Quality +15.4 (GFR 88.0-97.5 vs tier3 baseline 152.1 (UEFA confederation), mod +34.2), Mod +34.2"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 49.590057937606545
+    },
+    {
+      "id": 9014072,
+      "time": "14:35",
+      "name": "San Francisco Giants @ Texas Rangers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -6.666666666666666,
+        "l": "Quality -6.7 (San Francisco Giants 0.483 vs Texas Rangers 0.497)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.666666666666666
+    },
+    {
+      "id": 19235681,
+      "time": "16:00",
+      "name": "Egypt @ Nigeria",
+      "sport": "Soccer",
+      "league": "Women's Africa Cup of Nations",
+      "ch": [
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
     },
     {
       "id": 68463183,
@@ -37,12 +151,12 @@
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "GUARDIANS.TV"
+        "Guardians.TV"
       ],
       "dur": 180,
       "_st": {
-        "v": -5.533869115958611,
-        "l": "Quality -5.5 (New York Mets 0.480 vs Cleveland Guardians 0.504)"
+        "v": -4.0,
+        "l": "Quality -4.0 (New York Mets 0.483 vs Cleveland Guardians 0.505)"
       },
       "_sk": {
         "v": 0,
@@ -56,7 +170,91 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.533869115958611
+      "_score": -4.0
+    },
+    {
+      "id": 110718,
+      "time": "19:00",
+      "name": "NY Cosmos @ Richmond Kickers",
+      "sport": "Soccer",
+      "league": "USL League One",
+      "ch": [
+        "CBS Sports Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 87424433,
+      "time": "19:00",
+      "name": "Seattle Storm @ New York Liberty",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": [
+        "USA Network"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -0.7938540332906524,
+        "l": "Quality -0.8 (Seattle Storm -3.900 vs New York Liberty 3.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.7938540332906524
+    },
+    {
+      "id": 72652748,
+      "time": "19:00",
+      "name": "Canada U18 @ Sweden U18",
+      "sport": "Hockey",
+      "league": "Hlinka-Gretzky Cup",
+      "ch": [
+        "NHL Network"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Hlinka-Gretzky Cup not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 1602846,
@@ -65,12 +263,12 @@
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
-        "PRIME VIDEO"
+        "Prime Video (US)"
       ],
       "dur": 180,
       "_st": {
-        "v": 6.349848331648143,
-        "l": "Quality +6.3 (St. Louis Cardinals 0.507 vs New York Yankees 0.514)"
+        "v": 7.213114754098374,
+        "l": "Quality +7.2 (St. Louis Cardinals 0.507 vs New York Yankees 0.515)"
       },
       "_sk": {
         "v": 0,
@@ -84,7 +282,92 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.349848331648143
+      "_score": 7.213114754098374
+    },
+    {
+      "id": 18025055,
+      "time": "19:30",
+      "name": "Alta @ Naples",
+      "sport": "Soccer",
+      "league": "USL League One",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 98738745,
+      "time": "19:30",
+      "name": "Atl\u00e9tico San Luis @ Inter Miami",
+      "sport": "Soccer",
+      "league": "Leagues Cup",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 42.63768097679459,
+        "l": "Quality +12.2 (GFR 74.9-84.9 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 42.63768097679459
+    },
+    {
+      "id": 5789729,
+      "time": "19:30",
+      "name": "Orlando City @ Monterrey",
+      "sport": "Soccer",
+      "league": "Leagues Cup",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 39.24632071769761,
+        "l": "Quality +8.8 (GFR 80.4-75.1 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 39.24632071769761
     },
     {
       "id": 41002737,
@@ -94,12 +377,13 @@
       "league": "MLB",
       "ch": [
         "ESPN",
-        "ESPN UNLIMITED"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 180,
       "_st": {
-        "v": 13.62992922143578,
-        "l": "Quality +13.6 (Pittsburgh Pirates 0.509 vs Milwaukee Brewers 0.536)"
+        "v": 12.786885245901697,
+        "l": "Quality +12.8 (Pittsburgh Pirates 0.507 vs Milwaukee Brewers 0.532)"
       },
       "_sk": {
         "v": 0,
@@ -113,21 +397,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.62992922143578
+      "_score": 12.786885245901697
     },
     {
-      "id": 87424433,
-      "time": "19:00",
-      "name": "Seattle Storm @ New York Liberty",
-      "sport": "Basketball",
-      "league": "WNBA",
+      "id": 83200689,
+      "time": "20:30",
+      "name": "Vasco da Gama @ Fluminense",
+      "sport": "Soccer",
+      "league": "Copa do Brasil",
       "ch": [
-        "USA NETWORK"
+        "FOX Deportes"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": -0.9803921568627458,
-        "l": "Quality -1.0 (Seattle Storm -4.000 vs New York Liberty 3.500)"
+        "v": 38.29035921853532,
+        "l": "Quality +0.2 (GFR 75.5-84.5 vs tier1 baseline 159.9 (Serie A (Brazil)), mod +38.1), Mod +38.1"
       },
       "_sk": {
         "v": 0,
@@ -141,7 +425,92 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.9803921568627458
+      "_score": 38.29035921853532
+    },
+    {
+      "id": 23514986,
+      "time": "20:30",
+      "name": "Quer\u00e9taro @ FC Dallas",
+      "sport": "Soccer",
+      "league": "Leagues Cup",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 38.22811089995456,
+        "l": "Quality +7.8 (GFR 76.2-78.0 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 38.22811089995456
+    },
+    {
+      "id": 84050410,
+      "time": "20:30",
+      "name": "Le\u00f3n @ Nashville SC",
+      "sport": "Soccer",
+      "league": "Leagues Cup",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 39.40666872049178,
+        "l": "Quality +9.0 (GFR 74.5-81.3 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 39.40666872049178
+    },
+    {
+      "id": 32095457,
+      "time": "21:00",
+      "name": "Monterey Bay @ El Paso Locomotive",
+      "sport": "Soccer",
+      "league": "USL Championship",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 5.826893504104163,
+        "l": "Quality -15.9 (GFR 58.9-61.2 vs tier1 baseline 127.1 (USL Championship (USA)), mod +21.7), Mod +21.7"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.826893504104163
     },
     {
       "id": 10915820,
@@ -150,13 +519,13 @@
       "sport": "Basketball",
       "league": "WNBA",
       "ch": [
-        "USA NETWORK",
+        "USA Network",
         "CNBC"
       ],
       "dur": 150,
       "_st": {
-        "v": -0.9803921568627456,
-        "l": "Quality -1.0 (Los Angeles Sparks 0.900 vs Chicago Sky -1.400)"
+        "v": -2.138284250960307,
+        "l": "Quality -2.1 (Los Angeles Sparks 0.500 vs Chicago Sky -1.600)"
       },
       "_sk": {
         "v": 0,
@@ -170,16 +539,16 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.9803921568627456
+      "_score": -2.138284250960307
     },
     {
-      "id": 87165805,
+      "id": 54025902,
       "time": "22:00",
-      "name": "Denver Summit FC @ North Carolina Courage",
+      "name": "North Carolina Courage @ Denver Summit FC",
       "sport": "Soccer",
       "league": "NWSL",
       "ch": [
-        "CBSSN"
+        "CBS Sports Network"
       ],
       "dur": 120,
       "_st": {
@@ -201,19 +570,20 @@
       "_score": 0.0
     },
     {
-      "id": 86979769,
-      "time": "21:00",
-      "name": "El Paso Locomotive @ Monterey Bay",
+      "id": 33665217,
+      "time": "22:00",
+      "name": "Seattle Sounders @ Toluca",
       "sport": "Soccer",
-      "league": "USL Championship",
+      "league": "Leagues Cup",
       "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
+        "FOX",
+        "FOX Sports 1",
+        "Apple TV"
       ],
       "dur": 120,
       "_st": {
-        "v": 5.829893504104149,
-        "l": "Quality -15.9 (GFR 61.2-58.9 vs tier1 baseline 127.1 (USL Championship (USA)), mod +21.7), Mod +21.7"
+        "v": 46.29361544050196,
+        "l": "Quality +15.8 (GFR 84.7-79.7 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
       },
       "_sk": {
         "v": 0,
@@ -227,12 +597,12 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.829893504104149
+      "_score": 46.29361544050196
     },
     {
-      "id": 71383536,
+      "id": 86478793,
       "time": "22:30",
-      "name": "Las Vegas Lights @ Oakland Roots",
+      "name": "Oakland Roots @ Las Vegas Lights",
       "sport": "Soccer",
       "league": "USL Championship",
       "ch": [
@@ -240,8 +610,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 10.064255236343053,
-        "l": "Quality -11.6 (GFR 59.5-62.4 vs tier1 baseline 127.1 (USL Championship (USA)), mod +21.7), Mod +21.7"
+        "v": 10.061255236343067,
+        "l": "Quality -11.6 (GFR 62.4-59.5 vs tier1 baseline 127.1 (USL Championship (USA)), mod +21.7), Mod +21.7"
       },
       "_sk": {
         "v": 0,
@@ -255,276 +625,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.064255236343053
+      "_score": 10.061255236343067
     },
     {
-      "id": 64673929,
-      "time": "19:00",
-      "name": "Richmond Kickers @ NY Cosmos",
-      "sport": "Soccer",
-      "league": "USL League One",
-      "ch": [
-        "CBSSN"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
-      "id": 62344976,
-      "time": "19:30",
-      "name": "Naples @ Alta",
-      "sport": "Soccer",
-      "league": "USL League One",
-      "ch": [
-        "ESPN UNLIMITED",
-        "ESPN SELECT"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
-      "id": 97373199,
-      "time": "20:30",
-      "name": "Fluminense @ Vasco da Gama",
-      "sport": "Soccer",
-      "league": "Copa do Brasil",
-      "ch": [
-        "FOX DEPORTES"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 38.29335921853531,
-        "l": "Quality +0.2 (GFR 84.5-75.5 vs tier1 baseline 159.9 (Serie A (Brazil)), mod +38.1), Mod +38.1"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 38.29335921853531
-    },
-    {
-      "id": 1135970,
-      "time": "14:30",
-      "name": "Arsenal FC @ Real Betis",
-      "sport": "Soccer",
-      "league": "Soccer Club Friendlies",
-      "ch": [
-        "CBSSN",
-        "FOX DEPORTES"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 49.59307998939087,
-        "l": "Quality +15.4 (GFR 97.5-88.0 vs tier3 baseline 152.1 (UEFA confederation), mod +34.2), Mod +34.2"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 49.59307998939087
-    },
-    {
-      "id": 62829316,
-      "time": "19:30",
-      "name": "Inter Miami @ Atl\u00e9tico San Luis",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 42.64068097679458,
-        "l": "Quality +12.2 (GFR 84.9-74.9 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 42.64068097679458
-    },
-    {
-      "id": 42648763,
-      "time": "19:30",
-      "name": "Monterrey @ Orlando City",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 39.24932071769759,
-        "l": "Quality +8.8 (GFR 75.1-80.4 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 39.24932071769759
-    },
-    {
-      "id": 79052047,
-      "time": "20:30",
-      "name": "FC Dallas @ Quer\u00e9taro",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 38.231110899954544,
-        "l": "Quality +7.8 (GFR 78.0-76.2 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 38.231110899954544
-    },
-    {
-      "id": 11939796,
-      "time": "20:30",
-      "name": "Nashville SC @ Le\u00f3n",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
-      "ch": [
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 39.409668720491766,
-        "l": "Quality +9.0 (GFR 81.3-74.5 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 39.409668720491766
-    },
-    {
-      "id": 97630485,
-      "time": "22:00",
-      "name": "Toluca @ Seattle Sounders",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
-      "ch": [
-        "FOX",
-        "APPLE TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 46.296615440501945,
-        "l": "Quality +15.8 (GFR 79.7-84.7 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 46.296615440501945
-    },
-    {
-      "id": 55512326,
+      "id": 80558606,
       "time": "22:30",
-      "name": "Los Angeles FC @ Guadalajara",
+      "name": "Guadalajara @ Los Angeles FC",
       "sport": "Soccer",
       "league": "Leagues Cup",
       "ch": [
-        "APPLE TV"
+        "Apple TV"
       ],
       "dur": 120,
       "_st": {
-        "v": 45.35056222401626,
-        "l": "Quality +14.9 (GFR 82.6-80.6 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
+        "v": 45.34756222401627,
+        "l": "Quality +14.9 (GFR 80.6-82.6 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
       },
       "_sk": {
         "v": 0,
@@ -538,7 +653,829 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.35056222401626
+      "_score": 45.34756222401627
+    }
+  ],
+  "dropped": [
+    {
+      "name": "National Bank Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "11:00",
+      "date": "2026-08-05",
+      "channel": "Sportsnet One, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
+    },
+    {
+      "name": "Columbus Clippers @ Syracuse Mets",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "12:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Frederick Keys @ Jersey Shore BlueClaws",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "12:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Portland Sea Dogs @ New Hampshire Fisher Cats",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "12:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "National Bank Open",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "12:30",
+      "date": "2026-08-05",
+      "channel": "Sportsnet 360, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet 360, Sportsnet NOW \u2014 none in channels.txt"
+    },
+    {
+      "name": "Altoona Curve @ Erie SeaWolves",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "12:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Saratoga Live",
+      "league": "Horse Racing",
+      "sport": "Equestrian",
+      "time": "13:00",
+      "date": "2026-08-05",
+      "channel": "Fubo Sports, FOX Sports 2, FOX Sports Racing",
+      "reason": "marquee",
+      "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
+    },
+    {
+      "name": "Norfolk Tides @ Buffalo Bisons",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "13:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lake County Captains @ Lansing Lugnuts",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "13:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Iowa Cubs @ Indianapolis Indians",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "13:35",
+      "date": "2026-08-05",
+      "channel": "SportsNet Pittsburgh, Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on SportsNet Pittsburgh, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "PSG @ Mallorca",
+      "league": "Soccer Club Friendlies",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-08-05",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Louisville Bats @ St. Paul",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "14:07",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Toronto Blue Jays @ Houston Astros",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "14:10",
+      "date": "2026-08-05",
+      "channel": "Space City Home Network, MLB.TV, Sportsnet, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Space City Home Network, MLB.TV, Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tampa Bay Rays @ Colorado Rockies",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "15:10",
+      "date": "2026-08-05",
+      "channel": "Rockies.TV, MLB.TV, Rays.TV",
+      "reason": "channel",
+      "detail": "airs on Rockies.TV, MLB.TV, Rays.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Daytona Tortugas @ St. Lucie Mets",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "16:00",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Stockton Ports @ San Jose Giants",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "16:00",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Harrisburg Senators @ Chesapeake Baysox",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Estudiantes @ Boca Juniors",
+      "league": "Primera Division",
+      "sport": "Soccer",
+      "time": "18:00",
+      "date": "2026-08-05",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hartford Yard Goats @ Binghamton Rumble Ponies",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:07",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Jupiter Hammerheads @ Palm Beach Cardinals",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wilson Warbirds @ Hill City Howlers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Dunedin Blue Jays @ Lakeland Flying Tigers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Asheville Tourists @ Winston-Salem Dash",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tampa Tarpons @ Clearwater Threshers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Fort Myers Mighty Mussels @ Bradenton Marauders",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Jacksonville Jumbo Shrimp @ Gwinnett Stripers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Los Angeles Angels @ Baltimore Orioles",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "FanDuel Sports Network West, MASN, MLB.TV, Angels Broadcast Television",
+      "reason": "channel",
+      "detail": "airs on FanDuel Sports Network West, MASN, MLB.TV, Angels Broadcast Television \u2014 none in channels.txt"
+    },
+    {
+      "name": "Brooklyn Cyclones @ Wilmington Blue Rocks",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Delmarva Shorebirds @ Fredericksburg Nationals",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "West Michigan Whitecaps @ Fort Wayne TinCaps",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Somerset Patriots @ Akron RubberDucks",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Fayetteville Woodpeckers @ Salem RidgeYaks",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:35",
+      "date": "2026-08-05",
+      "channel": "WZBJ 24, Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on WZBJ 24, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Athletics @ Cincinnati Reds",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "18:40",
+      "date": "2026-08-05",
+      "channel": "NBC Sports California, MLB.TV, Reds.TV",
+      "reason": "channel",
+      "detail": "airs on NBC Sports California, MLB.TV, Reds.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Washington Nationals @ Philadelphia Phillies",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "18:40",
+      "date": "2026-08-05",
+      "channel": "NBC Sports Philadelphia, MLB.TV, Nationals.TV",
+      "reason": "channel",
+      "detail": "airs on NBC Sports Philadelphia, MLB.TV, Nationals.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lehigh Valley IronPigs @ Worcester",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:45",
+      "date": "2026-08-05",
+      "channel": "NESN Plus, Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on NESN Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Greensboro Grasshoppers @ Rome Emperors",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:45",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hudson Valley Renegades @ Greenville Drive",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:45",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Phoenix Mercury @ Atlanta Dream",
+      "league": "WNBA",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-08-05",
+      "channel": "WNBA League Pass, AZ Family Sports, Atlanta News First, Merc+, Peachtree Sports Network, Victory+",
+      "reason": "channel",
+      "detail": "airs on WNBA League Pass, AZ Family Sports, Atlanta News First, Merc+, Peachtree Sports Network, Victory+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Daytona Tortugas @ St. Lucie Mets",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:00",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Augusta GreenJackets @ Hickory Crawdads",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:00",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Knoxville Smokies @ Chattanooga Lookouts",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:00",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Durham Bulls @ Charlotte Knights",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:04",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rochester Red Wings @ Scranton/WB",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Omaha Storm Chasers @ Toledo Mud Hens",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Great Lakes Loons @ Dayton Dragons",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Kannapolis Cannon Ballers @ Charleston RiverDogs",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Cedar Rapids Kernels @ South Bend Cubs",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Marquee Sports Network, Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Marquee Sports Network, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wisconsin Timber Rattlers @ Beloit Sky Carp",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Reading Fightin Phils @ Richmond Flying Squirrels",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Myrtle Beach Pelicans @ Columbia Fireflies",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Montgomery Biscuits @ Pensacola Blue Wahoos",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Biloxi Shuckers @ Columbus Clingstones",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:06",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Chicago White Sox @ Boston Red Sox",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "19:10",
+      "date": "2026-08-05",
+      "channel": "Chicago Sports Network, NESN, MLB.TV, Sportsnet NOW, Sportsnet+, RDS 2",
+      "reason": "channel",
+      "detail": "airs on Chicago Sports Network, NESN, MLB.TV, Sportsnet NOW, Sportsnet+, RDS 2 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Miami Marlins @ Atlanta Braves",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "19:15",
+      "date": "2026-08-05",
+      "channel": "MLB.TV, Marlins.TV, BravesVision",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, Marlins.TV, BravesVision \u2014 none in channels.txt"
+    },
+    {
+      "name": "Santa Fe @ Deportivo Pereira",
+      "league": "Primera A",
+      "sport": "Soccer",
+      "time": "19:25",
+      "date": "2026-08-05",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Dallas Wings @ Washington Mystics",
+      "league": "WNBA",
+      "sport": "Basketball",
+      "time": "19:30",
+      "date": "2026-08-05",
+      "channel": "WNBA League Pass, Monumental Sports Network, KFAA 29",
+      "reason": "channel",
+      "detail": "airs on WNBA League Pass, Monumental Sports Network, KFAA 29 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Frisco RoughRiders @ Midland RockHounds",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:30",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tulsa Drillers @ Corpus Christi Hooks",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Birmingham Barons @ Rocket City Trash Pandas",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Quad Cities River Bandits @ Peoria Chiefs",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Amarillo Sod Poodles @ Arkansas Travelers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hub City Spartanburgers @ Bowling Green Hot Rods",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minnesota Twins @ Kansas City Royals",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "19:40",
+      "date": "2026-08-05",
+      "channel": "Twins.TV, MLB.TV, Royals.TV",
+      "reason": "channel",
+      "detail": "airs on Twins.TV, MLB.TV, Royals.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Nashville Sounds @ Memphis Redbirds",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:45",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Springfield Cardinals @ San Antonio Missions",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wichita Wind Surge @ Northwest Arkansas Naturals",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Belgrano @ Tigre",
+      "league": "Primera Division",
+      "sport": "Soccer",
+      "time": "20:15",
+      "date": "2026-08-05",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sugar Land Space Cowboys @ Albuquerque Isotopes",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Oklahoma City Baseball Club @ Salt Lake Bees",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Harrisburg Senators @ Chesapeake Baysox",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ontario Tower Buzzers @ Lake Elsinore Storm",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Am\u00e9rica de Cali @ Once Caldas",
+      "league": "Primera A",
+      "sport": "Soccer",
+      "time": "21:30",
+      "date": "2026-08-05",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "El Paso Chihuahuas @ Reno Aces",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:35",
+      "date": "2026-08-05",
+      "channel": "Nevada Sports Net, Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Nevada Sports Net, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Eugene Emeralds @ Spokane Indians",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rancho Cucamonga Quakes @ Inland Empire 66ers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:35",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "San Diego Padres @ Arizona Diamondbacks",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "21:40",
+      "date": "2026-08-05",
+      "channel": "Padres.TV, Dbacks.TV",
+      "reason": "channel",
+      "detail": "airs on Padres.TV, Dbacks.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Detroit Tigers @ Seattle Mariners",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "21:40",
+      "date": "2026-08-05",
+      "channel": "Detroit SportsNet, Mariners.TV",
+      "reason": "channel",
+      "detail": "airs on Detroit SportsNet, Mariners.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Round Rock Express @ Sacramento River Cats",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:45",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Visalia Rawhide @ Fresno Grizzlies",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:50",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tacoma Rainiers @ Las Vegas Aviators",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "22:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Vancouver Canadians @ Everett AquaSox",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "22:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hillsboro Hops @ Tri-City Dust Devils",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "22:05",
+      "date": "2026-08-05",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     }
   ]
 }
