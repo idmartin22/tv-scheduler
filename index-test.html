@@ -1007,7 +1007,13 @@ function App(){
     if(!e.bumpTgt)return;
     const b=final.find(a=>a.name===e.bumpTgt.name&&a.tv===e.bumpTgt.tv);
     if(!b)return;
-    setPrioOvr(p=>{const n={...p,[e.id]:e.priority+1,[b.id]:-1};debouncedSave(buildSavePayload({prioOvr:n}));return n;});setSel(null);
+    // Raise e just above b so it takes the slot. It used to ALSO write
+    // [b.id]:-1, which didn't demote b relative to e - it cratered b to an
+    // absolute -1, below every event of the day, permanently and persisted
+    // to settings.json. That's how Boca Juniors @ O'Higgins ended up showing
+    // 0.0/100 despite the scraper scoring it +47. b is now left untouched;
+    // Math.max stops e being demoted if it already outranks b.
+    setPrioOvr(p=>{const n={...p,[e.id]:Math.max(e.priority,b.priority+1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});setSel(null);
   };
   const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
 
