@@ -146,6 +146,34 @@
       "_score": 15
     },
     {
+      "id": 8954480,
+      "time": "11:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 93415043,
       "time": "12:00",
       "name": "Paksi SE @ Panathinaikos",
@@ -214,7 +242,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 55.62215496340723,
+        "v": 55.622173502804735,
         "l": "Quality +5.6 (GFR 79.1-85.2 vs tier3 baseline 152.1 (UEFA confederation), mod +50.0), Mod +50.0"
       },
       "_sk": {
@@ -229,7 +257,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 55.62215496340723
+      "_score": 55.622173502804735
+    },
+    {
+      "id": 93188603,
+      "time": "13:00",
+      "name": "Mubadala Citi DC Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 11437529,
@@ -270,8 +326,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 5.806451612903175,
-        "l": "Quality +5.8 (New York Yankees 0.516 vs Chicago White Sox 0.502)"
+        "v": 5.901639344262306,
+        "l": "Quality +5.9 (New York Yankees 0.515 vs Chicago White Sox 0.503)"
       },
       "_sk": {
         "v": 0,
@@ -285,7 +341,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.806451612903175
+      "_score": 5.901639344262306
     },
     {
       "id": 24575000,
@@ -298,8 +354,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 7.7419354838709245,
-        "l": "Quality +7.7 (Chicago Cubs 0.518 vs St. Louis Cardinals 0.506)"
+        "v": 7.540983606557427,
+        "l": "Quality +7.5 (Chicago Cubs 0.516 vs St. Louis Cardinals 0.507)"
       },
       "_sk": {
         "v": 0,
@@ -313,7 +369,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.7419354838709245
+      "_score": 7.540983606557427
     },
     {
       "id": 62462993,
@@ -322,7 +378,9 @@
       "sport": "Golf",
       "league": "PGA Tour",
       "ch": [
-        "Golf Channel USA"
+        "Golf Channel USA",
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 240,
       "_st": {
@@ -350,7 +408,7 @@
       "sport": "Soccer",
       "league": "CONCACAF U20",
       "ch": [
-        "FOX Soccer Plus",
+        "FOX Sports 2",
         "TUDN"
       ],
       "dur": 120,
@@ -384,7 +442,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 48.52113593362414,
+        "v": 48.518360029075595,
         "l": "Quality +10.4 (GFR 80.1-79.7 vs tier3 baseline 148.6 (CONMEBOL confederation), mod +38.1), Mod +38.1"
       },
       "_sk": {
@@ -399,7 +457,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 48.52113593362414
+      "_score": 48.518360029075595
     },
     {
       "id": 88754711,
@@ -545,34 +603,6 @@
       "_score": 10
     },
     {
-      "id": 91348420,
-      "time": "19:00",
-      "name": "Non-Alumni Bracket Tournament (Championship)",
-      "sport": "Basketball",
-      "league": "The Basketball Tournament (TBT)",
-      "ch": [
-        "FOX Sports 1"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "The Basketball Tournament (TBT) not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 33140334,
       "time": "19:00",
       "name": "Savannah Bananas - The Firefighters",
@@ -602,20 +632,18 @@
       "_score": 0
     },
     {
-      "id": 98405031,
-      "time": "19:15",
-      "name": "Washington Nationals @ Atlanta Braves",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 47881006,
+      "time": "19:00",
+      "name": "Davis Steel - The Mecca",
+      "sport": "Basketball",
+      "league": "The Basketball Tournament (TBT)",
       "ch": [
-        "ESPN",
-        "ESPN Unlimited",
-        "ESPN Deportes"
+        "FOX Sports 1"
       ],
-      "dur": 180,
+      "dur": 150,
       "_st": {
-        "v": 7.7419354838709245,
-        "l": "Quality +7.7 (Washington Nationals 0.506 vs Atlanta Braves 0.518)"
+        "v": 0,
+        "l": "The Basketball Tournament (TBT) not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -629,7 +657,37 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.7419354838709245
+      "_score": 0
+    },
+    {
+      "id": 98405031,
+      "time": "19:15",
+      "name": "Washington Nationals @ Atlanta Braves",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 7.213114754098374,
+        "l": "Quality +7.2 (Washington Nationals 0.505 vs Atlanta Braves 0.517)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.213114754098374
     },
     {
       "id": 87449431,
@@ -643,7 +701,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 48.59500959692897,
+        "v": 48.58644770163456,
         "l": "Quality -1.4 (GFR 91.7-91.1 vs tier1 baseline 183.7 (Premier League (England)), mod +50.0), Mod +50.0"
       },
       "_sk": {
@@ -658,7 +716,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 48.59500959692897
+      "_score": 48.58644770163456
     },
     {
       "id": 96866217,
@@ -671,8 +729,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.4159292035398234,
-        "l": "Quality +1.4 (Minnesota Lynx 3.100 vs Toronto Tempo -2.500)"
+        "v": 1.1745776347546266,
+        "l": "Quality +1.2 (Minnesota Lynx 3.200 vs Toronto Tempo -2.700)"
       },
       "_sk": {
         "v": 0,
@@ -686,7 +744,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.4159292035398234
+      "_score": 1.1745776347546266
     },
     {
       "id": 47937236,
@@ -727,7 +785,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.948295979214535,
+        "v": 37.94529597921455,
         "l": "Quality +1.6 (GFR 76.4-80.7 vs tier1 baseline 156.3 (Liga Profesional (Argentina)), mod +36.3), Mod +36.3"
       },
       "_sk": {
@@ -742,7 +800,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.948295979214535
+      "_score": 37.94529597921455
     },
     {
       "id": 72226857,
@@ -756,7 +814,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 47.00725939317994,
+        "v": 47.00451881509038,
         "l": "Quality +8.9 (GFR 83.6-74.6 vs tier3 baseline 148.6 (CONMEBOL confederation), mod +38.1), Mod +38.1"
       },
       "_sk": {
@@ -771,7 +829,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 47.00725939317994
+      "_score": 47.00451881509038
     },
     {
       "id": 72650894,
@@ -780,7 +838,8 @@
       "sport": "Soccer",
       "league": "CONCACAF U20",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -800,6 +859,34 @@
         "l": ""
       },
       "_score": 0.0
+    },
+    {
+      "id": 10607680,
+      "time": "21:00",
+      "name": "Marath\u00f3n @ Herediano",
+      "sport": "Soccer",
+      "league": "CONCACAF Central American Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 34.57217643624719,
+        "l": "Quality +4.1 (GFR 72.1-77.6 vs tier3 baseline 144.6 (CONCACAF confederation), mod +30.4), Mod +30.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 34.57217643624719
     },
     {
       "id": 67079345,
@@ -841,7 +928,7 @@
       "dur": 150,
       "_st": {
         "v": 17.82783588093323,
-        "l": "Quality +17.8 (New York Liberty 3.600 vs Las Vegas Aces 3.800)"
+        "l": "Quality +17.8 (New York Liberty 3.500 vs Las Vegas Aces 3.900)"
       },
       "_sk": {
         "v": 0,
@@ -868,8 +955,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 6.129032258064502,
-        "l": "Quality +6.1 (Seattle Mariners 0.491 vs Los Angeles Dodgers 0.528)"
+        "v": 6.55737704918034,
+        "l": "Quality +6.6 (Seattle Mariners 0.491 vs Los Angeles Dodgers 0.529)"
       },
       "_sk": {
         "v": 0,
@@ -883,7 +970,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.129032258064502
+      "_score": 6.55737704918034
     },
     {
       "id": 86063004,
@@ -912,6 +999,34 @@
         "l": ""
       },
       "_score": 10
+    },
+    {
+      "id": 56206835,
+      "time": "23:00",
+      "name": "Cartagin\u00e9s @ Municipal",
+      "sport": "Soccer",
+      "league": "CONCACAF Central American Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 35.68648689956335,
+        "l": "Quality +4.6 (GFR 72.9-75.1 vs tier1 baseline 145.9 (Primera Division (Costa Rica)), mod +31.1), Mod +31.1"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 35.68648689956335
     }
   ],
   "dropped": [
@@ -922,6 +1037,16 @@
       "time": "01:00",
       "date": "2026-07-30",
       "channel": "Tennis Channel",
+      "reason": "cutoff",
+      "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "AEW Dynamite",
+      "league": "Wrestling",
+      "sport": "Fighting",
+      "time": "01:00",
+      "date": "2026-07-30",
+      "channel": "TSN2",
       "reason": "cutoff",
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
@@ -976,16 +1101,6 @@
       "detail": "airs on RDS \u2014 none in channels.txt"
     },
     {
-      "name": "Mubadala Citi DC Open",
-      "league": "ATP",
-      "sport": "Tennis",
-      "time": "11:00",
-      "date": "2026-07-30",
-      "channel": "TSN2",
-      "reason": "channel",
-      "detail": "airs on TSN2 \u2014 none in channels.txt"
-    },
-    {
       "name": "Toledo Mud Hens @ Columbus Clippers",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1014,16 +1129,6 @@
       "channel": "Fubo Sports, FOX Sports 2, FOX Sports Racing",
       "reason": "marquee",
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
-    },
-    {
-      "name": "Mubadala Citi DC Open",
-      "league": "WTA",
-      "sport": "Tennis",
-      "time": "13:00",
-      "date": "2026-07-30",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Rally Finland",
@@ -1076,6 +1181,16 @@
       "detail": "airs on TSN2, RDS 2 \u2014 none in channels.txt"
     },
     {
+      "name": "Memphis Redbirds @ Jacksonville Jumbo Shrimp",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:00",
+      "date": "2026-07-30",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Jersey Shore BlueClaws @ Hudson Valley Renegades",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1097,6 +1212,16 @@
     },
     {
       "name": "Buffalo Bisons @ Lehigh Valley IronPigs",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:05",
+      "date": "2026-07-30",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Syracuse Mets @ Rochester Red Wings",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "17:05",
@@ -1316,26 +1441,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Buffalo Bisons @ Lehigh Valley IronPigs",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "18:45",
-      "date": "2026-07-30",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Syracuse Mets @ Rochester Red Wings",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "18:45",
-      "date": "2026-07-30",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
       "name": "Salem RidgeYaks @ Kannapolis Cannon Ballers",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1384,6 +1489,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Canada U20 @ Finland U20",
+      "league": "International Friendly",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-07-30",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
       "name": "Memphis Redbirds @ Jacksonville Jumbo Shrimp",
@@ -1437,6 +1552,16 @@
     },
     {
       "name": "Fort Wayne TinCaps @ Great Lakes Loons",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:05",
+      "date": "2026-07-30",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Buffalo Bisons @ Lehigh Valley IronPigs",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "19:05",
@@ -1556,6 +1681,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Syracuse Mets @ Rochester Red Wings",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "19:45",
+      "date": "2026-07-30",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Connecticut Sun @ Chicago Sky",
       "league": "WNBA",
       "sport": "Basketball",
@@ -1587,6 +1722,16 @@
     },
     {
       "name": "Northwest Arkansas Naturals @ Tulsa Drillers",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:00",
+      "date": "2026-07-30",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Memphis Redbirds @ Jacksonville Jumbo Shrimp",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "20:00",
@@ -1686,6 +1831,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Syracuse Mets @ Rochester Red Wings",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:05",
+      "date": "2026-07-30",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Atl\u00e9tico Tucum\u00e1n @ Central C\u00f3rdoba SdE",
       "league": "Primera Division",
       "sport": "Soccer",
@@ -1701,9 +1856,9 @@
       "sport": "Football",
       "time": "20:30",
       "date": "2026-07-30",
-      "channel": "CFL+ (US), RDS, TSN1, TSN3, TSN 4K",
+      "channel": "CFL+ (US), RDS, TSN1, TSN3, TSN4, TSN5, TSN 4K",
       "reason": "channel",
-      "detail": "airs on CFL+ (US), RDS, TSN1, TSN3, TSN 4K \u2014 none in channels.txt"
+      "detail": "airs on CFL+ (US), RDS, TSN1, TSN3, TSN4, TSN5, TSN 4K \u2014 none in channels.txt"
     },
     {
       "name": "Cruzeiro @ Coritiba",
@@ -1854,16 +2009,6 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Cartagin\u00e9s @ Municipal",
-      "league": "CONCACAF Central American Cup",
-      "sport": "Soccer",
-      "time": "23:00",
-      "date": "2026-07-30",
-      "channel": "OneSoccer",
-      "reason": "channel",
-      "detail": "airs on OneSoccer \u2014 none in channels.txt"
     }
   ]
 }
