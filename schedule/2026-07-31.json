@@ -88,6 +88,34 @@
       "_score": 15
     },
     {
+      "id": 76487750,
+      "time": "08:00",
+      "name": "Women's British Open",
+      "sport": "Golf",
+      "league": "LPGA Tour",
+      "ch": [
+        "USA Network"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 30382164,
       "time": "09:00",
       "name": "Portugal Invitational",
@@ -128,34 +156,6 @@
       "_st": {
         "v": 15,
         "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 77214611,
-      "time": "09:45",
-      "name": "Tour of Denmark",
-      "sport": "Cycling",
-      "league": "Men's Road Cycling",
-      "ch": [
-        "HBO Max (US)"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Cycling event +15"
       },
       "_sk": {
         "v": 0,
@@ -341,9 +341,37 @@
       "_score": 10
     },
     {
-      "id": 19262773,
-      "time": "13:00",
-      "name": "North Adams SteepleCATS - Martha's Vineyard Sharks",
+      "id": 20245138,
+      "time": "12:00",
+      "name": "Women's British Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 52058181,
+      "time": "13:30",
+      "name": "Danbury Westerners - Newport Gulls",
       "sport": "Baseball",
       "league": "Collegiate Summer Baseball",
       "ch": [
@@ -370,18 +398,18 @@
       "_score": 0
     },
     {
-      "id": 62459148,
-      "time": "14:20",
-      "name": "New York Yankees @ Chicago Cubs",
+      "id": 60773189,
+      "time": "14:00",
+      "name": "Connie Mack World Series",
       "sport": "Baseball",
-      "league": "MLB",
+      "league": "Other",
       "ch": [
-        "MLB Network"
+        "Prime Video (US)"
       ],
       "dur": 180,
       "_st": {
-        "v": 10.163934426229563,
-        "l": "Quality +10.2 (New York Yankees 0.515 vs Chicago Cubs 0.516)"
+        "v": 0,
+        "l": "Other not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -395,7 +423,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.163934426229563
+      "_score": 0
+    },
+    {
+      "id": 62459148,
+      "time": "14:20",
+      "name": "New York Yankees @ Chicago Cubs",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 10.0,
+        "l": "Quality +10.0 (New York Yankees 0.514 vs Chicago Cubs 0.517)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.0
     },
     {
       "id": 24801014,
@@ -513,6 +569,34 @@
       "_score": 10
     },
     {
+      "id": 46379935,
+      "time": "15:00",
+      "name": "Wigan Warriors @ Leigh Leopards",
+      "sport": "Rugby League",
+      "league": "Super League",
+      "ch": [
+        "FOX Soccer Plus"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Super League not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 20174927,
       "time": "15:45",
       "name": "Road America",
@@ -599,35 +683,6 @@
       "_score": 15
     },
     {
-      "id": 41308553,
-      "time": "16:30",
-      "name": "North Adams SteepleCATS - Sanford Mainers",
-      "sport": "Baseball",
-      "league": "Collegiate Summer Baseball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 96657057,
       "time": "16:45",
       "name": "Road America",
@@ -710,6 +765,35 @@
         "l": ""
       },
       "_score": 10
+    },
+    {
+      "id": 12227335,
+      "time": "17:00",
+      "name": "USA Women's Elite Team - American Samoa",
+      "sport": "Softball",
+      "league": "USA Softball International Cup",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "USA Softball International Cup not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 92424090,
@@ -797,9 +881,95 @@
       "_score": 10
     },
     {
+      "id": 1476093,
+      "time": "18:00",
+      "name": "Connie Mack World Series",
+      "sport": "Baseball",
+      "league": "Other",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Other not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 58596420,
       "time": "18:30",
       "name": "Danbury Westerners - Newport Gulls",
+      "sport": "Baseball",
+      "league": "Collegiate Summer Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 53271863,
+      "time": "18:30",
+      "name": "Vermont Mountaineers - North Shore Navigators",
+      "sport": "Baseball",
+      "league": "Collegiate Summer Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 6287886,
+      "time": "18:30",
+      "name": "Keene Swamp Bats - Upper Valley Nighthawks",
       "sport": "Baseball",
       "league": "Collegiate Summer Baseball",
       "ch": [
@@ -952,8 +1122,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.3278688524589806,
-        "l": "Quality +0.3 (St. Louis Cardinals 0.507 vs Toronto Blue Jays 0.494)"
+        "v": -7.280150981148548e-14,
+        "l": "Quality -0.0 (St. Louis Cardinals 0.506 vs Toronto Blue Jays 0.494)"
       },
       "_sk": {
         "v": 0,
@@ -967,7 +1137,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.3278688524589806
+      "_score": -7.280150981148548e-14
     },
     {
       "id": 42081070,
@@ -980,8 +1150,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.590163934426238,
-        "l": "Quality +4.6 (Arizona Diamondbacks 0.509 vs Cleveland Guardians 0.505)"
+        "v": 4.516129032258009,
+        "l": "Quality +4.5 (Arizona Diamondbacks 0.509 vs Cleveland Guardians 0.505)"
       },
       "_sk": {
         "v": 0,
@@ -995,35 +1165,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.590163934426238
-    },
-    {
-      "id": 13794908,
-      "time": "19:10",
-      "name": "Chicago White Sox @ Tampa Bay Rays",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "MLB Network"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 9.180327868852476,
-        "l": "Quality +9.2 (Chicago White Sox 0.503 vs Tampa Bay Rays 0.525)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 9.180327868852476
+      "_score": 4.516129032258009
     },
     {
       "id": 98405031,
@@ -1036,8 +1178,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 7.213114754098374,
-        "l": "Quality +7.2 (Washington Nationals 0.505 vs Atlanta Braves 0.517)"
+        "v": 7.096774193548341,
+        "l": "Quality +7.1 (Washington Nationals 0.504 vs Atlanta Braves 0.518)"
       },
       "_sk": {
         "v": 0,
@@ -1051,7 +1193,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.213114754098374
+      "_score": 7.096774193548341
     },
     {
       "id": 25527429,
@@ -1120,8 +1262,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.1779769526248398,
-        "l": "Quality -1.2 (Seattle Storm -3.900 vs Atlanta Dream 3.300)"
+        "v": -1.3222079589216955,
+        "l": "Quality -1.3 (Seattle Storm -4.000 vs Atlanta Dream 3.300)"
       },
       "_sk": {
         "v": 0,
@@ -1135,7 +1277,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.1779769526248398
+      "_score": -1.3222079589216955
     },
     {
       "id": 56588826,
@@ -1148,8 +1290,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.138284250960307,
-        "l": "Quality -2.1 (Dallas Wings 1.200 vs Washington Mystics -2.300)"
+        "v": -1.707317073170733,
+        "l": "Quality -1.7 (Dallas Wings 1.300 vs Washington Mystics -2.200)"
       },
       "_sk": {
         "v": 0,
@@ -1163,7 +1305,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.138284250960307
+      "_score": -1.707317073170733
     },
     {
       "id": 50940032,
@@ -1194,18 +1336,18 @@
       "_score": 0.0
     },
     {
-      "id": 72879825,
-      "time": "20:15",
-      "name": "Texas Rangers @ Houston Astros",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 7303058,
+      "time": "20:00",
+      "name": "Legacy Fighting Alliance (LFA)",
+      "sport": "Fighting",
+      "league": "Boxing",
       "ch": [
-        "Apple TV"
+        "ESPN Deportes"
       ],
       "dur": 180,
       "_st": {
-        "v": -3.6666666666666665,
-        "l": "Quality -3.7 (Texas Rangers 0.497 vs Houston Astros 0.492)"
+        "v": 15,
+        "l": "Boxing event +15"
       },
       "_sk": {
         "v": 0,
@@ -1219,7 +1361,92 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.6666666666666665
+      "_score": 15
+    },
+    {
+      "id": 54425578,
+      "time": "20:00",
+      "name": "USA Women's National Team - Canada",
+      "sport": "Softball",
+      "league": "USA Softball International Cup",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "USA Softball International Cup not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 50732530,
+      "time": "20:00",
+      "name": "ABCD Camp",
+      "sport": "Basketball",
+      "league": "High School Basketball",
+      "ch": [
+        "NBA TV"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "High School Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 72879825,
+      "time": "20:15",
+      "name": "Texas Rangers @ Houston Astros",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -3.9344262295082624,
+        "l": "Quality -3.9 (Texas Rangers 0.496 vs Houston Astros 0.492)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.9344262295082624
     },
     {
       "id": 91841693,
@@ -1336,34 +1563,6 @@
       "_score": 30.240889961389954
     },
     {
-      "id": 27396087,
-      "time": "21:00",
-      "name": "Legacy Fighting Alliance (LFA)",
-      "sport": "Fighting",
-      "league": "Boxing",
-      "ch": [
-        "ESPN Deportes"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
       "id": 71605963,
       "time": "21:00",
       "name": "Party Animals - Texas Tailgaters",
@@ -1433,7 +1632,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.33333333333329634,
+        "v": -0.32786885245905223,
         "l": "Quality -0.3 (Milwaukee Brewers 0.532 vs Los Angeles Angels 0.467)"
       },
       "_sk": {
@@ -1448,7 +1647,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.33333333333329634
+      "_score": -0.32786885245905223
     },
     {
       "id": 9929219,
@@ -1461,8 +1660,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.666666666666667,
-        "l": "Quality -4.7 (San Francisco Giants 0.483 vs San Diego Padres 0.503)"
+        "v": -4.590163934426294,
+        "l": "Quality -4.6 (San Francisco Giants 0.484 vs San Diego Padres 0.502)"
       },
       "_sk": {
         "v": 0,
@@ -1476,7 +1675,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.666666666666667
+      "_score": -4.590163934426294
     },
     {
       "id": 54457276,
@@ -1489,8 +1688,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.3700384122919318,
-        "l": "Quality -1.4 (Indiana Fever 4.400 vs Portland Fire -5.100)"
+        "v": -1.5147625160462135,
+        "l": "Quality -1.5 (Indiana Fever 4.300 vs Portland Fire -5.100)"
       },
       "_sk": {
         "v": 0,
@@ -1504,7 +1703,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.3700384122919318
+      "_score": -1.5147625160462135
     },
     {
       "id": 79818932,
@@ -1535,9 +1734,9 @@
       "_score": 0.0
     },
     {
-      "id": 69783012,
+      "id": 61932450,
       "time": "22:00",
-      "name": "Luis Castillo - Adrian Curiel",
+      "name": "Miguel Calder\u00f3n - Hugo Guarneros",
       "sport": "Fighting",
       "league": "Boxing",
       "ch": [
@@ -1574,8 +1773,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 11.803278688524612,
-        "l": "Quality +11.8 (Boston Red Sox 0.507 vs Los Angeles Dodgers 0.529)"
+        "v": 12.258064516129004,
+        "l": "Quality +12.3 (Boston Red Sox 0.508 vs Los Angeles Dodgers 0.530)"
       },
       "_sk": {
         "v": 0,
@@ -1589,7 +1788,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.803278688524612
+      "_score": 12.258064516129004
     },
     {
       "id": 55103514,
@@ -1777,6 +1976,16 @@
       "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Rally Finland",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "04:58",
+      "date": "2026-07-31",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "cutoff",
+      "detail": "starts 04:58 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Chiba Lotte Marines @ Nippon Ham Fighters",
       "league": "NPB",
       "sport": "Baseball",
@@ -1795,16 +2004,6 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Women's British Open",
-      "league": "LPGA Tour",
-      "sport": "Golf",
-      "time": "08:00",
-      "date": "2026-07-31",
-      "channel": "Golf Channel Canada",
-      "reason": "channel",
-      "detail": "airs on Golf Channel Canada \u2014 none in channels.txt"
     },
     {
       "name": "Women's British Open",
@@ -1862,9 +2061,9 @@
       "sport": "Tennis",
       "time": "14:00",
       "date": "2026-07-31",
-      "channel": "TSN2",
+      "channel": "TSN+, TSN2",
       "reason": "channel",
-      "detail": "airs on TSN2 \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN2 \u2014 none in channels.txt"
     },
     {
       "name": "Union Saint-Gilloise @ Club Brugge",
@@ -2315,6 +2514,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Chicago White Sox @ Tampa Bay Rays",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "19:10",
+      "date": "2026-07-31",
+      "channel": "Fanatiz, Chicago Sports Network, MLB.TV, Rays.TV",
+      "reason": "channel",
+      "detail": "airs on Fanatiz, Chicago Sports Network, MLB.TV, Rays.TV \u2014 none in channels.txt"
     },
     {
       "name": "Miami Marlins @ New York Mets",
