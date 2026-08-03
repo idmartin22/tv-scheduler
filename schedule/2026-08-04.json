@@ -31,18 +31,18 @@
       "_score": 15
     },
     {
-      "id": 69160132,
-      "time": "11:00",
-      "name": "National Bank Open",
-      "sport": "Tennis",
-      "league": "WTA",
+      "id": 40524423,
+      "time": "09:45",
+      "name": "Tour de France",
+      "sport": "Cycling",
+      "league": "Women's Road Cycling",
       "ch": [
-        "Tennis Channel"
+        "Peacock"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": 10,
-        "l": "Tennis event +10"
+        "v": 15,
+        "l": "Cycling event +15"
       },
       "_sk": {
         "v": 0,
@@ -56,7 +56,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10
+      "_score": 15
     },
     {
       "id": 69160132,
@@ -87,11 +87,11 @@
       "_score": 10
     },
     {
-      "id": 39592425,
-      "time": "12:30",
+      "id": 69160132,
+      "time": "11:00",
       "name": "National Bank Open",
       "sport": "Tennis",
-      "league": "ATP",
+      "league": "WTA",
       "ch": [
         "Tennis Channel"
       ],
@@ -113,6 +113,64 @@
         "l": ""
       },
       "_score": 10
+    },
+    {
+      "id": 40518609,
+      "time": "14:00",
+      "name": "NEC @ Olympiakos Piraeus",
+      "sport": "Soccer",
+      "league": "UEFA Champions League",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 33.0,
+        "l": "Quality -20.0 (GFR 81.6-47.8 (not rated yet) vs tier1 baseline 157.4 (Eredivisie (Netherlands) \u2014 opponent not in GFR), mod +53.0), Mod +53.0"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 33.0
+    },
+    {
+      "id": 28950756,
+      "time": "14:00",
+      "name": "Senior League Softball World Series",
+      "sport": "Softball",
+      "league": "Senior League Softball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Senior League Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 40888068,
@@ -144,18 +202,18 @@
       "_score": 0.0
     },
     {
-      "id": 76274456,
-      "time": "17:00",
-      "name": "National Bank Open",
-      "sport": "Tennis",
-      "league": "ATP",
+      "id": 39171342,
+      "time": "18:00",
+      "name": "Salcedo @ Portmore United",
+      "sport": "Soccer",
+      "league": "CONCACAF Caribbean Cup",
       "ch": [
-        "Tennis Channel"
+        "Paramount+ (US)"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": 10,
-        "l": "Tennis event +10"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -169,7 +227,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10
+      "_score": 0.0
     },
     {
       "id": 68463183,
@@ -182,8 +240,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.999999999999948,
-        "l": "Quality -5.0 (New York Mets 0.482 vs Cleveland Guardians 0.502)"
+        "v": -4.477296726504756,
+        "l": "Quality -4.5 (New York Mets 0.482 vs Cleveland Guardians 0.504)"
       },
       "_sk": {
         "v": 0,
@@ -197,7 +255,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.999999999999948
+      "_score": -4.477296726504756
     },
     {
       "id": 67965297,
@@ -284,19 +342,19 @@
       "_score": 10
     },
     {
-      "id": 70114459,
-      "time": "19:30",
-      "name": "Pachuca @ FC Cincinnati",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
+      "id": 42071054,
+      "time": "19:00",
+      "name": "Guayama, Puerto Rico - Kirkland, WA",
+      "sport": "Softball",
+      "league": "Junior League Softball",
       "ch": [
-        "FOX Sports 1",
-        "Apple TV"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 120,
       "_st": {
-        "v": 42.28607177264372,
-        "l": "Quality +11.8 (GFR 80.6-79.3 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
+        "v": 0,
+        "l": "Junior League Softball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -310,7 +368,93 @@
         "v": 0,
         "l": ""
       },
-      "_score": 42.28607177264372
+      "_score": 0
+    },
+    {
+      "id": 6730554,
+      "time": "19:05",
+      "name": "Wisconsin Rapids Rafters at Madison Mallards",
+      "sport": "Baseball",
+      "league": "Collegiate Summer Baseball",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 70114459,
+      "time": "19:30",
+      "name": "Pachuca @ FC Cincinnati",
+      "sport": "Soccer",
+      "league": "Leagues Cup",
+      "ch": [
+        "FOX Sports 1",
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 42.45471620434754,
+        "l": "Quality +11.9 (GFR 80.6-79.4 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 42.45471620434754
+    },
+    {
+      "id": 26647493,
+      "time": "19:30",
+      "name": "Bacolod City, Philippines - Repentigny, Quebec",
+      "sport": "Softball",
+      "league": "Junior League Softball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Junior League Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 53591755,
@@ -324,8 +468,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.54407174964702,
-        "l": "Quality +10.0 (GFR 75.8-81.9 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
+        "v": 40.634248806905006,
+        "l": "Quality +10.1 (GFR 75.8-81.9 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
       },
       "_sk": {
         "v": 0,
@@ -339,7 +483,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.54407174964702
+      "_score": 40.634248806905006
+    },
+    {
+      "id": 52226377,
+      "time": "20:00",
+      "name": "Defence Force @ Violette AC",
+      "sport": "Soccer",
+      "league": "CONCACAF Caribbean Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
     },
     {
       "id": 12719226,
@@ -352,8 +524,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.14545845065542,
-        "l": "Quality +12.6 (GFR 80.8-80.2 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
+        "v": 41.86091567985985,
+        "l": "Quality +11.4 (GFR 80.8-78.4 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
       },
       "_sk": {
         "v": 0,
@@ -367,7 +539,93 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.14545845065542
+      "_score": 41.86091567985985
+    },
+    {
+      "id": 58426413,
+      "time": "20:00",
+      "name": "Firpo @ Plaza Amador",
+      "sport": "Soccer",
+      "league": "CONCACAF Central American Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 64058300,
+      "time": "20:00",
+      "name": "Malolos, Philippines - Conneaut Lake, PA",
+      "sport": "Softball",
+      "league": "Senior League Softball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Senior League Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 25923364,
+      "time": "20:00",
+      "name": "Georgetown, DE - San Antonio, TX",
+      "sport": "Softball",
+      "league": "Senior League Softball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Senior League Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 52556769,
@@ -382,8 +640,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 14.754098360655748,
-        "l": "Quality +14.8 (Los Angeles Dodgers 0.528 vs Chicago Cubs 0.517)"
+        "v": 14.815668202765018,
+        "l": "Quality +14.8 (Los Angeles Dodgers 0.527 vs Chicago Cubs 0.516)"
       },
       "_sk": {
         "v": 0,
@@ -397,7 +655,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.754098360655748
+      "_score": 14.815668202765018
     },
     {
       "id": 22309566,
@@ -410,8 +668,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.03965526038774,
-        "l": "Quality +8.8 (GFR 79.9-79.9 vs tier2 baseline 152.3 (Brazil (cross-tier)), mod +34.3), Mod +34.3"
+        "v": 42.9152672358529,
+        "l": "Quality +8.6 (GFR 79.9-79.9 vs tier2 baseline 152.4 (Brazil (cross-tier)), mod +34.3), Mod +34.3"
       },
       "_sk": {
         "v": 0,
@@ -425,7 +683,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.03965526038774
+      "_score": 42.9152672358529
     },
     {
       "id": 40387796,
@@ -438,8 +696,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.19943170549335,
-        "l": "Quality +6.7 (GFR 75.2-78.1 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
+        "v": 36.90736919926511,
+        "l": "Quality +6.4 (GFR 75.2-77.7 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
       },
       "_sk": {
         "v": 0,
@@ -453,7 +711,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.19943170549335
+      "_score": 36.90736919926511
     },
     {
       "id": 3998541,
@@ -466,8 +724,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.262295081967242,
-        "l": "Quality +4.3 (San Diego Padres 0.503 vs Arizona Diamondbacks 0.510)"
+        "v": 4.447004608294897,
+        "l": "Quality +4.4 (San Diego Padres 0.504 vs Arizona Diamondbacks 0.509)"
       },
       "_sk": {
         "v": 0,
@@ -481,7 +739,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.262295081967242
+      "_score": 4.447004608294897
     },
     {
       "id": 23824707,
@@ -497,8 +755,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.45514734363262,
-        "l": "Quality +12.9 (GFR 80.4-81.0 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
+        "v": 43.57199877015992,
+        "l": "Quality +13.1 (GFR 80.4-81.0 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.5), Mod +30.5"
       },
       "_sk": {
         "v": 0,
@@ -512,7 +770,63 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.45514734363262
+      "_score": 43.57199877015992
+    },
+    {
+      "id": 23095759,
+      "time": "22:00",
+      "name": "Alajuelense @ Diriang\u00e9n",
+      "sport": "Soccer",
+      "league": "CONCACAF Central American Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 11.078999999999994,
+        "l": "Quality -20.0 (GFR 74.6-47.8 (not rated yet) vs tier1 baseline 145.9 (Primera Division (Costa Rica) \u2014 opponent not in GFR), mod +31.1), Mod +31.1"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.078999999999994
+    },
+    {
+      "id": 98866811,
+      "time": "22:00",
+      "name": "Real Estel\u00ed @ Antigua GFC",
+      "sport": "Soccer",
+      "league": "CONCACAF Central American Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
     },
     {
       "id": 14494006,
@@ -525,7 +839,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 17.336166666666685,
+        "v": 17.343333333333334,
         "l": "Quality -20.0 (GFR 47.8 (not rated yet)-82.6 vs tier1 baseline 158.4 (MLS (USA) \u2014 opponent not in GFR), mod +37.3), Mod +37.3"
       },
       "_sk": {
@@ -540,7 +854,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 17.336166666666685
+      "_score": 17.343333333333334
     }
   ],
   "dropped": [
