@@ -31,6 +31,34 @@
       "_score": 36.00328830712319
     },
     {
+      "id": 28912737,
+      "time": "17:00",
+      "name": "Llaneros @ Rionegro \u00c1guilas",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 14.022999999999996,
+        "l": "Quality -20.0 (GFR 75.7-47.8 (not rated yet) vs tier1 baseline 151.6 (Primera A (Colombia) \u2014 opponent not in GFR), mod +34.0), Mod +34.0"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.022999999999996
+    },
+    {
       "id": 53584974,
       "time": "18:00",
       "name": "National Bank Open",
@@ -70,8 +98,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.642857142857043,
-        "l": "Quality +4.6 (Philadelphia Phillies 0.508 vs St. Louis Cardinals 0.505)"
+        "v": 5.454545454545425,
+        "l": "Quality +5.5 (Philadelphia Phillies 0.510 vs St. Louis Cardinals 0.505)"
       },
       "_sk": {
         "v": 0,
@@ -85,7 +113,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.642857142857043
+      "_score": 5.454545454545425
     },
     {
       "id": 94597134,
@@ -117,6 +145,34 @@
       "_score": -1.7211055276381906
     },
     {
+      "id": 47079067,
+      "time": "21:40",
+      "name": "Milwaukee Brewers @ San Diego Padres",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 12.363636363636308,
+        "l": "Quality +12.4 (Milwaukee Brewers 0.530 vs San Diego Padres 0.504)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 12.363636363636308
+    },
+    {
       "id": 22971744,
       "time": "22:00",
       "name": "Chicago Sky @ Seattle Storm",
@@ -143,6 +199,34 @@
         "l": ""
       },
       "_score": -10.76633165829146
+    },
+    {
+      "id": 1355330,
+      "time": "22:10",
+      "name": "Kansas City Royals @ Los Angeles Dodgers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0.36363636363624324,
+        "l": "Quality +0.4 (Kansas City Royals 0.476 vs Los Angeles Dodgers 0.525)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.36363636363624324
     }
   ],
   "dropped": [
@@ -242,9 +326,9 @@
       "sport": "Baseball",
       "time": "21:38",
       "date": "2026-08-10",
-      "channel": "Rangers Sports Network, Angels Broadcast Television",
+      "channel": "FanDuel Sports Network West, Rangers Sports Network, MLB.TV, Angels Broadcast Television",
       "reason": "channel",
-      "detail": "airs on Rangers Sports Network, Angels Broadcast Television \u2014 none in channels.txt"
+      "detail": "airs on FanDuel Sports Network West, Rangers Sports Network, MLB.TV, Angels Broadcast Television \u2014 none in channels.txt"
     },
     {
       "name": "Colorado Rockies @ Arizona Diamondbacks",
@@ -252,9 +336,9 @@
       "sport": "Baseball",
       "time": "21:40",
       "date": "2026-08-10",
-      "channel": "Dbacks.TV, Rockies.TV",
+      "channel": "Dbacks.TV, Rockies.TV, MLB.TV",
       "reason": "channel",
-      "detail": "airs on Dbacks.TV, Rockies.TV \u2014 none in channels.txt"
+      "detail": "airs on Dbacks.TV, Rockies.TV, MLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Tampa Bay Rays @ Athletics",
@@ -262,19 +346,9 @@
       "sport": "Baseball",
       "time": "21:40",
       "date": "2026-08-10",
-      "channel": "NBC Sports California, Rays.TV",
+      "channel": "NBC Sports California, MLB.TV, Rays.TV",
       "reason": "channel",
-      "detail": "airs on NBC Sports California, Rays.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Milwaukee Brewers @ San Diego Padres",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "21:40",
-      "date": "2026-08-10",
-      "channel": "Padres.TV, Brewers.TV",
-      "reason": "channel",
-      "detail": "airs on Padres.TV, Brewers.TV \u2014 none in channels.txt"
+      "detail": "airs on NBC Sports California, MLB.TV, Rays.TV \u2014 none in channels.txt"
     },
     {
       "name": "Houston Astros @ San Francisco Giants",
@@ -282,19 +356,9 @@
       "sport": "Baseball",
       "time": "21:45",
       "date": "2026-08-10",
-      "channel": "Space City Home Network, NBC Sports Bay Area",
+      "channel": "Space City Home Network, NBC Sports Bay Area, MLB.TV",
       "reason": "channel",
-      "detail": "airs on Space City Home Network, NBC Sports Bay Area \u2014 none in channels.txt"
-    },
-    {
-      "name": "Kansas City Royals @ Los Angeles Dodgers",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "22:10",
-      "date": "2026-08-10",
-      "channel": "SportsNet LA, Royals.TV, SNLA+",
-      "reason": "channel",
-      "detail": "airs on SportsNet LA, Royals.TV, SNLA+ \u2014 none in channels.txt"
+      "detail": "airs on Space City Home Network, NBC Sports Bay Area, MLB.TV \u2014 none in channels.txt"
     }
   ]
 }
