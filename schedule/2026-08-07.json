@@ -257,6 +257,34 @@
       "_score": 10
     },
     {
+      "id": 95243973,
+      "time": "12:00",
+      "name": "LIV Golf New York",
+      "sport": "Golf",
+      "league": "LIV Golf",
+      "ch": [
+        "FOX"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 54734765,
       "time": "13:00",
       "name": "Fortuna D\u00fcsseldorf @ Waldhof Mannheim",
@@ -297,8 +325,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 16.42200000000001,
-        "l": "Quality -20.0 (GFR 75.4-47.8 (not rated yet) vs tier1 baseline 156.4 (Ekstraklasa (Poland) \u2014 opponent not in GFR), mod +36.4), Mod +36.4"
+        "v": 16.46977777777778,
+        "l": "Quality -20.0 (GFR 75.4-47.8 (not rated yet) vs tier1 baseline 156.5 (Ekstraklasa (Poland) \u2014 opponent not in GFR), mod +36.5), Mod +36.5"
       },
       "_sk": {
         "v": 0,
@@ -312,7 +340,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.42200000000001
+      "_score": 16.46977777777778
+    },
+    {
+      "id": 48765588,
+      "time": "14:30",
+      "name": "Livingston @ Partick Thistle",
+      "sport": "Soccer",
+      "league": "Scottish Championship",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 25.366124151445174,
+        "l": "Quality -3.6 (GFR 70.2-67.9 vs tier2 baseline 141.5 (Scotland (cross-tier)), mod +29.0), Mod +29.0"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25.366124151445174
     },
     {
       "id": 2255584,
@@ -321,7 +377,8 @@
       "sport": "Soccer",
       "league": "English League Cup",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "CBS Sports Golazo Network"
       ],
       "dur": 120,
       "_st": {
@@ -522,8 +579,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.2698412698413382,
-        "l": "Quality -1.3 (Cincinnati Reds 0.495 vs Washington Nationals 0.501)"
+        "v": -1.230769230769297,
+        "l": "Quality -1.2 (Cincinnati Reds 0.496 vs Washington Nationals 0.500)"
       },
       "_sk": {
         "v": 0,
@@ -537,7 +594,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.2698412698413382
+      "_score": -1.230769230769297
     },
     {
       "id": 62275956,
@@ -625,18 +682,19 @@
       "_score": 10
     },
     {
-      "id": 40635561,
-      "time": "19:05",
-      "name": "Atlanta Braves @ New York Yankees",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 16710402,
+      "time": "19:00",
+      "name": "Montr\u00e9al Roses @ Halifax Tides",
+      "sport": "Soccer",
+      "league": "Northern Super League",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 12.500000000000009,
-        "l": "Quality +12.5 (Atlanta Braves 0.521 vs New York Yankees 0.514)"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -650,7 +708,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.500000000000009
+      "_score": 0.0
+    },
+    {
+      "id": 40635561,
+      "time": "19:05",
+      "name": "Atlanta Braves @ New York Yankees",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 13.45454545454536,
+        "l": "Quality +13.5 (Atlanta Braves 0.522 vs New York Yankees 0.515)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 13.45454545454536
     },
     {
       "id": 49128721,
@@ -663,8 +749,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -5.714285714285775,
-        "l": "Quality -5.7 (Athletics Athletics 0.469 vs Boston Red Sox 0.513)"
+        "v": -5.230769230769256,
+        "l": "Quality -5.2 (Athletics Athletics 0.468 vs Boston Red Sox 0.515)"
       },
       "_sk": {
         "v": 0,
@@ -678,7 +764,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.714285714285775
+      "_score": -5.230769230769256
     },
     {
       "id": 26385602,
@@ -747,8 +833,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.928485005178686,
-        "l": "Quality +7.4 (GFR 75.8-78.4 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 37.66917927861539,
+        "l": "Quality +7.1 (GFR 74.7-78.4 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -762,7 +848,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.928485005178686
+      "_score": 37.66917927861539
     },
     {
       "id": 4143222,
@@ -775,8 +861,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.401867896472,
-        "l": "Quality +13.8 (GFR 80.6-81.8 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 46.08988210455783,
+        "l": "Quality +15.5 (GFR 80.6-82.4 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -790,7 +876,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.401867896472
+      "_score": 46.08988210455783
     },
     {
       "id": 58093380,
@@ -833,8 +919,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 3.214285714285608,
-        "l": "Quality +3.2 (Cleveland Guardians 0.503 vs Chicago White Sox 0.506)"
+        "v": 2.5454545454545103,
+        "l": "Quality +2.5 (Cleveland Guardians 0.502 vs Chicago White Sox 0.505)"
       },
       "_sk": {
         "v": 0,
@@ -848,7 +934,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.214285714285608
+      "_score": 2.5454545454545103
     },
     {
       "id": 36947612,
@@ -890,8 +976,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.2769292640707,
-        "l": "Quality +13.7 (GFR 80.2-82.1 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 46.03040186259861,
+        "l": "Quality +15.4 (GFR 80.8-82.1 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -905,7 +991,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.2769292640707
+      "_score": 46.03040186259861
     },
     {
       "id": 27062229,
@@ -947,8 +1033,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -3.1746031746032393,
-        "l": "Quality -3.2 (Baltimore Orioles 0.498 vs Texas Rangers 0.492)"
+        "v": -2.7692307692308327,
+        "l": "Quality -2.8 (Baltimore Orioles 0.499 vs Texas Rangers 0.492)"
       },
       "_sk": {
         "v": 0,
@@ -962,7 +1048,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.1746031746032393
+      "_score": -2.7692307692308327
     },
     {
       "id": 10186832,
@@ -1032,8 +1118,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.91773069591688,
-        "l": "Quality +13.3 (GFR 80.8-81.1 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 43.86362161979806,
+        "l": "Quality +13.3 (GFR 80.8-79.6 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1047,7 +1133,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.91773069591688
+      "_score": 43.86362161979806
     },
     {
       "id": 264087,
@@ -1088,8 +1174,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 5.357142857142839,
-        "l": "Quality +5.4 (Tampa Bay Rays 0.525 vs Seattle Mariners 0.490)"
+        "v": 5.090909090909021,
+        "l": "Quality +5.1 (Tampa Bay Rays 0.525 vs Seattle Mariners 0.489)"
       },
       "_sk": {
         "v": 0,
@@ -1103,7 +1189,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.357142857142839
+      "_score": 5.090909090909021
     },
     {
       "id": 51048197,
@@ -1175,8 +1261,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -8.25396825396831,
-        "l": "Quality -8.3 (Detroit Tigers 0.491 vs San Francisco Giants 0.483)"
+        "v": -8.000000000000055,
+        "l": "Quality -8.0 (Detroit Tigers 0.493 vs San Francisco Giants 0.481)"
       },
       "_sk": {
         "v": 0,
@@ -1190,7 +1276,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.25396825396831
+      "_score": -8.000000000000055
     },
     {
       "id": 68851404,
@@ -1203,8 +1289,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.67713491800769,
-        "l": "Quality +10.1 (GFR 75.2-82.5 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 41.44192605431514,
+        "l": "Quality +10.8 (GFR 75.2-82.3 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1218,7 +1304,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.67713491800769
+      "_score": 41.44192605431514
     },
     {
       "id": 1415975,
@@ -1281,24 +1367,14 @@
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
     },
     {
-      "name": "LIV Golf New York",
-      "league": "LIV Golf",
-      "sport": "Golf",
-      "time": "12:00",
-      "date": "2026-08-07",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "National Bank Open",
       "league": "WTA",
       "sport": "Tennis",
       "time": "12:30",
       "date": "2026-08-07",
-      "channel": "Sportsnet One, Sportsnet NOW",
+      "channel": "Sportsnet One, Sportsnet NOW, TVA Sports 2",
       "reason": "channel",
-      "detail": "airs on Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet One, Sportsnet NOW, TVA Sports 2 \u2014 none in channels.txt"
     },
     {
       "name": "National Bank Open",
@@ -1306,9 +1382,9 @@
       "sport": "Tennis",
       "time": "12:30",
       "date": "2026-08-07",
-      "channel": "Sportsnet, Sportsnet NOW",
+      "channel": "Sportsnet, Sportsnet NOW, TVA Sports",
       "reason": "channel",
-      "detail": "airs on Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
     },
     {
       "name": "Saratoga Live",
@@ -1326,9 +1402,9 @@
       "sport": "Soccer",
       "time": "14:45",
       "date": "2026-08-07",
-      "channel": "DAZN Canada",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "York RLFC @ Leigh Leopards",
@@ -1339,6 +1415,16 @@
       "channel": "Sportsnet+",
       "reason": "channel",
       "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "U.S. Women's Amateur",
+      "league": "Amateur Golf",
+      "sport": "Golf",
+      "time": "15:00",
+      "date": "2026-08-07",
+      "channel": "TSN3",
+      "reason": "channel",
+      "detail": "airs on TSN3 \u2014 none in channels.txt"
     },
     {
       "name": "Hull Kingston Rovers @ Castleford Tigers",
@@ -1861,6 +1947,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Emanuel Moreno - Guillermo Gutierrez",
+      "league": "Boxing",
+      "sport": "Fighting",
+      "time": "20:00",
+      "date": "2026-08-07",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Nashville Sounds @ Memphis Redbirds",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -1954,6 +2050,16 @@
       "name": "Internacional F.C. de Palmira @ Deportes Quind\u00edo",
       "league": "Primera B",
       "sport": "Soccer",
+      "time": "20:30",
+      "date": "2026-08-07",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ancud @ CD Puerto Varas",
+      "league": "LNB",
+      "sport": "Basketball",
       "time": "20:30",
       "date": "2026-08-07",
       "channel": "Fanatiz",
