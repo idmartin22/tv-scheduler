@@ -42,7 +42,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 35.830797250859135,
+        "v": 35.818166945073735,
         "l": "Quality -1.1 (GFR 82.6-74.0 vs tier1 baseline 157.4 (Eredivisie (Netherlands)), mod +36.9), Mod +36.9"
       },
       "_sk": {
@@ -57,7 +57,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 35.830797250859135
+      "_score": 35.818166945073735
+    },
+    {
+      "id": 86502308,
+      "time": "07:00",
+      "name": "Chelsea @ Johor Darul Ta'zim",
+      "sport": "Soccer",
+      "league": "Soccer Club Friendlies",
+      "ch": [
+        "CBS Sports Golazo Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 30.000000000000014,
+        "l": "Quality -20.0 (GFR 89.6-47.8 (not rated yet) vs tier1 baseline 183.6 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30.000000000000014
     },
     {
       "id": 15300803,
@@ -115,6 +143,35 @@
         "l": ""
       },
       "_score": 15
+    },
+    {
+      "id": 80072946,
+      "time": "08:00",
+      "name": "British Grand Prix",
+      "sport": "Motorsports",
+      "league": "MotoGP",
+      "ch": [
+        "FOX Sports 1",
+        "FOX Deportes"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
     },
     {
       "id": 4606496,
@@ -184,7 +241,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 33.50502405498285,
+        "v": 33.495107976171425,
         "l": "Quality -3.4 (GFR 81.6-73.1 vs tier1 baseline 157.4 (Eredivisie (Netherlands)), mod +36.9), Mod +36.9"
       },
       "_sk": {
@@ -199,7 +256,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 33.50502405498285
+      "_score": 33.495107976171425
     },
     {
       "id": 62780462,
@@ -213,7 +270,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.84701565437426,
+        "v": 46.84869252190184,
         "l": "Quality +12.6 (GFR 86.7-92.8 vs tier3 baseline 152.1 (UEFA confederation), mod +34.2), Mod +34.2"
       },
       "_sk": {
@@ -228,7 +285,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.84701565437426
+      "_score": 46.84869252190184
     },
     {
       "id": 40524423,
@@ -294,7 +351,8 @@
       "sport": "Soccer",
       "league": "Scottish Premiership",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "CBS Sports Golazo Network"
       ],
       "dur": 120,
       "_st": {
@@ -383,8 +441,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.2698412698413382,
-        "l": "Quality -1.3 (Cincinnati Reds 0.495 vs Washington Nationals 0.501)"
+        "v": -1.230769230769297,
+        "l": "Quality -1.2 (Cincinnati Reds 0.496 vs Washington Nationals 0.500)"
       },
       "_sk": {
         "v": 0,
@@ -398,7 +456,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.2698412698413382
+      "_score": -1.230769230769297
     },
     {
       "id": 40798716,
@@ -602,18 +660,18 @@
       "_score": 0.0
     },
     {
-      "id": 80497998,
-      "time": "13:40",
-      "name": "Los Angeles Angels @ Miami Marlins",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 77666931,
+      "time": "13:30",
+      "name": "U.S. Gymnastics Championships",
+      "sport": "Gymnastics",
+      "league": "U.S. Gymnastics Championships",
       "ch": [
-        "Telemundo"
+        "NBC"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": -8.571428571428592,
-        "l": "Quality -8.6 (Los Angeles Angels 0.468 vs Miami Marlins 0.505)"
+        "v": 0,
+        "l": "U.S. Gymnastics Championships not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -627,7 +685,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.571428571428592
+      "_score": 0
+    },
+    {
+      "id": 80497998,
+      "time": "13:40",
+      "name": "Los Angeles Angels @ Miami Marlins",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "Telemundo"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -8.923076923076943,
+        "l": "Quality -8.9 (Los Angeles Angels 0.467 vs Miami Marlins 0.504)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.923076923076943
     },
     {
       "id": 41869750,
@@ -640,8 +726,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.110653494083486,
-        "l": "Quality +0.7 (GFR 79.7-77.1 vs tier1 baseline 156.4 (Liga Profesional (Argentina)), mod +36.4), Mod +36.4"
+        "v": 36.35615499263797,
+        "l": "Quality -0.1 (GFR 79.7-76.7 vs tier1 baseline 156.4 (Liga Profesional (Argentina)), mod +36.4), Mod +36.4"
       },
       "_sk": {
         "v": 0,
@@ -655,7 +741,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.110653494083486
+      "_score": 36.35615499263797
     },
     {
       "id": 34662213,
@@ -726,8 +812,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 3.214285714285608,
-        "l": "Quality +3.2 (Cleveland Guardians 0.503 vs Chicago White Sox 0.506)"
+        "v": 2.5454545454545103,
+        "l": "Quality +2.5 (Cleveland Guardians 0.502 vs Chicago White Sox 0.505)"
       },
       "_sk": {
         "v": 0,
@@ -741,7 +827,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.214285714285608
+      "_score": 2.5454545454545103
     },
     {
       "id": 54491871,
@@ -754,8 +840,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.642857142857142,
-        "l": "Quality +9.6 (Minnesota Twins 0.497 vs Milwaukee Brewers 0.530)"
+        "v": 9.090909090908989,
+        "l": "Quality +9.1 (Minnesota Twins 0.495 vs Milwaukee Brewers 0.530)"
       },
       "_sk": {
         "v": 0,
@@ -769,7 +855,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.642857142857142
+      "_score": 9.090909090908989
     },
     {
       "id": 65278965,
@@ -857,6 +943,34 @@
         "l": ""
       },
       "_score": 25
+    },
+    {
+      "id": 17233881,
+      "time": "15:30",
+      "name": "Quer\u00e9taro @ Seattle Sounders",
+      "sport": "Soccer",
+      "league": "Leagues Cup",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 40.64319137657691,
+        "l": "Quality +10.0 (GFR 77.6-79.0 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 40.64319137657691
     },
     {
       "id": 86327649,
@@ -955,8 +1069,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -8.25396825396831,
-        "l": "Quality -8.3 (Detroit Tigers 0.491 vs San Francisco Giants 0.483)"
+        "v": -8.000000000000055,
+        "l": "Quality -8.0 (Detroit Tigers 0.493 vs San Francisco Giants 0.481)"
       },
       "_sk": {
         "v": 0,
@@ -970,7 +1084,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.25396825396831
+      "_score": -8.000000000000055
     },
     {
       "id": 31055601,
@@ -983,8 +1097,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 12.85714285714283,
-        "l": "Quality +12.9 (Los Angeles Dodgers 0.526 vs Arizona Diamondbacks 0.510)"
+        "v": 11.999999999999904,
+        "l": "Quality +12.0 (Los Angeles Dodgers 0.525 vs Arizona Diamondbacks 0.508)"
       },
       "_sk": {
         "v": 0,
@@ -998,7 +1112,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.85714285714283
+      "_score": 11.999999999999904
     },
     {
       "id": 98516647,
@@ -1008,12 +1122,13 @@
       "league": "USL Championship",
       "ch": [
         "ESPN Unlimited",
+        "CBS Sports Golazo Network",
         "ESPN Select"
       ],
       "dur": 120,
       "_st": {
-        "v": 11.852410367170613,
-        "l": "Quality -10.1 (GFR 62.1-60.8 vs tier1 baseline 127.6 (USL Championship (USA)), mod +22.0), Mod +22.0"
+        "v": 12.050217201333808,
+        "l": "Quality -10.0 (GFR 62.1-60.8 vs tier1 baseline 127.7 (USL Championship (USA)), mod +22.1), Mod +22.1"
       },
       "_sk": {
         "v": 0,
@@ -1027,35 +1142,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.852410367170613
-    },
-    {
-      "id": 83302801,
-      "time": "17:00",
-      "name": "Quer\u00e9taro @ Seattle Sounders",
-      "sport": "Soccer",
-      "league": "Leagues Cup",
-      "ch": [
-        "Apple TV"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 43.71470541826474,
-        "l": "Quality +13.1 (GFR 76.2-85.3 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 43.71470541826474
+      "_score": 12.050217201333808
     },
     {
       "id": 55640497,
@@ -1127,8 +1214,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 48.54177651261442,
-        "l": "Quality +12.1 (GFR 79.5-82.4 vs tier1 baseline 156.4 (Liga Profesional (Argentina)), mod +36.4), Mod +36.4"
+        "v": 48.36959706903986,
+        "l": "Quality +11.9 (GFR 79.5-82.2 vs tier1 baseline 156.4 (Liga Profesional (Argentina)), mod +36.4), Mod +36.4"
       },
       "_sk": {
         "v": 0,
@@ -1142,7 +1229,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 48.54177651261442
+      "_score": 48.36959706903986
     },
     {
       "id": 59294504,
@@ -1157,8 +1244,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.80840939256574,
-        "l": "Quality +13.2 (GFR 78.6-83.1 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 44.95975750733247,
+        "l": "Quality +14.4 (GFR 78.6-83.1 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1172,7 +1259,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.80840939256574
+      "_score": 44.95975750733247
     },
     {
       "id": 19748400,
@@ -1185,8 +1272,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.53805177892454,
-        "l": "Quality +7.0 (GFR 75.5-78.2 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 38.36594782728065,
+        "l": "Quality +7.8 (GFR 75.8-78.2 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1200,7 +1287,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.53805177892454
+      "_score": 38.36594782728065
     },
     {
       "id": 78800432,
@@ -1242,8 +1329,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 34.86748851134636,
-        "l": "Quality +4.3 (GFR 72.5-77.7 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 34.89909943879979,
+        "l": "Quality +4.3 (GFR 72.1-77.7 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1257,7 +1344,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 34.86748851134636
+      "_score": 34.89909943879979
     },
     {
       "id": 90401800,
@@ -1270,8 +1357,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 39.38870527136908,
-        "l": "Quality +8.8 (GFR 74.7-81.3 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 40.48174500554471,
+        "l": "Quality +9.9 (GFR 75.1-81.3 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1285,7 +1372,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 39.38870527136908
+      "_score": 40.48174500554471
     },
     {
       "id": 43206439,
@@ -1300,8 +1387,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.6349206349207043,
-        "l": "Quality -0.6 (Houston Astros 0.495 vs San Diego Padres 0.503)"
+        "v": -0.3076923076923755,
+        "l": "Quality -0.3 (Houston Astros 0.495 vs San Diego Padres 0.504)"
       },
       "_sk": {
         "v": 0,
@@ -1315,7 +1402,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.6349206349207043
+      "_score": -0.3076923076923755
     },
     {
       "id": 11043436,
@@ -1358,8 +1445,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 32.25939455996882,
-        "l": "Quality +1.7 (GFR 71.0-75.9 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 30.599527662889706,
+        "l": "Quality +0.0 (GFR 71.0-73.8 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1373,7 +1460,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 32.25939455996882
+      "_score": 30.599527662889706
     },
     {
       "id": 34530232,
@@ -1386,8 +1473,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 42.64491837832845,
-        "l": "Quality +12.1 (GFR 79.3-80.9 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 45.19767847516939,
+        "l": "Quality +14.6 (GFR 80.4-81.6 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1401,7 +1488,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 42.64491837832845
+      "_score": 45.19767847516939
     },
     {
       "id": 59197400,
@@ -1416,8 +1503,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.78743810293773,
-        "l": "Quality +8.2 (GFR 76.0-79.3 vs tier3 baseline 144.7 (CONCACAF confederation), mod +30.6), Mod +30.6"
+        "v": 41.39094298977865,
+        "l": "Quality +10.8 (GFR 78.7-78.8 vs tier3 baseline 144.8 (CONCACAF confederation), mod +30.6), Mod +30.6"
       },
       "_sk": {
         "v": 0,
@@ -1431,7 +1518,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.78743810293773
+      "_score": 41.39094298977865
     }
   ],
   "dropped": [
@@ -1446,6 +1533,16 @@
       "detail": "starts 02:10 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "St. Kilda Saints - Carlton Blues",
+      "league": "AFL Women",
+      "sport": "Aus Football",
+      "time": "02:35",
+      "date": "2026-08-09",
+      "channel": "FOX Soccer Plus",
+      "reason": "cutoff",
+      "detail": "starts 02:35 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Chiba Lotte Marines - Orix Buffaloes",
       "league": "NPB",
       "sport": "Baseball",
@@ -1454,6 +1551,16 @@
       "channel": "Next Level Sports",
       "reason": "cutoff",
       "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Cracovia Krak\u00f3w @ \u015al\u0105sk Wroc\u0142aw",
+      "league": "Ekstraklasa",
+      "sport": "Soccer",
+      "time": "08:45",
+      "date": "2026-08-09",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Borussia Dortmund @ Arsenal FC",
@@ -1470,6 +1577,16 @@
       "league": "Serie A Brazil",
       "sport": "Soccer",
       "time": "10:00",
+      "date": "2026-08-09",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Piast Gliwice @ Lech Pozna\u0144",
+      "league": "Ekstraklasa",
+      "sport": "Soccer",
+      "time": "11:30",
       "date": "2026-08-09",
       "channel": "Fanatiz",
       "reason": "channel",
@@ -1876,6 +1993,16 @@
       "detail": "airs on Rockies.TV, MLB.TV, Cardinals.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Widzew \u0141\u00f3d\u017a @ Jagiellonia Bia\u0142ystok",
+      "league": "Ekstraklasa",
+      "sport": "Soccer",
+      "time": "14:15",
+      "date": "2026-08-09",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "Baltimore Orioles @ Texas Rangers",
       "league": "MLB",
       "sport": "Baseball",
@@ -1981,9 +2108,9 @@
       "sport": "Baseball",
       "time": "15:35",
       "date": "2026-08-09",
-      "channel": "Bally Sports Live, MiLB.TV",
+      "channel": "MyNetworkTV, Bally Sports Live, MiLB.TV",
       "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+      "detail": "airs on MyNetworkTV, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "El Paso Chihuahuas @ Reno Aces",
@@ -2186,16 +2313,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Vit\u00f3ria @ Flamengo",
-      "league": "Serie A Brazil",
-      "sport": "Soccer",
-      "time": "18:30",
-      "date": "2026-08-09",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Bay @ Chicago Stars",
       "league": "NWSL",
       "sport": "Soccer",
@@ -2274,16 +2391,6 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Gimnasia Mendoza @ Instituto",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "20:30",
-      "date": "2026-08-09",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Rancho Cucamonga Quakes @ Inland Empire 66ers",
