@@ -13,8 +13,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.90806377079483,
-        "l": "Quality +6.4 (GFR 72.9-78.5 vs tier1 baseline 148.0 (League One (England)), mod +32.5), Mod +32.5"
+        "v": 33.886825173692706,
+        "l": "Quality -3.4 (GFR 72.9-78.5 vs tier2 baseline 156.4 (England (cross-tier)), mod +37.3), Mod +37.3"
       },
       "_sk": {
         "v": 0,
@@ -28,7 +28,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.90806377079483
+      "_score": 33.886825173692706
     },
     {
       "id": 28912737,
@@ -41,8 +41,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 14.323499999999996,
-        "l": "Quality -20.0 (GFR 75.7-47.8 (not rated yet) vs tier1 baseline 151.6 (Primera A (Colombia) \u2014 opponent not in GFR), mod +34.3), Mod +34.3"
+        "v": 15.344444444444463,
+        "l": "Quality -20.0 (GFR 75.7-47.8 (not rated yet) vs tier1 baseline 152.4 (Primera A (Colombia) \u2014 opponent not in GFR), mod +35.3), Mod +35.3"
       },
       "_sk": {
         "v": 0,
@@ -56,7 +56,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.323499999999996
+      "_score": 15.344444444444463
     },
     {
       "id": 53584974,
@@ -98,8 +98,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 5.29754959159873,
-        "l": "Quality +5.3 (Philadelphia Phillies 0.508 vs St. Louis Cardinals 0.507)"
+        "v": 5.86206896551723,
+        "l": "Quality +5.9 (Philadelphia Phillies 0.510 vs St. Louis Cardinals 0.507)"
       },
       "_sk": {
         "v": 0,
@@ -113,7 +113,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.29754959159873
+      "_score": 5.86206896551723
     },
     {
       "id": 94597134,
@@ -127,8 +127,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.0148331273176736,
-        "l": "Quality -2.0 (Toronto Tempo -4.300 vs Atlanta Dream 3.200)"
+        "v": -2.8301886792452824,
+        "l": "Quality -2.8 (Toronto Tempo -4.700 vs Atlanta Dream 3.200)"
       },
       "_sk": {
         "v": 0,
@@ -142,7 +142,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.0148331273176736
+      "_score": -2.8301886792452824
     },
     {
       "id": 47079067,
@@ -155,8 +155,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 11.948658109685015,
-        "l": "Quality +11.9 (Milwaukee Brewers 0.531 vs San Diego Padres 0.503)"
+        "v": 12.75862068965515,
+        "l": "Quality +12.8 (Milwaukee Brewers 0.532 vs San Diego Padres 0.505)"
       },
       "_sk": {
         "v": 0,
@@ -170,7 +170,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.948658109685015
+      "_score": 12.75862068965515
     },
     {
       "id": 22971744,
@@ -183,8 +183,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -10.173053152039554,
-        "l": "Quality -10.2 (Chicago Sky -1.600 vs Seattle Storm -3.900)"
+        "v": -10.566037735849054,
+        "l": "Quality -10.6 (Chicago Sky -1.700 vs Seattle Storm -3.900)"
       },
       "_sk": {
         "v": 0,
@@ -198,7 +198,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.173053152039554
+      "_score": -10.566037735849054
     },
     {
       "id": 1355330,
@@ -211,8 +211,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.04667444574106807,
-        "l": "Quality +0.0 (Kansas City Royals 0.477 vs Los Angeles Dodgers 0.523)"
+        "v": -0.298507462686535,
+        "l": "Quality -0.3 (Kansas City Royals 0.476 vs Los Angeles Dodgers 0.523)"
       },
       "_sk": {
         "v": 0,
@@ -226,7 +226,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.04667444574106807
+      "_score": -0.298507462686535
     }
   ],
   "dropped": [
@@ -235,6 +235,16 @@
       "league": "Primera B",
       "sport": "Soccer",
       "time": "15:00",
+      "date": "2026-08-10",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sportivo Trinidense @ Libertad",
+      "league": "Divisi\u00f3n Profesional",
+      "sport": "Soccer",
+      "time": "17:30",
       "date": "2026-08-10",
       "channel": "Fanatiz",
       "reason": "channel",
