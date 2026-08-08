@@ -3,18 +3,19 @@
   "label": "Monday, August 10",
   "events": [
     {
-      "id": 73920995,
-      "time": "15:00",
-      "name": "Exeter City @ Plymouth Argyle",
-      "sport": "Soccer",
-      "league": "English League Cup",
+      "id": 52396571,
+      "time": "10:00",
+      "name": "Little League Baseball Regionals",
+      "sport": "Baseball",
+      "league": "Little League Baseball",
       "ch": [
-        "Paramount+ (US)"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 180,
       "_st": {
-        "v": 33.886825173692706,
-        "l": "Quality -3.4 (GFR 72.9-78.5 vs tier2 baseline 156.4 (England (cross-tier)), mod +37.3), Mod +37.3"
+        "v": 0,
+        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -28,7 +29,92 @@
         "v": 0,
         "l": ""
       },
-      "_score": 33.886825173692706
+      "_score": 0
+    },
+    {
+      "id": 73920995,
+      "time": "15:00",
+      "name": "Exeter City @ Plymouth Argyle",
+      "sport": "Soccer",
+      "league": "English League Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 34.719276266746824,
+        "l": "Quality +1.4 (GFR 72.9-78.5 vs tier2 baseline 148.4 (England (cross-tier)), mod +33.4), Mod +33.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 34.719276266746824
+    },
+    {
+      "id": 56970877,
+      "time": "16:00",
+      "name": "National Bank Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 66686919,
+      "time": "16:00",
+      "name": "Little League Baseball Regionals",
+      "sport": "Baseball",
+      "league": "Little League Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 28912737,
@@ -41,8 +127,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 15.344444444444463,
-        "l": "Quality -20.0 (GFR 75.7-47.8 (not rated yet) vs tier1 baseline 152.4 (Primera A (Colombia) \u2014 opponent not in GFR), mod +35.3), Mod +35.3"
+        "v": 15.19707142857142,
+        "l": "Quality -20.0 (GFR 75.7-33.3 (not rated yet) vs tier1 baseline 152.1 (Primera A (Colombia) \u2014 opponent not in GFR), mod +35.2), Mod +35.2"
       },
       "_sk": {
         "v": 0,
@@ -56,7 +142,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.344444444444463
+      "_score": 15.19707142857142
     },
     {
       "id": 53584974,
@@ -87,19 +173,19 @@
       "_score": 10
     },
     {
-      "id": 17250020,
-      "time": "19:45",
-      "name": "Philadelphia Phillies @ St. Louis Cardinals",
+      "id": 12024564,
+      "time": "18:00",
+      "name": "Little League Baseball Regionals",
       "sport": "Baseball",
-      "league": "MLB",
+      "league": "Little League Baseball",
       "ch": [
-        "FOX Sports 1",
-        "FOX Deportes"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 180,
       "_st": {
-        "v": 5.86206896551723,
-        "l": "Quality +5.9 (Philadelphia Phillies 0.510 vs St. Louis Cardinals 0.507)"
+        "v": 0,
+        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -113,7 +199,36 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.86206896551723
+      "_score": 0
+    },
+    {
+      "id": 17250020,
+      "time": "19:45",
+      "name": "Philadelphia Phillies @ St. Louis Cardinals",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "FOX Sports 1",
+        "FOX Deportes"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 5.614035087719309,
+        "l": "Quality +5.6 (Philadelphia Phillies 0.508 vs St. Louis Cardinals 0.508)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.614035087719309
     },
     {
       "id": 94597134,
@@ -127,8 +242,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.8301886792452824,
-        "l": "Quality -2.8 (Toronto Tempo -4.700 vs Atlanta Dream 3.200)"
+        "v": -3.2380952380952377,
+        "l": "Quality -3.2 (Toronto Tempo -4.800 vs Atlanta Dream 3.100)"
       },
       "_sk": {
         "v": 0,
@@ -142,21 +257,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.8301886792452824
+      "_score": -3.2380952380952377
     },
     {
-      "id": 47079067,
-      "time": "21:40",
-      "name": "Milwaukee Brewers @ San Diego Padres",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 40430449,
+      "time": "20:00",
+      "name": "National Bank Open",
+      "sport": "Tennis",
+      "league": "ATP",
       "ch": [
-        "ESPN Unlimited"
+        "Tennis Channel"
       ],
-      "dur": 180,
+      "dur": 150,
       "_st": {
-        "v": 12.75862068965515,
-        "l": "Quality +12.8 (Milwaukee Brewers 0.532 vs San Diego Padres 0.505)"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -170,7 +285,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.75862068965515
+      "_score": 10
     },
     {
       "id": 22971744,
@@ -183,8 +298,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -10.566037735849054,
-        "l": "Quality -10.6 (Chicago Sky -1.700 vs Seattle Storm -3.900)"
+        "v": -10.666666666666666,
+        "l": "Quality -10.7 (Chicago Sky -1.700 vs Seattle Storm -3.900)"
       },
       "_sk": {
         "v": 0,
@@ -198,35 +313,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.566037735849054
-    },
-    {
-      "id": 1355330,
-      "time": "22:10",
-      "name": "Kansas City Royals @ Los Angeles Dodgers",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "MLB Network"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": -0.298507462686535,
-        "l": "Quality -0.3 (Kansas City Royals 0.476 vs Los Angeles Dodgers 0.523)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -0.298507462686535
+      "_score": -10.666666666666666
     }
   ],
   "dropped": [
@@ -336,9 +423,9 @@
       "sport": "Baseball",
       "time": "21:38",
       "date": "2026-08-10",
-      "channel": "FanDuel Sports Network West, Rangers Sports Network, MLB.TV, Angels Broadcast Television",
+      "channel": "FanDuel Sports Network West, Rangers Sports Network, Angels Broadcast Television",
       "reason": "channel",
-      "detail": "airs on FanDuel Sports Network West, Rangers Sports Network, MLB.TV, Angels Broadcast Television \u2014 none in channels.txt"
+      "detail": "airs on FanDuel Sports Network West, Rangers Sports Network, Angels Broadcast Television \u2014 none in channels.txt"
     },
     {
       "name": "Colorado Rockies @ Arizona Diamondbacks",
@@ -346,9 +433,9 @@
       "sport": "Baseball",
       "time": "21:40",
       "date": "2026-08-10",
-      "channel": "Dbacks.TV, Rockies.TV, MLB.TV",
+      "channel": "Dbacks.TV, Rockies.TV",
       "reason": "channel",
-      "detail": "airs on Dbacks.TV, Rockies.TV, MLB.TV \u2014 none in channels.txt"
+      "detail": "airs on Dbacks.TV, Rockies.TV \u2014 none in channels.txt"
     },
     {
       "name": "Tampa Bay Rays @ Athletics",
@@ -356,9 +443,19 @@
       "sport": "Baseball",
       "time": "21:40",
       "date": "2026-08-10",
-      "channel": "NBC Sports California, MLB.TV, Rays.TV",
+      "channel": "NBC Sports California, Rays.TV",
       "reason": "channel",
-      "detail": "airs on NBC Sports California, MLB.TV, Rays.TV \u2014 none in channels.txt"
+      "detail": "airs on NBC Sports California, Rays.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Milwaukee Brewers @ San Diego Padres",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "21:40",
+      "date": "2026-08-10",
+      "channel": "Padres.TV, Brewers.TV",
+      "reason": "channel",
+      "detail": "airs on Padres.TV, Brewers.TV \u2014 none in channels.txt"
     },
     {
       "name": "Houston Astros @ San Francisco Giants",
@@ -366,9 +463,19 @@
       "sport": "Baseball",
       "time": "21:45",
       "date": "2026-08-10",
-      "channel": "Space City Home Network, NBC Sports Bay Area, MLB.TV",
+      "channel": "Space City Home Network, NBC Sports Bay Area",
       "reason": "channel",
-      "detail": "airs on Space City Home Network, NBC Sports Bay Area, MLB.TV \u2014 none in channels.txt"
+      "detail": "airs on Space City Home Network, NBC Sports Bay Area \u2014 none in channels.txt"
+    },
+    {
+      "name": "Kansas City Royals @ Los Angeles Dodgers",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "22:10",
+      "date": "2026-08-10",
+      "channel": "SportsNet LA, Royals.TV, SNLA+",
+      "reason": "channel",
+      "detail": "airs on SportsNet LA, Royals.TV, SNLA+ \u2014 none in channels.txt"
     }
   ]
 }
