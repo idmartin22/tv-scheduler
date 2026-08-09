@@ -42,8 +42,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 41.50128012222381,
-        "l": "Quality +3.5 (GFR 85.8-74.6 vs tier1 baseline 157.7 (Eredivisie (Netherlands)), mod +38.0), Mod +38.0"
+        "v": 41.52576833354274,
+        "l": "Quality +3.6 (GFR 85.8-74.6 vs tier1 baseline 157.8 (Eredivisie (Netherlands)), mod +38.0), Mod +38.0"
       },
       "_sk": {
         "v": 0,
@@ -57,7 +57,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 41.50128012222381
+      "_score": 41.52576833354274
     },
     {
       "id": 9544332,
@@ -70,8 +70,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 50.636537613346015,
-        "l": "Quality +15.6 (GFR 88.6-96.8 vs tier3 baseline 151.8 (UEFA confederation), mod +35.1), Mod +35.1"
+        "v": 50.552776251413576,
+        "l": "Quality +15.6 (GFR 88.6-96.8 vs tier3 baseline 151.8 (UEFA confederation), mod +35.0), Mod +35.0"
       },
       "_sk": {
         "v": 0,
@@ -85,21 +85,22 @@
         "v": 0,
         "l": ""
       },
-      "_score": 50.636537613346015
+      "_score": 50.552776251413576
     },
     {
-      "id": 15300803,
-      "time": "07:25",
-      "name": "Tour of Poland",
-      "sport": "Cycling",
-      "league": "Men's Road Cycling",
+      "id": 20095182,
+      "time": "07:00",
+      "name": "Wyndham Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
       "ch": [
-        "HBO Max (US)"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
         "v": 15,
-        "l": "Cycling event +15"
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -116,19 +117,18 @@
       "_score": 15
     },
     {
-      "id": 1644813,
-      "time": "07:30",
-      "name": "Wyndham Championship",
-      "sport": "Golf",
-      "league": "PGA Tour",
+      "id": 15300803,
+      "time": "07:25",
+      "name": "Tour of Poland",
+      "sport": "Cycling",
+      "league": "Men's Road Cycling",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "HBO Max (US)"
       ],
-      "dur": 240,
+      "dur": 120,
       "_st": {
         "v": 15,
-        "l": "Golf event +15"
+        "l": "Cycling event +15"
       },
       "_sk": {
         "v": 0,
@@ -185,7 +185,7 @@
       "dur": 120,
       "_st": {
         "v": 29.999999999999986,
-        "l": "Quality -20.0 (GFR 88.6-33.3 (not rated yet) vs tier1 baseline 181.7 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+        "l": "Quality -20.0 (GFR 89.1-33.0 (not rated yet) vs tier1 baseline 181.9 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -240,8 +240,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.55313287013212,
-        "l": "Quality +12.3 (GFR 83.3-74.8 vs tier1 baseline 150.1 (Premiership (Scotland)), mod +34.2), Mod +34.2"
+        "v": 46.46113287013212,
+        "l": "Quality +12.3 (GFR 83.3-74.8 vs tier1 baseline 150.1 (Premiership (Scotland)), mod +34.1), Mod +34.1"
       },
       "_sk": {
         "v": 0,
@@ -255,7 +255,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.55313287013212
+      "_score": 46.46113287013212
     },
     {
       "id": 78005652,
@@ -269,8 +269,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 36.36384459065381,
-        "l": "Quality -1.6 (GFR 82.8-73.6 vs tier1 baseline 157.7 (Eredivisie (Netherlands)), mod +38.0), Mod +38.0"
+        "v": 36.15608358157973,
+        "l": "Quality -1.8 (GFR 82.8-73.6 vs tier1 baseline 157.8 (Eredivisie (Netherlands)), mod +38.0), Mod +38.0"
       },
       "_sk": {
         "v": 0,
@@ -284,7 +284,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 36.36384459065381
+      "_score": 36.15608358157973
     },
     {
       "id": 62780462,
@@ -298,8 +298,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 47.69334681919175,
-        "l": "Quality +12.6 (GFR 86.3-92.8 vs tier3 baseline 151.8 (UEFA confederation), mod +35.1), Mod +35.1"
+        "v": 47.608171019190074,
+        "l": "Quality +12.6 (GFR 86.3-92.8 vs tier3 baseline 151.8 (UEFA confederation), mod +35.0), Mod +35.0"
       },
       "_sk": {
         "v": 0,
@@ -313,7 +313,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 47.69334681919175
+      "_score": 47.608171019190074
     },
     {
       "id": 40524423,
@@ -342,35 +342,6 @@
         "l": ""
       },
       "_score": 15
-    },
-    {
-      "id": 52396571,
-      "time": "10:00",
-      "name": "Little League Baseball Regionals",
-      "sport": "Baseball",
-      "league": "Little League Baseball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 42141146,
@@ -402,19 +373,19 @@
       "_score": 0
     },
     {
-      "id": 82827221,
-      "time": "10:30",
-      "name": "Rot-Weiss Essen @ Saarbr\u00fccken",
-      "sport": "Soccer",
-      "league": "3. Liga",
+      "id": 79137092,
+      "time": "10:00",
+      "name": "Mid-Atlantic Region vs. Southeast Region",
+      "sport": "Softball",
+      "league": "Little League Softball",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "ESPN",
+        "ESPN Unlimited"
       ],
       "dur": 120,
       "_st": {
-        "v": 12.31349999999999,
-        "l": "Quality -20.0 (GFR 33.3 (not rated yet)-33.3 (not rated yet) vs tier4 baseline 146.3 (3. Liga \u2014 league tracked by GFR, but neither team rated yet), mod +32.3), Mod +32.3"
+        "v": 0,
+        "l": "Little League Softball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -428,7 +399,65 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.31349999999999
+      "_score": 0
+    },
+    {
+      "id": 82827221,
+      "time": "10:30",
+      "name": "Rot-Weiss Essen @ Saarbr\u00fccken",
+      "sport": "Soccer",
+      "league": "3. Liga",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 12.221499999999992,
+        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-33.0 (not rated yet) vs tier4 baseline 146.3 (3. Liga \u2014 league tracked by GFR, but neither team rated yet), mod +32.2), Mod +32.2"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 12.221499999999992
+    },
+    {
+      "id": 50160777,
+      "time": "10:30",
+      "name": "Fargo, ND - Sioux City, NE",
+      "sport": "Baseball",
+      "league": "Little League Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 49823280,
@@ -442,8 +471,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.29888685880941,
-        "l": "Quality +10.1 (GFR 76.8-79.8 vs tier1 baseline 150.1 (Premiership (Scotland)), mod +34.2), Mod +34.2"
+        "v": 44.20688685880941,
+        "l": "Quality +10.1 (GFR 76.8-79.8 vs tier1 baseline 150.1 (Premiership (Scotland)), mod +34.1), Mod +34.1"
       },
       "_sk": {
         "v": 0,
@@ -457,7 +486,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.29888685880941
+      "_score": 44.20688685880941
     },
     {
       "id": 64215255,
@@ -470,8 +499,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.857421727942935,
-        "l": "Quality +4.5 (GFR 81.4-77.1 vs tier2 baseline 148.4 (England (cross-tier)), mod +33.4), Mod +33.4"
+        "v": 37.77106165449915,
+        "l": "Quality +4.5 (GFR 81.4-77.1 vs tier2 baseline 148.4 (England (cross-tier)), mod +33.3), Mod +33.3"
       },
       "_sk": {
         "v": 0,
@@ -485,7 +514,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.857421727942935
+      "_score": 37.77106165449915
     },
     {
       "id": 5029163,
@@ -514,35 +543,6 @@
         "l": ""
       },
       "_score": 15
-    },
-    {
-      "id": 2962279,
-      "time": "12:00",
-      "name": "Little League World Series",
-      "sport": "Baseball",
-      "league": "Little League Baseball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 16810065,
@@ -584,8 +584,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.1940298507462705,
-        "l": "Quality -1.2 (Cincinnati Reds 0.496 vs Washington Nationals 0.500)"
+        "v": -1.2691914022517892,
+        "l": "Quality -1.3 (Cincinnati Reds 0.495 vs Washington Nationals 0.501)"
       },
       "_sk": {
         "v": 0,
@@ -599,7 +599,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.1940298507462705
+      "_score": -1.2691914022517892
     },
     {
       "id": 40798716,
@@ -614,8 +614,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 17.176470588235297,
-        "l": "Quality +17.2 (Las Vegas Aces 4.200 vs New York Liberty 3.100)"
+        "v": 16.754250386398763,
+        "l": "Quality +16.8 (Las Vegas Aces 4.100 vs New York Liberty 3.100)"
       },
       "_sk": {
         "v": 0,
@@ -629,7 +629,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 17.176470588235297
+      "_score": 16.754250386398763
     },
     {
       "id": 39592425,
@@ -700,8 +700,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.793529824960736,
-        "l": "Quality +6.4 (GFR 78.6-88.6 vs tier1 baseline 160.4 (Liga Portugal (Portugal)), mod +39.4), Mod +39.4"
+        "v": 45.91089274800399,
+        "l": "Quality +6.6 (GFR 78.6-88.6 vs tier1 baseline 160.4 (Liga Portugal (Portugal)), mod +39.3), Mod +39.3"
       },
       "_sk": {
         "v": 0,
@@ -715,7 +715,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.793529824960736
+      "_score": 45.91089274800399
     },
     {
       "id": 47070345,
@@ -724,7 +724,8 @@
       "sport": "Motorsports",
       "league": "IndyCar",
       "ch": [
-        "FOX Sports 1"
+        "FOX Sports 1",
+        "FOX One"
       ],
       "dur": 240,
       "_st": {
@@ -752,7 +753,9 @@
       "sport": "Golf",
       "league": "PGA Tour",
       "ch": [
-        "Golf Channel USA"
+        "Golf Channel USA",
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 240,
       "_st": {
@@ -802,35 +805,6 @@
       "_score": 0.0
     },
     {
-      "id": 39238901,
-      "time": "13:00",
-      "name": "Little League Baseball Regionals",
-      "sport": "Baseball",
-      "league": "Little League Baseball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 94550825,
       "time": "13:00",
       "name": "Naamans, DE - West Chester, PA",
@@ -871,8 +845,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 12.31349999999999,
-        "l": "Quality -20.0 (GFR 33.3 (not rated yet)-33.3 (not rated yet) vs tier4 baseline 146.3 (3. Liga \u2014 league tracked by GFR, but neither team rated yet), mod +32.3), Mod +32.3"
+        "v": 12.221499999999992,
+        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-33.0 (not rated yet) vs tier4 baseline 146.3 (3. Liga \u2014 league tracked by GFR, but neither team rated yet), mod +32.2), Mod +32.2"
       },
       "_sk": {
         "v": 0,
@@ -886,7 +860,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.31349999999999
+      "_score": 12.221499999999992
     },
     {
       "id": 77666931,
@@ -917,35 +891,6 @@
       "_score": 0
     },
     {
-      "id": 62994625,
-      "time": "13:30",
-      "name": "Little League World Series",
-      "sport": "Baseball",
-      "league": "Little League Baseball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 80497998,
       "time": "13:40",
       "name": "Los Angeles Angels @ Miami Marlins",
@@ -956,8 +901,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -9.253731343283565,
-        "l": "Quality -9.3 (Los Angeles Angels 0.468 vs Miami Marlins 0.501)"
+        "v": -9.252814738996943,
+        "l": "Quality -9.3 (Los Angeles Angels 0.468 vs Miami Marlins 0.502)"
       },
       "_sk": {
         "v": 0,
@@ -971,7 +916,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.253731343283565
+      "_score": -9.252814738996943
     },
     {
       "id": 41869750,
@@ -984,8 +929,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 35.232001483679504,
-        "l": "Quality -2.1 (GFR 79.7-76.0 vs tier1 baseline 156.4 (Liga Profesional (Argentina)), mod +37.4), Mod +37.4"
+        "v": 34.73934545300607,
+        "l": "Quality -2.6 (GFR 79.7-76.0 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
       },
       "_sk": {
         "v": 0,
@@ -999,7 +944,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 35.232001483679504
+      "_score": 34.73934545300607
     },
     {
       "id": 34662213,
@@ -1089,35 +1034,6 @@
       "_score": 0.0
     },
     {
-      "id": 83779148,
-      "time": "14:00",
-      "name": "Little League Baseball Regionals",
-      "sport": "Baseball",
-      "league": "Little League Baseball",
-      "ch": [
-        "ESPN",
-        "ESPN Unlimited"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 39011814,
       "time": "14:10",
       "name": "Cleveland Guardians @ Chicago White Sox",
@@ -1128,8 +1044,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 1.0526315789474094,
-        "l": "Quality +1.1 (Cleveland Guardians 0.501 vs Chicago White Sox 0.502)"
+        "v": 0.9739524348811279,
+        "l": "Quality +1.0 (Cleveland Guardians 0.500 vs Chicago White Sox 0.503)"
       },
       "_sk": {
         "v": 0,
@@ -1143,7 +1059,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.0526315789474094
+      "_score": 0.9739524348811279
     },
     {
       "id": 54491871,
@@ -1156,8 +1072,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.771929824561383,
-        "l": "Quality +8.8 (Minnesota Twins 0.495 vs Milwaukee Brewers 0.530)"
+        "v": 8.788221970554913,
+        "l": "Quality +8.8 (Minnesota Twins 0.495 vs Milwaukee Brewers 0.531)"
       },
       "_sk": {
         "v": 0,
@@ -1171,7 +1087,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.771929824561383
+      "_score": 8.788221970554913
     },
     {
       "id": 46042190,
@@ -1287,19 +1203,19 @@
       "_score": 10
     },
     {
-      "id": 92801890,
-      "time": "15:30",
-      "name": "Dallas Wings @ Minnesota Lynx",
-      "sport": "Basketball",
-      "league": "WNBA",
+      "id": 93524865,
+      "time": "15:00",
+      "name": "Senior League Softball World Series",
+      "sport": "Softball",
+      "league": "Senior League Softball",
       "ch": [
-        "NBC",
-        "Peacock"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": 14.588235294117647,
-        "l": "Quality +14.6 (Dallas Wings 1.900 vs Minnesota Lynx 4.300)"
+        "v": 0,
+        "l": "Senior League Softball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -1313,7 +1229,93 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.588235294117647
+      "_score": 0
+    },
+    {
+      "id": 24773969,
+      "time": "15:00",
+      "name": "World Athletics U20 Championships Oregon",
+      "sport": "Athletics",
+      "league": "U20 World Athletics Championships",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "U20 World Athletics Championships not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 46312350,
+      "time": "15:00",
+      "name": "Central Region vs. North Carolina Region",
+      "sport": "Softball",
+      "league": "Little League Softball",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Little League Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 92801890,
+      "time": "15:30",
+      "name": "Dallas Wings @ Minnesota Lynx",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": [
+        "NBC",
+        "Peacock"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 14.89953632148377,
+        "l": "Quality +14.9 (Dallas Wings 1.900 vs Minnesota Lynx 4.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.89953632148377
     },
     {
       "id": 6656847,
@@ -1355,8 +1357,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.71506398101317,
-        "l": "Quality +9.1 (GFR 77.3-78.3 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 40.78935104211186,
+        "l": "Quality +9.3 (GFR 77.3-78.3 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1370,7 +1372,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.71506398101317
+      "_score": 40.78935104211186
     },
     {
       "id": 86327649,
@@ -1384,8 +1386,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 42.44636377989062,
-        "l": "Quality +3.1 (GFR 73.6-90.1 vs tier1 baseline 160.4 (Liga Portugal (Portugal)), mod +39.4), Mod +39.4"
+        "v": 42.447472811054325,
+        "l": "Quality +3.2 (GFR 73.6-90.1 vs tier1 baseline 160.4 (Liga Portugal (Portugal)), mod +39.3), Mod +39.3"
       },
       "_sk": {
         "v": 0,
@@ -1399,7 +1401,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 42.44636377989062
+      "_score": 42.447472811054325
     },
     {
       "id": 59033993,
@@ -1487,18 +1489,19 @@
       "_score": 0.0
     },
     {
-      "id": 96985192,
-      "time": "16:05",
-      "name": "Detroit Tigers @ San Francisco Giants",
+      "id": 7724926,
+      "time": "16:00",
+      "name": "Tulsa, OK - Gonzales, LA",
       "sport": "Baseball",
-      "league": "MLB",
+      "league": "Little League Baseball",
       "ch": [
+        "ESPN",
         "ESPN Unlimited"
       ],
       "dur": 180,
       "_st": {
-        "v": -8.059701492537327,
-        "l": "Quality -8.1 (Detroit Tigers 0.492 vs San Francisco Giants 0.481)"
+        "v": 0,
+        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -1512,7 +1515,64 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.059701492537327
+      "_score": 0
+    },
+    {
+      "id": 493756,
+      "time": "16:00",
+      "name": "Junior League Baseball World Series",
+      "sport": "Baseball",
+      "league": "Junior League Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Junior League Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 96985192,
+      "time": "16:05",
+      "name": "Detroit Tigers @ San Francisco Giants",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -8.638689866939623,
+        "l": "Quality -8.6 (Detroit Tigers 0.492 vs San Francisco Giants 0.480)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.638689866939623
     },
     {
       "id": 31055601,
@@ -1525,8 +1585,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.8771929824562,
-        "l": "Quality +10.9 (Los Angeles Dodgers 0.522 vs Arizona Diamondbacks 0.509)"
+        "v": 10.82672706681765,
+        "l": "Quality +10.8 (Los Angeles Dodgers 0.523 vs Arizona Diamondbacks 0.509)"
       },
       "_sk": {
         "v": 0,
@@ -1540,7 +1600,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.8771929824562
+      "_score": 10.82672706681765
+    },
+    {
+      "id": 68723705,
+      "time": "16:45",
+      "name": "Birmingham",
+      "sport": "Cycling",
+      "league": "BMX Freestyle World Cup",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 98516647,
@@ -1553,8 +1641,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 12.66936683991253,
-        "l": "Quality -10.2 (GFR 61.6-60.8 vs tier1 baseline 127.4 (USL Championship (USA)), mod +22.9), Mod +22.9"
+        "v": 13.494626892617202,
+        "l": "Quality -9.3 (GFR 61.6-60.8 vs tier1 baseline 127.4 (USL Championship (USA)), mod +22.8), Mod +22.8"
       },
       "_sk": {
         "v": 0,
@@ -1568,7 +1656,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.66936683991253
+      "_score": 13.494626892617202
+    },
+    {
+      "id": 72554075,
+      "time": "17:00",
+      "name": "Sioux City Explorers - Chicago Dogs",
+      "sport": "Baseball",
+      "league": "AAPB",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "AAPB not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 55640497,
@@ -1600,11 +1716,11 @@
       "_score": 0
     },
     {
-      "id": 11991043,
-      "time": "18:00",
-      "name": "Little League World Series",
+      "id": 16604610,
+      "time": "18:30",
+      "name": "Sanford Mainers - Danbury Westerners",
       "sport": "Baseball",
-      "league": "Little League Baseball",
+      "league": "Collegiate Summer Baseball",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -1612,7 +1728,7 @@
       "dur": 180,
       "_st": {
         "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
+        "l": "Collegiate Summer Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -1629,19 +1745,18 @@
       "_score": 0
     },
     {
-      "id": 12024564,
-      "time": "18:00",
-      "name": "Little League Baseball Regionals",
-      "sport": "Baseball",
-      "league": "Little League Baseball",
+      "id": 75835594,
+      "time": "18:45",
+      "name": "Birmingham",
+      "sport": "Cycling",
+      "league": "BMX Freestyle World Cup",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "HBO Max (US)"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 0,
-        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
+        "v": 15,
+        "l": "Cycling event +15"
       },
       "_sk": {
         "v": 0,
@@ -1655,7 +1770,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 15
     },
     {
       "id": 90101799,
@@ -1670,8 +1785,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.647058823529411,
-        "l": "Quality +5.6 (Golden State Valkyries 3.900 vs Los Angeles Sparks -1.500)"
+        "v": 5.625965996908809,
+        "l": "Quality +5.6 (Golden State Valkyries 4.100 vs Los Angeles Sparks -1.700)"
       },
       "_sk": {
         "v": 0,
@@ -1685,7 +1800,64 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.647058823529411
+      "_score": 5.625965996908809
+    },
+    {
+      "id": 53729528,
+      "time": "19:00",
+      "name": "Mexico U20 @ United States U20",
+      "sport": "Soccer",
+      "league": "CONCACAF U20",
+      "ch": [
+        "FOX Sports 2"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 33796074,
+      "time": "19:00",
+      "name": "Junior League Baseball World Series",
+      "sport": "Baseball",
+      "league": "Junior League Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Junior League Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 29552821,
@@ -1698,8 +1870,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 50.60659523809528,
-        "l": "Quality +13.2 (GFR 79.5-82.5 vs tier1 baseline 156.4 (Liga Profesional (Argentina)), mod +37.4), Mod +37.4"
+        "v": 50.49969443145256,
+        "l": "Quality +13.2 (GFR 79.5-82.5 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
       },
       "_sk": {
         "v": 0,
@@ -1713,7 +1885,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 50.60659523809528
+      "_score": 50.49969443145256
     },
     {
       "id": 59294504,
@@ -1728,8 +1900,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 48.122446581919036,
-        "l": "Quality +16.5 (GFR 81.1-83.3 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 48.338948714327785,
+        "l": "Quality +16.8 (GFR 81.1-83.3 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1743,7 +1915,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 48.122446581919036
+      "_score": 48.338948714327785
     },
     {
       "id": 19748400,
@@ -1756,8 +1928,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.40659885538843,
-        "l": "Quality +6.8 (GFR 75.0-77.9 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 38.43656546618159,
+        "l": "Quality +6.9 (GFR 75.0-77.9 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1771,7 +1943,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.40659885538843
+      "_score": 38.43656546618159
     },
     {
       "id": 78800432,
@@ -1813,8 +1985,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 35.16798294654485,
-        "l": "Quality +3.6 (GFR 71.2-77.8 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 35.135771050132824,
+        "l": "Quality +3.6 (GFR 71.2-77.8 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1828,7 +2000,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 35.16798294654485
+      "_score": 35.135771050132824
     },
     {
       "id": 90401800,
@@ -1841,8 +2013,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.73197581343536,
-        "l": "Quality +9.2 (GFR 75.9-79.7 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 40.80658756647768,
+        "l": "Quality +9.3 (GFR 75.9-79.7 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1856,7 +2028,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.73197581343536
+      "_score": 40.80658756647768
+    },
+    {
+      "id": 86576064,
+      "time": "20:00",
+      "name": "Team Corrick - Team Ricketts",
+      "sport": "Softball",
+      "league": "Athletes Unlimited Softball",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Athletes Unlimited Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 43206439,
@@ -1871,8 +2071,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.29850746268656764,
-        "l": "Quality -0.3 (Houston Astros 0.496 vs San Diego Padres 0.503)"
+        "v": -0.3480040941658098,
+        "l": "Quality -0.3 (Houston Astros 0.495 vs San Diego Padres 0.504)"
       },
       "_sk": {
         "v": 0,
@@ -1886,7 +2086,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.29850746268656764
+      "_score": -0.3480040941658098
     },
     {
       "id": 11043436,
@@ -1930,8 +2130,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 33.671285777183755,
-        "l": "Quality +2.1 (GFR 72.0-75.3 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 33.61033864376044,
+        "l": "Quality +2.1 (GFR 72.0-75.3 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1945,7 +2145,64 @@
         "v": 0,
         "l": ""
       },
-      "_score": 33.671285777183755
+      "_score": 33.61033864376044
+    },
+    {
+      "id": 88888209,
+      "time": "21:00",
+      "name": "Mamba League Invitational",
+      "sport": "Basketball",
+      "league": "Girls High School Basketball",
+      "ch": [
+        "NBA TV"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Girls High School Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 89661551,
+      "time": "21:00",
+      "name": "Intermediate League Baseball World Series",
+      "sport": "Baseball",
+      "league": "Intermediate League Baseball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Intermediate League Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 34530232,
@@ -1958,8 +2215,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.07206271681185,
-        "l": "Quality +12.5 (GFR 79.1-80.5 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 44.210801128721144,
+        "l": "Quality +12.7 (GFR 79.1-80.5 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -1973,7 +2230,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.07206271681185
+      "_score": 44.210801128721144
     },
     {
       "id": 59197400,
@@ -1988,8 +2245,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.308828370722054,
-        "l": "Quality +12.7 (GFR 79.2-80.7 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.6), Mod +31.6"
+        "v": 44.45211246984218,
+        "l": "Quality +13.0 (GFR 79.2-80.7 vs tier3 baseline 144.9 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
         "v": 0,
@@ -2003,7 +2260,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.308828370722054
+      "_score": 44.45211246984218
+    },
+    {
+      "id": 99555866,
+      "time": "23:00",
+      "name": "Mamba League Invitational",
+      "sport": "Basketball",
+      "league": "High School Basketball",
+      "ch": [
+        "NBA TV"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "High School Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     }
   ],
   "dropped": [
@@ -2083,9 +2368,9 @@
       "sport": "Soccer",
       "time": "09:00",
       "date": "2026-08-09",
-      "channel": "Arsenal.com",
+      "channel": "YouTube US",
       "reason": "channel",
-      "detail": "airs on Arsenal.com \u2014 none in channels.txt"
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
       "name": "Mirassol @ Cruzeiro",
@@ -2116,6 +2401,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Asheville Tourists @ Winston-Salem Dash",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "11:30",
+      "date": "2026-08-09",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Dunedin Blue Jays @ Lakeland Flying Tigers",
@@ -2658,6 +2953,26 @@
       "detail": "airs on MyNetworkTV, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "CT United FC - New England Revolution II",
+      "league": "MLS Next Pro",
+      "sport": "Soccer",
+      "time": "16:00",
+      "date": "2026-08-09",
+      "channel": "MLSNEXTPro.com",
+      "reason": "channel",
+      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Green Bay Blizzard - Tulsa Oilers",
+      "league": "IFL",
+      "sport": "Football",
+      "time": "16:00",
+      "date": "2026-08-09",
+      "channel": "Yahoo! Sports",
+      "reason": "channel",
+      "detail": "airs on Yahoo! Sports \u2014 none in channels.txt"
+    },
+    {
       "name": "El Paso Chihuahuas @ Reno Aces",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -2863,9 +3178,9 @@
       "sport": "Tennis",
       "time": "18:00",
       "date": "2026-08-09",
-      "channel": "Sportsnet, Sportsnet NOW, TVA Sports",
+      "channel": "Sportsnet One, Sportsnet NOW, TVA Sports",
       "reason": "channel",
-      "detail": "airs on Sportsnet, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet One, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
     },
     {
       "name": "Tulsa Drillers @ Corpus Christi Hooks",
@@ -2893,9 +3208,9 @@
       "sport": "Tennis",
       "time": "19:00",
       "date": "2026-08-09",
-      "channel": "Sportsnet One, Sportsnet NOW, TVA Sports 2",
+      "channel": "Sportsnet, Sportsnet NOW, TVA Sports 2",
       "reason": "channel",
-      "detail": "airs on Sportsnet One, Sportsnet NOW, TVA Sports 2 \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet, Sportsnet NOW, TVA Sports 2 \u2014 none in channels.txt"
     },
     {
       "name": "Vancouver Canadians @ Everett AquaSox",
@@ -2928,6 +3243,16 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
+      "name": "San Diego Strike Force - Arizona Rattlers",
+      "league": "IFL",
+      "sport": "Football",
+      "time": "19:30",
+      "date": "2026-08-09",
+      "channel": "Yahoo! Sports",
+      "reason": "channel",
+      "detail": "airs on Yahoo! Sports \u2014 none in channels.txt"
+    },
+    {
       "name": "Stockton Ports @ San Jose Giants",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -2956,6 +3281,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Austin FC II - Sporting KC II",
+      "league": "MLS Next Pro",
+      "sport": "Soccer",
+      "time": "20:30",
+      "date": "2026-08-09",
+      "channel": "MLSNEXTPro.com",
+      "reason": "channel",
+      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
     },
     {
       "name": "Rancho Cucamonga Quakes @ Inland Empire 66ers",
