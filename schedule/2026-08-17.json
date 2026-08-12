@@ -42,8 +42,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.2831142568250785,
-        "l": "Quality -0.3 (St. Louis Cardinals 0.506 vs Cincinnati Reds 0.493)"
+        "v": 0.2995391705068035,
+        "l": "Quality +0.3 (St. Louis Cardinals 0.507 vs Cincinnati Reds 0.494)"
       },
       "_sk": {
         "v": 0,
@@ -57,7 +57,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.2831142568250785
+      "_score": 0.2995391705068035
     },
     {
       "id": 82828974,
@@ -118,6 +118,34 @@
       "_score": 39.35915572851189
     },
     {
+      "id": 83091183,
+      "time": "15:15",
+      "name": "Benfica @ Casa Pia",
+      "sport": "Soccer",
+      "league": "Liga Portugal",
+      "ch": [
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 41.92534631483682,
+        "l": "Quality +2.6 (GFR 89.3-73.7 vs tier1 baseline 160.5 (Liga Portugal (Portugal)), mod +39.3), Mod +39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 41.92534631483682
+    },
+    {
       "id": 18516587,
       "time": "15:30",
       "name": "Eldense @ Almer\u00eda",
@@ -157,8 +185,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 42.15120967741937,
-        "l": "Quality +4.8 (GFR 82.3-76.2 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
+        "v": 45.0215637707864,
+        "l": "Quality +7.7 (GFR 82.2-77.5 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
       },
       "_sk": {
         "v": 0,
@@ -172,7 +200,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 42.15120967741937
+      "_score": 45.0215637707864
     },
     {
       "id": 37173233,
@@ -216,8 +244,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.193124368048538,
-        "l": "Quality -1.2 (Detroit Tigers 0.493 vs Pittsburgh Pirates 0.503)"
+        "v": -1.5762538382805116,
+        "l": "Quality -1.6 (Detroit Tigers 0.493 vs Pittsburgh Pirates 0.502)"
       },
       "_sk": {
         "v": 0,
@@ -231,7 +259,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.193124368048538
+      "_score": -1.5762538382805116
     },
     {
       "id": 64969693,
@@ -244,8 +272,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.806920871958106,
-        "l": "Quality -5.4 (GFR 76.6-74.4 vs tier1 baseline 154.2 (Liga MX (Mexico)), mod +36.2), Mod +36.2"
+        "v": 30.74027867156976,
+        "l": "Quality -5.5 (GFR 76.6-74.4 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -259,7 +287,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.806920871958106
+      "_score": 30.74027867156976
     },
     {
       "id": 9360234,
@@ -302,7 +330,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 14.03409090909091,
+        "v": 14.017094017094017,
         "l": "Quality +14.0 (Dallas Wings 2.000 vs Golden State Valkyries 4.600)"
       },
       "_sk": {
@@ -317,7 +345,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.03409090909091
+      "_score": 14.017094017094017
+    },
+    {
+      "id": 65915060,
+      "time": "23:00",
+      "name": "Puebla @ Pachuca",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "TUDN"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 29.246828889910407,
+        "l": "Quality -7.0 (GFR 71.3-78.8 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 29.246828889910407
     }
   ],
   "dropped": [
@@ -342,6 +398,26 @@
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "Empoli @ Pisa",
+      "league": "Coppa Italia",
+      "sport": "Soccer",
+      "time": "12:00",
+      "date": "2026-08-17",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Cesena @ Sassuolo",
+      "league": "Coppa Italia",
+      "sport": "Soccer",
+      "time": "12:30",
+      "date": "2026-08-17",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Atl\u00e9tico Tucum\u00e1n @ Estudiantes R\u00edo Cuarto",
       "league": "Primera Division",
       "sport": "Soccer",
@@ -350,6 +426,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sampdoria @ Cremonese",
+      "league": "Coppa Italia",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-08-17",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Ebbsfleet United @ Chelmsford City",
@@ -367,9 +453,9 @@
       "sport": "Soccer",
       "time": "15:15",
       "date": "2026-08-17",
-      "channel": "TLN",
+      "channel": "TLN, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on TLN \u2014 none in channels.txt"
+      "detail": "airs on TLN, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Deportivo Pasto @ Atl\u00e9tico Bucaramanga",
@@ -447,9 +533,9 @@
       "sport": "Baseball",
       "time": "19:10",
       "date": "2026-08-17",
-      "channel": "NESN, Dbacks.TV, MLB.TV, Sportsnet NOW, Sportsnet+",
+      "channel": "NESN, Dbacks.TV, MLB.TV, Sportsnet NOW, Sportsnet+, RDS 2",
       "reason": "channel",
-      "detail": "airs on NESN, Dbacks.TV, MLB.TV, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
+      "detail": "airs on NESN, Dbacks.TV, MLB.TV, Sportsnet NOW, Sportsnet+, RDS 2 \u2014 none in channels.txt"
     },
     {
       "name": "San Diego Padres @ New York Mets",
@@ -520,16 +606,6 @@
       "channel": "SportsNet LA, Rockies.TV, MLB.TV, SNLA+",
       "reason": "channel",
       "detail": "airs on SportsNet LA, Rockies.TV, MLB.TV, SNLA+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Junior @ Boyac\u00e1 Chic\u00f3",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "21:15",
-      "date": "2026-08-17",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     }
   ]
 }
