@@ -361,7 +361,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.572893028936704,
+        "v": 44.57246602378672,
         "l": "Quality +9.6 (GFR 93.0-79.5 vs tier3 baseline 151.8 (UEFA confederation), mod +35.0), Mod +35.0"
       },
       "_sk": {
@@ -376,7 +376,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.572893028936704
+      "_score": 44.57246602378672
     },
     {
       "id": 78945469,
@@ -647,8 +647,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 7.810383747178351,
-        "l": "Quality +7.8 (Baltimore Orioles 0.495 vs Tampa Bay Rays 0.528)"
+        "v": 8.248847926267239,
+        "l": "Quality +8.2 (Baltimore Orioles 0.496 vs Tampa Bay Rays 0.528)"
       },
       "_sk": {
         "v": 0,
@@ -662,7 +662,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.810383747178351
+      "_score": 8.248847926267239
     },
     {
       "id": 25257658,
@@ -676,7 +676,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 49.69603537566413,
+        "v": 49.695412731885455,
         "l": "Quality +14.7 (GFR 91.5-92.1 vs tier3 baseline 151.8 (UEFA confederation), mod +35.0), Mod +35.0"
       },
       "_sk": {
@@ -691,7 +691,36 @@
         "v": 0,
         "l": ""
       },
-      "_score": 49.69603537566413
+      "_score": 49.695412731885455
+    },
+    {
+      "id": 46720680,
+      "time": "13:00",
+      "name": "Legan\u00e9s @ Girona",
+      "sport": "Soccer",
+      "league": "LaLiga2",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 41.131823323735084,
+        "l": "Quality +4.9 (GFR 75.3-82.5 vs tier1 baseline 154.3 (LaLiga 2 (Spain)), mod +36.2), Mod +36.2"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 41.131823323735084
     },
     {
       "id": 64438949,
@@ -790,8 +819,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.435833333333335,
-        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-79.9 vs tier1 baseline 158.7 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
+        "v": 18.41549999999998,
+        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-80.4 vs tier1 baseline 158.7 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
       },
       "_sk": {
         "v": 0,
@@ -805,7 +834,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.435833333333335
+      "_score": 18.41549999999998
     },
     {
       "id": 46946927,
@@ -1213,18 +1242,19 @@
       "_score": 2.781100000000002
     },
     {
-      "id": 13065203,
-      "time": "13:37",
-      "name": "New York Yankees @ Toronto Blue Jays",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 86712889,
+      "time": "13:00",
+      "name": "NC State @ VCU",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
-        "MLB Network"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 5.101580135440207,
-        "l": "Quality +5.1 (New York Yankees 0.516 vs Toronto Blue Jays 0.499)"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -1238,7 +1268,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.101580135440207
+      "_score": 0.0
+    },
+    {
+      "id": 13065203,
+      "time": "13:37",
+      "name": "New York Yankees @ Toronto Blue Jays",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 6.175115207373222,
+        "l": "Quality +6.2 (New York Yankees 0.517 vs Toronto Blue Jays 0.501)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.175115207373222
     },
     {
       "id": 84207841,
@@ -1251,8 +1309,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -2.7098078867543034,
-        "l": "Quality -2.7 (Washington Nationals 0.503 vs New York Mets 0.488)"
+        "v": -3.1115660184238054,
+        "l": "Quality -3.1 (Washington Nationals 0.502 vs New York Mets 0.488)"
       },
       "_sk": {
         "v": 0,
@@ -1266,7 +1324,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.7098078867543034
+      "_score": -3.1115660184238054
     },
     {
       "id": 75739287,
@@ -1279,8 +1337,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 39.2231560875468,
-        "l": "Quality +3.0 (GFR 76.4-79.6 vs tier1 baseline 154.2 (Liga MX (Mexico)), mod +36.2), Mod +36.2"
+        "v": 39.13184896591206,
+        "l": "Quality +2.9 (GFR 76.4-79.6 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -1294,7 +1352,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 39.2231560875468
+      "_score": 39.13184896591206
     },
     {
       "id": 45077237,
@@ -1480,7 +1538,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.435833333333335,
+        "v": 18.41549999999998,
         "l": "Quality -20.0 (GFR 33.0 (not rated yet)-78.9 vs tier1 baseline 158.7 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
       },
       "_sk": {
@@ -1495,7 +1553,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.435833333333335
+      "_score": 18.41549999999998
     },
     {
       "id": 74272729,
@@ -1643,35 +1701,6 @@
       "_score": 0.0
     },
     {
-      "id": 40475208,
-      "time": "14:00",
-      "name": "Middle Tennessee @ Southern Indiana",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
       "id": 93229327,
       "time": "14:00",
       "name": "Tennessee Tech @ Austin Peay",
@@ -1787,18 +1816,19 @@
       "_score": 0.0
     },
     {
-      "id": 24632237,
-      "time": "14:15",
-      "name": "Lech Pozna\u0144 @ Wis\u0142a P\u0142ock",
-      "sport": "Soccer",
-      "league": "Ekstraklasa",
+      "id": 56990940,
+      "time": "14:00",
+      "name": "Fedex St. Jude Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
       "ch": [
-        "beIN SPORTS Xtra"
+        "CBS",
+        "Paramount+ (US)"
       ],
-      "dur": 120,
+      "dur": 240,
       "_st": {
-        "v": 46.32598463352045,
-        "l": "Quality +8.8 (GFR 84.6-76.7 vs tier1 baseline 157.0 (Ekstraklasa (Poland)), mod +37.6), Mod +37.6"
+        "v": 15,
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -1812,7 +1842,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.32598463352045
+      "_score": 15
     },
     {
       "id": 73830539,
@@ -1826,8 +1856,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 64.08861111111112,
-        "l": "Quality +20.0 (GFR 95.7-90.1 vs tier1 baseline 170.0 (Ligue 1 (France)), mod +44.1), Mod +44.1"
+        "v": 64.13805555555558,
+        "l": "Quality +20.0 (GFR 95.7-90.1 vs tier1 baseline 170.1 (Ligue 1 (France)), mod +44.1), Mod +44.1"
       },
       "_sk": {
         "v": 0,
@@ -1841,7 +1871,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 64.08861111111112
+      "_score": 64.13805555555558
     },
     {
       "id": 76587562,
@@ -1988,35 +2018,6 @@
       "_score": 15
     },
     {
-      "id": 5750663,
-      "time": "15:00",
-      "name": "Texas A&M-San Antonio @ Incarnate Word",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 9.75833333333334,
-        "l": "Quality -20.0 (GFR 71.8-33.0 (not rated yet) vs tier1 baseline 141.3 (Liga Pro Serie B (Ecuador) \u2014 opponent not in GFR), mod +29.8), Mod +29.8"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 9.75833333333334
-    },
-    {
       "id": 66893207,
       "time": "15:15",
       "name": "St. Louis Cardinals @ Chicago Cubs",
@@ -2028,8 +2029,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.164785553047423,
-        "l": "Quality +9.2 (St. Louis Cardinals 0.506 vs Chicago Cubs 0.521)"
+        "v": 9.976958525345548,
+        "l": "Quality +10.0 (St. Louis Cardinals 0.507 vs Chicago Cubs 0.522)"
       },
       "_sk": {
         "v": 0,
@@ -2043,7 +2044,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.164785553047423
+      "_score": 9.976958525345548
     },
     {
       "id": 96066633,
@@ -2056,7 +2057,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 41.82811471360615,
+        "v": 41.828526689625505,
         "l": "Quality +2.0 (GFR 76.6-87.2 vs tier2 baseline 161.5 (Italy (cross-tier)), mod +39.8), Mod +39.8"
       },
       "_sk": {
@@ -2071,7 +2072,36 @@
         "v": 0,
         "l": ""
       },
-      "_score": 41.82811471360615
+      "_score": 41.828526689625505
+    },
+    {
+      "id": 39424729,
+      "time": "15:30",
+      "name": "Albacete @ Las Palmas",
+      "sport": "Soccer",
+      "league": "LaLiga2",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 41.39599444672973,
+        "l": "Quality +5.2 (GFR 80.0-78.0 vs tier1 baseline 154.3 (LaLiga 2 (Spain)), mod +36.2), Mod +36.2"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 41.39599444672973
     },
     {
       "id": 59835767,
@@ -2143,7 +2173,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 27.322922656282373,
+        "v": 27.322581890616963,
         "l": "Quality -4.2 (GFR 63.3-75.2 vs tier3 baseline 144.8 (CONCACAF confederation), mod +31.5), Mod +31.5"
       },
       "_sk": {
@@ -2158,7 +2188,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 27.322922656282373
+      "_score": 27.322581890616963
     },
     {
       "id": 9815693,
@@ -2343,8 +2373,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -11.506572295247746,
-        "l": "Quality -11.5 (Texas Rangers 0.494 vs Athletics Athletics 0.468)"
+        "v": -12.630501535312192,
+        "l": "Quality -12.6 (Texas Rangers 0.492 vs Athletics Athletics 0.467)"
       },
       "_sk": {
         "v": 0,
@@ -2358,7 +2388,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.506572295247746
+      "_score": -12.630501535312192
     },
     {
       "id": 29102220,
@@ -2372,8 +2402,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 51.6903801843318,
-        "l": "Quality +14.4 (GFR 82.8-79.9 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
+        "v": 51.80683717141093,
+        "l": "Quality +14.5 (GFR 82.8-79.9 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
       },
       "_sk": {
         "v": 0,
@@ -2387,7 +2417,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 51.6903801843318
+      "_score": 51.80683717141093
     },
     {
       "id": 21934192,
@@ -2402,8 +2432,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 13.607954545454549,
-        "l": "Quality +13.6 (Indiana Fever 3.300 vs Atlanta Dream 3.100)"
+        "v": 14.017094017094017,
+        "l": "Quality +14.0 (Indiana Fever 3.500 vs Atlanta Dream 3.100)"
       },
       "_sk": {
         "v": 0,
@@ -2417,7 +2447,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.607954545454549
+      "_score": 14.017094017094017
     },
     {
       "id": 69446256,
@@ -2576,8 +2606,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.435833333333335,
-        "l": "Quality -20.0 (GFR 80.2-33.0 (not rated yet) vs tier1 baseline 158.7 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
+        "v": 18.41549999999998,
+        "l": "Quality -20.0 (GFR 79.6-33.0 (not rated yet) vs tier1 baseline 158.7 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
       },
       "_sk": {
         "v": 0,
@@ -2591,7 +2621,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.435833333333335
+      "_score": 18.41549999999998
     },
     {
       "id": 80257112,
@@ -2633,8 +2663,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 33.953818944844144,
-        "l": "Quality -4.5 (GFR 78.5-78.2 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
+        "v": 34.00188629958819,
+        "l": "Quality -4.4 (GFR 78.5-78.2 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
       },
       "_sk": {
         "v": 0,
@@ -2648,7 +2678,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 33.953818944844144
+      "_score": 34.00188629958819
     },
     {
       "id": 16910180,
@@ -2661,8 +2691,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 39.63910852023258,
-        "l": "Quality +1.2 (GFR 78.5-80.8 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
+        "v": 39.70005976180355,
+        "l": "Quality +1.3 (GFR 78.5-80.8 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
       },
       "_sk": {
         "v": 0,
@@ -2676,7 +2706,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 39.63910852023258
+      "_score": 39.70005976180355
     },
     {
       "id": 7865607,
@@ -3066,7 +3096,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 17.312500000000014,
+        "v": 17.314062500000006,
         "l": "Quality -20.0 (GFR 33.0 (not rated yet)-76.3 vs tier1 baseline 156.5 (Liga Profesional (Argentina) \u2014 opponent not in GFR), mod +37.3), Mod +37.3"
       },
       "_sk": {
@@ -3081,7 +3111,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 17.312500000000014
+      "_score": 17.314062500000006
     },
     {
       "id": 18342499,
@@ -3096,8 +3126,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -12.345986309894215,
-        "l": "Quality -12.3 (Portland Fire -5.400 vs Phoenix Mercury -1.200)"
+        "v": -12.178770949720672,
+        "l": "Quality -12.2 (Portland Fire -5.400 vs Phoenix Mercury -1.100)"
       },
       "_sk": {
         "v": 0,
@@ -3111,7 +3141,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.345986309894215
+      "_score": -12.178770949720672
     },
     {
       "id": 50220596,
@@ -3125,8 +3155,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.2911040500145,
-        "l": "Quality +4.1 (GFR 75.3-81.3 vs tier1 baseline 154.2 (Liga MX (Mexico)), mod +36.2), Mod +36.2"
+        "v": 40.20848379660256,
+        "l": "Quality +4.0 (GFR 75.3-81.3 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -3140,7 +3170,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.2911040500145
+      "_score": 40.20848379660256
     },
     {
       "id": 21301611,
@@ -3153,8 +3183,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 36.708310885606714,
-        "l": "Quality +0.5 (GFR 75.3-79.2 vs tier1 baseline 154.2 (Liga MX (Mexico)), mod +36.2), Mod +36.2"
+        "v": 36.59654759041509,
+        "l": "Quality +0.3 (GFR 75.3-79.2 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -3168,7 +3198,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 36.708310885606714
+      "_score": 36.59654759041509
     },
     {
       "id": 10036731,
@@ -3239,7 +3269,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.435833333333335,
+        "v": 18.41549999999998,
         "l": "Quality -20.0 (GFR 84.2-33.0 (not rated yet) vs tier1 baseline 158.7 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
       },
       "_sk": {
@@ -3254,7 +3284,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.435833333333335
+      "_score": 18.41549999999998
     },
     {
       "id": 84420429,
@@ -3471,8 +3501,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -5.743174924165836,
-        "l": "Quality -5.7 (Seattle Mariners 0.487 vs Houston Astros 0.494)"
+        "v": -6.48925281473905,
+        "l": "Quality -6.5 (Seattle Mariners 0.486 vs Houston Astros 0.493)"
       },
       "_sk": {
         "v": 0,
@@ -3486,7 +3516,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.743174924165836
+      "_score": -6.48925281473905
     },
     {
       "id": 37268691,
@@ -3720,6 +3750,35 @@
       "_score": 0.0
     },
     {
+      "id": 66156389,
+      "time": "20:00",
+      "name": "Texas A&M-San Antonio @ Incarnate Word",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 9.75833333333334,
+        "l": "Quality -20.0 (GFR 71.8-33.0 (not rated yet) vs tier1 baseline 141.3 (Liga Pro Serie B (Ecuador) \u2014 opponent not in GFR), mod +29.8), Mod +29.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 9.75833333333334
+    },
+    {
       "id": 61689342,
       "time": "20:00",
       "name": "Sam Houston @ Lamar",
@@ -3817,8 +3876,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 34.77396282973623,
-        "l": "Quality -3.7 (GFR 81.0-76.0 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
+        "v": 34.82564524170829,
+        "l": "Quality -3.6 (GFR 81.0-76.0 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
       },
       "_sk": {
         "v": 0,
@@ -3832,7 +3891,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 34.77396282973623
+      "_score": 34.82564524170829
     },
     {
       "id": 60153089,
@@ -3894,35 +3953,6 @@
       "_score": 0.0
     },
     {
-      "id": 16636316,
-      "time": "21:00",
-      "name": "Guadalajara @ Santos Laguna",
-      "sport": "Soccer",
-      "league": "Liga MX",
-      "ch": [
-        "ViX",
-        "TUDN"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 29.318495557285118,
-        "l": "Quality -6.9 (GFR 79.2-70.9 vs tier1 baseline 154.2 (Liga MX (Mexico)), mod +36.2), Mod +36.2"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 29.318495557285118
-    },
-    {
       "id": 58763042,
       "time": "21:00",
       "name": "Duke @ UCLA",
@@ -3951,18 +3981,19 @@
       "_score": 0.0
     },
     {
-      "id": 74951810,
-      "time": "22:30",
-      "name": "Vancouver Whitecaps @ Seattle Sounders",
+      "id": 99912413,
+      "time": "21:10",
+      "name": "Guadalajara @ Santos Laguna",
       "sport": "Soccer",
-      "league": "MLS",
+      "league": "Liga MX",
       "ch": [
-        "Apple TV"
+        "ViX",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
-        "v": 41.476061172422,
-        "l": "Quality +3.0 (GFR 80.9-79.2 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
+        "v": 29.263422776373275,
+        "l": "Quality -7.0 (GFR 79.2-70.9 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -3976,7 +4007,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 41.476061172422
+      "_score": 29.263422776373275
+    },
+    {
+      "id": 74951810,
+      "time": "22:30",
+      "name": "Vancouver Whitecaps @ Seattle Sounders",
+      "sport": "Soccer",
+      "league": "MLS",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 41.52906869417277,
+        "l": "Quality +3.1 (GFR 80.9-79.2 vs tier1 baseline 158.7 (MLS (USA)), mod +38.4), Mod +38.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 41.52906869417277
     },
     {
       "id": 63975799,
@@ -3989,8 +4048,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 50.04043544931635,
-        "l": "Quality +13.8 (GFR 83.6-78.6 vs tier1 baseline 154.2 (Liga MX (Mexico)), mod +36.2), Mod +36.2"
+        "v": 50.037117896131804,
+        "l": "Quality +13.8 (GFR 83.6-78.6 vs tier1 baseline 154.3 (Liga MX (Mexico)), mod +36.3), Mod +36.3"
       },
       "_sk": {
         "v": 0,
@@ -4004,7 +4063,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 50.04043544931635
+      "_score": 50.037117896131804
     }
   ],
   "dropped": [
@@ -4089,6 +4148,16 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "GKS Katowice @ Lublin",
+      "league": "Ekstraklasa",
+      "sport": "Soccer",
+      "time": "08:45",
+      "date": "2026-08-16",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "Bahia @ Chapecoense",
       "league": "Serie A Brazil",
       "sport": "Soccer",
@@ -4097,6 +4166,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "London E-Prix",
+      "league": "Formula E",
+      "sport": "Motorsports",
+      "time": "10:05",
+      "date": "2026-08-16",
+      "channel": "TSN5, TVA Sports",
+      "reason": "channel",
+      "detail": "airs on TSN5, TVA Sports \u2014 none in channels.txt"
     },
     {
       "name": "Cincinnati Open",
@@ -4117,6 +4196,16 @@
       "channel": "TSN2, RDS Info",
       "reason": "channel",
       "detail": "airs on TSN2, RDS Info \u2014 none in channels.txt"
+    },
+    {
+      "name": "Juve Stabia @ Frosinone",
+      "league": "Coppa Italia",
+      "sport": "Soccer",
+      "time": "12:00",
+      "date": "2026-08-16",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Tampa Tarpons @ Dunedin Blue Jays",
@@ -4294,9 +4383,9 @@
       "sport": "Baseball",
       "time": "13:05",
       "date": "2026-08-16",
-      "channel": "Bally Sports Live, MiLB.TV",
+      "channel": "WNEMT TV5 Plus, Bally Sports Live, MiLB.TV",
       "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+      "detail": "airs on WNEMT TV5 Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Rome Emperors @ Asheville Tourists",
@@ -4579,6 +4668,36 @@
       "detail": "airs on NBC Sports Philadelphia, Twins.TV, MLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Wis\u0142a Krak\u00f3w @ G\u00f3rnik Zabrze",
+      "league": "Ekstraklasa",
+      "sport": "Soccer",
+      "time": "14:15",
+      "date": "2026-08-16",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ey\u00fcpspor @ Be\u015fikta\u015f",
+      "league": "S\u00fcper Lig",
+      "sport": "Soccer",
+      "time": "14:30",
+      "date": "2026-08-16",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Virtus Entella @ Hellas Verona",
+      "league": "Coppa Italia",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-08-16",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Santos @ Vasco da Gama",
       "league": "Serie A Brazil",
       "sport": "Soccer",
@@ -4727,16 +4846,6 @@
       "channel": "WNBA League Pass, The U, Seattle 11, KOMO 4, Prime Video (Seattle)",
       "reason": "channel",
       "detail": "airs on WNBA League Pass, The U, Seattle 11, KOMO 4, Prime Video (Seattle) \u2014 none in channels.txt"
-    },
-    {
-      "name": "Jaguares de C\u00f3rdoba @ Deportivo Pereira",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "17:00",
-      "date": "2026-08-16",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Appalachian State @ Campbell",
@@ -4949,16 +5058,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Fortaleza CEIF @ Am\u00e9rica de Cali",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "19:05",
-      "date": "2026-08-16",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Hillsboro Hops @ Eugene Emeralds",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -5069,14 +5168,24 @@
       "detail": "airs on SSSEN, KVVU-FOX, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Alianza Petrolera @ Once Caldas",
-      "league": "Primera A",
+      "name": "Tacoma Defiance @ Los Angeles FC 2",
+      "league": "MLS Next Pro",
       "sport": "Soccer",
-      "time": "21:15",
+      "time": "22:00",
       "date": "2026-08-16",
-      "channel": "Fanatiz",
+      "channel": "MLSNEXTPro.com",
       "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Kansas State @ Hawai'i",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "22:00",
+      "date": "2026-08-16",
+      "channel": "KFVE, MW+",
+      "reason": "channel",
+      "detail": "airs on KFVE, MW+ \u2014 none in channels.txt"
     },
     {
       "name": "Sacramento State @ UC Davis",
