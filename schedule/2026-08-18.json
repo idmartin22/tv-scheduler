@@ -37,7 +37,8 @@
       "sport": "Soccer",
       "league": "UEFA Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -154,8 +155,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.678941311852707,
-        "l": "Quality +10.7 (Toronto Blue Jays 0.502 vs Tampa Bay Rays 0.529)"
+        "v": 10.011481056257116,
+        "l": "Quality +10.0 (Toronto Blue Jays 0.501 vs Tampa Bay Rays 0.528)"
       },
       "_sk": {
         "v": 0,
@@ -169,7 +170,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.678941311852707
+      "_score": 10.011481056257116
     },
     {
       "id": 36576267,
@@ -182,8 +183,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.119677790563808,
-        "l": "Quality +4.1 (Miami Marlins 0.505 vs Philadelphia Phillies 0.507)"
+        "v": 4.156142365097557,
+        "l": "Quality +4.2 (Miami Marlins 0.504 vs Philadelphia Phillies 0.508)"
       },
       "_sk": {
         "v": 0,
@@ -197,7 +198,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.119677790563808
+      "_score": 4.156142365097557
     },
     {
       "id": 59189419,
@@ -212,8 +213,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.385189794648413,
-        "l": "Quality -3.4 (Indiana Fever 3.500 vs Toronto Tempo -5.300)"
+        "v": -3.292079207920791,
+        "l": "Quality -3.3 (Indiana Fever 3.500 vs Toronto Tempo -5.300)"
       },
       "_sk": {
         "v": 0,
@@ -227,7 +228,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.385189794648413
+      "_score": -3.292079207920791
     },
     {
       "id": 7433143,
@@ -242,8 +243,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.60759493670878,
-        "l": "Quality +8.6 (Chicago White Sox 0.503 vs Chicago Cubs 0.522)"
+        "v": 7.94489092996557,
+        "l": "Quality +7.9 (Chicago White Sox 0.502 vs Chicago Cubs 0.521)"
       },
       "_sk": {
         "v": 0,
@@ -257,7 +258,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.60759493670878
+      "_score": 7.94489092996557
     },
     {
       "id": 51306869,
@@ -329,8 +330,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 14.158553546592492,
-        "l": "Quality +14.2 (Atlanta Dream 3.100 vs Las Vegas Aces 3.700)"
+        "v": 15.171448565430373,
+        "l": "Quality +15.2 (Atlanta Dream 3.500 vs Las Vegas Aces 3.700)"
       },
       "_sk": {
         "v": 0,
@@ -344,7 +345,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.158553546592492
+      "_score": 15.171448565430373
     }
   ],
   "dropped": [
@@ -374,9 +375,19 @@
       "sport": "Tennis",
       "time": "11:00",
       "date": "2026-08-18",
-      "channel": "DAZN Canada",
+      "channel": "TSN3, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on TSN3, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Cincinnati Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "11:00",
+      "date": "2026-08-18",
+      "channel": "TSN5",
+      "reason": "channel",
+      "detail": "airs on TSN5 \u2014 none in channels.txt"
     },
     {
       "name": "Chicago Fire FC II @ Atlanta United 2",
