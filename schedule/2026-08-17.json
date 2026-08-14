@@ -98,8 +98,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.32220943613337555,
-        "l": "Quality +0.3 (St. Louis Cardinals 0.508 vs Cincinnati Reds 0.493)"
+        "v": 1.0562571756601604,
+        "l": "Quality +1.1 (St. Louis Cardinals 0.508 vs Cincinnati Reds 0.495)"
       },
       "_sk": {
         "v": 0,
@@ -113,7 +113,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.32220943613337555
+      "_score": 1.0562571756601604
     },
     {
       "id": 40120091,
@@ -345,20 +345,18 @@
       "_score": 0.0
     },
     {
-      "id": 10905747,
-      "time": "19:05",
-      "name": "Detroit Tigers @ Pittsburgh Pirates",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 4688686,
+      "time": "18:00",
+      "name": "SLAM Summer Classic",
+      "sport": "Basketball",
+      "league": "Girls High School Basketball",
       "ch": [
-        "ESPN",
-        "ESPN Unlimited",
-        "ESPN Deportes"
+        "NBA TV"
       ],
-      "dur": 180,
+      "dur": 150,
       "_st": {
-        "v": -2.2060353798127545,
-        "l": "Quality -2.2 (Detroit Tigers 0.492 vs Pittsburgh Pirates 0.501)"
+        "v": 0,
+        "l": "Girls High School Basketball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -372,7 +370,37 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.2060353798127545
+      "_score": 0
+    },
+    {
+      "id": 10905747,
+      "time": "19:05",
+      "name": "Detroit Tigers @ Pittsburgh Pirates",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -1.567796610169529,
+        "l": "Quality -1.6 (Detroit Tigers 0.493 vs Pittsburgh Pirates 0.502)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.567796610169529
     },
     {
       "id": 64969693,
@@ -443,8 +471,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 14.15855354659249,
-        "l": "Quality +14.2 (Dallas Wings 2.000 vs Golden State Valkyries 4.800)"
+        "v": 14.12176347095871,
+        "l": "Quality +14.1 (Dallas Wings 1.900 vs Golden State Valkyries 4.800)"
       },
       "_sk": {
         "v": 0,
@@ -458,11 +486,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.15855354659249
+      "_score": 14.12176347095871
     },
     {
-      "id": 65915060,
-      "time": "23:00",
+      "id": 52619649,
+      "time": "23:06",
       "name": "Puebla @ Pachuca",
       "sport": "Soccer",
       "league": "Liga MX",
@@ -496,9 +524,9 @@
       "sport": "Tennis",
       "time": "11:00",
       "date": "2026-08-17",
-      "channel": "RDS",
+      "channel": "RDS, TSN4",
       "reason": "channel",
-      "detail": "airs on RDS \u2014 none in channels.txt"
+      "detail": "airs on RDS, TSN4 \u2014 none in channels.txt"
     },
     {
       "name": "Cincinnati Open",
@@ -506,9 +534,9 @@
       "sport": "Tennis",
       "time": "11:00",
       "date": "2026-08-17",
-      "channel": "DAZN Canada",
+      "channel": "TSN3, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on TSN3, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Atl\u00e9tico Tucum\u00e1n @ Estudiantes R\u00edo Cuarto",
@@ -529,16 +557,6 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Deportivo Pasto @ Atl\u00e9tico Bucaramanga",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "17:05",
-      "date": "2026-08-17",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Baltimore Orioles @ Tampa Bay Rays",
@@ -596,9 +614,9 @@
       "sport": "Tennis",
       "time": "19:00",
       "date": "2026-08-17",
-      "channel": "DAZN Canada",
+      "channel": "TSN3, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on TSN3, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Arizona Diamondbacks @ Boston Red Sox",
@@ -619,16 +637,6 @@
       "channel": "MLB.TV, SNY, Padres.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, SNY, Padres.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Deportivo Cali @ Millonarios",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "19:10",
-      "date": "2026-08-17",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Athletics @ Kansas City Royals",
