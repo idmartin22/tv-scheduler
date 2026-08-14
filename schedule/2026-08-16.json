@@ -379,6 +379,34 @@
       "_score": 53.58560813670557
     },
     {
+      "id": 78427557,
+      "time": "11:00",
+      "name": "St. Mirren @ Rangers F.C.",
+      "sport": "Soccer",
+      "league": "Scottish League Cup",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 36.541766275778365,
+        "l": "Quality +2.4 (GFR 72.6-79.0 vs tier1 baseline 150.1 (Premiership (Scotland)), mod +34.2), Mod +34.2"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 36.541766275778365
+    },
+    {
       "id": 46599386,
       "time": "11:00",
       "name": "Real Madrid @ Schalke 04",
@@ -705,8 +733,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.26237054085151,
-        "l": "Quality +8.3 (Baltimore Orioles 0.495 vs Tampa Bay Rays 0.529)"
+        "v": 7.94489092996557,
+        "l": "Quality +7.9 (Baltimore Orioles 0.495 vs Tampa Bay Rays 0.528)"
       },
       "_sk": {
         "v": 0,
@@ -720,7 +748,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.26237054085151
+      "_score": 7.94489092996557
     },
     {
       "id": 52583607,
@@ -1357,18 +1385,19 @@
       "_score": 0.0
     },
     {
-      "id": 13065203,
-      "time": "13:37",
-      "name": "New York Yankees @ Toronto Blue Jays",
+      "id": 84234757,
+      "time": "13:00",
+      "name": "Central Plains - Mid-Atlantic",
       "sport": "Baseball",
-      "league": "MLB",
+      "league": "American Legion Baseball",
       "ch": [
-        "MLB Network"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 180,
       "_st": {
-        "v": 6.536248561565006,
-        "l": "Quality +6.5 (New York Yankees 0.517 vs Toronto Blue Jays 0.502)"
+        "v": 0,
+        "l": "American Legion Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -1382,7 +1411,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.536248561565006
+      "_score": 0
+    },
+    {
+      "id": 13065203,
+      "time": "13:37",
+      "name": "New York Yankees @ Toronto Blue Jays",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 5.87830080367387,
+        "l": "Quality +5.9 (New York Yankees 0.516 vs Toronto Blue Jays 0.501)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.87830080367387
     },
     {
       "id": 84207841,
@@ -1395,8 +1452,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -3.4547346514048423,
-        "l": "Quality -3.5 (Washington Nationals 0.501 vs New York Mets 0.488)"
+        "v": -3.1567796610169863,
+        "l": "Quality -3.2 (Washington Nationals 0.502 vs New York Mets 0.488)"
       },
       "_sk": {
         "v": 0,
@@ -1410,7 +1467,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.4547346514048423
+      "_score": -3.1567796610169863
     },
     {
       "id": 75739287,
@@ -2104,19 +2161,19 @@
       "_score": 15
     },
     {
-      "id": 66893207,
-      "time": "15:15",
-      "name": "St. Louis Cardinals @ Chicago Cubs",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 53945278,
+      "time": "15:00",
+      "name": "Montr\u00e9al Roses @ AFC Toronto",
+      "sport": "Soccer",
+      "league": "Northern Super League",
       "ch": [
-        "ABC",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 10.33371691599536,
-        "l": "Quality +10.3 (St. Louis Cardinals 0.508 vs Chicago Cubs 0.522)"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -2130,7 +2187,36 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.33371691599536
+      "_score": 0.0
+    },
+    {
+      "id": 66893207,
+      "time": "15:15",
+      "name": "St. Louis Cardinals @ Chicago Cubs",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 10.011481056257116,
+        "l": "Quality +10.0 (St. Louis Cardinals 0.508 vs Chicago Cubs 0.521)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.011481056257116
     },
     {
       "id": 96066633,
@@ -2189,36 +2275,6 @@
         "l": ""
       },
       "_score": 41.40199444672972
-    },
-    {
-      "id": 59835767,
-      "time": "15:30",
-      "name": "Osasuna @ Celta de Vigo",
-      "sport": "Soccer",
-      "league": "La Liga",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select",
-        "ESPN Deportes"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 35.28352893816466,
-        "l": "Quality -4.7 (GFR 81.7-76.0 vs tier2 baseline 161.7 (Spain (cross-tier)), mod +40.0), Mod +40.0"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 35.28352893816466
     },
     {
       "id": 89128118,
@@ -2450,18 +2506,19 @@
       "_score": 0.0
     },
     {
-      "id": 75637390,
-      "time": "16:05",
-      "name": "Texas Rangers @ Athletics",
+      "id": 55114456,
+      "time": "16:00",
+      "name": "Northwest - Great Lakes",
       "sport": "Baseball",
-      "league": "MLB",
+      "league": "American Legion Baseball",
       "ch": [
-        "FOX"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 180,
       "_st": {
-        "v": -13.13215400624352,
-        "l": "Quality -13.1 (Texas Rangers 0.491 vs Athletics Athletics 0.467)"
+        "v": 0,
+        "l": "American Legion Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -2475,7 +2532,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.13215400624352
+      "_score": 0
+    },
+    {
+      "id": 75637390,
+      "time": "16:05",
+      "name": "Texas Rangers @ Athletics",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "FOX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -13.961864406779696,
+        "l": "Quality -14.0 (Texas Rangers 0.489 vs Athletics Athletics 0.467)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -13.961864406779696
     },
     {
       "id": 29102220,
@@ -2519,8 +2604,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 13.741307371349096,
-        "l": "Quality +13.7 (Indiana Fever 3.500 vs Atlanta Dream 3.100)"
+        "v": 14.751574527641708,
+        "l": "Quality +14.8 (Indiana Fever 3.500 vs Atlanta Dream 3.500)"
       },
       "_sk": {
         "v": 0,
@@ -2534,7 +2619,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.741307371349096
+      "_score": 14.751574527641708
     },
     {
       "id": 69446256,
@@ -2598,35 +2683,6 @@
       "id": 22929258,
       "time": "17:00",
       "name": "Eastern Illinois @ UIC",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
-      "id": 61619770,
-      "time": "17:00",
-      "name": "Little Rock @ Arkansas State",
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
@@ -2766,34 +2822,6 @@
         "l": ""
       },
       "_score": 15
-    },
-    {
-      "id": 55868794,
-      "time": "17:30",
-      "name": "Jeremiah Wells @ Myktybek Orolbai",
-      "sport": "Fighting",
-      "league": "UFC",
-      "ch": [
-        "Paramount+ (US)"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 25,
-        "l": "UFC Fight Night +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
     },
     {
       "id": 52458141,
@@ -2942,6 +2970,35 @@
       "id": 47108669,
       "time": "18:00",
       "name": "East Carolina @ UNC Greensboro",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 76063340,
+      "time": "18:00",
+      "name": "Little Rock @ Arkansas State",
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
@@ -3200,6 +3257,34 @@
       "_score": 0.0
     },
     {
+      "id": 57627846,
+      "time": "18:00",
+      "name": "Cincinnati Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 4845840,
       "time": "18:30",
       "name": "Forward Madison @ Portland Hearts of Pine",
@@ -3269,8 +3354,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -12.159303049159927,
-        "l": "Quality -12.2 (Portland Fire -5.400 vs Phoenix Mercury -1.100)"
+        "v": -12.202970297029703,
+        "l": "Quality -12.2 (Portland Fire -5.400 vs Phoenix Mercury -1.200)"
       },
       "_sk": {
         "v": 0,
@@ -3284,7 +3369,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.159303049159927
+      "_score": -12.202970297029703
     },
     {
       "id": 50220596,
@@ -3632,20 +3717,19 @@
       "_score": 0.0
     },
     {
-      "id": 17757820,
-      "time": "19:20",
-      "name": "Seattle Mariners @ Houston Astros",
+      "id": 38002686,
+      "time": "19:00",
+      "name": "Western - Mid-South",
       "sport": "Baseball",
-      "league": "MLB",
+      "league": "American Legion Baseball",
       "ch": [
-        "NBC",
-        "Peacock",
-        "NBC Universo"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 180,
       "_st": {
-        "v": -6.576482830385061,
-        "l": "Quality -6.6 (Seattle Mariners 0.486 vs Houston Astros 0.493)"
+        "v": 0,
+        "l": "American Legion Baseball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -3659,7 +3743,65 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.576482830385061
+      "_score": 0
+    },
+    {
+      "id": 57994491,
+      "time": "19:06",
+      "name": "Cleburne Railroaders - Gary SouthShore RailCats",
+      "sport": "Baseball",
+      "league": "AAPB",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "AAPB not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 17757820,
+      "time": "19:20",
+      "name": "Seattle Mariners @ Houston Astros",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "NBC",
+        "Peacock",
+        "NBC Universo"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -6.334745762711901,
+        "l": "Quality -6.3 (Seattle Mariners 0.487 vs Houston Astros 0.493)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.334745762711901
     },
     {
       "id": 37268691,
@@ -4009,6 +4151,34 @@
       "_score": 0.0
     },
     {
+      "id": 31715628,
+      "time": "20:00",
+      "name": "Team Brown - Team Klingler",
+      "sport": "Softball",
+      "league": "Athletes Unlimited Softball",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Athletes Unlimited Softball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 86512452,
       "time": "20:30",
       "name": "FC Dallas @ Austin",
@@ -4306,15 +4476,25 @@
       "sport": "Motorsports",
       "time": "08:32",
       "date": "2026-08-16",
-      "channel": "DAZN Canada",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "GKS Katowice @ Lublin",
       "league": "Ekstraklasa",
       "sport": "Soccer",
       "time": "08:45",
+      "date": "2026-08-16",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sportivo San Lorenzo @ Cerro Porte\u00f1o",
+      "league": "Divisi\u00f3n Profesional",
+      "sport": "Soccer",
+      "time": "09:00",
       "date": "2026-08-16",
       "channel": "Fanatiz",
       "reason": "channel",
@@ -4389,6 +4569,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Walton Raceway",
+      "league": "Triple Crown Series",
+      "sport": "Motorsports",
+      "time": "12:00",
+      "date": "2026-08-16",
+      "channel": "FOX Sports Racing",
+      "reason": "channel",
+      "detail": "airs on FOX Sports Racing \u2014 none in channels.txt"
     },
     {
       "name": "Clearwater Threshers @ Fort Myers Mighty Mussels",
@@ -4871,6 +5061,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "Libertad @ Sportivo Luque\u00f1o",
+      "league": "Divisi\u00f3n Profesional",
+      "sport": "Soccer",
+      "time": "15:00",
+      "date": "2026-08-16",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "Bowling Green Hot Rods @ Frederick Keys",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -4879,6 +5079,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Malawi @ Cameroon",
+      "league": "Women's Africa Cup of Nations",
+      "sport": "Soccer",
+      "time": "15:00",
+      "date": "2026-08-16",
+      "channel": "Fanatiz, beIN SPORTS Xtra (Canada)",
+      "reason": "channel",
+      "detail": "airs on Fanatiz, beIN SPORTS Xtra (Canada) \u2014 none in channels.txt"
     },
     {
       "name": "Beloit Sky Carp @ Peoria Chiefs",
@@ -5091,6 +5301,16 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
+      "name": "Sportivo Ameliano @ Olimpia",
+      "league": "Divisi\u00f3n Profesional",
+      "sport": "Soccer",
+      "time": "17:30",
+      "date": "2026-08-16",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "Akron RubberDucks @ Altoona Curve",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -5109,6 +5329,26 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Connecticut United FC @ FC Cincinnati 2",
+      "league": "MLS Next Pro",
+      "sport": "Soccer",
+      "time": "18:00",
+      "date": "2026-08-16",
+      "channel": "WWAX",
+      "reason": "channel",
+      "detail": "airs on WWAX \u2014 none in channels.txt"
+    },
+    {
+      "name": "Cincinnati Open",
+      "league": "Mixed Coverage",
+      "sport": "Tennis",
+      "time": "18:00",
+      "date": "2026-08-16",
+      "channel": "RDS 2",
+      "reason": "channel",
+      "detail": "airs on RDS 2 \u2014 none in channels.txt"
     },
     {
       "name": "Pensacola Blue Wahoos @ Biloxi Shuckers",
@@ -5261,6 +5501,16 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
+      "name": "Arizona Rattlers @ Green Bay Blizzard",
+      "league": "IFL",
+      "sport": "Football",
+      "time": "19:30",
+      "date": "2026-08-16",
+      "channel": "Yahoo! Sports",
+      "reason": "channel",
+      "detail": "airs on Yahoo! Sports \u2014 none in channels.txt"
+    },
+    {
       "name": "Fresno Grizzlies @ San Jose Giants",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -5311,6 +5561,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Sul Ross State @ UTEP",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "21:00",
+      "date": "2026-08-16",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
       "name": "Sacramento River Cats @ Las Vegas Aviators",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -5339,6 +5599,16 @@
       "channel": "KFVE, MW+",
       "reason": "channel",
       "detail": "airs on KFVE, MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "St Louis CITY2 @ San Jose Earthquakes II",
+      "league": "MLS Next Pro",
+      "sport": "Soccer",
+      "time": "22:30",
+      "date": "2026-08-16",
+      "channel": "MLSNEXTPro.com",
+      "reason": "channel",
+      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
     },
     {
       "name": "Sacramento State @ UC Davis",
