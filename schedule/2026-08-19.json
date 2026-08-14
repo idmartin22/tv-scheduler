@@ -99,7 +99,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.6451612903226455,
+        "v": -0.6144067796610545,
         "l": "Quality -0.6 (San Diego Padres 0.510 vs New York Mets 0.488)"
       },
       "_sk": {
@@ -114,7 +114,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.6451612903226455
+      "_score": -0.6144067796610545
     },
     {
       "id": 96083792,
@@ -127,8 +127,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 6.536248561565006,
-        "l": "Quality +6.5 (Atlanta Braves 0.524 vs Minnesota Twins 0.495)"
+        "v": 6.222732491389181,
+        "l": "Quality +6.2 (Atlanta Braves 0.524 vs Minnesota Twins 0.494)"
       },
       "_sk": {
         "v": 0,
@@ -142,7 +142,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.536248561565006
+      "_score": 6.222732491389181
     },
     {
       "id": 67231895,
@@ -209,7 +209,8 @@
       "sport": "Soccer",
       "league": "UEFA Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -229,6 +230,34 @@
         "l": ""
       },
       "_score": 59.630618187513775
+    },
+    {
+      "id": 83293063,
+      "time": "15:00",
+      "name": "Southeast vs. Northwest",
+      "sport": "Baseball",
+      "league": "Little League Baseball",
+      "ch": [
+        "Disney+"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "Little League Baseball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 17639171,
@@ -413,8 +442,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.119677790563808,
-        "l": "Quality +4.1 (New York Yankees 0.517 vs Baltimore Orioles 0.495)"
+        "v": 3.8117106773823246,
+        "l": "Quality +3.8 (New York Yankees 0.516 vs Baltimore Orioles 0.495)"
       },
       "_sk": {
         "v": 0,
@@ -428,7 +457,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.119677790563808
+      "_score": 3.8117106773823246
     },
     {
       "id": 21191384,
@@ -1057,6 +1086,35 @@
       "_score": 0.0
     },
     {
+      "id": 90497199,
+      "time": "20:30",
+      "name": "Santa Fe @ River Plate",
+      "sport": "Soccer",
+      "league": "Copa Sudamericana",
+      "ch": [
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 50.3621984082151,
+        "l": "Quality +10.9 (GFR 80.0-79.9 vs tier3 baseline 149.0 (CONMEBOL confederation), mod +39.4), Mod +39.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 50.3621984082151
+    },
+    {
       "id": 13673038,
       "time": "21:30",
       "name": "Los Angeles FC @ Colorado Rapids",
@@ -1147,7 +1205,8 @@
       "sport": "Soccer",
       "league": "USL Championship",
       "ch": [
-        "CBS Sports Network"
+        "CBS Sports Network",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -1180,7 +1239,7 @@
       "dur": 150,
       "_st": {
         "v": 20.0,
-        "l": "Quality +20.0 (Minnesota Lynx 4.800 vs Golden State Valkyries 4.800)"
+        "l": "Quality +20.0 (Minnesota Lynx 4.700 vs Golden State Valkyries 4.800)"
       },
       "_sk": {
         "v": 0,
@@ -2040,9 +2099,9 @@
       "sport": "Baseball",
       "time": "20:10",
       "date": "2026-08-19",
-      "channel": "MLB.TV, Space City Home Network, Angels Broadcast Television",
+      "channel": "MLB.TV, Space City Home Network, FanDuel Sports Network West, Angels Broadcast Television",
       "reason": "channel",
-      "detail": "airs on MLB.TV, Space City Home Network, Angels Broadcast Television \u2014 none in channels.txt"
+      "detail": "airs on MLB.TV, Space City Home Network, FanDuel Sports Network West, Angels Broadcast Television \u2014 none in channels.txt"
     },
     {
       "name": "Cruzeiro @ Flamengo",
@@ -2063,16 +2122,6 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Santa Fe @ River Plate",
-      "league": "Copa Sudamericana",
-      "sport": "Soccer",
-      "time": "20:30",
-      "date": "2026-08-19",
-      "channel": "beIN Sport Canada",
-      "reason": "channel",
-      "detail": "airs on beIN Sport Canada \u2014 none in channels.txt"
     },
     {
       "name": "Las Vegas Aviators @ Albuquerque Isotopes",
@@ -2170,9 +2219,9 @@
       "sport": "Baseball",
       "time": "21:45",
       "date": "2026-08-19",
-      "channel": "NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV",
+      "channel": "NBC Sports Bay Area, NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV",
       "reason": "channel",
-      "detail": "airs on NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+      "detail": "airs on NBC Sports Bay Area, NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Stockton Ports @ Fresno Grizzlies",
