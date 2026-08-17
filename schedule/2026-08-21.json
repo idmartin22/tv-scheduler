@@ -199,6 +199,36 @@
       "_score": 15
     },
     {
+      "id": 32203462,
+      "time": "10:00",
+      "name": "BMW Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 29920020,
       "time": "12:00",
       "name": "Al Nassr @ Al Riyadh",
@@ -210,7 +240,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 35.464827122153196,
+        "v": 35.413327122153206,
         "l": "Quality +1.4 (GFR 80.2-71.0 vs tier1 baseline 149.8 (Pro League (Saudi Arabia)), mod +34.0), Mod +34.0"
       },
       "_sk": {
@@ -225,7 +255,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 35.464827122153196
+      "_score": 35.413327122153206
+    },
+    {
+      "id": 79870521,
+      "time": "12:00",
+      "name": "AdventHealth Championship",
+      "sport": "Golf",
+      "league": "Korn Ferry Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 37130978,
@@ -268,7 +326,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 14.023833333333357,
+        "v": 13.972333333333367,
         "l": "Quality -20.0 (GFR 80.2-33.0 (not rated yet) vs tier1 baseline 149.8 (Pro League (Saudi Arabia) \u2014 opponent not in GFR), mod +34.0), Mod +34.0"
       },
       "_sk": {
@@ -283,35 +341,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.023833333333357
-    },
-    {
-      "id": 77473414,
-      "time": "14:30",
-      "name": "Wieczysta Krak\u00f3w @ Cracovia Krak\u00f3w",
-      "sport": "Soccer",
-      "league": "Ekstraklasa",
-      "ch": [
-        "beIN SPORTS Xtra"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 33.79972587883327,
-        "l": "Quality -3.9 (GFR 77.7-78.0 vs tier1 baseline 157.1 (Ekstraklasa (Poland)), mod +37.7), Mod +37.7"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 33.79972587883327
+      "_score": 13.972333333333367
     },
     {
       "id": 92421790,
@@ -325,7 +355,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.51485475525202,
+        "v": 38.50558164310594,
         "l": "Quality -5.5 (GFR 82.3-84.5 vs tier1 baseline 169.8 (Ligue 1 (France)), mod +44.0), Mod +44.0"
       },
       "_sk": {
@@ -340,7 +370,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.51485475525202
+      "_score": 38.50558164310594
     },
     {
       "id": 94333203,
@@ -354,8 +384,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 52.1660462297636,
-        "l": "Quality +2.2 (GFR 86.6-96.4 vs tier1 baseline 181.7 (Premier League (England)), mod +50.0), Mod +50.0"
+        "v": 52.774283717679914,
+        "l": "Quality +2.8 (GFR 86.6-96.8 vs tier1 baseline 181.9 (Premier League (England)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -369,7 +399,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 52.1660462297636
+      "_score": 52.774283717679914
     },
     {
       "id": 99973498,
@@ -384,8 +414,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.916912707040986,
-        "l": "Quality +2.1 (GFR 83.0-90.0 vs tier1 baseline 171.3 (LaLiga (Spain)), mod +44.8), Mod +44.8"
+        "v": 46.84740743097086,
+        "l": "Quality +2.1 (GFR 83.0-90.0 vs tier1 baseline 171.3 (LaLiga (Spain)), mod +44.7), Mod +44.7"
       },
       "_sk": {
         "v": 0,
@@ -399,7 +429,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.916912707040986
+      "_score": 46.84740743097086
     },
     {
       "id": 32644950,
@@ -441,8 +471,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 18.56972586412396,
-        "l": "Quality +18.6 (Atlanta Braves 0.522 vs Milwaukee Brewers 0.530)"
+        "v": 20.0,
+        "l": "Quality +20.0 (Atlanta Braves 0.524 vs Milwaukee Brewers 0.531)"
       },
       "_sk": {
         "v": 0,
@@ -456,7 +486,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.56972586412396
+      "_score": 20.0
     },
     {
       "id": 13379981,
@@ -632,18 +662,19 @@
       "_score": 0
     },
     {
-      "id": 1798431,
-      "time": "19:05",
-      "name": "Toronto Blue Jays @ New York Yankees",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 80163653,
+      "time": "19:00",
+      "name": "Newberry @ Presbyterian",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
-        "MLB Network"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 6.054827175208544,
-        "l": "Quality +6.1 (Toronto Blue Jays 0.504 vs New York Yankees 0.513)"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -657,7 +688,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.054827175208544
+      "_score": 0.0
+    },
+    {
+      "id": 1798431,
+      "time": "19:05",
+      "name": "Toronto Blue Jays @ New York Yankees",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 5.85247883917782,
+        "l": "Quality +5.9 (Toronto Blue Jays 0.502 vs New York Yankees 0.514)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.85247883917782
     },
     {
       "id": 72410640,
@@ -670,8 +729,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.557806912991659,
-        "l": "Quality +8.6 (Tampa Bay Rays 0.526 vs Baltimore Orioles 0.498)"
+        "v": 8.391777509069014,
+        "l": "Quality +8.4 (Tampa Bay Rays 0.524 vs Baltimore Orioles 0.499)"
       },
       "_sk": {
         "v": 0,
@@ -685,7 +744,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.557806912991659
+      "_score": 8.391777509069014
     },
     {
       "id": 3537671,
@@ -698,8 +757,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.547143840330351,
-        "l": "Quality +5.5 (Golden State Valkyries 4.800 vs Chicago Sky -2.100)"
+        "v": 5.64493758668516,
+        "l": "Quality +5.6 (Golden State Valkyries 4.800 vs Chicago Sky -2.100)"
       },
       "_sk": {
         "v": 0,
@@ -713,7 +772,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.547143840330351
+      "_score": 5.64493758668516
     },
     {
       "id": 13317008,
@@ -726,8 +785,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 10.089470061940816,
-        "l": "Quality +10.1 (Minnesota Lynx 4.900 vs Washington Mystics 0.000)"
+        "v": 10.013869625520112,
+        "l": "Quality +10.0 (Minnesota Lynx 4.800 vs Washington Mystics -0.000)"
       },
       "_sk": {
         "v": 0,
@@ -741,7 +800,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.089470061940816
+      "_score": 10.013869625520112
     },
     {
       "id": 77655625,
@@ -812,8 +871,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.9548872180451107,
-        "l": "Quality -2.0 (New York Mets 0.490 vs Chicago White Sox 0.504)"
+        "v": -1.5732758620688707,
+        "l": "Quality -1.6 (New York Mets 0.491 vs Chicago White Sox 0.504)"
       },
       "_sk": {
         "v": 0,
@@ -827,7 +886,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.9548872180451107
+      "_score": -1.5732758620688707
     },
     {
       "id": 73746365,
@@ -897,8 +956,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -13.555316863587539,
-        "l": "Quality -13.6 (Los Angeles Angels 0.470 vs Texas Rangers 0.488)"
+        "v": -14.504310344827559,
+        "l": "Quality -14.5 (Los Angeles Angels 0.469 vs Texas Rangers 0.486)"
       },
       "_sk": {
         "v": 0,
@@ -912,7 +971,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.555316863587539
+      "_score": -14.504310344827559
     },
     {
       "id": 4624399,
@@ -955,7 +1014,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 36.42426566265825,
+        "v": 36.386554197773975,
         "l": "Quality -0.1 (GFR 75.9-78.8 vs tier1 baseline 154.8 (Liga MX (Mexico)), mod +36.5), Mod +36.5"
       },
       "_sk": {
@@ -970,7 +1029,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 36.42426566265825
+      "_score": 36.386554197773975
     },
     {
       "id": 53811676,
@@ -1068,8 +1127,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -19.813316739265716,
-        "l": "Quality -19.8 (Portland Fire -5.300 vs Toronto Tempo -5.300)"
+        "v": -19.438552713661885,
+        "l": "Quality -19.4 (Portland Fire -5.100 vs Toronto Tempo -5.300)"
       },
       "_sk": {
         "v": 0,
@@ -1083,7 +1142,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -19.813316739265716
+      "_score": -19.438552713661885
     },
     {
       "id": 69637408,
@@ -1097,8 +1156,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.35816666666669,
-        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-79.4 vs tier1 baseline 158.5 (MLS (USA) \u2014 opponent not in GFR), mod +38.4), Mod +38.4"
+        "v": 18.30900000000001,
+        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-79.4 vs tier1 baseline 158.5 (MLS (USA) \u2014 opponent not in GFR), mod +38.3), Mod +38.3"
       },
       "_sk": {
         "v": 0,
@@ -1112,7 +1171,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.35816666666669
+      "_score": 18.30900000000001
     },
     {
       "id": 97798995,
@@ -1154,8 +1213,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 2.8367103694874873,
-        "l": "Quality +2.8 (Chicago Cubs 0.521 vs Seattle Mariners 0.487)"
+        "v": 2.9504232164450745,
+        "l": "Quality +3.0 (Chicago Cubs 0.520 vs Seattle Mariners 0.488)"
       },
       "_sk": {
         "v": 0,
@@ -1169,7 +1228,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.8367103694874873
+      "_score": 2.9504232164450745
     },
     {
       "id": 12036465,
@@ -1211,8 +1270,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 39.07155959370556,
-        "l": "Quality +2.6 (GFR 81.3-74.8 vs tier1 baseline 154.8 (Liga MX (Mexico)), mod +36.5), Mod +36.5"
+        "v": 39.636253000463796,
+        "l": "Quality +3.2 (GFR 81.6-74.8 vs tier1 baseline 154.8 (Liga MX (Mexico)), mod +36.5), Mod +36.5"
       },
       "_sk": {
         "v": 0,
@@ -1226,7 +1285,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 39.07155959370556
+      "_score": 39.636253000463796
     },
     {
       "id": 46157316,
@@ -1300,6 +1359,16 @@
     },
     {
       "name": "Dutch Grand Prix",
+      "league": "F1 Academy",
+      "sport": "Motorsports",
+      "time": "08:00",
+      "date": "2026-08-21",
+      "channel": "YouTube US",
+      "reason": "practice",
+      "detail": "practice/qualifying session \u2014 Practice"
+    },
+    {
+      "name": "Dutch Grand Prix",
       "league": "Formula 1",
       "sport": "Motorsports",
       "time": "10:30",
@@ -1367,6 +1436,16 @@
       "channel": "Atlanta News First, Peachtree Sports Network",
       "reason": "channel",
       "detail": "airs on Atlanta News First, Peachtree Sports Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wieczysta Krak\u00f3w @ Cracovia Krak\u00f3w",
+      "league": "Ekstraklasa",
+      "sport": "Soccer",
+      "time": "14:30",
+      "date": "2026-08-21",
+      "channel": "beIN SPORTS Xtra (Canada)",
+      "reason": "channel",
+      "detail": "airs on beIN SPORTS Xtra (Canada) \u2014 none in channels.txt"
     },
     {
       "name": "Bradford @ Leigh Leopards",
@@ -1937,6 +2016,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Carolina Panthers @ Jacksonville Jaguars",
+      "league": "NFL",
+      "sport": "Football",
+      "time": "19:30",
+      "date": "2026-08-21",
+      "channel": "NFL+, WSOC-ABC, WJAX-CBS",
+      "reason": "channel",
+      "detail": "airs on NFL+, WSOC-ABC, WJAX-CBS \u2014 none in channels.txt"
     },
     {
       "name": "Rochester Red Wings @ Omaha Storm Chasers",
