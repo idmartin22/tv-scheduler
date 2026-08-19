@@ -59,34 +59,6 @@
       "_score": 0
     },
     {
-      "id": 86208918,
-      "time": "06:25",
-      "name": "Tour of Britain",
-      "sport": "Cycling",
-      "league": "Women's Road Cycling",
-      "ch": [
-        "HBO Max (US)"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Cycling event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
       "id": 28773834,
       "time": "07:30",
       "name": "Nexo Championship",
@@ -118,34 +90,6 @@
       "id": 28669008,
       "time": "08:35",
       "name": "Tour du Limousin",
-      "sport": "Cycling",
-      "league": "Men's Road Cycling",
-      "ch": [
-        "HBO Max (US)"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Cycling event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 12150809,
-      "time": "09:00",
-      "name": "Deutschland Tour",
       "sport": "Cycling",
       "league": "Men's Road Cycling",
       "ch": [
@@ -470,8 +414,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.50558164310594,
-        "l": "Quality -5.5 (GFR 82.3-84.5 vs tier1 baseline 169.8 (Ligue 1 (France)), mod +44.0), Mod +44.0"
+        "v": 38.51775907500485,
+        "l": "Quality -5.4 (GFR 82.3-84.5 vs tier1 baseline 169.8 (Ligue 1 (France)), mod +44.0), Mod +44.0"
       },
       "_sk": {
         "v": 0,
@@ -485,7 +429,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.50558164310594
+      "_score": 38.51775907500485
     },
     {
       "id": 94333203,
@@ -614,8 +558,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 18.933649289099492,
-        "l": "Quality +18.9 (Atlanta Braves 0.522 vs Milwaukee Brewers 0.531)"
+        "v": 18.594847775175644,
+        "l": "Quality +18.6 (Atlanta Braves 0.521 vs Milwaukee Brewers 0.532)"
       },
       "_sk": {
         "v": 0,
@@ -629,7 +573,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.933649289099492
+      "_score": 18.594847775175644
     },
     {
       "id": 13379981,
@@ -891,18 +835,18 @@
       "_score": 0
     },
     {
-      "id": 1798431,
-      "time": "19:05",
-      "name": "Toronto Blue Jays @ New York Yankees",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 7404154,
+      "time": "19:00",
+      "name": "Team Palacios - Team Landry",
+      "sport": "Softball",
+      "league": "Athletes Unlimited Softball",
       "ch": [
-        "MLB Network"
+        "CBS Sports Network"
       ],
-      "dur": 180,
+      "dur": 120,
       "_st": {
-        "v": 6.137440758293874,
-        "l": "Quality +6.1 (Toronto Blue Jays 0.503 vs New York Yankees 0.514)"
+        "v": 0,
+        "l": "Athletes Unlimited Softball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -916,7 +860,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.137440758293874
+      "_score": 0
+    },
+    {
+      "id": 1798431,
+      "time": "19:05",
+      "name": "Toronto Blue Jays @ New York Yankees",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 6.651053864168672,
+        "l": "Quality +6.7 (Toronto Blue Jays 0.504 vs New York Yankees 0.515)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.651053864168672
     },
     {
       "id": 72410640,
@@ -929,8 +901,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.27014218009489,
-        "l": "Quality +8.3 (Tampa Bay Rays 0.525 vs Baltimore Orioles 0.498)"
+        "v": 7.704918032786901,
+        "l": "Quality +7.7 (Tampa Bay Rays 0.524 vs Baltimore Orioles 0.498)"
       },
       "_sk": {
         "v": 0,
@@ -944,7 +916,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.27014218009489
+      "_score": 7.704918032786901
     },
     {
       "id": 3537671,
@@ -957,8 +929,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.792724776938918,
-        "l": "Quality +5.8 (Golden State Valkyries 4.900 vs Chicago Sky -2.100)"
+        "v": 6.1855670103092795,
+        "l": "Quality +6.2 (Golden State Valkyries 4.900 vs Chicago Sky -1.900)"
       },
       "_sk": {
         "v": 0,
@@ -972,7 +944,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.792724776938918
+      "_score": 6.1855670103092795
     },
     {
       "id": 13317008,
@@ -985,8 +957,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 9.70487302676733,
-        "l": "Quality +9.7 (Minnesota Lynx 4.800 vs Washington Mystics -0.100)"
+        "v": 9.896907216494846,
+        "l": "Quality +9.9 (Minnesota Lynx 4.800 vs Washington Mystics -0.000)"
       },
       "_sk": {
         "v": 0,
@@ -1000,7 +972,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.70487302676733
+      "_score": 9.896907216494846
     },
     {
       "id": 77655625,
@@ -1156,8 +1128,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.171548117154722,
-        "l": "Quality -1.2 (New York Mets 0.492 vs Chicago White Sox 0.504)"
+        "v": -1.606765327695561,
+        "l": "Quality -1.6 (New York Mets 0.491 vs Chicago White Sox 0.504)"
       },
       "_sk": {
         "v": 0,
@@ -1171,7 +1143,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.171548117154722
+      "_score": -1.606765327695561
     },
     {
       "id": 73746365,
@@ -1300,8 +1272,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -14.037656903765663,
-        "l": "Quality -14.0 (Los Angeles Angels 0.469 vs Texas Rangers 0.486)"
+        "v": -13.657505285412286,
+        "l": "Quality -13.7 (Los Angeles Angels 0.470 vs Texas Rangers 0.487)"
       },
       "_sk": {
         "v": 0,
@@ -1315,7 +1287,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -14.037656903765663
+      "_score": -13.657505285412286
     },
     {
       "id": 4624399,
@@ -1344,6 +1316,34 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 82947429,
+      "time": "21:00",
+      "name": "Monterrey @ Le\u00f3n",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "TUDN"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 40.62654011940556,
+        "l": "Quality +4.2 (GFR 78.7-78.2 vs tier1 baseline 154.8 (Liga MX (Mexico)), mod +36.5), Mod +36.5"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 40.62654011940556
     },
     {
       "id": 69254775,
@@ -1471,8 +1471,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -19.443757725587144,
-        "l": "Quality -19.4 (Portland Fire -5.200 vs Toronto Tempo -5.300)"
+        "v": -19.81132075471698,
+        "l": "Quality -19.8 (Portland Fire -5.200 vs Toronto Tempo -5.300)"
       },
       "_sk": {
         "v": 0,
@@ -1486,7 +1486,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -19.443757725587144
+      "_score": -19.81132075471698
     },
     {
       "id": 69637408,
@@ -1557,8 +1557,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 3.2938388625592925,
-        "l": "Quality +3.3 (Chicago Cubs 0.521 vs Seattle Mariners 0.488)"
+        "v": 3.489461358313826,
+        "l": "Quality +3.5 (Chicago Cubs 0.522 vs Seattle Mariners 0.488)"
       },
       "_sk": {
         "v": 0,
@@ -1572,7 +1572,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.2938388625592925
+      "_score": 3.489461358313826
     },
     {
       "id": 12036465,
@@ -1638,7 +1638,8 @@
       "sport": "Soccer",
       "league": "Liga MX",
       "ch": [
-        "ViX"
+        "ViX",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -1855,9 +1856,19 @@
       "sport": "Soccer",
       "time": "14:30",
       "date": "2026-08-21",
-      "channel": "beIN SPORTS Xtra (Canada)",
+      "channel": "Fanatiz",
       "reason": "channel",
-      "detail": "airs on beIN SPORTS Xtra (Canada) \u2014 none in channels.txt"
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Galatasaray @ Erzurumspor F.K.",
+      "league": "S\u00fcper Lig",
+      "sport": "Soccer",
+      "time": "14:30",
+      "date": "2026-08-21",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "VfB Stuttgart @ Hansa Rostock",
@@ -1975,9 +1986,9 @@
       "sport": "Fighting",
       "time": "18:00",
       "date": "2026-08-21",
-      "channel": "Fubo Sports, fubo Sports Network, Fight Network Canada",
+      "channel": "Fubo Sports, fubo Sports Network, Fight Network Canada, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, Fight Network Canada \u2014 none in channels.txt"
+      "detail": "airs on Fubo Sports, fubo Sports Network, Fight Network Canada, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Reading Fightin Phils @ Portland Sea Dogs",
@@ -2650,6 +2661,16 @@
       "detail": "airs on TVA Sports 2, DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "Tulare Thunderbowl Raceway",
+      "league": "Other",
+      "sport": "Motorsports",
+      "time": "20:30",
+      "date": "2026-08-21",
+      "channel": "FloRacing",
+      "reason": "channel",
+      "detail": "airs on FloRacing \u2014 none in channels.txt"
+    },
+    {
       "name": "Las Vegas Aviators @ Albuquerque Isotopes",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -2775,9 +2796,9 @@
       "sport": "Baseball",
       "time": "21:45",
       "date": "2026-08-21",
-      "channel": "NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV",
+      "channel": "NBC Sports Bay Area, NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV",
       "reason": "channel",
-      "detail": "airs on NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+      "detail": "airs on NBC Sports Bay Area, NBC Sports Bay Area Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "San Jose Giants @ Lake Elsinore Storm",
@@ -2788,6 +2809,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Mission Viejo - Chaparral",
+      "league": "High School Football",
+      "sport": "Football",
+      "time": "22:00",
+      "date": "2026-08-21",
+      "channel": "Spectrum SportsNet",
+      "reason": "channel",
+      "detail": "airs on Spectrum SportsNet \u2014 none in channels.txt"
     },
     {
       "name": "Everett AquaSox @ Tri-City Dust Devils",
