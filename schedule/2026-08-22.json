@@ -1008,6 +1008,7 @@
       "sport": "Football",
       "league": "NFL",
       "ch": [
+        "WIVB-CBS",
         "WEWS-ABC",
         "NFL Network"
       ],
@@ -3293,6 +3294,34 @@
       "_score": 0
     },
     {
+      "id": 6263081,
+      "time": "20:10",
+      "name": "Cleveland Guardians @ Colorado Rockies",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "CleGuardians.TV"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -8.634097706879341,
+        "l": "Quality -8.6 (Cleveland Guardians 0.497 vs Colorado Rockies 0.474)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.634097706879341
+    },
+    {
       "id": 43493103,
       "time": "20:30",
       "name": "Philadelphia Union @ Austin",
@@ -5432,16 +5461,6 @@
       "channel": "MLB.TV, Dbacks.TV, Reds.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, Dbacks.TV, Reds.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Cleveland Guardians @ Colorado Rockies",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "20:10",
-      "date": "2026-08-22",
-      "channel": "MLB.TV, Rockies.TV, CleGuardians.TV",
-      "reason": "channel",
-      "detail": "airs on MLB.TV, Rockies.TV, CleGuardians.TV \u2014 none in channels.txt"
     },
     {
       "name": "Las Vegas Aviators @ Albuquerque Isotopes",
