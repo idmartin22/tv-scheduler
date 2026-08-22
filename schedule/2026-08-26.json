@@ -400,6 +400,34 @@
       "_score": 0.0
     },
     {
+      "id": 58641689,
+      "time": "16:07",
+      "name": "Cleveland Guardians @ Los Angeles Angels",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "CleGuardians.TV"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -10.129611166500485,
+        "l": "Quality -10.1 (Cleveland Guardians 0.497 vs Los Angeles Angels 0.469)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -10.129611166500485
+    },
+    {
       "id": 23480418,
       "time": "16:45",
       "name": "Winston-Salem",
@@ -1182,16 +1210,6 @@
       "detail": "airs on MLB.TV, NBC Sports Bay Area, Reds.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Cleveland Guardians @ Los Angeles Angels",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "16:07",
-      "date": "2026-08-26",
-      "channel": "MLB.TV, FanDuel Sports Network West, CleGuardians.TV, Angels Broadcast Television",
-      "reason": "channel",
-      "detail": "airs on MLB.TV, FanDuel Sports Network West, CleGuardians.TV, Angels Broadcast Television \u2014 none in channels.txt"
-    },
-    {
       "name": "Pittsburgh Pirates @ San Diego Padres",
       "league": "MLB",
       "sport": "Baseball",
@@ -1830,6 +1848,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "AEW Dynamite",
+      "league": "Wrestling",
+      "sport": "Fighting",
+      "time": "20:00",
+      "date": "2026-08-26",
+      "channel": "TSN2",
+      "reason": "channel",
+      "detail": "airs on TSN2 \u2014 none in channels.txt"
     },
     {
       "name": "Frisco RoughRiders @ Northwest Arkansas Naturals",
