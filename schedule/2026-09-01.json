@@ -38,6 +38,7 @@
       "sport": "Tennis",
       "league": "U.S. Open",
       "ch": [
+        "ESPN Unlimited",
         "ESPN Deportes"
       ],
       "dur": 150,
@@ -662,6 +663,35 @@
       "_score": 0.9635722679202195
     },
     {
+      "id": 46622023,
+      "time": "18:45",
+      "name": "U.S. Open",
+      "sport": "Tennis",
+      "league": "U.S. Open",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 50194284,
       "time": "19:00",
       "name": "Club Sando @ Defence Force",
@@ -987,7 +1017,8 @@
       "ch": [
         "ESPN",
         "ESPN2",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 150,
       "_st": {
@@ -1282,9 +1313,9 @@
       "sport": "Soccer",
       "time": "15:00",
       "date": "2026-09-01",
-      "channel": "TLN",
+      "channel": "TLN, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on TLN \u2014 none in channels.txt"
+      "detail": "airs on TLN, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Prince Albert Raiders @ Saskatoon Blades",
@@ -1325,6 +1356,16 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Gardner-Webb @ North Carolina Central",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-09-01",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
     },
     {
       "name": "Holy Cross @ New Haven",
