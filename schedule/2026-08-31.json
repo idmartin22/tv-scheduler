@@ -270,6 +270,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "USA Network",
         "NBC Universo"
       ],
       "dur": 120,
@@ -349,6 +350,35 @@
         "l": ""
       },
       "_score": 0.0
+    },
+    {
+      "id": 75967898,
+      "time": "17:00",
+      "name": "U.S. Open",
+      "sport": "Tennis",
+      "league": "U.S. Open",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 51383236,
@@ -552,6 +582,36 @@
         "l": ""
       },
       "_score": -1.3278008298754456
+    },
+    {
+      "id": 46622023,
+      "time": "18:45",
+      "name": "U.S. Open",
+      "sport": "Tennis",
+      "league": "U.S. Open",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 23970927,
@@ -794,7 +854,8 @@
       "ch": [
         "ESPN",
         "ESPN2",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 150,
       "_st": {
@@ -1109,7 +1170,7 @@
       "sport": "Basketball",
       "time": "06:00",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1119,7 +1180,7 @@
       "sport": "Basketball",
       "time": "06:10",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1289,7 +1350,7 @@
       "sport": "Basketball",
       "time": "11:30",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1319,7 +1380,7 @@
       "sport": "Basketball",
       "time": "13:30",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1339,7 +1400,7 @@
       "sport": "Basketball",
       "time": "14:30",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1349,7 +1410,7 @@
       "sport": "Basketball",
       "time": "15:30",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1479,7 +1540,7 @@
       "sport": "Basketball",
       "time": "19:10",
       "date": "2026-08-31",
-      "channel": "Sling TV, HBO Max (US), DAZN US, TSN5, DAZN Canada",
+      "channel": "Sling TV, HBO Max (US), DAZN US, TSN5, RDS 2, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -1584,6 +1645,16 @@
       "detail": "airs on MLB.TV, MASN, Rockies.TV \u2014 none in channels.txt"
     },
     {
+      "name": "C\u00facuta Deportivo @ Deportes Tolima",
+      "league": "Primera A",
+      "sport": "Soccer",
+      "time": "21:05",
+      "date": "2026-08-31",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "New York Yankees @ Los Angeles Angels",
       "league": "MLB",
       "sport": "Baseball",
@@ -1619,7 +1690,7 @@
       "sport": "Basketball",
       "time": "22:10",
       "date": "2026-08-31",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     }
