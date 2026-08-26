@@ -2846,16 +2846,16 @@
       "id": 70022550,
       "time": "19:00",
       "name": "Air Force @ Boston College",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ACC Network X"
       ],
       "dur": 120,
       "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -2869,7 +2869,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 0.0
     },
     {
       "id": 65940520,
@@ -3776,6 +3776,35 @@
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 70022550,
+      "time": "19:00",
+      "name": "Air Force @ Boston College",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
       ],
       "dur": 120,
       "_st": {
@@ -6001,8 +6030,8 @@
       "time": "05:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Nigeria @ South Sudan",
@@ -6011,8 +6040,8 @@
       "time": "08:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Rally del Paraguay",
@@ -6031,8 +6060,8 @@
       "time": "08:30",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Rally del Paraguay",
@@ -6071,8 +6100,8 @@
       "time": "11:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Montenegro @ Georgia",
@@ -6081,8 +6110,8 @@
       "time": "11:30",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Greece @ Ukraine",
@@ -6091,8 +6120,8 @@
       "time": "12:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Le Moyne @ UNC Wilmington",
@@ -6161,8 +6190,8 @@
       "time": "14:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Italy @ Bosnia & Herzegovina",
@@ -6171,8 +6200,8 @@
       "time": "14:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Iceland @ Serbia",
@@ -6181,8 +6210,8 @@
       "time": "14:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Lithuania @ Turkiye",
@@ -6191,8 +6220,8 @@
       "time": "14:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Rally del Paraguay",
@@ -6331,8 +6360,8 @@
       "time": "15:00",
       "date": "2026-08-28",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Catalans Dragons @ Castleford Tigers",
