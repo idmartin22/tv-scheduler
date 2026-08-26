@@ -210,6 +210,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "Peacock",
         "NBC Sports Network"
       ],
       "dur": 120,
@@ -267,6 +268,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "Peacock",
         "NBC Sports Network Extra"
       ],
       "dur": 120,
@@ -351,6 +353,7 @@
       "sport": "Soccer",
       "league": "Bundesliga",
       "ch": [
+        "Fandango",
         "NBC Universo"
       ],
       "dur": 120,
@@ -716,6 +719,34 @@
         "l": ""
       },
       "_score": 48.03610906411199
+    },
+    {
+      "id": 71181868,
+      "time": "11:30",
+      "name": "Schalke 04 @ FC Augsburg",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 32.0364809092751,
+        "l": "Quality -12.8 (GFR 79.4-84.6 vs tier1 baseline 171.4 (Bundesliga (Germany)), mod +44.8), Mod +44.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 32.0364809092751
     },
     {
       "id": 28011393,
@@ -1095,6 +1126,34 @@
       "_score": 0
     },
     {
+      "id": 20212922,
+      "time": "12:40",
+      "name": "Brown @ Penn State",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "Big Ten Plus"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
       "id": 99758448,
       "time": "13:00",
       "name": "Real Valladolid @ C\u00e1diz",
@@ -1151,34 +1210,6 @@
         "l": ""
       },
       "_score": 46.3513217648926
-    },
-    {
-      "id": 89440987,
-      "time": "13:00",
-      "name": "Brown @ Penn State",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
     },
     {
       "id": 60799634,
@@ -6427,19 +6458,18 @@
       "_score": 0.0
     },
     {
-      "id": 34940704,
+      "id": 1379167,
       "time": "20:00",
-      "name": "West Alabama @ Tuskegee",
-      "sport": "Football",
-      "league": "College Football",
+      "name": "Team Kilfoyl - Team Klingler",
+      "sport": "Softball",
+      "league": "Athletes Unlimited Softball",
       "ch": [
-        "ESPN2",
-        "ESPN Unlimited"
+        "MLB Network"
       ],
-      "dur": 210,
+      "dur": 120,
       "_st": {
         "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "l": "Athletes Unlimited Softball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -6454,6 +6484,34 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 21280079,
+      "time": "20:30",
+      "name": "Racing Club @ Independiente Rivadavia",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 48.889161271182644,
+        "l": "Quality +11.5 (GFR 79.2-81.4 vs tier1 baseline 156.5 (Liga Profesional (Argentina)), mod +37.3), Mod +37.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 48.889161271182644
     },
     {
       "id": 87945500,
@@ -6723,7 +6781,7 @@
       "sport": "Basketball",
       "time": "02:00",
       "date": "2026-08-30",
-      "channel": "DAZN Canada",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "cutoff",
       "detail": "starts 02:00 AM \u2014 before the 5am day boundary"
     },
@@ -6918,16 +6976,6 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "Schalke 04 @ FC Augsburg",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "11:30",
-      "date": "2026-08-30",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "Ivory Coast @ Angola",
       "league": "FIBA World Cup",
       "sport": "Basketball",
@@ -7006,6 +7054,16 @@
       "channel": "LionAthletics.com",
       "reason": "channel",
       "detail": "airs on LionAthletics.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Green Bay @ Navy",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "12:00",
+      "date": "2026-08-30",
+      "channel": "Bronco All-Access",
+      "reason": "channel",
+      "detail": "airs on Bronco All-Access \u2014 none in channels.txt"
     },
     {
       "name": "Bradenton Marauders @ Fort Myers Mighty Mussels",
@@ -7156,6 +7214,16 @@
       "channel": "TSN+, CTV2, CJDC TV",
       "reason": "channel",
       "detail": "airs on TSN+, CTV2, CJDC TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "AEW: All In London 2026",
+      "league": "Wrestling",
+      "sport": "Fighting",
+      "time": "13:00",
+      "date": "2026-08-30",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Norfolk Tides @ Durham Bulls",
@@ -7596,16 +7664,6 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
-    },
-    {
-      "name": "Botafogo @ Flamengo",
-      "league": "Serie A Brazil",
-      "sport": "Soccer",
-      "time": "15:00",
-      "date": "2026-08-30",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Santos @ Corinthians",
@@ -8093,9 +8151,9 @@
       "sport": "Soccer",
       "time": "19:00",
       "date": "2026-08-30",
-      "channel": "NWSL+",
+      "channel": "Roku Sports",
       "reason": "channel",
-      "detail": "airs on NWSL+ \u2014 none in channels.txt"
+      "detail": "airs on Roku Sports \u2014 none in channels.txt"
     },
     {
       "name": "Golden State Valkyries @ Portland Fire",
@@ -8119,6 +8177,16 @@
     },
     {
       "name": "Crown Legacy FC @ Orlando City B",
+      "league": "MLS Next Pro",
+      "sport": "Soccer",
+      "time": "19:00",
+      "date": "2026-08-30",
+      "channel": "MLSNEXTPro.com",
+      "reason": "channel",
+      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sporting Kansas City II @ Vancouver Whitecaps 2",
       "league": "MLS Next Pro",
       "sport": "Soccer",
       "time": "19:00",
@@ -8178,6 +8246,26 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "La Equidad @ Millonarios",
+      "league": "Primera A",
+      "sport": "Soccer",
+      "time": "19:15",
+      "date": "2026-08-30",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Connecticut Sun @ Dallas Wings",
+      "league": "WNBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-08-30",
+      "channel": "WNBA League Pass, NBC Sports Boston, KFAA 29, WFAA",
+      "reason": "channel",
+      "detail": "airs on WNBA League Pass, NBC Sports Boston, KFAA 29, WFAA \u2014 none in channels.txt"
+    },
+    {
       "name": "Lake Elsinore Storm @ Rancho Cucamonga Quakes",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -8198,14 +8286,14 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Racing Club @ Independiente Rivadavia",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "20:30",
+      "name": "West Alabama @ Tuskegee",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "20:00",
       "date": "2026-08-30",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+      "channel": "ESPN2, ESPN Unlimited",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "San Francisco @ Kansas City",
@@ -8248,14 +8336,24 @@
       "detail": "airs on SSSEN, KVVU-FOX, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Atl\u00e9tico Bucaramanga @ Deportivo Cali",
+      "league": "Primera A",
+      "sport": "Soccer",
+      "time": "21:20",
+      "date": "2026-08-30",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "Los Angeles FC 2 @ San Jose Earthquakes II",
       "league": "MLS Next Pro",
       "sport": "Soccer",
       "time": "22:30",
       "date": "2026-08-30",
-      "channel": "MLSNEXTPro.com",
+      "channel": "MyNetworkTV, MLSNEXTPro.com",
       "reason": "channel",
-      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
+      "detail": "airs on MyNetworkTV, MLSNEXTPro.com \u2014 none in channels.txt"
     }
   ]
 }
