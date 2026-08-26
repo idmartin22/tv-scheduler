@@ -148,6 +148,36 @@
       "_score": 30
     },
     {
+      "id": 87370310,
+      "time": "11:00",
+      "name": "U.S. Open",
+      "sport": "Tennis",
+      "league": "U.S. Open",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 21291665,
       "time": "12:00",
       "name": "League Phase Draw",
@@ -289,6 +319,34 @@
         "l": ""
       },
       "_score": 30
+    },
+    {
+      "id": 3410125,
+      "time": "13:00",
+      "name": "U.S. Open",
+      "sport": "Tennis",
+      "league": "U.S. Open",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 88198049,
@@ -3150,6 +3208,34 @@
       "_score": 0.0
     },
     {
+      "id": 75466988,
+      "time": "19:10",
+      "name": "USA @ Chile",
+      "sport": "Basketball",
+      "league": "FIBA World Cup",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "FIBA World Cup not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 16512022,
       "time": "19:15",
       "name": "Los Angeles Dodgers @ Atlanta Braves",
@@ -4499,6 +4585,34 @@
       "_score": 0.0
     },
     {
+      "id": 25186554,
+      "time": "21:40",
+      "name": "Canada @ Panama",
+      "sport": "Basketball",
+      "league": "FIBA World Cup",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "FIBA World Cup not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 24676027,
       "time": "22:00",
       "name": "Washington Mystics @ Phoenix Mercury",
@@ -4977,8 +5091,8 @@
       "time": "08:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "D.R. Congo @ Angola",
@@ -4987,8 +5101,8 @@
       "time": "08:30",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Rally del Paraguay",
@@ -5007,18 +5121,8 @@
       "time": "11:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
-    },
-    {
-      "name": "U.S. Open",
-      "league": "U.S. Open",
-      "sport": "Tennis",
-      "time": "11:00",
-      "date": "2026-08-27",
-      "channel": "Fubo Sports, ESPN Select, ESPN Unlimited, ESPN2, TSN+",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Ivory Coast @ Mali",
@@ -5027,8 +5131,8 @@
       "time": "11:30",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Sweden @ Finland",
@@ -5037,8 +5141,8 @@
       "time": "11:30",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "China @ Qatar",
@@ -5047,8 +5151,8 @@
       "time": "12:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Estonia @ Hungary",
@@ -5057,8 +5161,8 @@
       "time": "12:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Japan @ Saudi Arabia",
@@ -5067,8 +5171,8 @@
       "time": "13:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Saratoga Live",
@@ -5081,24 +5185,14 @@
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
-      "name": "U.S. Open",
-      "league": "U.S. Open",
-      "sport": "Tennis",
-      "time": "13:00",
-      "date": "2026-08-27",
-      "channel": "Tennis Channel, T2",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
-    },
-    {
       "name": "Cape Verde @ Tunisia",
       "league": "FIBA World Cup",
       "sport": "Basketball",
       "time": "14:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "South Korea @ Lebanon",
@@ -5107,8 +5201,8 @@
       "time": "14:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Latvia @ Croatia",
@@ -5117,8 +5211,8 @@
       "time": "14:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Netherlands @ Germany",
@@ -5127,8 +5221,8 @@
       "time": "14:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Poland @ Israel",
@@ -5137,8 +5231,8 @@
       "time": "14:00",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Chicago State @ St. Thomas (MN)",
@@ -5167,8 +5261,8 @@
       "time": "14:30",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Slovenia @ France",
@@ -5177,8 +5271,8 @@
       "time": "14:30",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Boston United @ Boreham Wood",
@@ -5377,8 +5471,8 @@
       "time": "18:10",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "USAC Racing",
@@ -6067,8 +6161,8 @@
       "time": "19:10",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Dominican Republic @ Brazil",
@@ -6077,18 +6171,8 @@
       "time": "19:10",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
-    },
-    {
-      "name": "USA @ Chile",
-      "league": "FIBA World Cup",
-      "sport": "Basketball",
-      "time": "19:10",
-      "date": "2026-08-27",
-      "channel": "Sling TV, HBO Max (US), DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Beloit Sky Carp @ Quad Cities River Bandits",
@@ -6521,24 +6605,14 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Canada @ Panama",
-      "league": "FIBA World Cup",
-      "sport": "Basketball",
-      "time": "21:40",
-      "date": "2026-08-27",
-      "channel": "Sling TV, HBO Max (US), DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
-    },
-    {
       "name": "Colombia @ Mexico",
       "league": "FIBA World Cup",
       "sport": "Basketball",
       "time": "21:40",
       "date": "2026-08-27",
       "channel": "DAZN US, DAZN Canada",
-      "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Qualifying"
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Arizona Diamondbacks @ San Francisco Giants",
