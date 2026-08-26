@@ -65,6 +65,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "USA Network",
         "NBC Universo"
       ],
       "dur": 120,
@@ -231,6 +232,146 @@
       "_score": 15
     },
     {
+      "id": 46813064,
+      "time": "09:30",
+      "name": "Bayer Leverkusen @ Elversberg",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 45.1127213191167,
+        "l": "Quality +0.3 (GFR 89.9-81.8 vs tier1 baseline 171.4 (Bundesliga (Germany)), mod +44.8), Mod +44.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 45.1127213191167
+    },
+    {
+      "id": 10687093,
+      "time": "09:30",
+      "name": "TSG 1899 Hoffenheim @ 1. FC K\u00f6ln",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 35.81922728678206,
+        "l": "Quality -9.0 (GFR 85.1-81.1 vs tier1 baseline 171.4 (Bundesliga (Germany)), mod +44.8), Mod +44.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 35.81922728678206
+    },
+    {
+      "id": 59315030,
+      "time": "09:30",
+      "name": "Paderborn @ FSV Mainz 05",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 40.03379402701812,
+        "l": "Quality -4.8 (GFR 80.4-88.2 vs tier1 baseline 171.4 (Bundesliga (Germany)), mod +44.8), Mod +44.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 40.03379402701812
+    },
+    {
+      "id": 26236303,
+      "time": "09:30",
+      "name": "Borussia M\u00f6nchengladbach @ RB Leipzig",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 24.816444444444457,
+        "l": "Quality -20.0 (GFR 33.0 (not rated yet)-85.8 vs tier1 baseline 171.4 (Bundesliga (Germany) \u2014 opponent not in GFR), mod +44.8), Mod +44.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 24.816444444444457
+    },
+    {
+      "id": 17650162,
+      "time": "09:30",
+      "name": "Eintracht Frankfurt @ Union Berlin",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 37.35650777809765,
+        "l": "Quality -7.5 (GFR 84.0-83.2 vs tier1 baseline 171.4 (Bundesliga (Germany)), mod +44.8), Mod +44.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 37.35650777809765
+    },
+    {
       "id": 7375707,
       "time": "10:00",
       "name": "Salford City @ Shrewsbury Town",
@@ -294,6 +435,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "USA Network",
         "NBC Universo"
       ],
       "dur": 120,
@@ -788,8 +930,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "v": 0.0,
+        "l": "Quality +0.0 (team not found in FPI data \u2014 flat mod)"
       },
       "_sk": {
         "v": 0,
@@ -803,7 +945,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 0.0
     },
     {
       "id": 93804798,
@@ -893,35 +1035,6 @@
       "_score": 0
     },
     {
-      "id": 89172610,
-      "time": "12:00",
-      "name": "Robert Morris @ Wagner",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 93858072,
       "time": "12:05",
       "name": "Al Ahli @ Al Kholood",
@@ -986,6 +1099,7 @@
       "sport": "Soccer",
       "league": "Serie A",
       "ch": [
+        "CBS Sports Network",
         "Paramount+ (US)"
       ],
       "dur": 120,
@@ -1102,6 +1216,7 @@
       "sport": "Soccer",
       "league": "Bundesliga",
       "ch": [
+        "USA Network",
         "Telemundo"
       ],
       "dur": 120,
@@ -1221,8 +1336,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "NFL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 3.884892086330934,
+        "l": "Quality +3.9 (Detroit Lions 2.500 vs Indianapolis Colts -0.600)"
       },
       "_sk": {
         "v": 0,
@@ -1236,7 +1351,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 3.884892086330934
     },
     {
       "id": 12927759,
@@ -1494,35 +1609,6 @@
         "l": ""
       },
       "_score": 25
-    },
-    {
-      "id": 33556121,
-      "time": "13:00",
-      "name": "Georgetown (KY) @ Butler",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 98320438,
@@ -1784,64 +1870,6 @@
       "_score": 0
     },
     {
-      "id": 83266215,
-      "time": "14:00",
-      "name": "Central Connecticut @ South Dakota",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 86798802,
-      "time": "14:00",
-      "name": "Lawrence Tech @ Valparaiso Beacons",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 20514567,
       "time": "14:00",
       "name": "Highland Park - Lewisville",
@@ -2022,6 +2050,7 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
+        "Big Ten Network",
         "Big Ten Plus"
       ],
       "dur": 120,
@@ -2076,35 +2105,6 @@
       "id": 6663618,
       "time": "15:00",
       "name": "UIC @ Saint Louis",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 58754246,
-      "time": "15:00",
-      "name": "Fairleigh Dickinson @ Seton Hall",
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
@@ -2246,34 +2246,6 @@
       "_score": 0.0
     },
     {
-      "id": 93174199,
-      "time": "15:00",
-      "name": "Southern University @ Alabama State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 16752240,
       "time": "15:00",
       "name": "UMBC @ UT Rio Grande Valley",
@@ -2329,35 +2301,6 @@
         "l": ""
       },
       "_score": 0.0
-    },
-    {
-      "id": 60409304,
-      "time": "15:00",
-      "name": "UC Davis @ Portland State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 43616885,
@@ -2604,8 +2547,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "v": 4.174311926605506,
+        "l": "Quality +4.2 (NC State Wolfpack 3.700 vs Virginia Cavaliers 7.900)"
       },
       "_sk": {
         "v": 0,
@@ -2619,36 +2562,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
-    },
-    {
-      "id": 76905202,
-      "time": "15:30",
-      "name": "Lehigh @ Holy Cross",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
+      "_score": 4.174311926605506
     },
     {
       "id": 6304972,
@@ -3367,35 +3281,6 @@
       "_score": 0
     },
     {
-      "id": 61198585,
-      "time": "17:00",
-      "name": "Eastern Washington @ Northern Arizona",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 22190574,
       "time": "17:00",
       "name": "Southern Illinois @ East Texas A&M",
@@ -3566,35 +3451,6 @@
       "_score": 0
     },
     {
-      "id": 39619836,
-      "time": "17:30",
-      "name": "Campbell @ East Tennessee State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 5896605,
       "time": "18:00",
       "name": "Chicago Bears @ Tennessee Titans",
@@ -3606,8 +3462,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "NFL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -4.8374655647382925,
+        "l": "Quality -4.8 (Chicago Bears 1.200 vs Tennessee Titans -3.900)"
       },
       "_sk": {
         "v": 0,
@@ -3621,7 +3477,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -4.8374655647382925
     },
     {
       "id": 6454840,
@@ -3939,35 +3795,6 @@
       "_score": 0
     },
     {
-      "id": 83395977,
-      "time": "18:00",
-      "name": "Savannah State @ South Carolina State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 47900945,
       "time": "18:00",
       "name": "St. Thomas Aquinas (FL) vs. DeSoto (TX)",
@@ -3981,92 +3808,6 @@
       "_st": {
         "v": 0,
         "l": "High School Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 20066150,
-      "time": "18:00",
-      "name": "Bucknell @ Richmond",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 74839557,
-      "time": "18:00",
-      "name": "Bryant @ Stonehill College",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "Prime Video (US)"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 99064114,
-      "time": "18:00",
-      "name": "VMI @ Idaho State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -4141,35 +3882,6 @@
       "_score": 0.0
     },
     {
-      "id": 57578649,
-      "time": "18:00",
-      "name": "The Citadel @ Wofford",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 41812669,
       "time": "18:00",
       "name": "Evansville @ Bellarmine",
@@ -4199,19 +3911,19 @@
       "_score": 0
     },
     {
-      "id": 20074395,
+      "id": 36955292,
       "time": "18:00",
-      "name": "Southeast Missouri State @ Indiana State",
-      "sport": "Football",
-      "league": "College Football",
+      "name": "Calgary Wild @ Vancouver Rise",
+      "sport": "Soccer",
+      "league": "Northern Super League",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
       ],
-      "dur": 210,
+      "dur": 120,
       "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
       },
       "_sk": {
         "v": 0,
@@ -4225,7 +3937,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 0.0
     },
     {
       "id": 69431393,
@@ -4296,8 +4008,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "v": -14.014837359710864,
+        "l": "Quality -14.0 (Sacramento State Hornets -10.400 vs Eastern Michigan Eagles -16.300)"
       },
       "_sk": {
         "v": 0,
@@ -4311,7 +4023,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -14.014837359710864
     },
     {
       "id": 52717391,
@@ -5273,8 +4985,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "v": -3.3570477458626575,
+        "l": "Quality -3.4 (New Mexico State Aggies -15.700 vs Florida State Seminoles 9.300)"
       },
       "_sk": {
         "v": 0,
@@ -5288,36 +5000,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
-    },
-    {
-      "id": 36344499,
-      "time": "19:00",
-      "name": "East Texas A&M University @ Mercer",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN",
-        "ESPN Unlimited"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
+      "_score": -3.3570477458626575
     },
     {
       "id": 9520999,
@@ -5407,194 +5090,19 @@
       "_score": 0.0
     },
     {
-      "id": 80701932,
+      "id": 25657537,
       "time": "19:00",
-      "name": "Stetson @ South Dakota State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "CW",
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 5648203,
-      "time": "19:00",
-      "name": "Abilene Christian @ Lamar",
-      "sport": "Football",
-      "league": "College Football",
+      "name": "Loco Beach Coconuts - Bananas",
+      "sport": "Baseball",
+      "league": "Banana Ball",
       "ch": [
         "ESPN Unlimited",
-        "ESPN Select"
+        "Disney+"
       ],
-      "dur": 210,
+      "dur": 180,
       "_st": {
         "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 99269827,
-      "time": "19:00",
-      "name": "Monmouth @ Tennessee Tech",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 19828358,
-      "time": "19:00",
-      "name": "Eastern Kentucky @ Western Carolina",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 84988370,
-      "time": "19:00",
-      "name": "Samford @ North Alabama",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 72224282,
-      "time": "19:00",
-      "name": "Stephen F. Austin @ McNeese St",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 97475882,
-      "time": "19:00",
-      "name": "Oklahoma Panhandle State @ Incarnate Word",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "l": "Banana Ball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -5880,35 +5388,6 @@
       "_st": {
         "v": 0,
         "l": "Women's Pro Baseball League not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 25419117,
-      "time": "19:30",
-      "name": "Alabama A&M @ Howard",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ABC",
-        "ESPN Unlimited"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -6269,35 +5748,6 @@
       "_score": 0.0
     },
     {
-      "id": 31704644,
-      "time": "20:00",
-      "name": "UT Permian Basin @ UT Rio Grande Valley",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 95530692,
       "time": "20:30",
       "name": "San Jose Earthquakes @ Houston Dynamo",
@@ -6450,8 +5900,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
+        "v": 0.0,
+        "l": "Quality +0.0 (team not found in FPI data \u2014 flat mod)"
       },
       "_sk": {
         "v": 0,
@@ -6465,7 +5915,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 0.0
     },
     {
       "id": 75901567,
@@ -6552,64 +6002,6 @@
         "l": ""
       },
       "_score": 20.18353565778743
-    },
-    {
-      "id": 91756170,
-      "time": "21:00",
-      "name": "Prairie View A&M @ Tarleton State",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN2",
-        "ESPN Unlimited"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 38139810,
-      "time": "21:00",
-      "name": "Southern Utah @ Montana",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 99514755,
@@ -6981,35 +6373,6 @@
         "l": ""
       },
       "_score": 0.0
-    },
-    {
-      "id": 20162644,
-      "time": "22:00",
-      "name": "Montana State @ Utah Tech",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 0,
-        "l": "College Football not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 60655202,
@@ -7516,56 +6879,6 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "Bayer Leverkusen @ Elversberg",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-08-29",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "TSG 1899 Hoffenheim @ 1. FC K\u00f6ln",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-08-29",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Paderborn @ FSV Mainz 05",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-08-29",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Borussia M\u00f6nchengladbach @ RB Leipzig",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-08-29",
-      "channel": "Peacock ES, DAZN Canada, OneSoccer",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada, OneSoccer \u2014 none in channels.txt"
-    },
-    {
-      "name": "Eintracht Frankfurt @ Union Berlin",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-08-29",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "Dagenham & Redbridge @ Truro City",
       "league": "National League North / South",
       "sport": "Soccer",
@@ -7666,6 +6979,26 @@
       "detail": "airs on MEC TV \u2014 none in channels.txt"
     },
     {
+      "name": "Duquesne @ Mercyhurst",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "12:00",
+      "date": "2026-08-29",
+      "channel": "PSAC Sports Digital Network",
+      "reason": "channel",
+      "detail": "airs on PSAC Sports Digital Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Robert Morris @ Wagner",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "12:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
       "name": "Warrington Wolves @ Hull FC",
       "league": "Super League",
       "sport": "Rugby League",
@@ -7746,6 +7079,16 @@
       "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "Georgetown (KY) @ Butler",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "13:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
       "name": "Los Angeles Dodgers @ Detroit Tigers",
       "league": "MLB",
       "sport": "Baseball",
@@ -7794,6 +7137,26 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Central Connecticut @ South Dakota",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "14:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Lawrence Tech @ Valparaiso Beacons",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "14:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Rally del Paraguay",
@@ -7926,6 +7289,16 @@
       "detail": "airs on MW+ \u2014 none in channels.txt"
     },
     {
+      "name": "Indiana State @ Green Bay",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "15:00",
+      "date": "2026-08-29",
+      "channel": "Bronco All-Access",
+      "reason": "channel",
+      "detail": "airs on Bronco All-Access \u2014 none in channels.txt"
+    },
+    {
       "name": "Texas Southern @ UL Monroe",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
@@ -7934,6 +7307,26 @@
       "channel": "LionAthletics.com",
       "reason": "channel",
       "detail": "airs on LionAthletics.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Southern University @ Alabama State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "15:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "UC Davis @ Portland State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "15:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Rally del Paraguay",
@@ -7954,6 +7347,16 @@
       "channel": "MLB.TV, Mariners.TV, Sportsnet, Sportsnet NOW, TVA Sports",
       "reason": "channel",
       "detail": "airs on MLB.TV, Mariners.TV, Sportsnet, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lehigh @ Holy Cross",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "15:30",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Scranton/WB @ Worcester",
@@ -8066,6 +7469,16 @@
       "detail": "airs on SIAC Network \u2014 none in channels.txt"
     },
     {
+      "name": "Eastern Washington @ Northern Arizona",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "17:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
       "name": "Rally del Paraguay",
       "league": "World Rally Championship",
       "sport": "Motorsports",
@@ -8114,6 +7527,26 @@
       "channel": "FOX Sports Racing",
       "reason": "marquee",
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
+    },
+    {
+      "name": "Campbell @ East Tennessee State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "17:30",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Circuit ICAR",
+      "league": "NASCAR Canada Series",
+      "sport": "Motorsports",
+      "time": "17:40",
+      "date": "2026-08-29",
+      "channel": "TVA Sports 2, REV TV",
+      "reason": "channel",
+      "detail": "airs on TVA Sports 2, REV TV \u2014 none in channels.txt"
     },
     {
       "name": "Estudiantes R\u00edo Cuarto @ Hurac\u00e1n",
@@ -8241,9 +7674,69 @@
       "sport": "Volleyball",
       "time": "18:00",
       "date": "2026-08-29",
-      "channel": "YouTube US",
+      "channel": "YouTube US, Bronco All-Access",
       "reason": "channel",
-      "detail": "airs on YouTube US \u2014 none in channels.txt"
+      "detail": "airs on YouTube US, Bronco All-Access \u2014 none in channels.txt"
+    },
+    {
+      "name": "Savannah State @ South Carolina State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Bucknell @ Richmond",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Bryant @ Stonehill College",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-08-29",
+      "channel": "Prime Video (US)",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "VMI @ Idaho State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "The Citadel @ Wofford",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Southeast Missouri State @ Indiana State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Hartford Yard Goats @ New Hampshire Fisher Cats",
@@ -8626,6 +8119,96 @@
       "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
+      "name": "East Texas A&M University @ Mercer",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN, ESPN Unlimited",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Stetson @ South Dakota State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "CW, ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Abilene Christian @ Lamar",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Monmouth @ Tennessee Tech",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Eastern Kentucky @ Western Carolina",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Samford @ North Alabama",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Stephen F. Austin @ McNeese St",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "St. Francis (IL) @ Illinois State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Oklahoma Panhandle State @ Incarnate Word",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
       "name": "El Paso Chihuahuas @ Oklahoma City Baseball Club",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -8796,6 +8379,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Alabama A&M @ Howard",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "19:30",
+      "date": "2026-08-29",
+      "channel": "ABC, ESPN Unlimited",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
       "name": "Lake County Captains @ Cedar Rapids Kernels",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -8864,6 +8457,16 @@
       "channel": "YouTube US",
       "reason": "channel",
       "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "UT Permian Basin @ UT Rio Grande Valley",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "20:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Tri-City Dust Devils @ Hillsboro Hops",
@@ -8956,6 +8559,26 @@
       "detail": "airs on Jazz+ \u2014 none in channels.txt"
     },
     {
+      "name": "Prairie View A&M @ Tarleton State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "21:00",
+      "date": "2026-08-29",
+      "channel": "ESPN2, ESPN Unlimited",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Southern Utah @ Montana",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "21:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
       "name": "Salt Lake Bees @ Tacoma Rainiers",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -9034,6 +8657,16 @@
       "channel": "KFVE, MW+",
       "reason": "channel",
       "detail": "airs on KFVE, MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Montana State @ Utah Tech",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "22:00",
+      "date": "2026-08-29",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Sugar Land Space Cowboys @ Las Vegas Aviators",
