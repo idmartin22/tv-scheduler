@@ -551,6 +551,8 @@ function App(){
   const [activeTVs,setActiveTVs]=useState(()=>new Set(TV_PRIO));
   const [syncStatus,setSyncStatus]=useState("idle"); // idle | loading | saving | saved | error
   const [ghaSha,setGhaSha]=useState(null);
+  const detailPanelRef=React.useRef(null);
+  const [detailPanelH,setDetailPanelH]=useState(0); // measured height of the open detail panel, so scrollable content can reserve exactly that much
   const saveTimerRef=React.useRef(null);
   const settingsLoaded=React.useRef(false);
   const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
@@ -1017,6 +1019,23 @@ function App(){
   };
   const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
 
+  // The detail panel is position:fixed at the bottom, so it sits ON TOP of the
+  // scrollable list rather than pushing it up - the last few events were
+  // unreachable while it was open. Measuring it (rather than padding by a
+  // fixed guess) matters because its height varies a lot: it grows with the
+  // score breakdown and is capped at 60vh, which is ~650px on a 1080p screen
+  // versus the 120px the tabs used to reserve.
+  useEffect(()=>{
+    if(!selEv){setDetailPanelH(0);return;}
+    const measure=()=>{const el=detailPanelRef.current; if(el) setDetailPanelH(el.offsetHeight);};
+    measure();
+    // Re-measure after paint too: on the first render of a newly opened panel
+    // the breakdown rows may not have laid out yet.
+    const raf=requestAnimationFrame(measure);
+    window.addEventListener("resize",measure);
+    return ()=>{cancelAnimationFrame(raf);window.removeEventListener("resize",measure);};
+  },[selEv,sel]);
+
   // Dynamic time window based on actual events + current time trimming
   const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
   const earliestEvt=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
@@ -1128,7 +1147,7 @@ function App(){
       </div>
 
       {tab==="grid"&&(
-        <div key={scheduleDate} style={{overflowX:"auto",paddingBottom:120}}>
+        <div key={scheduleDate} style={{overflowX:"auto",paddingBottom:120+detailPanelH}}>
           <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
 
@@ -1172,7 +1191,7 @@ function App(){
       )}
 
       {tab==="list"&&(
-        <div key={scheduleDate} style={{paddingBottom:120,maxWidth:700,margin:"0 auto"}}>
+        <div key={scheduleDate} style={{paddingBottom:120+detailPanelH,maxWidth:700,margin:"0 auto"}}>
           <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
             {["SCORE","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
           </div>
@@ -1248,7 +1267,7 @@ function App(){
       )}
 
       {tab==="rank"&&(
-        <div key={scheduleDate} style={{paddingBottom:20,maxWidth:700,margin:"0 auto"}}>
+        <div key={scheduleDate} style={{paddingBottom:20+detailPanelH,maxWidth:700,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 16px 8px"}}>
             <div style={{fontSize:11,color:C.MT}}>Tap a game for score breakdown</div>
             <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave(buildSavePayload({prioOvr:{},lastDate:scheduleDate}));}}>Reset</button>
@@ -1618,7 +1637,7 @@ function App(){
       )}
 
       {selEv&&(
-        <div style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",maxHeight:"70vh",overflowY:"auto",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
+        <div ref={detailPanelRef} style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
               <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
