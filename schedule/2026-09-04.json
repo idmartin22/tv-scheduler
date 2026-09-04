@@ -115,6 +115,35 @@
       "_score": 0
     },
     {
+      "id": 70658166,
+      "time": "06:00",
+      "name": "League Phase Draw",
+      "sport": "Soccer",
+      "league": "UEFA Women's Champions League",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "insufficient data \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 74881702,
       "time": "06:40",
       "name": "Almu\u00f1\u00e9car - Loja",
@@ -225,6 +254,34 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 61631002,
+      "time": "08:45",
+      "name": "Almu\u00f1\u00e9car - Loja",
+      "sport": "Cycling",
+      "league": "Vuelta a Espa\u00f1a",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 80862382,
@@ -844,8 +901,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.381139489194484,
-        "l": "Quality -4.4 (Detroit Tigers 0.487 vs Cleveland Guardians 0.498)"
+        "v": -4.760956175298789,
+        "l": "Quality -4.8 (Detroit Tigers 0.487 vs Cleveland Guardians 0.497)"
       },
       "_sk": {
         "v": 0,
@@ -859,7 +916,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.381139489194484
+      "_score": -4.760956175298789
     },
     {
       "id": 9981586,
@@ -1550,35 +1607,6 @@
         "l": ""
       },
       "_score": 7.779999999999987
-    },
-    {
-      "id": 47185970,
-      "time": "17:00",
-      "name": "Lindenwood @ Butler",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
     },
     {
       "id": 94430804,
@@ -2431,8 +2459,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -13.388981636060098,
-        "l": "Quality -13.4 (San Jos\u00e9 State Spartans -11.800 vs Eastern Michigan Eagles -15.100)"
+        "v": -13.261041292639135,
+        "l": "Quality -13.3 (San Jos\u00e9 State Spartans -11.700 vs Eastern Michigan Eagles -15.100)"
       },
       "_sk": {
         "v": 0,
@@ -2446,7 +2474,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.388981636060098
+      "_score": -13.261041292639135
     },
     {
       "id": 41947368,
@@ -2517,8 +2545,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 14.195888754534485,
-        "l": "Quality +14.2 (Atlanta Braves 0.523 vs Philadelphia Phillies 0.516)"
+        "v": 14.451294697903874,
+        "l": "Quality +14.5 (Atlanta Braves 0.523 vs Philadelphia Phillies 0.516)"
       },
       "_sk": {
         "v": 0,
@@ -2532,7 +2560,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.195888754534485
+      "_score": 14.451294697903874
     },
     {
       "id": 50763919,
@@ -2545,8 +2573,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -8.801571709233789,
-        "l": "Quality -8.8 (Los Angeles Angels 0.467 vs Pittsburgh Pirates 0.503)"
+        "v": -8.94422310756972,
+        "l": "Quality -8.9 (Los Angeles Angels 0.467 vs Pittsburgh Pirates 0.503)"
       },
       "_sk": {
         "v": 0,
@@ -2560,7 +2588,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.801571709233789
+      "_score": -8.94422310756972
     },
     {
       "id": 24197877,
@@ -2714,8 +2742,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -13.263772954924873,
-        "l": "Quality -13.3 (Purdue Boilermakers -0.900 vs unlisted opponent -25.750 (not in FPI pool))"
+        "v": -13.350233393177735,
+        "l": "Quality -13.4 (Purdue Boilermakers -0.900 vs unlisted opponent -26.080 (not in FPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -2729,7 +2757,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.263772954924873
+      "_score": -13.350233393177735
     },
     {
       "id": 74671207,
@@ -2744,7 +2772,7 @@
       "dur": 210,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (Georgia State Panthers -15.200 vs unlisted opponent -25.750 (not in FPI pool))"
+        "l": "Quality -20.0 (Georgia State Panthers -15.200 vs unlisted opponent -26.080 (not in FPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -3109,6 +3137,35 @@
       "_score": 0
     },
     {
+      "id": 98848513,
+      "time": "19:00",
+      "name": "Lindenwood @ Butler",
+      "sport": "Soccer",
+      "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
       "id": 77102290,
       "time": "19:00",
       "name": "UC Santa Barbara @ Cornell",
@@ -3437,8 +3494,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -8.212180746561883,
-        "l": "Quality -8.2 (San Francisco Giants 0.478 vs New York Mets 0.494)"
+        "v": -8.346613545816728,
+        "l": "Quality -8.3 (San Francisco Giants 0.478 vs New York Mets 0.494)"
       },
       "_sk": {
         "v": 0,
@@ -3452,7 +3509,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.212180746561883
+      "_score": -8.346613545816728
     },
     {
       "id": 77335357,
@@ -3465,8 +3522,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.381139489194484,
-        "l": "Quality -4.4 (Detroit Tigers 0.487 vs Cleveland Guardians 0.498)"
+        "v": -4.760956175298789,
+        "l": "Quality -4.8 (Detroit Tigers 0.487 vs Cleveland Guardians 0.497)"
       },
       "_sk": {
         "v": 0,
@@ -3480,7 +3537,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.381139489194484
+      "_score": -4.760956175298789
     },
     {
       "id": 5415405,
@@ -3893,8 +3950,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0.4901374775851777,
-        "l": "Quality +0.5 (UTEP Miners -16.600 vs Oklahoma Sooners 17.800)"
+        "v": 0.4449075280020851,
+        "l": "Quality +0.4 (UTEP Miners -16.600 vs Oklahoma Sooners 17.800)"
       },
       "_sk": {
         "v": 0,
@@ -3908,7 +3965,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.4901374775851777
+      "_score": 0.4449075280020851
     },
     {
       "id": 8934152,
@@ -3921,8 +3978,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0.4901374775851777,
-        "l": "Quality +0.5 (UTEP Miners -16.600 vs Oklahoma Sooners 17.800)"
+        "v": 0.4449075280020851,
+        "l": "Quality +0.4 (UTEP Miners -16.600 vs Oklahoma Sooners 17.800)"
       },
       "_sk": {
         "v": 0,
@@ -3936,7 +3993,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.4901374775851777
+      "_score": 0.4449075280020851
     },
     {
       "id": 34571514,
@@ -3949,8 +4006,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -11.410684474123538,
-        "l": "Quality -11.4 (Kansas Jayhawks 2.800 vs unlisted opponent -25.750 (not in FPI pool))"
+        "v": -11.516840215439855,
+        "l": "Quality -11.5 (Kansas Jayhawks 2.800 vs unlisted opponent -26.080 (not in FPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -3964,7 +4021,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.410684474123538
+      "_score": -11.516840215439855
     },
     {
       "id": 86449015,
@@ -3977,7 +4034,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -1.2687813021702818,
+        "v": -1.3192100538599623,
         "l": "Quality -1.3 (Toledo Rockets -3.000 vs Michigan State Spartans 0.300)"
       },
       "_sk": {
@@ -3992,7 +4049,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.2687813021702818
+      "_score": -1.3192100538599623
     },
     {
       "id": 91104126,
@@ -4411,7 +4468,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.411835026897791,
+        "v": 7.382651732221934,
         "l": "Quality +7.4 (Miami Hurricanes 21.800 vs Stanford Cardinal -1.300)"
       },
       "_sk": {
@@ -4426,7 +4483,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.411835026897791
+      "_score": 7.382651732221934
     },
     {
       "id": 92692707,
@@ -4440,8 +4497,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 4.040645546921699,
-        "l": "Quality +4.0 (Fresno State Bulldogs -2.500 vs USC Trojans 13.600)"
+        "v": 4.147434227663456,
+        "l": "Quality +4.1 (Fresno State Bulldogs -2.500 vs USC Trojans 14.000)"
       },
       "_sk": {
         "v": 0,
@@ -4455,7 +4512,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.040645546921699
+      "_score": 4.147434227663456
     },
     {
       "id": 99046373,
@@ -4584,8 +4641,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.117291414752076,
-        "l": "Quality +9.1 (New York Yankees 0.519 vs San Diego Padres 0.506)"
+        "v": 9.272503082614037,
+        "l": "Quality +9.3 (New York Yankees 0.519 vs San Diego Padres 0.506)"
       },
       "_sk": {
         "v": 0,
@@ -4599,7 +4656,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.117291414752076
+      "_score": 9.272503082614037
     },
     {
       "id": 42079791,
@@ -4840,8 +4897,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 6.940749697702588,
-        "l": "Quality +6.9 (Washington Nationals 0.497 vs Los Angeles Dodgers 0.522)"
+        "v": 7.422934648582022,
+        "l": "Quality +7.4 (Washington Nationals 0.497 vs Los Angeles Dodgers 0.523)"
       },
       "_sk": {
         "v": 0,
@@ -4855,7 +4912,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.940749697702588
+      "_score": 7.422934648582022
     },
     {
       "id": 11853770,
@@ -4868,8 +4925,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -12.632612966601155,
-        "l": "Quality -12.6 (Athletics Athletics 0.465 vs Seattle Mariners 0.492)"
+        "v": -12.828685258964121,
+        "l": "Quality -12.8 (Athletics Athletics 0.466 vs Seattle Mariners 0.491)"
       },
       "_sk": {
         "v": 0,
@@ -4883,7 +4940,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.632612966601155
+      "_score": -12.828685258964121
     },
     {
       "id": 75307659,
@@ -5202,6 +5259,16 @@
       "detail": "airs on Summit League Network, Midco Sports Plus \u2014 none in channels.txt"
     },
     {
+      "name": "Worcester Red Sox @ Buffalo Bisons",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "14:00",
+      "date": "2026-09-04",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Rali Ceredigion",
       "league": "European Rally Championship",
       "sport": "Motorsports",
@@ -5332,16 +5399,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Worcester Red Sox @ Buffalo Bisons",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "16:05",
-      "date": "2026-09-04",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
       "name": "Saratoga Live",
       "league": "Horse Racing",
       "sport": "Equestrian",
@@ -5382,6 +5439,16 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Great Lakes Loons @ Lake County Captains",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:00",
+      "date": "2026-09-04",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Northern Iowa @ Utah Valley",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
@@ -5390,6 +5457,16 @@
       "channel": "Midco Sports Plus",
       "reason": "channel",
       "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Worcester Red Sox @ Buffalo Bisons",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "17:05",
+      "date": "2026-09-04",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Chicago Fire FC II @ Crown Legacy FC",
@@ -5493,6 +5570,16 @@
     },
     {
       "name": "Somerset Patriots @ Erie SeaWolves",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "18:05",
+      "date": "2026-09-04",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Richmond Flying Squirrels @ Akron RubberDucks",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "18:05",
@@ -5712,14 +5799,14 @@
       "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
     },
     {
-      "name": "Great Lakes Loons @ Lake County Captains",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
+      "name": "Austin FC II @ Houston Dynamo 2",
+      "league": "MLS Next Pro",
+      "sport": "Soccer",
       "time": "19:00",
       "date": "2026-09-04",
-      "channel": "Bally Sports Live, MiLB.TV",
+      "channel": "MLSNEXTPro.com",
       "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+      "detail": "airs on MLSNEXTPro.com \u2014 none in channels.txt"
     },
     {
       "name": "New Hampshire Fisher Cats @ Binghamton Rumble Ponies",
@@ -6062,16 +6149,6 @@
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "London Knights @ Victoria Royals",
-      "league": "OHL",
-      "sport": "Hockey",
-      "time": "19:05",
-      "date": "2026-09-04",
-      "channel": "FloHockey",
-      "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
       "name": "Worcester Red Sox @ Buffalo Bisons",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -6120,16 +6197,6 @@
       "channel": "NESN Plus, Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on NESN Plus, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Richmond Flying Squirrels @ Akron RubberDucks",
-      "league": "Minor League Baseball",
-      "sport": "Baseball",
-      "time": "19:17",
-      "date": "2026-09-04",
-      "channel": "Bally Sports Live, MiLB.TV",
-      "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "BC Lions @ Montreal Alouettes",
@@ -6213,6 +6280,16 @@
     },
     {
       "name": "Lakeland Flying Tigers @ Bradenton Marauders",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "20:00",
+      "date": "2026-09-04",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Great Lakes Loons @ Lake County Captains",
       "league": "Minor League Baseball",
       "sport": "Baseball",
       "time": "20:00",
@@ -6490,6 +6567,16 @@
       "channel": "Jazz+",
       "reason": "channel",
       "detail": "airs on Jazz+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Richmond Flying Squirrels @ Akron RubberDucks",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "21:05",
+      "date": "2026-09-04",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Boston Legacy FC @ Utah Royals",
