@@ -123,7 +123,8 @@
       "league": "U.S. Open",
       "ch": [
         "ESPN",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 150,
       "_st": {
@@ -143,6 +144,34 @@
         "l": ""
       },
       "_score": 10
+    },
+    {
+      "id": 2407892,
+      "time": "11:30",
+      "name": "Folds of Honor Collegiate",
+      "sport": "Golf",
+      "league": "Women's College Golf",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 99898667,
@@ -207,11 +236,13 @@
       "sport": "Soccer",
       "league": "UEFA Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "ViX",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
-        "v": 65.06787366233465,
+        "v": 65.06917275657145,
         "l": "Quality +12.1 (GFR 84.4-94.3 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
       },
       "_sk": {
@@ -226,7 +257,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 65.06787366233465
+      "_score": 65.06917275657145
     },
     {
       "id": 91117002,
@@ -240,8 +271,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 63.37140733578197,
-        "l": "Quality +10.4 (GFR 86.6-88.8 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
+        "v": 63.561449658270334,
+        "l": "Quality +10.6 (GFR 86.3-89.5 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
       },
       "_sk": {
         "v": 0,
@@ -255,7 +286,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 63.37140733578197
+      "_score": 63.561449658270334
     },
     {
       "id": 89494206,
@@ -269,8 +300,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -5.657370517928274,
-        "l": "Quality -5.7 (Minnesota Twins 0.494 vs Detroit Tigers 0.487)"
+        "v": -6.693548387096827,
+        "l": "Quality -6.7 (Minnesota Twins 0.493 vs Detroit Tigers 0.485)"
       },
       "_sk": {
         "v": 0,
@@ -284,7 +315,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.657370517928274
+      "_score": -6.693548387096827
     },
     {
       "id": 2751644,
@@ -298,8 +329,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.36814054685002,
-        "l": "Quality +4.6 (GFR 72.4-85.1 vs tier1 baseline 153.2 (Pro League (Saudi Arabia)), mod +35.8), Mod +35.8"
+        "v": 39.442615589262765,
+        "l": "Quality +3.7 (GFR 71.5-85.1 vs tier1 baseline 153.2 (Pro League (Saudi Arabia)), mod +35.8), Mod +35.8"
       },
       "_sk": {
         "v": 0,
@@ -313,7 +344,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.36814054685002
+      "_score": 39.442615589262765
     },
     {
       "id": 3901048,
@@ -355,7 +386,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 42.540118100665985,
+        "v": 42.550118100665976,
         "l": "Quality +2.2 (GFR 81.8-81.3 vs tier1 baseline 162.3 (Championship (England)), mod +40.3), Mod +40.3"
       },
       "_sk": {
@@ -370,7 +401,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 42.540118100665985
+      "_score": 42.550118100665976
+    },
+    {
+      "id": 28568246,
+      "time": "15:00",
+      "name": "Queens Park Rangers @ Charlton Athletic",
+      "sport": "Soccer",
+      "league": "Championship",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 35.571629706028276,
+        "l": "Quality -4.8 (GFR 80.9-80.0 vs tier1 baseline 162.3 (Championship (England)), mod +40.3), Mod +40.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 35.571629706028276
     },
     {
       "id": 41055755,
@@ -408,12 +467,14 @@
       "sport": "Soccer",
       "league": "UEFA Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "ViX",
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
-        "v": 67.11076554506029,
-        "l": "Quality +14.1 (GFR 89.3-93.4 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
+        "v": 67.41225594987726,
+        "l": "Quality +14.4 (GFR 89.3-94.0 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
       },
       "_sk": {
         "v": 0,
@@ -427,7 +488,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 67.11076554506029
+      "_score": 67.41225594987726
     },
     {
       "id": 69076490,
@@ -440,7 +501,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 51.096093316052645,
+        "v": 51.13102938458698,
         "l": "Quality +1.1 (GFR 89.9-92.3 vs tier1 baseline 181.6 (Premier League (England)), mod +50.0), Mod +50.0"
       },
       "_sk": {
@@ -455,7 +516,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 51.096093316052645
+      "_score": 51.13102938458698
     },
     {
       "id": 13973677,
@@ -468,8 +529,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 63.66179346375044,
-        "l": "Quality +10.7 (GFR 81.7-94.3 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
+        "v": 63.0266154511027,
+        "l": "Quality +10.0 (GFR 81.7-93.0 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
       },
       "_sk": {
         "v": 0,
@@ -483,7 +544,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 63.66179346375044
+      "_score": 63.0266154511027
     },
     {
       "id": 70478749,
@@ -497,8 +558,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 64.37502254998883,
-        "l": "Quality +11.4 (GFR 87.1-90.3 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
+        "v": 64.64130539083736,
+        "l": "Quality +11.6 (GFR 87.6-90.3 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
       },
       "_sk": {
         "v": 0,
@@ -512,7 +573,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 64.37502254998883
+      "_score": 64.64130539083736
     },
     {
       "id": 39835744,
@@ -521,11 +582,12 @@
       "sport": "Soccer",
       "league": "UEFA Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
-        "v": 68.81232636508612,
+        "v": 68.81301220674486,
         "l": "Quality +15.8 (GFR 97.2-88.8 vs tier3 baseline 155.0 (UEFA confederation), mod +53.0), Mod +53.0"
       },
       "_sk": {
@@ -540,7 +602,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 68.81232636508612
+      "_score": 68.81301220674486
     },
     {
       "id": 47567827,
@@ -611,8 +673,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -5.956175298804769,
-        "l": "Quality -6.0 (Texas Rangers 0.489 vs Seattle Mariners 0.491)"
+        "v": -6.693548387096827,
+        "l": "Quality -6.7 (Texas Rangers 0.488 vs Seattle Mariners 0.490)"
       },
       "_sk": {
         "v": 0,
@@ -626,7 +688,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.956175298804769
+      "_score": -6.693548387096827
+    },
+    {
+      "id": 97430637,
+      "time": "16:30",
+      "name": "Folds of Honor Collegiate",
+      "sport": "Golf",
+      "league": "College Golf",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 94012436,
@@ -900,8 +990,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 59.06080714125333,
-        "l": "Quality +13.0 (GFR 82.3-87.8 vs tier3 baseline 156.3 (CONMEBOL confederation), mod +46.1), Mod +46.1"
+        "v": 59.35957846103914,
+        "l": "Quality +13.2 (GFR 82.6-87.8 vs tier3 baseline 156.3 (CONMEBOL confederation), mod +46.1), Mod +46.1"
       },
       "_sk": {
         "v": 0,
@@ -915,7 +1005,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 59.06080714125333
+      "_score": 59.35957846103914
     },
     {
       "id": 71383670,
@@ -928,7 +1018,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.28545304777595,
+        "v": 46.29545304777594,
         "l": "Quality +3.2 (GFR 85.1-84.3 vs tier1 baseline 167.9 (Serie A (Brazil)), mod +43.1), Mod +43.1"
       },
       "_sk": {
@@ -943,7 +1033,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.28545304777595
+      "_score": 46.29545304777594
     },
     {
       "id": 82484184,
@@ -1013,8 +1103,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.4741035856573443,
-        "l": "Quality -1.5 (Cleveland Guardians 0.497 vs Baltimore Orioles 0.498)"
+        "v": -1.2500000000000608,
+        "l": "Quality -1.3 (Cleveland Guardians 0.498 vs Baltimore Orioles 0.498)"
       },
       "_sk": {
         "v": 0,
@@ -1028,7 +1118,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.4741035856573443
+      "_score": -1.2500000000000608
     },
     {
       "id": 8003661,
@@ -1245,8 +1335,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 16.670776818742258,
-        "l": "Quality +16.7 (Tampa Bay Rays 0.522 vs Atlanta Braves 0.523)"
+        "v": 16.778042959427236,
+        "l": "Quality +16.8 (Tampa Bay Rays 0.523 vs Atlanta Braves 0.524)"
       },
       "_sk": {
         "v": 0,
@@ -1260,7 +1350,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.670776818742258
+      "_score": 16.778042959427236
     },
     {
       "id": 13513016,
@@ -1273,8 +1363,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 32.084274275095,
-        "l": "Quality -7.1 (GFR 79.7-77.4 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 32.09427427509499,
+        "l": "Quality -7.1 (GFR 79.7-77.4 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1288,7 +1378,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 32.084274275095
+      "_score": 32.09427427509499
     },
     {
       "id": 43312343,
@@ -1301,8 +1391,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 32.47781367002824,
-        "l": "Quality -6.7 (GFR 80.2-77.0 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 32.48781367002823,
+        "l": "Quality -6.7 (GFR 80.2-77.0 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1316,7 +1406,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 32.47781367002824
+      "_score": 32.48781367002823
     },
     {
       "id": 52566010,
@@ -1329,8 +1419,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 36.21643792189343,
-        "l": "Quality -2.9 (GFR 80.9-77.8 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 36.22643792189342,
+        "l": "Quality -2.9 (GFR 80.9-77.8 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1344,7 +1434,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 36.21643792189343
+      "_score": 36.22643792189342
     },
     {
       "id": 53274807,
@@ -1359,8 +1449,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.51170840633488,
-        "l": "Quality +6.4 (GFR 81.1-80.9 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 45.521708406334874,
+        "l": "Quality +6.4 (GFR 81.1-80.9 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1374,7 +1464,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.51170840633488
+      "_score": 45.521708406334874
     },
     {
       "id": 18915619,
@@ -1387,8 +1477,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 41.05947713765513,
-        "l": "Quality +1.9 (GFR 82.6-78.0 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 40.729376137964266,
+        "l": "Quality +1.6 (GFR 82.5-78.0 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1402,7 +1492,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 41.05947713765513
+      "_score": 40.729376137964266
     },
     {
       "id": 96163114,
@@ -1415,7 +1505,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 26.291550188050692,
+        "v": 26.301594405594393,
         "l": "Quality -8.1 (GFR 63.2-78.0 vs tier3 baseline 150.4 (CONCACAF confederation), mod +34.4), Mod +34.4"
       },
       "_sk": {
@@ -1430,7 +1520,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 26.291550188050692
+      "_score": 26.301594405594393
     },
     {
       "id": 53676650,
@@ -1440,7 +1530,8 @@
       "league": "U.S. Open",
       "ch": [
         "ESPN",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 150,
       "_st": {
@@ -1472,8 +1563,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 18.150431565967903,
-        "l": "Quality +18.2 (Chicago Cubs 0.518 vs Milwaukee Brewers 0.531)"
+        "v": 18.210023866348482,
+        "l": "Quality +18.2 (Chicago Cubs 0.519 vs Milwaukee Brewers 0.532)"
       },
       "_sk": {
         "v": 0,
@@ -1487,7 +1578,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.150431565967903
+      "_score": 18.210023866348482
     },
     {
       "id": 85795972,
@@ -1500,8 +1591,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 37.66761444070948,
-        "l": "Quality -1.5 (GFR 79.1-80.2 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 37.94817277472607,
+        "l": "Quality -1.2 (GFR 79.1-80.3 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1515,7 +1606,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 37.66761444070948
+      "_score": 37.94817277472607
     },
     {
       "id": 65978811,
@@ -1645,8 +1736,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 33.46166215736115,
-        "l": "Quality -5.7 (GFR 79.3-78.3 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 33.47166215736114,
+        "l": "Quality -5.7 (GFR 79.3-78.3 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1660,7 +1751,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 33.46166215736115
+      "_score": 33.47166215736114
     },
     {
       "id": 31258079,
@@ -1673,8 +1764,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 55.621983578961874,
-        "l": "Quality +16.5 (GFR 83.3-81.9 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 55.631983578961865,
+        "l": "Quality +16.5 (GFR 83.3-81.9 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1688,7 +1779,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 55.621983578961874
+      "_score": 55.631983578961865
     },
     {
       "id": 81824235,
@@ -1701,8 +1792,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 39.85366450238774,
-        "l": "Quality +0.7 (GFR 79.4-80.8 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 39.86366450238773,
+        "l": "Quality +0.7 (GFR 79.4-80.8 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1716,7 +1807,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 39.85366450238774
+      "_score": 39.86366450238773
     },
     {
       "id": 31993363,
@@ -1729,8 +1820,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.913645951424016,
-        "l": "Quality +6.8 (GFR 81.5-80.7 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 45.92364595142401,
+        "l": "Quality +6.8 (GFR 81.5-80.7 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1744,7 +1835,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.913645951424016
+      "_score": 45.92364595142401
     },
     {
       "id": 68044535,
@@ -1758,7 +1849,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 57.30086179467705,
+        "v": 57.31922870588686,
         "l": "Quality +11.2 (GFR 84.5-83.7 vs tier3 baseline 156.3 (CONMEBOL confederation), mod +46.1), Mod +46.1"
       },
       "_sk": {
@@ -1773,7 +1864,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 57.30086179467705
+      "_score": 57.31922870588686
     },
     {
       "id": 21115277,
@@ -1874,8 +1965,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 6.313193588162748,
-        "l": "Quality +6.3 (Cincinnati Reds 0.494 vs Los Angeles Dodgers 0.523)"
+        "v": 6.39618138424816,
+        "l": "Quality +6.4 (Cincinnati Reds 0.494 vs Los Angeles Dodgers 0.524)"
       },
       "_sk": {
         "v": 0,
@@ -1889,7 +1980,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.313193588162748
+      "_score": 6.39618138424816
     },
     {
       "id": 58002765,
@@ -1902,8 +1993,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 41.09039541035427,
-        "l": "Quality +1.9 (GFR 77.9-82.7 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 41.10039541035426,
+        "l": "Quality +1.9 (GFR 77.9-82.7 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1917,7 +2008,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 41.09039541035427
+      "_score": 41.10039541035426
     },
     {
       "id": 82574620,
@@ -1930,8 +2021,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 42.759982136109244,
-        "l": "Quality +3.6 (GFR 80.8-80.3 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 42.769982136109235,
+        "l": "Quality +3.6 (GFR 80.8-80.3 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1945,7 +2036,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 42.759982136109244
+      "_score": 42.769982136109235
     },
     {
       "id": 6067770,
@@ -1958,8 +2049,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.872828837692445,
-        "l": "Quality -0.3 (GFR 79.0-80.8 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 38.882828837692436,
+        "l": "Quality -0.3 (GFR 79.0-80.8 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -1973,7 +2064,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.872828837692445
+      "_score": 38.882828837692436
     },
     {
       "id": 59315501,
@@ -1986,8 +2077,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.48079013363575,
-        "l": "Quality +6.3 (GFR 78.9-83.1 vs tier1 baseline 159.9 (MLS (USA)), mod +39.1), Mod +39.1"
+        "v": 45.49079013363574,
+        "l": "Quality +6.3 (GFR 78.9-83.1 vs tier1 baseline 159.9 (MLS (USA)), mod +39.2), Mod +39.2"
       },
       "_sk": {
         "v": 0,
@@ -2001,10 +2092,40 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.48079013363575
+      "_score": 45.49079013363574
     }
   ],
   "dropped": [
+    {
+      "name": "Nippon Ham Fighters @ Fukuoka",
+      "league": "NPB",
+      "sport": "Baseball",
+      "time": "05:00",
+      "date": "2026-09-09",
+      "channel": "Next Level Sports",
+      "reason": "channel",
+      "detail": "airs on Next Level Sports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Atl\u00e9tico Madrid U19 @ Liverpool U19",
+      "league": "UEFA Youth League",
+      "sport": "Soccer",
+      "time": "10:00",
+      "date": "2026-09-09",
+      "channel": "All Red Video",
+      "reason": "channel",
+      "detail": "airs on All Red Video \u2014 none in channels.txt"
+    },
+    {
+      "name": "U.S. Open",
+      "league": "U.S. Open",
+      "sport": "Tennis",
+      "time": "11:00",
+      "date": "2026-09-09",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
+    },
     {
       "name": "Knoxville Smokies @ Birmingham Barons",
       "league": "Minor League Baseball",
@@ -2024,6 +2145,16 @@
       "channel": "Bally Sports Live, MiLB.TV",
       "reason": "channel",
       "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Kentucky Downs",
+      "league": "Horse Racing",
+      "sport": "Equestrian",
+      "time": "12:05",
+      "date": "2026-09-09",
+      "channel": "Peacock, NBC Sports Network Extra",
+      "reason": "marquee",
+      "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
       "name": "Sugar Land Space Cowboys @ Oklahoma City Baseball Club",
@@ -2056,14 +2187,14 @@
       "detail": "airs on Marquee Sports Network, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Queens Park Rangers @ Charlton Athletic",
-      "league": "Championship",
-      "sport": "Soccer",
-      "time": "15:00",
+      "name": "Kentucky Downs",
+      "league": "Horse Racing",
+      "sport": "Equestrian",
+      "time": "13:30",
       "date": "2026-09-09",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "channel": "NBC Sports Network",
+      "reason": "marquee",
+      "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
       "name": "Toronto Blue Jays @ Athletics",
