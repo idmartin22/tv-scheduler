@@ -31,34 +31,6 @@
       "_score": 15
     },
     {
-      "id": 66003243,
-      "time": "05:00",
-      "name": "Grand Prix de Fourmies",
-      "sport": "Cycling",
-      "league": "Women's Road Cycling",
-      "ch": [
-        "HBO Max (US)"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Cycling event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
       "id": 93723702,
       "time": "05:25",
       "name": "Spanish Grand Prix",
@@ -85,6 +57,34 @@
         "l": ""
       },
       "_score": 25
+    },
+    {
+      "id": 88158588,
+      "time": "06:15",
+      "name": "Brussels Urban Sessions",
+      "sport": "Cycling",
+      "league": "Other",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 91320285,
@@ -208,11 +208,12 @@
       "league": "La Liga",
       "ch": [
         "ESPN Unlimited",
-        "ESPN Select"
+        "ESPN Select",
+        "ESPN Deportes"
       ],
       "dur": 120,
       "_st": {
-        "v": 38.61253996142827,
+        "v": 38.61253996142829,
         "l": "Quality -2.4 (GFR 83.7-78.4 vs tier2 baseline 163.7 (Spain (cross-tier)), mod +41.0), Mod +41.0"
       },
       "_sk": {
@@ -227,40 +228,12 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.61253996142827
+      "_score": 38.61253996142829
     },
     {
       "id": 3207414,
       "time": "08:00",
       "name": "Grand Prix de Fourmies",
-      "sport": "Cycling",
-      "league": "Men's Road Cycling",
-      "ch": [
-        "HBO Max (US)"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Cycling event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
-      "id": 74754050,
-      "time": "08:00",
-      "name": "Trofeo Matteotti",
       "sport": "Cycling",
       "league": "Men's Road Cycling",
       "ch": [
@@ -352,8 +325,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.004620027434825,
-        "l": "Quality -14.8 (GFR 82.1-82.1 vs tier1 baseline 171.2 (Serie A (Italy)), mod +44.8), Mod +44.8"
+        "v": 28.359330760404667,
+        "l": "Quality -16.4 (GFR 82.1-81.3 vs tier1 baseline 171.2 (Serie A (Italy)), mod +44.8), Mod +44.8"
       },
       "_sk": {
         "v": 0,
@@ -367,7 +340,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.004620027434825
+      "_score": 28.359330760404667
     },
     {
       "id": 30688995,
@@ -437,7 +410,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.438178249492296,
+        "v": 43.43817824949231,
         "l": "Quality +8.8 (GFR 78.7-90.6 vs tier2 baseline 150.9 (England (cross-tier)), mod +34.7), Mod +34.7"
       },
       "_sk": {
@@ -452,7 +425,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.438178249492296
+      "_score": 43.43817824949231
     },
     {
       "id": 316903,
@@ -539,18 +512,18 @@
       "_score": 0.0
     },
     {
-      "id": 67491459,
+      "id": 560612,
       "time": "09:00",
-      "name": "Spanish Grand Prix",
-      "sport": "Motorsports",
-      "league": "Formula 1",
+      "name": "Brussels Urban Sessions",
+      "sport": "Cycling",
+      "league": "Other",
       "ch": [
-        "Apple TV"
+        "HBO Max (US)"
       ],
-      "dur": 240,
+      "dur": 120,
       "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
+        "v": 15,
+        "l": "Cycling event +15"
       },
       "_sk": {
         "v": 0,
@@ -564,7 +537,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": 25
+      "_score": 15
+    },
+    {
+      "id": 59690855,
+      "time": "09:00",
+      "name": "Trofeo Matteotti",
+      "sport": "Cycling",
+      "league": "Men's Road Cycling",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 95028100,
@@ -658,7 +659,8 @@
       "league": "La Liga",
       "ch": [
         "ESPN Unlimited",
-        "ESPN Select"
+        "ESPN Select",
+        "ESPN Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -688,6 +690,34 @@
       "ch": [
         "Peacock",
         "NBC Sports Network Extra"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 72301611,
+      "time": "10:20",
+      "name": "Grand Prix de Fourmies",
+      "sport": "Cycling",
+      "league": "Women's Road Cycling",
+      "ch": [
+        "HBO Max (US)"
       ],
       "dur": 120,
       "_st": {
@@ -1209,8 +1239,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 31.80504842820734,
-        "l": "Quality -13.4 (GFR 85.0-83.1 vs tier1 baseline 172.1 (LaLiga (Spain)), mod +45.2), Mod +45.2"
+        "v": 33.8896781609196,
+        "l": "Quality -11.4 (GFR 85.0-83.4 vs tier1 baseline 172.1 (LaLiga (Spain)), mod +45.2), Mod +45.2"
       },
       "_sk": {
         "v": 0,
@@ -1224,7 +1254,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 31.80504842820734
+      "_score": 33.8896781609196
     },
     {
       "id": 77150966,
@@ -1723,35 +1753,6 @@
       "id": 48307230,
       "time": "13:00",
       "name": "Dartmouth @ Colgate",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 65848260,
-      "time": "13:00",
-      "name": "Quinnipiac @ Lafayette",
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
@@ -2385,6 +2386,35 @@
       "_score": 58.31829954452084
     },
     {
+      "id": 14619655,
+      "time": "13:30",
+      "name": "Quinnipiac @ Lafayette",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 67085103,
       "time": "13:30",
       "name": "Alcorn State @ Troy",
@@ -2414,18 +2444,18 @@
       "_score": 0.0
     },
     {
-      "id": 18986438,
-      "time": "13:35",
-      "name": "Kansas City Royals @ Boston Red Sox",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 84474876,
+      "time": "13:30",
+      "name": "Sanford International",
+      "sport": "Golf",
+      "league": "PGA Tour Champions",
       "ch": [
-        "MLB Network"
+        "Golf Channel USA"
       ],
-      "dur": 180,
+      "dur": 240,
       "_st": {
-        "v": -1.1931243680485697,
-        "l": "Quality -1.2 (Kansas City Royals 0.482 vs Boston Red Sox 0.514)"
+        "v": 15,
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -2439,7 +2469,35 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.1931243680485697
+      "_score": 15
+    },
+    {
+      "id": 18986438,
+      "time": "13:35",
+      "name": "Kansas City Royals @ Boston Red Sox",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -1.231079717457177,
+        "l": "Quality -1.2 (Kansas City Royals 0.481 vs Boston Red Sox 0.515)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.231079717457177
     },
     {
       "id": 99154847,
@@ -2452,8 +2510,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 14.188861985472155,
-        "l": "Quality +14.2 (Philadelphia Phillies 0.515 vs Atlanta Braves 0.524)"
+        "v": 14.028103044496492,
+        "l": "Quality +14.0 (Philadelphia Phillies 0.516 vs Atlanta Braves 0.524)"
       },
       "_sk": {
         "v": 0,
@@ -2467,7 +2525,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.188861985472155
+      "_score": 14.028103044496492
     },
     {
       "id": 79105270,
@@ -2480,8 +2538,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.745762711864324,
-        "l": "Quality +4.7 (Houston Astros 0.491 vs Tampa Bay Rays 0.522)"
+        "v": 4.543325526931996,
+        "l": "Quality +4.5 (Houston Astros 0.491 vs Tampa Bay Rays 0.522)"
       },
       "_sk": {
         "v": 0,
@@ -2495,7 +2553,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.745762711864324
+      "_score": 4.543325526931996
     },
     {
       "id": 53248014,
@@ -3143,8 +3201,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -2.7098078867543327,
-        "l": "Quality -2.7 (Cleveland Guardians 0.498 vs Minnesota Twins 0.493)"
+        "v": -3.350151362260403,
+        "l": "Quality -3.4 (Cleveland Guardians 0.497 vs Minnesota Twins 0.492)"
       },
       "_sk": {
         "v": 0,
@@ -3158,7 +3216,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.7098078867543327
+      "_score": -3.350151362260403
     },
     {
       "id": 66820720,
@@ -3171,8 +3229,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.467312348668239,
-        "l": "Quality +9.5 (Cincinnati Reds 0.496 vs Milwaukee Brewers 0.530)"
+        "v": 9.461358313817348,
+        "l": "Quality +9.5 (Cincinnati Reds 0.496 vs Milwaukee Brewers 0.531)"
       },
       "_sk": {
         "v": 0,
@@ -3186,7 +3244,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.467312348668239
+      "_score": 9.461358313817348
     },
     {
       "id": 34918630,
@@ -3315,7 +3373,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.052375141956844,
+        "v": 30.052652746638287,
         "l": "Quality -4.3 (GFR 67.3-78.2 vs tier3 baseline 150.4 (CONCACAF confederation), mod +34.4), Mod +34.4"
       },
       "_sk": {
@@ -3330,7 +3388,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.052375141956844
+      "_score": 30.052652746638287
     },
     {
       "id": 46228627,
@@ -3372,8 +3430,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.4322711279752,
-        "l": "Quality +0.2 (GFR 86.8-85.4 vs tier1 baseline 172.1 (LaLiga (Spain)), mod +45.2), Mod +45.2"
+        "v": 46.56369575715766,
+        "l": "Quality +1.3 (GFR 86.8-86.2 vs tier1 baseline 172.1 (LaLiga (Spain)), mod +45.2), Mod +45.2"
       },
       "_sk": {
         "v": 0,
@@ -3387,7 +3445,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.4322711279752
+      "_score": 46.56369575715766
     },
     {
       "id": 87593129,
@@ -3719,7 +3777,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.245999999999995,
+        "v": 7.237249999999989,
         "l": "Quality -20.0 (GFR 39.7 (not rated yet)-63.7 vs tier1 baseline 136.1 (Premier League (Canada) \u2014 opponent not in GFR), mod +27.2), Mod +27.2"
       },
       "_sk": {
@@ -3734,7 +3792,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.245999999999995
+      "_score": 7.237249999999989
     },
     {
       "id": 90285072,
@@ -3880,34 +3938,6 @@
         "l": ""
       },
       "_score": 0.0
-    },
-    {
-      "id": 20125857,
-      "time": "15:00",
-      "name": "Marquette @ Illinois",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 77422556,
@@ -4120,7 +4150,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 21.21849999999999,
+        "v": 21.221833333333336,
         "l": "Quality -20.0 (GFR 39.7 (not rated yet)-82.8 vs tier1 baseline 164.1 (Liga Portugal (Portugal) \u2014 opponent not in GFR), mod +41.2), Mod +41.2"
       },
       "_sk": {
@@ -4135,7 +4165,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 21.21849999999999
+      "_score": 21.221833333333336
     },
     {
       "id": 84833443,
@@ -4658,6 +4688,34 @@
       "_score": 10
     },
     {
+      "id": 37320756,
+      "time": "17:00",
+      "name": "Simmons Bank Open",
+      "sport": "Golf",
+      "league": "Korn Ferry Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 70467102,
       "time": "17:30",
       "name": "New England Revolution @ Chicago Fire",
@@ -4725,8 +4783,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 29.968136620441673,
-        "l": "Quality +2.7 (GFR 73.8-63.7 vs tier1 baseline 136.1 (Premier League (Canada)), mod +27.2), Mod +27.2"
+        "v": 30.620801494196098,
+        "l": "Quality +3.4 (GFR 74.1-63.7 vs tier1 baseline 136.1 (Premier League (Canada)), mod +27.2), Mod +27.2"
       },
       "_sk": {
         "v": 0,
@@ -4740,7 +4798,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 29.968136620441673
+      "_score": 30.620801494196098
     },
     {
       "id": 90346571,
@@ -4985,8 +5043,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.45007180887293,
-        "l": "Quality +5.7 (GFR 81.3-83.9 vs tier1 baseline 163.2 (Liga Profesional (Argentina)), mod +40.8), Mod +40.8"
+        "v": 46.63131021191208,
+        "l": "Quality +5.9 (GFR 81.3-83.9 vs tier1 baseline 163.2 (Liga Profesional (Argentina)), mod +40.8), Mod +40.8"
       },
       "_sk": {
         "v": 0,
@@ -5000,7 +5058,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.45007180887293
+      "_score": 46.63131021191208
     },
     {
       "id": 51243658,
@@ -5128,7 +5186,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.245999999999995,
+        "v": 7.237249999999989,
         "l": "Quality -20.0 (GFR 39.7 (not rated yet)-63.7 vs tier1 baseline 136.1 (Premier League (Canada) \u2014 opponent not in GFR), mod +27.2), Mod +27.2"
       },
       "_sk": {
@@ -5143,7 +5201,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.245999999999995
+      "_score": 7.237249999999989
     },
     {
       "id": 76768856,
@@ -5389,8 +5447,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -4.529828109201249,
-        "l": "Quality -4.5 (San Diego Padres 0.508 vs San Francisco Giants 0.477)"
+        "v": -3.955600403632753,
+        "l": "Quality -4.0 (San Diego Padres 0.509 vs San Francisco Giants 0.478)"
       },
       "_sk": {
         "v": 0,
@@ -5404,7 +5462,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.529828109201249
+      "_score": -3.955600403632753
     },
     {
       "id": 11081314,
@@ -6720,9 +6778,9 @@
       "sport": "Baseball",
       "time": "20:05",
       "date": "2026-09-13",
-      "channel": "Bally Sports Live, MiLB.TV",
+      "channel": "FanDuel Sports Network West, Bally Sports Live, MiLB.TV",
       "reason": "channel",
-      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
+      "detail": "airs on FanDuel Sports Network West, Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     },
     {
       "name": "Racing Club @ Hurac\u00e1n",
