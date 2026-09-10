@@ -433,7 +433,7 @@ function makeEvent(o) {
   const bd=[st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
   const leagueId=computeLeagueId(o.league);
   const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
-  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,pinTv:o.pinTv,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
 }
 
 
@@ -510,8 +510,15 @@ function fillBlocks(tvId,assigned,tvFillChMap){
 
 function runSchedule(events,activeTVs){
   const active=TV_PRIO.filter(id=>activeTVs.has(id));
-  const sorted=[...events].sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
   const asgn=[];
+  // Events carrying pinTv (currently just NFL RedZone) claim that TV before
+  // anything else is placed, so they are never outbid on score. Everything
+  // scheduled afterwards sees the pinned block as occupied and routes around
+  // it. If the pinned TV is switched off, the pin is ignored and the event
+  // falls back to normal assignment rather than vanishing.
+  const isPinned=e=>Number.isInteger(e.pinTv)&&active.includes(e.pinTv);
+  for(const e of events.filter(isPinned)) asgn.push({...e,tv:e.pinTv,why:null,pinned:true});
+  const sorted=[...events].filter(e=>!isPinned(e)).sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
   for(const e of sorted){
     const avail=[];
     for(const tv of active){
