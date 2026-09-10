@@ -97,6 +97,38 @@ function b64ToUtf8(b64) {
   return new TextDecoder('utf-8').decode(bytes);
 }
 
+// Second line of defence behind b64ToUtf8. Even with the decode fixed, a name
+// that is ALREADY corrupted (in stored settings, or from any future encoding
+// bug) would otherwise persist and keep compounding. This reverses however
+// many rounds of latin-1/UTF-8 misdecoding a string has been through, so bad
+// data self-heals on load instead of needing a manual repair, and caps the
+// length so nothing can ever bloat settings.json the way it did on 2026-09-10.
+function healLeagueNames(ls) {
+  if (!ls || typeof ls !== 'object') return ls;
+  const out = {};
+  for (const [k, v] of Object.entries(ls)) {
+    out[k] = (v && typeof v === 'object' && typeof v.name === 'string')
+      ? { ...v, name: sanitizeName(v.name) } : v;
+  }
+  return out;
+}
+
+function sanitizeName(s) {
+  if (typeof s !== 'string') return s;
+  let out = s;
+  for (let i = 0; i < 24; i++) {
+    if (!/[ÃÂ]/.test(out)) break;          // no mojibake markers left
+    let dec;
+    try {
+      const bytes = Uint8Array.from(out, c => c.charCodeAt(0) & 0xff);
+      dec = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+    } catch (e) { break; }                  // not valid UTF-8 -> already clean
+    if (dec === out) break;
+    out = dec;
+  }
+  return out.length > 80 ? out.slice(0, 80) : out;
+}
+
 function dateToStr(d) {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
@@ -694,7 +726,7 @@ function App(){
           const isNewDay=data.lastDate&&data.lastDate!==todayStr;
           if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
           if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
-          if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(data.leagueStatus);
+          if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(healLeagueNames(data.leagueStatus));
           else{seededStatus=INITIAL_LEAGUE_STATUS;setLeagueStatus(seededStatus);}
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
           if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
@@ -746,7 +778,7 @@ function App(){
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
           if(d.mirrors) setMirrors(d.mirrors);
-          if(d.leagueStatus) setLeagueStatus(d.leagueStatus);
+          if(d.leagueStatus) setLeagueStatus(healLeagueNames(d.leagueStatus));
           else setLeagueStatus(INITIAL_LEAGUE_STATUS);
         }
         if(active)setSyncStatus("error");
@@ -800,7 +832,7 @@ function App(){
       const found={};
       parsedEvents.forEach(e=>{
         if(!prev[e.leagueId]){
-          found[e.leagueId]={name:e.league,sport:e.sport||"Other",status:"pending"};
+          found[e.leagueId]={name:sanitizeName(e.league),sport:e.sport||"Other",status:"pending"};
         }
       });
       if(Object.keys(found).length===0) return prev;
