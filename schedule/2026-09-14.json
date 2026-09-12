@@ -98,7 +98,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 40.04647350026447,
+        "v": 40.046473500264426,
         "l": "Quality +1.1 (GFR 81.0-79.4 vs tier1 baseline 159.8 (Ekstraklasa (Poland)), mod +39.0), Mod +39.0"
       },
       "_sk": {
@@ -113,7 +113,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 40.04647350026447
+      "_score": 40.046473500264426
     },
     {
       "id": 81062322,
@@ -127,8 +127,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 49.98796044155459,
-        "l": "Quality +11.7 (GFR 86.8-80.4 vs tier1 baseline 158.4 (Super Lig (Turkiye)), mod +38.3), Mod +38.3"
+        "v": 49.70689094854391,
+        "l": "Quality +11.5 (GFR 86.8-80.4 vs tier1 baseline 158.3 (Super Lig (Turkiye)), mod +38.3), Mod +38.3"
       },
       "_sk": {
         "v": 0,
@@ -142,7 +142,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 49.98796044155459
+      "_score": 49.70689094854391
     },
     {
       "id": 9488388,
@@ -288,6 +288,34 @@
         "l": ""
       },
       "_score": 0.0
+    },
+    {
+      "id": 10350262,
+      "time": "15:00",
+      "name": "Guadalajara Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
     },
     {
       "id": 17789032,
@@ -472,8 +500,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -0.3225806451612903,
-        "l": "Quality -0.3 (Chicago White Sox 0.502 vs Cleveland Guardians 0.497)"
+        "v": -0.2966101694914935,
+        "l": "Quality -0.3 (Chicago White Sox 0.501 vs Cleveland Guardians 0.498)"
       },
       "_sk": {
         "v": 0,
@@ -487,7 +515,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.3225806451612903
+      "_score": -0.2966101694914935
     },
     {
       "id": 79743563,
@@ -529,8 +557,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 13.000000000000036,
-        "l": "Quality +13.0 (Atlanta Braves 0.523 vs Chicago Cubs 0.516)"
+        "v": 13.449781659388647,
+        "l": "Quality +13.4 (Atlanta Braves 0.524 vs Chicago Cubs 0.517)"
       },
       "_sk": {
         "v": 0,
@@ -544,7 +572,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.000000000000036
+      "_score": 13.449781659388647
     },
     {
       "id": 37236662,
@@ -560,8 +588,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.521082441787284,
-        "l": "Quality +8.5 (Denver Broncos 1.500 vs Kansas City Chiefs 2.600)"
+        "v": 8.825396825396822,
+        "l": "Quality +8.8 (Denver Broncos 1.500 vs Kansas City Chiefs 2.600)"
       },
       "_sk": {
         "v": 0,
@@ -575,7 +603,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.521082441787284
+      "_score": 8.825396825396822
     },
     {
       "id": 67250023,
@@ -588,8 +616,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 33.165406649821655,
-        "l": "Quality -6.0 (GFR 77.4-80.1 vs tier1 baseline 160.1 (Liga MX (Mexico)), mod +39.1), Mod +39.1"
+        "v": 33.03736734894606,
+        "l": "Quality -6.1 (GFR 77.4-80.1 vs tier1 baseline 160.1 (Liga MX (Mexico)), mod +39.1), Mod +39.1"
       },
       "_sk": {
         "v": 0,
@@ -603,7 +631,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 33.165406649821655
+      "_score": 33.03736734894606
     },
     {
       "id": 17806648,
@@ -644,6 +672,16 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Liverpool U21 @ West Ham United U21",
+      "league": "Premier League 2",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-09-14",
+      "channel": "All Red Video",
+      "reason": "channel",
+      "detail": "airs on All Red Video \u2014 none in channels.txt"
     },
     {
       "name": "Guadalajara Open",
