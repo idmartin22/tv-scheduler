@@ -4539,34 +4539,6 @@
       "_score": -2.041834465348317
     },
     {
-      "id": 36933765,
-      "time": "15:45",
-      "name": "UNLV @ North Texas",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "ESPN Unlimited"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": -2.041834465348317,
-        "l": "Quality -2.0 (UNLV Rebels 2.300 vs North Texas Mean Green -6.700)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -2.041834465348317
-    },
-    {
       "id": 85450903,
       "time": "16:00",
       "name": "HFX Wanderers @ Supra du Quebec",
@@ -4890,6 +4862,7 @@
       "sport": "Tennis",
       "league": "U.S. Open",
       "ch": [
+        "ESPN",
         "ESPN Unlimited",
         "ESPN Deportes"
       ],
@@ -8525,34 +8498,6 @@
       "_score": -2.539520346216262
     },
     {
-      "id": 67448478,
-      "time": "22:00",
-      "name": "North Dakota State @ Air Force",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "FOX Sports 1"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": -2.539520346216262,
-        "l": "Quality -2.5 (North Dakota State Bison 0.200 vs Air Force Falcons -5.800)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -2.539520346216262
-    },
-    {
       "id": 12152546,
       "time": "22:00",
       "name": "North Dakota @ Portland State",
@@ -8782,35 +8727,6 @@
       "_score": -13.799663400853516
     },
     {
-      "id": 48006799,
-      "time": "22:30",
-      "name": "Montana State @ Nevada",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "CW",
-        "ESPN Unlimited"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": -13.799663400853516,
-        "l": "Quality -13.8 (Nevada Wolf Pack -3.100 vs unlisted opponent -29.650 (not in FPI pool))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -13.799663400853516
-    },
-    {
       "id": 57989791,
       "time": "22:35",
       "name": "Melbourne Demons - Port Adelaide Power",
@@ -8982,6 +8898,16 @@
       "channel": "Fubo Sports, FOX Sports 2",
       "reason": "cutoff",
       "detail": "starts 02:05 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Fijian Drua - Canada",
+      "league": "Pacific Nations Cup",
+      "sport": "Rugby Union",
+      "time": "03:00",
+      "date": "2026-09-12",
+      "channel": "TSN4",
+      "reason": "cutoff",
+      "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "Cronulla Sharks W - St. George Illawarra Dragons W",
@@ -10739,9 +10665,9 @@
       "sport": "Motorsports",
       "time": "18:00",
       "date": "2026-09-12",
-      "channel": "REV TV",
+      "channel": "TSN2, REV TV",
       "reason": "channel",
-      "detail": "airs on REV TV \u2014 none in channels.txt"
+      "detail": "airs on TSN2, REV TV \u2014 none in channels.txt"
     },
     {
       "name": "El Paso Chihuahuas @ Tacoma Rainiers",
