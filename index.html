@@ -793,7 +793,18 @@ function App(){
   // unfiltered, since a brand-new league's events need to be SEEN before
   // they can be marked pending in the first place.
   const parsedEvents=useMemo(()=>{
-    return dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
+    const evs = dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
+    // Drop any event sharing an id with one already seen. Two events with the
+    // same id become duplicate React keys, which silently scrambles render
+    // order - on 2026-09-12 the feed listed three college football games twice
+    // under different fixture_ids and they appeared above rank 1 in the Rank
+    // tab. The scraper now dedups at source; this also repairs schedule files
+    // already published, and guards against it recurring.
+    const seen=new Set();
+    return evs.filter(e=>{
+      if(!e||seen.has(e.id)) return false;
+      seen.add(e.id); return true;
+    });
   },[dynamicEvents,scheduleDate]);
 
   // The app can't call GFR directly (CORS blocks it from the browser, same
