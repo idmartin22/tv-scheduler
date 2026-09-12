@@ -66,6 +66,9 @@ function ChBadges({channel,style={}}){
   });
 }
 const MAX_MOD = 100;
+// How many days past today the scraper publishes. Keep in step with
+// LSOT_NUM_DAYS in daily_scrape.py (which publishes today + this many).
+const SCHEDULE_DAYS_AHEAD = 10;
 
 const GITHUB_PAT  = 'ghp_uCQAATKH' + '1vsNTPGdLZtBJjG' + 'FUY7lMp3acy8a';
 const GITHUB_REPO = 'idmartin22/tv-scheduler';
@@ -639,7 +642,10 @@ function App(){
       const d=strToDate(prev);
       d.setDate(d.getDate()+delta);
       const today=new Date(); today.setHours(0,0,0,0);
-      const maxFuture=new Date(today); maxFuture.setDate(today.getDate()+6);
+      // Matches the scraper's publish window (LSOT_NUM_DAYS in daily_scrape.py).
+      // It publishes today plus the next SCHEDULE_DAYS_AHEAD days; navigating
+      // past that would only ever land on a date with no file.
+      const maxFuture=new Date(today); maxFuture.setDate(today.getDate()+SCHEDULE_DAYS_AHEAD);
       if(d<today){d.setTime(today.getTime());}
       if(d>maxFuture){d.setTime(maxFuture.getTime());}
       const newStr=dateToStr(d);
