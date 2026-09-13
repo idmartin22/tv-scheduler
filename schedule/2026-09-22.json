@@ -72,7 +72,7 @@
       "dur": 120,
       "_st": {
         "v": 29.99999999999997,
-        "l": "Quality -20.0 (GFR 95.7-40.1 (not rated yet) vs tier1 baseline 181.8 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+        "l": "Quality -20.0 (GFR 95.7-40.1 (not rated yet) vs tier1 baseline 181.9 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -99,8 +99,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.84027413850582,
-        "l": "Quality +8.2 (GFR 79.5-91.7 vs tier3 baseline 155.0 (UEFA confederation), mod +36.6), Mod +36.6"
+        "v": 44.752829139623074,
+        "l": "Quality +8.2 (GFR 79.5-91.7 vs tier3 baseline 155.0 (UEFA confederation), mod +36.5), Mod +36.5"
       },
       "_sk": {
         "v": 0,
@@ -114,7 +114,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.84027413850582
+      "_score": 44.752829139623074
     },
     {
       "id": 46850357,
@@ -273,8 +273,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 5.852333333333306,
-        "l": "Quality -20.0 (GFR 64.7-40.1 (not rated yet) vs tier1 baseline 133.5 (Championship (Scotland) \u2014 opponent not in GFR), mod +25.9), Mod +25.9"
+        "v": 5.8148333333333255,
+        "l": "Quality -20.0 (GFR 64.0-40.1 (not rated yet) vs tier1 baseline 133.5 (Championship (Scotland) \u2014 opponent not in GFR), mod +25.8), Mod +25.8"
       },
       "_sk": {
         "v": 0,
@@ -288,7 +288,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.852333333333306
+      "_score": 5.8148333333333255
     },
     {
       "id": 1478493,
@@ -504,8 +504,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 2.9694323144104784,
-        "l": "Quality +3.0 (Cleveland Guardians 0.498 vs Boston Red Sox 0.511)"
+        "v": 2.950819672131054,
+        "l": "Quality +3.0 (Cleveland Guardians 0.497 vs Boston Red Sox 0.512)"
       },
       "_sk": {
         "v": 0,
@@ -519,7 +519,36 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.9694323144104784
+      "_score": 2.950819672131054
+    },
+    {
+      "id": 38494456,
+      "time": "19:00",
+      "name": "College of Charleston @ South Carolina",
+      "sport": "Soccer",
+      "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
     },
     {
       "id": 22954334,
@@ -1111,8 +1140,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 14.104803493449854,
-        "l": "Quality +14.1 (Tampa Bay Rays 0.524 vs New York Yankees 0.519)"
+        "v": 14.098360655737745,
+        "l": "Quality +14.1 (Tampa Bay Rays 0.525 vs New York Yankees 0.518)"
       },
       "_sk": {
         "v": 0,
@@ -1126,7 +1155,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.104803493449854
+      "_score": 14.098360655737745
     },
     {
       "id": 14720253,
@@ -1156,6 +1185,240 @@
         "l": ""
       },
       "_score": 0.0
+    },
+    {
+      "id": 2055633,
+      "time": "20:00",
+      "name": "Minnesota Lynx @ Indiana Fever",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 140,
+      "_st": {
+        "v": 16.221662468513852,
+        "l": "Quality +16.2 (Minnesota Lynx 4.900 vs Indiana Fever 3.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 16.221662468513852
+    },
+    {
+      "id": 40783998,
+      "time": "20:00",
+      "name": "Edmonton Oilers @ Winnipeg Jets",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 77621535,
+      "time": "20:00",
+      "name": "Tampa Bay Lightning @ Nashville Predators",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 83922417,
+      "time": "20:00",
+      "name": "Creighton @ Denver",
+      "sport": "Soccer",
+      "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 13187232,
+      "time": "20:00",
+      "name": "Kentucky @ Lipscomb",
+      "sport": "Soccer",
+      "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 33870767,
+      "time": "21:00",
+      "name": "Montana State @ Montana",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 78102115,
+      "time": "22:00",
+      "name": "Los Angeles Sparks @ Las Vegas Aces",
+      "sport": "Basketball",
+      "league": "WNBA",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited",
+        "ESPN Deportes"
+      ],
+      "dur": 140,
+      "_st": {
+        "v": 2.430730478589421,
+        "l": "Quality +2.4 (Los Angeles Sparks -2.400 vs Las Vegas Aces 3.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.430730478589421
+    },
+    {
+      "id": 85615967,
+      "time": "22:10",
+      "name": "San Diego Padres @ Los Angeles Dodgers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "TBS",
+        "HBO Max (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 12.459016393442619,
+        "l": "Quality +12.5 (San Diego Padres 0.511 vs Los Angeles Dodgers 0.527)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 12.459016393442619
     }
   ],
   "dropped": [
@@ -1175,9 +1438,9 @@
       "sport": "Baseball",
       "time": "13:05",
       "date": "2026-09-22",
-      "channel": "MLB.TV, YES, Rays.TV",
+      "channel": "MLB.TV, YES, Rays.TV, Sportsnet One, Sportsnet NOW",
       "reason": "channel",
-      "detail": "airs on MLB.TV, YES, Rays.TV \u2014 none in channels.txt"
+      "detail": "airs on MLB.TV, YES, Rays.TV, Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
     },
     {
       "name": "Winthrop @ Campbell",
@@ -1358,6 +1621,126 @@
       "channel": "MLB.TV, Marquee Sports Network, Marlins.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, Marquee Sports Network, Marlins.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Toronto Tempo @ Chicago Sky",
+      "league": "WNBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-09-22",
+      "channel": "WNBA League Pass, The U, TSN1, TSN4, TSN5",
+      "reason": "channel",
+      "detail": "airs on WNBA League Pass, The U, TSN1, TSN4, TSN5 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Arizona @ UTEP",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-09-22",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "New York Mets @ Texas Rangers",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "20:05",
+      "date": "2026-09-22",
+      "channel": "MLB.TV, SNY, Rangers Sports Network",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, SNY, Rangers Sports Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Arizona Diamondbacks @ Colorado Rockies",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "20:40",
+      "date": "2026-09-22",
+      "channel": "MLB.TV, Dbacks.TV, Rockies.TV",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, Dbacks.TV, Rockies.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Deportivo Cali @ Santa Fe",
+      "league": "Primera A",
+      "sport": "Soccer",
+      "time": "21:00",
+      "date": "2026-09-22",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Vancouver Canucks @ Calgary Flames",
+      "league": "NHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-09-22",
+      "channel": "Sportsnet One, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
+    },
+    {
+      "name": "Los Angeles Angels @ Athletics",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "21:40",
+      "date": "2026-09-22",
+      "channel": "MLB.TV, NBC Sports California, Angels Broadcast Television",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, NBC Sports California, Angels Broadcast Television \u2014 none in channels.txt"
+    },
+    {
+      "name": "Houston Astros @ Seattle Mariners",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "21:40",
+      "date": "2026-09-22",
+      "channel": "MLB.TV, Space City Home Network, Mariners.TV",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, Space City Home Network, Mariners.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minnesota Twins @ San Francisco Giants",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "21:45",
+      "date": "2026-09-22",
+      "channel": "MLB.TV, NBC Sports Bay Area, Twins.TV",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, NBC Sports Bay Area, Twins.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Golden State Valkyries @ Portland Fire",
+      "league": "WNBA",
+      "sport": "Basketball",
+      "time": "22:00",
+      "date": "2026-09-22",
+      "channel": "WNBA League Pass, Rose City SportsNet, KPIX-CBS, CBS News Sacramento",
+      "reason": "channel",
+      "detail": "airs on WNBA League Pass, Rose City SportsNet, KPIX-CBS, CBS News Sacramento \u2014 none in channels.txt"
+    },
+    {
+      "name": "Utah Mammoth @ Los Angeles Kings",
+      "league": "NHL",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-09-22",
+      "channel": "Utah 16",
+      "reason": "channel",
+      "detail": "airs on Utah 16 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Vegas Golden Knights @ San Jose Sharks",
+      "league": "NHL",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-09-22",
+      "channel": "Scripps 66, Vegas 34",
+      "reason": "channel",
+      "detail": "airs on Scripps 66, Vegas 34 \u2014 none in channels.txt"
     }
   ]
 }
