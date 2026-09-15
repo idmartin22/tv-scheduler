@@ -42,7 +42,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.6892,
+        "v": 7.664200000000008,
         "l": "Quality -20.0 (GFR 40.1 (not rated yet)-71.3 vs tier1 baseline 137.2 (USL Championship (USA) \u2014 opponent not in GFR), mod +27.7), Mod +27.7"
       },
       "_sk": {
@@ -57,22 +57,21 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.6892
+      "_score": 7.664200000000008
     },
     {
-      "id": 32831109,
-      "time": "19:00",
-      "name": "Evansville @ Georgetown",
-      "sport": "Soccer",
-      "league": "College Soccer",
+      "id": 11118118,
+      "time": "18:35",
+      "name": "Toronto Blue Jays @ Baltimore Orioles",
+      "sport": "Baseball",
+      "league": "MLB",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "ESPN Unlimited"
       ],
-      "dur": 120,
+      "dur": 180,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0.327868852458909,
+        "l": "Quality +0.3 (Toronto Blue Jays 0.504 vs Baltimore Orioles 0.497)"
       },
       "_sk": {
         "v": 0,
@@ -86,14 +85,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0
+      "_score": 0.327868852458909
     },
     {
-      "id": 10362015,
+      "id": 32831109,
       "time": "19:00",
-      "name": "Georgetown @ James Madison",
+      "name": "Evansville @ Georgetown",
       "sport": "Soccer",
-      "league": "Women's College Soccer",
+      "league": "College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -129,7 +128,7 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 13.396226415094336,
+        "v": 13.379571248423707,
         "l": "Quality +13.4 (Atlanta Dream 3.900 vs New York Liberty 3.200)"
       },
       "_sk": {
@@ -144,7 +143,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.396226415094336
+      "_score": 13.379571248423707
     },
     {
       "id": 54965605,
@@ -189,8 +188,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 2.8789808917197437,
-        "l": "Quality +2.9 (New York Giants -1.700 vs Los Angeles Rams 2.900)"
+        "v": 6.264501160092809,
+        "l": "Quality +6.3 (New York Giants -0.000 vs Los Angeles Rams 3.000)"
       },
       "_sk": {
         "v": 0,
@@ -204,7 +203,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.8789808917197437
+      "_score": 6.264501160092809
     },
     {
       "id": 7323054,
@@ -245,8 +244,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 2.075471698113207,
-        "l": "Quality +2.1 (Dallas Wings 2.500 vs Phoenix Mercury -1.400)"
+        "v": 2.030264817150063,
+        "l": "Quality +2.0 (Dallas Wings 2.500 vs Phoenix Mercury -1.400)"
       },
       "_sk": {
         "v": 0,
@@ -260,7 +259,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.075471698113207
+      "_score": 2.030264817150063
     },
     {
       "id": 6833401,
@@ -303,6 +302,16 @@
       "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Nippon Ham Fighters - Orix Buffaloes",
+      "league": "NPB",
+      "sport": "Baseball",
+      "time": "01:00",
+      "date": "2026-09-21",
+      "channel": "Next Level Sports",
+      "reason": "cutoff",
+      "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Atl\u00e9tico Tucum\u00e1n @ Aldosivi",
       "league": "Primera Division",
       "sport": "Soccer",
@@ -323,16 +332,6 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
-      "name": "Toronto Blue Jays @ Baltimore Orioles",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "18:35",
-      "date": "2026-09-21",
-      "channel": "MLB.TV, MASN, Sportsnet, Sportsnet NOW, TVA Sports",
-      "reason": "channel",
-      "detail": "airs on MLB.TV, MASN, Sportsnet, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
-    },
-    {
       "name": "Washington Nationals @ Detroit Tigers",
       "league": "MLB",
       "sport": "Baseball",
@@ -348,9 +347,9 @@
       "sport": "Hockey",
       "time": "19:00",
       "date": "2026-09-21",
-      "channel": "SportsNet Pittsburgh, SportsNet Pittsburgh +, MSG Sportsnet",
+      "channel": "SportsNet Pittsburgh, SportsNet Pittsburgh +, MSG Sportsnet, MSG Sportsnet 2",
       "reason": "channel",
-      "detail": "airs on SportsNet Pittsburgh, SportsNet Pittsburgh +, MSG Sportsnet \u2014 none in channels.txt"
+      "detail": "airs on SportsNet Pittsburgh, SportsNet Pittsburgh +, MSG Sportsnet, MSG Sportsnet 2 \u2014 none in channels.txt"
     },
     {
       "name": "New York Rangers @ New Jersey Devils",
