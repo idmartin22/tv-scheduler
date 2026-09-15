@@ -321,6 +321,9 @@ function getFaveBoost(name, leagueId, favTeams) {
   return { match: matched.length > 0, teams: matched };
 }
 
+// Breakdown values are raw floats (e.g. 25.152999999999999); show one decimal,
+// and leave whole numbers and non-numbers as they are.
+function fmtBd(v) { return typeof v==="number" ? String(Math.round(v*10)/10) : v; }
 function t2m(t="0:0") { const [h,m]=(t||"0:0").split(":").map(Number); return (h||0)*60+(m||0); }
 function m2t(m) {
   const h=Math.floor(m/60),mn=m%60,ap=h>=12?"PM":"AM";
@@ -1376,7 +1379,7 @@ function App(){
                         {a.breakdown.filter(Boolean).map((b,j)=>(
                           <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
                             <span style={{color:C.MT}}>{b.l}</span>
-                            <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{b.v}</span>
+                            <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{fmtBd(b.v)}</span>
                           </div>
                         ))}
                         <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
@@ -1435,7 +1438,7 @@ function App(){
                     {e.breakdown.filter(Boolean).map((b,j)=>(
                       <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
                         <span style={{color:C.MT}}>{b.l}</span>
-                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{b.v}</span>
+                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{fmtBd(b.v)}</span>
                       </div>
                     ))}
                     <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
