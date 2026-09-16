@@ -664,8 +664,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.00000000000003,
-        "l": "Quality -20.0 (GFR 97.9-40.1 (not rated yet) vs tier1 baseline 182.0 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+        "v": 63.50000000000005,
+        "l": "Quality +13.5 (GFR 97.9-92.2 vs tier1 baseline 182.0 (Premier League (England)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -679,7 +679,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.00000000000003
+      "_score": 63.50000000000005
     },
     {
       "id": 21554589,
@@ -837,8 +837,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 25.132500000000036,
-        "l": "Quality -20.0 (GFR 40.1 (not rated yet)-86.9 vs tier1 baseline 172.2 (LaLiga (Spain) \u2014 opponent not in GFR), mod +45.1), Mod +45.1"
+        "v": 43.402692994996414,
+        "l": "Quality -1.7 (GFR 84.7-86.9 vs tier1 baseline 172.2 (LaLiga (Spain)), mod +45.1), Mod +45.1"
       },
       "_sk": {
         "v": 0,
@@ -852,7 +852,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 25.132500000000036
+      "_score": 43.402692994996414
     },
     {
       "id": 93553937,
@@ -1728,8 +1728,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.39058035221109,
-        "l": "Quality -2.5 (GFR 84.5-77.5 vs tier2 baseline 163.7 (Spain (cross-tier)), mod +40.9), Mod +40.9"
+        "v": 38.39911901358114,
+        "l": "Quality -6.7 (GFR 84.5-85.3 vs tier1 baseline 172.2 (LaLiga (Spain)), mod +45.1), Mod +45.1"
       },
       "_sk": {
         "v": 0,
@@ -1743,7 +1743,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.39058035221109
+      "_score": 38.39911901358114
     },
     {
       "id": 98646347,
@@ -5272,7 +5272,6 @@
       "sport": "Soccer",
       "league": "Primera Division",
       "ch": [
-        "ViX",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -8626,34 +8625,6 @@
       "_score": 0.0
     },
     {
-      "id": 58702633,
-      "time": "21:10",
-      "name": "Cruz Azul @ Monterrey",
-      "sport": "Soccer",
-      "league": "Liga MX",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 48.539658709455516,
-        "l": "Quality +9.5 (GFR 84.2-81.1 vs tier1 baseline 160.1 (Liga MX (Mexico)), mod +39.1), Mod +39.1"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 48.539658709455516
-    },
-    {
       "id": 40476846,
       "time": "21:15",
       "name": "Once Caldas @ Deportivo Pasto",
@@ -9162,34 +9133,6 @@
         "l": ""
       },
       "_score": 0
-    },
-    {
-      "id": 52972914,
-      "time": "23:15",
-      "name": "Guadalajara @ Am\u00e9rica",
-      "sport": "Soccer",
-      "league": "Liga MX",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 52.23760270602087,
-        "l": "Quality +13.2 (GFR 84.5-82.9 vs tier1 baseline 160.1 (Liga MX (Mexico)), mod +39.1), Mod +39.1"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 52.23760270602087
     },
     {
       "id": 6238023,
@@ -11702,6 +11645,16 @@
       "detail": "airs on MLB.TV, NBC Sports Bay Area, SportsNet LA, SNLA+ \u2014 none in channels.txt"
     },
     {
+      "name": "Cruz Azul @ Monterrey",
+      "league": "Liga MX",
+      "sport": "Soccer",
+      "time": "21:10",
+      "date": "2026-09-19",
+      "channel": "ViX",
+      "reason": "channel",
+      "detail": "airs on ViX \u2014 none in channels.txt"
+    },
+    {
       "name": "Reno Aces @ Sacramento River Cats",
       "league": "Minor League Baseball",
       "sport": "Baseball",
@@ -11770,6 +11723,16 @@
       "channel": "WWAX",
       "reason": "channel",
       "detail": "airs on WWAX \u2014 none in channels.txt"
+    },
+    {
+      "name": "Guadalajara @ Am\u00e9rica",
+      "league": "Liga MX",
+      "sport": "Soccer",
+      "time": "23:15",
+      "date": "2026-09-19",
+      "channel": "ViX",
+      "reason": "channel",
+      "detail": "airs on ViX \u2014 none in channels.txt"
     }
   ]
 }
