@@ -171,18 +171,48 @@ async function githubLoadOverrides(date) {
 }
 
 async function githubSaveOverrides(date, ovrs, removed, sha) {
-  try {
+  // GitHub rejects a write to an EXISTING file unless the request carries that
+  // file's current sha - it answers 409 Conflict. This used to send no sha when
+  // it didn't have one and swallow every failure with `return null`, so a stale
+  // or missing sha meant manual TV overrides silently vanished on reload with
+  // nothing logged (observed 2026-09-13). Now: fetch the sha when missing, and
+  // retry once against a freshly-read sha if the write still conflicts.
+  const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json`;
+  const headers = { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Content-Type': 'application/json' };
+
+  const currentSha = async () => {
+    try {
+      const r = await fetch(`${url}?t=${Date.now()}`, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+      if (r.status === 404) return null;          // file doesn't exist yet - correct to omit sha
+      if (!r.ok) return null;
+      return (await r.json()).sha || null;
+    } catch(e) { return null; }
+  };
+
+  const put = async (useSha) => {
     const content = btoa(unescape(encodeURIComponent(JSON.stringify({ date, overrides: ovrs, removed: removed||[] }, null, 2))));
     const body = { message: `Update overrides for ${date}`, content };
-    if (sha) body.sha = sha;
-    const r = await fetch(
-      `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json`,
-      { method: 'PUT', headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
-    );
-    if (!r.ok) return null;
+    if (useSha) body.sha = useSha;
+    return fetch(url, { method: 'PUT', headers, body: JSON.stringify(body) });
+  };
+
+  try {
+    let useSha = sha || await currentSha();
+    let r = await put(useSha);
+    if (r.status === 409 || r.status === 422) {
+      useSha = await currentSha();               // someone else wrote it - re-read and retry
+      r = await put(useSha);
+    }
+    if (!r.ok) {
+      console.error(`Override save failed for ${date}: HTTP ${r.status}`, await r.text().catch(()=>''));
+      return null;
+    }
     const j = await r.json();
     return j.content?.sha || null;
-  } catch(e) { return null; }
+  } catch(e) {
+    console.error('Override save threw:', e);
+    return null;
+  }
 }
 
 async function githubSave(data, sha) {
@@ -291,6 +321,9 @@ function getFaveBoost(name, leagueId, favTeams) {
   return { match: matched.length > 0, teams: matched };
 }
 
+// Breakdown values are raw floats (e.g. 25.152999999999999); show one decimal,
+// and leave whole numbers and non-numbers as they are.
+function fmtBd(v) { return typeof v==="number" ? String(Math.round(v*10)/10) : v; }
 function t2m(t="0:0") { const [h,m]=(t||"0:0").split(":").map(Number); return (h||0)*60+(m||0); }
 function m2t(m) {
   const h=Math.floor(m/60),mn=m%60,ap=h>=12?"PM":"AM";
@@ -610,11 +643,16 @@ function App(){
   const saveTimerRef=React.useRef(null);
   const settingsLoaded=React.useRef(false);
   const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
-  const latestDateRequest=React.useRef(null); // guards against out-of-order date-navigation fetches
+  const latestDateRequest=React.useRef(null);
+  const overridesLoading=React.useRef(false); // true while a date's overrides are still being fetched // guards against out-of-order date-navigation fetches
   const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
 
   const loadScheduleForDate=React.useCallback(async(dateStr)=>{
     latestDateRequest.current=dateStr;
+    // Overrides are cleared to [] below and only repopulated once the network
+    // round-trip finishes. A save firing inside that window would persist the
+    // empty array over real data, so saves are blocked until the load settles.
+    overridesLoading.current=true;
     setScheduleStatus("loading");
     setDynamicEvents(null);
     setDroppedEvents([]);
@@ -631,9 +669,11 @@ function App(){
       setTvOverrides(ovr.overrides||[]);
       setRemovedEvents(ovr.removed||[]);
       setOverridesSha(ovr.sha);
+      overridesLoading.current=false;
     }catch(e){
       if(latestDateRequest.current!==dateStr)return;
       console.error('loadScheduleForDate error:', e);setScheduleStatus("error");
+      overridesLoading.current=false;
     }
   },[]);
 
@@ -902,6 +942,7 @@ function App(){
 
 
   const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
+    if(overridesLoading.current){console.warn('Override save skipped — schedule still loading');return;}
     setOvrSaving(true);
     const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
     const updated=[...tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
@@ -914,6 +955,7 @@ function App(){
   },[tvOverrides,overridesSha,scheduleDate]);
 
   const removeOverride=React.useCallback(async(eventId,tvId)=>{
+    if(overridesLoading.current)return;
     const updated=tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId));
     setTvOverrides(updated);
     const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
@@ -921,6 +963,7 @@ function App(){
   },[tvOverrides,removedEvents,overridesSha,scheduleDate]);
 
   const removeFromGrid=React.useCallback(async(eventId)=>{
+    if(overridesLoading.current)return;
     if(removedEvents.includes(eventId)) return;
     const updated=[...removedEvents,eventId];
     setRemovedEvents(updated);
@@ -930,6 +973,7 @@ function App(){
   },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
 
   const restoreToGrid=React.useCallback(async(eventId)=>{
+    if(overridesLoading.current)return;
     const updated=removedEvents.filter(id=>id!==eventId);
     setRemovedEvents(updated);
     const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
@@ -1335,7 +1379,7 @@ function App(){
                         {a.breakdown.filter(Boolean).map((b,j)=>(
                           <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
                             <span style={{color:C.MT}}>{b.l}</span>
-                            <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{b.v}</span>
+                            <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{fmtBd(b.v)}</span>
                           </div>
                         ))}
                         <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
@@ -1394,7 +1438,7 @@ function App(){
                     {e.breakdown.filter(Boolean).map((b,j)=>(
                       <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
                         <span style={{color:C.MT}}>{b.l}</span>
-                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{b.v}</span>
+                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{fmtBd(b.v)}</span>
                       </div>
                     ))}
                     <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
