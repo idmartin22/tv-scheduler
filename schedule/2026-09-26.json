@@ -182,8 +182,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 30.00000000000003,
+        "l": "Quality -20.0 (GFR 92.2-40.1 (not rated yet) vs tier1 baseline 182.0 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -197,7 +197,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0
+      "_score": 30.00000000000003
     },
     {
       "id": 73051981,
@@ -4820,34 +4820,6 @@
       "_score": 19.875345354784702
     },
     {
-      "id": 17870862,
-      "time": "19:00",
-      "name": "Toluca @ Cruz Azul",
-      "sport": "Soccer",
-      "league": "Liga MX",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 58.58211446483401,
-        "l": "Quality +19.5 (GFR 86.6-84.2 vs tier1 baseline 160.1 (Liga MX (Mexico)), mod +39.1), Mod +39.1"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 58.58211446483401
-    },
-    {
       "id": 67010914,
       "time": "19:00",
       "name": "St. Louis Blues @ Chicago Blackhawks",
@@ -6868,6 +6840,16 @@
       "channel": "CFL+ (US), TSN1, TSN3",
       "reason": "channel",
       "detail": "airs on CFL+ (US), TSN1, TSN3 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Toluca @ Cruz Azul",
+      "league": "Liga MX",
+      "sport": "Soccer",
+      "time": "19:00",
+      "date": "2026-09-26",
+      "channel": "ViX",
+      "reason": "channel",
+      "detail": "airs on ViX \u2014 none in channels.txt"
     },
     {
       "name": "Kingston Frontenacs @ Brantford Bulldogs",
