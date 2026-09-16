@@ -101,8 +101,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 16.231969696969713,
-        "l": "Quality -20.0 (GFR 40.1 (not rated yet)-40.1 (not rated yet) vs tier4 baseline 154.4 (Championship \u2014 league tracked by GFR, but neither team rated yet), mod +36.2), Mod +36.2"
+        "v": 48.436703029282555,
+        "l": "Quality +8.3 (GFR 82.2-83.6 vs tier1 baseline 162.2 (Championship (England)), mod +40.1), Mod +40.1"
       },
       "_sk": {
         "v": 0,
@@ -116,7 +116,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.231969696969713
+      "_score": 48.436703029282555
     },
     {
       "id": 82566394,
@@ -217,8 +217,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 19.124444444444464,
-        "l": "Quality -20.0 (GFR 77.3-40.1 (not rated yet) vs tier1 baseline 160.2 (Eredivisie (Netherlands) \u2014 opponent not in GFR), mod +39.1), Mod +39.1"
+        "v": 41.35418456438911,
+        "l": "Quality +2.2 (GFR 77.3-84.5 vs tier1 baseline 160.2 (Eredivisie (Netherlands)), mod +39.1), Mod +39.1"
       },
       "_sk": {
         "v": 0,
@@ -232,7 +232,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 19.124444444444464
+      "_score": 41.35418456438911
     },
     {
       "id": 69104950,
@@ -417,8 +417,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.00000000000003,
-        "l": "Quality -20.0 (GFR 90.7-40.1 (not rated yet) vs tier1 baseline 182.0 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+        "v": 51.44999999999999,
+        "l": "Quality +1.4 (GFR 90.7-92.2 vs tier1 baseline 182.0 (Premier League (England)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -432,7 +432,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.00000000000003
+      "_score": 51.44999999999999
     },
     {
       "id": 49251248,
@@ -2052,34 +2052,6 @@
         "l": ""
       },
       "_score": 12.905405405405393
-    },
-    {
-      "id": 2840584,
-      "time": "13:45",
-      "name": "Boca Juniors @ San Lorenzo",
-      "sport": "Soccer",
-      "league": "Primera Division",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 51.69777426105832,
-        "l": "Quality +11.1 (GFR 86.0-81.4 vs tier1 baseline 163.2 (Liga Profesional (Argentina)), mod +40.6), Mod +40.6"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 51.69777426105832
     },
     {
       "id": 611146,
@@ -3895,6 +3867,34 @@
       "_score": -12.508324084350718
     },
     {
+      "id": 32257731,
+      "time": "19:00",
+      "name": "Xelaj\u00fa @ Suchitep\u00e9quez",
+      "sport": "Soccer",
+      "league": "Liga Nacional",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 12.857727272727288,
+        "l": "Quality -20.0 (GFR 40.1 (not rated yet)-40.1 (not rated yet) vs tier4 baseline 147.7 (Liga Nacional \u2014 league tracked by GFR, but neither team rated yet), mod +32.9), Mod +32.9"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 12.857727272727288
+    },
+    {
       "id": 50482987,
       "time": "19:00",
       "name": "Carolina Hurricanes @ Florida Panthers",
@@ -4125,34 +4125,6 @@
         "l": ""
       },
       "_score": 10.540540540540572
-    },
-    {
-      "id": 37750174,
-      "time": "20:00",
-      "name": "Tijuana @ Pachuca",
-      "sport": "Soccer",
-      "league": "Liga MX",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 42.01387518610487,
-        "l": "Quality +3.0 (GFR 79.6-82.0 vs tier1 baseline 160.1 (Liga MX (Mexico)), mod +39.1), Mod +39.1"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 42.01387518610487
     },
     {
       "id": 9566530,
@@ -4871,6 +4843,16 @@
       "detail": "airs on MLB.TV, Marquee Sports Network, Reds.TV \u2014 none in channels.txt"
     },
     {
+      "name": "Boca Juniors @ San Lorenzo",
+      "league": "Primera Division",
+      "sport": "Soccer",
+      "time": "13:45",
+      "date": "2026-09-20",
+      "channel": "Fanatiz, ViX",
+      "reason": "channel",
+      "detail": "airs on Fanatiz, ViX \u2014 none in channels.txt"
+    },
+    {
       "name": "Charlottetown Islanders @ Cape Breton Eagles",
       "league": "OHL",
       "sport": "Hockey",
@@ -5379,6 +5361,16 @@
       "channel": "Fanatiz",
       "reason": "channel",
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tijuana @ Pachuca",
+      "league": "Liga MX",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-09-20",
+      "channel": "ViX",
+      "reason": "channel",
+      "detail": "airs on ViX \u2014 none in channels.txt"
     },
     {
       "name": "San Diego @ Kansas City",
