@@ -57,7 +57,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.646200000000036
+      "_score": 7.646200000000036,
+      "_rk": [
+        null,
+        1115
+      ]
     },
     {
       "id": 11118118,
@@ -85,7 +89,69 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.40540540540539655
+      "_score": 0.40540540540539655,
+      "_rk": [
+        12,
+        16
+      ]
+    },
+    {
+      "id": 70251134,
+      "time": "19:00",
+      "name": "Buffalo Sabres @ Pittsburgh Penguins",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 99845698,
+      "time": "19:00",
+      "name": "New York Rangers @ New Jersey Devils",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 53768749,
@@ -200,7 +266,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.387909319899244
+      "_score": 13.387909319899244,
+      "_rk": [
+        3,
+        6
+      ]
     },
     {
       "id": 15667812,
@@ -269,6 +339,7 @@
       "ch": [
         "ABC",
         "ESPN",
+        "ESPN2",
         "ESPN Unlimited",
         "ESPN Deportes"
       ],
@@ -289,7 +360,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.13583138173302
+      "_score": 6.13583138173302,
+      "_rk": [
+        16,
+        6
+      ]
     },
     {
       "id": 7323054,
@@ -317,7 +392,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.46052631578946
+      "_score": -10.46052631578946,
+      "_rk": [
+        23,
+        27
+      ]
     },
     {
       "id": 47634694,
@@ -345,7 +424,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.052896725440806
+      "_score": 2.052896725440806,
+      "_rk": [
+        7,
+        9
+      ]
     },
     {
       "id": 6833401,
@@ -426,26 +509,6 @@
       "channel": "MLB.TV, DSN, Nationals.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, DSN, Nationals.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Buffalo Sabres @ Pittsburgh Penguins",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-09-21",
-      "channel": "SportsNet Pittsburgh, SportsNet Pittsburgh +, MSG Sportsnet, MSG Sportsnet 2, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on SportsNet Pittsburgh, SportsNet Pittsburgh +, MSG Sportsnet, MSG Sportsnet 2, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "New York Rangers @ New Jersey Devils",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-09-21",
-      "channel": "MSG Sportsnet, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on MSG Sportsnet, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "St. Louis Blues @ Dallas Stars",
