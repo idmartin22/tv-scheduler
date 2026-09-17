@@ -323,6 +323,18 @@ function getFaveBoost(name, leagueId, favTeams) {
 
 // Breakdown values are raw floats (e.g. 25.152999999999999); show one decimal,
 // and leave whole numbers and non-numbers as they are.
+// Matchup name with each team's overall rank in ( ), e.g. "Reds (17) @ Dodgers (2)".
+// Ranks come from the scraper as ev._rk (GFR for soccer, ESPN RPI/BPI/FPI
+// otherwise), one per side in "@" order; null = unrated (NR). Display only —
+// e.name stays the plain name, since favorites, bumps and overrides match on it.
+function evName(e) {
+  const n = (e && e.name) || "";
+  const rk = e && e.rk;
+  if (!Array.isArray(rk) || rk.every(r => r == null)) return n;
+  const parts = n.split("@").map(p => p.trim());
+  if (parts.length !== rk.length) return n;
+  return parts.map((p, i) => `${p} (${rk[i] ?? "NR"})`).join(" @ ");
+}
 function fmtBd(v) { return typeof v==="number" ? String(Math.round(v*10)/10) : v; }
 function t2m(t="0:0") { const [h,m]=(t||"0:0").split(":").map(Number); return (h||0)*60+(m||0); }
 function m2t(m) {
@@ -513,7 +525,7 @@ function makeEvent(o) {
   const bd=[st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
   const leagueId=computeLeagueId(o.league);
   const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
-  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,pinTv:o.pinTv,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,pinTv:o.pinTv,rk:Array.isArray(o._rk)?o._rk:null,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
 }
 
 
@@ -614,7 +626,7 @@ function runSchedule(events,activeTVs){
       const blk=active.map(tv=>({tv,b:asgn.filter(a=>a.tv===tv).find(a=>overlaps(a,e))})).filter(x=>x.b);
       blk.sort((a,b)=>a.b.priority-b.b.priority);
       const lb=blk[0];
-      asgn.push({...e,tv:-1,why:`All ${active.length} TVs occupied. Lowest: "${lb.b.name}" on ${TVS[lb.tv]?.name}`,bumpTgt:{name:lb.b.name,tv:lb.tv}});
+      asgn.push({...e,tv:-1,why:`All ${active.length} TVs occupied. Lowest: "${evName(lb.b)}" on ${TVS[lb.tv]?.name}`,bumpTgt:{name:lb.b.name,tv:lb.tv,label:evName(lb.b)}});
     }
   }
   return asgn;
@@ -1289,15 +1301,15 @@ function App(){
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {m.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{a.name}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {evName(m)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{evName(a)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
           })}
           {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
             <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
-            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{a.name}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.name}"</button>}</div>);})}
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{evName(a)}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.label||a.bumpTgt.name}"</button>}</div>);})}
           </div>)}
         </div>
       )}
@@ -1344,7 +1356,7 @@ function App(){
                         <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
                       </div>
                       <div style={{minWidth:0}}>
-                        <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{a.name}</div>
+                        <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{evName(a)}</div>
                         <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
                       </div>
                       <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><ChBadges channel={a.channel}/></div>
@@ -1420,7 +1432,7 @@ function App(){
                   </div>
                   {/* Event info */}
                   <div style={{minWidth:0}}>
-                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{e.name}</div>
+                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{evName(e)}</div>
                     <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · <ChBadges channel={e.channel}/></div>
                   </div>
                   {/* Score */}
@@ -1701,7 +1713,7 @@ function App(){
               if(st==="active") return;
               rows.push({
                 key:`a${i}`, reason: st==="off"?"leagueOff":"leaguePending",
-                time:e.time||"", name:e.name||"", league:e.league||"", sport:e.sport||"Other",
+                time:e.time||"", name:e.name||"", rk:e.rk, league:e.league||"", sport:e.sport||"Other",
                 detail: st==="off" ? "league is switched off in the League tab"
                                    : "league hasn't been turned on or off yet",
               });
@@ -1751,7 +1763,7 @@ function App(){
                         </div>
                         <div style={{minWidth:0}}>
                           <div style={{fontSize:13,fontWeight:600,color:"#cbd5e1",overflow:"hidden",
-                            textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div>
+                            textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{evName(r)}</div>
                           <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",
                             textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.league}</div>
                         </div>
@@ -1770,7 +1782,7 @@ function App(){
         <div ref={detailPanelRef} style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
-              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{selEv.name}</div>
+              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{evName(selEv)}</div>
               <div style={{fontSize:10,color:C.MT}}>{selEv.league} · <ChBadges channel={selEv.channel}/> · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds?.toFixed(1)??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{faveBoosts[selEv.leagueId]??FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
             </div>
             <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
@@ -1778,7 +1790,7 @@ function App(){
           {selEv.tv===-1&&selEv.why&&(<div style={{background:"#2d1515",border:"1px solid #5a2020",borderRadius:6,padding:"8px 10px",marginBottom:10,fontSize:10,color:"#fca5a5",lineHeight:1.5}}>
             <div style={{fontFamily:"monospace",fontSize:9,color:C.A,marginBottom:3}}>WHY UNASSIGNED</div>
             {selEv.why}
-            {selEv.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6,display:"block"}} onClick={()=>bumpAndAssign(selEv)}>⚡ Bump "{selEv.bumpTgt.name}"</button>}
+            {selEv.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6,display:"block"}} onClick={()=>bumpAndAssign(selEv)}>⚡ Bump "{selEv.bumpTgt.label||selEv.bumpTgt.name}"</button>}
           </div>)}
           <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>{selEv.tv===-1?"ASSIGN TO:":"MOVE TO:"}</div>
           <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:10}}>
@@ -1839,7 +1851,7 @@ function App(){
                     if(ovrForm.toMin<=ovrForm.fromMin){alert("End time must be after start");return;}
                     const conflict=final.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
                       !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin));
-                    if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||TVS[ovrForm.tvId].name} already has "${conflict.name}" in that window. Override anyway?`))return;
+                    if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||TVS[ovrForm.tvId].name} already has "${evName(conflict)}" in that window. Override anyway?`))return;
                     saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
                   }} style={{padding:"4px 12px",borderRadius:4,fontFamily:"monospace",fontSize:10,
                     background:"#f59e0b",color:"#000",border:"none",cursor:"pointer",fontWeight:700}}>
