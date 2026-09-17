@@ -617,12 +617,45 @@
       "_score": 15
     },
     {
+      "id": 39213708,
+      "time": "09:30",
+      "name": "FSV Mainz 05 @ Borussia M\u00f6nchengladbach",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 35.081622810324504,
+        "l": "Quality -10.4 (GFR 85.4-82.3 vs tier1 baseline 172.8 (Bundesliga (Germany)), mod +45.4), Mod +45.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 35.081622810324504,
+      "_rk": [
+        84,
+        207
+      ]
+    },
+    {
       "id": 82791047,
       "time": "09:30",
       "name": "Freiburg @ Eintracht Frankfurt",
       "sport": "Soccer",
       "league": "Bundesliga",
       "ch": [
+        "Fandango",
         "NBC Universo"
       ],
       "dur": 120,
@@ -646,6 +679,70 @@
       "_rk": [
         37,
         82
+      ]
+    },
+    {
+      "id": 91550464,
+      "time": "09:30",
+      "name": "1. FC K\u00f6ln @ Hamburger SV",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 27.26438689084921,
+        "l": "Quality -18.2 (GFR 83.0-80.9 vs tier1 baseline 172.8 (Bundesliga (Germany)), mod +45.4), Mod +45.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 27.26438689084921,
+      "_rk": [
+        172,
+        300
+      ]
+    },
+    {
+      "id": 79297166,
+      "time": "09:30",
+      "name": "FC Augsburg @ Werder Bremen",
+      "sport": "Soccer",
+      "league": "Bundesliga",
+      "ch": [
+        "Fandango"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 44.54780693156398,
+        "l": "Quality -0.9 (GFR 87.0-85.4 vs tier1 baseline 172.8 (Bundesliga (Germany)), mod +45.4), Mod +45.4"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 44.54780693156398,
+      "_rk": [
+        54,
+        86
       ]
     },
     {
@@ -1718,6 +1815,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "NBC",
         "NBC Sports 4K",
         "Peacock"
       ],
@@ -1784,6 +1882,7 @@
       "sport": "Soccer",
       "league": "Bundesliga",
       "ch": [
+        "Fandango",
         "NBC Universo"
       ],
       "dur": 120,
@@ -2043,8 +2142,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 2.052896725440806,
-        "l": "Quality +2.1 (Phoenix Mercury -1.400 vs Dallas Wings 2.500)"
+        "v": 1.8867924528301894,
+        "l": "Quality +1.9 (Phoenix Mercury -1.500 vs Dallas Wings 2.500)"
       },
       "_sk": {
         "v": 0,
@@ -2058,7 +2157,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.052896725440806,
+      "_score": 1.8867924528301894,
       "_rk": [
         9,
         7
@@ -2691,6 +2790,64 @@
       "_st": {
         "v": 0,
         "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 68809642,
+      "time": "13:00",
+      "name": "Pacific @ Wyoming",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 73446808,
+      "time": "13:00",
+      "name": "Cornell - Mansfield",
+      "sport": "Football",
+      "league": "Collegiate Sprint Football League",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 0,
+        "l": "Collegiate Sprint Football League not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -4927,8 +5084,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.540540540540572,
-        "l": "Quality +10.5 (Milwaukee Brewers 0.533 vs Baltimore Orioles 0.498)"
+        "v": 10.999999999999963,
+        "l": "Quality +11.0 (Milwaukee Brewers 0.534 vs Baltimore Orioles 0.499)"
       },
       "_sk": {
         "v": 0,
@@ -4942,7 +5099,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.540540540540572,
+      "_score": 10.999999999999963,
       "_rk": [
         1,
         16
@@ -4959,8 +5116,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 2.4324324324324915,
-        "l": "Quality +2.4 (Philadelphia Phillies 0.513 vs New York Mets 0.494)"
+        "v": 2.3333333333333703,
+        "l": "Quality +2.3 (Philadelphia Phillies 0.514 vs New York Mets 0.493)"
       },
       "_sk": {
         "v": 0,
@@ -4974,10 +5131,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.4324324324324915,
+      "_score": 2.3333333333333703,
       "_rk": [
         7,
-        19
+        20
       ]
     },
     {
@@ -6115,8 +6272,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -10.46052631578946,
-        "l": "Quality -10.5 (Athletics Athletics 0.470 vs Cleveland Guardians 0.498)"
+        "v": -10.158730158730176,
+        "l": "Quality -10.2 (Athletics Athletics 0.469 vs Cleveland Guardians 0.499)"
       },
       "_sk": {
         "v": 0,
@@ -6130,7 +6287,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.46052631578946,
+      "_score": -10.158730158730176,
       "_rk": [
         29,
         16
@@ -6482,7 +6639,7 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 2.9974811083123427,
+        "v": 3.018867924528302,
         "l": "Quality +3.0 (Chicago Sky -2.300 vs Atlanta Dream 3.900)"
       },
       "_sk": {
@@ -6497,7 +6654,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.9974811083123427,
+      "_score": 3.018867924528302,
       "_rk": [
         10,
         3
@@ -7857,8 +8014,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 5.472972972972984,
-        "l": "Quality +5.5 (Atlanta Braves 0.524 vs Houston Astros 0.492)"
+        "v": 5.000000000000036,
+        "l": "Quality +5.0 (Atlanta Braves 0.524 vs Houston Astros 0.491)"
       },
       "_sk": {
         "v": 0,
@@ -7872,10 +8029,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.472972972972984,
+      "_score": 5.000000000000036,
       "_rk": [
         4,
-        21
+        23
       ]
     },
     {
@@ -8330,7 +8487,8 @@
       "league": "College Football",
       "ch": [
         "NBC",
-        "NBC Sports 4K"
+        "NBC Sports 4K",
+        "Peacock"
       ],
       "dur": 210,
       "_st": {
@@ -9062,7 +9220,7 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 2.6196473551637283,
+        "v": 2.6415094339622653,
         "l": "Quality +2.6 (Seattle Storm -4.300 vs Golden State Valkyries 5.700)"
       },
       "_sk": {
@@ -9077,7 +9235,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.6196473551637283,
+      "_score": 2.6415094339622653,
       "_rk": [
         12,
         1
@@ -9198,6 +9356,38 @@
         "l": ""
       },
       "_score": 0.0
+    },
+    {
+      "id": 23154982,
+      "time": "21:10",
+      "name": "San Francisco Giants @ Los Angeles Dodgers",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 1.3333333333333333,
+        "l": "Quality +1.3 (San Francisco Giants 0.479 vs Los Angeles Dodgers 0.525)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.3333333333333333,
+      "_rk": [
+        27,
+        3
+      ]
     },
     {
       "id": 40476846,
@@ -9964,36 +10154,6 @@
       "channel": "DAZN US",
       "reason": "channel",
       "detail": "airs on DAZN US \u2014 none in channels.txt"
-    },
-    {
-      "name": "FSV Mainz 05 @ Borussia M\u00f6nchengladbach",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-09-19",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "1. FC K\u00f6ln @ Hamburger SV",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-09-19",
-      "channel": "Peacock ES, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "FC Augsburg @ Werder Bremen",
-      "league": "Bundesliga",
-      "sport": "Soccer",
-      "time": "09:30",
-      "date": "2026-09-19",
-      "channel": "Peacock ES, DAZN Canada, OneSoccer",
-      "reason": "channel",
-      "detail": "airs on Peacock ES, DAZN Canada, OneSoccer \u2014 none in channels.txt"
     },
     {
       "name": "Altrincham @ Fylde",
@@ -10864,6 +11024,16 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "France @ Canada",
+      "league": "Davis Cup",
+      "sport": "Tennis",
+      "time": "14:00",
+      "date": "2026-09-19",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
       "name": "Yale @ Holy Cross",
@@ -12284,16 +12454,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "San Francisco Giants @ Los Angeles Dodgers",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "21:10",
-      "date": "2026-09-19",
-      "channel": "MLB.TV, NBC Sports Bay Area, SportsNet LA, SNLA+",
-      "reason": "channel",
-      "detail": "airs on MLB.TV, NBC Sports Bay Area, SportsNet LA, SNLA+ \u2014 none in channels.txt"
     },
     {
       "name": "Cruz Azul @ Monterrey",
