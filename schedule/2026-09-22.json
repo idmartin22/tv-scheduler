@@ -71,8 +71,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.00000000000003,
-        "l": "Quality -20.0 (GFR 96.0-40.1 (not rated yet) vs tier1 baseline 182.0 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+        "v": 55.593422285370295,
+        "l": "Quality +19.1 (GFR 96.0-96.9 vs tier3 baseline 155.0 (UEFA confederation), mod +36.5), Mod +36.5"
       },
       "_sk": {
         "v": 0,
@@ -86,7 +86,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.00000000000003
+      "_score": 55.593422285370295,
+      "_rk": [
+        3,
+        2
+      ]
     },
     {
       "id": 87227498,
@@ -114,7 +118,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.86210824633612
+      "_score": 44.86210824633612,
+      "_rk": [
+        408,
+        10
+      ]
     },
     {
       "id": 37513752,
@@ -142,7 +150,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.608108108108086
+      "_score": 15.608108108108086,
+      "_rk": [
+        2,
+        5
+      ]
     },
     {
       "id": 34016702,
@@ -170,7 +182,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 52.39611309787508
+      "_score": 52.39611309787508,
+      "_rk": [
+        6,
+        7
+      ]
     },
     {
       "id": 35437325,
@@ -198,7 +214,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 48.6015043918368
+      "_score": 48.6015043918368,
+      "_rk": [
+        16,
+        46
+      ]
     },
     {
       "id": 26663943,
@@ -226,7 +246,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.00000000000003
+      "_score": 30.00000000000003,
+      "_rk": [
+        null,
+        1
+      ]
     },
     {
       "id": 46850357,
@@ -400,7 +424,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.79833333333336
+      "_score": 5.79833333333336,
+      "_rk": [
+        1563,
+        null
+      ]
     },
     {
       "id": 1478493,
@@ -631,7 +659,72 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.4459459459459647
+      "_score": 3.4459459459459647,
+      "_rk": [
+        16,
+        8
+      ]
+    },
+    {
+      "id": 41212777,
+      "time": "19:00",
+      "name": "Jaguares de C\u00f3rdoba @ Independiente Medell\u00edn",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 36.84281482735291,
+        "l": "Quality -2.0 (GFR 76.9-82.0 vs tier1 baseline 159.7 (Primera A (Colombia)), mod +38.9), Mod +38.9"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 36.84281482735291,
+      "_rk": [
+        637,
+        225
+      ]
+    },
+    {
+      "id": 88804002,
+      "time": "19:00",
+      "name": "Detroit Red Wings @ Pittsburgh Penguins",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 28934513,
@@ -641,6 +734,64 @@
       "league": "NHL",
       "ch": [
         "NHL Network"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 87202650,
+      "time": "19:00",
+      "name": "New York Islanders @ New York Rangers",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 45278942,
+      "time": "19:00",
+      "name": "Philadelphia Flyers @ Boston Bruins",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 150,
       "_st": {
@@ -1325,7 +1476,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.608108108108086
+      "_score": 15.608108108108086,
+      "_rk": [
+        2,
+        5
+      ]
     },
     {
       "id": 14720253,
@@ -1384,7 +1539,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.221662468513852
+      "_score": 16.221662468513852,
+      "_rk": [
+        2,
+        4
+      ]
     },
     {
       "id": 40783998,
@@ -1559,7 +1718,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.430730478589421
+      "_score": 2.430730478589421,
+      "_rk": [
+        11,
+        4
+      ]
     },
     {
       "id": 56180669,
@@ -1645,7 +1808,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.22972972972972
+      "_score": 12.22972972972972,
+      "_rk": [
+        9,
+        2
+      ]
     }
   ],
   "dropped": [
@@ -1738,46 +1905,6 @@
       "channel": "MLB.TV, NBC Sports Philadelphia, Brewers.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, NBC Sports Philadelphia, Brewers.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Jaguares de C\u00f3rdoba @ Independiente Medell\u00edn",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "19:00",
-      "date": "2026-09-22",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Detroit Red Wings @ Pittsburgh Penguins",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-09-22",
-      "channel": "SportsNet Pittsburgh, SportsNet Pittsburgh +, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on SportsNet Pittsburgh, SportsNet Pittsburgh +, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "New York Islanders @ New York Rangers",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-09-22",
-      "channel": "MSG Sportsnet, MSG Sportsnet 2, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on MSG Sportsnet, MSG Sportsnet 2, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Philadelphia Flyers @ Boston Bruins",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-09-22",
-      "channel": "NBC Sports Philadelphia Plus, NESN Plus, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on NBC Sports Philadelphia Plus, NESN Plus, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "St. John's (NY) @ UNC Wilmington",
@@ -1928,6 +2055,16 @@
       "channel": "WNBA League Pass, Rose City SportsNet, KPIX-CBS, CBS News Sacramento",
       "reason": "channel",
       "detail": "airs on WNBA League Pass, Rose City SportsNet, KPIX-CBS, CBS News Sacramento \u2014 none in channels.txt"
+    },
+    {
+      "name": "Oklahoma City Comets @ Las Vegas Aviators",
+      "league": "Minor League Baseball",
+      "sport": "Baseball",
+      "time": "22:05",
+      "date": "2026-09-22",
+      "channel": "Bally Sports Live, MiLB.TV",
+      "reason": "channel",
+      "detail": "airs on Bally Sports Live, MiLB.TV \u2014 none in channels.txt"
     }
   ]
 }
