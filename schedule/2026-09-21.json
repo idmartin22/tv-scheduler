@@ -42,7 +42,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.646200000000036,
+        "v": 7.550700000000006,
         "l": "Quality -20.0 (GFR 40.1 (not rated yet)-71.3 vs tier1 baseline 137.2 (USL Championship (USA) \u2014 opponent not in GFR), mod +27.6), Mod +27.6"
       },
       "_sk": {
@@ -57,10 +57,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.646200000000036,
+      "_score": 7.550700000000006,
       "_rk": [
         null,
-        1115
+        1118
       ]
     },
     {
@@ -74,7 +74,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 1.0000000000000369,
+        "v": 0.9954751131222102,
         "l": "Quality +1.0 (Toronto Blue Jays 0.504 vs Baltimore Orioles 0.499)"
       },
       "_sk": {
@@ -89,9 +89,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.0000000000000369,
+      "_score": 0.9954751131222102,
       "_rk": [
-        11,
+        12,
         16
       ]
     },
@@ -251,8 +251,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 13.396226415094336,
-        "l": "Quality +13.4 (Atlanta Dream 3.900 vs New York Liberty 3.200)"
+        "v": 14.332493702770781,
+        "l": "Quality +14.3 (Atlanta Dream 4.400 vs New York Liberty 3.200)"
       },
       "_sk": {
         "v": 0,
@@ -266,7 +266,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.396226415094336,
+      "_score": 14.332493702770781,
       "_rk": [
         3,
         6
@@ -345,8 +345,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 6.248548199767713,
-        "l": "Quality +6.2 (New York Giants -0.000 vs Los Angeles Rams 3.000)"
+        "v": 4.850078905839032,
+        "l": "Quality +4.9 (New York Giants -0.300 vs Los Angeles Rams 2.500)"
       },
       "_sk": {
         "v": 0,
@@ -360,10 +360,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.248548199767713,
+      "_score": 4.850078905839032,
       "_rk": [
         17,
-        6
+        7
       ]
     },
     {
@@ -377,8 +377,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -9.206349206349223,
-        "l": "Quality -9.2 (Minnesota Twins 0.492 vs San Francisco Giants 0.479)"
+        "v": -10.010741138560686,
+        "l": "Quality -10.0 (Minnesota Twins 0.490 vs San Francisco Giants 0.479)"
       },
       "_sk": {
         "v": 0,
@@ -392,9 +392,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.206349206349223,
+      "_score": -10.010741138560686,
       "_rk": [
-        21,
+        23,
         27
       ]
     },
@@ -409,8 +409,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 1.8867924528301894,
-        "l": "Quality +1.9 (Dallas Wings 2.500 vs Phoenix Mercury -1.500)"
+        "v": 2.4307304785894215,
+        "l": "Quality +2.4 (Dallas Wings 2.700 vs Phoenix Mercury -1.400)"
       },
       "_sk": {
         "v": 0,
@@ -424,7 +424,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.8867924528301894,
+      "_score": 2.4307304785894215,
       "_rk": [
         7,
         9
@@ -481,6 +481,16 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Stuttgart @ Werder Bremen",
+      "league": "Women's Bundesliga",
+      "sport": "Soccer",
+      "time": "12:00",
+      "date": "2026-09-21",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Atl\u00e9tico Tucum\u00e1n @ Aldosivi",
       "league": "Primera Division",
       "sport": "Soccer",
@@ -519,6 +529,16 @@
       "channel": "St. Louis Blues App",
       "reason": "channel",
       "detail": "airs on St. Louis Blues App \u2014 none in channels.txt"
+    },
+    {
+      "name": "Anguilla @ Dominica",
+      "league": "International Friendly",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-09-21",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Estudiantes @ Lan\u00fas",
