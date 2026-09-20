@@ -42,8 +42,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.550700000000006,
-        "l": "Quality -20.0 (GFR 40.1 (not rated yet)-71.3 vs tier1 baseline 137.2 (USL Championship (USA) \u2014 opponent not in GFR), mod +27.6), Mod +27.6"
+        "v": 7.5260000000000105,
+        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-71.6 vs tier1 baseline 137.3 (USL Championship (USA) \u2014 opponent not in GFR), mod +27.5), Mod +27.5"
       },
       "_sk": {
         "v": 0,
@@ -57,10 +57,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.550700000000006,
+      "_score": 7.5260000000000105,
       "_rk": [
         null,
-        1120
+        1100
       ]
     },
     {
@@ -74,8 +74,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.316742081447928,
-        "l": "Quality +0.3 (Toronto Blue Jays 0.503 vs Baltimore Orioles 0.498)"
+        "v": -0.04223864836331796,
+        "l": "Quality -0.0 (Toronto Blue Jays 0.502 vs Baltimore Orioles 0.498)"
       },
       "_sk": {
         "v": 0,
@@ -89,7 +89,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.316742081447928,
+      "_score": -0.04223864836331796,
       "_rk": [
         12,
         17
@@ -279,8 +279,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 14.680177327422419,
-        "l": "Quality +14.7 (Atlanta Dream 4.300 vs New York Liberty 3.400)"
+        "v": 14.8992443324937,
+        "l": "Quality +14.9 (Atlanta Dream 4.500 vs New York Liberty 3.400)"
       },
       "_sk": {
         "v": 0,
@@ -294,7 +294,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 14.680177327422419,
+      "_score": 14.8992443324937,
       "_rk": [
         3,
         6
@@ -373,8 +373,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.850078905839032,
-        "l": "Quality +4.9 (New York Giants -0.300 vs Los Angeles Rams 2.500)"
+        "v": 5.225603357817419,
+        "l": "Quality +5.2 (New York Giants -0.200 vs Los Angeles Rams 2.600)"
       },
       "_sk": {
         "v": 0,
@@ -388,7 +388,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.850078905839032,
+      "_score": 5.225603357817419,
       "_rk": [
         17,
         7
@@ -405,8 +405,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -9.534883720930248,
-        "l": "Quality -9.5 (Minnesota Twins 0.491 vs San Francisco Giants 0.479)"
+        "v": -10.179514255543873,
+        "l": "Quality -10.2 (Minnesota Twins 0.489 vs San Francisco Giants 0.479)"
       },
       "_sk": {
         "v": 0,
@@ -420,7 +420,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.534883720930248,
+      "_score": -10.179514255543873,
       "_rk": [
         23,
         27
@@ -437,8 +437,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 2.330588980367323,
-        "l": "Quality +2.3 (Dallas Wings 2.700 vs Phoenix Mercury -1.500)"
+        "v": 2.2418136020151143,
+        "l": "Quality +2.2 (Dallas Wings 2.700 vs Phoenix Mercury -1.500)"
       },
       "_sk": {
         "v": 0,
@@ -452,7 +452,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.330588980367323,
+      "_score": 2.2418136020151143,
       "_rk": [
         7,
         9
@@ -509,6 +509,16 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Road World Championships",
+      "league": "Women's Road Cycling",
+      "sport": "Cycling",
+      "time": "09:00",
+      "date": "2026-09-21",
+      "channel": "FloSports, CBC Gem",
+      "reason": "channel",
+      "detail": "airs on FloSports, CBC Gem \u2014 none in channels.txt"
+    },
+    {
       "name": "Stuttgart @ Werder Bremen",
       "league": "Women's Bundesliga",
       "sport": "Soccer",
@@ -517,6 +527,16 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Road World Championships",
+      "league": "Men's Road Cycling",
+      "sport": "Cycling",
+      "time": "12:00",
+      "date": "2026-09-21",
+      "channel": "FloSports, CBC Gem",
+      "reason": "channel",
+      "detail": "airs on FloSports, CBC Gem \u2014 none in channels.txt"
     },
     {
       "name": "Atl\u00e9tico Tucum\u00e1n @ Aldosivi",
