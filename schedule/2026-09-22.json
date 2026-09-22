@@ -100,7 +100,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 56.293095964557025,
+        "v": 56.29125292289792,
         "l": "Quality +19.9 (GFR 96.3-97.0 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
       },
       "_sk": {
@@ -115,7 +115,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 56.293095964557025,
+      "_score": 56.29125292289792,
       "_rk": [
         3,
         1
@@ -130,11 +130,12 @@
       "ch": [
         "ESPN Unlimited",
         "Paramount+ (US)",
+        "CBS Sports Golazo Network",
         "ESPN Select"
       ],
       "dur": 120,
       "_st": {
-        "v": 45.71556696980637,
+        "v": 45.714741994339676,
         "l": "Quality +9.3 (GFR 80.9-92.0 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
       },
       "_sk": {
@@ -149,9 +150,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.71556696980637,
+      "_score": 45.714741994339676,
       "_rk": [
-        301,
+        299,
         10
       ]
     },
@@ -196,11 +197,12 @@
       "ch": [
         "ESPN Unlimited",
         "Paramount+ (US)",
+        "CBS Sports Golazo Network",
         "ESPN Select"
       ],
       "dur": 120,
       "_st": {
-        "v": 52.35570287627074,
+        "v": 52.35423880088924,
         "l": "Quality +15.9 (GFR 93.6-92.2 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
       },
       "_sk": {
@@ -215,7 +217,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 52.35570287627074,
+      "_score": 52.35423880088924,
       "_rk": [
         7,
         9
@@ -234,7 +236,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 49.352078899830985,
+        "v": 49.35090391730158,
         "l": "Quality +12.9 (GFR 90.5-89.5 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
       },
       "_sk": {
@@ -249,7 +251,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 49.352078899830985,
+      "_score": 49.35090391730158,
       "_rk": [
         25,
         32
@@ -464,7 +466,7 @@
       },
       "_score": 5.686166666666679,
       "_rk": [
-        1604,
+        1603,
         null
       ]
     },
@@ -731,7 +733,7 @@
       },
       "_score": 36.75983183418065,
       "_rk": [
-        630,
+        629,
         224
       ]
     },
@@ -1591,8 +1593,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 15.649432534678436,
-        "l": "Quality +15.6 (Minnesota Lynx 4.700 vs Indiana Fever 3.600)"
+        "v": 15.660377358490564,
+        "l": "Quality +15.7 (Minnesota Lynx 4.700 vs Indiana Fever 3.600)"
       },
       "_sk": {
         "v": 0,
@@ -1606,10 +1608,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.649432534678436,
+      "_score": 15.660377358490564,
       "_rk": [
         2,
-        6
+        5
       ]
     },
     {
@@ -1769,8 +1771,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 3.543505674653215,
-        "l": "Quality +3.5 (Los Angeles Sparks -2.400 vs Las Vegas Aces 4.300)"
+        "v": 3.584905660377356,
+        "l": "Quality +3.6 (Los Angeles Sparks -2.400 vs Las Vegas Aces 4.300)"
       },
       "_sk": {
         "v": 0,
@@ -1784,7 +1786,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.543505674653215,
+      "_score": 3.584905660377356,
       "_rk": [
         10,
         4
@@ -1920,6 +1922,16 @@
       "channel": "Tennis Channel",
       "reason": "cutoff",
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Singapore Open",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "02:30",
+      "date": "2026-09-22",
+      "channel": "Tennis Channel",
+      "reason": "cutoff",
+      "detail": "starts 02:30 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "Seibu Lions @ Fukuoka",
@@ -2117,9 +2129,9 @@
       "sport": "Baseball",
       "time": "19:40",
       "date": "2026-09-22",
-      "channel": "MLB.TV, Chicago Sports Network, Royals.TV",
+      "channel": "MLB.TV, Chicago Sports Network, Royals.TV, Sportsnet NOW, Sportsnet+",
       "reason": "channel",
-      "detail": "airs on MLB.TV, Chicago Sports Network, Royals.TV \u2014 none in channels.txt"
+      "detail": "airs on MLB.TV, Chicago Sports Network, Royals.TV, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Miami Marlins @ Chicago Cubs",
@@ -2182,16 +2194,6 @@
       "detail": "airs on MLB.TV, Dbacks.TV, Rockies.TV \u2014 none in channels.txt"
     },
     {
-      "name": "Deportivo Cali @ Santa Fe",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "21:00",
-      "date": "2026-09-22",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Vancouver Canucks @ Calgary Flames",
       "league": "NHL",
       "sport": "Hockey",
@@ -2217,9 +2219,9 @@
       "sport": "Baseball",
       "time": "21:40",
       "date": "2026-09-22",
-      "channel": "MLB.TV, Space City Home Network, Mariners.TV, Sportsnet NOW, Sportsnet+",
+      "channel": "MLB.TV, Space City Home Network, Mariners.TV",
       "reason": "channel",
-      "detail": "airs on MLB.TV, Space City Home Network, Mariners.TV, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
+      "detail": "airs on MLB.TV, Space City Home Network, Mariners.TV \u2014 none in channels.txt"
     },
     {
       "name": "Minnesota Twins @ San Francisco Giants",
