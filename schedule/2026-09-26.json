@@ -600,34 +600,6 @@
       "_score": 0.0
     },
     {
-      "id": 41993746,
-      "time": "11:30",
-      "name": "Johnny Fisher - Michael Pirotton",
-      "sport": "Fighting",
-      "league": "Boxing",
-      "ch": [
-        "Paramount+ (US)"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
       "id": 86803982,
       "time": "11:45",
       "name": "Canada @ France",
@@ -1209,6 +1181,34 @@
         44,
         1
       ]
+    },
+    {
+      "id": 94046785,
+      "time": "12:00",
+      "name": "Presidents Cup",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "NBC"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 35,
+        "l": "Golf: presidents cup +35"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 35
     },
     {
       "id": 44623585,
@@ -2071,8 +2071,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -1.8461538461538494,
-        "l": "Quality -1.8 (Pittsburgh Pirates 0.507 vs Detroit Tigers 0.487)"
+        "v": -1.5573770491803285,
+        "l": "Quality -1.6 (Pittsburgh Pirates 0.507 vs Detroit Tigers 0.488)"
       },
       "_sk": {
         "v": 0,
@@ -2086,7 +2086,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.8461538461538494,
+      "_score": -1.5573770491803285,
       "_rk": [
         11,
         24
@@ -2973,6 +2973,35 @@
       "_score": 0
     },
     {
+      "id": 51192114,
+      "time": "14:00",
+      "name": "Dartmouth @ Harvard",
+      "sport": "Rugby Union",
+      "league": "Women's College Rugby",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Rugby not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 16720787,
       "time": "14:45",
       "name": "Switzerland @ North Macedonia",
@@ -3040,8 +3069,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 9.623673749374476,
+        "l": "Quality +9.6 (Carolina Hurricanes 0.610 vs Nashville Predators -0.075)"
       },
       "_sk": {
         "v": 0,
@@ -3055,7 +3084,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 9.623673749374476,
+      "_rk": [
+        1,
+        21
+      ]
     },
     {
       "id": 6138024,
@@ -3068,8 +3101,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 7.252250479333826,
+        "l": "Quality +7.3 (Pittsburgh Penguins 0.062 vs Buffalo Sabres 0.341)"
       },
       "_sk": {
         "v": 0,
@@ -3083,7 +3116,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 7.252250479333826,
+      "_rk": [
+        14,
+        4
+      ]
     },
     {
       "id": 25021063,
@@ -3788,6 +3825,35 @@
       "_score": 0
     },
     {
+      "id": 90314839,
+      "time": "15:00",
+      "name": "Dartmouth @ Harvard",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 6653027,
       "time": "15:30",
       "name": "William & Mary @ Duke",
@@ -4113,6 +4179,39 @@
       "_rk": [
         14,
         3
+      ]
+    },
+    {
+      "id": 51378744,
+      "time": "15:30",
+      "name": "Mississippi @ Florida",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 10.691094254442373,
+        "l": "Quality +10.7 (Mississippi State Bulldogs 14.100 vs Florida Gators 16.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.691094254442373,
+      "_rk": [
+        22,
+        16
       ]
     },
     {
@@ -4847,18 +4946,18 @@
       "_score": 0
     },
     {
-      "id": 76206555,
-      "time": "16:05",
-      "name": "New York Mets @ Washington Nationals",
-      "sport": "Baseball",
-      "league": "MLB",
+      "id": 33403199,
+      "time": "16:00",
+      "name": "Houston @ Georgia Southern",
+      "sport": "Football",
+      "league": "College Football",
       "ch": [
         "ESPN Unlimited"
       ],
-      "dur": 180,
+      "dur": 210,
       "_st": {
-        "v": -3.076923076923082,
-        "l": "Quality -3.1 (New York Mets 0.495 vs Washington Nationals 0.495)"
+        "v": 0.7302028924643698,
+        "l": "Quality +0.7 (Houston Cougars 10.800 vs Georgia Southern Eagles -7.800)"
       },
       "_sk": {
         "v": 0,
@@ -4872,10 +4971,42 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.076923076923082,
+      "_score": 0.7302028924643698,
+      "_rk": [
+        31,
+        101
+      ]
+    },
+    {
+      "id": 76206555,
+      "time": "16:05",
+      "name": "New York Mets @ Washington Nationals",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": -3.401639344262299,
+        "l": "Quality -3.4 (New York Mets 0.495 vs Washington Nationals 0.494)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.401639344262299,
       "_rk": [
         18,
-        18
+        20
       ]
     },
     {
@@ -4889,7 +5020,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.387096774193548,
+        "v": 8.3745963401507,
         "l": "Quality +8.4 (Atlanta Braves 0.526 vs Miami Marlins 0.500)"
       },
       "_sk": {
@@ -4904,7 +5035,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.387096774193548,
+      "_score": 8.3745963401507,
       "_rk": [
         4,
         15
@@ -4987,8 +5118,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 10.406351384023704,
+        "l": "Quality +10.4 (Colorado Avalanche 0.501 vs Utah Mammoth 0.077)"
       },
       "_sk": {
         "v": 0,
@@ -5002,7 +5133,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 10.406351384023704,
+      "_rk": [
+        2,
+        10
+      ]
     },
     {
       "id": 83773468,
@@ -5016,8 +5151,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 1.6547559473941682,
+        "l": "Quality +1.7 (Washington Capitals 0.066 vs Philadelphia Flyers 0.025)"
       },
       "_sk": {
         "v": 0,
@@ -5031,7 +5166,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 1.6547559473941682,
+      "_rk": [
+        13,
+        16
+      ]
     },
     {
       "id": 46694275,
@@ -5247,7 +5386,8 @@
       "sport": "Football",
       "league": "College Football",
       "ch": [
-        "Peacock"
+        "Peacock",
+        "NBC Sports Network"
       ],
       "dur": 210,
       "_st": {
@@ -5333,6 +5473,38 @@
       "_score": 0.0
     },
     {
+      "id": 34708174,
+      "time": "17:10",
+      "name": "La Equidad @ Deportivo Pereira",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 24.505888410898173,
+        "l": "Quality -14.3 (GFR 78.3-76.0 vs tier1 baseline 159.7 (Primera A (Colombia)), mod +38.8), Mod +38.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 24.505888410898173,
+      "_rk": [
+        515,
+        719
+      ]
+    },
+    {
       "id": 35803780,
       "time": "17:30",
       "name": "Ohio @ Central Michigan",
@@ -5402,8 +5574,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 4.893422021804771,
+        "l": "Quality +4.9 (Tampa Bay Lightning 0.362 vs Florida Panthers -0.090)"
       },
       "_sk": {
         "v": 0,
@@ -5417,7 +5589,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 4.893422021804771,
+      "_rk": [
+        3,
+        22
+      ]
     },
     {
       "id": 11061170,
@@ -6235,6 +6411,35 @@
       ]
     },
     {
+      "id": 64673929,
+      "time": "19:00",
+      "name": "Richmond Kickers @ NY Cosmos",
+      "sport": "Soccer",
+      "league": "USL League One",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
       "id": 62574451,
       "time": "19:00",
       "name": "Sporting JAX @ Carolina Ascent",
@@ -6277,8 +6482,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -9.086971924099771,
+        "l": "Quality -9.1 (St. Louis Blues -0.040 vs Chicago Blackhawks -0.530)"
       },
       "_sk": {
         "v": 0,
@@ -6292,7 +6497,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -9.086971924099771,
+      "_rk": [
+        18,
+        31
+      ]
     },
     {
       "id": 12562119,
@@ -6306,8 +6515,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -0.8706672454483302,
+        "l": "Quality -0.9 (Columbus Blue Jackets 0.039 vs Detroit Red Wings -0.094)"
       },
       "_sk": {
         "v": 0,
@@ -6321,7 +6530,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -0.8706672454483302,
+      "_rk": [
+        15,
+        23
+      ]
     },
     {
       "id": 62261943,
@@ -6335,8 +6548,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": 8.763627980725438,
+        "l": "Quality +8.8 (Ottawa Senators 0.232 vs Montreal Canadiens 0.255)"
       },
       "_sk": {
         "v": 0,
@@ -6350,7 +6563,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 8.763627980725438,
+      "_rk": [
+        7,
+        6
+      ]
     },
     {
       "id": 10971763,
@@ -7370,7 +7587,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -6.461538461538473,
+        "v": -6.475409836065583,
         "l": "Quality -6.5 (Cleveland Guardians 0.500 vs Kansas City Royals 0.479)"
       },
       "_sk": {
@@ -7385,10 +7602,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.461538461538473,
+      "_score": -6.475409836065583,
       "_rk": [
         15,
-        26
+        27
       ]
     },
     {
@@ -7403,7 +7620,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 12.903225806451612,
+        "v": 12.895586652314318,
         "l": "Quality +12.9 (Tampa Bay Rays 0.527 vs Philadelphia Phillies 0.513)"
       },
       "_sk": {
@@ -7418,7 +7635,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.903225806451612,
+      "_score": 12.895586652314318,
       "_rk": [
         2,
         8
@@ -7437,8 +7654,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 4.8387096774193905,
-        "l": "Quality +4.8 (Baltimore Orioles 0.497 vs New York Yankees 0.518)"
+        "v": 5.145317545748118,
+        "l": "Quality +5.1 (Baltimore Orioles 0.498 vs New York Yankees 0.518)"
       },
       "_sk": {
         "v": 0,
@@ -7452,7 +7669,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.8387096774193905,
+      "_score": 5.145317545748118,
       "_rk": [
         17,
         6
@@ -7630,8 +7847,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -1.0079782058766287,
+        "l": "Quality -1.0 (New Jersey Devils -0.043 vs New York Islanders -0.021)"
       },
       "_sk": {
         "v": 0,
@@ -7645,7 +7862,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -1.0079782058766287,
+      "_rk": [
+        19,
+        17
+      ]
     },
     {
       "id": 86004806,
@@ -7875,7 +8096,9 @@
       "sport": "Football",
       "league": "College Football",
       "ch": [
-        "NBC"
+        "NBC",
+        "NBC Sports 4K",
+        "Peacock"
       ],
       "dur": 210,
       "_st": {
@@ -8980,8 +9203,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -0.40764191377150977,
+        "l": "Quality -0.4 (San Jose Sharks -0.239 vs Vegas Golden Knights 0.213)"
       },
       "_sk": {
         "v": 0,
@@ -8995,7 +9218,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -0.40764191377150977,
+      "_rk": [
+        27,
+        9
+      ]
     },
     {
       "id": 8454352,
@@ -9565,6 +9792,38 @@
       ]
     },
     {
+      "id": 32175296,
+      "time": "23:10",
+      "name": "Puebla @ Tigres UANL",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 33.29891875468492,
+        "l": "Quality -5.6 (GFR 76.9-81.2 vs tier1 baseline 160.0 (Liga MX (Mexico)), mod +38.9), Mod +38.9"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 33.29891875468492,
+      "_rk": [
+        631,
+        278
+      ]
+    },
+    {
       "id": 50720226,
       "time": "17:00",
       "name": "UFC: Raoni Barcelos @ Raul Rosas Jr",
@@ -9715,6 +9974,36 @@
       "detail": "airs on TVA Sports 2 \u2014 none in channels.txt"
     },
     {
+      "name": "Napoli @ Juventus",
+      "league": "Serie A Women",
+      "sport": "Soccer",
+      "time": "06:30",
+      "date": "2026-09-26",
+      "channel": "DAZN US",
+      "reason": "channel",
+      "detail": "airs on DAZN US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Leinster @ Lions",
+      "league": "United Rugby Championship",
+      "sport": "Rugby Union",
+      "time": "07:30",
+      "date": "2026-09-26",
+      "channel": "Sportsnet+",
+      "reason": "channel",
+      "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Barnet @ Crawley Town",
+      "league": "League Two",
+      "sport": "Soccer",
+      "time": "07:30",
+      "date": "2026-09-26",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Laver Cup",
       "league": "Laver Cup",
       "sport": "Tennis",
@@ -9743,6 +10032,16 @@
       "channel": "FloSports, CBC Gem",
       "reason": "channel",
       "detail": "airs on FloSports, CBC Gem \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ospreys @ Sharks",
+      "league": "United Rugby Championship",
+      "sport": "Rugby Union",
+      "time": "10:00",
+      "date": "2026-09-26",
+      "channel": "Sportsnet+",
+      "reason": "channel",
+      "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Tamworth @ Aldershot Town",
@@ -9950,9 +10249,9 @@
       "sport": "Fighting",
       "time": "11:00",
       "date": "2026-09-26",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN US \u2014 none in channels.txt"
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Kazakhstan @ Faroe Islands",
@@ -9983,6 +10282,16 @@
       "channel": "DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Manresa @ Bilbao",
+      "league": "ACB",
+      "sport": "Basketball",
+      "time": "12:00",
+      "date": "2026-09-26",
+      "channel": "DAZN US",
+      "reason": "channel",
+      "detail": "airs on DAZN US \u2014 none in channels.txt"
     },
     {
       "name": "America's Day at the Races",
@@ -10083,6 +10392,26 @@
       "channel": "ESPN Unlimited, ESPN Select",
       "reason": "belowtier",
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Glasgow Warriors @ Munster",
+      "league": "United Rugby Championship",
+      "sport": "Rugby Union",
+      "time": "12:30",
+      "date": "2026-09-26",
+      "channel": "Sportsnet+",
+      "reason": "channel",
+      "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Bulls @ Zebre",
+      "league": "United Rugby Championship",
+      "sport": "Rugby Union",
+      "time": "12:30",
+      "date": "2026-09-26",
+      "channel": "Sportsnet+",
+      "reason": "channel",
+      "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Bristol @ Sale Sharks",
@@ -10395,6 +10724,16 @@
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
+      "name": "Obradoiro CAB @ MoraBanc Andorra",
+      "league": "ACB",
+      "sport": "Basketball",
+      "time": "13:30",
+      "date": "2026-09-26",
+      "channel": "DAZN US",
+      "reason": "channel",
+      "detail": "airs on DAZN US \u2014 none in channels.txt"
+    },
+    {
       "name": "Tennessee Tech @ Wofford",
       "league": "College Football",
       "sport": "Football",
@@ -10585,6 +10924,16 @@
       "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "Nathaniel Collins @ Liam Davies",
+      "league": "Boxing",
+      "sport": "Fighting",
+      "time": "14:00",
+      "date": "2026-09-26",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Laver Cup",
       "league": "Laver Cup",
       "sport": "Tennis",
@@ -10593,6 +10942,46 @@
       "channel": "TSN+, TSN2",
       "reason": "channel",
       "detail": "airs on TSN+, TSN2 \u2014 none in channels.txt"
+    },
+    {
+      "name": "BKFC Fight Night",
+      "league": "Bare Knuckle Fighting",
+      "sport": "Fighting",
+      "time": "14:00",
+      "date": "2026-09-26",
+      "channel": "DAZN US",
+      "reason": "channel",
+      "detail": "airs on DAZN US \u2014 none in channels.txt"
+    },
+    {
+      "name": "UNC Wilmington @ Campbell",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "14:00",
+      "date": "2026-09-26",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Towson @ Charleston Southern",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "14:00",
+      "date": "2026-09-26",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "North Carolina A&T @ Northeastern",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "14:00",
+      "date": "2026-09-26",
+      "channel": "NESN, FloSports",
+      "reason": "channel",
+      "detail": "airs on NESN, FloSports \u2014 none in channels.txt"
     },
     {
       "name": "South Dakota @ Youngstown State",
@@ -10645,6 +11034,16 @@
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
+      "name": "Union @ Franklin Pierce",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "14:30",
+      "date": "2026-09-26",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
       "name": "Colgate @ Villanova",
       "league": "College Football",
       "sport": "Football",
@@ -10653,6 +11052,16 @@
       "channel": "ESPN Unlimited, ESPN Select",
       "reason": "belowtier",
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Cardiff Rugby @ Scarlets",
+      "league": "United Rugby Championship",
+      "sport": "Rugby Union",
+      "time": "14:45",
+      "date": "2026-09-26",
+      "channel": "Sportsnet World, Sportsnet NOW, Sportsnet+",
+      "reason": "channel",
+      "detail": "airs on Sportsnet World, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Croatia @ Czechia",
@@ -10703,6 +11112,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Leyma Coruna @ Barcelona",
+      "league": "ACB",
+      "sport": "Basketball",
+      "time": "15:00",
+      "date": "2026-09-26",
+      "channel": "DAZN US",
+      "reason": "channel",
+      "detail": "airs on DAZN US \u2014 none in channels.txt"
     },
     {
       "name": "MIT @ Springfield College",
@@ -10850,9 +11269,9 @@
       "sport": "Soccer",
       "time": "16:00",
       "date": "2026-09-26",
-      "channel": "TSN+, TSN4",
+      "channel": "TSN+, TSN4, OneSoccer",
       "reason": "channel",
-      "detail": "airs on TSN+, TSN4 \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN4, OneSoccer \u2014 none in channels.txt"
     },
     {
       "name": "Sherbrooke Phoenix @ Blainville-Boisbriand Armada",
@@ -11085,16 +11504,6 @@
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
-      "name": "La Equidad @ Deportivo Pereira",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "17:10",
-      "date": "2026-09-26",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Halifax Mooseheads @ Newfoundland",
       "league": "OHL",
       "sport": "Hockey",
@@ -11185,6 +11594,16 @@
       "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "Javon Walton @ Henry Cejudo",
+      "league": "Boxing",
+      "sport": "Fighting",
+      "time": "18:00",
+      "date": "2026-09-26",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Fort Valley State @ West Georgia",
       "league": "College Football",
       "sport": "Football",
@@ -11223,6 +11642,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hofstra @ Stony Brook",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:30",
+      "date": "2026-09-26",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
       "name": "Hamilton Tiger-Cats @ Edmonton Elks",
@@ -11333,6 +11762,36 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Laval @ Montreal",
+      "league": "U Sports",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-09-26",
+      "channel": "TVA Sports",
+      "reason": "channel",
+      "detail": "airs on TVA Sports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Party Animals - Indianapolis Clowns",
+      "league": "Banana Ball",
+      "sport": "Baseball",
+      "time": "19:00",
+      "date": "2026-09-26",
+      "channel": "Stadium",
+      "reason": "channel",
+      "detail": "airs on Stadium \u2014 none in channels.txt"
+    },
+    {
+      "name": "Flex Fight Series 62",
+      "league": "MMA",
+      "sport": "Fighting",
+      "time": "19:00",
+      "date": "2026-09-26",
+      "channel": "Fubo Sports, fubo Sports Network",
+      "reason": "channel",
+      "detail": "airs on Fubo Sports, fubo Sports Network \u2014 none in channels.txt"
     },
     {
       "name": "Prairie View A&M @ Grambling State",
@@ -11685,6 +12144,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "Calgary Flames @ Edmonton Oilers",
+      "league": "NHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-09-26",
+      "channel": "Oilers+",
+      "reason": "channel",
+      "detail": "airs on Oilers+ \u2014 none in channels.txt"
+    },
+    {
       "name": "Oregon State @ UTEP",
       "league": "College Football",
       "sport": "Football",
@@ -11763,6 +12232,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tijuana @ Ju\u00e1rez",
+      "league": "Liga MX Femenil",
+      "sport": "Soccer",
+      "time": "21:06",
+      "date": "2026-09-26",
+      "channel": "Estrella TV",
+      "reason": "channel",
+      "detail": "airs on Estrella TV \u2014 none in channels.txt"
     },
     {
       "name": "Independiente Medell\u00edn @ Junior",
