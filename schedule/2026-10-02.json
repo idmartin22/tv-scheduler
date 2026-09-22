@@ -1762,8 +1762,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -3.4492393511657955,
+        "l": "Quality -3.4 (New York Rangers -0.122 vs Detroit Red Wings -0.094)"
       },
       "_sk": {
         "v": 0,
@@ -1777,7 +1777,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -3.4492393511657955,
+      "_rk": [
+        24,
+        23
+      ]
     },
     {
       "id": 59487920,
@@ -2828,6 +2832,35 @@
       "name": "Florida International @ South Florida",
       "sport": "Soccer",
       "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 67225532,
+      "time": "19:00",
+      "name": "Nicholls @ McNeese",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -3942,6 +3975,16 @@
       "detail": "starts 12:30 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "02:01",
+      "date": "2026-10-02",
+      "channel": "DAZN US",
+      "reason": "cutoff",
+      "detail": "starts 02:01 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Bahrain Grand Prix",
       "league": "Formula 1",
       "sport": "Motorsports",
@@ -4010,6 +4053,86 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Syracuse @ Mercyhurst",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Campbell @ Hofstra",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Stony Brook @ Elon",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "William & Mary @ Towson",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Northeastern @ UNC Wilmington",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Maryland Eastern Shore @ Norfolk State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Morgan State @ North Carolina Central",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Le Moyne @ Long Island University",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "NEC Front Row",
+      "reason": "channel",
+      "detail": "airs on NEC Front Row \u2014 none in channels.txt"
     },
     {
       "name": "Hamilton Tiger-Cats @ Ottawa RedBlacks",
@@ -4127,9 +4250,59 @@
       "sport": "Hockey",
       "time": "19:00",
       "date": "2026-10-02",
-      "channel": "Monumental Sports Network, TVA Sports",
+      "channel": "Monumental Sports Network, Sportsnet, Sportsnet NOW, TVA Sports",
       "reason": "channel",
-      "detail": "airs on Monumental Sports Network, TVA Sports \u2014 none in channels.txt"
+      "detail": "airs on Monumental Sports Network, Sportsnet, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
+    },
+    {
+      "name": "RIT @ Niagara",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Campbell @ William & Mary",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Alcorn State @ Texas Southern",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Florida A&M @ Mississippi Valley State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Bethune-Cookman @ Jackson State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "SWAC TV",
+      "reason": "channel",
+      "detail": "airs on SWAC TV \u2014 none in channels.txt"
     },
     {
       "name": "Peterborough Petes @ Kingston Frontenacs",
@@ -4200,6 +4373,26 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minnesota @ Michigan Tech",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-10-02",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Miami (OH) @ Northern Michigan",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-10-02",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
     },
     {
       "name": "Madison Capitols @ Muskegon Lumberjacks",
