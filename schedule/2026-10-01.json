@@ -3,8 +3,8 @@
   "label": "Thursday, October 1",
   "events": [
     {
-      "id": 46021477,
-      "time": "09:52",
+      "id": 62617683,
+      "time": "11:00",
       "name": "Swimming World Cup",
       "sport": "Swimming",
       "league": "Swimming World Cup",
@@ -1191,8 +1191,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -0.27033095334321156,
+        "l": "Quality -0.3 (Philadelphia Flyers 0.025 vs New Jersey Devils -0.043)"
       },
       "_sk": {
         "v": 0,
@@ -1206,7 +1206,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -0.27033095334321156,
+      "_rk": [
+        16,
+        19
+      ]
     },
     {
       "id": 27655496,
@@ -2342,35 +2346,6 @@
       "_score": 0.0
     },
     {
-      "id": 51325158,
-      "time": "20:00",
-      "name": "Nicholls @ McNeese",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
       "id": 53251504,
       "time": "20:00",
       "name": "Liberty @ Middle Tennessee",
@@ -2612,8 +2587,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -12.024922118380061,
-        "l": "Quality -12.0 (Pittsburgh Steelers -2.800 vs Cleveland Browns -6.300)"
+        "v": -10.440048445700445,
+        "l": "Quality -10.4 (Pittsburgh Steelers -2.700 vs Cleveland Browns -6.200)"
       },
       "_sk": {
         "v": 0,
@@ -2627,7 +2602,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.024922118380061,
+      "_score": -10.440048445700445,
       "_rk": [
         23,
         30
@@ -2674,8 +2649,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -9.906047769445319,
+        "l": "Quality -9.9 (Seattle Kraken -0.356 vs Calgary Flames -0.265)"
       },
       "_sk": {
         "v": 0,
@@ -2689,7 +2664,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -9.906047769445319,
+      "_rk": [
+        29,
+        28
+      ]
     },
     {
       "id": 28037574,
@@ -3002,8 +2981,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0,
-        "l": "NHL not yet approved for baseline scoring \u2014 flat mod"
+        "v": -7.233273958317742,
+        "l": "Quality -7.2 (Chicago Blackhawks -0.530 vs Utah Mammoth 0.077)"
       },
       "_sk": {
         "v": 0,
@@ -3017,7 +2996,11 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -7.233273958317742,
+      "_rk": [
+        31,
+        10
+      ]
     },
     {
       "id": 80608879,
@@ -3137,6 +3120,26 @@
   ],
   "dropped": [
     {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "03:00",
+      "date": "2026-10-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "cutoff",
+      "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "10:05",
+      "date": "2026-10-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Kenya @ Guinea",
       "league": "Africa Cup of Nations Qualifier",
       "sport": "Soccer",
@@ -3157,14 +3160,74 @@
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
+      "name": "Extreme Fighting Championship",
+      "league": "MMA",
+      "sport": "Fighting",
+      "time": "13:00",
+      "date": "2026-10-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Gibraltar @ Malta",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-01",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Austria @ Republic of Ireland",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-01",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Kosovo @ Israel",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-01",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Portugal @ Denmark",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-01",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Serbia @ Germany",
       "league": "UEFA Nations League",
       "sport": "Soccer",
       "time": "14:45",
       "date": "2026-10-01",
-      "channel": "Fubo Sports, fubo Sports Network",
+      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network \u2014 none in channels.txt"
+      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Norway @ Wales",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-01",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Niagara IceDogs @ Barrie Colts",
@@ -3247,6 +3310,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "South Dakota State @ Nebraska-Omaha",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:30",
+      "date": "2026-10-01",
+      "channel": "Summit League Network, Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Summit League Network, Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "Minnesota Wild @ Nashville Predators",
       "league": "NHL",
       "sport": "Hockey",
@@ -3255,6 +3328,106 @@
       "channel": "Scripps 66, WAVE",
       "reason": "channel",
       "detail": "airs on Scripps 66, WAVE \u2014 none in channels.txt"
+    },
+    {
+      "name": "North Dakota @ Kansas City",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-01",
+      "channel": "Summit League Network, Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Summit League Network, Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "North Dakota State @ Oral Roberts",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-01",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "South Dakota @ St. Thomas (MN)",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-01",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "UNLV @ UTEP",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-01",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "San Diego State @ Boise State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-01",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Texas State @ Oregon State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-01",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Air Force @ UC Davis",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-01",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wyoming @ San Jose State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-01",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Colorado State @ Gonzaga",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-01",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Fresno State @ Utah State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-01",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
       "name": "Edmonton Oilers @ Vancouver Canucks",
@@ -3282,9 +3455,9 @@
       "sport": "Tennis",
       "time": "23:00",
       "date": "2026-10-01",
-      "channel": "TSN+, TSN2",
+      "channel": "TSN+, TSN2, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on TSN+, TSN2 \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN2, DAZN Canada \u2014 none in channels.txt"
     }
   ]
 }
