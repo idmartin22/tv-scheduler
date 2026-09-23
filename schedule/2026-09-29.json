@@ -716,6 +716,43 @@
       "espn": "concacaf.nations.league"
     },
     {
+      "id": 40904922,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "16:00",
+      "name": "Bahamas @ US Virgin Islands",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 10.202544440014616,
+        "l": "Quality -19.1 (FIFA men Bahamas 787 vs US Virgin Islands 780, CONCACAF pool baseline 2199), Mod +29.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.202544440014616,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league",
+      "_rk": [
+        207,
+        208
+      ]
+    },
+    {
       "id": 84941890,
       "lgId": 707,
       "lgSlug": "nhl",
@@ -2454,6 +2491,9 @@
       "span": 38.36,
       "label": "Men's club leagues",
       "seen": [
+        "League One (England)",
+        "League One (Scotland)",
+        "League Two (England)",
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
         "MLS (USA)",
@@ -2929,6 +2969,9 @@
       "span": 57.16,
       "label": "Men's club competitions",
       "seen": [
+        "Canadian Premier League",
+        "League One",
+        "League Two",
         "Liga Nacional",
         "Primera A"
       ]
@@ -3128,7 +3171,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 81.64,
+      "rating": 78.58,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
