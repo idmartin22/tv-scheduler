@@ -144,8 +144,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 49.58373065542717,
-        "l": "Quality -0.2 (GFR 83.1-87.8 vs tier1 baseline 171.1 (WSL (England)), mod +49.8), Mod +49.8"
+        "v": 49.88653728966137,
+        "l": "Quality +0.1 (GFR 83.1-88.1 vs tier1 baseline 171.1 (WSL (England)), mod +49.8), Mod +49.8"
       },
       "_sk": {
         "v": 0,
@@ -159,7 +159,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 49.58373065542717,
+      "_score": 49.88653728966137,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "eng.w.1",
@@ -267,6 +267,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
+      "lgR": 75.57,
       "_rk": [
         709,
         854
@@ -304,6 +305,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
+      "lgR": 75.57,
       "_rk": [
         442,
         685
@@ -342,6 +344,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
+      "lgR": 75.57,
       "_rk": [
         413,
         483
@@ -379,6 +382,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "afc.cup",
+      "lgR": 69.77,
       "_rk": [
         1204,
         1233
@@ -416,6 +420,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "afc.cup",
+      "lgR": 69.77,
       "_rk": [
         1384,
         879
@@ -453,6 +458,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "afc.cup",
+      "lgR": 69.77,
       "_rk": [
         1182,
         980
@@ -3862,8 +3868,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.23560820957788,
-        "l": "Quality -3.8 (GFR 86.8-83.1 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
+        "v": 42.758888371370944,
+        "l": "Quality -7.2 (GFR 85.9-82.3 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -3877,14 +3883,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.23560820957788,
+      "_score": 42.758888371370944,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.nwsl",
       "lgR": 85.76,
       "_rk": [
-        14,
-        31
+        18,
+        37
       ]
     },
     {
@@ -5852,8 +5858,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 48.38478224595362,
-        "l": "Quality -1.6 (GFR 82.6-88.2 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
+        "v": 50.14811587889355,
+        "l": "Quality +0.1 (GFR 83.4-88.2 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -5867,13 +5873,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 48.38478224595362,
+      "_score": 50.14811587889355,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.nwsl",
       "lgR": 85.76,
       "_rk": [
-        34,
+        27,
         10
       ]
     },
@@ -7693,6 +7699,16 @@
       "channel": "Apple TV",
       "reason": "cutoff",
       "detail": "starts 12:30 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "02:00",
+      "date": "2026-10-03",
+      "channel": "DAZN US",
+      "reason": "cutoff",
+      "detail": "starts 02:00 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "BMX World Cup",
@@ -10107,6 +10123,9 @@
       "span": 38.36,
       "label": "Men's club leagues",
       "seen": [
+        "League One (England)",
+        "League One (Scotland)",
+        "League Two (England)",
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
         "MLS (USA)",
@@ -10588,6 +10607,9 @@
       "span": 57.16,
       "label": "Men's club competitions",
       "seen": [
+        "Canadian Premier League",
+        "League One",
+        "League Two",
         "Liga Nacional",
         "Primera A",
         "Primera Division"
