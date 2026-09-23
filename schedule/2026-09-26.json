@@ -191,9 +191,10 @@
         "l": ""
       },
       "_score": 49.50485518886979,
-      "cat": "club_competition",
-      "area": "womens_club_competition",
+      "cat": "club_league",
+      "area": "womens_club_league",
       "espn": "eng.w.1",
+      "lgR": 63.92,
       "_rk": [
         4,
         99
@@ -774,9 +775,10 @@
         "l": ""
       },
       "_score": 43.56933919022153,
-      "cat": "club_competition",
-      "area": "womens_club_competition",
+      "cat": "club_league",
+      "area": "womens_club_league",
       "espn": "eng.w.1",
+      "lgR": 63.92,
       "_rk": [
         26,
         33
@@ -14226,7 +14228,8 @@
       "label": "Women's club leagues",
       "seen": [
         "NWSL (USA)",
-        "USL Super League (USA)"
+        "USL Super League (USA)",
+        "Women's Super League (Switzerland)"
       ]
     },
     "mens_club_competition": {
@@ -14754,7 +14757,7 @@
       "confederation": "CONCACAF"
     },
     "women-s-super-league": {
-      "rating": 70.41,
+      "rating": 63.92,
       "area": "womens_club_league",
       "gfrLeague": "Women's Super League",
       "country": "Switzerland",
