@@ -348,8 +348,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 11.002331027160324,
-        "l": "Quality -17.2 (GFR 38.1 (not rated yet)-75.4 vs tier1 baseline 127.8 (Women's Super League (Switzerland) \u2014 opponent not in GFR), mod +28.2), Mod +28.2"
+        "v": 11.101554587827053,
+        "l": "Quality -17.1 (GFR 38.1 (not rated yet)-75.4 vs tier1 baseline 127.9 (Women's Super League (Switzerland) \u2014 opponent not in GFR), mod +28.2), Mod +28.2"
       },
       "_sk": {
         "v": 0,
@@ -363,13 +363,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.002331027160324,
+      "_score": 11.101554587827053,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
       "_rk": [
         null,
-        80
+        81
       ]
     },
     {
@@ -387,7 +387,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 29.910493114787318,
+        "v": 29.911091756080214,
         "l": "Quality -1.1 (GFR 58.5-72.5 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
@@ -402,7 +402,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 29.910493114787318,
+      "_score": 29.911091756080214,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
@@ -595,7 +595,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 29.77595238095236,
+        "v": 29.79928571428573,
         "l": "Quality -20.0 (GFR 38.1 (not rated yet)-96.7 vs tier1 baseline 171.1 (WSL (England) \u2014 opponent not in GFR), mod +49.8), Mod +49.8"
       },
       "_sk": {
@@ -610,7 +610,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 29.77595238095236,
+      "_score": 29.79928571428573,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
@@ -635,7 +635,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 46.96682901010227,
+        "v": 46.96695328051552,
         "l": "Quality +15.9 (GFR 83.8-100.0 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
@@ -650,12 +650,12 @@
         "v": 0,
         "l": ""
       },
-      "_score": 46.96682901010227,
+      "_score": 46.96695328051552,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
       "_rk": [
-        25,
+        24,
         1
       ]
     },
@@ -1793,6 +1793,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "eng.1",
+      "lgR": 68.03,
       "_rk": [
         552,
         1475
@@ -3258,6 +3259,7 @@
       "span": 57.16,
       "label": "Men's club competitions",
       "seen": [
+        "Canadian Premier League",
         "Primera A"
       ]
     },
@@ -3366,7 +3368,8 @@
     },
     "africa-cup-of-nations-qualifier": {
       "rating": 1311.14,
-      "area": "mens_national"
+      "area": "mens_national",
+      "confederation": "CAF"
     },
     "uefa-nations-league": {
       "rating": 1336.9,
@@ -3453,7 +3456,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 81.64,
+      "rating": 78.58,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
