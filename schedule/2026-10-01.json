@@ -63,7 +63,7 @@
       "_score": 28.170629896103094,
       "cat": "national_men",
       "area": "mens_national",
-      "lgR": 1294.61,
+      "lgR": 1391.11,
       "_rk": [
         206,
         126
@@ -215,7 +215,8 @@
       "league": "MLB",
       "ch": [
         "NBC",
-        "Peacock"
+        "Peacock",
+        "NBC Universo"
       ],
       "dur": 180,
       "_st": {
@@ -246,7 +247,8 @@
       "league": "MLB",
       "ch": [
         "NBC",
-        "Peacock"
+        "Peacock",
+        "NBC Universo"
       ],
       "dur": 180,
       "_st": {
@@ -277,7 +279,8 @@
       "league": "MLB",
       "ch": [
         "NBC",
-        "Peacock"
+        "Peacock",
+        "NBC Universo"
       ],
       "dur": 180,
       "_st": {
@@ -308,7 +311,8 @@
       "league": "MLB",
       "ch": [
         "NBC",
-        "Peacock"
+        "Peacock",
+        "NBC Universo"
       ],
       "dur": 180,
       "_st": {
@@ -360,10 +364,47 @@
       "_score": 49.59246066134673,
       "cat": "national_men",
       "area": "mens_national",
-      "lgR": 1294.61,
+      "lgR": 1391.11,
       "_rk": [
         9,
         46
+      ]
+    },
+    {
+      "id": 46139003,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Norway @ Wales",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "FOX Sports 1"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 48.185455846742435,
+        "l": "Quality +6.4 (FIFA men Norway 1651 vs Wales 1517, UEFA pool baseline 2801), Mod +41.8"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 48.185455846742435,
+      "cat": "national_men",
+      "area": "mens_national",
+      "lgR": 1391.11,
+      "_rk": [
+        19,
+        38
       ]
     },
     {
@@ -2850,8 +2891,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -10.440048445700445,
-        "l": "Quality -10.4 (Pittsburgh Steelers -2.700 vs Cleveland Browns -6.200)"
+        "v": -10.455461507456668,
+        "l": "Quality -10.5 (Pittsburgh Steelers -2.700 vs Cleveland Browns -6.200)"
       },
       "_sk": {
         "v": 0,
@@ -2865,7 +2906,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.440048445700445,
+      "_score": -10.455461507456668,
       "_rk": [
         23,
         30
@@ -3231,6 +3272,7 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
+        "Big Ten Network",
         "Big Ten Plus"
       ],
       "dur": 120,
@@ -3568,16 +3610,6 @@
       "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
       "reason": "channel",
       "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Norway @ Wales",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-01",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "UMass Amherst @ Bowling Green",
@@ -4945,7 +4977,7 @@
         "International Friendly": 1001.64,
         "CONCACAF Nations League": 1123.83,
         "Africa Cup of Nations Qualifier": 1311.14,
-        "UEFA Nations League": 1294.61
+        "UEFA Nations League": 1391.11
       },
       "origin": {},
       "fifa_top": 1995.88,
@@ -5018,7 +5050,7 @@
       "area": "mens_national"
     },
     "uefa-nations-league": {
-      "rating": 1294.61,
+      "rating": 1391.11,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
