@@ -417,7 +417,7 @@ function LeagueRow({lg,i,enabled,pending,committedMod,favValue,faveBoost,C,onTog
     );
   }
   return(
-    <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
+    <div key={leagueId} style={{display:"grid",gridTemplateColumns:"34px 26px 1fr 60px 70px 210px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
       <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{enabled?i+1:"—"}</div>
       <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
       <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
@@ -1502,7 +1502,7 @@ function App(){
       )}
 
       {tab==="league"&&(
-        <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
+        <div style={{paddingBottom:80,maxWidth:980,margin:"0 auto"}}>
           {/* TV Name Labels */}
           <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
             <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>TV Names</div>
@@ -1632,7 +1632,7 @@ function App(){
                 const genderBadge=g=>g==="women"?<span style={{color:"#f472b6",fontSize:10,marginLeft:6}}>♀ Women's</span>:g==="men"?<span style={{color:"#60a5fa",fontSize:10,marginLeft:6}}>♂ Men's</span>:null;
                 return(<>
                   {/* Active leagues header */}
-                  <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
+                  <div style={{display:"grid",gridTemplateColumns:"34px 26px 1fr 60px 70px 210px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
                     {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
                   </div>
                   {activeNonSoccer.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
@@ -1713,7 +1713,7 @@ function App(){
                         const known=d?Object.keys(d.leagues||{}).length:0;
                         return (
                           <div key={area}>
-                            <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}}
+                            <div style={{display:"grid",gridTemplateColumns:"34px 26px 1fr 60px 70px 210px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}}
                                  onClick={()=>setAreaExpanded(x=>({...x,[area]:!open}))}>
                               <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{open?"\u25be":"\u25b8"}</div>
                               <div style={{fontSize:16,textAlign:"center"}}>{sportIcon("Soccer")}</div>
@@ -1747,7 +1747,7 @@ function App(){
                               const hasFave=fv.trim().length>0;
                               const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
                               return (
-                                <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
+                                <div key={lg.id} style={{display:"grid",gridTemplateColumns:"34px 26px 1fr 60px 70px 210px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
                                   <div/>
                                   <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
                                   <div style={{fontSize:12,color:"#cbd5e1"}}>
@@ -1792,7 +1792,7 @@ function App(){
                 <div style={{padding:"12px 16px 6px",marginTop:8,borderTop:`2px solid ${C.BD2}`}}>
                   <span style={{fontSize:10,fontWeight:700,color:"#f87171",letterSpacing:"0.08em"}}>DISABLED LEAGUES ({disabledLgs.length})</span>
                 </div>
-                <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+                <div style={{display:"grid",gridTemplateColumns:"34px 26px 1fr 60px 70px 210px",gap:8,padding:"4px 16px 6px"}}>
                   {["","","LEAGUE","ON/OFF","MOD",""].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
                 </div>
                 {disabledLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={false} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
