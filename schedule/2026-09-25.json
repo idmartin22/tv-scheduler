@@ -160,6 +160,36 @@
       ]
     },
     {
+      "id": 76438000,
+      "lgId": 2001,
+      "lgSlug": "pga-tour",
+      "time": "09:00",
+      "name": "Presidents Cup",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "NBC"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 35,
+        "l": "Golf: presidents cup +35"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 35
+    },
+    {
       "id": 80862382,
       "lgId": 2478,
       "lgSlug": "mma",
@@ -7258,64 +7288,68 @@
     "mens_club_competition": {
       "leagues": {
         "Afc Champions League": 67.16,
-        "Arabian Gulf Cup": 39.29,
-        "Austrian Bundesliga": 45.65,
-        "Brazilian Serie A": 77.23,
-        "Bundesliga": 53.46,
-        "Caf Champions League": 43.77,
+        "Arabian Gulf Cup": 43.14,
+        "Austrian Bundesliga": 65.3,
+        "Brazilian Serie A": 81.68,
+        "Bundesliga": 81.51,
+        "Caf Champions League": 45.1,
         "Campeon De Campeones": 84.24,
-        "Campeones Cup": 61.04,
-        "Concacaf Central American Cup": 45.37,
-        "Concacaf Champions Cup": 61.47,
+        "Campeones Cup": 83.11,
+        "Concacaf Central American Cup": 56.72,
+        "Concacaf Champions Cup": 72.09,
         "Concacaf Nations League": 39.29,
-        "Copa Argentina": 53.98,
+        "Copa Argentina": 61.92,
         "Copa Del Rey": 39.29,
-        "Copa Do Brasil": 49.36,
-        "Copa Libertadores": 71.11,
-        "Copa Sudamericana": 69.75,
-        "Coppa Italia": 67.75,
-        "Coupe De France": 53.72,
-        "Dfb Super Cup": 68.14,
-        "Dutch Eredivisie": 65.6,
-        "English League Cup": 73.93,
+        "Copa Do Brasil": 52.04,
+        "Copa Libertadores": 79.06,
+        "Copa Sudamericana": 77.55,
+        "Coppa Italia": 70.74,
+        "Coupe De France": 59.66,
+        "Dfb Super Cup": 94.74,
+        "Dutch Eredivisie": 80.04,
+        "English League Cup": 78.34,
         "Fa Community Shield": 96.45,
-        "Fa Cup": 66.65,
-        "German Cup": 49.11,
-        "International Friendly": 39.54,
-        "Johan Cruyff Shield": 61.83,
-        "La Liga": 84.05,
-        "Laliga2": 68.53,
-        "Leagues Cup": 65.89,
-        "Liga Mx": 62.82,
-        "Liga Portugal": 72.92,
-        "Ligue 1": 66.49,
-        "Ligue 2": 64.99,
-        "Mls": 65.1,
-        "Northern Super League": 39.29,
-        "Premier League": 64.97,
-        "Primera A": 64.25,
-        "Primera Division": 70.63,
-        "Scottish Championship": 59.04,
-        "Scottish League Cup": 56.81,
-        "Scottish Premiership": 73.25,
-        "Serie A": 79.15,
+        "Fa Cup": 71.29,
+        "German Cup": 63.26,
+        "International Friendly": 41.01,
+        "Johan Cruyff Shield": 85.8,
+        "La Liga": 86.04,
+        "Laliga2": 77.72,
+        "Leagues Cup": 78.32,
+        "Liga Mx": 78.08,
+        "Liga Portugal": 82.13,
+        "Ligue 1": 85.3,
+        "Ligue 2": 74.29,
+        "Mls": 80.02,
+        "Northern Super League": 48.52,
+        "Premier League": 91.09,
+        "Primera A": 77.91,
+        "Primera Division": 79.2,
+        "Scottish Championship": 64.03,
+        "Scottish League Cup": 60.72,
+        "Scottish Premiership": 76.66,
+        "Serie A": 85.56,
         "Supercopa De Espana": 90.83,
-        "Trophee Des Champions": 63.23,
-        "Troph\u00e9e Des Champions": 63.23,
-        "U.S. Open Cup": 46.2,
-        "Uefa Champions League": 72.3,
-        "Uefa Conference League": 53.56,
-        "Uefa Europa League": 66.31,
-        "Uefa Nations League": 39.98,
-        "Uefa Super Cup": 65.5,
-        "Us Open Cup": 46.2,
-        "Usl Championship": 58.36,
-        "Usl Cup": 48.95,
-        "Usl League One": 39.29,
-        "World Cup 2026": 39.29
+        "Trophee Des Champions": 90.37,
+        "Troph\u00e9e Des Champions": 90.37,
+        "U.S. Open Cup": 55.17,
+        "Uefa Champions League": 89.29,
+        "Uefa Conference League": 70.55,
+        "Uefa Europa League": 82.57,
+        "Uefa Nations League": 41.24,
+        "Uefa Super Cup": 92.63,
+        "Us Open Cup": 55.17,
+        "Usl Championship": 67.48,
+        "Usl Cup": 58.04,
+        "Usl League One": 44.15,
+        "World Cup 2026": 41.91
       },
       "origin": {
         "Afc Champions League": {
+          "country": "",
+          "confederation": "AFC"
+        },
+        "Arabian Gulf Cup": {
           "country": "",
           "confederation": "AFC"
         },
@@ -7348,6 +7382,10 @@
           "confederation": "CONCACAF"
         },
         "Concacaf Champions Cup": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
+        "Concacaf Nations League": {
           "country": "",
           "confederation": "CONCACAF"
         },
@@ -7439,6 +7477,10 @@
           "country": "",
           "confederation": "CONCACAF"
         },
+        "Northern Super League": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
         "Premier League": {
           "country": "",
           "confederation": "UEFA"
@@ -7514,6 +7556,14 @@
         "Usl Cup": {
           "country": "",
           "confederation": "CONCACAF"
+        },
+        "Usl League One": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
+        "World Cup 2026": {
+          "country": "",
+          "confederation": "UEFA"
         }
       },
       "top": 96.45,
@@ -7529,13 +7579,17 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "Nwsl": 65.15,
-        "Uefa Women'S Champions League": 73.7,
-        "Usl Super League": 41.48,
-        "Women'S Africa Cup Of Nations": 38.11,
-        "Women'S Super League": 74.6
+        "Nwsl": 79.8,
+        "Uefa Women'S Champions League": 85.2,
+        "Usl Super League": 62.73,
+        "Women'S Africa Cup Of Nations": 39.81,
+        "Women'S Super League": 84.28
       },
       "origin": {
+        "Nwsl": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
         "Uefa Women'S Champions League": {
           "country": "",
           "confederation": "UEFA"
@@ -7544,15 +7598,19 @@
           "country": "",
           "confederation": "CONCACAF"
         },
+        "Women'S Africa Cup Of Nations": {
+          "country": "",
+          "confederation": "UEFA"
+        },
         "Women'S Super League": {
           "country": "",
           "confederation": "UEFA"
         }
       },
-      "top": 74.6,
-      "worst": 38.11,
+      "top": 85.2,
+      "worst": 39.81,
       "anchored": true,
-      "span": 36.49,
+      "span": 45.39,
       "label": "Women's club competitions",
       "seen": []
     },
@@ -7585,7 +7643,7 @@
     "arabian-gulf-cup": {
       "rating": 1243.57,
       "area": "mens_club_competition",
-      "confederation": ""
+      "confederation": "AFC"
     },
     "usl-champ": {
       "rating": 68.63,
@@ -7600,14 +7658,14 @@
       "confederation": "UEFA"
     },
     "uefa-women-s-champions-league": {
-      "rating": 80.16,
+      "rating": 63.78,
       "area": "womens_club_competition",
       "confederation": "UEFA"
     },
     "concacaf-nations-league": {
       "rating": 1157.03,
       "area": "mens_club_competition",
-      "confederation": ""
+      "confederation": "CONCACAF"
     },
     "primera-a": {
       "rating": 79.86,
@@ -7698,7 +7756,7 @@
     "usl-league-one": {
       "rating": 44.55,
       "area": "mens_club_competition",
-      "confederation": ""
+      "confederation": "CONCACAF"
     },
     "serie-a-women": {
       "rating": 75.85,
@@ -7864,77 +7922,77 @@
       "confederation": "CONCACAF"
     },
     "northern-super-league": {
-      "rating": 39.29,
+      "rating": 48.52,
       "area": "mens_club_competition",
-      "confederation": ""
+      "confederation": "CONCACAF"
     },
     "scottish-league-cup": {
-      "rating": 56.81,
+      "rating": 60.72,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "uefa-champions-league": {
-      "rating": 72.3,
+      "rating": 89.29,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "copa-sudamericana": {
-      "rating": 69.75,
+      "rating": 77.55,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL"
     },
     "women-s-africa-cup-of-nations": {
-      "rating": 38.11,
+      "rating": 39.81,
       "area": "womens_club_competition",
-      "confederation": ""
+      "confederation": "UEFA"
     },
     "uefa-conference-league": {
-      "rating": 53.56,
+      "rating": 70.55,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "english-league-cup": {
-      "rating": 73.93,
+      "rating": 78.34,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "copa-do-brasil": {
-      "rating": 49.36,
+      "rating": 52.04,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL"
     },
     "concacaf-central-american-cup": {
-      "rating": 45.37,
+      "rating": 56.72,
       "area": "mens_club_competition",
       "confederation": "CONCACAF"
     },
     "uefa-europa-league": {
-      "rating": 66.31,
+      "rating": 82.57,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "leagues-cup": {
-      "rating": 65.89,
+      "rating": 78.32,
       "area": "mens_club_competition",
       "confederation": "CONCACAF"
     },
     "johan-cruyff-shield": {
-      "rating": 61.83,
+      "rating": 85.8,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "copa-libertadores": {
-      "rating": 71.11,
+      "rating": 79.06,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL"
     },
     "uefa-super-cup": {
-      "rating": 65.5,
+      "rating": 92.63,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "usl-cup": {
-      "rating": 48.95,
+      "rating": 58.04,
       "area": "mens_club_competition",
       "confederation": "CONCACAF"
     },
@@ -7944,27 +8002,27 @@
       "confederation": "UEFA"
     },
     "troph-e-des-champions": {
-      "rating": 63.23,
+      "rating": 90.37,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "coppa-italia": {
-      "rating": 67.75,
+      "rating": 70.74,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "dfb-super-cup": {
-      "rating": 68.14,
+      "rating": 94.74,
       "area": "mens_club_competition",
       "confederation": "UEFA"
     },
     "u-s-open-cup": {
-      "rating": 46.2,
+      "rating": 55.17,
       "area": "mens_club_competition",
       "confederation": "CONCACAF"
     },
     "campeones-cup": {
-      "rating": 61.04,
+      "rating": 83.11,
       "area": "mens_club_competition",
       "confederation": "CONCACAF"
     }
