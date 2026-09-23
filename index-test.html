@@ -525,7 +525,7 @@ function makeEvent(o) {
   const bd=[st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
   const leagueId=computeLeagueId(o.league);
   const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
-  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,pinTv:o.pinTv,rk:Array.isArray(o._rk)?o._rk:null,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,pinTv:o.pinTv,rk:Array.isArray(o._rk)?o._rk:null,area:o.area,cat:o.cat,lgR:o.lgR,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
 }
 
 
@@ -674,8 +674,8 @@ function App(){
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
-      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setScheduleStatus("loaded");}
-      else {setDynamicEvents([]);setDroppedEvents([]);setScheduleStatus("none");}
+      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setAreaData(sched.areas||{});setScheduleStatus("loaded");}
+      else {setDynamicEvents([]);setDroppedEvents([]);setAreaData({});setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
       if(latestDateRequest.current!==dateStr)return;
       setTvOverrides(ovr.overrides||[]);
@@ -756,6 +756,14 @@ function App(){
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
   const [droppedEvents,setDroppedEvents]=useState([]); // scraper-side drops for this date (see Missed tab)
+  // Soccer areas. The scraper publishes each area's full league list with GFR
+  // ratings plus the area's top/worst/scale; the app owns the base mod per
+  // area and computes each league's mod from it, so a base change re-scores
+  // instantly with no re-scrape.
+  const [areaData,setAreaData]=useState({});
+  const [areaBases,setAreaBases]=useState({});      // area -> base mod (default 50)
+  const [areaOverrides,setAreaOverrides]=useState({}); // leagueId -> area, manual placement
+  const [areaExpanded,setAreaExpanded]=useState({});
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
   const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
   const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
@@ -778,6 +786,8 @@ function App(){
           if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
           if(typeof data.soccerAdjustment==="number") setSoccerAdjustment(data.soccerAdjustment);
           if(data.faveBoosts&&typeof data.faveBoosts==="object") setFaveBoosts(data.faveBoosts);
+          if(data.areaBases&&typeof data.areaBases==="object") setAreaBases(data.areaBases);
+          if(data.areaOverrides&&typeof data.areaOverrides==="object") setAreaOverrides(data.areaOverrides);
           // Auto-clear prioOvr and mirrors if it's a new day
           const today=new Date();
           const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
@@ -818,6 +828,7 @@ function App(){
         if(sched?.events&&active){
           setDynamicEvents(sched.events);
           setDroppedEvents(sched.dropped||[]);
+          setAreaData(sched.areas||{});
           setScheduleStatus("loaded");
         } else if(active) {
           setScheduleStatus("none");
@@ -832,6 +843,8 @@ function App(){
           if(d.leagueMods) setLeagueMods(d.leagueMods);
           if(typeof d.soccerAdjustment==="number") setSoccerAdjustment(d.soccerAdjustment);
           if(d.faveBoosts&&typeof d.faveBoosts==="object") setFaveBoosts(d.faveBoosts);
+          if(d.areaBases&&typeof d.areaBases==="object") setAreaBases(d.areaBases);
+          if(d.areaOverrides&&typeof d.areaOverrides==="object") setAreaOverrides(d.areaOverrides);
           if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
@@ -1009,11 +1022,13 @@ function App(){
       leagueStatus: overrides.leagueStatus ?? leagueStatus,
       soccerAdjustment: overrides.soccerAdjustment ?? soccerAdjustment,
       faveBoosts: overrides.faveBoosts ?? faveBoosts,
+      areaBases: overrides.areaBases ?? areaBases,
+      areaOverrides: overrides.areaOverrides ?? areaOverrides,
       tvNames:    overrides.tvNames    ?? tvNames,
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,tvNames,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,areaBases,areaOverrides,tvNames,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -1021,6 +1036,24 @@ function App(){
   // Takes the DISPLAYED baseline value (e.g. user types 55) and stores it as
   // a delta from 50, since 50 is the fixed reference point the whole GFR mod
   // scale is anchored to (EPL always computes to exactly 50).
+  const AREA_ORDER=["mens_club_league","mens_club_competition","mens_national",
+                    "womens_club_league","womens_club_competition","womens_national"];
+  const AREA_LABEL={mens_club_league:"Men's club leagues",mens_club_competition:"Men's club competitions",
+                    mens_national:"Men's national teams",womens_club_league:"Women's club leagues",
+                    womens_club_competition:"Women's club competitions",womens_national:"Women's national teams",
+                    unassigned:"Unassigned — place these manually"};
+  const areaBase=a=>areaBases[a]??50;
+  // mod = base - (how far below the area's best this league rates) * scale
+  const areaModFor=(area,rating)=>{
+    const d=areaData[area];
+    if(!d||rating===undefined||rating===null) return undefined;
+    return areaBase(area)-(d.top-rating)*(d.scale||0);
+  };
+  const updateAreaBase=(area,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));
+    const m={...areaBases,[area]:v};setAreaBases(m);debouncedSave(buildSavePayload({areaBases:m}));};
+  const updateAreaOverride=(leagueId,area)=>{const m={...areaOverrides};
+    if(area) m[leagueId]=area; else delete m[leagueId];
+    setAreaOverrides(m);debouncedSave(buildSavePayload({areaOverrides:m}));};
   const updateSoccerAdjustment=(val)=>{const displayed=Number(val)||50;const adj=displayed-50;setSoccerAdjustment(adj);debouncedSave(buildSavePayload({soccerAdjustment:adj}));};
   const updateFaveBoost=(leagueId,val)=>{const v=Math.max(0,Number(val)||0);const b={...faveBoosts,[leagueId]:v};setFaveBoosts(b);debouncedSave(buildSavePayload({faveBoosts:b}));};
   const toggleLeague=(leagueId)=>{
@@ -1599,78 +1632,91 @@ function App(){
                     {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
                   </div>
                   {activeNonSoccer.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
-                  {activeSoccer.length>0&&(<>
-                    <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}} onClick={()=>setSoccerExpanded(x=>!x)}>
-                      <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{soccerExpanded?"▾":"▸"}</div>
-                      <div style={{fontSize:16,textAlign:"center"}}>{sportIcon("Soccer")}</div>
-                      <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Soccer ({activeSoccer.length} leagues — click to {soccerExpanded?"collapse":"expand"})</div>
-                      <div/>
-                      <div onClick={ev=>ev.stopPropagation()}>
-                        <input type="number" defaultValue={50+soccerAdjustment}
-                          key={`soccer-adj-${soccerAdjustment}`}
-                          onBlur={ev=>updateSoccerAdjustment(ev.target.value)}
-                          onKeyDown={ev=>{if(ev.key==="Enter")updateSoccerAdjustment(ev.target.value);}}
-                          style={{background:C.SUR,border:"1px solid #4ade80",borderRadius:8,color:"#86efac",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
-                      </div>
-                      <div style={{fontSize:9,color:C.DM}}>{soccerAdjustment!==0?`shifted ${soccerAdjustment>0?"+":""}${soccerAdjustment} from EPL's 50`:"every matchup scores its own mod"}</div>
-                    </div>
-                    {soccerExpanded&&(<>
-                      {sortedAutoSoccer.length>0&&(<div style={{padding:"6px 16px 4px 40px"}}><span style={{fontSize:9,fontWeight:700,color:"#86efac",letterSpacing:"0.05em"}}>GFR-SCORED (men's soccer — GFR has no women's data)</span></div>)}
-                      {sortedAutoSoccer.map(lg=>{
-                        const rawMod=soccerCurrentMods[lg.id];
-                        const mod=rawMod!==undefined?rawMod+soccerAdjustment:undefined;
-                        const fv=favTeams[lg.id]||"";
-                        const hasFave=fv.trim().length>0;
-                        const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
-                        return(
-                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
-                            <div/>
-                            <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
-                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
-                            <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
-                            <div title={mod!==undefined?"live from today's games":"no game today"} style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"—"}</div>
-                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
-                              <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
-                              <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
-                                key={`faveboost-${lg.id}-${fBoost}`}
-                                onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
-                                onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
-                                style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+                  {activeSoccer.length>0&&(()=>{
+                    // Six areas. A league's area comes from the scraper unless
+                    // it has been placed by hand; anything still unknown falls
+                    // into "unassigned" so it can be placed rather than hidden.
+                    const areaOfLeague={};
+                    (parsedEvents||[]).forEach(e=>{ if(e.area&&e.leagueId) areaOfLeague[e.leagueId]=e.area; });
+                    const ratingOfLeague={};
+                    (parsedEvents||[]).forEach(e=>{ if(e.lgR!==undefined&&e.leagueId) ratingOfLeague[e.leagueId]=e.lgR; });
+                    const areaOf=lg=>areaOverrides[lg.id]||areaOfLeague[lg.id]||"unassigned";
+                    const byArea={};
+                    activeSoccer.forEach(lg=>{ (byArea[areaOf(lg)]=byArea[areaOf(lg)]||[]).push(lg); });
+                    const order=[...AREA_ORDER,"unassigned"].filter(a=>(byArea[a]||[]).length);
+
+                    return (<>
+                      {order.map(area=>{
+                        const lgs=byArea[area]||[];
+                        const d=areaData[area];
+                        const open=areaExpanded[area]!==false;
+                        const known=d?Object.keys(d.leagues||{}).length:0;
+                        return (
+                          <div key={area}>
+                            <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}}
+                                 onClick={()=>setAreaExpanded(x=>({...x,[area]:!open}))}>
+                              <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{open?"\u25be":"\u25b8"}</div>
+                              <div style={{fontSize:16,textAlign:"center"}}>{sportIcon("Soccer")}</div>
+                              <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>
+                                {AREA_LABEL[area]||area}
+                                <span style={{fontSize:10,color:C.DM,marginLeft:8}}>
+                                  {lgs.length} on{known?` \u00b7 ${known} rated by GFR`:""}
+                                </span>
+                              </div>
+                              <div/>
+                              <div onClick={ev=>ev.stopPropagation()}>
+                                {area!=="unassigned"&&(
+                                  <input type="number" defaultValue={areaBase(area)}
+                                    key={`base-${area}-${areaBase(area)}`}
+                                    title="Base mod: the best-rated league in this area gets this"
+                                    onBlur={ev=>updateAreaBase(area,ev.target.value)}
+                                    onKeyDown={ev=>{if(ev.key==="Enter")updateAreaBase(area,ev.target.value);}}
+                                    style={{background:C.SUR,border:"1px solid #4ade80",borderRadius:8,color:"#86efac",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                                )}
+                              </div>
+                              <div style={{fontSize:9,color:C.DM}}>
+                                {area==="unassigned"?"set an area on each row"
+                                  :d?`top ${d.top} \u00b7 worst ${d.worst}`:"no GFR ratings yet"}
+                              </div>
                             </div>
+                            {open&&lgs.map(lg=>{
+                              const rating=ratingOfLeague[lg.id];
+                              const mod=areaModFor(area,rating);
+                              const fv=favTeams[lg.id]||"";
+                              const hasFave=fv.trim().length>0;
+                              const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
+                              return (
+                                <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
+                                  <div/>
+                                  <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
+                                  <div style={{fontSize:12,color:"#cbd5e1"}}>
+                                    {lg.n}{originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>\u2b50</span>}
+                                    {rating!==undefined&&<span style={{fontSize:10,color:C.DM,marginLeft:6}}>GFR {rating}</span>}
+                                    <select value={areaOverrides[lg.id]||""} onChange={ev=>updateAreaOverride(lg.id,ev.target.value)}
+                                      title="Move this league to another area"
+                                      style={{marginLeft:8,background:C.SUR,border:`1px solid ${areaOverrides[lg.id]?"#f59e0b":C.BD2}`,borderRadius:6,color:areaOverrides[lg.id]?"#fde68a":"#94a3b8",fontSize:9,padding:"2px 4px",outline:"none"}}>
+                                      <option value="">auto</option>
+                                      {AREA_ORDER.map(a=><option key={a} value={a}>{AREA_LABEL[a]}</option>)}
+                                    </select>
+                                  </div>
+                                  <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
+                                  <div title={mod!==undefined?"from this area's base and GFR rating":"no GFR rating for this league"} style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"\u2014"}</div>
+                                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                                    <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+                                    <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+                                      key={`faveboost-${lg.id}-${fBoost}`}
+                                      onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
+                                      onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
+                                      style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           </div>
                         );
                       })}
-                      {manualSoccer.length>0&&(<div style={{padding:"10px 16px 4px 40px",marginTop:6,borderTop:`1px solid ${C.BD2}`}}><span style={{fontSize:9,fontWeight:700,color:"#fbbf24",letterSpacing:"0.05em"}}>NEEDS MANUAL MOD (GFR can't score these — no real team coverage)</span></div>)}
-                      {manualSoccer.map(lg=>{
-                        const committedMod=leagueMods[lg.id]??0;
-                        const fv=favTeams[lg.id]||"";
-                        const hasFave=fv.trim().length>0;
-                        const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
-                        return(
-                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.06)":"rgba(251,191,36,0.03)"}}>
-                            <div/>
-                            <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
-                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{originBadge(lg.id)}{genderBadge(lg.gender)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
-                            <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
-                            <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
-                              key={`mod-${lg.id}-${committedMod}`}
-                              title="manually set"
-                              onBlur={ev=>updateMod(lg.id,ev.target.value)}
-                              onKeyDown={ev=>{if(ev.key==="Enter")updateMod(lg.id,ev.target.value);}}
-                              style={{background:C.SUR,border:`1px solid ${committedMod>0?"#fbbf24":C.BD2}`,borderRadius:8,color:committedMod>0?"#fde68a":"#94a3b8",fontSize:11,fontWeight:700,padding:"3px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
-                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
-                              <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Team name..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
-                              <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
-                                key={`faveboost-${lg.id}-${fBoost}`}
-                                onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
-                                onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
-                                style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </>)}
-                  </>)}
+                    </>);
+                  })()}
                 </>);
               })()}
               {/* Disabled leagues sub-list */}
