@@ -4,6 +4,8 @@
   "events": [
     {
       "id": 21786393,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
       "time": "12:00",
       "name": "Ukraine @ Georgia",
       "sport": "Soccer",
@@ -39,6 +41,8 @@
     },
     {
       "id": 71675246,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
       "time": "12:00",
       "name": "Montenegro @ Armenia",
       "sport": "Soccer",
@@ -74,6 +78,8 @@
     },
     {
       "id": 32284524,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
       "time": "12:00",
       "name": "Cyprus @ Latvia",
       "sport": "Soccer",
@@ -109,6 +115,8 @@
     },
     {
       "id": 5105829,
+      "lgId": 2364,
+      "lgSlug": "africa-cup-of-nations-qualifier",
       "time": "12:00",
       "name": "Sierra Leone @ Equatorial Guinea",
       "sport": "Soccer",
@@ -144,6 +152,8 @@
     },
     {
       "id": 726286,
+      "lgId": 2364,
+      "lgSlug": "africa-cup-of-nations-qualifier",
       "time": "12:00",
       "name": "DR Congo @ Zimbabwe",
       "sport": "Soccer",
@@ -179,6 +189,8 @@
     },
     {
       "id": 59168113,
+      "lgId": 2364,
+      "lgSlug": "africa-cup-of-nations-qualifier",
       "time": "12:00",
       "name": "Burkina Faso @ Central African Republic",
       "sport": "Soccer",
@@ -214,6 +226,8 @@
     },
     {
       "id": 74963355,
+      "lgId": 541,
+      "lgSlug": "laliga-2",
       "time": "14:30",
       "name": "Castell\u00f3n @ Legan\u00e9s",
       "sport": "Soccer",
@@ -242,7 +256,7 @@
       "_score": 48.30010162670396,
       "cat": "club_league",
       "area": "mens_club_league",
-      "lgR": 80.84,
+      "lgR": 78.56,
       "_rk": [
         158,
         503
@@ -250,6 +264,8 @@
     },
     {
       "id": 60966621,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
       "time": "14:45",
       "name": "Poland @ Sweden",
       "sport": "Soccer",
@@ -285,6 +301,8 @@
     },
     {
       "id": 90602062,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
       "time": "14:45",
       "name": "France @ Belgium",
       "sport": "Soccer",
@@ -320,6 +338,8 @@
     },
     {
       "id": 89938107,
+      "lgId": 2364,
+      "lgSlug": "africa-cup-of-nations-qualifier",
       "time": "15:00",
       "name": "Tunisia @ Botswana",
       "sport": "Soccer",
@@ -356,6 +376,8 @@
     },
     {
       "id": 99745696,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
       "time": "17:00",
       "name": "Bonaire @ Cuba",
       "sport": "Soccer",
@@ -387,6 +409,8 @@
     },
     {
       "id": 38593922,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
       "time": "18:00",
       "name": "Martinique @ Suriname",
       "sport": "Soccer",
@@ -418,6 +442,8 @@
     },
     {
       "id": 61774314,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
       "time": "20:00",
       "name": "Honduras @ Jamaica",
       "sport": "Soccer",
@@ -453,6 +479,8 @@
     },
     {
       "id": 54692395,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
       "time": "20:00",
       "name": "Grenada @ St. Kitts and Nevis",
       "sport": "Soccer",
@@ -488,6 +516,8 @@
     },
     {
       "id": 10084642,
+      "lgId": 1820,
+      "lgSlug": "nfl",
       "time": "20:15",
       "name": "Philadelphia Eagles @ Chicago Bears",
       "sport": "Football",
@@ -524,6 +554,8 @@
     },
     {
       "id": 7190468,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "21:00",
       "name": "TCU @ BYU",
       "sport": "Soccer",
@@ -534,8 +566,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -549,13 +581,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 42437667,
+      "lgId": 1881,
+      "lgSlug": "liga-mx-femenil",
       "time": "21:06",
       "name": "Toluca @ Necaxa",
       "sport": "Soccer",
@@ -581,9 +613,9 @@
         "l": ""
       },
       "_score": 43.926861377093914,
-      "cat": "club_league",
-      "area": "womens_club_league",
-      "lgR": 71.25,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "lgR": 80.38,
       "_rk": [
         80,
         637
@@ -591,6 +623,8 @@
     },
     {
       "id": 7603318,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
       "time": "22:00",
       "name": "El Salvador @ Guatemala",
       "sport": "Soccer",
@@ -688,51 +722,9 @@
     }
   ],
   "areas": {
-    "womens_club_league": {
-      "leagues": {
-        "USL Super League": 62.73,
-        "U20 Women's World Cup": 39.29,
-        "Women's College Soccer": 39.29,
-        "NWSL": 85.76,
-        "Women's Super League": 63.92,
-        "Serie A Women": 75.85,
-        "Liga MX Femenil": 71.25
-      },
-      "top": 85.76,
-      "worst": 39.29,
-      "scale": 0.5379814934366257,
-      "label": "Women's club leagues"
-    },
-    "womens_club_competition": {
-      "leagues": {
-        "UEFA Women's Champions League": 86.64
-      },
-      "top": 86.64,
-      "worst": 86.64,
-      "scale": 0.0,
-      "label": "Women's club competitions"
-    },
-    "mens_club_league": {
-      "leagues": {
-        "College Soccer": 39.29,
-        "Primera A": 79.86,
-        "Arabian Gulf Cup": 46.98,
-        "USL Championship": 68.63,
-        "MLS": 80.02,
-        "Liga Nacional": 73.76,
-        "LaLiga2": 80.84,
-        "Liga MX": 80.02,
-        "League One": 75.57,
-        "League Two": 69.77,
-        "USL League One": 42.8
-      },
-      "top": 80.84,
-      "worst": 39.29,
-      "scale": 0.6016847172081828,
-      "label": "Men's club leagues"
-    },
     "mens_national": {
       "leagues": {
+        "Arabian Gulf Cup": 1243.57,
         "International Friendly": 1434.24,
         "CONCACAF Nations League": 1166.61,
         "Africa Cup of Nations Qualifier": 1242.01,
@@ -740,17 +732,61 @@
       },
       "top": 1439.42,
       "worst": 1166.61,
+      "anchored": false,
       "scale": 0.09163886954290526,
       "label": "Men's national teams"
     },
+    "mens_club_league": {
+      "leagues": {
+        "USL Championship": 68.63,
+        "Primera A": 79.86,
+        "MLS": 80.02,
+        "Liga Nacional": 73.12,
+        "LaLiga2": 78.56,
+        "USL Super League": 53.06,
+        "Liga MX": 80.02,
+        "League One": 75.57,
+        "League Two": 69.77,
+        "USL League One": 42.8
+      },
+      "top": 91.09,
+      "worst": 42.8,
+      "anchored": true,
+      "scale": 0.5177055290950506,
+      "label": "Men's club leagues"
+    },
+    "womens_club_competition": {
+      "leagues": {
+        "UEFA Women's Champions League": 86.64,
+        "Serie A Women": 88.31
+      },
+      "top": 88.31,
+      "worst": 86.64,
+      "anchored": false,
+      "scale": 14.970059880239505,
+      "label": "Women's club competitions"
+    },
     "mens_club_competition": {
       "leagues": {
-        "Canadian Premier League": 71.89
+        "Canadian Premier League": 65.85,
+        "Liga MX Femenil": 80.38
       },
-      "top": 71.89,
-      "worst": 71.89,
-      "scale": 0.0,
+      "top": 80.38,
+      "worst": 65.85,
+      "anchored": false,
+      "scale": 1.7205781142463867,
       "label": "Men's club competitions"
+    },
+    "womens_club_league": {
+      "leagues": {
+        "NWSL": 85.76,
+        "Women's Super League": 91.09
+      },
+      "top": 91.09,
+      "worst": 53.4,
+      "anchored": true,
+      "scale": 0.6633059166887768,
+      "label": "Women's club leagues"
     }
   }
 }
