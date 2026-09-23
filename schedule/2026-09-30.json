@@ -4,6 +4,8 @@
   "events": [
     {
       "id": 6137172,
+      "lgId": 379,
+      "lgSlug": "international-friendly-2",
       "time": "12:00",
       "name": "Andorra @ Lithuania",
       "sport": "Soccer",
@@ -39,6 +41,8 @@
     },
     {
       "id": 9269451,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "12:00",
       "name": "Villanova @ Creighton",
       "sport": "Soccer",
@@ -49,8 +53,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -64,13 +68,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 14352911,
+      "lgId": 392,
+      "lgSlug": "uefa-womens-champions-league",
       "time": "12:45",
       "name": "FC Barcelona Femen\u00ed @ Roma",
       "sport": "Soccer",
@@ -100,7 +104,7 @@
       "_score": 52.888510809541266,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 90.9,
+      "lgR": 88.27,
       "_rk": [
         4,
         15
@@ -108,6 +112,8 @@
     },
     {
       "id": 89157502,
+      "lgId": 392,
+      "lgSlug": "uefa-womens-champions-league",
       "time": "12:45",
       "name": "Arsenal @ Paris FC",
       "sport": "Soccer",
@@ -135,7 +141,7 @@
       "_score": 51.30644321110563,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 90.9,
+      "lgR": 88.27,
       "_rk": [
         2,
         51
@@ -143,6 +149,8 @@
     },
     {
       "id": 74919181,
+      "lgId": 392,
+      "lgSlug": "uefa-womens-champions-league",
       "time": "12:45",
       "name": "Juventus @ BK H\u00e4cken",
       "sport": "Soccer",
@@ -170,7 +178,7 @@
       "_score": 44.38165552614965,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 90.9,
+      "lgR": 88.27,
       "_rk": [
         32,
         299
@@ -178,6 +186,8 @@
     },
     {
       "id": 9970218,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "13:00",
       "name": "Rider @ Iona",
       "sport": "Soccer",
@@ -188,8 +198,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -203,13 +213,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 86244865,
+      "lgId": 380,
+      "lgSlug": "arabian-gulf-cup",
       "time": "13:30",
       "name": "Yemen @ Bahrain",
       "sport": "Soccer",
@@ -220,8 +230,46 @@
       ],
       "dur": 120,
       "_st": {
+        "v": 31.783334289056523,
+        "l": "Quality +0.8 (FIFA men Yemen 1065 vs Bahrain 1254, AFC pool baseline 2279), Mod +31.0"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 31.783334289056523,
+      "cat": "national_men",
+      "area": "mens_national",
+      "lgR": 1243.57,
+      "_rk": [
+        145,
+        92
+      ]
+    },
+    {
+      "id": 40218740,
+      "lgId": 380,
+      "lgSlug": "arabian-gulf-cup",
+      "time": "13:30",
+      "name": "Qatar @ UAE",
+      "sport": "Soccer",
+      "league": "Arabian Gulf Cup",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
         "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "l": "national-team match not resolved in FIFA men \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -236,48 +284,14 @@
         "l": ""
       },
       "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 46.98
-    },
-    {
-      "id": 40218740,
-      "time": "13:30",
-      "name": "Qatar @ UAE",
-      "sport": "Soccer",
-      "league": "Arabian Gulf Cup",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 10.50533333333334,
-        "l": "Quality -20.0 (GFR 70.1-39.3 (not rated yet) vs tier1 baseline 143.2 (Qatar Stars League (Qatar) \u2014 opponent not in GFR), mod +30.5), Mod +30.5"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 10.50533333333334,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 46.98,
-      "_rk": [
-        1211,
-        null
-      ]
+      "cat": "national_men",
+      "area": "mens_national",
+      "lgR": 1243.57
     },
     {
       "id": 84802465,
+      "lgId": 1758,
+      "lgSlug": "mlb",
       "time": "14:00",
       "name": "AL Wild Card #2 @ AL Wild Card #1",
       "sport": "Baseball",
@@ -307,6 +321,8 @@
     },
     {
       "id": 12148250,
+      "lgId": 1758,
+      "lgSlug": "mlb",
       "time": "14:00",
       "name": "NL Wild Card #2 @ NL Wild Card #1",
       "sport": "Baseball",
@@ -336,6 +352,8 @@
     },
     {
       "id": 58809601,
+      "lgId": 1758,
+      "lgSlug": "mlb",
       "time": "14:00",
       "name": "AL Wild Card #3 @ AL Div. Winner #3",
       "sport": "Baseball",
@@ -365,6 +383,8 @@
     },
     {
       "id": 71812385,
+      "lgId": 1758,
+      "lgSlug": "mlb",
       "time": "14:00",
       "name": "NL Wild Card #3 @ NL Div. Winner #3",
       "sport": "Baseball",
@@ -394,6 +414,8 @@
     },
     {
       "id": 55379436,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "14:00",
       "name": "East Tennessee State @ Radford",
       "sport": "Soccer",
@@ -404,8 +426,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -419,13 +441,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 89726612,
+      "lgId": 392,
+      "lgSlug": "uefa-womens-champions-league",
       "time": "15:00",
       "name": "Chelsea Women @ Lyon",
       "sport": "Soccer",
@@ -456,7 +478,7 @@
       "_score": 49.73474982643023,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 90.9,
+      "lgR": 88.27,
       "_rk": [
         23,
         29
@@ -464,6 +486,8 @@
     },
     {
       "id": 71507917,
+      "lgId": 392,
+      "lgSlug": "uefa-womens-champions-league",
       "time": "15:00",
       "name": "Bayern M\u00fcnchen @ SL Benfica",
       "sport": "Soccer",
@@ -491,7 +515,7 @@
       "_score": 53.25679539802958,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 90.9,
+      "lgR": 88.27,
       "_rk": [
         1,
         25
@@ -499,6 +523,8 @@
     },
     {
       "id": 69103252,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "16:00",
       "name": "San Diego @ Loyola Marymount",
       "sport": "Soccer",
@@ -509,8 +535,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.93416666666667,
-        "l": "Quality -20.0 (GFR 79.0-39.3 (not rated yet) vs tier1 baseline 160.0 (MLS (USA) \u2014 opponent not in GFR), mod +38.9), Mod +38.9"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -524,17 +550,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.93416666666667,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22,
-      "_rk": [
-        453,
-        null
-      ]
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 44958614,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "16:00",
       "name": "Siena @ Niagara",
       "sport": "Soccer",
@@ -545,8 +567,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -560,13 +582,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 66874624,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "16:00",
       "name": "Eastern Mennonite @ VMI",
       "sport": "Soccer",
@@ -577,8 +599,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -592,13 +614,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 35769695,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "16:00",
       "name": "Rider @ Merrimack",
       "sport": "Soccer",
@@ -609,8 +631,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -624,13 +646,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 92604476,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "18:00",
       "name": "Quinnipiac @ Manhattan",
       "sport": "Soccer",
@@ -641,8 +663,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -656,13 +678,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 11026319,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "Army @ Boston University",
       "sport": "Soccer",
@@ -673,8 +695,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -688,13 +710,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 73021110,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "Colgate @ Holy Cross",
       "sport": "Soccer",
@@ -705,8 +727,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -720,13 +742,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 48288205,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "Navy @ Lehigh",
       "sport": "Soccer",
@@ -737,8 +759,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -752,13 +774,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 11248813,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "American @ Loyola Maryland",
       "sport": "Soccer",
@@ -769,8 +791,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -784,13 +806,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 90966755,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "Butler @ Seton Hall",
       "sport": "Soccer",
@@ -801,8 +823,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -816,13 +838,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 6454443,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "Longwood @ Winthrop",
       "sport": "Soccer",
@@ -833,8 +855,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -848,13 +870,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 90946172,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "UC Riverside @ Sacramento State",
       "sport": "Soccer",
@@ -865,8 +887,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -880,13 +902,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 19554168,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
       "time": "18:00",
       "name": "Stonehill @ New Hampshire",
       "sport": "Volleyball",
@@ -916,6 +938,8 @@
     },
     {
       "id": 60244885,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "18:30",
       "name": "DePaul @ Xavier",
       "sport": "Soccer",
@@ -926,8 +950,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -941,13 +965,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 40649955,
+      "lgId": 218,
+      "lgSlug": "canadian-premier-league",
       "time": "19:00",
       "name": "Cavalry @ Atl\u00e9tico Ottawa",
       "sport": "Soccer",
@@ -973,9 +997,9 @@
         "l": ""
       },
       "_score": 37.96594512474246,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "lgR": 71.04,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "lgR": 65.85,
       "_rk": [
         884,
         1364
@@ -983,6 +1007,8 @@
     },
     {
       "id": 80500943,
+      "lgId": 590,
+      "lgSlug": "usl-championship",
       "time": "19:00",
       "name": "Sporting JAX @ Miami FC",
       "sport": "Soccer",
@@ -1019,6 +1045,8 @@
     },
     {
       "id": 36083050,
+      "lgId": 590,
+      "lgSlug": "usl-championship",
       "time": "19:00",
       "name": "Detroit City @ Brooklyn FC",
       "sport": "Soccer",
@@ -1055,6 +1083,8 @@
     },
     {
       "id": 58179177,
+      "lgId": 592,
+      "lgSlug": "usl-league-one",
       "time": "19:00",
       "name": "Spokane Velocity @ Chattanooga Red Wolves",
       "sport": "Soccer",
@@ -1083,10 +1113,12 @@
       "_score": 0.0,
       "cat": "unclassified",
       "area": "mens_club_league",
-      "lgR": 39.29
+      "lgR": 42.8
     },
     {
       "id": 62895774,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "19:00",
       "name": "West Florida @ North Carolina",
       "sport": "Soccer",
@@ -1097,8 +1129,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.537499999999994,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-67.9 vs tier1 baseline 137.3 (USL Championship (USA) \u2014 opponent not in GFR), mod +27.5), Mod +27.5"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1112,17 +1144,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.537499999999994,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22,
-      "_rk": [
-        null,
-        1370
-      ]
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 8215254,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "19:00",
       "name": "Marquette @ Georgetown",
       "sport": "Soccer",
@@ -1133,8 +1161,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1148,13 +1176,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 38540327,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "19:00",
       "name": "Bucknell @ Lafayette",
       "sport": "Soccer",
@@ -1165,8 +1193,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1180,13 +1208,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 87389014,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "19:00",
       "name": "UNC Asheville @ Radford",
       "sport": "Soccer",
@@ -1197,8 +1225,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1212,13 +1240,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 48566044,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "19:00",
       "name": "Presbyterian @ South Carolina Upstate",
       "sport": "Soccer",
@@ -1229,8 +1257,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1244,13 +1272,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 7877844,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "19:00",
       "name": "UConn @ St. John's (NY)",
       "sport": "Soccer",
@@ -1261,8 +1289,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1276,13 +1304,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 35033047,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
       "time": "19:00",
       "name": "Vanderbilt @ LSU",
       "sport": "Volleyball",
@@ -1312,6 +1340,8 @@
     },
     {
       "id": 76940772,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
       "time": "19:00",
       "name": "Notre Dame @ Louisville",
       "sport": "Volleyball",
@@ -1341,6 +1371,8 @@
     },
     {
       "id": 41426371,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
       "time": "19:00",
       "name": "UIC @ Valparaiso",
       "sport": "Volleyball",
@@ -1370,6 +1402,8 @@
     },
     {
       "id": 5733029,
+      "lgId": 590,
+      "lgSlug": "usl-championship",
       "time": "19:30",
       "name": "Indy Eleven @ Rhode Island",
       "sport": "Soccer",
@@ -1405,6 +1439,8 @@
     },
     {
       "id": 36286894,
+      "lgId": 707,
+      "lgSlug": "nhl",
       "time": "19:30",
       "name": "Pittsburgh Penguins @ Philadelphia Flyers",
       "sport": "Hockey",
@@ -1439,6 +1475,8 @@
     },
     {
       "id": 29734336,
+      "lgId": 362,
+      "lgSlug": "soccer-club-friendlies",
       "time": "19:30",
       "name": "Paderborn @ D.C. United",
       "sport": "Soccer",
@@ -1474,6 +1512,8 @@
     },
     {
       "id": 51959824,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
       "time": "19:30",
       "name": "UAB @ Memphis",
       "sport": "Volleyball",
@@ -1503,6 +1543,8 @@
     },
     {
       "id": 45126352,
+      "lgId": 590,
+      "lgSlug": "usl-championship",
       "time": "20:00",
       "name": "New Mexico United @ FC Tulsa",
       "sport": "Soccer",
@@ -1539,6 +1581,8 @@
     },
     {
       "id": 31733463,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "20:00",
       "name": "St. Mary's @ Portland",
       "sport": "Soccer",
@@ -1549,8 +1593,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.93416666666667,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-79.7 vs tier1 baseline 160.0 (MLS (USA) \u2014 opponent not in GFR), mod +38.9), Mod +38.9"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1564,17 +1608,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.93416666666667,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22,
-      "_rk": [
-        null,
-        395
-      ]
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 73884466,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
       "time": "20:00",
       "name": "Marquette @ DePaul",
       "sport": "Volleyball",
@@ -1604,6 +1644,8 @@
     },
     {
       "id": 64492000,
+      "lgId": 230,
+      "lgSlug": "primera-a",
       "time": "21:00",
       "name": "Junior @ Atl\u00e9tico Nacional",
       "sport": "Soccer",
@@ -1639,6 +1681,8 @@
     },
     {
       "id": 70498871,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "21:00",
       "name": "UC Irvine @ Utah Valley",
       "sport": "Soccer",
@@ -1649,8 +1693,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1664,13 +1708,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 90915242,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "21:00",
       "name": "Cal Poly @ CSU Fullerton",
       "sport": "Soccer",
@@ -1681,8 +1725,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1696,13 +1740,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 55120130,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "21:00",
       "name": "Utah Valley @ UC Irvine",
       "sport": "Soccer",
@@ -1713,8 +1757,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1728,13 +1772,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 70547331,
+      "lgId": 590,
+      "lgSlug": "usl-championship",
       "time": "22:00",
       "name": "Las Vegas Lights @ Sacramento Republic",
       "sport": "Soccer",
@@ -1771,6 +1815,8 @@
     },
     {
       "id": 55347097,
+      "lgId": 707,
+      "lgSlug": "nhl",
       "time": "22:00",
       "name": "Los Angeles Kings @ Colorado Avalanche",
       "sport": "Hockey",
@@ -1805,6 +1851,8 @@
     },
     {
       "id": 97109837,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "22:00",
       "name": "CSU Bakersfield @ CSU Northridge",
       "sport": "Soccer",
@@ -1815,8 +1863,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1830,13 +1878,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 42328858,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "22:00",
       "name": "Seattle U @ Pacific",
       "sport": "Soccer",
@@ -1847,8 +1895,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 6.938250000000011,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-64.0 vs tier1 baseline 136.1 (Premier League (Canada) \u2014 opponent not in GFR), mod +26.9), Mod +26.9"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1862,17 +1910,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.938250000000011,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22,
-      "_rk": [
-        null,
-        1560
-      ]
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 45421357,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "22:00",
       "name": "San Francisco @ Santa Clara",
       "sport": "Soccer",
@@ -1883,8 +1927,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 21.035611111111123,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-83.8 vs tier1 baseline 164.3 (Liga Portugal (Portugal) \u2014 opponent not in GFR), mod +41.0), Mod +41.0"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1898,17 +1942,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 21.035611111111123,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22,
-      "_rk": [
-        null,
-        144
-      ]
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 5768601,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "22:00",
       "name": "CSU Fullerton @ UC Riverside",
       "sport": "Soccer",
@@ -1919,8 +1959,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1934,13 +1974,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 28394271,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "22:00",
       "name": "Cal Poly @ UC San Diego",
       "sport": "Soccer",
@@ -1951,8 +1991,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1966,13 +2006,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 18002699,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
       "time": "22:00",
       "name": "Sacramento State @ UC Santa Barbara",
       "sport": "Soccer",
@@ -1983,8 +2023,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1998,13 +2038,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
-      "lgR": 45.22
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 2494261,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "22:00",
       "name": "UC San Diego @ California Baptist",
       "sport": "Soccer",
@@ -2015,8 +2055,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -2030,13 +2070,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 61660256,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "22:00",
       "name": "CSU Northridge @ Long Beach State",
       "sport": "Soccer",
@@ -2047,8 +2087,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -2062,10 +2102,8 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
-      "cat": "unclassified",
-      "area": "womens_club_league",
-      "lgR": 39.29
+      "_score": 0,
+      "cat": "unclassified"
     }
   ],
   "dropped": [
@@ -2171,70 +2209,72 @@
     }
   ],
   "areas": {
-    "womens_club_league": {
-      "leagues": {
-        "USL Super League": 62.73,
-        "U20 Women's World Cup": 39.29,
-        "Women's College Soccer": 39.29,
-        "NWSL": 85.76,
-        "Women's Super League": 63.92,
-        "Serie A Women": 75.85,
-        "Liga MX Femenil": 71.25
-      },
-      "top": 85.76,
-      "worst": 39.29,
-      "scale": 0.5379814934366257,
-      "label": "Women's club leagues"
-    },
-    "womens_club_competition": {
-      "leagues": {
-        "UEFA Women's Champions League": 90.9
-      },
-      "top": 90.9,
-      "worst": 90.9,
-      "scale": 0.0,
-      "label": "Women's club competitions"
-    },
-    "mens_club_league": {
-      "leagues": {
-        "College Soccer": 45.22,
-        "Primera A": 79.86,
-        "Arabian Gulf Cup": 46.98,
-        "USL Championship": 68.63,
-        "CONCACAF Nations League": 39.29,
-        "MLS": 80.02,
-        "Canadian Premier League": 71.04,
-        "Liga Nacional": 73.76,
-        "LaLiga2": 80.84,
-        "Liga MX": 80.02,
-        "League One": 75.57,
-        "League Two": 69.77,
-        "USL League One": 39.29
-      },
-      "top": 80.84,
-      "worst": 39.29,
-      "scale": 0.6016847172081828,
-      "label": "Men's club leagues"
-    },
     "mens_national": {
       "leagues": {
+        "Arabian Gulf Cup": 1243.57,
         "International Friendly": 1001.64,
+        "CONCACAF Nations League": 873.92,
         "Africa Cup of Nations Qualifier": 1302.27,
         "UEFA Nations League": 1407.35
       },
       "top": 1407.35,
-      "worst": 1001.64,
-      "scale": 0.06162036922925243,
+      "worst": 873.92,
+      "anchored": false,
+      "scale": 0.04686650544588794,
       "label": "Men's national teams"
+    },
+    "mens_club_league": {
+      "leagues": {
+        "USL Championship": 68.63,
+        "Primera A": 79.86,
+        "MLS": 80.02,
+        "Liga Nacional": 73.12,
+        "LaLiga2": 78.56,
+        "USL Super League": 53.06,
+        "Liga MX": 80.02,
+        "League One": 75.57,
+        "League Two": 69.77,
+        "USL League One": 42.8
+      },
+      "top": 91.09,
+      "worst": 42.8,
+      "anchored": true,
+      "scale": 0.5177055290950506,
+      "label": "Men's club leagues"
+    },
+    "womens_club_competition": {
+      "leagues": {
+        "UEFA Women's Champions League": 88.27,
+        "Serie A Women": 88.31
+      },
+      "top": 88.31,
+      "worst": 88.27,
+      "anchored": false,
+      "scale": 624.9999999999023,
+      "label": "Women's club competitions"
     },
     "mens_club_competition": {
       "leagues": {
+        "Canadian Premier League": 65.85,
+        "Liga MX Femenil": 80.38,
         "Soccer Club Friendlies": 80.78
       },
       "top": 80.78,
-      "worst": 80.78,
-      "scale": 0.0,
+      "worst": 65.85,
+      "anchored": false,
+      "scale": 1.6744809109176149,
       "label": "Men's club competitions"
+    },
+    "womens_club_league": {
+      "leagues": {
+        "NWSL": 85.76,
+        "Women's Super League": 91.09
+      },
+      "top": 91.09,
+      "worst": 53.4,
+      "anchored": true,
+      "scale": 0.6633059166887768,
+      "label": "Women's club leagues"
     }
   }
 }
