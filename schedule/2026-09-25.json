@@ -2247,8 +2247,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 49.43600867678964,
+        "l": "Quality -0.6 (GFR 88.2-83.1 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -2262,10 +2262,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 49.43600867678964,
       "cat": "club_league",
       "area": "womens_club_league",
-      "lgR": 85.76
+      "lgR": 85.76,
+      "_rk": [
+        9,
+        31
+      ]
     },
     {
       "id": 99799428,
@@ -4380,8 +4384,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 29.999999999999986,
+        "l": "Quality -20.0 (GFR 38.1 (not rated yet)-89.5 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -4395,10 +4399,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 29.999999999999986,
       "cat": "club_league",
       "area": "womens_club_league",
-      "lgR": 85.76
+      "lgR": 85.76,
+      "_rk": [
+        null,
+        8
+      ]
     },
     {
       "id": 59714372,
@@ -6515,10 +6523,10 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "UEFA Women's Champions League": 86.64
+        "UEFA Women's Champions League": 73.56
       },
-      "top": 86.64,
-      "worst": 86.64,
+      "top": 73.56,
+      "worst": 73.56,
       "anchored": false,
       "scale": 0.0,
       "label": "Women's club competitions"
