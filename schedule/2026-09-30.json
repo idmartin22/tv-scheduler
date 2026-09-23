@@ -86,7 +86,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 38.93022844858724,
+        "v": 38.93085153082714,
         "l": "Quality +7.9 (GFR 100.0-58.5 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
@@ -101,7 +101,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 38.93022844858724,
+      "_score": 38.93085153082714,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
@@ -123,8 +123,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.64937141228472,
-        "l": "Quality +13.6 (GFR 92.7-83.8 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
+        "v": 44.58623832429619,
+        "l": "Quality +13.6 (GFR 92.5-83.8 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
         "v": 0,
@@ -138,13 +138,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.64937141228472,
+      "_score": 44.58623832429619,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
       "_rk": [
         6,
-        25
+        24
       ]
     },
     {
@@ -160,8 +160,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 41.54569016979036,
-        "l": "Quality +10.5 (GFR 82.8-83.9 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
+        "v": 41.20061439188311,
+        "l": "Quality +10.2 (GFR 82.3-83.3 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
         "v": 0,
@@ -175,13 +175,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 41.54569016979036,
+      "_score": 41.20061439188311,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
       "_rk": [
-        32,
-        23
+        36,
+        28
       ]
     },
     {
@@ -464,7 +464,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 29.77595238095236,
+        "v": 29.79928571428573,
         "l": "Quality -20.0 (GFR 96.7-38.1 (not rated yet) vs tier1 baseline 171.1 (WSL (England) \u2014 opponent not in GFR), mod +49.8), Mod +49.8"
       },
       "_sk": {
@@ -479,7 +479,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 29.77595238095236,
+      "_score": 29.79928571428573,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
@@ -501,8 +501,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.62083910259887,
-        "l": "Quality +13.6 (GFR 93.2-83.2 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
+        "v": 44.8081425146229,
+        "l": "Quality +13.8 (GFR 93.3-83.8 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
         "v": 0,
@@ -516,13 +516,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.62083910259887,
+      "_score": 44.8081425146229,
       "cat": "club_competition",
       "area": "womens_club_competition",
       "espn": "uefa.wchampions",
       "_rk": [
         5,
-        28
+        25
       ]
     },
     {
@@ -1004,6 +1004,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "eng.1",
+      "lgR": 68.03,
       "_rk": [
         884,
         1366
@@ -2790,6 +2791,9 @@
       "span": 38.36,
       "label": "Men's club leagues",
       "seen": [
+        "League One (England)",
+        "League One (Scotland)",
+        "League Two (England)",
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
         "MLS (USA)",
@@ -3265,6 +3269,9 @@
       "span": 57.16,
       "label": "Men's club competitions",
       "seen": [
+        "Canadian Premier League",
+        "League One",
+        "League Two",
         "Liga Nacional",
         "Primera A"
       ]
@@ -3464,7 +3471,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 81.64,
+      "rating": 78.58,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
