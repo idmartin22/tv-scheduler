@@ -1657,6 +1657,36 @@ function App(){
                         if(publishedRating[bare]===undefined) publishedRating[bare]=rt;
                       });
                     });
+                    // Origin badge data from GFR, keyed the same way as ratings.
+                    // The hand-kept LEAGUE_ORIGIN map covers ~30 leagues; this
+                    // covers every league GFR rates, which is why some rows had
+                    // a country tag and most did not.
+                    const publishedOrigin={};
+                    Object.values(areaData||{}).forEach(d=>{
+                      Object.entries(d.origin||{}).forEach(([full,o])=>{
+                        publishedOrigin[full.toLowerCase()]=o;
+                        const bare=full.replace(/\s*\([^)]*\)\s*$/,"").toLowerCase();
+                        if(publishedOrigin[bare]===undefined) publishedOrigin[bare]=o;
+                      });
+                    });
+                    const COUNTRY_CODE={England:"ENG",Scotland:"SCO",Wales:"WAL",Spain:"ESP",Germany:"GER",
+                      Italy:"ITA",France:"FRA",Portugal:"POR",Netherlands:"NED",Belgium:"BEL",
+                      Brazil:"BRA",Argentina:"ARG",Mexico:"MEX",USA:"USA",Canada:"CAN",Colombia:"COL",
+                      Chile:"CHI",Peru:"PER",Uruguay:"URU",Ecuador:"ECU",Paraguay:"PAR",Bolivia:"BOL",
+                      Venezuela:"VEN",Japan:"JPN",Turkiye:"TUR",Denmark:"DEN",Norway:"NOR",Sweden:"SWE",
+                      Poland:"POL",Austria:"AUT",Switzerland:"SUI",Croatia:"CRO",Russia:"RUS",Greece:"GRE",
+                      Czechia:"CZE",Israel:"ISR",Morocco:"MAR",Egypt:"EGY",Romania:"ROU",Australia:"AUS",
+                      "South Korea":"KOR","Saudi Arabia":"KSA","Costa Rica":"CRC",Honduras:"HON"};
+                    const gfrBadge=lg=>{
+                      const o=publishedOrigin[(lg.n||"").toLowerCase()];
+                      if(!o) return null;
+                      const code=o.country?(COUNTRY_CODE[o.country]||o.country.slice(0,3).toUpperCase())
+                                          :(o.confederation||"");
+                      if(!code) return null;
+                      const col=({UEFA:"#3b82f6",CONMEBOL:"#fbbf24",CONCACAF:"#22c55e",CAF:"#ef4444",AFC:"#f97316"})[o.confederation]||"#94a3b8";
+                      return <span title={`${o.country||""} ${o.confederation||""}`.trim()}
+                        style={{marginLeft:6,fontSize:8,fontWeight:700,color:col,border:`1px solid ${col}55`,borderRadius:4,padding:"1px 3px"}}>{code}</span>;
+                    };
                     const ratingFor=lg=>{
                       if(ratingOfLeague[lg.id]!==undefined) return ratingOfLeague[lg.id];
                       const n=(lg.n||"").toLowerCase();
@@ -1721,7 +1751,7 @@ function App(){
                                   <div/>
                                   <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
                                   <div style={{fontSize:12,color:"#cbd5e1"}}>
-                                    {lg.n}{originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>\u2b50</span>}
+                                    {lg.n}{originBadge(lg.id)||gfrBadge(lg)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>\u2b50</span>}
                                     {rating!==undefined&&(
                                       <span title={onToday?"has games today":"no games today"}
                                         style={{fontSize:10,color:onToday?"#86efac":C.DM,marginLeft:6}}>
