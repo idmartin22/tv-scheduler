@@ -4296,8 +4296,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 59.885321100917444,
+        "l": "Quality +9.9 (GFR 88.2-86.4 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -4311,10 +4311,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 59.885321100917444,
       "cat": "club_league",
       "area": "womens_club_league",
-      "lgR": 85.76
+      "lgR": 85.76,
+      "_rk": [
+        9,
+        16
+      ]
     },
     {
       "id": 70222792,
@@ -5982,19 +5986,18 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "UEFA Women's Champions League": 86.72,
-        "Serie A Women": 88.31
+        "UEFA Women's Champions League": 80.44,
+        "Women's Super League": 84.28
       },
-      "top": 88.31,
-      "worst": 86.72,
+      "top": 84.28,
+      "worst": 80.44,
       "anchored": false,
-      "scale": 15.723270440251538,
+      "scale": 6.510416666666661,
       "label": "Women's club competitions"
     },
     "mens_club_competition": {
       "leagues": {
         "Canadian Premier League": 65.85,
-        "Liga MX Femenil": 80.38,
         "Soccer Club Friendlies": 80.78,
         "Primera Division": 85.28
       },
@@ -6007,12 +6010,13 @@
     "womens_club_league": {
       "leagues": {
         "NWSL": 85.76,
-        "Women's Super League": 91.09
+        "Serie A Women": 75.85,
+        "Liga MX Femenil": 71.25
       },
-      "top": 91.09,
+      "top": 85.76,
       "worst": 53.4,
       "anchored": true,
-      "scale": 0.6633059166887768,
+      "scale": 0.772558714462299,
       "label": "Women's club leagues"
     }
   }
