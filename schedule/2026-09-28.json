@@ -339,6 +339,39 @@
       ]
     },
     {
+      "id": 13559967,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "15:00",
+      "name": "Barbados @ Guadeloupe",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "national-team match not resolved in FIFA men \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league"
+    },
+    {
       "id": 99745696,
       "lgId": 365,
       "lgSlug": "concacaf-nations-league",
@@ -479,6 +512,43 @@
       ]
     },
     {
+      "id": 28326708,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "20:00",
+      "name": "Bermuda @ St. Lucia",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 21.84378361159753,
+        "l": "Quality -7.5 (FIFA men Bermuda 975 vs St Lucia 977, CONCACAF pool baseline 2199), Mod +29.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 21.84378361159753,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league",
+      "_rk": [
+        167,
+        166
+      ]
+    },
+    {
       "id": 10084642,
       "lgId": 1820,
       "lgSlug": "nfl",
@@ -561,7 +631,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 28.201020874103065,
+        "v": 28.247930273495655,
         "l": "Quality -7.3 (GFR 76.1-57.5 vs tier1 baseline 142.5 (Liga MX Femenil (Mexico)), mod +35.5), Mod +35.5"
       },
       "_sk": {
@@ -576,13 +646,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 28.201020874103065,
+      "_score": 28.247930273495655,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "mex.w.1",
       "lgR": 71.25,
       "_rk": [
-        74,
+        76,
         327
       ]
     },
@@ -1238,6 +1308,9 @@
       "span": 38.36,
       "label": "Men's club leagues",
       "seen": [
+        "League One (England)",
+        "League One (Scotland)",
+        "League Two (England)",
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
         "MLS (USA)",
@@ -1713,6 +1786,9 @@
       "span": 57.16,
       "label": "Men's club competitions",
       "seen": [
+        "Canadian Premier League",
+        "League One",
+        "League Two",
         "Liga Nacional",
         "Primera A"
       ]
@@ -1912,7 +1988,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 81.64,
+      "rating": 78.58,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
