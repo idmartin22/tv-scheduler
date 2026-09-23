@@ -597,8 +597,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 43.926861377093914,
-        "l": "Quality +5.0 (GFR 85.7-76.9 vs tier1 baseline 160.0 (Liga MX (Mexico)), mod +38.9), Mod +38.9"
+        "v": 28.201020874103065,
+        "l": "Quality -7.3 (GFR 76.1-57.5 vs tier1 baseline 142.5 (Liga MX Femenil (Mexico)), mod +35.5), Mod +35.5"
       },
       "_sk": {
         "v": 0,
@@ -612,13 +612,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 43.926861377093914,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "lgR": 80.38,
+      "_score": 28.201020874103065,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "lgR": 71.25,
       "_rk": [
-        80,
-        637
+        74,
+        327
       ]
     },
     {
@@ -757,35 +757,35 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "UEFA Women's Champions League": 86.64,
-        "Serie A Women": 88.31
+        "UEFA Women's Champions League": 73.56,
+        "Women's Super League": 84.28
       },
-      "top": 88.31,
-      "worst": 86.64,
+      "top": 84.28,
+      "worst": 73.56,
       "anchored": false,
-      "scale": 14.970059880239505,
+      "scale": 2.332089552238806,
       "label": "Women's club competitions"
     },
     "mens_club_competition": {
       "leagues": {
-        "Canadian Premier League": 65.85,
-        "Liga MX Femenil": 80.38
+        "Canadian Premier League": 65.85
       },
-      "top": 80.38,
+      "top": 65.85,
       "worst": 65.85,
       "anchored": false,
-      "scale": 1.7205781142463867,
+      "scale": 0.0,
       "label": "Men's club competitions"
     },
     "womens_club_league": {
       "leagues": {
         "NWSL": 85.76,
-        "Women's Super League": 91.09
+        "Serie A Women": 75.85,
+        "Liga MX Femenil": 71.25
       },
-      "top": 91.09,
+      "top": 85.76,
       "worst": 53.4,
       "anchored": true,
-      "scale": 0.6633059166887768,
+      "scale": 0.772558714462299,
       "label": "Women's club leagues"
     }
   }
