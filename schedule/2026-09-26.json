@@ -174,8 +174,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.4861920875303,
-        "l": "Quality +11.0 (GFR 96.3-77.8 vs tier2 baseline 151.1 (England (cross-tier)), mod +34.4), Mod +34.4"
+        "v": 49.69599345295317,
+        "l": "Quality +6.5 (GFR 95.1-73.8 vs tier2 baseline 158.0 (England (cross-tier)), mod +43.2), Mod +43.2"
       },
       "_sk": {
         "v": 0,
@@ -189,13 +189,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.4861920875303,
-      "cat": "club_league",
-      "area": "womens_club_league",
-      "lgR": 77.0,
+      "_score": 49.69599345295317,
+      "cat": "club_competition",
+      "area": "womens_club_competition",
+      "lgR": 83.78,
       "_rk": [
-        3,
-        547
+        4,
+        98
       ]
     },
     {
@@ -751,8 +751,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 30.0,
-        "l": "Quality -20.0 (GFR 94.5-39.3 (not rated yet) vs tier1 baseline 182.2 (Premier League (England) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
+        "v": 43.28064616727339,
+        "l": "Quality -6.5 (GFR 83.7-82.5 vs tier1 baseline 171.1 (WSL (England)), mod +49.8), Mod +49.8"
       },
       "_sk": {
         "v": 0,
@@ -766,13 +766,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30.0,
-      "cat": "club_league",
-      "area": "womens_club_league",
-      "lgR": 77.0,
+      "_score": 43.28064616727339,
+      "cat": "club_competition",
+      "area": "womens_club_competition",
+      "lgR": 83.78,
       "_rk": [
-        6,
-        null
+        26,
+        37
       ]
     },
     {
@@ -1602,8 +1602,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 29.999999999999986,
+        "l": "Quality -20.0 (GFR 38.1 (not rated yet)-88.2 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -1617,10 +1617,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 29.999999999999986,
       "cat": "club_league",
       "area": "womens_club_league",
-      "lgR": 85.76
+      "lgR": 85.76,
+      "_rk": [
+        null,
+        10
+      ]
     },
     {
       "id": 38447523,
@@ -6838,8 +6842,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 56.256880733944996,
+        "l": "Quality +6.3 (GFR 86.3-87.2 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -6853,10 +6857,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 56.256880733944996,
       "cat": "club_league",
       "area": "womens_club_league",
-      "lgR": 85.76
+      "lgR": 85.76,
+      "_rk": [
+        17,
+        12
+      ]
     },
     {
       "id": 17506862,
@@ -9654,8 +9662,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": 45.51143000166864,
+        "l": "Quality -4.5 (GFR 82.7-86.9 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -9669,10 +9677,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 45.51143000166864,
       "cat": "club_league",
       "area": "womens_club_league",
-      "lgR": 85.76
+      "lgR": 85.76,
+      "_rk": [
+        33,
+        13
+      ]
     },
     {
       "id": 93349836,
@@ -13257,12 +13269,13 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "UEFA Women's Champions League": 86.64
+        "UEFA Women's Champions League": 73.56,
+        "Women's Super League": 83.78
       },
-      "top": 86.64,
-      "worst": 86.64,
+      "top": 83.78,
+      "worst": 73.56,
       "anchored": false,
-      "scale": 0.0,
+      "scale": 2.4461839530332683,
       "label": "Women's club competitions"
     },
     "mens_club_competition": {
@@ -13277,8 +13290,7 @@
     },
     "womens_club_league": {
       "leagues": {
-        "NWSL": 85.76,
-        "Women's Super League": 77.0
+        "NWSL": 85.76
       },
       "top": 85.76,
       "worst": 53.4,
