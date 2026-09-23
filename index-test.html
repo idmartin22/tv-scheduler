@@ -674,8 +674,8 @@ function App(){
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
-      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setAreaData(sched.areas||{});setScheduleStatus("loaded");}
-      else {setDynamicEvents([]);setDroppedEvents([]);setAreaData({});setScheduleStatus("none");}
+      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setAreaData(sched.areas||{});setLeagueGfr(sched.leagueGfr||{});setScheduleStatus("loaded");}
+      else {setDynamicEvents([]);setDroppedEvents([]);setAreaData({});setLeagueGfr({});setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
       if(latestDateRequest.current!==dateStr)return;
       setTvOverrides(ovr.overrides||[]);
@@ -761,6 +761,7 @@ function App(){
   // area and computes each league's mod from it, so a base change re-scores
   // instantly with no re-scrape.
   const [areaData,setAreaData]=useState({});
+  const [leagueGfr,setLeagueGfr]=useState({});  // app league id -> {rating, area, gfrLeague, country, confederation}
   const [areaBases,setAreaBases]=useState({});      // area -> base mod (default 50)
   const [areaOverrides,setAreaOverrides]=useState({}); // leagueId -> area, manual placement
   const [areaExpanded,setAreaExpanded]=useState({});
@@ -829,6 +830,7 @@ function App(){
           setDynamicEvents(sched.events);
           setDroppedEvents(sched.dropped||[]);
           setAreaData(sched.areas||{});
+          setLeagueGfr(sched.leagueGfr||{});
           setScheduleStatus("loaded");
         } else if(active) {
           setScheduleStatus("none");
@@ -1652,9 +1654,9 @@ function App(){
                     const publishedRating={};
                     Object.values(areaData||{}).forEach(d=>{
                       Object.entries(d.leagues||{}).forEach(([full,rt])=>{
-                        publishedRating[full.toLowerCase()]=rt;
-                        const bare=full.replace(/\s*\([^)]*\)\s*$/,"").toLowerCase();
-                        if(publishedRating[bare]===undefined) publishedRating[bare]=rt;
+                        publishedRating[full.toLowerCase()]=rt;   // exact only — a bare
+                        // "Serie A" matches Italy, Brazil and Ecuador, so indexing
+                        // without the country showed whichever came first
                       });
                     });
                     // Origin badge data from GFR, keyed the same way as ratings.
@@ -1665,8 +1667,6 @@ function App(){
                     Object.values(areaData||{}).forEach(d=>{
                       Object.entries(d.origin||{}).forEach(([full,o])=>{
                         publishedOrigin[full.toLowerCase()]=o;
-                        const bare=full.replace(/\s*\([^)]*\)\s*$/,"").toLowerCase();
-                        if(publishedOrigin[bare]===undefined) publishedOrigin[bare]=o;
                       });
                     });
                     const COUNTRY_CODE={England:"ENG",Scotland:"SCO",Wales:"WAL",Spain:"ESP",Germany:"GER",
@@ -1678,7 +1678,10 @@ function App(){
                       Czechia:"CZE",Israel:"ISR",Morocco:"MAR",Egypt:"EGY",Romania:"ROU",Australia:"AUS",
                       "South Korea":"KOR","Saudi Arabia":"KSA","Costa Rica":"CRC",Honduras:"HON"};
                     const gfrBadge=lg=>{
-                      const o=publishedOrigin[(lg.n||"").toLowerCase()];
+                      const m=gfrById[lg.id];
+                      const o=(m&&(m.country||m.confederation))
+                        ? {country:m.country||"",confederation:m.confederation||""}
+                        : publishedOrigin[(lg.n||"").toLowerCase()];
                       if(!o) return null;
                       const code=o.country?(COUNTRY_CODE[o.country]||o.country.slice(0,3).toUpperCase())
                                           :(o.confederation||"");
@@ -1687,10 +1690,18 @@ function App(){
                       return <span title={`${o.country||""} ${o.confederation||""}`.trim()}
                         style={{marginLeft:6,fontSize:8,fontWeight:700,color:col,border:`1px solid ${col}55`,borderRadius:4,padding:"1px 3px"}}>{code}</span>;
                     };
+                    // Look leagues up by ID, never by name. Name matching both
+                    // missed leagues the app names differently and picked the
+                    // wrong country when a name repeats (Serie A, Premier
+                    // League); the scraper resolves each one exactly and
+                    // publishes it here.
+                    const gfrById=leagueGfr||{};
                     const ratingFor=lg=>{
                       if(ratingOfLeague[lg.id]!==undefined) return ratingOfLeague[lg.id];
-                      const n=(lg.n||"").toLowerCase();
-                      return publishedRating[n];
+                      const m=gfrById[lg.id];
+                      if(m&&m.rating!==undefined) return m.rating;
+                      const full=(lg.n||"").toLowerCase();
+                      return publishedRating[full];      // exact "League (Country)" only
                     };
                     const areaOf=lg=>areaOverrides[lg.id]||areaOfLeague[lg.id]||"unassigned";
                     const byArea={};
