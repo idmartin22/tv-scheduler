@@ -1038,11 +1038,12 @@ function App(){
   // Takes the DISPLAYED baseline value (e.g. user types 55) and stores it as
   // a delta from 50, since 50 is the fixed reference point the whole GFR mod
   // scale is anchored to (EPL always computes to exactly 50).
-  const AREA_ORDER=["mens_club_league","mens_club_competition","mens_national",
-                    "womens_club_league","womens_club_competition","womens_national"];
+  const AREA_ORDER=["mens_club_league","mens_club_competition","mens_oneoff","mens_national",
+                    "womens_club_league","womens_club_competition","womens_oneoff","womens_national"];
   const AREA_LABEL={mens_club_league:"Men's club leagues",mens_club_competition:"Men's club competitions",
-                    mens_national:"Men's national teams",womens_club_league:"Women's club leagues",
-                    womens_club_competition:"Women's club competitions",womens_national:"Women's national teams",
+                    mens_oneoff:"Men's one-off finals",mens_national:"Men's national teams",
+                    womens_club_league:"Women's club leagues",womens_club_competition:"Women's club competitions",
+                    womens_oneoff:"Women's one-off finals",womens_national:"Women's national teams",
                     unassigned:"Unassigned — place these manually"};
   const areaBase=a=>areaBases[a]??50;
   // Mods run from the area's base at the top down to ZERO at the bottom, so
