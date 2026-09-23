@@ -278,6 +278,39 @@
       "_score": 0
     },
     {
+      "id": 9255740,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "15:00",
+      "name": "Guadeloupe @ St. Lucia",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "national-team match not resolved in FIFA men \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league"
+    },
+    {
       "id": 46233117,
       "lgId": 2025,
       "lgSlug": "ncaa-soccer",
@@ -4335,8 +4368,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 59.885321100917444,
-        "l": "Quality +9.9 (GFR 88.2-86.4 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
+        "v": 56.73491614027458,
+        "l": "Quality +6.7 (GFR 88.2-85.5 vs tier1 baseline 171.5 (NWSL (USA)), mod +50.0), Mod +50.0"
       },
       "_sk": {
         "v": 0,
@@ -4350,14 +4383,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 59.885321100917444,
+      "_score": 56.73491614027458,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.nwsl",
       "lgR": 85.76,
       "_rk": [
         9,
-        16
+        21
       ]
     },
     {
@@ -4526,6 +4559,39 @@
         167,
         179
       ]
+    },
+    {
+      "id": 98758803,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "20:00",
+      "name": "Grenada @ Bonaire",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.0,
+        "l": "national-team match not resolved in FIFA men \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league"
     },
     {
       "id": 75887270,
@@ -5249,7 +5315,7 @@
       "sport": "Motorsports",
       "time": "02:01",
       "date": "2026-10-02",
-      "channel": "DAZN US",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "cutoff",
       "detail": "starts 02:01 AM \u2014 before the 5am day boundary"
     },
@@ -5262,6 +5328,16 @@
       "channel": "Apple TV, TSN+, TSN1, TSN5",
       "reason": "cutoff",
       "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "08:30",
+      "date": "2026-10-02",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "One Friday Fights",
@@ -5279,9 +5355,9 @@
       "sport": "Soccer",
       "time": "12:00",
       "date": "2026-10-02",
-      "channel": "Fubo Sports, fubo Sports Network",
+      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network \u2014 none in channels.txt"
+      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "America's Day at the Races",
@@ -5324,14 +5400,54 @@
       "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
     },
     {
+      "name": "Georgia @ Hungary",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Romania @ Poland",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Northern Ireland @ Ukraine",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "T\u00fcrkiye @ Belgium",
       "league": "UEFA Nations League",
       "sport": "Soccer",
       "time": "14:45",
       "date": "2026-10-02",
-      "channel": "Fubo Sports, fubo Sports Network",
+      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network \u2014 none in channels.txt"
+      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Slovakia @ Faroe Islands",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Exeter Chiefs @ Bath",
@@ -5999,9 +6115,9 @@
       "sport": "Tennis",
       "time": "23:00",
       "date": "2026-10-02",
-      "channel": "TSN+, TSN2",
+      "channel": "TSN+, TSN2, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on TSN+, TSN2 \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN2, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "China Open",
@@ -6556,6 +6672,9 @@
       "span": 38.36,
       "label": "Men's club leagues",
       "seen": [
+        "League One (England)",
+        "League One (Scotland)",
+        "League Two (England)",
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
         "MLS (USA)",
@@ -7037,6 +7156,9 @@
       "span": 57.16,
       "label": "Men's club competitions",
       "seen": [
+        "Canadian Premier League",
+        "League One",
+        "League Two",
         "Liga Nacional",
         "Primera A",
         "Primera Division"
