@@ -5580,8 +5580,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "national-team match not resolved in FIFA men \u2014 flat mod"
+        "v": 43.92853555835582,
+        "l": "Quality +9.1 (FIFA men Peru 1458 vs USA 1690, global pool (friendly) baseline 2466), Mod +34.8"
       },
       "_sk": {
         "v": 0,
@@ -5595,10 +5595,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": 43.92853555835582,
       "cat": "national_men",
       "area": "mens_national",
-      "espn": "fifa.friendly"
+      "espn": "fifa.friendly",
+      "_rk": [
+        50,
+        16
+      ]
     },
     {
       "id": 53692303,
@@ -10798,7 +10802,8 @@
       "sport": "Rugby League",
       "league": "NRLW",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "FOX One"
       ],
       "dur": 120,
       "_st": {
@@ -12395,9 +12400,9 @@
       "sport": "Hockey",
       "time": "16:00",
       "date": "2026-09-26",
-      "channel": "FanDuel Sports Network West, MyNetworkTV",
+      "channel": "FanDuel Sports Network West, MyNetworkTV, Fox 11 Plus",
       "reason": "channel",
-      "detail": "airs on FanDuel Sports Network West, MyNetworkTV \u2014 none in channels.txt"
+      "detail": "airs on FanDuel Sports Network West, MyNetworkTV, Fox 11 Plus \u2014 none in channels.txt"
     },
     {
       "name": "UT Permian Basin @ Eastern New Mexico",
@@ -14199,9 +14204,11 @@
     },
     "mens_club_competition": {
       "leagues": {
+        "Acrobatic Gymnastics World Championships": 78.06,
         "Africa Cup Of Nations Qualifier": 39.29,
         "Arabian Gulf Cup": 43.14,
         "Austrian Bundesliga": 65.3,
+        "Banana Ball World Tour": 78.06,
         "Bmx European Championship": 40.93,
         "Brazilian Serie A": 81.68,
         "Bundesliga": 81.51,
@@ -14213,9 +14220,13 @@
         "Concacaf Nations League": 39.29,
         "Copa Do Brasil": 51.75,
         "Coppa Italia": 70.74,
+        "Dfb Super Cup": 65.5,
+        "Dp World Tour": 78.06,
         "Dutch Eredivisie": 75.23,
+        "English Championship": 81.08,
         "European Aquatics Championships": 40.93,
         "Fa Community Shield": 96.45,
+        "Formula 3": 51.2,
         "International Friendly": 40.18,
         "Johan Cruyff Shield": 61.83,
         "La Liga": 86.04,
@@ -14230,10 +14241,12 @@
         "Ligue 1": 82.28,
         "Ligue 2": 72.28,
         "Mls": 80.02,
+        "Pony League World Series": 78.06,
         "Premier League": 91.09,
         "Primera A": 77.91,
         "Primera Division": 78.52,
         "Pro League": 72.71,
+        "Pro Motocross Championship": 48.98,
         "Rugby Union International Friendly": 40.18,
         "Scottish Championship": 64.03,
         "Scottish League Cup": 60.72,
@@ -14243,8 +14256,11 @@
         "Super Cup": 94.74,
         "S\u00fcper Lig": 78.33,
         "Troph\u00e9e Des Champions": 63.23,
+        "U.S. Gymnastics Championships": 39.29,
+        "U.S. Junior Amateur Championship": 39.29,
         "U.S. Open": 55.17,
         "U.S. Open Cup": 55.17,
+        "U20 World Athletics Championships": 78.06,
         "Uefa Champions League": 86.45,
         "Uefa Conference League": 70.55,
         "Uefa Europa League": 81.5,
@@ -14252,9 +14268,15 @@
         "Uefa Super Cup": 65.5,
         "Usl Championship": 67.48,
         "Usl Cup": 58.04,
-        "Usl League One": 44.15
+        "Usl League One": 44.15,
+        "World Athletics Championships": 78.06,
+        "World Rhythmic Gymnastics Championships": 78.06
       },
       "origin": {
+        "Acrobatic Gymnastics World Championships": {
+          "country": "",
+          "confederation": "AFC"
+        },
         "Africa Cup Of Nations Qualifier": {
           "country": "",
           "confederation": "CAF"
@@ -14266,6 +14288,10 @@
         "Austrian Bundesliga": {
           "country": "",
           "confederation": "UEFA"
+        },
+        "Banana Ball World Tour": {
+          "country": "",
+          "confederation": "AFC"
         },
         "Bmx European Championship": {
           "country": "",
@@ -14311,7 +14337,19 @@
           "country": "",
           "confederation": "UEFA"
         },
+        "Dfb Super Cup": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "Dp World Tour": {
+          "country": "",
+          "confederation": "AFC"
+        },
         "Dutch Eredivisie": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "English Championship": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -14320,6 +14358,10 @@
           "confederation": "UEFA"
         },
         "Fa Community Shield": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "Formula 3": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -14379,6 +14421,10 @@
           "country": "",
           "confederation": "CONCACAF"
         },
+        "Pony League World Series": {
+          "country": "",
+          "confederation": "AFC"
+        },
         "Premier League": {
           "country": "",
           "confederation": "UEFA"
@@ -14431,6 +14477,10 @@
           "country": "",
           "confederation": "UEFA"
         },
+        "U.S. Junior Amateur Championship": {
+          "country": "",
+          "confederation": "UEFA"
+        },
         "U.S. Open": {
           "country": "",
           "confederation": "CONCACAF"
@@ -14438,6 +14488,10 @@
         "U.S. Open Cup": {
           "country": "",
           "confederation": "CONCACAF"
+        },
+        "U20 World Athletics Championships": {
+          "country": "",
+          "confederation": "AFC"
         },
         "Uefa Champions League": {
           "country": "",
@@ -14470,6 +14524,14 @@
         "Usl League One": {
           "country": "",
           "confederation": "CONCACAF"
+        },
+        "World Athletics Championships": {
+          "country": "",
+          "confederation": "AFC"
+        },
+        "World Rhythmic Gymnastics Championships": {
+          "country": "",
+          "confederation": "AFC"
         }
       },
       "top": 96.45,
@@ -14495,6 +14557,7 @@
         "Uefa Women'S Champions League": 82.59,
         "Usl Super League": 62.73,
         "Women'S Africa Cup Of Nations": 39.29,
+        "Women'S Pro Baseball League": 74.6,
         "Women'S Super League": 84.28
       },
       "origin": {
@@ -14525,6 +14588,10 @@
         "Women'S Africa Cup Of Nations": {
           "country": "",
           "confederation": "CAF"
+        },
+        "Women'S Pro Baseball League": {
+          "country": "",
+          "confederation": "UEFA"
         },
         "Women'S Super League": {
           "country": "",
