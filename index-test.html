@@ -1043,11 +1043,15 @@ function App(){
                     womens_club_competition:"Women's club competitions",womens_national:"Women's national teams",
                     unassigned:"Unassigned — place these manually"};
   const areaBase=a=>areaBases[a]??50;
-  // mod = base - (how far below the area's best this league rates) * scale
+  // Mods run from the area's base at the top down to ZERO at the bottom, so
+  // the gaps reflect the real rating spread. A league rated halfway between
+  // the area's best and worst gets half the base.
   const areaModFor=(area,rating)=>{
     const d=areaData[area];
     if(!d||rating===undefined||rating===null) return undefined;
-    return areaBase(area)-(d.top-rating)*(d.scale||0);
+    const span=(d.top??0)-(d.worst??0);
+    if(!(span>0)) return areaBase(area);
+    return areaBase(area)*(rating-d.worst)/span;
   };
   const updateAreaBase=(area,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));
     const m={...areaBases,[area]:v};setAreaBases(m);debouncedSave(buildSavePayload({areaBases:m}));};
@@ -1676,7 +1680,7 @@ function App(){
                               </div>
                               <div style={{fontSize:9,color:C.DM}}>
                                 {area==="unassigned"?"set an area on each row"
-                                  :d?`top ${d.top} \u00b7 worst ${d.worst}`:"no GFR ratings yet"}
+                                  :d?`${d.top} \u2192 ${d.worst}  (base \u2192 0)`:"no GFR ratings yet"}
                               </div>
                             </div>
                             {open&&lgs.map(lg=>{
