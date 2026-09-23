@@ -113,8 +113,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 44.599514015114565,
-        "l": "Quality +8.2 (GFR 92.0-78.8 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
+        "v": 20.084285714285727,
+        "l": "Quality -20.0 (GFR 80.7-38.1 (not rated yet) vs tier1 baseline 151.7 (Serie A Women (Italy) \u2014 opponent not in GFR), mod +40.1), Mod +40.1"
       },
       "_sk": {
         "v": 0,
@@ -128,13 +128,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 44.599514015114565,
+      "_score": 20.084285714285727,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 86.72,
+      "lgR": 80.44,
       "_rk": [
-        10,
-        476
+        42,
+        null
       ]
     },
     {
@@ -150,8 +150,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 18.48033333333335,
-        "l": "Quality -20.0 (GFR 80.3-39.3 (not rated yet) vs tier1 baseline 159.1 (Super League (Switzerland) \u2014 opponent not in GFR), mod +38.5), Mod +38.5"
+        "v": 35.19249587974061,
+        "l": "Quality +4.2 (GFR 75.4-71.3 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
         "v": 0,
@@ -165,13 +165,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 18.48033333333335,
+      "_score": 35.19249587974061,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 86.72,
+      "lgR": 80.44,
       "_rk": [
-        359,
-        null
+        80,
+        137
       ]
     },
     {
@@ -379,8 +379,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 53.791067406681606,
-        "l": "Quality +17.4 (GFR 92.2-96.3 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
+        "v": 40.36001418951162,
+        "l": "Quality +9.3 (GFR 67.9-95.1 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
         "v": 0,
@@ -394,13 +394,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 53.791067406681606,
+      "_score": 40.36001418951162,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 86.72,
+      "lgR": 80.44,
       "_rk": [
-        9,
-        3
+        194,
+        4
       ]
     },
     {
@@ -416,8 +416,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 45.7562388493806,
-        "l": "Quality +9.3 (GFR 79.5-93.6 vs tier3 baseline 155.0 (UEFA confederation), mod +36.4), Mod +36.4"
+        "v": 38.99997409448599,
+        "l": "Quality +8.0 (GFR 72.5-86.3 vs tier3 baseline 133.6 (UEFA confederation), mod +31.0), Mod +31.0"
       },
       "_sk": {
         "v": 0,
@@ -431,13 +431,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 45.7562388493806,
+      "_score": 38.99997409448599,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "lgR": 86.72,
+      "lgR": 80.44,
       "_rk": [
-        414,
-        7
+        116,
+        18
       ]
     },
     {
@@ -3906,19 +3906,18 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "UEFA Women's Champions League": 86.72,
-        "Serie A Women": 88.31
+        "UEFA Women's Champions League": 80.44,
+        "Women's Super League": 84.28
       },
-      "top": 88.31,
-      "worst": 86.72,
+      "top": 84.28,
+      "worst": 80.44,
       "anchored": false,
-      "scale": 15.723270440251538,
+      "scale": 6.510416666666661,
       "label": "Women's club competitions"
     },
     "mens_club_competition": {
       "leagues": {
         "Canadian Premier League": 65.85,
-        "Liga MX Femenil": 80.38,
         "Soccer Club Friendlies": 80.78
       },
       "top": 80.78,
@@ -3930,12 +3929,13 @@
     "womens_club_league": {
       "leagues": {
         "NWSL": 85.76,
-        "Women's Super League": 91.09
+        "Serie A Women": 75.85,
+        "Liga MX Femenil": 71.25
       },
-      "top": 91.09,
+      "top": 85.76,
       "worst": 53.4,
       "anchored": true,
-      "scale": 0.6633059166887768,
+      "scale": 0.772558714462299,
       "label": "Women's club leagues"
     }
   }
