@@ -1053,7 +1053,11 @@ function App(){
     if(!d||rating===undefined||rating===null) return undefined;
     const span=(d.top??0)-(d.worst??0);
     if(!(span>0)) return areaBase(area);
-    return areaBase(area)*(rating-d.worst)/span;
+    // A league GFR does not rate gets a team-average instead, which can fall
+    // below the area's floor — USL League One rated 42.80 against a floor of
+    // 52.73 and produced a mod of -12.9. Zero is the bottom of the scale.
+    const m=areaBase(area)*(rating-d.worst)/span;
+    return Math.max(0,Math.min(areaBase(area),m));
   };
   const updateAreaBase=(area,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));
     const m={...areaBases,[area]:v};setAreaBases(m);debouncedSave(buildSavePayload({areaBases:m}));};
@@ -1787,8 +1791,12 @@ function App(){
                                   </div>
                                   <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
                                   <div title={mod===undefined?"no GFR rating for this league":onToday?"has games today":"no games today"}
-                                       style={{fontSize:11,fontWeight:700,color:mod===undefined?C.DM:(onToday?"#86efac":"#cbd5e1"),textAlign:"center"}}>
-                                    {mod!==undefined?mod.toFixed(1):"\u2014"}
+                                       style={{textAlign:"center",lineHeight:1.15}}>
+                                    <div style={{fontSize:11,fontWeight:700,color:mod===undefined?C.DM:(onToday?"#86efac":"#cbd5e1")}}>
+                                      {mod!==undefined?mod.toFixed(1):"\u2014"}
+                                    </div>
+                                    {rating!==undefined&&(
+                                      <div style={{fontSize:8,color:C.DM}}>GFR {Number(rating).toFixed(2)}</div>)}
                                   </div>
                                   <div style={{display:"flex",gap:4,alignItems:"center"}}>
                                     <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
