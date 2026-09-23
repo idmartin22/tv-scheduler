@@ -1644,9 +1644,35 @@ function App(){
                     (parsedEvents||[]).forEach(e=>{ if(e.area&&e.leagueId) areaOfLeague[e.leagueId]=e.area; });
                     const ratingOfLeague={};
                     (parsedEvents||[]).forEach(e=>{ if(e.lgR!==undefined&&e.leagueId) ratingOfLeague[e.leagueId]=e.lgR; });
+                    const playingToday=new Set((parsedEvents||[]).map(e=>e.leagueId));
+                    // The scraper publishes every league GFR rates, named
+                    // "League (Country)". Index them by the bare name too, so a
+                    // league with no game today still shows its rating and mod
+                    // rather than a dash.
+                    const publishedRating={};
+                    Object.values(areaData||{}).forEach(d=>{
+                      Object.entries(d.leagues||{}).forEach(([full,rt])=>{
+                        publishedRating[full.toLowerCase()]=rt;
+                        const bare=full.replace(/\s*\([^)]*\)\s*$/,"").toLowerCase();
+                        if(publishedRating[bare]===undefined) publishedRating[bare]=rt;
+                      });
+                    });
+                    const ratingFor=lg=>{
+                      if(ratingOfLeague[lg.id]!==undefined) return ratingOfLeague[lg.id];
+                      const n=(lg.n||"").toLowerCase();
+                      return publishedRating[n];
+                    };
                     const areaOf=lg=>areaOverrides[lg.id]||areaOfLeague[lg.id]||"unassigned";
                     const byArea={};
                     activeSoccer.forEach(lg=>{ (byArea[areaOf(lg)]=byArea[areaOf(lg)]||[]).push(lg); });
+                    // strongest league first; unrated ones fall to the bottom
+                    Object.values(byArea).forEach(list=>list.sort((a,b)=>{
+                      const ra=ratingFor(a), rb=ratingFor(b);
+                      if(ra!==undefined&&rb!==undefined) return rb-ra;
+                      if(ra!==undefined) return -1;
+                      if(rb!==undefined) return 1;
+                      return (a.n||"").localeCompare(b.n||"");
+                    }));
                     const order=[...AREA_ORDER,"unassigned"].filter(a=>(byArea[a]||[]).length);
 
                     return (<>
@@ -1684,8 +1710,9 @@ function App(){
                               </div>
                             </div>
                             {open&&lgs.map(lg=>{
-                              const rating=ratingOfLeague[lg.id];
+                              const rating=ratingFor(lg);
                               const mod=areaModFor(area,rating);
+                              const onToday=playingToday.has(lg.id);
                               const fv=favTeams[lg.id]||"";
                               const hasFave=fv.trim().length>0;
                               const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
@@ -1695,7 +1722,11 @@ function App(){
                                   <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
                                   <div style={{fontSize:12,color:"#cbd5e1"}}>
                                     {lg.n}{originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>\u2b50</span>}
-                                    {rating!==undefined&&<span style={{fontSize:10,color:C.DM,marginLeft:6}}>GFR {rating}</span>}
+                                    {rating!==undefined&&(
+                                      <span title={onToday?"has games today":"no games today"}
+                                        style={{fontSize:10,color:onToday?"#86efac":C.DM,marginLeft:6}}>
+                                        GFR {typeof rating==="number"?rating.toFixed(2):rating}
+                                      </span>)}
                                     <select value={areaOverrides[lg.id]||""} onChange={ev=>updateAreaOverride(lg.id,ev.target.value)}
                                       title="Move this league to another area"
                                       style={{marginLeft:8,background:C.SUR,border:`1px solid ${areaOverrides[lg.id]?"#f59e0b":C.BD2}`,borderRadius:6,color:areaOverrides[lg.id]?"#fde68a":"#94a3b8",fontSize:9,padding:"2px 4px",outline:"none"}}>
@@ -1704,7 +1735,10 @@ function App(){
                                     </select>
                                   </div>
                                   <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
-                                  <div title={mod!==undefined?"from this area's base and GFR rating":"no GFR rating for this league"} style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"\u2014"}</div>
+                                  <div title={mod===undefined?"no GFR rating for this league":onToday?"has games today":"no games today"}
+                                       style={{fontSize:11,fontWeight:700,color:mod===undefined?C.DM:(onToday?"#86efac":"#cbd5e1"),textAlign:"center"}}>
+                                    {mod!==undefined?mod.toFixed(1):"\u2014"}
+                                  </div>
                                   <div style={{display:"flex",gap:4,alignItems:"center"}}>
                                     <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
                                     <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
