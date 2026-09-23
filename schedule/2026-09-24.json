@@ -5690,7 +5690,7 @@
         "Mls": 80.02,
         "Premier League": 91.09,
         "Primera A": 77.91,
-        "Primera Division": 39.29,
+        "Primera Division": 78.52,
         "Pro League": 72.71,
         "Rugby Union International Friendly": 40.18,
         "Scottish Championship": 64.03,
@@ -5842,6 +5842,10 @@
           "confederation": "UEFA"
         },
         "Primera A": {
+          "country": "",
+          "confederation": "CONMEBOL"
+        },
+        "Primera Division": {
           "country": "",
           "confederation": "CONMEBOL"
         },
@@ -6041,7 +6045,7 @@
     },
     "africa-cup-of-nations-qualifier": {
       "rating": 1311.14,
-      "area": "mens_club_competition",
+      "area": "mens_national",
       "confederation": "CAF"
     },
     "uefa-nations-league": {
@@ -6377,41 +6381,6 @@
       "rating": 83.11,
       "area": "mens_club_competition",
       "confederation": "CONCACAF"
-    },
-    "super-cup": {
-      "rating": 94.74,
-      "area": "mens_club_competition",
-      "confederation": "UEFA"
-    },
-    "ladies-european-tour": {
-      "rating": 42.11,
-      "area": "mens_club_competition",
-      "confederation": "UEFA"
-    },
-    "rugby-union-international-friendly": {
-      "rating": 41.01,
-      "area": "mens_club_competition",
-      "confederation": "UEFA"
-    },
-    "european-aquatics-championships": {
-      "rating": 42.11,
-      "area": "mens_club_competition",
-      "confederation": "UEFA"
-    },
-    "bmx-european-championship": {
-      "rating": 42.11,
-      "area": "mens_club_competition",
-      "confederation": "UEFA"
-    },
-    "u-s-open": {
-      "rating": 55.17,
-      "area": "mens_club_competition",
-      "confederation": "CONCACAF"
-    },
-    "serie-a-cup-women": {
-      "rating": 61.33,
-      "area": "womens_club_competition",
-      "confederation": "UEFA"
     }
   }
 }
