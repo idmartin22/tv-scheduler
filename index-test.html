@@ -1051,7 +1051,11 @@ function App(){
   // the area's best and worst gets half the base.
   const areaModFor=(area,rating)=>{
     const d=areaData[area];
-    if(!d||rating===undefined||rating===null) return undefined;
+    if(!d) return undefined;
+    // A flat area has no per-competition rating at all — national teams, where
+    // every fixture takes the base and quality does the separating.
+    if(d.flat) return areaBase(area);
+    if(rating===undefined||rating===null) return undefined;
     const span=(d.top??0)-(d.worst??0);
     if(!(span>0)) return areaBase(area);
     // A league GFR does not rate gets a team-average instead, which can fall
@@ -1798,7 +1802,9 @@ function App(){
                               </div>
                               <div style={{fontSize:9,color:C.DM}}>
                                 {area==="unassigned"?"set an area on each row"
-                                  :d?`${d.top} \u2192 ${d.worst}  (base \u2192 0)`:"no GFR ratings yet"}
+                                  :d?(d.flat?"flat \u2014 every fixture takes the base, quality separates them"
+                                           :`${d.top} \u2192 ${d.worst}  (base \u2192 0)`)
+                                    :"no GFR ratings yet"}
                               </div>
                             </div>
                             {open&&lgs.map(lg=>{
