@@ -592,6 +592,8 @@
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.39,
+        "SuperLiga (Romania)": 75.79,
+        "Superliga (Denmark)": 79.3,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -623,8 +625,6 @@
         "Ligue 2 (France)": 76.12,
         "Serie B (Italy)": 75.8,
         "Serie B (Brazil)": 72.44,
-        "SuperLiga (Romania)": 75.79,
-        "Superliga (Denmark)": 79.3,
         "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
@@ -766,6 +766,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "Persian Gulf Pro League (Iran)": {
           "country": "Iran",
           "confederation": "AFC"
@@ -889,14 +897,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -1297,140 +1297,34 @@
     },
     "mens_club_competition": {
       "leagues": {
-        "Acrobatic Gymnastics World Championships": 78.06,
         "Afc Champions League Elite": 67.17,
-        "Africa Cup Of Nations Qualifier": 39.29,
-        "Arabian Gulf Cup": 43.14,
-        "Austrian Bundesliga": 65.3,
-        "Banana Ball World Tour": 78.06,
-        "Bmx European Championship": 40.93,
-        "Brazilian Serie A": 81.68,
-        "Bundesliga": 81.51,
         "Caf Champions League": 45.1,
-        "Campeon De Campeones": 84.24,
-        "Campeones Cup": 83.11,
-        "Canadian Premier League": 91.09,
-        "Championship": 81.08,
         "Concacaf Caribbean Cup": 72.09,
         "Concacaf Central American Cup": 56.72,
         "Concacaf Champions Cup": 72.09,
-        "Concacaf Nations League": 39.29,
         "Copa Del Rey": 39.29,
         "Copa Do Brasil": 52.04,
         "Copa Libertadores": 78.06,
         "Coppa Italia": 70.74,
-        "Dfb Super Cup": 92.63,
-        "Dp World Tour": 78.06,
-        "Dutch Eredivisie": 80.04,
-        "English Championship": 81.08,
         "English League Cup": 78.33,
-        "European Aquatics Championships": 40.93,
-        "Fa Community Shield": 96.45,
         "Fa Cup": 71.28,
         "Fifa Club World Cup": 85.25,
-        "Formula 3": 51.2,
         "German Cup": 63.26,
-        "International Friendly": 40.18,
-        "Johan Cruyff Shield": 85.8,
-        "La Liga": 86.04,
-        "Ladies European Tour": 40.93,
-        "Laliga2": 77.72,
-        "League One": 44.15,
         "League Two": 52.62,
         "Leagues Cup": 78.32,
-        "Liga Mx": 78.08,
-        "Liga Nacional": 68.39,
-        "Liga Portugal": 82.13,
-        "Ligue 1": 85.3,
-        "Ligue 2": 74.29,
-        "Mls": 80.02,
-        "Pony League World Series": 78.06,
-        "Premier League": 91.09,
-        "Primera A": 77.91,
-        "Primera Division": 78.52,
-        "Pro League": 72.71,
-        "Pro Motocross Championship": 48.98,
-        "Rugby Union International Friendly": 40.18,
-        "Scottish Championship": 64.03,
-        "Scottish League Cup": 60.72,
-        "Scottish Premiership": 76.66,
-        "Serie A": 85.56,
-        "Serie B": 63.71,
-        "Super Cup": 94.74,
-        "S\u00fcper Lig": 78.33,
-        "Troph\u00e9e Des Champions": 90.37,
-        "U.S. Gymnastics Championships": 39.29,
-        "U.S. Junior Amateur Championship": 39.29,
         "U.S. Open": 55.17,
         "U.S. Open Cup": 55.17,
-        "U20 World Athletics Championships": 78.06,
         "Uefa Champions League": 89.29,
-        "Uefa Conference League": 70.55,
-        "Uefa Europa League": 82.57,
-        "Uefa Nations League": 40.71,
-        "Uefa Super Cup": 92.63,
-        "Usl Championship": 67.48,
-        "Usl Cup": 58.04,
-        "Usl League One": 44.15,
-        "World Athletics Championships": 78.06,
-        "World Rhythmic Gymnastics Championships": 78.06
+        "Usl Cup": 58.04
       },
       "origin": {
-        "Acrobatic Gymnastics World Championships": {
-          "country": "",
-          "confederation": "AFC"
-        },
         "Afc Champions League Elite": {
           "country": "",
           "confederation": "AFC"
         },
-        "Africa Cup Of Nations Qualifier": {
-          "country": "",
-          "confederation": "CAF"
-        },
-        "Arabian Gulf Cup": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Austrian Bundesliga": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Banana Ball World Tour": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Bmx European Championship": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Brazilian Serie A": {
-          "country": "",
-          "confederation": "CONMEBOL"
-        },
-        "Bundesliga": {
-          "country": "",
-          "confederation": "UEFA"
-        },
         "Caf Champions League": {
           "country": "",
           "confederation": "CAF"
-        },
-        "Campeon De Campeones": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Campeones Cup": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Canadian Premier League": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Championship": {
-          "country": "",
-          "confederation": "UEFA"
         },
         "Concacaf Caribbean Cup": {
           "country": "",
@@ -1441,10 +1335,6 @@
           "confederation": "CONCACAF"
         },
         "Concacaf Champions Cup": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Concacaf Nations League": {
           "country": "",
           "confederation": "CONCACAF"
         },
@@ -1460,31 +1350,7 @@
           "country": "",
           "confederation": "UEFA"
         },
-        "Dfb Super Cup": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Dp World Tour": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Dutch Eredivisie": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "English Championship": {
-          "country": "",
-          "confederation": "UEFA"
-        },
         "English League Cup": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "European Aquatics Championships": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Fa Community Shield": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -1496,37 +1362,9 @@
           "country": "",
           "confederation": "UEFA"
         },
-        "Formula 3": {
-          "country": "",
-          "confederation": "UEFA"
-        },
         "German Cup": {
           "country": "",
           "confederation": "UEFA"
-        },
-        "International Friendly": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Johan Cruyff Shield": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "La Liga": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Ladies European Tour": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Laliga2": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "League One": {
-          "country": "",
-          "confederation": "CONCACAF"
         },
         "League Two": {
           "country": "",
@@ -1536,90 +1374,6 @@
           "country": "",
           "confederation": "CONCACAF"
         },
-        "Liga Mx": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Liga Nacional": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Liga Portugal": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Ligue 1": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Ligue 2": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Mls": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Pony League World Series": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Premier League": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Primera A": {
-          "country": "",
-          "confederation": "CONMEBOL"
-        },
-        "Primera Division": {
-          "country": "",
-          "confederation": "CONMEBOL"
-        },
-        "Pro League": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Rugby Union International Friendly": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Scottish Championship": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Scottish League Cup": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Scottish Premiership": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Serie A": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Serie B": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Super Cup": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "S\u00fcper Lig": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Troph\u00e9e Des Champions": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "U.S. Junior Amateur Championship": {
-          "country": "",
-          "confederation": "UEFA"
-        },
         "U.S. Open": {
           "country": "",
           "confederation": "CONCACAF"
@@ -1628,116 +1382,78 @@
           "country": "",
           "confederation": "CONCACAF"
         },
-        "U20 World Athletics Championships": {
-          "country": "",
-          "confederation": "AFC"
-        },
         "Uefa Champions League": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Uefa Conference League": {
+        "Usl Cup": {
+          "country": "",
+          "confederation": "CONCACAF"
+        }
+      },
+      "top": 89.29,
+      "worst": 39.29,
+      "anchored": true,
+      "span": 50.0,
+      "label": "Men's club competitions",
+      "seen": []
+    },
+    "mens_oneoff": {
+      "leagues": {
+        "Campeones Cup": 83.11,
+        "Dfb Super Cup": 92.63,
+        "Fa Community Shield": 96.45,
+        "Super Cup": 94.74,
+        "Troph\u00e9e Des Champions": 90.37,
+        "Uefa Super Cup": 92.63
+      },
+      "origin": {
+        "Campeones Cup": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
+        "Dfb Super Cup": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Uefa Europa League": {
+        "Fa Community Shield": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Uefa Nations League": {
+        "Super Cup": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "Troph\u00e9e Des Champions": {
           "country": "",
           "confederation": "UEFA"
         },
         "Uefa Super Cup": {
           "country": "",
           "confederation": "UEFA"
-        },
-        "Usl Championship": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Usl Cup": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Usl League One": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "World Athletics Championships": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "World Rhythmic Gymnastics Championships": {
-          "country": "",
-          "confederation": "AFC"
         }
       },
       "top": 96.45,
-      "worst": 39.29,
+      "worst": 83.11,
       "anchored": true,
-      "span": 57.16,
-      "label": "Men's club competitions",
-      "seen": [
-        "Canadian Premier League",
-        "Primera A"
-      ]
+      "span": 13.34,
+      "label": "Men's one-off finals",
+      "seen": []
     },
     "womens_club_competition": {
       "leagues": {
-        "Northern Super League": 39.29,
-        "Nwsl": 79.95,
-        "Serie A Cup Women": 85.56,
-        "Serie A Women": 85.56,
-        "Super League": 84.28,
-        "Uefa Women'S Champions League": 85.21,
-        "Usl Super League": 62.73,
-        "Women'S Africa Cup Of Nations": 39.29,
-        "Women'S Pro Baseball League": 74.6,
-        "Women'S Super League": 84.28
+        "Uefa Women'S Champions League": 85.21
       },
       "origin": {
-        "Nwsl": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Serie A Cup Women": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Serie A Women": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Super League": {
-          "country": "",
-          "confederation": "UEFA"
-        },
         "Uefa Women'S Champions League": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Usl Super League": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Women'S Africa Cup Of Nations": {
-          "country": "",
-          "confederation": "CAF"
-        },
-        "Women'S Pro Baseball League": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Women'S Super League": {
           "country": "",
           "confederation": "UEFA"
         }
       },
-      "top": 85.56,
-      "worst": 39.29,
+      "top": 85.21,
+      "worst": 85.21,
       "anchored": true,
-      "span": 46.27,
+      "span": 0.0,
       "label": "Women's club competitions",
       "seen": []
     }
@@ -1810,7 +1526,7 @@
     },
     "laliga2": {
       "rating": 78.56,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "LaLiga 2",
       "country": "Spain",
       "confederation": "UEFA"
@@ -1851,7 +1567,7 @@
       "confederation": "UEFA"
     },
     "league-two": {
-      "rating": 69.77,
+      "rating": 69.61,
       "area": "mens_club_league",
       "gfrLeague": "League Two",
       "country": "England",
@@ -1863,14 +1579,14 @@
       "confederation": "CONCACAF"
     },
     "serie-a-women": {
-      "rating": 75.85,
+      "rating": 75.86,
       "area": "womens_club_league",
       "gfrLeague": "Serie A Women",
       "country": "Italy",
       "confederation": "UEFA"
     },
     "liga-mx-femenil": {
-      "rating": 71.25,
+      "rating": 71.26,
       "area": "womens_club_league",
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
