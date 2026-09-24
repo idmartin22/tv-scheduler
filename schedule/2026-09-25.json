@@ -160,36 +160,6 @@
       ]
     },
     {
-      "id": 76438000,
-      "lgId": 2001,
-      "lgSlug": "pga-tour",
-      "time": "09:00",
-      "name": "Presidents Cup",
-      "sport": "Golf",
-      "league": "PGA Tour",
-      "ch": [
-        "NBC"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 35,
-        "l": "Golf: presidents cup +35"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 35
-    },
-    {
       "id": 80862382,
       "lgId": 2478,
       "lgSlug": "mma",
@@ -2358,6 +2328,40 @@
       "_score": 0
     },
     {
+      "id": 54995065,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "18:05",
+      "name": "Chicago Cubs @ Boston Red Sox",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 9.044038668098796,
+        "l": "Quality +9.0 (Chicago Cubs 0.518 vs Boston Red Sox 0.510)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 9.044038668098796,
+      "_rk": [
+        5,
+        9
+      ]
+    },
+    {
       "id": 21679441,
       "lgId": 588,
       "lgSlug": "nwsl",
@@ -4197,40 +4201,6 @@
       ]
     },
     {
-      "id": 41272274,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "19:10",
-      "name": "Chicago Cubs @ Boston Red Sox",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "ESPN Unlimited"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 9.044038668098796,
-        "l": "Quality +9.0 (Chicago Cubs 0.518 vs Boston Red Sox 0.510)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 9.044038668098796,
-      "_rk": [
-        5,
-        9
-      ]
-    },
-    {
       "id": 68078182,
       "lgId": 590,
       "lgSlug": "usl-championship",
@@ -4282,8 +4252,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 35.44738412475793,
-        "l": "Quality +8.5 (GFR 63.1-66.9 vs tier1 baseline 125.5 (USL Super League (USA)), mod +27.0), Mod +27.0"
+        "v": 7.537499999999994,
+        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-70.0 vs tier1 baseline 137.3 (USL Championship (USA) \u2014 opponent not in GFR), mod +27.5), Mod +27.5"
       },
       "_sk": {
         "v": 0,
@@ -4297,14 +4267,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 35.44738412475793,
+      "_score": 7.537499999999994,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.w.usl.1",
       "lgR": 62.73,
       "_rk": [
-        265,
-        210
+        null,
+        1213
       ]
     },
     {
@@ -5868,6 +5838,16 @@
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
+      "name": "Chicago Cubs @ Boston Red Sox",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "13:05",
+      "date": "2026-09-25",
+      "channel": "MLB.TV, Marquee Sports Network, NESN",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, Marquee Sports Network, NESN \u2014 none in channels.txt"
+    },
+    {
       "name": "Laver Cup",
       "league": "Laver Cup",
       "sport": "Tennis",
@@ -6423,9 +6403,9 @@
       "sport": "Baseball",
       "time": "19:40",
       "date": "2026-09-25",
-      "channel": "MLB.TV, Chicago Sports Network, Rockies.TV, Sportsnet One, Sportsnet NOW",
+      "channel": "MLB.TV, Chicago Sports Network, Rockies.TV, Sportsnet NOW, Sportsnet+",
       "reason": "channel",
-      "detail": "airs on MLB.TV, Chicago Sports Network, Rockies.TV, Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
+      "detail": "airs on MLB.TV, Chicago Sports Network, Rockies.TV, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "St. Louis Cardinals @ Milwaukee Brewers",
@@ -6563,9 +6543,9 @@
       "sport": "Baseball",
       "time": "20:10",
       "date": "2026-09-25",
-      "channel": "MLB.TV, MyNetworkTV, CW 33, Rangers Sports Network, Twins.TV, Sportsnet NOW, Sportsnet+",
+      "channel": "MLB.TV, MyNetworkTV, CW 33, Rangers Sports Network, Twins.TV",
       "reason": "channel",
-      "detail": "airs on MLB.TV, MyNetworkTV, CW 33, Rangers Sports Network, Twins.TV, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
+      "detail": "airs on MLB.TV, MyNetworkTV, CW 33, Rangers Sports Network, Twins.TV \u2014 none in channels.txt"
     },
     {
       "name": "Boston Legacy FC @ Seattle Reign FC",
@@ -6769,12 +6749,10 @@
         "Primera Division (Bolivia)": 75.55,
         "Primera Division (Venezuela)": 75.53,
         "Primera Division (Uruguay)": 78.16,
-        "Primera Division (Chile)": 78.58,
+        "Primera Division (Chile)": 78.52,
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.39,
-        "SuperLiga (Romania)": 75.79,
-        "Superliga (Denmark)": 79.3,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -6798,7 +6776,7 @@
         "1. Liga (Latvia)": 52.73,
         "Liga Nacional (Honduras)": 73.76,
         "Liga Pro Serie B (Ecuador)": 72.48,
-        "Qatar Stars League (Qatar)": 71.6,
+        "Qatar Stars League (Qatar)": 71.63,
         "Challenger Pro League (Belgium)": 71.57,
         "Erovnuli Liga (Georgia)": 70.8,
         "Super League 1 (Greece)": 78.31,
@@ -6806,16 +6784,18 @@
         "Ligue 2 (France)": 76.12,
         "Serie B (Italy)": 75.8,
         "Serie B (Brazil)": 72.44,
-        "League One (England)": 75.57,
+        "SuperLiga (Romania)": 75.79,
+        "Superliga (Denmark)": 79.3,
+        "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
         "Primera B (Colombia)": 72.51,
-        "Primera B (Chile)": 73.82,
+        "Primera B (Chile)": 73.88,
         "Eredivisie (Netherlands)": 80.04,
         "MLS (USA)": 80.02,
         "Ekstraklasa (Poland)": 79.82,
         "LaLiga (Spain)": 86.04,
-        "League Two (England)": 69.77,
+        "League Two (England)": 69.61,
         "Eerste Divisie (Netherlands)": 68.84,
         "USL Championship (USA)": 68.63,
         "Segunda Divisi\u00f3n (Uruguay)": 68.28,
@@ -6834,9 +6814,9 @@
         "Liga Portugal 2 (Portugal)": 74.67,
         "Prva Liga (Slovenia)": 73.85,
         "Prva Liga (Serbia)": 64.98,
-        "Division Profesional (Paraguay)": 78.58,
         "LaLiga 2 (Spain)": 78.56,
-        "Division Intermedia (Paraguay)": 69.95,
+        "Division Profesional (Paraguay)": 78.42,
+        "Division Intermedia (Paraguay)": 70.07,
         "FNL (Czechia)": 69.69,
         "Virsliga (Latvia)": 69.3,
         "CSL (China)": 69.19,
@@ -6851,7 +6831,7 @@
         "Division 1 (Saudi Arabia)": 65.95,
         "Division 1 (UAE)": 58.9,
         "Liga II (Romania)": 65.69,
-        "Second Division (Qatar)": 64.53,
+        "Second Division (Qatar)": 64.49,
         "Ykk\u00f6sliiga (Finland)": 62.97,
         "National League (England)": 62.52,
         "2. SNL (Slovenia)": 62.4,
@@ -6945,14 +6925,6 @@
         },
         "Super Liga (Serbia)": {
           "country": "Serbia",
-          "confederation": "UEFA"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
           "confederation": "UEFA"
         },
         "Persian Gulf Pro League (Iran)": {
@@ -7079,6 +7051,14 @@
           "country": "Brazil",
           "confederation": "CONMEBOL"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "League One (England)": {
           "country": "England",
           "confederation": "UEFA"
@@ -7191,13 +7171,13 @@
           "country": "Serbia",
           "confederation": ""
         },
-        "Division Profesional (Paraguay)": {
-          "country": "Paraguay",
-          "confederation": "CONMEBOL"
-        },
         "LaLiga 2 (Spain)": {
           "country": "Spain",
           "confederation": "UEFA"
+        },
+        "Division Profesional (Paraguay)": {
+          "country": "Paraguay",
+          "confederation": "CONMEBOL"
         },
         "Division Intermedia (Paraguay)": {
           "country": "Paraguay",
@@ -7300,27 +7280,27 @@
     "womens_club_league": {
       "leagues": {
         "Super League (Belgium)": 60.68,
-        "WSL (England)": 85.54,
-        "Liga MX Femenil (Mexico)": 71.25,
+        "WSL (England)": 85.56,
+        "Liga MX Femenil (Mexico)": 71.26,
         "WE League (Japan)": 68.35,
         "Primera Federaci\u00f3n (Spain)": 67.99,
-        "Eredivisie Women (Netherlands)": 67.7,
+        "Eredivisie Women (Netherlands)": 67.68,
         "Noi NB 1 (Hungary)": 61.31,
         "NWSL (USA)": 85.76,
-        "Liga F (Spain)": 80.06,
-        "Premi\u00e8re Ligue (France)": 77.18,
-        "Serie A Women (Italy)": 75.85,
-        "Frauen Bundesliga (Germany)": 75.43,
+        "Liga F (Spain)": 80.1,
+        "Premi\u00e8re Ligue (France)": 77.2,
+        "Serie A Women (Italy)": 75.86,
+        "Frauen Bundesliga (Germany)": 75.4,
         "Damallsvenskan (Sweden)": 73.03,
-        "WSL 2 (England)": 72.44,
+        "WSL 2 (England)": 72.4,
         "Toppserien (Norway)": 71.97,
         "1. Liga Women (Czechia)": 57.44,
         "Kansallinen Liiga (Finland)": 64.72,
-        "Elitedivisionen (Denmark)": 64.26,
-        "Women's Super League (Switzerland)": 63.92,
+        "Elitedivisionen (Denmark)": 64.25,
+        "Women's Super League (Switzerland)": 63.93,
         "USL Super League (USA)": 62.73,
         "OFB Frauen Bundesliga (Austria)": 53.4,
-        "1a Divis\u00e3o Women (Portugal)": 72.97,
+        "1a Divis\u00e3o Women (Portugal)": 73.04,
         "Brasileiro Women (Brazil)": 71.95,
         "A-League Women (Australia)": 67.76,
         "WK League (South Korea)": 64.53,
@@ -7331,7 +7311,7 @@
         "Seconde Ligue (France)": 61.0,
         "Russian Super League (Russia)": 59.2,
         "Ekstraliga Women (Poland)": 59.13,
-        "Elitettan (Sweden)": 58.95,
+        "Elitettan (Sweden)": 58.93,
         "Serie B Women (Italy)": 58.5
       },
       "origin": {
@@ -7485,6 +7465,7 @@
     "mens_club_competition": {
       "leagues": {
         "Acrobatic Gymnastics World Championships": 78.06,
+        "Afc Champions League Elite": 67.17,
         "Africa Cup Of Nations Qualifier": 39.29,
         "Arabian Gulf Cup": 43.14,
         "Austrian Bundesliga": 65.3,
@@ -7492,6 +7473,7 @@
         "Bmx European Championship": 40.93,
         "Brazilian Serie A": 81.68,
         "Bundesliga": 81.51,
+        "Caf Champions League": 45.1,
         "Campeon De Campeones": 84.24,
         "Campeones Cup": 83.11,
         "Canadian Premier League": 91.09,
@@ -7502,6 +7484,7 @@
         "Concacaf Nations League": 39.29,
         "Copa Del Rey": 39.29,
         "Copa Do Brasil": 52.04,
+        "Copa Libertadores": 78.06,
         "Coppa Italia": 70.74,
         "Dfb Super Cup": 92.63,
         "Dp World Tour": 78.06,
@@ -7511,6 +7494,7 @@
         "European Aquatics Championships": 40.93,
         "Fa Community Shield": 96.45,
         "Fa Cup": 71.28,
+        "Fifa Club World Cup": 85.25,
         "Formula 3": 51.2,
         "German Cup": 63.26,
         "International Friendly": 40.18,
@@ -7563,6 +7547,10 @@
           "country": "",
           "confederation": "AFC"
         },
+        "Afc Champions League Elite": {
+          "country": "",
+          "confederation": "AFC"
+        },
         "Africa Cup Of Nations Qualifier": {
           "country": "",
           "confederation": "CAF"
@@ -7590,6 +7578,10 @@
         "Bundesliga": {
           "country": "",
           "confederation": "UEFA"
+        },
+        "Caf Champions League": {
+          "country": "",
+          "confederation": "CAF"
         },
         "Campeon De Campeones": {
           "country": "",
@@ -7627,6 +7619,10 @@
           "country": "",
           "confederation": "CONMEBOL"
         },
+        "Copa Libertadores": {
+          "country": "",
+          "confederation": "CONMEBOL"
+        },
         "Coppa Italia": {
           "country": "",
           "confederation": "UEFA"
@@ -7660,6 +7656,10 @@
           "confederation": "UEFA"
         },
         "Fa Cup": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "Fifa Club World Cup": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -7978,7 +7978,7 @@
     },
     "laliga2": {
       "rating": 78.56,
-      "area": "mens_club_league",
+      "area": "mens_club_competition",
       "gfrLeague": "LaLiga 2",
       "country": "Spain",
       "confederation": "UEFA"
@@ -8005,7 +8005,7 @@
       "confederation": "CONCACAF"
     },
     "women-s-super-league": {
-      "rating": 70.41,
+      "rating": 63.92,
       "area": "womens_club_league",
       "gfrLeague": "Women's Super League",
       "country": "Switzerland",
