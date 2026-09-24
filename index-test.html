@@ -1091,11 +1091,20 @@ function App(){
       const lm=leagueMods[e.leagueId]??0;
       const fb=getFaveBoost(e.name,e.leagueId,favTeams);
       const fm=fb.match?(faveBoosts[e.leagueId]??FAVE_BOOST):0;
-      // Only applies to auto-scored (GFR) soccer - manual-mod soccer leagues
-      // (NWSL, USL League One, etc.) get their entire score from their own
-      // individually-typed mod, same mechanism as MLB/NFL, with nothing
-      // underneath to shift - so they're deliberately excluded here.
-      const sa=(e.sport==="Soccer"&&leagueStatus[e.leagueId]?.scoring!=="manual")?soccerAdjustment:0;
+      // Soccer's mod comes from its AREA, not from one global adjustment. The
+      // scraper publishes quality only; the base mod for each of the eight
+      // areas is set in the Leagues tab and scales by the league's GFR rating,
+      // so changing a base re-scores instantly with no re-scrape.
+      //
+      // Manual-mod soccer leagues are excluded, as before: they get their
+      // whole score from their own typed mod, with nothing underneath.
+      let sa=0;
+      if(e.sport==="Soccer"&&leagueStatus[e.leagueId]?.scoring!=="manual"){
+        const ar=areaOverrides[e.leagueId]||e.area;
+        const rt=(e.lgR!==undefined&&e.lgR!==null)?e.lgR:(leagueGfr[e.leagueId]||{}).rating;
+        const am=ar?areaModFor(ar,rt):undefined;
+        sa=(am===undefined)?soccerAdjustment:am;   // no area yet -> old global nudge
+      }
       const raw=e.rawBase+lm+fm+sa;
       const ov=prioOvr[e.id]??prioOvr[String(e.id)];
       const bd=[
