@@ -1830,6 +1830,22 @@ function App(){
                                         style={{fontSize:10,color:onToday?"#86efac":C.DM,marginLeft:6}}>
                                         GFR {typeof rating==="number"?rating.toFixed(2):rating}
                                       </span>)}
+                                    {(()=>{
+                                      // how many of the clubs ESPN lists in this competition
+                                      // have a GFR rating — a low ratio means a naming
+                                      // mismatch or a field GFR does not rate, and either
+                                      // way the rating is pulled toward the unrated default
+                                      const m=gfrById[lg.id]||{};
+                                      if(m.rosterTotal===undefined||!m.rosterTotal) return null;
+                                      const hit=m.rosterMatched||0, tot=m.rosterTotal;
+                                      const frac=hit/tot;
+                                      const col=frac>=0.9?"#4ade80":frac>=0.6?"#fbbf24":"#f87171";
+                                      return <span title={`${hit} of ${tot} teams ESPN lists for this competition have a GFR rating`}
+                                        style={{marginLeft:6,fontSize:9,fontWeight:700,color:col,
+                                                border:`1px solid ${col}44`,borderRadius:4,padding:"1px 4px"}}>
+                                        {hit}/{tot}
+                                      </span>;
+                                    })()}
                                     <select value={areaOverrides[lg.id]||""} onChange={ev=>updateAreaOverride(lg.id,ev.target.value)}
                                       title="Move this league to another area"
                                       style={{marginLeft:8,background:C.SUR,border:`1px solid ${areaOverrides[lg.id]?"#f59e0b":C.BD2}`,borderRadius:6,color:areaOverrides[lg.id]?"#fde68a":"#94a3b8",fontSize:9,padding:"2px 4px",outline:"none"}}>
