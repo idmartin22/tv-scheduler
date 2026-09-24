@@ -6809,11 +6809,11 @@
           "confederation": ""
         }
       },
+      "label": "Men's club leagues",
       "top": 91.09,
       "worst": 52.73,
       "anchored": true,
       "span": 38.36,
-      "label": "Men's club leagues",
       "seen": [
         "League One (England)",
         "League One (Scotland)",
@@ -7006,11 +7006,11 @@
           "confederation": "UEFA"
         }
       },
+      "label": "Women's club leagues",
       "top": 85.76,
       "worst": 53.4,
       "anchored": true,
       "span": 32.36,
-      "label": "Women's club leagues",
       "seen": [
         "Liga MX Femenil (Mexico)",
         "NWSL (USA)",
@@ -7115,11 +7115,11 @@
           "confederation": "CONCACAF"
         }
       },
+      "label": "Men's club competitions",
       "top": 89.29,
       "worst": 39.29,
       "anchored": true,
       "span": 50.0,
-      "label": "Men's club competitions",
       "seen": [
         "League Two"
       ]
@@ -7159,11 +7159,11 @@
           "confederation": "UEFA"
         }
       },
+      "label": "Men's one-off finals",
       "top": 96.45,
       "worst": 83.11,
       "anchored": true,
       "span": 13.34,
-      "label": "Men's one-off finals",
       "seen": []
     },
     "womens_club_competition": {
@@ -7176,36 +7176,21 @@
           "confederation": "UEFA"
         }
       },
+      "label": "Women's club competitions",
       "top": 85.21,
       "worst": 85.21,
       "anchored": true,
       "span": 0.0,
-      "label": "Women's club competitions",
       "seen": []
     },
     "mens_national": {
-      "leagues": {
-        "Africa Cup of Nations Qualifier": 1311.14,
-        "Arabian Gulf Cup": 1275.3,
-        "UEFA Nations League": 1387.51,
-        "CONCACAF Nations League": 1108.59,
-        "International Friendly": 1001.64
-      },
+      "leagues": {},
       "origin": {},
-      "fifa_top": 1995.88,
-      "fifa_worst": 721.2,
-      "top": 1995.88,
-      "worst": 721.2,
-      "anchored": true,
-      "span": 1274.68,
+      "flat": true,
       "label": "Men's national teams",
-      "seen": [
-        "Africa Cup of Nations Qualifier",
-        "Arabian Gulf Cup",
-        "CONCACAF Nations League",
-        "International Friendly",
-        "UEFA Nations League"
-      ]
+      "top": null,
+      "worst": null,
+      "anchored": false
     }
   },
   "leagueGfr": {
@@ -7248,7 +7233,9 @@
       "area": "mens_club_league",
       "gfrLeague": "MLS",
       "country": "USA",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 30,
+      "rosterTotal": 30
     },
     "canadian-premier-league": {
       "rating": 68.03,
@@ -7279,14 +7266,18 @@
       "area": "mens_club_league",
       "gfrLeague": "LaLiga 2",
       "country": "Spain",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 21,
+      "rosterTotal": 22
     },
     "nwsl": {
       "rating": 85.76,
       "area": "womens_club_league",
       "gfrLeague": "NWSL",
       "country": "USA",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 14,
+      "rosterTotal": 16
     },
     "usl-super-league": {
       "rating": 62.73,
