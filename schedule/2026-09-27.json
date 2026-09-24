@@ -799,6 +799,38 @@
       "_score": 35
     },
     {
+      "id": 44672893,
+      "lgId": 2436,
+      "lgSlug": "womens-u20-world-cup",
+      "time": "12:00",
+      "name": "Korea DPR U20 @ Spain U20",
+      "sport": "Soccer",
+      "league": "U20 Women's World Cup",
+      "ch": [
+        "FOX Soccer Plus",
+        "NBC Universo"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
       "id": 51675183,
       "lgId": 541,
       "lgSlug": "laliga-2",
@@ -4261,8 +4293,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -6.046511627907012,
-        "l": "Quality -6.0 (Cleveland Guardians 0.501 vs Kansas City Royals 0.479)"
+        "v": -6.032388663967602,
+        "l": "Quality -6.0 (Cleveland Guardians 0.500 vs Kansas City Royals 0.480)"
       },
       "_sk": {
         "v": 0,
@@ -4276,9 +4308,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.046511627907012,
+      "_score": -6.032388663967602,
       "_rk": [
-        13,
+        15,
         26
       ]
     },
@@ -4295,8 +4327,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.39957035445755,
-        "l": "Quality +8.4 (Atlanta Braves 0.525 vs Miami Marlins 0.501)"
+        "v": 9.055793991416326,
+        "l": "Quality +9.1 (Atlanta Braves 0.526 vs Miami Marlins 0.502)"
       },
       "_sk": {
         "v": 0,
@@ -4310,10 +4342,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.39957035445755,
+      "_score": 9.055793991416326,
       "_rk": [
-        4,
-        13
+        3,
+        12
       ]
     },
     {
@@ -4329,8 +4361,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.97744360902254,
-        "l": "Quality +11.0 (St. Louis Cardinals 0.500 vs Milwaukee Brewers 0.534)"
+        "v": 11.309012875536531,
+        "l": "Quality +11.3 (St. Louis Cardinals 0.501 vs Milwaukee Brewers 0.534)"
       },
       "_sk": {
         "v": 0,
@@ -4344,9 +4376,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.97744360902254,
+      "_score": 11.309012875536531,
       "_rk": [
-        16,
+        13,
         1
       ]
     },
@@ -5540,6 +5572,16 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Sydney Swans - Brisbane Lions",
+      "league": "AFL Women",
+      "sport": "Aus Football",
+      "time": "01:05",
+      "date": "2026-09-27",
+      "channel": "Fubo Sports, FOX Soccer Plus",
+      "reason": "cutoff",
+      "detail": "starts 01:05 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Hangzhou Open",
       "league": "ATP",
       "sport": "Tennis",
@@ -5928,6 +5970,16 @@
       "channel": "OneSoccer",
       "reason": "channel",
       "detail": "airs on OneSoccer \u2014 none in channels.txt"
+    },
+    {
+      "name": "Atl\u00e9tico San Luis @ Pumas UNAM",
+      "league": "Liga MX",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-09-27",
+      "channel": "Univision",
+      "reason": "channel",
+      "detail": "airs on Univision \u2014 none in channels.txt"
     },
     {
       "name": "South Dakota @ North Dakota State",
