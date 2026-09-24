@@ -1728,8 +1728,35 @@ function App(){
                       return undefined;                  // ambiguous — show nothing, not a guess
                     };
                     const areaOf=lg=>areaOverrides[lg.id]||areaOfLeague[lg.id]||"unassigned";
+
+                    // Two app leagues can resolve to the SAME GFR league — the
+                    // feed has named the Championship both "Championship" and
+                    // "English Championship", so it appeared twice with an
+                    // identical rating. They are one league, so show one row:
+                    // the duplicates are folded in, and ON/OFF and favourites
+                    // apply to every id behind it.
+                    const dupeOf={}, dupeGroup={};
+                    (()=>{
+                      const byGfr={};
+                      activeSoccer.forEach(lg=>{
+                        const m=gfrById[lg.id];
+                        if(!m||!m.gfrLeague) return;
+                        const k=`${m.gfrLeague}|${m.country||""}`.toLowerCase();
+                        (byGfr[k]=byGfr[k]||[]).push(lg.id);
+                      });
+                      Object.values(byGfr).forEach(ids=>{
+                        if(ids.length<2) return;
+                        // keep the one with games today, else the longest name
+                        const primary=ids.find(id=>playingToday.has(id))
+                          ||ids.slice().sort((a,b)=>(b||"").length-(a||"").length)[0];
+                        dupeGroup[primary]=ids;
+                        ids.forEach(id=>{ if(id!==primary) dupeOf[id]=primary; });
+                      });
+                    })();
+                    const groupIds=id=>dupeGroup[id]||[id];
                     const byArea={};
-                    activeSoccer.forEach(lg=>{ (byArea[areaOf(lg)]=byArea[areaOf(lg)]||[]).push(lg); });
+                    activeSoccer.filter(lg=>!dupeOf[lg.id])
+                      .forEach(lg=>{ (byArea[areaOf(lg)]=byArea[areaOf(lg)]||[]).push(lg); });
                     // strongest league first; unrated ones fall to the bottom
                     Object.values(byArea).forEach(list=>list.sort((a,b)=>{
                       const ra=ratingFor(a), rb=ratingFor(b);
@@ -1787,6 +1814,11 @@ function App(){
                                   <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
                                   <div style={{fontSize:12,color:"#cbd5e1"}}>
                                     {lg.n}{originBadge(lg.id)||gfrBadge(lg)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>{"\u2b50"}</span>}
+                                    {(dupeGroup[lg.id]||[]).length>1&&(
+                                      <span title={`the feed also lists this as: ${dupeGroup[lg.id].filter(i=>i!==lg.id).join(", ")}`}
+                                        style={{marginLeft:6,fontSize:8,color:"#94a3b8",border:`1px solid ${C.BD2}`,borderRadius:4,padding:"1px 3px"}}>
+                                        +{dupeGroup[lg.id].length-1} dup
+                                      </span>)}
                                     {rating!==undefined&&(
                                       <span title={onToday?"has games today":"no games today"}
                                         style={{fontSize:10,color:onToday?"#86efac":C.DM,marginLeft:6}}>
@@ -1799,7 +1831,7 @@ function App(){
                                       {AREA_ORDER.map(a=><option key={a} value={a}>{AREA_LABEL[a]}</option>)}
                                     </select>
                                   </div>
-                                  <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
+                                  <button onClick={()=>groupIds(lg.id).forEach(id=>toggleLeague(id))} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
                                   <div title={mod===undefined?"no GFR rating for this league":onToday?"has games today":"no games today"}
                                        style={{textAlign:"center",lineHeight:1.15}}>
                                     <div style={{fontSize:11,fontWeight:700,color:mod===undefined?C.DM:(onToday?"#86efac":"#cbd5e1")}}>
@@ -1809,7 +1841,7 @@ function App(){
                                       <div style={{fontSize:8,color:C.DM}}>GFR {Number(rating).toFixed(2)}</div>)}
                                   </div>
                                   <div style={{display:"flex",gap:4,alignItems:"center"}}>
-                                    <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+                                    <input defaultValue={fv} onBlur={ev=>groupIds(lg.id).forEach(id=>updateFave(id,ev.target.value))} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
                                     <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
                                       key={`faveboost-${lg.id}-${fBoost}`}
                                       onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
