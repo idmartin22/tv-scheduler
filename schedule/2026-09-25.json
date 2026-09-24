@@ -6488,16 +6488,6 @@
       "detail": "airs on MLB.TV, Marlins.TV, BravesVision \u2014 none in channels.txt"
     },
     {
-      "name": "Deportivo Pasto @ Boyac\u00e1 Chic\u00f3",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "19:10",
-      "date": "2026-09-25",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "USA U18 @ Muskegon Lumberjacks",
       "league": "USHL",
       "sport": "Hockey",
@@ -6766,16 +6756,6 @@
       "channel": "YouTube US",
       "reason": "channel",
       "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
-      "name": "Atl\u00e9tico Bucaramanga @ Once Caldas",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "21:15",
-      "date": "2026-09-25",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Ben Franklin at Valley Christian",
@@ -7384,11 +7364,11 @@
           "confederation": ""
         }
       },
+      "label": "Men's club leagues",
       "top": 91.09,
       "worst": 52.73,
       "anchored": true,
       "span": 38.36,
-      "label": "Men's club leagues",
       "seen": [
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
@@ -7570,11 +7550,11 @@
           "confederation": "UEFA"
         }
       },
+      "label": "Women's club leagues",
       "top": 85.76,
       "worst": 53.4,
       "anchored": true,
       "span": 32.36,
-      "label": "Women's club leagues",
       "seen": [
         "NWSL (USA)",
         "USL Super League (USA)"
@@ -7676,11 +7656,11 @@
           "confederation": "CONCACAF"
         }
       },
+      "label": "Men's club competitions",
       "top": 89.29,
       "worst": 39.29,
       "anchored": true,
       "span": 50.0,
-      "label": "Men's club competitions",
       "seen": []
     },
     "mens_oneoff": {
@@ -7718,11 +7698,11 @@
           "confederation": "UEFA"
         }
       },
+      "label": "Men's one-off finals",
       "top": 96.45,
       "worst": 83.11,
       "anchored": true,
       "span": 13.34,
-      "label": "Men's one-off finals",
       "seen": []
     },
     "womens_club_competition": {
@@ -7735,34 +7715,21 @@
           "confederation": "UEFA"
         }
       },
+      "label": "Women's club competitions",
       "top": 85.21,
       "worst": 85.21,
       "anchored": true,
       "span": 0.0,
-      "label": "Women's club competitions",
       "seen": []
     },
     "mens_national": {
-      "leagues": {
-        "Africa Cup of Nations Qualifier": 1299.14,
-        "Arabian Gulf Cup": 1275.3,
-        "UEFA Nations League": 1530.85,
-        "CONCACAF Nations League": 1108.59
-      },
+      "leagues": {},
       "origin": {},
-      "fifa_top": 1995.88,
-      "fifa_worst": 721.2,
-      "top": 1995.88,
-      "worst": 721.2,
-      "anchored": true,
-      "span": 1274.68,
+      "flat": true,
       "label": "Men's national teams",
-      "seen": [
-        "Africa Cup of Nations Qualifier",
-        "Arabian Gulf Cup",
-        "CONCACAF Nations League",
-        "UEFA Nations League"
-      ]
+      "top": null,
+      "worst": null,
+      "anchored": false
     }
   },
   "leagueGfr": {
@@ -7836,14 +7803,18 @@
       "area": "mens_club_league",
       "gfrLeague": "LaLiga 2",
       "country": "Spain",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 21,
+      "rosterTotal": 22
     },
     "nwsl": {
       "rating": 85.76,
       "area": "womens_club_league",
       "gfrLeague": "NWSL",
       "country": "USA",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 14,
+      "rosterTotal": 16
     },
     "usl-super-league": {
       "rating": 62.73,
