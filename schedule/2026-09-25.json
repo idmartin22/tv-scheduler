@@ -7602,7 +7602,7 @@
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
         "Concacaf Champions Cup": 72.11,
-        "Leagues Cup": 78.32,
+        "Leagues Cup": 79.39,
         "Conmebol Libertadores": 78.06,
         "English Fa Cup": 71.28,
         "Carabao Cup": 78.33,
@@ -7611,6 +7611,8 @@
         "German Cup": 64.59,
         "Coppa Italia": 70.74,
         "Uefa Champions League": 89.29,
+        "Uefa Europa League": 82.57,
+        "Uefa Conference League": 71.72,
         "U.S. Open Cup": 55.17,
         "Usl Cup": 58.04
       },
@@ -7664,6 +7666,14 @@
           "confederation": "UEFA"
         },
         "Uefa Champions League": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "Uefa Europa League": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "Uefa Conference League": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -7873,7 +7883,7 @@
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF",
-      "rosterMatched": 17,
+      "rosterMatched": 18,
       "rosterTotal": 18
     },
     "women-s-super-league": {
@@ -8087,7 +8097,7 @@
       "gfrLeague": "Ligue 2",
       "country": "France",
       "confederation": "UEFA",
-      "rosterMatched": 17,
+      "rosterMatched": 18,
       "rosterTotal": 18
     },
     "ligue-1": {
@@ -8111,20 +8121,26 @@
     "campe-n-de-campeones": {
       "rating": 84.24,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 2,
+      "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.52,
+      "rating": 48.51,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 2,
+      "rosterTotal": 6
     },
     "scottish-league-cup": {
       "rating": 60.72,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 32,
+      "rosterTotal": 45
     },
     "uefa-champions-league": {
-      "rating": 84.45,
+      "rating": 89.29,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 36,
@@ -8141,49 +8157,67 @@
       "confederation": "UEFA"
     },
     "uefa-conference-league": {
-      "rating": 70.55,
+      "rating": 71.72,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 27,
+      "rosterTotal": 36
     },
     "english-league-cup": {
-      "rating": 78.34,
+      "rating": 78.33,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 90,
+      "rosterTotal": 92
     },
     "copa-do-brasil": {
-      "rating": 52.04,
+      "rating": 52.39,
       "area": "mens_club_competition",
-      "confederation": "CONMEBOL"
+      "confederation": "CONMEBOL",
+      "rosterMatched": 42,
+      "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 56.72,
+      "rating": 72.11,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 22,
+      "rosterTotal": 27
     },
     "uefa-europa-league": {
       "rating": 82.57,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 34,
+      "rosterTotal": 36
     },
     "leagues-cup": {
-      "rating": 78.32,
+      "rating": 79.39,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 35,
+      "rosterTotal": 36
     },
     "johan-cruyff-shield": {
       "rating": 85.8,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
     },
     "copa-libertadores": {
-      "rating": 79.06,
+      "rating": 78.06,
       "area": "mens_club_competition",
-      "confederation": "CONMEBOL"
+      "confederation": "CONMEBOL",
+      "rosterMatched": 42,
+      "rosterTotal": 46
     },
     "uefa-super-cup": {
       "rating": 92.63,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
     },
     "usl-cup": {
       "rating": 58.04,
@@ -8195,32 +8229,93 @@
     "fa-community-shield": {
       "rating": 96.45,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
     },
     "troph-e-des-champions": {
       "rating": 90.37,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
     },
     "coppa-italia": {
       "rating": 70.74,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 34,
+      "rosterTotal": 46
     },
     "dfb-super-cup": {
-      "rating": 94.74,
+      "rating": 92.63,
       "area": "mens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
     },
     "u-s-open-cup": {
       "rating": 55.17,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 36,
+      "rosterTotal": 80
     },
     "campeones-cup": {
       "rating": 83.11,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 2,
+      "rosterTotal": 2
+    },
+    "pro-motocross-championship": {
+      "rating": 48.98,
+      "area": "mens_club_competition",
+      "confederation": "",
+      "rosterMatched": 2,
+      "rosterTotal": 4
+    },
+    "super-cup": {
+      "rating": 94.74,
+      "area": "mens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
+    },
+    "concacaf-caribbean-cup": {
+      "rating": 72.11,
+      "area": "mens_club_competition",
+      "confederation": "CONCACAF",
+      "rosterMatched": 22,
+      "rosterTotal": 27
+    },
+    "women-s-pro-baseball-league": {
+      "rating": 73.91,
+      "area": "womens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 2,
+      "rosterTotal": 2
+    },
+    "u-s-open": {
+      "rating": 55.17,
+      "area": "mens_club_competition",
+      "confederation": "CONCACAF",
+      "rosterMatched": 36,
+      "rosterTotal": 80
+    },
+    "serie-a-cup-women": {
+      "rating": 85.56,
+      "area": "womens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 20,
+      "rosterTotal": 20
+    },
+    "formula-3": {
+      "rating": 51.2,
+      "area": "mens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 3,
+      "rosterTotal": 10
     }
   }
 }
