@@ -2844,96 +2844,81 @@
     },
     "mens_club_competition": {
       "leagues": {
-        "Afcchampionsleagueelite": 67.17,
-        "Cafchampionsleague": 45.1,
-        "Concacafcaribbeancup": 72.11,
-        "Concacafcentralamericancup": 72.11,
-        "Concacafchampionscup": 72.11,
-        "Copadelrey": 39.29,
-        "Copadobrasil": 52.04,
-        "Copalibertadores": 78.06,
-        "Coppaitalia": 70.74,
-        "Englishleaguecup": 78.33,
-        "Facup": 71.28,
-        "Fifaclubworldcup": 85.27,
-        "Germancup": 63.26,
-        "Leaguescup": 78.32,
-        "Leaguetwo": 52.62,
-        "Uefachampionsleague": 89.29,
-        "Uslcup": 58.04,
-        "Usopen": 55.17,
-        "Usopencup": 55.17
+        "Afc Champions League Elite": 67.17,
+        "Afc Champions League Two": 52.62,
+        "Copa Do Brazil": 52.39,
+        "Caf Champions League": 45.1,
+        "Concacaf Champions Cup": 72.11,
+        "Leagues Cup": 78.32,
+        "Conmebol Libertadores": 78.06,
+        "English Fa Cup": 71.28,
+        "Carabao Cup": 78.33,
+        "Copa Del Rey": 39.29,
+        "Club World Cup": 85.27,
+        "German Cup": 64.59,
+        "Coppa Italia": 70.74,
+        "Uefa Champions League": 89.29,
+        "U.S. Open Cup": 55.17,
+        "Usl Cup": 58.04
       },
       "origin": {
-        "Afcchampionsleagueelite": {
+        "Afc Champions League Elite": {
           "country": "",
           "confederation": "AFC"
         },
-        "Cafchampionsleague": {
+        "Afc Champions League Two": {
+          "country": "",
+          "confederation": "AFC"
+        },
+        "Copa Do Brazil": {
+          "country": "",
+          "confederation": "CONMEBOL"
+        },
+        "Caf Champions League": {
           "country": "",
           "confederation": "CAF"
         },
-        "Concacafcaribbeancup": {
+        "Concacaf Champions Cup": {
           "country": "",
           "confederation": "CONCACAF"
         },
-        "Concacafcentralamericancup": {
+        "Leagues Cup": {
           "country": "",
           "confederation": "CONCACAF"
         },
-        "Concacafchampionscup": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Copadobrasil": {
+        "Conmebol Libertadores": {
           "country": "",
           "confederation": "CONMEBOL"
         },
-        "Copalibertadores": {
-          "country": "",
-          "confederation": "CONMEBOL"
-        },
-        "Coppaitalia": {
+        "English Fa Cup": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Englishleaguecup": {
+        "Carabao Cup": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Facup": {
+        "Club World Cup": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Fifaclubworldcup": {
+        "German Cup": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Germancup": {
+        "Coppa Italia": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Leaguescup": {
+        "Uefa Champions League": {
+          "country": "",
+          "confederation": "UEFA"
+        },
+        "U.S. Open Cup": {
           "country": "",
           "confederation": "CONCACAF"
         },
-        "Leaguetwo": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Uefachampionsleague": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Uslcup": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Usopen": {
-          "country": "",
-          "confederation": "CONCACAF"
-        },
-        "Usopencup": {
+        "Usl Cup": {
           "country": "",
           "confederation": "CONCACAF"
         }
@@ -2947,35 +2932,30 @@
     },
     "mens_oneoff": {
       "leagues": {
-        "Campeonescup": 83.11,
-        "Dfbsupercup": 92.63,
-        "Facommunityshield": 96.45,
-        "Supercup": 94.74,
-        "Tropheedeschampions": 90.37,
-        "Uefasupercup": 92.63
+        "Campeones Cup": 83.11,
+        "Community Shield": 96.45,
+        "Trophee Des Champions": 90.37,
+        "German Supercup": 94.74,
+        "Uefa Super Cup": 92.63
       },
       "origin": {
-        "Campeonescup": {
+        "Campeones Cup": {
           "country": "",
           "confederation": "CONCACAF"
         },
-        "Dfbsupercup": {
+        "Community Shield": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Facommunityshield": {
+        "Trophee Des Champions": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Supercup": {
+        "German Supercup": {
           "country": "",
           "confederation": "UEFA"
         },
-        "Tropheedeschampions": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "Uefasupercup": {
+        "Uefa Super Cup": {
           "country": "",
           "confederation": "UEFA"
         }
@@ -2989,10 +2969,10 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "Uefawomenschampionsleague": 85.21
+        "Uefa Women'S Champions League": 85.21
       },
       "origin": {
-        "Uefawomenschampionsleague": {
+        "Uefa Women'S Champions League": {
           "country": "",
           "confederation": "UEFA"
         }
@@ -3039,9 +3019,11 @@
       "confederation": "UEFA"
     },
     "uefa-women-s-champions-league": {
-      "rating": 63.78,
+      "rating": 85.21,
       "area": "womens_club_competition",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "concacaf-nations-league": {
       "rating": 1032.11,
@@ -3146,7 +3128,7 @@
       "confederation": "UEFA"
     },
     "league-one": {
-      "rating": 75.72,
+      "rating": 59.72,
       "area": "mens_club_league",
       "gfrLeague": "League One",
       "country": "England",
@@ -3191,11 +3173,13 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 75.55,
+      "rating": 78.52,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
-      "confederation": "CONMEBOL"
+      "confederation": "CONMEBOL",
+      "rosterMatched": 16,
+      "rosterTotal": 16
     },
     "la-liga": {
       "rating": 86.04,
@@ -3212,7 +3196,7 @@
       "gfrLeague": "Bundesliga",
       "country": "Germany",
       "confederation": "UEFA",
-      "rosterMatched": 16,
+      "rosterMatched": 18,
       "rosterTotal": 18
     },
     "eredivisie": {
@@ -3230,7 +3214,7 @@
       "gfrLeague": "Serie A",
       "country": "Brazil",
       "confederation": "CONMEBOL",
-      "rosterMatched": 19,
+      "rosterMatched": 20,
       "rosterTotal": 20
     },
     "efl-championship": {
@@ -3446,7 +3430,9 @@
     "usl-cup": {
       "rating": 58.04,
       "area": "mens_club_competition",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "rosterMatched": 26,
+      "rosterTotal": 42
     },
     "fa-community-shield": {
       "rating": 96.45,
