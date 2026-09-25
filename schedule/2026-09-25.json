@@ -1041,6 +1041,40 @@
       "_score": 0
     },
     {
+      "id": 21689755,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "16:05",
+      "name": "Baltimore Orioles @ New York Yankees",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "MLB Network"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 6.158798283261859,
+        "l": "Quality +6.2 (Baltimore Orioles 0.499 vs New York Yankees 0.520)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.158798283261859,
+      "_rk": [
+        17,
+        5
+      ]
+    },
+    {
       "id": 28644768,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -1231,6 +1265,40 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 88544748,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "17:35",
+      "name": "Chicago Cubs @ Boston Red Sox",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 9.055793991416326,
+        "l": "Quality +9.1 (Chicago Cubs 0.518 vs Boston Red Sox 0.510)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 9.055793991416326,
+      "_rk": [
+        6,
+        9
+      ]
     },
     {
       "id": 81625587,
@@ -2409,40 +2477,6 @@
         "l": ""
       },
       "_score": 0
-    },
-    {
-      "id": 54995065,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "18:05",
-      "name": "Chicago Cubs @ Boston Red Sox",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "ESPN Unlimited"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 9.055793991416326,
-        "l": "Quality +9.1 (Chicago Cubs 0.518 vs Boston Red Sox 0.510)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 9.055793991416326,
-      "_rk": [
-        6,
-        9
-      ]
     },
     {
       "id": 99799428,
@@ -4242,40 +4276,6 @@
       "cat": "unclassified"
     },
     {
-      "id": 79876045,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "19:05",
-      "name": "Baltimore Orioles @ New York Yankees",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "MLB Network"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 6.158798283261859,
-        "l": "Quality +6.2 (Baltimore Orioles 0.499 vs New York Yankees 0.520)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 6.158798283261859,
-      "_rk": [
-        17,
-        5
-      ]
-    },
-    {
       "id": 68078182,
       "lgId": 590,
       "lgSlug": "usl-championship",
@@ -4310,8 +4310,8 @@
       "espn": "usa.usl.1",
       "lgR": 68.63,
       "_rk": [
-        1497,
-        1574
+        1495,
+        1573
       ]
     },
     {
@@ -4327,8 +4327,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-70.0 vs tier1 baseline 137.3 (USL Championship (USA) \u2014 opponent not in GFR))"
+        "v": 8.480598410472183,
+        "l": "Quality +8.5 (GFR 63.1-66.9 vs tier1 baseline 125.5 (USL Super League (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -4342,14 +4342,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": 8.480598410472183,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.w.usl.1",
       "lgR": 62.73,
       "_rk": [
-        null,
-        1214
+        266,
+        210
       ]
     },
     {
@@ -4839,15 +4839,16 @@
       "_score": 0
     },
     {
-      "id": 44229554,
+      "id": 42390951,
       "lgId": 2033,
       "lgSlug": "arca-menards-series",
       "time": "20:00",
-      "name": "Reese's 150",
+      "name": "Menards 150",
       "sport": "Motorsports",
       "league": "ARCA Menards Series",
       "ch": [
-        "FOX Sports 1"
+        "FOX Sports 1",
+        "FOX One"
       ],
       "dur": 240,
       "_st": {
@@ -5136,7 +5137,7 @@
       "lgR": 68.63,
       "_rk": [
         1236,
-        1135
+        1137
       ]
     },
     {
@@ -5691,6 +5692,36 @@
       "_score": 0
     },
     {
+      "id": 89287305,
+      "lgId": 2011,
+      "lgSlug": "wta",
+      "time": "22:00",
+      "name": "Korea Open",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 6917201,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -5790,7 +5821,7 @@
       "espn": "mex.1",
       "lgR": 80.02,
       "_rk": [
-        484,
+        485,
         387
       ]
     },
@@ -6246,7 +6277,7 @@
       "sport": "Motorsports",
       "time": "17:00",
       "date": "2026-09-25",
-      "channel": "Fubo Sports, FOX Sports 2",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Practice & Qualifying"
     },
@@ -6419,6 +6450,16 @@
       "channel": "MLB.TV, WPIX, Nationals.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, WPIX, Nationals.TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Baltimore Orioles @ New York Yankees",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "19:00",
+      "date": "2026-09-25",
+      "channel": "MLB.TV, MASN, YES",
+      "reason": "channel",
+      "detail": "airs on MLB.TV, MASN, YES \u2014 none in channels.txt"
     },
     {
       "name": "Peterborough Petes @ Brantford Bulldogs",
@@ -6996,6 +7037,8 @@
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.39,
+        "SuperLiga (Romania)": 75.79,
+        "Superliga (Denmark)": 79.3,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -7027,8 +7070,6 @@
         "Ligue 2 (France)": 76.12,
         "Serie B (Italy)": 75.8,
         "Serie B (Brazil)": 72.44,
-        "SuperLiga (Romania)": 75.79,
-        "Superliga (Denmark)": 79.3,
         "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
@@ -7170,6 +7211,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "Persian Gulf Pro League (Iran)": {
           "country": "Iran",
           "confederation": "AFC"
@@ -7293,14 +7342,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -7879,7 +7920,7 @@
     },
     "usl-champ": {
       "rating": 68.63,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "USL Championship",
       "country": "USA",
       "confederation": "CONCACAF",
@@ -7908,8 +7949,8 @@
       "rosterTotal": 37
     },
     "primera-a": {
-      "rating": 79.86,
-      "area": "mens_club_competition",
+      "rating": 79.85,
+      "area": "mens_club_league",
       "gfrLeague": "Primera A",
       "country": "Colombia",
       "confederation": "CONMEBOL",
@@ -7950,7 +7991,7 @@
     },
     "liga-nacional": {
       "rating": 73.76,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "rosterMatched": 10,
       "rosterTotal": 12,
       "gfrLeague": "Liga Nacional",
@@ -7959,7 +8000,7 @@
     },
     "laliga2": {
       "rating": 78.56,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "LaLiga 2",
       "country": "Spain",
       "confederation": "UEFA",
@@ -7977,16 +8018,16 @@
     },
     "usl-super-league": {
       "rating": 62.73,
-      "area": "mens_club_competition",
+      "area": "womens_club_league",
       "gfrLeague": "USL Super League",
       "country": "USA",
       "confederation": "CONCACAF",
-      "rosterMatched": 5,
+      "rosterMatched": 8,
       "rosterTotal": 8
     },
     "liga-mx": {
       "rating": 80.02,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF",
@@ -7994,8 +8035,8 @@
       "rosterTotal": 18
     },
     "women-s-super-league": {
-      "rating": 63.93,
-      "area": "womens_club_competition",
+      "rating": 84.3,
+      "area": "womens_club_league",
       "rosterMatched": 14,
       "rosterTotal": 14,
       "gfrLeague": "Women's Super League",
@@ -8013,10 +8054,10 @@
     },
     "league-two": {
       "rating": 69.61,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "League Two",
       "country": "England",
-      "confederation": "AFC",
+      "confederation": "UEFA",
       "rosterMatched": 12,
       "rosterTotal": 32
     },
@@ -8028,8 +8069,8 @@
       "confederation": "CONCACAF"
     },
     "serie-a-women": {
-      "rating": 75.86,
-      "area": "womens_club_competition",
+      "rating": 75.82,
+      "area": "womens_club_league",
       "gfrLeague": "Serie A Women",
       "country": "Italy",
       "confederation": "UEFA",
@@ -8146,7 +8187,7 @@
     },
     "premier-league": {
       "rating": 91.09,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Premier League",
       "country": "England",
       "confederation": "UEFA",
@@ -8155,7 +8196,7 @@
     },
     "serie-a": {
       "rating": 85.56,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Serie A",
       "country": "Italy",
       "confederation": "UEFA",
@@ -8173,7 +8214,7 @@
     },
     "liga-portugal": {
       "rating": 82.13,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Liga Portugal",
       "country": "Portugal",
       "confederation": "UEFA",
@@ -8181,17 +8222,17 @@
       "rosterTotal": 18
     },
     "pro-league": {
-      "rating": 72.71,
-      "area": "mens_club_competition",
+      "rating": 82.56,
+      "area": "mens_club_league",
       "gfrLeague": "Pro League",
       "country": "Belgium",
-      "confederation": "AFC",
+      "confederation": "UEFA",
       "rosterMatched": 16,
       "rosterTotal": 18
     },
     "s-per-lig": {
-      "rating": 78.33,
-      "area": "mens_club_competition",
+      "rating": 79.32,
+      "area": "mens_club_league",
       "gfrLeague": "Super Lig",
       "country": "Turkiye",
       "confederation": "UEFA",
@@ -8199,8 +8240,8 @@
       "rosterTotal": 18
     },
     "ligue-2": {
-      "rating": 76.33,
-      "area": "mens_club_competition",
+      "rating": 76.12,
+      "area": "mens_club_league",
       "gfrLeague": "Ligue 2",
       "country": "France",
       "confederation": "UEFA",
@@ -8209,7 +8250,7 @@
     },
     "ligue-1": {
       "rating": 85.3,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Ligue 1",
       "country": "France",
       "confederation": "UEFA",
@@ -8217,8 +8258,8 @@
       "rosterTotal": 18
     },
     "serie-b": {
-      "rating": 63.71,
-      "area": "mens_club_competition",
+      "rating": 75.8,
+      "area": "mens_club_league",
       "gfrLeague": "Serie B",
       "country": "Italy",
       "confederation": "UEFA",
@@ -8234,7 +8275,7 @@
     },
     "northern-super-league": {
       "rating": 48.51,
-      "area": "mens_club_competition",
+      "area": "womens_club_league",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
       "rosterTotal": 6
