@@ -7722,9 +7722,14 @@
     },
     "womens_club_competition": {
       "leagues": {
+        "Wsl Players Cup": 72.23,
         "Uefa Women'S Champions League": 85.21
       },
       "origin": {
+        "Wsl Players Cup": {
+          "country": "",
+          "confederation": "UEFA"
+        },
         "Uefa Women'S Champions League": {
           "country": "",
           "confederation": "UEFA"
@@ -7732,9 +7737,9 @@
       },
       "label": "Women's club competitions",
       "top": 85.21,
-      "worst": 85.21,
+      "worst": 72.23,
       "anchored": true,
-      "span": 0.0,
+      "span": 12.98,
       "seen": []
     },
     "mens_national": {
@@ -7881,7 +7886,7 @@
       "confederation": "UEFA"
     },
     "league-one": {
-      "rating": 75.72,
+      "rating": 59.72,
       "area": "mens_club_league",
       "gfrLeague": "League One",
       "country": "England",
@@ -7926,7 +7931,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 78.52,
+      "rating": 75.55,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
