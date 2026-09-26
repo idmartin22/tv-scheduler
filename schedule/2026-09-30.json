@@ -34,10 +34,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "fifa.friendly",
-      "lgR": 1425.9,
+      "lgR": 1427.61,
       "_rk": [
         179,
-        139
+        138
       ]
     },
     {
@@ -104,7 +104,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "caf.nations",
-      "lgR": 1533.12,
+      "lgR": 1534.21,
       "_rk": [
         70,
         157
@@ -993,8 +993,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -1008,7 +1008,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "eng.1",
@@ -1106,8 +1106,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -1121,7 +1121,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -1520,6 +1520,41 @@
       "_rk": [
         14,
         16
+      ]
+    },
+    {
+      "id": 29524121,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:30",
+      "name": "New York Islanders @ Toronto Maple Leafs",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -6.040584569481241,
+        "l": "Quality -6.0 (New York Islanders -0.021 vs Toronto Maple Leafs -0.358)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.040584569481241,
+      "_rk": [
+        17,
+        30
       ]
     },
     {
@@ -2265,6 +2300,16 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Chiba Lotte Marines @ Tohoku",
+      "league": "NPB",
+      "sport": "Baseball",
+      "time": "05:00",
+      "date": "2026-09-30",
+      "channel": "Next Level Sports",
+      "reason": "channel",
+      "detail": "airs on Next Level Sports \u2014 none in channels.txt"
+    },
+    {
       "name": "Cambodia @ Timor-Leste",
       "league": "ASEAN Cup",
       "sport": "Soccer",
@@ -2353,16 +2398,6 @@
       "channel": "YouTube US",
       "reason": "channel",
       "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
-      "name": "New York Islanders @ Toronto Maple Leafs",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:30",
-      "date": "2026-09-30",
-      "channel": "MSG Sportsnet, MSG Sportsnet 2, Prime Video (CA)",
-      "reason": "channel",
-      "detail": "airs on MSG Sportsnet, MSG Sportsnet 2, Prime Video (CA) \u2014 none in channels.txt"
     },
     {
       "name": "Red Deer Rebels @ Prince Albert Raiders",
@@ -3147,7 +3182,6 @@
     "mens_club_competition": {
       "leagues": {
         "Afc Champions League Elite": 67.17,
-        "Afc Champions League Two": 52.62,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
         "Concacaf Champions Cup": 72.11,
@@ -3167,10 +3201,6 @@
       },
       "origin": {
         "Afc Champions League Elite": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Afc Champions League Two": {
           "country": "",
           "confederation": "AFC"
         },
@@ -3247,7 +3277,6 @@
         "Campeones Cup": 83.11,
         "Community Shield": 96.45,
         "Trophee Des Champions": 90.37,
-        "German Supercup": 94.74,
         "Uefa Super Cup": 92.63
       },
       "origin": {
@@ -3260,10 +3289,6 @@
           "confederation": "UEFA"
         },
         "Trophee Des Champions": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "German Supercup": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -3329,7 +3354,7 @@
       "rosterTotal": 25
     },
     "international-friendly": {
-      "rating": 1425.9,
+      "rating": 1427.61,
       "area": "mens_club_competition",
       "rosterMatched": 5,
       "rosterTotal": 191,
@@ -3343,7 +3368,7 @@
       "rosterTotal": 18
     },
     "concacaf-nations-league": {
-      "rating": 1116.8,
+      "rating": 1126.64,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 0,
@@ -3377,14 +3402,14 @@
       "rosterTotal": 20
     },
     "africa-cup-of-nations-qualifier": {
-      "rating": 1533.12,
+      "rating": 1534.21,
       "area": "mens_national",
       "confederation": "CAF",
       "rosterMatched": 0,
       "rosterTotal": 24
     },
     "uefa-nations-league": {
-      "rating": 1612.81,
+      "rating": 1614.15,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -3825,7 +3850,7 @@
       "rosterTotal": 4
     },
     "super-cup": {
-      "rating": 94.74,
+      "rating": 92.63,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
