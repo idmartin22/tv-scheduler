@@ -840,11 +840,11 @@
       "cat": "unclassified"
     },
     {
-      "id": 52304623,
+      "id": 36406333,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
       "time": "17:00",
-      "name": "Sam Houston @ Western Kentucky",
+      "name": "Jacksonville @ Queens",
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
@@ -1043,38 +1043,6 @@
       "lgSlug": "ncaa-women-3",
       "time": "18:00",
       "name": "Bryant @ New Hampshire",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 50595947,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "18:00",
-      "name": "Jacksonville @ Queens",
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
@@ -1754,6 +1722,38 @@
       "name": "Western Illinois @ SIU Edwardsville",
       "sport": "Soccer",
       "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 97116380,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "19:00",
+      "name": "Sam Houston @ Western Kentucky",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -2693,6 +2693,41 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 91253651,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "20:00",
+      "name": "Minnesota Wild @ Nashville Predators",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 2.788289073437879,
+        "l": "Quality +2.8 (Minnesota Wild 0.230 vs Nashville Predators -0.075)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.788289073437879,
+      "_rk": [
+        8,
+        21
+      ]
     },
     {
       "id": 48905654,
@@ -4067,16 +4102,6 @@
       "detail": "airs on Summit League Network, Midco Sports Plus \u2014 none in channels.txt"
     },
     {
-      "name": "Minnesota Wild @ Nashville Predators",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "20:00",
-      "date": "2026-10-01",
-      "channel": "Scripps 66, WAVE, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on Scripps 66, WAVE, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
       "name": "North Dakota @ Kansas City",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
@@ -4120,16 +4145,6 @@
       "name": "San Diego State @ Boise State",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
-      "time": "20:00",
-      "date": "2026-10-01",
-      "channel": "YouTube US",
-      "reason": "channel",
-      "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
-      "name": "Texas State @ Utah State",
-      "league": "Women's College Soccer",
-      "sport": "Soccer",
       "time": "20:00",
       "date": "2026-10-01",
       "channel": "YouTube US",
@@ -4191,6 +4206,16 @@
       "league": "Women's College Soccer",
       "sport": "Soccer",
       "time": "21:00",
+      "date": "2026-10-01",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Texas State @ Utah State",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "21:30",
       "date": "2026-10-01",
       "channel": "YouTube US",
       "reason": "channel",
