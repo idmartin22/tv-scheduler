@@ -1819,7 +1819,10 @@ function App(){
                                   <div/>
                                   <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
                                   <div style={{fontSize:12,color:"#cbd5e1"}}>
-                                    {lg.n}{originBadge(lg.id)||gfrBadge(lg)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>{"\u2b50"}</span>}
+                                    {/* GFR's own country first: the hardcoded map said ENG for
+                                        "League One" while the rating shown was Scotland's 59.72 —
+                                        the badge must agree with the rating beside it. */}
+                                    {lg.n}{gfrBadge(lg)||originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>{"\u2b50"}</span>}
                                     {(dupeGroup[lg.id]||[]).length>1&&(
                                       <span title={`the feed also lists this as: ${dupeGroup[lg.id].filter(i=>i!==lg.id).join(", ")}`}
                                         style={{marginLeft:6,fontSize:8,color:"#94a3b8",border:`1px solid ${C.BD2}`,borderRadius:4,padding:"1px 3px"}}>
