@@ -3,6 +3,67 @@
   "label": "Friday, October 2",
   "events": [
     {
+      "id": 69495416,
+      "lgId": 1999,
+      "lgSlug": "dp-world-tour",
+      "time": "07:00",
+      "name": "Alfred Dunhill Links Championship",
+      "sport": "Golf",
+      "league": "DP World Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 80862382,
+      "lgId": 2478,
+      "lgSlug": "mma",
+      "time": "09:30",
+      "name": "One Friday Fights",
+      "sport": "Fighting",
+      "league": "MMA",
+      "ch": [
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 15,
+        "l": "Boxing event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 46021477,
       "lgId": 3582,
       "lgSlug": "swimming-world-cup",
@@ -154,7 +215,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 1.2039582188015694,
+        "v": 1.2228832951944917,
         "l": "Quality +1.2 (GFR 79.9-77.7 vs tier1 baseline 157.1 (LaLiga 2 (Spain)))"
       },
       "_sk": {
@@ -169,14 +230,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.2039582188015694,
+      "_score": 1.2228832951944917,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "esp.2",
       "lgR": 78.56,
       "_rk": [
-        381,
-        564
+        380,
+        565
       ]
     },
     {
@@ -226,7 +287,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Sports 1"
+        "FOX Sports 1",
+        "FOX One"
       ],
       "dur": 120,
       "_st": {
@@ -2218,7 +2280,7 @@
       "lgR": 62.73,
       "_rk": [
         349,
-        318
+        319
       ]
     },
     {
@@ -4421,8 +4483,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 6.734916140274577,
-        "l": "Quality +6.7 (GFR 88.2-85.5 vs tier1 baseline 171.5 (NWSL (USA)))"
+        "v": 7.252032520325223,
+        "l": "Quality +7.3 (GFR 88.6-85.5 vs tier1 baseline 171.5 (NWSL (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -4436,7 +4498,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.734916140274577,
+      "_score": 7.252032520325223,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.nwsl",
@@ -4925,8 +4987,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -0.9896853375114755,
-        "l": "Quality -1.0 (GFR 77.6-81.8 vs tier1 baseline 159.7 (Primera A (Colombia)))"
+        "v": -0.9074219774457355,
+        "l": "Quality -0.9 (GFR 77.6-81.8 vs tier1 baseline 159.7 (Primera A (Colombia)))"
       },
       "_sk": {
         "v": 0,
@@ -4940,14 +5002,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.9896853375114755,
+      "_score": -0.9074219774457355,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "col.1",
       "lgR": 79.85,
       "_rk": [
-        576,
-        238
+        577,
+        240
       ]
     },
     {
@@ -5543,16 +5605,6 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "One Friday Fights",
-      "league": "MMA",
-      "sport": "Fighting",
-      "time": "09:30",
-      "date": "2026-10-02",
-      "channel": "beIN Sport Canada",
-      "reason": "channel",
-      "detail": "airs on beIN Sport Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "Montenegro @ Latvia",
       "league": "UEFA Nations League",
       "sport": "Soccer",
@@ -5638,9 +5690,9 @@
       "sport": "Soccer",
       "time": "14:45",
       "date": "2026-10-02",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
+      "channel": "Fubo Sports, ViX, fubo Sports Network, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on Fubo Sports, ViX, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Slovakia @ Faroe Islands",
@@ -5868,9 +5920,9 @@
       "sport": "Hockey",
       "time": "19:00",
       "date": "2026-10-02",
-      "channel": "FloHockey",
+      "channel": "FloHockey, RDS",
       "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
+      "detail": "airs on FloHockey, RDS \u2014 none in channels.txt"
     },
     {
       "name": "Washington Capitals @ Carolina Hurricanes",
@@ -6218,9 +6270,9 @@
       "sport": "Soccer",
       "time": "22:00",
       "date": "2026-10-02",
-      "channel": "NWSL+",
+      "channel": "NWSL+ (US)",
       "reason": "channel",
-      "detail": "airs on NWSL+ \u2014 none in channels.txt"
+      "detail": "airs on NWSL+ (US) \u2014 none in channels.txt"
     },
     {
       "name": "Ontario Reign @ Coachella Valley Firebirds",
@@ -6301,6 +6353,16 @@
       "channel": "ESPN, ESPN Unlimited",
       "reason": "belowtier",
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Am\u00e9rica @ Monterrey",
+      "league": "Liga MX Femenil",
+      "sport": "Soccer",
+      "time": "23:00",
+      "date": "2026-10-02",
+      "channel": "ViX",
+      "reason": "channel",
+      "detail": "airs on ViX \u2014 none in channels.txt"
     },
     {
       "name": "China Open",
@@ -7073,19 +7135,19 @@
         "Afc Champions League Elite": 67.17,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
-        "Concacaf Champions Cup": 72.11,
-        "Leagues Cup": 79.39,
+        "Concacaf Champions Cup": 72.07,
+        "Leagues Cup": 79.36,
         "Conmebol Libertadores": 78.06,
         "English Fa Cup": 71.28,
         "Carabao Cup": 78.33,
         "Copa Del Rey": 39.29,
-        "Club World Cup": 85.27,
+        "Club World Cup": 85.23,
         "German Cup": 64.59,
         "Coppa Italia": 70.74,
         "Uefa Champions League": 89.29,
         "Uefa Europa League": 82.57,
         "Uefa Conference League": 71.72,
-        "U.S. Open Cup": 55.17,
+        "U.S. Open Cup": 55.18,
         "Usl Cup": 58.04
       },
       "origin": {
@@ -7641,7 +7703,7 @@
       "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 72.11,
+      "rating": 72.07,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -7655,7 +7717,7 @@
       "rosterTotal": 36
     },
     "leagues-cup": {
-      "rating": 79.39,
+      "rating": 79.36,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 35,
@@ -7718,7 +7780,7 @@
       "rosterTotal": 2
     },
     "u-s-open-cup": {
-      "rating": 55.17,
+      "rating": 55.18,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
@@ -7746,7 +7808,7 @@
       "rosterTotal": 2
     },
     "concacaf-caribbean-cup": {
-      "rating": 72.11,
+      "rating": 72.07,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -7760,7 +7822,7 @@
       "rosterTotal": 2
     },
     "u-s-open": {
-      "rating": 55.17,
+      "rating": 55.18,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
