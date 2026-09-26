@@ -296,10 +296,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
         126,
-        139
+        138
       ]
     },
     {
@@ -590,10 +590,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
-        8,
-        44
+        9,
+        42
       ]
     },
     {
@@ -4044,8 +4044,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -8.604117276757611,
-        "l": "Quality -8.6 (Elo Republic of Ireland (unrated) 181 vs Israel 1637, world baseline 2608)"
+        "v": 7.829439598808289,
+        "l": "Quality +7.8 (Elo Ireland 1685 vs Israel 1637, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -4059,14 +4059,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.604117276757611,
+      "_score": 7.829439598808289,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
-        null,
-        56
+        47,
+        54
       ]
     },
     {
@@ -4101,7 +4101,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
         28,
         12
@@ -4549,7 +4549,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         209,
         134
@@ -4890,8 +4890,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -4905,7 +4905,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "can.w.nsl",
@@ -5153,10 +5153,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "fifa.friendly",
-      "lgR": 1425.9,
+      "lgR": 1427.61,
       "_rk": [
         23,
-        58
+        59
       ]
     },
     {
@@ -5555,7 +5555,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         67,
         78
@@ -5672,8 +5672,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -12.10098980726216,
-        "l": "Quality -12.1 (Elo Nicaragua 1316 vs Cura\u00e7ao (unrated) 181, world baseline 2608)"
+        "v": 1.9634487748104812,
+        "l": "Quality +2.0 (Elo Nicaragua 1316 vs Cura\u00e7ao 1471, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -5687,14 +5687,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.10098980726216,
+      "_score": 1.9634487748104812,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         130,
-        null
+        85
       ]
     },
     {
@@ -5729,7 +5729,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         167,
         196
@@ -5910,10 +5910,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
-        136,
-        111
+        135,
+        112
       ]
     },
     {
@@ -6649,6 +6649,16 @@
       "channel": "TSN+, TSN3",
       "reason": "channel",
       "detail": "airs on TSN+, TSN3 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Chicago Cubs @ Boston Red Sox",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "15:05",
+      "date": "2026-09-27",
+      "channel": "Marquee Sports Network, NESN",
+      "reason": "channel",
+      "detail": "airs on Marquee Sports Network, NESN \u2014 none in channels.txt"
     },
     {
       "name": "New York Mets @ Washington Nationals",
@@ -7643,7 +7653,6 @@
     "mens_club_competition": {
       "leagues": {
         "Afc Champions League Elite": 67.17,
-        "Afc Champions League Two": 52.62,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
         "Concacaf Champions Cup": 72.11,
@@ -7663,10 +7672,6 @@
       },
       "origin": {
         "Afc Champions League Elite": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Afc Champions League Two": {
           "country": "",
           "confederation": "AFC"
         },
@@ -7743,7 +7748,6 @@
         "Campeones Cup": 83.11,
         "Community Shield": 96.45,
         "Trophee Des Champions": 90.37,
-        "German Supercup": 94.74,
         "Uefa Super Cup": 92.63
       },
       "origin": {
@@ -7756,10 +7760,6 @@
           "confederation": "UEFA"
         },
         "Trophee Des Champions": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "German Supercup": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -7825,7 +7825,7 @@
       "rosterTotal": 25
     },
     "international-friendly": {
-      "rating": 1425.9,
+      "rating": 1427.61,
       "area": "mens_club_competition",
       "rosterMatched": 5,
       "rosterTotal": 191,
@@ -7839,7 +7839,7 @@
       "rosterTotal": 18
     },
     "concacaf-nations-league": {
-      "rating": 1116.8,
+      "rating": 1126.64,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 0,
@@ -7873,14 +7873,14 @@
       "rosterTotal": 20
     },
     "africa-cup-of-nations-qualifier": {
-      "rating": 1533.12,
+      "rating": 1534.21,
       "area": "mens_national",
       "confederation": "CAF",
       "rosterMatched": 0,
       "rosterTotal": 24
     },
     "uefa-nations-league": {
-      "rating": 1612.81,
+      "rating": 1614.15,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -8321,7 +8321,7 @@
       "rosterTotal": 4
     },
     "super-cup": {
-      "rating": 94.74,
+      "rating": 92.63,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
