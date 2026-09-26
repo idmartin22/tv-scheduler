@@ -243,7 +243,7 @@
       "espn": "uefa.wchampions",
       "lgR": 85.21,
       "_rk": [
-        77,
+        78,
         137
       ]
     },
@@ -293,8 +293,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.69957081545066,
-        "l": "Quality +9.7 (Boston Red Sox 0.510 vs New York Yankees 0.520)"
+        "v": 10.635091496232473,
+        "l": "Quality +10.6 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
       },
       "_sk": {
         "v": 0,
@@ -308,7 +308,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.69957081545066,
+      "_score": 10.635091496232473,
       "_rk": [
         9,
         5
@@ -2794,6 +2794,36 @@
       "_score": 0
     },
     {
+      "id": 66482398,
+      "lgId": 2000,
+      "lgSlug": "lpga-tour",
+      "time": "20:00",
+      "name": "Lotte Championship",
+      "sport": "Golf",
+      "league": "LPGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 74996554,
       "lgId": 365,
       "lgSlug": "concacaf-nations-league",
@@ -3229,7 +3259,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -11.7010989010989,
+        "v": -11.73017958826106,
         "l": "Quality -11.7 (Pittsburgh Steelers -2.600 vs Cleveland Browns -6.300)"
       },
       "_sk": {
@@ -3244,7 +3274,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.7010989010989,
+      "_score": -11.73017958826106,
       "_rk": [
         23,
         30
@@ -3292,7 +3322,8 @@
       "league": "NHL",
       "ch": [
         "ABC",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
       "dur": 150,
       "_st": {
@@ -3987,9 +4018,9 @@
       "sport": "Soccer",
       "time": "14:45",
       "date": "2026-10-01",
-      "channel": "DAZN Canada",
+      "channel": "ViX, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on ViX, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Serbia @ Germany",
@@ -3997,9 +4028,9 @@
       "sport": "Soccer",
       "time": "14:45",
       "date": "2026-10-01",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
+      "channel": "Fubo Sports, ViX, fubo Sports Network, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on Fubo Sports, ViX, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "UMass Amherst @ Bowling Green",
@@ -5016,19 +5047,19 @@
         "Afc Champions League Elite": 67.17,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
-        "Concacaf Champions Cup": 72.11,
-        "Leagues Cup": 79.39,
+        "Concacaf Champions Cup": 72.07,
+        "Leagues Cup": 79.36,
         "Conmebol Libertadores": 78.06,
         "English Fa Cup": 71.28,
         "Carabao Cup": 78.33,
         "Copa Del Rey": 39.29,
-        "Club World Cup": 85.27,
+        "Club World Cup": 85.23,
         "German Cup": 64.59,
         "Coppa Italia": 70.74,
         "Uefa Champions League": 89.29,
         "Uefa Europa League": 82.57,
         "Uefa Conference League": 71.72,
-        "U.S. Open Cup": 55.17,
+        "U.S. Open Cup": 55.18,
         "Usl Cup": 58.04
       },
       "origin": {
@@ -5584,7 +5615,7 @@
       "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 72.11,
+      "rating": 72.07,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -5598,7 +5629,7 @@
       "rosterTotal": 36
     },
     "leagues-cup": {
-      "rating": 79.39,
+      "rating": 79.36,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 35,
@@ -5661,7 +5692,7 @@
       "rosterTotal": 2
     },
     "u-s-open-cup": {
-      "rating": 55.17,
+      "rating": 55.18,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
@@ -5689,7 +5720,7 @@
       "rosterTotal": 2
     },
     "concacaf-caribbean-cup": {
-      "rating": 72.11,
+      "rating": 72.07,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -5703,7 +5734,7 @@
       "rosterTotal": 2
     },
     "u-s-open": {
-      "rating": 55.17,
+      "rating": 55.18,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
