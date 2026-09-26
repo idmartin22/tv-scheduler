@@ -232,7 +232,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
         33,
         48
@@ -270,9 +270,9 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "caf.nations",
-      "lgR": 1533.12,
+      "lgR": 1534.21,
       "_rk": [
-        87,
+        88,
         70
       ]
     },
@@ -369,7 +369,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "caf.nations",
-      "lgR": 1533.12,
+      "lgR": 1534.21,
       "_rk": [
         157,
         117
@@ -502,8 +502,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-39.3 (not rated yet) vs tier4 baseline 139.2 (League Two \u2014 league tracked by GFR, but neither team rated yet))"
+        "v": 2.4393327821815274,
+        "l": "Quality +2.4 (GFR 70.2-70.1 vs tier1 baseline 139.2 (League Two (England)))"
       },
       "_sk": {
         "v": 0,
@@ -517,14 +517,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": 2.4393327821815274,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "afc.cup",
+      "espn": "",
       "lgR": 69.61,
       "_rk": [
-        null,
-        null
+        1198,
+        1205
       ]
     },
     {
@@ -540,8 +540,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-39.3 (not rated yet) vs tier4 baseline 139.2 (League Two \u2014 league tracked by GFR, but neither team rated yet))"
+        "v": 8.747750814569786,
+        "l": "Quality +8.7 (GFR 74.2-68.9 vs tier1 baseline 139.2 (League Two (England)))"
       },
       "_sk": {
         "v": 0,
@@ -555,14 +555,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": 8.747750814569786,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "afc.cup",
+      "espn": "",
       "lgR": 69.61,
       "_rk": [
-        null,
-        null
+        879,
+        1304
       ]
     },
     {
@@ -945,7 +945,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
         91,
         89
@@ -1524,36 +1524,6 @@
       ]
     },
     {
-      "id": 94046785,
-      "lgId": 2001,
-      "lgSlug": "pga-tour",
-      "time": "12:00",
-      "name": "Presidents Cup",
-      "sport": "Golf",
-      "league": "PGA Tour",
-      "ch": [
-        "NBC"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 35,
-        "l": "Golf: presidents cup +35"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 35
-    },
-    {
       "id": 44623585,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -1743,7 +1713,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-39.3 (not rated yet) vs tier4 baseline 139.2 (League Two \u2014 league tracked by GFR, but neither team rated yet))"
+        "l": "Quality -20.0 (GFR 73.2-39.3 (not rated yet) vs tier1 baseline 139.2 (League Two (England) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -1760,10 +1730,10 @@
       "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "afc.cup",
+      "espn": "",
       "lgR": 69.61,
       "_rk": [
-        null,
+        979,
         null
       ]
     },
@@ -2628,8 +2598,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -2643,7 +2613,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -3437,6 +3407,37 @@
       ]
     },
     {
+      "id": 93038599,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "14:00",
+      "name": "Merrimack @ Iona",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 75493697,
       "lgId": 2180,
       "lgSlug": "ncaa-women-5",
@@ -3499,10 +3500,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
         11,
-        65
+        66
       ]
     },
     {
@@ -3537,7 +3538,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
-      "lgR": 1612.81,
+      "lgR": 1614.15,
       "_rk": [
         1,
         3
@@ -4336,7 +4337,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         213,
         189
@@ -5580,7 +5581,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         229,
         180
@@ -5649,40 +5650,6 @@
       "_rk": [
         31,
         101
-      ]
-    },
-    {
-      "id": 76206555,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "16:05",
-      "name": "New York Mets @ Washington Nationals",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "ESPN Unlimited"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": -2.6923076923076716,
-        "l": "Quality -2.7 (New York Mets 0.495 vs Washington Nationals 0.496)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -2.6923076923076716,
-      "_rk": [
-        20,
-        19
       ]
     },
     {
@@ -5790,9 +5757,9 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "fifa.friendly",
-      "lgR": 1425.9,
+      "lgR": 1427.61,
       "_rk": [
-        46,
+        44,
         32
       ]
     },
@@ -5810,8 +5777,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -5825,7 +5792,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -6265,7 +6232,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         153,
         164
@@ -6316,8 +6283,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -6331,7 +6298,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -7208,8 +7175,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -7223,7 +7190,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -7243,8 +7210,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -7258,7 +7225,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -7278,8 +7245,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -7293,7 +7260,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -7624,10 +7591,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "fifa.friendly",
-      "lgR": 1425.9,
+      "lgR": 1427.61,
       "_rk": [
         41,
-        39
+        38
       ]
     },
     {
@@ -8574,11 +8541,42 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         226,
         202
       ]
+    },
+    {
+      "id": 56964175,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Creighton @ St. John's",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 10911405,
@@ -9967,8 +9965,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.0,
-        "l": "neither team found, and the league itself has no GFR coverage at all \u2014 flat mod, set a manual mod if desired"
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -9982,7 +9980,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0,
+      "_score": -20.0,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
@@ -10810,7 +10808,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1116.8,
+      "lgR": 1126.64,
       "_rk": [
         175,
         191
@@ -11839,6 +11837,16 @@
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
+      "name": "New York Mets @ Washington Nationals",
+      "league": "MLB",
+      "sport": "Baseball",
+      "time": "12:35",
+      "date": "2026-09-26",
+      "channel": "SNY, Nationals.TV",
+      "reason": "channel",
+      "detail": "airs on SNY, Nationals.TV \u2014 none in channels.txt"
+    },
+    {
       "name": "NAPA Fall Final at Stafford Speedway",
       "league": "Other",
       "sport": "Motorsports",
@@ -12267,16 +12275,6 @@
       "channel": "Midco Sports Plus, WDAY",
       "reason": "channel",
       "detail": "airs on Midco Sports Plus, WDAY \u2014 none in channels.txt"
-    },
-    {
-      "name": "Merrimack @ Iona",
-      "league": "Women's College Volleyball",
-      "sport": "Volleyball",
-      "time": "14:00",
-      "date": "2026-09-26",
-      "channel": "Iona Insider",
-      "reason": "channel",
-      "detail": "airs on Iona Insider \u2014 none in channels.txt"
     },
     {
       "name": "Gonzaga @ Utah State",
@@ -13377,16 +13375,6 @@
       "channel": "MLB.TV, Brewers.TV, Cardinals.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV, Brewers.TV, Cardinals.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Chicago Cubs @ Boston Red Sox",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "19:15",
-      "date": "2026-09-26",
-      "channel": "MLB.TV, Marquee Sports Network, NESN",
-      "reason": "channel",
-      "detail": "airs on MLB.TV, Marquee Sports Network, NESN \u2014 none in channels.txt"
     },
     {
       "name": "Oshawa Generals @ Barrie Colts",
@@ -14559,7 +14547,6 @@
     "mens_club_competition": {
       "leagues": {
         "Afc Champions League Elite": 67.17,
-        "Afc Champions League Two": 52.62,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
         "Concacaf Champions Cup": 72.11,
@@ -14579,10 +14566,6 @@
       },
       "origin": {
         "Afc Champions League Elite": {
-          "country": "",
-          "confederation": "AFC"
-        },
-        "Afc Champions League Two": {
           "country": "",
           "confederation": "AFC"
         },
@@ -14659,7 +14642,6 @@
         "Campeones Cup": 83.11,
         "Community Shield": 96.45,
         "Trophee Des Champions": 90.37,
-        "German Supercup": 94.74,
         "Uefa Super Cup": 92.63
       },
       "origin": {
@@ -14672,10 +14654,6 @@
           "confederation": "UEFA"
         },
         "Trophee Des Champions": {
-          "country": "",
-          "confederation": "UEFA"
-        },
-        "German Supercup": {
           "country": "",
           "confederation": "UEFA"
         },
@@ -14741,7 +14719,7 @@
       "rosterTotal": 25
     },
     "international-friendly": {
-      "rating": 1425.9,
+      "rating": 1427.61,
       "area": "mens_club_competition",
       "rosterMatched": 5,
       "rosterTotal": 191,
@@ -14755,7 +14733,7 @@
       "rosterTotal": 18
     },
     "concacaf-nations-league": {
-      "rating": 1116.8,
+      "rating": 1126.64,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 0,
@@ -14789,14 +14767,14 @@
       "rosterTotal": 20
     },
     "africa-cup-of-nations-qualifier": {
-      "rating": 1533.12,
+      "rating": 1534.21,
       "area": "mens_national",
       "confederation": "CAF",
       "rosterMatched": 0,
       "rosterTotal": 24
     },
     "uefa-nations-league": {
-      "rating": 1612.81,
+      "rating": 1614.15,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -15237,7 +15215,7 @@
       "rosterTotal": 4
     },
     "super-cup": {
-      "rating": 94.74,
+      "rating": 92.63,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
