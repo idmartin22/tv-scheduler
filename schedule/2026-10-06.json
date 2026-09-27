@@ -352,7 +352,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -890,37 +891,6 @@
         "l": ""
       },
       "_score": 0
-    },
-    {
-      "id": 26971757,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "18:00",
-      "name": "Lakeland @ Wisconsin",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
     },
     {
       "id": 41324568,
@@ -1745,37 +1715,6 @@
       ]
     },
     {
-      "id": 8973190,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "21:00",
-      "name": "Westmont @ UCLA",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 59541671,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -1993,6 +1932,16 @@
       "detail": "airs on beIN Sport Canada \u2014 none in channels.txt"
     },
     {
+      "name": "Lakeland @ Wisconsin",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "18:00",
+      "date": "2026-10-06",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "High Point @ Charleston Southern",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
@@ -2141,6 +2090,16 @@
       "channel": "TBD",
       "reason": "channel",
       "detail": "airs on TBD \u2014 none in channels.txt"
+    },
+    {
+      "name": "Westmont @ UCLA",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "21:00",
+      "date": "2026-10-06",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Swift Current Broncos @ Penticton Vees",
@@ -2730,6 +2689,7 @@
         "League Two (England)",
         "Liga MX (Mexico)",
         "MLS (USA)",
+        "National League (England)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
@@ -3600,6 +3560,19 @@
       "confederation": "UEFA",
       "rosterMatched": 3,
       "rosterTotal": 10
+    },
+    "asean-cup": {
+      "area": "mens_club_league"
+    },
+    "dfb-pokal-women": {
+      "area": "womens_club_league"
+    },
+    "national-league": {
+      "rating": 62.52,
+      "area": "mens_club_league",
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.5"
     }
   }
 }
