@@ -3,6 +3,36 @@
   "label": "Sunday, October 4",
   "events": [
     {
+      "id": 78936433,
+      "lgId": 2066,
+      "lgSlug": "world-rally-championship",
+      "time": "05:38",
+      "name": "Rally Italia Sardegna",
+      "sport": "Motorsports",
+      "league": "World Rally Championship",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
+    },
+    {
       "id": 27617615,
       "lgId": 409,
       "lgSlug": "serie-a-women",
@@ -734,6 +764,7 @@
       "ch": [
         "ABC",
         "ESPN Unlimited",
+        "ESPN App",
         "ESPN Deportes"
       ],
       "dur": 120,
@@ -773,8 +804,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -809,8 +840,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -880,8 +911,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -951,8 +982,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -1087,7 +1118,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -1117,7 +1149,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -1147,7 +1180,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -2340,37 +2374,6 @@
       "_score": 0
     },
     {
-      "id": 48089207,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "13:30",
-      "name": "Wisconsin @ Nebraska",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 17707440,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -2400,6 +2403,44 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 74926374,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "13:45",
+      "name": "Aldosivi @ Hurac\u00e1n",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.544286680189326,
+        "l": "Quality -1.5 (GFR 79.4-83.2 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.544286680189326,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.56,
+      "_rk": [
+        418,
+        163
+      ]
     },
     {
       "id": 83793356,
@@ -2468,99 +2509,6 @@
       "_score": 0.0
     },
     {
-      "id": 6597947,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "14:00",
-      "name": "Portland @ Michigan",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 20495089,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "14:00",
-      "name": "Rutgers @ Iowa",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 84647244,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "14:00",
-      "name": "Michigan State @ Illinois",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 68969552,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -2569,7 +2517,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -3147,7 +3096,8 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -3174,6 +3124,44 @@
       "_rk": [
         9,
         6
+      ]
+    },
+    {
+      "id": 22809759,
+      "lgId": 230,
+      "lgSlug": "primera-a",
+      "time": "15:00",
+      "name": "Fortaleza CEIF @ Deportivo Pasto",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -15.722391968572655,
+        "l": "Quality -15.7 (GFR 77.0-77.3 vs tier1 baseline 159.7 (Primera A (Colombia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -15.722391968572655,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "col.1",
+      "lgR": 79.83,
+      "_rk": [
+        626,
+        601
       ]
     },
     {
@@ -3287,7 +3275,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -3317,7 +3306,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -3386,7 +3376,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -3541,6 +3532,44 @@
       },
       "_score": 0,
       "cat": "unclassified"
+    },
+    {
+      "id": 71026352,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "16:00",
+      "name": "Belgrano @ Talleres de C\u00f3rdoba",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.3192268267682372,
+        "l": "Quality +0.3 (GFR 83.2-80.2 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.3192268267682372,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.56,
+      "_rk": [
+        165,
+        362
+      ]
     },
     {
       "id": 90936719,
@@ -3721,8 +3750,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -3757,8 +3786,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -3793,8 +3822,8 @@
       "league": "NFL",
       "ch": [
         "CBS",
-        "NFL Sunday Ticket",
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "NFL Sunday Ticket"
       ],
       "dur": 180,
       "_st": {
@@ -3828,8 +3857,8 @@
       "sport": "Soccer",
       "league": "USL Super League",
       "ch": [
-        "FOX",
-        "Peacock"
+        "Peacock",
+        "FOX"
       ],
       "dur": 120,
       "_st": {
@@ -3857,36 +3886,6 @@
         196,
         287
       ]
-    },
-    {
-      "id": 67056388,
-      "lgId": 2890,
-      "lgSlug": "ncaa-college-volleyball-women",
-      "time": "17:00",
-      "name": "Michigan State @ Southern Cal",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 66173519,
@@ -3952,20 +3951,20 @@
       "cat": "unclassified"
     },
     {
-      "id": 51818517,
-      "lgId": 2890,
-      "lgSlug": "ncaa-college-volleyball-women",
-      "time": "17:00",
-      "name": "Purdue @ Washington",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
+      "id": 75303207,
+      "lgId": 230,
+      "lgSlug": "primera-a",
+      "time": "17:05",
+      "name": "Deportivo Pereira @ C\u00facuta Deportivo",
+      "sport": "Soccer",
+      "league": "Primera A",
       "ch": [
-        "Big Ten Plus"
+        "Fanatiz"
       ],
       "dur": 120,
       "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 76.1-39.3 (not rated yet) vs tier1 baseline 159.7 (Primera A (Colombia) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -3979,7 +3978,15 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": -20.0,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "col.1",
+      "lgR": 79.83,
+      "_rk": [
+        700,
+        null
+      ]
     },
     {
       "id": 56255029,
@@ -4191,6 +4198,82 @@
       "_score": 0
     },
     {
+      "id": 8945010,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "18:15",
+      "name": "Tigre @ Argentinos Juniors",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 4.395958412651925,
+        "l": "Quality +4.4 (GFR 81.3-83.8 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.395958412651925,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.56,
+      "_rk": [
+        272,
+        139
+      ]
+    },
+    {
+      "id": 11326674,
+      "lgId": 588,
+      "lgSlug": "nwsl",
+      "time": "19:00",
+      "name": "Washington Spirit @ Houston Dash",
+      "sport": "Soccer",
+      "league": "NWSL",
+      "ch": [
+        "Roku Sports"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.815361890694204,
+        "l": "Quality -2.8 (GFR 87.5-82.7 vs tier1 baseline 171.5 (NWSL (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.815361890694204,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.nwsl",
+      "lgR": 85.76,
+      "_rk": [
+        13,
+        34
+      ]
+    },
+    {
       "id": 29828968,
       "lgId": 365,
       "lgSlug": "concacaf-nations-league",
@@ -4199,7 +4282,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -4291,6 +4375,44 @@
       },
       "_score": 0,
       "cat": "unclassified"
+    },
+    {
+      "id": 63982296,
+      "lgId": 230,
+      "lgSlug": "primera-a",
+      "time": "19:10",
+      "name": "Junior @ Atl\u00e9tico Bucaramanga",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 10.972486369976009,
+        "l": "Quality +11.0 (GFR 81.6-82.4 vs tier1 baseline 159.7 (Primera A (Colombia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.972486369976009,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "col.1",
+      "lgR": 79.83,
+      "_rk": [
+        252,
+        203
+      ]
     },
     {
       "id": 545369,
@@ -4436,6 +4558,44 @@
       ]
     },
     {
+      "id": 27949522,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "20:30",
+      "name": "Racing Club @ Estudiantes R\u00edo Cuarto",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 4.302240445160364,
+        "l": "Quality +4.3 (GFR 82.3-82.8 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.302240445160364,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.56,
+      "_rk": [
+        210,
+        184
+      ]
+    },
+    {
       "id": 55440768,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -4465,6 +4625,44 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 50981497,
+      "lgId": 230,
+      "lgSlug": "primera-a",
+      "time": "21:15",
+      "name": "Am\u00e9rica de Cali @ Llaneros",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 6.205147711423918,
+        "l": "Quality +6.2 (GFR 83.2-78.9 vs tier1 baseline 159.7 (Primera A (Colombia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.205147711423918,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "col.1",
+      "lgR": 79.83,
+      "_rk": [
+        161,
+        460
+      ]
     },
     {
       "id": 98299614,
@@ -4594,16 +4792,6 @@
       "channel": "Sling TV, HBO Max (US)",
       "reason": "cutoff",
       "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
-    },
-    {
-      "name": "Rally Italia Sardegna",
-      "league": "World Rally Championship",
-      "sport": "Motorsports",
-      "time": "05:38",
-      "date": "2026-10-04",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "China Open",
@@ -4766,14 +4954,14 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Aldosivi @ Hurac\u00e1n",
-      "league": "Primera Division",
+      "name": "Wisconsin @ Nebraska",
+      "league": "Women's College Soccer",
       "sport": "Soccer",
-      "time": "13:45",
+      "time": "13:30",
       "date": "2026-10-04",
-      "channel": "Fanatiz",
+      "channel": "Big Ten Plus",
       "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Flint Firebirds @ London Knights",
@@ -4814,6 +5002,36 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Portland @ Michigan",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-10-04",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rutgers @ Iowa",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-10-04",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Michigan State @ Illinois",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-10-04",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Utah State @ Colorado State",
@@ -4894,16 +5112,6 @@
       "channel": "DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Fortaleza CEIF @ Deportivo Pasto",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "15:00",
-      "date": "2026-10-04",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Charlottetown Islanders @ Rimouski Oceanic",
@@ -5006,16 +5214,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Belgrano @ Talleres de C\u00f3rdoba",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-10-04",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Blainville-Boisbriand Armada @ Quebec Remparts",
       "league": "OHL",
       "sport": "Hockey",
@@ -5066,14 +5264,24 @@
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
-      "name": "Deportivo Pereira @ C\u00facuta Deportivo",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "17:05",
+      "name": "Michigan State @ Southern Cal",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "17:00",
       "date": "2026-10-04",
-      "channel": "Fanatiz",
+      "channel": "Big Ten Plus",
       "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Purdue @ Washington",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "17:00",
+      "date": "2026-10-04",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Hartford Wolf Pack @ Wilkes-Barre/Scranton",
@@ -5126,26 +5334,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Tigre @ Argentinos Juniors",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "18:15",
-      "date": "2026-10-04",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Washington Spirit @ Houston Dash",
-      "league": "NWSL",
-      "sport": "Soccer",
-      "time": "19:00",
-      "date": "2026-10-04",
-      "channel": "Roku Sports",
-      "reason": "channel",
-      "detail": "airs on Roku Sports \u2014 none in channels.txt"
-    },
-    {
       "name": "Golden State Warriors @ Los Angeles Clippers",
       "league": "NBA",
       "sport": "Basketball",
@@ -5186,16 +5374,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Junior @ Atl\u00e9tico Bucaramanga",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "19:10",
-      "date": "2026-10-04",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Bakersfield Condors @ Henderson Silver Knights",
       "league": "AHL",
       "sport": "Hockey",
@@ -5204,16 +5382,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Racing Club @ Estudiantes R\u00edo Cuarto",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "20:30",
-      "date": "2026-10-04",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Vegas Golden Knights @ Vancouver Canucks",
@@ -5234,16 +5402,6 @@
       "channel": "MW+",
       "reason": "channel",
       "detail": "airs on MW+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Am\u00e9rica de Cali @ Llaneros",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "21:15",
-      "date": "2026-10-04",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "San Jose State @ Grand Canyon",
@@ -5823,6 +5981,7 @@
         "League Two (England)",
         "Liga MX (Mexico)",
         "MLS (USA)",
+        "National League (England)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
@@ -6693,6 +6852,19 @@
       "confederation": "UEFA",
       "rosterMatched": 3,
       "rosterTotal": 10
+    },
+    "asean-cup": {
+      "area": "mens_club_league"
+    },
+    "dfb-pokal-women": {
+      "area": "womens_club_league"
+    },
+    "national-league": {
+      "rating": 62.52,
+      "area": "mens_club_league",
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.5"
     }
   }
 }
