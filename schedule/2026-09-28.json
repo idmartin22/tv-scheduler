@@ -31,8 +31,8 @@
         "l": ""
       },
       "_score": -20.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
+      "cat": "club_competition",
+      "area": "mens_club_competition",
       "espn": ""
     },
     {
@@ -94,9 +94,47 @@
         "l": ""
       },
       "_score": -20.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
+      "cat": "club_competition",
+      "area": "mens_club_competition",
       "espn": ""
+    },
+    {
+      "id": 21786393,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "12:00",
+      "name": "Ukraine @ Georgia",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.903810299332985,
+        "l": "Quality +8.9 (Elo Ukraine 1802 vs Georgia 1626, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.903810299332985,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        24,
+        59
+      ]
     },
     {
       "id": 71675246,
@@ -108,7 +146,8 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -146,7 +185,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -393,6 +433,82 @@
       ]
     },
     {
+      "id": 62269845,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Hungary @ Northern Ireland",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 7.742076152589963,
+        "l": "Quality +7.7 (Elo Hungary 1688 vs Northern Ireland 1633, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.742076152589963,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        46,
+        55
+      ]
+    },
+    {
+      "id": 30768453,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Bosnia-Herzegovina @ Romania",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 6.916919188548189,
+        "l": "Quality +6.9 (Elo Bosnia and Herzegovina 1616 vs Romania 1629, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.916919188548189,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        62,
+        57
+      ]
+    },
+    {
       "id": 60966621,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -401,7 +517,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -557,7 +674,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX One",
-        "Tubi"
+        "Tubi",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -627,7 +745,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -665,7 +784,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -742,7 +862,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -781,7 +902,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX One",
-        "Tubi"
+        "Tubi",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -988,36 +1110,6 @@
       "channel": "T2, TSN+",
       "reason": "channel",
       "detail": "airs on T2, TSN+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Ukraine @ Georgia",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "12:00",
-      "date": "2026-09-28",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Hungary @ Northern Ireland",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-28",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Bosnia-Herzegovina @ Romania",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-28",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Monmouth @ Stony Brook",
@@ -2436,10 +2528,18 @@
       "rosterTotal": 10
     },
     "asean-cup": {
-      "area": "mens_club_league"
+      "area": "mens_club_competition"
     },
     "dfb-pokal-women": {
-      "area": "womens_club_league"
+      "area": "womens_club_competition"
+    },
+    "national-league": {
+      "rating": 62.52,
+      "area": "mens_club_league",
+      "gfrLeague": "National League",
+      "country": "England",
+      "rosterMatched": 24,
+      "rosterTotal": 24
     }
   }
 }
