@@ -3,6 +3,72 @@
   "label": "Wednesday, September 30",
   "events": [
     {
+      "id": 23433814,
+      "lgId": 3643,
+      "lgSlug": "asean-cup",
+      "time": "05:00",
+      "name": "Cambodia @ Timor-Leste",
+      "sport": "Soccer",
+      "league": "ASEAN Cup",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "unclassified",
+      "area": "mens_club_league",
+      "espn": ""
+    },
+    {
+      "id": 40888844,
+      "lgId": 3643,
+      "lgSlug": "asean-cup",
+      "time": "08:00",
+      "name": "Hong Kong @ Brunei",
+      "sport": "Soccer",
+      "league": "ASEAN Cup",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "unclassified",
+      "area": "mens_club_league",
+      "espn": ""
+    },
+    {
       "id": 6137172,
       "lgId": 379,
       "lgSlug": "international-friendly-2",
@@ -120,8 +186,8 @@
       "league": "UEFA Women's Champions League",
       "ch": [
         "CBS Sports Network",
-        "ESPN Unlimited",
         "Paramount+ (US)",
+        "ESPN Unlimited",
         "ESPN Deportes"
       ],
       "dur": 120,
@@ -428,6 +494,82 @@
       "cat": "unclassified"
     },
     {
+      "id": 86151428,
+      "lgId": 262,
+      "lgSlug": "national-league-7",
+      "time": "14:45",
+      "name": "Southend United @ Eastleigh",
+      "sport": "Soccer",
+      "league": "National League",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 2.300661834226261,
+        "l": "Quality +2.3 (GFR 66.1-60.1 vs tier1 baseline 125.0 (National League (England)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.300661834226261,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "eng.5",
+      "lgR": 62.52,
+      "_rk": [
+        1469,
+        1680
+      ]
+    },
+    {
+      "id": 48541203,
+      "lgId": 262,
+      "lgSlug": "national-league-7",
+      "time": "14:45",
+      "name": "Sutton United @ Tamworth",
+      "sport": "Soccer",
+      "league": "National League",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-59.8 vs tier1 baseline 125.0 (National League (England) \u2014 opponent not in GFR))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "eng.5",
+      "lgR": 62.52,
+      "_rk": [
+        null,
+        1685
+      ]
+    },
+    {
       "id": 89726612,
       "lgId": 392,
       "lgSlug": "uefa-womens-champions-league",
@@ -436,8 +578,8 @@
       "sport": "Soccer",
       "league": "UEFA Women's Champions League",
       "ch": [
-        "ESPN Unlimited",
         "Paramount+ (US)",
+        "ESPN Unlimited",
         "ESPN Deportes"
       ],
       "dur": 120,
@@ -1774,6 +1916,44 @@
       "_score": 0
     },
     {
+      "id": 72852415,
+      "lgId": 379,
+      "lgSlug": "international-friendly-2",
+      "time": "20:00",
+      "name": "Bolivia @ Argentina",
+      "sport": "Soccer",
+      "league": "International Friendly",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 12.877592520902583,
+        "l": "Quality +12.9 (Elo Bolivia 1621 vs Argentina 2173, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 12.877592520902583,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "fifa.friendly",
+      "lgR": 1427.71,
+      "_rk": [
+        60,
+        2
+      ]
+    },
+    {
       "id": 64492000,
       "lgId": 230,
       "lgSlug": "primera-a",
@@ -1782,6 +1962,7 @@
       "sport": "Soccer",
       "league": "Primera A",
       "ch": [
+        "Fanatiz",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -2357,16 +2538,6 @@
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
     },
     {
-      "name": "Cambodia @ Timor-Leste",
-      "league": "ASEAN Cup",
-      "sport": "Soccer",
-      "time": "05:00",
-      "date": "2026-09-30",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "China Open",
       "league": "ATP",
       "sport": "Tennis",
@@ -2375,16 +2546,6 @@
       "channel": "RDS",
       "reason": "channel",
       "detail": "airs on RDS \u2014 none in channels.txt"
-    },
-    {
-      "name": "Hong Kong @ Brunei",
-      "league": "ASEAN Cup",
-      "sport": "Soccer",
-      "time": "08:00",
-      "date": "2026-09-30",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Germany U21 @ Malta U21",
@@ -2405,26 +2566,6 @@
       "channel": "All Red Video",
       "reason": "channel",
       "detail": "airs on All Red Video \u2014 none in channels.txt"
-    },
-    {
-      "name": "Southend United @ Eastleigh",
-      "league": "National League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-30",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Sutton United @ Tamworth",
-      "league": "National League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-30",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Norfolk State @ Hampton",
@@ -2465,16 +2606,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Bolivia @ Argentina",
-      "league": "International Friendly",
-      "sport": "Soccer",
-      "time": "20:00",
-      "date": "2026-09-30",
-      "channel": "ViX",
-      "reason": "channel",
-      "detail": "airs on ViX \u2014 none in channels.txt"
     },
     {
       "name": "Grand Canyon @ Utah Tech",
@@ -3051,6 +3182,7 @@
       "seen": [
         "Liga MX (Mexico)",
         "MLS (USA)",
+        "National League (England)",
         "Primera A (Colombia)",
         "USL Championship (USA)"
       ]
@@ -3910,6 +4042,19 @@
       "confederation": "UEFA",
       "rosterMatched": 3,
       "rosterTotal": 10
+    },
+    "asean-cup": {
+      "area": "mens_club_league"
+    },
+    "dfb-pokal-women": {
+      "area": "womens_club_league"
+    },
+    "national-league": {
+      "rating": 62.52,
+      "area": "mens_club_league",
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.5"
     }
   }
 }
