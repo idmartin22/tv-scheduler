@@ -33,6 +33,36 @@
       "_score": 15
     },
     {
+      "id": 46827423,
+      "lgId": 2003,
+      "lgSlug": "atp",
+      "time": "09:00",
+      "name": "China Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
       "id": 62617683,
       "lgId": 3582,
       "lgSlug": "swimming-world-cup",
@@ -114,8 +144,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 2.402027528006579,
-        "l": "Quality +2.4 (Elo Kenya 1363 vs Guinea 1464, world baseline 2608)"
+        "v": 2.1288373314110527,
+        "l": "Quality +2.1 (Elo Kenya 1350 vs Guinea 1454, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -129,14 +159,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.402027528006579,
+      "_score": 2.1288373314110527,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "caf.nations",
-      "lgR": 1534.21,
+      "lgR": 1534.62,
       "_rk": [
-        117,
-        88
+        122,
+        91
       ]
     },
     {
@@ -180,7 +210,9 @@
       "league": "UEFA Women's Champions League",
       "ch": [
         "CBS Sports Network",
-        "Paramount+ (US)"
+        "ESPN Unlimited",
+        "Paramount+ (US)",
+        "ESPN Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -218,7 +250,9 @@
       "sport": "Soccer",
       "league": "UEFA Women's Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "ESPN Unlimited",
+        "Paramount+ (US)",
+        "ESPN Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -293,8 +327,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.635091496232473,
-        "l": "Quality +10.6 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
+        "v": 10.302398331595343,
+        "l": "Quality +10.3 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
       },
       "_sk": {
         "v": 0,
@@ -308,18 +342,18 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.635091496232473,
+      "_score": 10.302398331595343,
       "_rk": [
-        9,
+        8,
         5
       ]
     },
     {
-      "id": 12148250,
+      "id": 58342182,
       "lgId": 1758,
       "lgSlug": "mlb",
       "time": "14:00",
-      "name": "NL Wild Card #2 @ NL Wild Card #1",
+      "name": "Chicago Cubs @ San Diego Padres",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
@@ -329,8 +363,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.0,
-        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
+        "v": 9.676746611053181,
+        "l": "Quality +9.7 (Chicago Cubs 0.516 vs San Diego Padres 0.515)"
       },
       "_sk": {
         "v": 0,
@@ -344,14 +378,18 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0
+      "_score": 9.676746611053181,
+      "_rk": [
+        6,
+        7
+      ]
     },
     {
-      "id": 58809601,
+      "id": 90784779,
       "lgId": 1758,
       "lgSlug": "mlb",
       "time": "14:00",
-      "name": "AL Wild Card #3 @ AL Div. Winner #3",
+      "name": "Chicago White Sox @ AL Div. Winner #3",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
@@ -423,8 +461,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 12.313907350238386,
-        "l": "Quality +12.3 (Elo Netherlands 1962 vs Greece 1769, world baseline 2608)"
+        "v": 12.19358082702585,
+        "l": "Quality +12.2 (Elo Netherlands 1962 vs Greece 1769, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -438,7 +476,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.313907350238386,
+      "_score": 12.19358082702585,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
@@ -463,8 +501,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 11.327105155547168,
-        "l": "Quality +11.3 (Elo Norway 1962 vs Wales 1679, world baseline 2608)"
+        "v": 11.2164212643448,
+        "l": "Quality +11.2 (Elo Norway 1962 vs Wales 1679, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -478,14 +516,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.327105155547168,
+      "_score": 11.2164212643448,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "uefa.nations",
       "lgR": 1614.15,
       "_rk": [
         9,
-        50
+        49
       ]
     },
     {
@@ -497,7 +535,9 @@
       "sport": "Soccer",
       "league": "UEFA Women's Champions League",
       "ch": [
-        "Paramount+ (US)"
+        "ESPN Unlimited",
+        "Paramount+ (US)",
+        "ESPN Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -540,7 +580,7 @@
       "dur": 120,
       "_st": {
         "v": -9.585638195755928,
-        "l": "Quality -9.6 (Elo Montserrat 985 vs British Virgin Islands 743, world baseline 2608)"
+        "l": "Quality -9.6 (Elo Montserrat 999 vs British Virgin Islands 729, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -558,10 +598,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
-        189,
-        213
+        187,
+        215
       ]
     },
     {
@@ -617,7 +657,7 @@
       "dur": 120,
       "_st": {
         "v": -10.108535022747262,
-        "l": "Quality -10.1 (Elo Saint Martin 1053 vs US Virgin Islands 627, world baseline 2608)"
+        "l": "Quality -10.1 (Elo Saint Martin 1001 vs US Virgin Islands 679, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -635,10 +675,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
-        180,
-        229
+        185,
+        224
       ]
     },
     {
@@ -770,6 +810,36 @@
       "cat": "unclassified"
     },
     {
+      "id": 77394591,
+      "lgId": 2001,
+      "lgSlug": "pga-tour",
+      "time": "16:00",
+      "name": "Bank of Utah Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 11945934,
       "lgId": 365,
       "lgSlug": "concacaf-nations-league",
@@ -801,10 +871,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
-        134,
-        196
+        133,
+        197
       ]
     },
     {
@@ -912,11 +982,12 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "FOX One"
       ],
       "dur": 120,
       "_st": {
-        "v": 2.5884234981149206,
+        "v": 2.5631304703804076,
         "l": "Quality +2.6 (Elo Trinidad and Tobago 1373 vs Cura\u00e7ao 1471, world baseline 2608)"
       },
       "_sk": {
@@ -931,13 +1002,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.5884234981149206,
+      "_score": 2.5631304703804076,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
-        112,
+        113,
         85
       ]
     },
@@ -1708,10 +1779,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
         202,
-        226
+        227
       ]
     },
     {
@@ -2742,8 +2813,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -11.70462916580723,
-        "l": "Quality -11.7 (Western Kentucky Hilltoppers -14.300 vs New Mexico State Aggies -13.500)"
+        "v": -11.789585296889724,
+        "l": "Quality -11.8 (Western Kentucky Hilltoppers -14.500 vs New Mexico State Aggies -13.500)"
       },
       "_sk": {
         "v": 0,
@@ -2757,9 +2828,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.70462916580723,
+      "_score": -11.789585296889724,
       "_rk": [
-        124,
+        125,
         121
       ]
     },
@@ -2855,10 +2926,10 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
         167,
-        209
+        208
       ]
     },
     {
@@ -2874,7 +2945,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 2.4349209344962865,
+        "v": 2.411127871741133,
         "l": "Quality +2.4 (Elo Haiti 1530 vs Dominican Republic 1300, world baseline 2608)"
       },
       "_sk": {
@@ -2889,14 +2960,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.4349209344962865,
+      "_score": 2.411127871741133,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
-        78,
-        135
+        79,
+        134
       ]
     },
     {
@@ -3259,7 +3330,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -11.73017958826106,
+        "v": -11.74464363795365,
         "l": "Quality -11.7 (Pittsburgh Steelers -2.600 vs Cleveland Browns -6.300)"
       },
       "_sk": {
@@ -3274,7 +3345,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.73017958826106,
+      "_score": -11.74464363795365,
       "_rk": [
         23,
         30
@@ -3362,8 +3433,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -1.7420514482717973,
-        "l": "Quality -1.7 (North Texas Mean Green -2.300 vs Tulsa Golden Hurricane -1.000)"
+        "v": -1.831409048067858,
+        "l": "Quality -1.8 (North Texas Mean Green -2.500 vs Tulsa Golden Hurricane -1.000)"
       },
       "_sk": {
         "v": 0,
@@ -3377,9 +3448,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.7420514482717973,
+      "_score": -1.831409048067858,
       "_rk": [
-        79,
+        80,
         72
       ]
     },
@@ -3676,8 +3747,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -8.832077502691066,
-        "l": "Quality -8.8 (GFR 76.0-80.8 vs tier1 baseline 160.0 (MLS (USA)))"
+        "v": -5.17210944395412,
+        "l": "Quality -5.2 (GFR 77.4-81.3 vs tier1 baseline 160.1 (MLS (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -3691,14 +3762,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.832077502691066,
+      "_score": -5.17210944395412,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.1",
       "lgR": 80.02,
       "_rk": [
-        719,
-        308
+        587,
+        274
       ]
     },
     {
@@ -3739,6 +3810,76 @@
       ]
     },
     {
+      "id": 68826223,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "22:00",
+      "name": "Edmonton Oilers @ Vancouver Canucks",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -10.340333597776679,
+        "l": "Quality -10.3 (Edmonton Oilers 0.075 vs Vancouver Canucks -0.723)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -10.340333597776679,
+      "_rk": [
+        11,
+        32
+      ]
+    },
+    {
+      "id": 4781029,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "22:00",
+      "name": "Florida Panthers @ San Jose Sharks",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -5.251844866555899,
+        "l": "Quality -5.3 (Florida Panthers -0.090 vs San Jose Sharks -0.239)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -5.251844866555899,
+      "_rk": [
+        22,
+        27
+      ]
+    },
+    {
       "id": 80608879,
       "lgId": 365,
       "lgSlug": "concacaf-nations-league",
@@ -3751,7 +3892,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 3.114718001950238,
+        "v": 3.0842822371436327,
         "l": "Quality +3.1 (Elo Costa Rica 1576 vs Nicaragua 1316, world baseline 2608)"
       },
       "_sk": {
@@ -3766,13 +3907,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.114718001950238,
+      "_score": 3.0842822371436327,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
-      "lgR": 1126.64,
+      "lgR": 1128.08,
       "_rk": [
-        67,
+        66,
         130
       ]
     },
@@ -3923,6 +4064,16 @@
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
     },
     {
+      "name": "China Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "07:00",
+      "date": "2026-10-01",
+      "channel": "RDS",
+      "reason": "channel",
+      "detail": "airs on RDS \u2014 none in channels.txt"
+    },
+    {
       "name": "Bangladesh @ Indonesia",
       "league": "ASEAN Cup",
       "sport": "Soccer",
@@ -3958,7 +4109,7 @@
       "sport": "Equestrian",
       "time": "13:00",
       "date": "2026-10-01",
-      "channel": "Fubo Sports, FOX Sports 2, FOX Sports Racing",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One, FOX Sports Racing",
       "reason": "marquee",
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
@@ -3968,9 +4119,9 @@
       "sport": "Fighting",
       "time": "13:00",
       "date": "2026-10-01",
-      "channel": "DAZN US, DAZN Canada",
+      "channel": "DAZN US, Next Level Sports, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on DAZN US, Next Level Sports, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "New Haven @ Le Moyne",
@@ -4251,26 +4402,6 @@
       "channel": "YouTube US",
       "reason": "channel",
       "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
-      "name": "Edmonton Oilers @ Vancouver Canucks",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "22:00",
-      "date": "2026-10-01",
-      "channel": "Sportsnet One, Sportsnet Pacific, Sportsnet NOW",
-      "reason": "channel",
-      "detail": "airs on Sportsnet One, Sportsnet Pacific, Sportsnet NOW \u2014 none in channels.txt"
-    },
-    {
-      "name": "Florida Panthers @ San Jose Sharks",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "22:00",
-      "date": "2026-10-01",
-      "channel": "NBC Sports California, Scripps 66, WSFL-TV, Sportsnet+, TVA Sports",
-      "reason": "channel",
-      "detail": "airs on NBC Sports California, Scripps 66, WSFL-TV, Sportsnet+, TVA Sports \u2014 none in channels.txt"
     },
     {
       "name": "Colorado State @ Fresno State",
@@ -4845,9 +4976,6 @@
       "anchored": true,
       "span": 38.36,
       "seen": [
-        "League One (England)",
-        "League One (Scotland)",
-        "League Two (England)",
         "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
@@ -5038,7 +5166,6 @@
         "Liga MX Femenil (Mexico)",
         "NWSL (USA)",
         "Serie A Women (Italy)",
-        "USL Super League (USA)",
         "Women's Super League (Switzerland)"
       ]
     },
@@ -5047,11 +5174,11 @@
         "Afc Champions League Elite": 67.17,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
-        "Concacaf Champions Cup": 72.07,
+        "Concacaf Champions Cup": 72.12,
         "Leagues Cup": 79.36,
         "Conmebol Libertadores": 78.06,
-        "English Fa Cup": 71.28,
-        "Carabao Cup": 78.33,
+        "English Fa Cup": 71.27,
+        "Carabao Cup": 78.34,
         "Copa Del Rey": 39.29,
         "Club World Cup": 85.23,
         "German Cup": 64.59,
@@ -5059,8 +5186,8 @@
         "Uefa Champions League": 89.29,
         "Uefa Europa League": 82.57,
         "Uefa Conference League": 71.72,
-        "U.S. Open Cup": 55.18,
-        "Usl Cup": 58.04
+        "U.S. Open Cup": 55.12,
+        "Usl Cup": 58.0
       },
       "origin": {
         "Afc Champions League Elite": {
@@ -5137,7 +5264,7 @@
     },
     "mens_oneoff": {
       "leagues": {
-        "Campeones Cup": 83.11,
+        "Campeones Cup": 83.17,
         "Community Shield": 96.45,
         "Trophee Des Champions": 90.37,
         "Uefa Super Cup": 92.63
@@ -5162,9 +5289,9 @@
       },
       "label": "Men's one-off finals",
       "top": 96.45,
-      "worst": 83.11,
+      "worst": 83.17,
       "anchored": true,
-      "span": 13.34,
+      "span": 13.28,
       "seen": []
     },
     "womens_club_competition": {
@@ -5217,7 +5344,7 @@
       "rosterTotal": 25
     },
     "international-friendly": {
-      "rating": 1427.61,
+      "rating": 1427.71,
       "area": "mens_club_competition",
       "rosterMatched": 5,
       "rosterTotal": 191,
@@ -5231,7 +5358,7 @@
       "rosterTotal": 18
     },
     "concacaf-nations-league": {
-      "rating": 1126.64,
+      "rating": 1128.08,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 0,
@@ -5265,7 +5392,7 @@
       "rosterTotal": 20
     },
     "africa-cup-of-nations-qualifier": {
-      "rating": 1534.21,
+      "rating": 1534.62,
       "area": "mens_national",
       "confederation": "CAF",
       "rosterMatched": 0,
@@ -5351,7 +5478,7 @@
       "rosterTotal": 32
     },
     "usl-league-one": {
-      "rating": 44.15,
+      "rating": 44.07,
       "area": "mens_club_competition",
       "rosterMatched": 2,
       "rosterTotal": 17,
@@ -5378,7 +5505,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 75.55,
+      "rating": 78.56,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
@@ -5563,7 +5690,7 @@
       "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.51,
+      "rating": 48.72,
       "area": "womens_club_league",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
@@ -5601,7 +5728,7 @@
       "rosterTotal": 36
     },
     "english-league-cup": {
-      "rating": 78.33,
+      "rating": 78.34,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 90,
@@ -5615,7 +5742,7 @@
       "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 72.07,
+      "rating": 72.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -5657,7 +5784,7 @@
       "rosterTotal": 2
     },
     "usl-cup": {
-      "rating": 58.04,
+      "rating": 58.0,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 26,
@@ -5692,14 +5819,14 @@
       "rosterTotal": 2
     },
     "u-s-open-cup": {
-      "rating": 55.18,
+      "rating": 55.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
       "rosterTotal": 80
     },
     "campeones-cup": {
-      "rating": 83.11,
+      "rating": 83.17,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
@@ -5720,7 +5847,7 @@
       "rosterTotal": 2
     },
     "concacaf-caribbean-cup": {
-      "rating": 72.07,
+      "rating": 72.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -5734,7 +5861,7 @@
       "rosterTotal": 2
     },
     "u-s-open": {
-      "rating": 55.18,
+      "rating": 55.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
