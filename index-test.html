@@ -216,6 +216,35 @@ async function githubSaveOverrides(date, ovrs, removed, sha) {
 }
 
 async function githubSave(data, sha) {
+  // MERGE with what is already there, never blind-replace.
+  //
+  // Two ways settings have been lost: an older build saving a payload without
+  // keys it did not know about (areaBases and areaOverrides vanished), and a
+  // failed settings load leaving the app on defaults, which then saved empty
+  // objects over 69 manual league placements. Both are the same mistake —
+  // writing a whole file from partial knowledge.
+  //
+  // So: read the remote file first, keep any key this payload does not carry,
+  // and refuse to overwrite a non-empty stored value with an empty one.
+  try {
+    const rc = await fetch(GITHUB_API + `?t=${Date.now()}`, {
+      headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (rc.ok) {
+      const meta = await rc.json();
+      if (!sha) sha = meta.sha;
+      const remote = JSON.parse(b64ToUtf8(meta.content));
+      const isEmpty = v => v === undefined || v === null ||
+        (typeof v === 'object' && Object.keys(v).length === 0);
+      const merged = { ...remote };
+      for (const [k, v] of Object.entries(data)) {
+        if (isEmpty(v) && !isEmpty(remote[k])) continue;   // never empty a stored value
+        merged[k] = v;
+      }
+      data = merged;
+    }
+  } catch(e) { /* fall through and save what we have */ }
+
   // Safe base64 encoding that handles unicode
   const json = JSON.stringify(data, null, 2);
   const bytes = new TextEncoder().encode(json);
