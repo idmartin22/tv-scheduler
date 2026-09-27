@@ -34,7 +34,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "fifa.friendly",
-      "lgR": 1427.61,
+      "lgR": 1427.71,
       "_rk": [
         179,
         138
@@ -85,8 +85,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 1.6893370540629202,
-        "l": "Quality +1.7 (Elo South Africa 1560 vs Eritrea 1202, world baseline 2608)"
+        "v": 1.922548090400609,
+        "l": "Quality +1.9 (Elo South Africa 1570 vs Eritrea 1215, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -100,14 +100,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.6893370540629202,
+      "_score": 1.922548090400609,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "caf.nations",
-      "lgR": 1534.21,
+      "lgR": 1534.62,
       "_rk": [
-        70,
-        157
+        68,
+        154
       ]
     },
     {
@@ -274,8 +274,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.635091496232473,
-        "l": "Quality +10.6 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
+        "v": 10.302398331595343,
+        "l": "Quality +10.3 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
       },
       "_sk": {
         "v": 0,
@@ -289,18 +289,18 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.635091496232473,
+      "_score": 10.302398331595343,
       "_rk": [
-        9,
+        8,
         5
       ]
     },
     {
-      "id": 12148250,
+      "id": 58342182,
       "lgId": 1758,
       "lgSlug": "mlb",
       "time": "14:00",
-      "name": "NL Wild Card #2 @ NL Wild Card #1",
+      "name": "Chicago Cubs @ San Diego Padres",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
@@ -310,8 +310,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.0,
-        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
+        "v": 9.676746611053181,
+        "l": "Quality +9.7 (Chicago Cubs 0.516 vs San Diego Padres 0.515)"
       },
       "_sk": {
         "v": 0,
@@ -325,14 +325,18 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.0
+      "_score": 9.676746611053181,
+      "_rk": [
+        6,
+        7
+      ]
     },
     {
-      "id": 58809601,
+      "id": 90784779,
       "lgId": 1758,
       "lgSlug": "mlb",
       "time": "14:00",
-      "name": "AL Wild Card #3 @ AL Div. Winner #3",
+      "name": "Chicago White Sox @ AL Div. Winner #3",
       "sport": "Baseball",
       "league": "MLB",
       "ch": [
@@ -1028,8 +1032,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -15.198475953501042,
-        "l": "Quality -15.2 (GFR 62.6-66.9 vs tier1 baseline 137.3 (USL Championship (USA)))"
+        "v": -12.361816608345537,
+        "l": "Quality -12.4 (GFR 62.6-68.1 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -1043,14 +1047,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -15.198475953501042,
+      "_score": -12.361816608345537,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.63,
       "_rk": [
-        1613,
-        1430
+        1615,
+        1361
       ]
     },
     {
@@ -1068,7 +1072,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 70.5-39.3 (not rated yet) vs tier1 baseline 137.3 (USL Championship (USA) \u2014 opponent not in GFR))"
+        "l": "Quality -20.0 (GFR 70.4-39.3 (not rated yet) vs tier1 baseline 137.2 (USL Championship (USA) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -1088,7 +1092,7 @@
       "espn": "usa.usl.1",
       "lgR": 68.63,
       "_rk": [
-        1178,
+        1185,
         null
       ]
     },
@@ -1125,7 +1129,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
-      "lgR": 44.15
+      "lgR": 44.07
     },
     {
       "id": 62895774,
@@ -1427,7 +1431,7 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 10.73139974779319,
+        "v": 10.71969696969697,
         "l": "Quality +10.7 (Atlanta Dream 5.000 vs Washington Mystics 0.700)"
       },
       "_sk": {
@@ -1442,10 +1446,48 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.73139974779319,
+      "_score": 10.71969696969697,
       "_rk": [
         2,
         8
+      ]
+    },
+    {
+      "id": 5182416,
+      "lgId": 587,
+      "lgSlug": "mls",
+      "time": "19:30",
+      "name": "St. Louis City @ New York Red Bulls",
+      "sport": "Soccer",
+      "league": "MLS",
+      "ch": [
+        "Apple TV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 7.100772237582278,
+        "l": "Quality +7.1 (GFR 83.3-79.3 vs tier1 baseline 160.1 (MLS (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.100772237582278,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "usa.1",
+      "lgR": 80.02,
+      "_rk": [
+        158,
+        424
       ]
     },
     {
@@ -1461,8 +1503,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -0.36623770459941185,
-        "l": "Quality -0.4 (GFR 67.2-69.9 vs tier1 baseline 137.3 (USL Championship (USA)))"
+        "v": -4.366181284569345,
+        "l": "Quality -4.4 (GFR 66.0-69.0 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -1476,14 +1518,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.36623770459941185,
+      "_score": -4.366181284569345,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.63,
       "_rk": [
-        1412,
-        1222
+        1481,
+        1299
       ]
     },
     {
@@ -1570,8 +1612,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 6.076717584178866,
-        "l": "Quality +6.1 (GFR 84.2-77.4 vs tier4 baseline 147.6 (global pool (no shared context)))"
+        "v": 6.215526824718017,
+        "l": "Quality +6.2 (GFR 84.2-77.7 vs tier4 baseline 147.6 (global pool (no shared context)))"
       },
       "_sk": {
         "v": 0,
@@ -1585,13 +1627,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.076717584178866,
+      "_score": 6.215526824718017,
       "cat": "club_competition",
       "area": "mens_club_competition",
       "espn": "",
       "_rk": [
-        126,
-        589
+        125,
+        563
       ]
     },
     {
@@ -1639,8 +1681,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.518628912071525,
-        "l": "Quality +7.5 (GFR 69.8-69.9 vs tier1 baseline 137.3 (USL Championship (USA)))"
+        "v": 5.356430707876358,
+        "l": "Quality +5.4 (GFR 69.1-69.9 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -1654,14 +1696,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.518628912071525,
+      "_score": 5.356430707876358,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.63,
       "_rk": [
-        1229,
-        1223
+        1289,
+        1224
       ]
     },
     {
@@ -1740,8 +1782,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 13.847294292068199,
-        "l": "Quality +13.8 (GFR 80.7-84.6 vs tier1 baseline 159.7 (Primera A (Colombia)))"
+        "v": 15.815899581589958,
+        "l": "Quality +15.8 (GFR 81.6-84.3 vs tier1 baseline 159.7 (Primera A (Colombia)))"
       },
       "_sk": {
         "v": 0,
@@ -1755,14 +1797,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.847294292068199,
+      "_score": 15.815899581589958,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "col.1",
       "lgR": 79.84,
       "_rk": [
-        315,
-        109
+        252,
+        119
       ]
     },
     {
@@ -1871,11 +1913,12 @@
       "league": "WNBA",
       "ch": [
         "ESPN",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 140,
       "_st": {
-        "v": 15.649432534678438,
+        "v": 15.643939393939396,
         "l": "Quality +15.6 (Golden State Valkyries 5.600 vs Dallas Wings 2.700)"
       },
       "_sk": {
@@ -1890,7 +1933,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.649432534678438,
+      "_score": 15.643939393939396,
       "_rk": [
         1,
         7
@@ -1910,8 +1953,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 3.7617983109786723,
-        "l": "Quality +3.8 (GFR 67.8-70.7 vs tier1 baseline 137.3 (USL Championship (USA)))"
+        "v": 5.699152542372822,
+        "l": "Quality +5.7 (GFR 67.8-71.3 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -1925,14 +1968,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.7617983109786723,
+      "_score": 5.699152542372822,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.63,
       "_rk": [
-        1381,
-        1161
+        1379,
+        1126
       ]
     },
     {
@@ -3002,9 +3045,6 @@
       "anchored": true,
       "span": 38.36,
       "seen": [
-        "League One (England)",
-        "League One (Scotland)",
-        "League Two (England)",
         "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
@@ -3195,7 +3235,6 @@
         "Liga MX Femenil (Mexico)",
         "NWSL (USA)",
         "Serie A Women (Italy)",
-        "USL Super League (USA)",
         "Women's Super League (Switzerland)"
       ]
     },
@@ -3204,11 +3243,11 @@
         "Afc Champions League Elite": 67.17,
         "Copa Do Brazil": 52.39,
         "Caf Champions League": 45.1,
-        "Concacaf Champions Cup": 72.07,
+        "Concacaf Champions Cup": 72.12,
         "Leagues Cup": 79.36,
         "Conmebol Libertadores": 78.06,
-        "English Fa Cup": 71.28,
-        "Carabao Cup": 78.33,
+        "English Fa Cup": 71.27,
+        "Carabao Cup": 78.34,
         "Copa Del Rey": 39.29,
         "Club World Cup": 85.23,
         "German Cup": 64.59,
@@ -3216,8 +3255,8 @@
         "Uefa Champions League": 89.29,
         "Uefa Europa League": 82.57,
         "Uefa Conference League": 71.72,
-        "U.S. Open Cup": 55.18,
-        "Usl Cup": 58.04
+        "U.S. Open Cup": 55.12,
+        "Usl Cup": 58.0
       },
       "origin": {
         "Afc Champions League Elite": {
@@ -3294,7 +3333,7 @@
     },
     "mens_oneoff": {
       "leagues": {
-        "Campeones Cup": 83.11,
+        "Campeones Cup": 83.17,
         "Community Shield": 96.45,
         "Trophee Des Champions": 90.37,
         "Uefa Super Cup": 92.63
@@ -3319,9 +3358,9 @@
       },
       "label": "Men's one-off finals",
       "top": 96.45,
-      "worst": 83.11,
+      "worst": 83.17,
       "anchored": true,
-      "span": 13.34,
+      "span": 13.28,
       "seen": []
     },
     "womens_club_competition": {
@@ -3374,7 +3413,7 @@
       "rosterTotal": 25
     },
     "international-friendly": {
-      "rating": 1427.61,
+      "rating": 1427.71,
       "area": "mens_club_competition",
       "rosterMatched": 5,
       "rosterTotal": 191,
@@ -3388,7 +3427,7 @@
       "rosterTotal": 18
     },
     "concacaf-nations-league": {
-      "rating": 1126.64,
+      "rating": 1128.08,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 0,
@@ -3422,7 +3461,7 @@
       "rosterTotal": 20
     },
     "africa-cup-of-nations-qualifier": {
-      "rating": 1534.21,
+      "rating": 1534.62,
       "area": "mens_national",
       "confederation": "CAF",
       "rosterMatched": 0,
@@ -3508,7 +3547,7 @@
       "rosterTotal": 32
     },
     "usl-league-one": {
-      "rating": 44.15,
+      "rating": 44.07,
       "area": "mens_club_competition",
       "rosterMatched": 2,
       "rosterTotal": 17,
@@ -3535,7 +3574,7 @@
       "area": "mens_club_competition"
     },
     "primera-division": {
-      "rating": 75.55,
+      "rating": 78.56,
       "area": "mens_club_league",
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
@@ -3720,7 +3759,7 @@
       "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.51,
+      "rating": 48.72,
       "area": "womens_club_league",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
@@ -3758,7 +3797,7 @@
       "rosterTotal": 36
     },
     "english-league-cup": {
-      "rating": 78.33,
+      "rating": 78.34,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 90,
@@ -3772,7 +3811,7 @@
       "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 72.07,
+      "rating": 72.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -3814,7 +3853,7 @@
       "rosterTotal": 2
     },
     "usl-cup": {
-      "rating": 58.04,
+      "rating": 58.0,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 26,
@@ -3849,14 +3888,14 @@
       "rosterTotal": 2
     },
     "u-s-open-cup": {
-      "rating": 55.18,
+      "rating": 55.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
       "rosterTotal": 80
     },
     "campeones-cup": {
-      "rating": 83.11,
+      "rating": 83.17,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
@@ -3877,7 +3916,7 @@
       "rosterTotal": 2
     },
     "concacaf-caribbean-cup": {
-      "rating": 72.07,
+      "rating": 72.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -3891,7 +3930,7 @@
       "rosterTotal": 2
     },
     "u-s-open": {
-      "rating": 55.18,
+      "rating": 55.12,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
