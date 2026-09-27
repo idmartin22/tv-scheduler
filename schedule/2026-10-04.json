@@ -3096,8 +3096,7 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One",
-        "ViX"
+        "FOX One"
       ],
       "dur": 120,
       "_st": {
@@ -6854,17 +6853,19 @@
       "rosterTotal": 10
     },
     "asean-cup": {
-      "area": "mens_club_league"
+      "area": "mens_club_competition"
     },
     "dfb-pokal-women": {
-      "area": "womens_club_league"
+      "area": "womens_club_competition"
     },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 24,
-      "rosterCode": "eng.5"
+      "rosterCode": "eng.5",
+      "gfrLeague": "National League",
+      "country": "England"
     }
   }
 }
