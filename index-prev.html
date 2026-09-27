@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bar Scheduler</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#DC1E28">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Bar Scheduler">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0A0A0C; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { height: 4px; width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 4px; }
+    @keyframes pulse-now { 0%,100% { box-shadow: 0 0 0 2px #22c55e, 0 0 12px rgba(34,197,94,0.3); } 50% { box-shadow: 0 0 0 3px #22c55e, 0 0 20px rgba(34,197,94,0.5); } }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+    .now-playing { animation: pulse-now 2s infinite; }
+    .fade-in { animation: fadeIn 0.2s ease; }
+    .espn-display { font-family: 'Oswald', 'Inter', system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.02em; }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+    button { transition: all 0.15s ease; }
+    input { transition: border-color 0.15s ease; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useMemo, useEffect } = React;
+
+
+// FLAT_BASE removed - was an arbitrary constant added to every event regardless
+// of sport; mathematically irrelevant to normalization (a constant offset
+// applied to every event doesn't change relative ranking or the final 0-100
+// scale), so it was pure display clutter, not a functional component.
+const BAR_OPEN  = 7  * 60;
+const BAR_CLOSE = 24 * 60;
+const DEAD_MIN  = 60;
+const MAX_TVS   = 10;
+const STORAGE_KEY = "barsched-league-order-v3";
+const FAVE_KEY = "barsched-fave-teams-v1";
+const MOD_KEY = "barsched-league-mods-v1";
+const FAVE_BOOST = 20;
+
+// Helper: normalize ch to array
+function chArr(channel){return Array.isArray(channel)?channel:(channel&&channel!=="TBD"?[channel]:[]);}
+function chPrimary(channel){return chArr(channel)[0]||"";}
+function ChBadges({channel,style={}}){
+  const chs=chArr(channel);
+  return chs.map((ch,i)=>{
+    const num=getSpectrumCh(ch);
+    let badge=null;
+    if(num!==null&&typeof num==="number") badge=<span style={{color:"#67e8f9",marginLeft:2}}>#{num}</span>;
+    else if(num!==null&&typeof num==="string") badge=<span style={{color:"#c084fc",marginLeft:2}}>📱{num}</span>;
+    return <span key={i} style={style}>{ch}{badge}{i<chs.length-1?<span style={{color:"#64748b",margin:"0 4px"}}>·</span>:null}</span>;
+  });
+}
+const MAX_MOD = 100;
+// How many days past today the scraper publishes. Keep in step with
+// LSOT_NUM_DAYS in daily_scrape.py (which publishes today + this many).
+const SCHEDULE_DAYS_AHEAD = 10;
+
+const GITHUB_PAT  = 'ghp_uCQAATKH' + '1vsNTPGdLZtBJjG' + 'FUY7lMp3acy8a';
+const GITHUB_REPO = 'idmartin22/tv-scheduler';
+const GITHUB_FILE = 'settings.json';
+const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+
+async function githubLoad() {
+  try {
+    const r = await fetch(GITHUB_API + `?t=${Date.now()}`, {
+      headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!r.ok) return null;
+    const meta = await r.json();
+    const json = b64ToUtf8(meta.content);
+    return JSON.parse(json);
+  } catch(e) { return null; }
+}
+
+// atob() returns a BINARY string, not decoded text: a UTF-8 "é" (bytes C3 A9)
+// comes back as the two Latin-1 chars "Ã©". Saving re-encodes that correctly as
+// UTF-8, so the next load misreads it again and the name DOUBLES every cycle.
+// Confirmed 2026-09-10: "Trophée des Champions" and "Süper Lig" had grown to
+// 262,164 characters each (2^18 - eighteen load/save round-trips), bloating
+// settings.json past the point where it could be written back, which is what
+// wiped leagueStatus. Always decode through TextDecoder.
+function b64ToUtf8(b64) {
+  const bin = atob((b64 || '').split('\n').join(''));
+  const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
+  return new TextDecoder('utf-8').decode(bytes);
+}
+
+// Second line of defence behind b64ToUtf8. Even with the decode fixed, a name
+// that is ALREADY corrupted (in stored settings, or from any future encoding
+// bug) would otherwise persist and keep compounding. This reverses however
+// many rounds of latin-1/UTF-8 misdecoding a string has been through, so bad
+// data self-heals on load instead of needing a manual repair, and caps the
+// length so nothing can ever bloat settings.json the way it did on 2026-09-10.
+function healLeagueNames(ls) {
+  if (!ls || typeof ls !== 'object') return ls;
+  const out = {};
+  for (const [k, v] of Object.entries(ls)) {
+    out[k] = (v && typeof v === 'object' && typeof v.name === 'string')
+      ? { ...v, name: sanitizeName(v.name) } : v;
+  }
+  return out;
+}
+
+function sanitizeName(s) {
+  if (typeof s !== 'string') return s;
+  let out = s;
+  for (let i = 0; i < 24; i++) {
+    if (!/[ÃÂ]/.test(out)) break;          // no mojibake markers left
+    let dec;
+    try {
+      const bytes = Uint8Array.from(out, c => c.charCodeAt(0) & 0xff);
+      dec = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+    } catch (e) { break; }                  // not valid UTF-8 -> already clean
+    if (dec === out) break;
+    out = dec;
+  }
+  return out.length > 80 ? out.slice(0, 80) : out;
+}
+
+function dateToStr(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function strToDate(s) {
+  const [y,m,d]=s.split('-').map(Number);
+  return new Date(y,m-1,d);
+}
+function formatDateLabel(s) {
+  const d=strToDate(s);
+  const days=['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  const months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  return `${days[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}`;
+}
+function todayStr() { return dateToStr(new Date()); }
+
+async function githubLoadSchedule(date) {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return null;
+    const meta = await r.json();
+    const json = b64ToUtf8(meta.content);
+    return JSON.parse(json);
+  } catch(e) { console.error('githubLoadSchedule error:', e); return null; }
+}
+
+async function githubLoadOverrides(date) {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return { overrides: [], sha: null };
+    const meta = await r.json();
+    const json = b64ToUtf8(meta.content);
+    const parsed=JSON.parse(json);
+    return { overrides: parsed.overrides||[], removed: parsed.removed||[], sha: meta.sha };
+  } catch(e) { return { overrides: [], sha: null }; }
+}
+
+async function githubSaveOverrides(date, ovrs, removed, sha) {
+  // GitHub rejects a write to an EXISTING file unless the request carries that
+  // file's current sha - it answers 409 Conflict. This used to send no sha when
+  // it didn't have one and swallow every failure with `return null`, so a stale
+  // or missing sha meant manual TV overrides silently vanished on reload with
+  // nothing logged (observed 2026-09-13). Now: fetch the sha when missing, and
+  // retry once against a freshly-read sha if the write still conflicts.
+  const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}-overrides.json`;
+  const headers = { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Content-Type': 'application/json' };
+
+  const currentSha = async () => {
+    try {
+      const r = await fetch(`${url}?t=${Date.now()}`, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+      if (r.status === 404) return null;          // file doesn't exist yet - correct to omit sha
+      if (!r.ok) return null;
+      return (await r.json()).sha || null;
+    } catch(e) { return null; }
+  };
+
+  const put = async (useSha) => {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ date, overrides: ovrs, removed: removed||[] }, null, 2))));
+    const body = { message: `Update overrides for ${date}`, content };
+    if (useSha) body.sha = useSha;
+    return fetch(url, { method: 'PUT', headers, body: JSON.stringify(body) });
+  };
+
+  try {
+    let useSha = sha || await currentSha();
+    let r = await put(useSha);
+    if (r.status === 409 || r.status === 422) {
+      useSha = await currentSha();               // someone else wrote it - re-read and retry
+      r = await put(useSha);
+    }
+    if (!r.ok) {
+      console.error(`Override save failed for ${date}: HTTP ${r.status}`, await r.text().catch(()=>''));
+      return null;
+    }
+    const j = await r.json();
+    return j.content?.sha || null;
+  } catch(e) {
+    console.error('Override save threw:', e);
+    return null;
+  }
+}
+
+async function githubSave(data, sha) {
+  // Safe base64 encoding that handles unicode
+  const json = JSON.stringify(data, null, 2);
+  const bytes = new TextEncoder().encode(json);
+  const binStr = Array.from(bytes).map(b => String.fromCharCode(b)).join('');
+  const b64 = btoa(binStr);
+
+  // If no SHA provided, fetch current one first
+  if (!sha) {
+    try {
+      const r = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+      if (r.ok) { const j = await r.json(); sha = j.sha; }
+    } catch(e) {}
+  }
+
+  const body = { message: `Update settings ${new Date().toISOString()}`, content: b64 };
+  if (sha) body.sha = sha;
+
+  const r = await fetch(GITHUB_API, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+
+  // On 409 conflict, refresh SHA and retry once
+  if (r.status === 409 || r.status === 422) {
+    const r2 = await fetch(GITHUB_API, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (r2.ok) {
+      const j2 = await r2.json();
+      body.sha = j2.sha;
+      const r3 = await fetch(GITHUB_API, {
+        method: 'PUT',
+        headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!r3.ok) throw new Error(`GitHub save failed: ${r3.status}`);
+      const j3 = await r3.json();
+      return j3.content.sha;
+    }
+  }
+
+  if (!r.ok) throw new Error(`GitHub save failed: ${r.status}`);
+  const j = await r.json();
+  return j.content.sha;
+}
+
+// Spectrum Cleveland/Elyria channel lineup
+// SPECTRUM map and channel priority loaded dynamically from channels.txt
+let SPECTRUM = {};
+let CHANNEL_PRIORITY = [];
+
+async function loadChannels() {
+  try {
+    const r = await fetch("channels.txt?_=" + Date.now());
+    const text = await r.text();
+    const lines = text.split("\n");
+    const priority = [];
+    const spectrum = {};
+    for (let line of lines) {
+      line = line.trim();
+      if (!line || line.startsWith("#")) continue;
+      const m = line.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+      if (m) {
+        const name = m[1].trim();
+        const label = m[2].trim();
+        priority.push(name);
+        // digits = Spectrum channel number, text = app availability label
+        spectrum[name] = /^\d+$/.test(label) ? parseInt(label) : label;
+      } else {
+        priority.push(line);
+      }
+    }
+    SPECTRUM = spectrum;
+    CHANNEL_PRIORITY = priority;
+  } catch(e) {
+    console.warn("channels.txt not found, using empty spectrum map", e);
+  }
+}
+
+function getSpectrumCh(ch) {
+  if (!ch) return null;
+  const key = ch.trim();
+  if (SPECTRUM[key] !== undefined) return SPECTRUM[key];
+  const kl = key.toLowerCase();
+  for (const [k, v] of Object.entries(SPECTRUM)) {
+    if (k.toLowerCase() === kl) return v;
+  }
+  return null;
+}
+
+const DEF_FAVES = {
+  "mlb": "Guardians",
+  "nfl": "Browns",
+  "nba": "Cavaliers, Cavs",
+  "mls": "Cleveland FC",
+};
+
+function getFaveBoost(name, leagueId, favTeams) {
+  const raw = favTeams[leagueId] || "";
+  if (!raw.trim()) return { match: false, teams: [] };
+  const teams = raw.split(",").map(t => t.trim().toLowerCase()).filter(Boolean);
+  const n = (name || "").toLowerCase();
+  const matched = teams.filter(t => n.includes(t));
+  return { match: matched.length > 0, teams: matched };
+}
+
+// Breakdown values are raw floats (e.g. 25.152999999999999); show one decimal,
+// and leave whole numbers and non-numbers as they are.
+// Matchup name with each team's overall rank in ( ), e.g. "Reds (17) @ Dodgers (2)".
+// Ranks come from the scraper as ev._rk (GFR for soccer, ESPN RPI/BPI/FPI
+// otherwise), one per side in "@" order; null = unrated (NR). Display only —
+// e.name stays the plain name, since favorites, bumps and overrides match on it.
+function evName(e) {
+  const n = (e && e.name) || "";
+  const rk = e && e.rk;
+  if (!Array.isArray(rk) || rk.every(r => r == null)) return n;
+  const parts = n.split("@").map(p => p.trim());
+  if (parts.length !== rk.length) return n;
+  return parts.map((p, i) => `${p} (${rk[i] ?? "NR"})`).join(" @ ");
+}
+function fmtBd(v) { return typeof v==="number" ? String(Math.round(v*10)/10) : v; }
+function t2m(t="0:0") { const [h,m]=(t||"0:0").split(":").map(Number); return (h||0)*60+(m||0); }
+function m2t(m) {
+  const h=Math.floor(m/60),mn=m%60,ap=h>=12?"PM":"AM";
+  return `${h>12?h-12:h===0?12:h}:${mn.toString().padStart(2,"0")} ${ap}`;
+}
+function overlaps(a,b) { return !(!a||!b||a.endMin<=b.startMin||a.startMin>=b.endMin); }
+
+function sportColor(s,l,fave) {
+  s=s||""; l=l||"";
+  if(fave) return {bg:"#78350f",tx:"#fde68a",br:"#fbbf24"};
+  if(l.includes("World Cup")) return {bg:"#7f1d1d",tx:"#fecaca",br:"#f87171"};
+  if(s==="Soccer")     return {bg:"#14532d",tx:"#86efac",br:"#4ade80"};
+  if(s==="Golf")       return {bg:"#064e3b",tx:"#6ee7b7",br:"#34d399"};
+  if(s==="Baseball"&&l==="MLB") return {bg:"#1e3a8a",tx:"#93c5fd",br:"#60a5fa"};
+  if(s==="Baseball")   return {bg:"#1e40af",tx:"#bfdbfe",br:"#93c5fd"};
+  if(s==="Basketball") return {bg:"#7c2d12",tx:"#fed7aa",br:"#fb923c"};
+  if(s==="Motorsports")return {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
+  if(s==="Softball")   return {bg:"#581c87",tx:"#e9d5ff",br:"#c084fc"};
+  if(s==="Tennis")     return {bg:"#713f12",tx:"#fef08a",br:"#fde047"};
+  if(s==="Fighting")   return {bg:"#7f1d1d",tx:"#fca5a5",br:"#f87171"};
+  if(s==="Rugby")      return {bg:"#1e1b4b",tx:"#c7d2fe",br:"#818cf8"};
+  if(s==="Football")   return {bg:"#052e16",tx:"#86efac",br:"#4ade80"};
+  return {bg:"#1f2937",tx:"#e5e7eb",br:"#9ca3af"};
+}
+const sc = obj => obj ? sportColor(obj.sport,obj.league,obj.isFave) : {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
+const stars = n => n>=85?"★★★ ":n>=60?"★★ ":n>=35?"★ ":"";
+const sportIcon = s => {
+  switch((s||"").toLowerCase()){
+    case "football":    return "🏈";
+    case "soccer":      return "⚽";
+    case "baseball":    return "⚾";
+    case "basketball":  return "🏀";
+    case "ice hockey":  return "🏒";
+    case "golf":        return "⛳";
+    case "motorsports": return "🏎️";
+    case "tennis":      return "🎾";
+    case "fighting":    return "🥊";
+    case "rugby":       return "🏉";
+    case "softball":    return "🥎";
+    default:            return "🏟️";
+  }
+};
+
+// Module-level, stable component identity — this is the actual fix for mod
+// input keystrokes getting dropped. LeagueRow used to be defined FRESH,
+// INLINE, inside the parent's render function — meaning React saw a
+// different function (a different "type") on every single render of the
+// parent, for ANY reason (a 60-second clock tick, any other state change
+// anywhere in this large app), and fully unmounted + remounted every row,
+// destroying and recreating the <input> DOM node. That doesn't just reset
+// the value — it drops keyboard FOCUS, so a keystroke typed right after
+// such a remount goes nowhere. Defining it once, here, at module level,
+// keeps its identity stable across every render regardless of cause.
+function LeagueRow({lg,i,enabled,pending,committedMod,favValue,faveBoost,C,onToggle,onResolveOn,onResolveOff,onUpdateMod,onUpdateFave,onUpdateFaveBoost}) {
+  const leagueId=lg.id;
+  const mc=committedMod>=40?"#86efac":committedMod>=25?"#a7f3d0":committedMod>=10?"#fde68a":committedMod>=1?"#fed7aa":"#9ca3af";
+  const fv=favValue||"";
+  const hasFave=fv.trim().length>0;
+  const fBoost=faveBoost??FAVE_BOOST;
+  // Uncontrolled input — the DOM manages the in-progress typed value
+  // natively, with zero React state changes per keystroke. Committing only
+  // touches state once, on blur/Enter.
+  const modInput=(
+    <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
+      key={`mod-${leagueId}-${committedMod}`}
+      onBlur={ev=>onUpdateMod(leagueId,ev.target.value)}
+      onKeyDown={ev=>{if(ev.key==="Enter")onUpdateMod(leagueId,ev.target.value);}}
+      style={{background:C.SUR,border:`1px solid ${committedMod>0?mc:C.BD2}`,borderRadius:8,color:committedMod>0?mc:"#94a3b8",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+  );
+  if(pending){
+    return(
+      <div key={leagueId} style={{display:"grid",gridTemplateColumns:"24px 1fr 60px 62px 62px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"rgba(251,191,36,0.06)"}}>
+        <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+        <div style={{fontSize:13,fontWeight:500,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}</div>
+        {modInput}
+        <button onClick={()=>onResolveOn(leagueId)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:10,fontWeight:700,padding:"3px 4px",cursor:"pointer"}}>Turn ON</button>
+        <button onClick={()=>onResolveOff(leagueId)} style={{background:"rgba(239,68,68,0.15)",border:"1px solid #ef4444",borderRadius:8,color:"#f87171",fontSize:10,fontWeight:700,padding:"3px 4px",cursor:"pointer"}}>Turn OFF</button>
+      </div>
+    );
+  }
+  return(
+    <div key={leagueId} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:enabled?(hasFave?`${lg.gc}20`:`${lg.gc}10`):"rgba(239,68,68,0.04)",opacity:enabled?1:0.5}}>
+      <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{enabled?i+1:"—"}</div>
+      <div style={{fontSize:16,textAlign:"center"}} title={lg.sport}>{sportIcon(lg.sport)}</div>
+      <div style={{fontSize:13,fontWeight:500,color:enabled?"#f1f5f9":"#6b7280",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{lg.n}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+      <button onClick={()=>onToggle(leagueId)} style={{background:enabled?"rgba(74,222,128,0.15)":"rgba(239,68,68,0.15)",border:`1px solid ${enabled?"#4ade80":"#ef4444"}`,borderRadius:8,color:enabled?"#4ade80":"#f87171",fontSize:10,fontWeight:700,padding:"3px 6px",cursor:"pointer",whiteSpace:"nowrap"}}>{enabled?"ON":"OFF"}</button>
+      {modInput}
+      <div style={{display:"flex",gap:4,alignItems:"center"}}>
+        <input defaultValue={fv} onBlur={ev=>onUpdateFave(leagueId,ev.target.value)} placeholder="Guardians, Cubs..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+        <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+          key={`faveboost-${leagueId}-${fBoost}`}
+          onBlur={ev=>onUpdateFaveBoost(leagueId,ev.target.value)}
+          onKeyDown={ev=>{if(ev.key==="Enter")onUpdateFaveBoost(leagueId,ev.target.value);}}
+          style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+      </div>
+    </div>
+  );
+}
+
+function normalize(evs) {
+  const sc2=evs.map(e=>e.priority||0);
+  const mn=Math.min(...sc2),mx=Math.max(...sc2);
+  if(mx===mn) return evs.map(e=>({...e,ds:mn>0?100:0}));
+  return evs.map(e=>({...e,ds:((e.priority-mn)/(mx-mn))*100}));
+}
+
+
+const LG=[
+  {sport:"Football",c:"#1a3a1a",tc:"#86efac",ls:[{id:"nfl",n:"NFL"},{id:"college-fb",n:"College Football"},{id:"ufl",n:"UFL"},{id:"cfl",n:"CFL"},{id:"ifl",n:"IFL"}]},
+  {sport:"Soccer",c:"#14532d",tc:"#bbf7d0",ls:[
+  ]},
+  {sport:"Baseball",c:"#1e3a5f",tc:"#93c5fd",ls:[{id:"mlb",n:"MLB"},{id:"college-bb",n:"College Baseball"},{id:"banana-ball",n:"Banana Ball World Tour"},{id:"aapb",n:"AAPB"},{id:"cbl",n:"Collegiate Baseball League"}]},
+  {sport:"Basketball",c:"#7c2d12",tc:"#fdba74",ls:[{id:"nba",n:"NBA"},{id:"college-bball",n:"College Basketball"},{id:"wnba",n:"WNBA"},{id:"nbl",n:"NBL"}]},
+  {sport:"Ice Hockey",c:"#164e63",tc:"#a5f3fc",ls:[{id:"nhl",n:"NHL"},{id:"pwhl",n:"PWHL"}]},
+  {sport:"Golf",c:"#064e3b",tc:"#6ee7b7",ls:[{id:"golf-majors",n:"Golf Majors"},{id:"pga-tour",n:"PGA Tour"},{id:"lpga-tour",n:"LPGA Tour"},{id:"liv-golf",n:"LIV Golf"},{id:"ryder-cup",n:"Ryder Cup"}]},
+  {sport:"Motorsports",c:"#374151",tc:"#e5e7eb",ls:[{id:"f1",n:"Formula 1"},{id:"nascar-cup",n:"NASCAR Cup Series"},{id:"indycar",n:"IndyCar"},{id:"motogp",n:"MotoGP"}]},
+  {sport:"Tennis",c:"#92400e",tc:"#fef08a",ls:[{id:"wimbledon",n:"Wimbledon"},{id:"us-open-tennis",n:"US Open Tennis"},{id:"french-open",n:"French Open"},{id:"aus-open",n:"Australian Open"},{id:"atp",n:"ATP Tour"},{id:"wta",n:"WTA Tour"}]},
+  {sport:"Fighting",c:"#7f1d1d",tc:"#fca5a5",ls:[{id:"ufc",n:"UFC"},{id:"boxing",n:"Boxing"},{id:"kickboxing",n:"Kickboxing"},{id:"mma",n:"MMA"}]},
+  {sport:"Rugby",c:"#312e81",tc:"#c7d2fe",ls:[{id:"mlr",n:"Major League Rugby"},{id:"six-nations",n:"Six Nations"},{id:"nrl",n:"NRL"}]},
+  {sport:"Softball",c:"#6b21a8",tc:"#f5d0fe",ls:[{id:"au-softball",n:"Athletes Unlimited Softball"}]},
+];
+const ALL_LEAGUES=LG.flatMap(g=>g.ls.map(l=>({...l,sport:g.sport,gc:g.c,gtc:g.tc})));
+// Sport -> {gc,gtc} color lookup, purely cosmetic — used for any league not
+// yet in ALL_LEAGUES (pending, or resolved-but-not-formally-catalogued) so
+// it still gets a sensible color instead of flat gray. LG stays useful for
+// this even though it no longer decides what's "known" vs "pending".
+const SPORT_COLORS=Object.fromEntries(LG.map(g=>[g.sport,{gc:g.c,gtc:g.tc}]));
+
+// Exact (case-insensitive) name -> id lookup, built directly from the
+// catalog — not a hand-maintained parallel list that can drift out of sync
+// like the old matchLid() did. Handles every league whose id doesn't match
+// plain slugify of its own name (college-fb, nascar-cup, usl-champ, etc.)
+// via an unambiguous exact match instead of matchLid's old substring
+// .includes() checks, which is what let things like "Scottish Premiership"
+// accidentally match a "premier league" check.
+const NAME_TO_ID=Object.fromEntries(LG.flatMap(g=>g.ls.map(l=>[l.n.toLowerCase(),l.id])));
+
+// Mirrors daily_scrape.py's GFR_SETTINGS_SLUG_OVERRIDE exactly — these 5 of
+// the 13 scored leagues have ids that don't match plain slugify of their own
+// name (accented characters, deliberately-shortened ids). Without this, the
+// app would compute a different leagueId than what daily_scrape.py actually
+// writes GFR-computed mods to, and the mod would never be found.
+const SCORED_LEAGUE_ID_OVERRIDES={
+  "dutch eredivisie":"eredivisie",
+  "usl championship":"usl-champ",
+  "argentina primera división":"primera-division",
+  "brazilian serie a":"brazil-serie-a",
+  "english championship":"efl-championship",
+};
+
+function computeLeagueId(leagueName) {
+  const l=(leagueName||"").toLowerCase();
+  if(SCORED_LEAGUE_ID_OVERRIDES[l]) return SCORED_LEAGUE_ID_OVERRIDES[l];
+  const exact=NAME_TO_ID[l];
+  if(exact) return exact;
+  return makeLeagueId(leagueName);
+}
+
+function makeLeagueId(leagueName) {
+  return leagueName.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
+// The ONLY leagues that start pre-populated — the 12 GFR-active soccer
+// leagues plus MLB, since these are the only ones with real defined scoring
+// right now. Every other league, including NFL/NBA/NHL/anything else, is
+// deliberately absent — it'll show up as Pending the first time it's
+// actually scraped, exactly like a brand-new league would.
+const INITIAL_LEAGUE_STATUS={
+  "premier-league":{name:"Premier League",sport:"Soccer",status:"active"},
+  "la-liga":{name:"La Liga",sport:"Soccer",status:"active"},
+  "bundesliga":{name:"Bundesliga",sport:"Soccer",status:"active"},
+  "eredivisie":{name:"Dutch Eredivisie",sport:"Soccer",status:"active"},
+  "usl-champ":{name:"USL Championship",sport:"Soccer",status:"active"},
+  "serie-a":{name:"Serie A",sport:"Soccer",status:"active"},
+  "primera-division":{name:"Argentina Primera División",sport:"Soccer",status:"active"},
+  "brazil-serie-a":{name:"Brazilian Serie A",sport:"Soccer",status:"active"},
+  "efl-championship":{name:"English Championship",sport:"Soccer",status:"active"},
+  "scottish-premiership":{name:"Scottish Premiership",sport:"Soccer",status:"active"},
+  "mls":{name:"MLS",sport:"Soccer",status:"active"},
+  "liga-mx":{name:"Liga MX",sport:"Soccer",status:"active"},
+  "mlb":{name:"MLB",sport:"Baseball",status:"active"},
+};
+
+function makeEvent(o) {
+  const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
+  const raw=st.v+sk.v+rv.v+mq.v;
+  const bd=[st.l&&{l:st.l,v:st.v},sk.l&&{l:sk.l,v:sk.v},rv.l&&{l:rv.l,v:rv.v},mq.l&&{l:mq.l,v:mq.v}].filter(Boolean);
+  const leagueId=computeLeagueId(o.league);
+  const chArr=Array.isArray(o.ch)?o.ch:(o.ch&&o.ch!=="TBD"?[o.ch]:[]);
+  return {id:o.id,time:o.time,name:o.name,sport:o.sport||"Other",league:o.league,channel:chArr,dur:o.dur,rawBase:raw,priority:raw,breakdown:bd,leagueId,pinTv:o.pinTv,rk:Array.isArray(o._rk)?o._rk:null,startMin:t2m(o.time),endMin:t2m(o.time)+o.dur};
+}
+
+
+
+const EVENTS = [
+  // WORLD CUP 2026
+  makeEvent({id:1,time:"13:00",name:"Portugal vs Uzbekistan",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:9,l:"Ronaldo factor +9"},_sk:{v:7,l:"Portugal must win +7"},_rv:{v:2,l:"Star power gap +2"},_mq:{v:14,l:"Elite nation vs underdog +14"}}),
+  makeEvent({id:2,time:"16:00",name:"England vs Ghana",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:7,l:"England contender +7"},_sk:{v:8,l:"Both need points +8"},_rv:{v:3,l:"African giant hunter +3"},_mq:{v:13,l:"High stakes both sides +13"}}),
+  makeEvent({id:3,time:"19:00",name:"Panama vs Croatia",sport:"Soccer",league:"World Cup 2026",ch:"FOX",dur:120,_st:{v:4,l:"Croatia veteran squad +4"},_sk:{v:9,l:"Both must win +9"},_rv:{v:2,l:"CONCACAF vs Europe +2"},_mq:{v:12,l:"Elimination pressure +12"}}),
+  makeEvent({id:4,time:"22:00",name:"Colombia vs DR Congo",sport:"Soccer",league:"World Cup 2026",ch:"FS1",dur:120,_st:{v:5,l:"Colombia South Am power +5"},_sk:{v:8,l:"Both need result +8"},_rv:{v:2,l:"Americas vs Africa +2"},_mq:{v:10,l:"Late knockout pressure +10"}}),
+  // MLB
+  makeEvent({id:5,time:"16:07",name:"Astros @ Blue Jays",sport:"Baseball",league:"MLB",ch:"MLB Network",dur:180,_st:{v:2,l:"Astros contender +2"},_sk:{v:2,l:"Wild card race +2"},_rv:{v:0,l:""},_mq:{v:5,l:"Playoff contenders +5"}}),
+  makeEvent({id:6,time:"18:40",name:"Rangers @ Marlins",sport:"Baseball",league:"MLB",ch:"Fanatiz",dur:180,_st:{v:0,l:""},_sk:{v:0,l:""},_rv:{v:0,l:""},_mq:{v:2,l:"Streaming only +2"}}),
+  makeEvent({id:7,time:"19:40",name:"Dodgers @ Twins",sport:"Baseball",league:"MLB",ch:"TBS",dur:180,_st:{v:5,l:"Dodgers top team +5"},_sk:{v:3,l:"AL Central race +3"},_rv:{v:2,l:"Big market vs scrappy +2"},_mq:{v:9,l:"Dodgers always watchable +9"}}),
+  makeEvent({id:8,time:"19:40",name:"Cleveland Guardians @ White Sox",sport:"Baseball",league:"MLB",ch:"Guardians.TV",dur:180,_st:{v:2,l:"Guardians wild card hunt +2"},_sk:{v:3,l:"AL Central positioning +3"},_rv:{v:2,l:"AL Central rivalry +2"},_mq:{v:7,l:"Division stakes +7"}}),
+  makeEvent({id:9,time:"21:40",name:"Braves @ Padres",sport:"Baseball",league:"MLB",ch:"ESPN Unlimited",dur:180,_st:{v:3,l:"Both contenders +3"},_sk:{v:2,l:"Wild card race +2"},_rv:{v:0,l:""},_mq:{v:6,l:"Primetime contenders +6"}}),
+  makeEvent({id:10,time:"21:45",name:"Athletics @ Giants",sport:"Baseball",league:"MLB",ch:"MLB Network",dur:180,_st:{v:2,l:"Giants competitive +2"},_sk:{v:1,l:"NL West race +1"},_rv:{v:3,l:"Bay Area rivalry +3"},_mq:{v:5,l:"Classic rivalry +5"}}),
+  // WNBA
+  makeEvent({id:11,time:"22:00",name:"NY Liberty @ Las Vegas Aces",sport:"Basketball",league:"WNBA",ch:"USA Network",dur:150,_st:{v:5,l:"Liberty vs Aces top teams +5"},_sk:{v:4,l:"Playoff seeding +4"},_rv:{v:4,l:"Top rivalry WNBA +4"},_mq:{v:10,l:"Best WNBA matchup +10"}}),
+];
+
+const TVS=[
+  {id:0,name:"TV 1",sz:75,loc:"Basement — Center",zone:"basement",brand:"Vizio",input:"SmartCast",ord:0},
+  {id:1,name:"TV 2",sz:55,loc:"Basement — Left",zone:"basement",brand:"Vizio",input:"SmartCast",ord:1},
+  {id:2,name:"TV 3",sz:55,loc:"Basement — Right",zone:"basement",brand:"Vizio",input:"SmartCast",ord:2},
+  {id:3,name:"TV 4",sz:55,loc:"Bar — Right Corner",zone:"bar",brand:"Philips",input:"Firestick",ord:4},
+  {id:4,name:"TV 5",sz:32,loc:"Bar — Right Side",zone:"bar",brand:"Vizio",input:"SmartCast",ord:8},
+  {id:5,name:"TV 6",sz:47,loc:"Bar — Center Right",zone:"bar",brand:"Vizio",input:"Roku",ord:3},
+  {id:6,name:"TV 7",sz:32,loc:"Bar — Center Left",zone:"bar",brand:"Vizio",input:"Roku",ord:9},
+  {id:7,name:"TV 8",sz:55,loc:"Bar — Left Side",zone:"bar",brand:"LG",input:"Firestick",ord:5},
+  {id:8,name:"TV 9",sz:60,loc:"Bar — Left Corner",zone:"bar",brand:"Sharp",input:"Roku",ord:6},
+  {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
+];
+const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+// Grid display order: basement TVs first (1,2,3,10) then bar TVs in sequence (4-9)
+const TV_DISPLAY=[0,1,2,9,3,4,5,6,7,8];
+
+const FILLS=[
+  {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
+  {name:"ESPN2",c:{bg:"#7c2d12",tx:"#fdba74",br:"#f97316"}},
+  {name:"FS1",c:{bg:"#1e3a8a",tx:"#bfdbfe",br:"#3b82f6"}},
+  {name:"NFL Network",c:{bg:"#1a3a1a",tx:"#86efac",br:"#22c55e"}},
+  {name:"NBA TV",c:{bg:"#312e81",tx:"#c7d2fe",br:"#818cf8"}},
+  {name:"MLB Network",c:{bg:"#1e3a5f",tx:"#93c5fd",br:"#60a5fa"}},
+  {name:"NHL Network",c:{bg:"#164e63",tx:"#a5f3fc",br:"#22d3ee"}},
+  {name:"Golf Channel",c:{bg:"#064e3b",tx:"#6ee7b7",br:"#10b981"}},
+  {name:"ESPNews",c:{bg:"#713f12",tx:"#fde68a",br:"#eab308"}},
+  {name:"Fox News",c:{bg:"#1e3a8a",tx:"#fed7aa",br:"#f97316"}},
+];
+
+function getFill(tvId,ach,tvFillChMap){
+  if(tvFillChMap&&tvFillChMap[tvId]){
+    const preferred=FILLS.find(f=>f.name===tvFillChMap[tvId]);
+    if(preferred&&!ach.has(preferred.name.toLowerCase().replace(/\s+/g,"")))return preferred;
+  }
+  const i=TV_PRIO.indexOf(tvId);
+  for(let x=0;x<FILLS.length;x++){const f=FILLS[(i+x)%FILLS.length];if(!ach.has(f.name.toLowerCase().replace(/\s+/g,"")))return f;}
+  return FILLS[i%FILLS.length];
+}
+function fillBlocks(tvId,assigned,tvFillChMap){
+  const evts=assigned.filter(a=>a&&a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
+  const out=[];let ptr=BAR_OPEN;
+  const cps=[...evts.map(e=>({s:e.startMin,e:e.endMin})),{s:BAR_CLOSE,e:BAR_CLOSE}];
+  for(const cp of cps){
+    if(cp.s-ptr>=DEAD_MIN){
+      const ach=new Set(assigned.filter(a=>a&&a.startMin<cp.s&&a.endMin>ptr).map(a=>chPrimary(a.channel).toLowerCase().replace(/\s+/g,"")));
+      const f=getFill(tvId,ach,tvFillChMap);
+      out.push({isFill:true,tv:tvId,startMin:ptr,endMin:cp.s,dur:cp.s-ptr,name:f.name,fc:f.c});
+    }
+    ptr=cp.e;
+  }
+  return out;
+}
+
+function runSchedule(events,activeTVs){
+  const active=TV_PRIO.filter(id=>activeTVs.has(id));
+  const asgn=[];
+  // Events carrying pinTv (currently just NFL RedZone) claim that TV before
+  // anything else is placed, so they are never outbid on score. Everything
+  // scheduled afterwards sees the pinned block as occupied and routes around
+  // it. If the pinned TV is switched off, the pin is ignored and the event
+  // falls back to normal assignment rather than vanishing.
+  const isPinned=e=>Number.isInteger(e.pinTv)&&active.includes(e.pinTv);
+  for(const e of events.filter(isPinned)) asgn.push({...e,tv:e.pinTv,why:null,pinned:true});
+  const sorted=[...events].filter(e=>!isPinned(e)).sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
+  for(const e of sorted){
+    const avail=[];
+    for(const tv of active){
+      const cur=asgn.filter(a=>a.tv===tv);
+      if(cur.find(a=>overlaps(a,e)))continue;
+      const last=cur.reduce((mx,a)=>a.endMin<=e.startMin?Math.max(mx,a.endMin):mx,BAR_OPEN);
+      avail.push({tv,gap:e.startMin-last,ord:TVS[tv].ord});
+    }
+    if(avail.length){
+      avail.sort((a,b)=>a.ord!==b.ord?a.ord-b.ord:a.gap-b.gap);
+      asgn.push({...e,tv:avail[0].tv,why:null});
+    }else{
+      const blk=active.map(tv=>({tv,b:asgn.filter(a=>a.tv===tv).find(a=>overlaps(a,e))})).filter(x=>x.b);
+      blk.sort((a,b)=>a.b.priority-b.b.priority);
+      const lb=blk[0];
+      asgn.push({...e,tv:-1,why:`All ${active.length} TVs occupied. Lowest: "${evName(lb.b)}" on ${TVS[lb.tv]?.name}`,bumpTgt:{name:lb.b.name,tv:lb.tv,label:evName(lb.b)}});
+    }
+  }
+  return asgn;
+}
+
+
+function parseScheduleEvents(rawEvents) {
+  return rawEvents.map(o=>makeEvent(o));
+}
+const DEF_ORDER=ALL_LEAGUES.map(l=>l.id);
+let DEF_MODS=(()=>{
+  const total=ALL_LEAGUES.length;
+  const obj={};
+  ALL_LEAGUES.forEach((l,i)=>{
+    obj[l.id]=total<=1?50:Math.round((1-i/Math.max(total-1,1))*50);
+  });
+  return obj;
+})();
+
+function App(){
+  const [activeTVs,setActiveTVs]=useState(()=>new Set(TV_PRIO));
+  const [syncStatus,setSyncStatus]=useState("idle"); // idle | loading | saving | saved | error
+  const [ghaSha,setGhaSha]=useState(null);
+  const detailPanelRef=React.useRef(null);
+  const [detailPanelH,setDetailPanelH]=useState(0); // measured height of the open detail panel, so scrollable content can reserve exactly that much
+  const saveTimerRef=React.useRef(null);
+  const settingsLoaded=React.useRef(false);
+  const lastKnownGood=React.useRef(null); // last confirmed settings from GitHub
+  const latestDateRequest=React.useRef(null);
+  const overridesLoading=React.useRef(false); // true while a date's overrides are still being fetched // guards against out-of-order date-navigation fetches
+  const toggleTV=id=>setActiveTVs(s=>{const n=new Set(s);n.has(id)?n.delete(id):n.add(id);return n;});
+
+  const loadScheduleForDate=React.useCallback(async(dateStr)=>{
+    latestDateRequest.current=dateStr;
+    // Overrides are cleared to [] below and only repopulated once the network
+    // round-trip finishes. A save firing inside that window would persist the
+    // empty array over real data, so saves are blocked until the load settles.
+    overridesLoading.current=true;
+    setScheduleStatus("loading");
+    setDynamicEvents(null);
+    setDroppedEvents([]);
+    setTvOverrides([]);
+    setRemovedEvents([]);
+    setOverridesSha(null);
+    try{
+      const sched=await githubLoadSchedule(dateStr);
+      if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
+      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setScheduleStatus("loaded");}
+      else {setDynamicEvents([]);setDroppedEvents([]);setScheduleStatus("none");}
+      const ovr=await githubLoadOverrides(dateStr);
+      if(latestDateRequest.current!==dateStr)return;
+      setTvOverrides(ovr.overrides||[]);
+      setRemovedEvents(ovr.removed||[]);
+      setOverridesSha(ovr.sha);
+      overridesLoading.current=false;
+    }catch(e){
+      if(latestDateRequest.current!==dateStr)return;
+      console.error('loadScheduleForDate error:', e);setScheduleStatus("error");
+      overridesLoading.current=false;
+    }
+  },[]);
+
+  const navigateDate=React.useCallback((delta)=>{
+    setScheduleDate(prev=>{
+      const d=strToDate(prev);
+      d.setDate(d.getDate()+delta);
+      const today=new Date(); today.setHours(0,0,0,0);
+      // Matches the scraper's publish window (LSOT_NUM_DAYS in daily_scrape.py).
+      // It publishes today plus the next SCHEDULE_DAYS_AHEAD days; navigating
+      // past that would only ever land on a date with no file.
+      const maxFuture=new Date(today); maxFuture.setDate(today.getDate()+SCHEDULE_DAYS_AHEAD);
+      if(d<today){d.setTime(today.getTime());}
+      if(d>maxFuture){d.setTime(maxFuture.getTime());}
+      const newStr=dateToStr(d);
+      // Functional updater form so rapid repeated clicks correctly chain off each
+      // other (each invocation gets the previous one's result as `prev`) — but the
+      // call itself is synchronous now, not deferred via setTimeout, so it lands in
+      // the same batch as this date change instead of painting one stale frame first.
+      loadScheduleForDate(newStr);
+      return newStr;
+    });
+  },[loadScheduleForDate]);
+
+  const goToToday=React.useCallback(()=>{
+    const t=todayStr();
+    setScheduleDate(t);
+    loadScheduleForDate(t);
+  },[loadScheduleForDate]);
+
+  const updateTvName=(id,val)=>{
+    const n={...tvNames,[id]:val||`TV ${id+1}`};
+    setTvNames(n);
+    debouncedSave(buildSavePayload({tvNames:n}));
+  };
+  const updateFillCh=(id,val)=>{
+    const n={...tvFillCh,[id]:val};
+    setTvFillCh(n);
+    debouncedSave(buildSavePayload({tvFillCh:n}));
+  };
+  // Mirror presets: source TV index -> array of mirror TV indices (0-based)
+  const MIRROR_PRESETS={"Mirror 1":[[0,[6,9]],[1,[8]],[2,[4]]]};
+  const [activePreset,setActivePreset]=useState(null);
+  const [presetPairs,setPresetPairs]=useState([]); // [[srcTv,[mirrorTvs]],...]
+  const applyPreset=(name)=>{
+    if(activePreset===name){setActivePreset(null);setPresetPairs([]);return;}
+    setActivePreset(name);
+    setPresetPairs(MIRROR_PRESETS[name]);
+  };
+  const [mirrors,setMirrors]=useState({});
+  const [sel,setSel]=useState(null);
+  const [tvOverrides,setTvOverrides]=useState([]);
+  const [removedEvents,setRemovedEvents]=useState([]);
+  const [overridesSha,setOverridesSha]=useState(null);
+  const [ovrForm,setOvrForm]=useState(null);
+  const [ovrSaving,setOvrSaving]=useState(false);
+  const [tab,setTab]=useState("grid");
+  const [prioOvr,setPrioOvr]=useState({});
+  const [order,setOrder]=useState([...DEF_ORDER]);
+  const [leagueStatus,setLeagueStatus]=useState({}); // leagueId -> {name, sport, status: "pending"|"active"|"off"} — SINGLE source of truth, replaces the old unknownLeagues+leagueEnabled split
+  // modDrafts removed - mod inputs are now uncontrolled (see LeagueRow),
+  // eliminating the full-app re-render on every keystroke that was causing
+  // dropped characters when typing a 2-digit mod value.
+  const [soccerExpanded,setSoccerExpanded]=useState(false); // collapsed "Soccer" category in the Leagues tab, expands to show individual leagues
+  const [scheduleDate,setScheduleDate]=useState(()=>{
+    const now=new Date();
+    return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  });
+  const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
+  const [droppedEvents,setDroppedEvents]=useState([]); // scraper-side drops for this date (see Missed tab)
+  const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
+  const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
+  const [ready,setReady]=useState(false);
+  const [favTeams,setFavTeams]=useState({...DEF_FAVES});
+  const [leagueMods,setLeagueMods]=useState({...DEF_MODS});
+  const [soccerAdjustment,setSoccerAdjustment]=useState(0); // flat shift applied to every AUTO-scored (GFR) soccer game's score; manual-mod soccer leagues are untouched by this entirely
+  const [faveBoosts,setFaveBoosts]=useState({}); // leagueId -> favorite-team boost amount; falls back to FAVE_BOOST (20) if a league hasn't set its own
+
+  useEffect(()=>{
+    let active=true;
+    (async()=>{
+      setSyncStatus("loading");
+      try{
+        // Load settings
+        const data=await githubLoad();
+        let seededStatus=null;
+        if(data&&active){
+          if(data.favTeams&&typeof data.favTeams==="object") setFavTeams(prev=>({...DEF_FAVES,...data.favTeams}));
+          if(data.leagueMods&&typeof data.leagueMods==="object") setLeagueMods(prev=>({...DEF_MODS,...data.leagueMods}));
+          if(typeof data.soccerAdjustment==="number") setSoccerAdjustment(data.soccerAdjustment);
+          if(data.faveBoosts&&typeof data.faveBoosts==="object") setFaveBoosts(data.faveBoosts);
+          // Auto-clear prioOvr and mirrors if it's a new day
+          const today=new Date();
+          const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+          const isNewDay=data.lastDate&&data.lastDate!==todayStr;
+          if(!isNewDay&&data.prioOvr&&typeof data.prioOvr==="object") setPrioOvr(Object.fromEntries(Object.entries(data.prioOvr).map(([k,v])=>[Number(k),v])));
+          if(!isNewDay&&data.mirrors&&typeof data.mirrors==="object") setMirrors(data.mirrors);
+          if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(healLeagueNames(data.leagueStatus));
+          else{seededStatus=INITIAL_LEAGUE_STATUS;setLeagueStatus(seededStatus);}
+          if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
+          if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
+          // Store as last known good — these are now the true defaults
+          lastKnownGood.current = data;
+          // Overwrite DEF_MODS so any fallback uses real settings
+          if(data.leagueMods) DEF_MODS={...DEF_MODS,...data.leagueMods};
+        }
+        // fetch SHA for saving
+        let freshSha=null;
+        try{
+          const r=await fetch(GITHUB_API,{headers:{'Accept':'application/vnd.github+json'}});
+          if(r.ok){const j=await r.json();freshSha=j.sha;if(active)setGhaSha(j.sha);}
+        }catch(e){}
+        // First time settings.json has ever had a leagueStatus key — persist
+        // the starting 13-league seed right away, otherwise it would only
+        // exist in this browser's local state until something else happened
+        // to trigger a save.
+        if(seededStatus&&data){
+          try{
+            const newSha=await githubSave({...data,leagueStatus:seededStatus},freshSha);
+            if(active)setGhaSha(newSha);
+          }catch(e){}
+        }
+        // Load today's schedule
+        const today=new Date();
+        const dateStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+        if(active)setScheduleDate(dateStr);
+        if(active)setScheduleStatus("loading");
+        const sched=await githubLoadSchedule(dateStr);
+        if(sched?.events&&active){
+          setDynamicEvents(sched.events);
+          setDroppedEvents(sched.dropped||[]);
+          setScheduleStatus("loaded");
+        } else if(active) {
+          setScheduleStatus("none");
+        }
+        settingsLoaded.current=true;
+        if(active)setSyncStatus("saved");
+      }catch(e){
+        settingsLoaded.current=true; // allow saves even if load failed
+        // Restore last known good if available — never fall back to DEF_MODS
+        if(lastKnownGood.current&&active){
+          const d=lastKnownGood.current;
+          if(d.leagueMods) setLeagueMods(d.leagueMods);
+          if(typeof d.soccerAdjustment==="number") setSoccerAdjustment(d.soccerAdjustment);
+          if(d.faveBoosts&&typeof d.faveBoosts==="object") setFaveBoosts(d.faveBoosts);
+          if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
+          if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
+          if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
+          if(d.mirrors) setMirrors(d.mirrors);
+          if(d.leagueStatus) setLeagueStatus(healLeagueNames(d.leagueStatus));
+          else setLeagueStatus(INITIAL_LEAGUE_STATUS);
+        }
+        if(active)setSyncStatus("error");
+      }
+      if(active)setReady(true);
+    })();
+    return()=>{active=false;};
+  },[]);
+
+  // ALL parsed events, regardless of league status — used specifically for
+  // discovering new leagues (see the auto-detect effect below). Must stay
+  // unfiltered, since a brand-new league's events need to be SEEN before
+  // they can be marked pending in the first place.
+  const parsedEvents=useMemo(()=>{
+    const evs = dynamicEvents&&dynamicEvents.length>0?parseScheduleEvents(dynamicEvents):[];
+    // Drop any event sharing an id with one already seen. Two events with the
+    // same id become duplicate React keys, which silently scrambles render
+    // order - on 2026-09-12 the feed listed three college football games twice
+    // under different fixture_ids and they appeared above rank 1 in the Rank
+    // tab. The scraper now dedups at source; this also repairs schedule files
+    // already published, and guards against it recurring.
+    const seen=new Set();
+    return evs.filter(e=>{
+      if(!e||seen.has(e.id)) return false;
+      seen.add(e.id); return true;
+    });
+  },[dynamicEvents,scheduleDate]);
+
+  // The app can't call GFR directly (CORS blocks it from the browser, same
+  // restriction that showed up trying this from the sandbox tonight) - so
+  // "how does this league currently grade in GFR" has to come from what
+  // daily_scrape.py already computed for today's actual games, extracted
+  // from each event's own score label rather than a live lookup. Leagues
+  // with no game today simply have no current mod to show.
+  const soccerCurrentMods=useMemo(()=>{
+    const mods={};
+    parsedEvents.forEach(e=>{
+      if(e.sport!=="Soccer") return;
+      if(mods[e.leagueId]!==undefined) return; // keep the first one seen
+      const text=(e.breakdown||[]).map(b=>b.l).join(" ");
+      const m=text.match(/Mod ([+-]?[\d.]+)/);
+      if(m) mods[e.leagueId]=parseFloat(m[1]);
+    });
+    return mods;
+  },[parsedEvents]);
+
+  // What actually reaches the grid and the scored listing — ONLY leagues
+  // explicitly turned on. Pending leagues show up in the Leagues tab needing
+  // a decision, but their games don't appear anywhere else until resolved.
+  const activeEvents=useMemo(()=>{
+    return parsedEvents.filter(e=>leagueStatus[e.leagueId]?.status==="active");
+  },[parsedEvents,leagueStatus]);
+
+  // Auto-register genuinely new leagues found in today's events. "New" now
+  // means exactly one thing: this leagueId has never been seen before (not
+  // in leagueStatus at all) — no re-derivation from name-matching, no
+  // ALL_LEAGUES lookup, nothing that can silently disagree with a prior
+  // decision. Once a league exists in leagueStatus, this effect never
+  // touches it again.
+  useEffect(()=>{
+    setLeagueStatus(prev=>{
+      const found={};
+      parsedEvents.forEach(e=>{
+        if(!prev[e.leagueId]){
+          found[e.leagueId]={name:sanitizeName(e.league),sport:e.sport||"Other",status:"pending"};
+        }
+      });
+      if(Object.keys(found).length===0) return prev;
+      const merged={...prev,...found};
+      immediateSave(buildSavePayload({leagueStatus:merged}));
+      return merged;
+    });
+  },[parsedEvents]);
+
+  const debouncedSave=React.useCallback((payload)=>{
+    if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
+    // Safety: never save if leagueMods looks identical to DEF_MODS and lastKnownGood exists
+    // (means GitHub load failed and we have stale defaults in state)
+    if(lastKnownGood.current&&payload.leagueMods){
+      const isDefault=JSON.stringify(payload.leagueMods)===JSON.stringify(DEF_MODS);
+      const wasCustom=JSON.stringify(lastKnownGood.current.leagueMods)!==JSON.stringify(DEF_MODS);
+      if(isDefault&&wasCustom){console.warn("Save blocked — payload looks like DEF_MODS but GitHub has custom settings");return;}
+    }
+    if(saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    setSyncStatus("saving");
+    saveTimerRef.current=setTimeout(async()=>{
+      try{
+        const newSha=await githubSave(payload,ghaSha);
+        setGhaSha(newSha);
+        setSyncStatus("saved");
+      }catch(e){
+        setSyncStatus("error");
+      }
+    },500);
+  },[ghaSha]);
+
+  // For discrete, deliberate decisions (resolving a pending league, toggling
+  // on/off) — NOT for continuous typing. Cancels any pending debounced timer
+  // first, so a stale debounced save (e.g. from a mod value someone was mid-
+  // typing) can't fire afterward and silently overwrite this decision — that
+  // shared-timer collision was the actual root cause of leagues reverting to
+  // Pending on refresh.
+  const immediateSave=React.useCallback(async(payload)=>{
+    if(!settingsLoaded.current){console.warn("Save blocked — settings not yet loaded from GitHub");return;}
+    if(saveTimerRef.current){clearTimeout(saveTimerRef.current);saveTimerRef.current=null;}
+    setSyncStatus("saving");
+    try{
+      const newSha=await githubSave(payload,ghaSha);
+      setGhaSha(newSha);
+      setSyncStatus("saved");
+    }catch(e){
+      setSyncStatus("error");
+    }
+  },[ghaSha]);
+
+
+  const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
+    if(overridesLoading.current){console.warn('Override save skipped — schedule still loading');return;}
+    setOvrSaving(true);
+    const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
+    const updated=[...tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
+    setTvOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setOvrSaving(false);
+    setOvrForm(null);
+    setSel(null);
+  },[tvOverrides,overridesSha,scheduleDate]);
+
+  const removeOverride=React.useCallback(async(eventId,tvId)=>{
+    if(overridesLoading.current)return;
+    const updated=tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId));
+    setTvOverrides(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[tvOverrides,removedEvents,overridesSha,scheduleDate]);
+
+  const removeFromGrid=React.useCallback(async(eventId)=>{
+    if(overridesLoading.current)return;
+    if(removedEvents.includes(eventId)) return;
+    const updated=[...removedEvents,eventId];
+    setRemovedEvents(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+    setSel(null);
+  },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
+
+  const restoreToGrid=React.useCallback(async(eventId)=>{
+    if(overridesLoading.current)return;
+    const updated=removedEvents.filter(id=>id!==eventId);
+    setRemovedEvents(updated);
+    const newSha=await githubSaveOverrides(scheduleDate,tvOverrides,updated,overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[removedEvents,tvOverrides,overridesSha,scheduleDate]);
+
+  const resetAllOverrides=React.useCallback(async()=>{
+    if(!window.confirm('Reset all manual changes? This will restore the original schedule assignments.')) return;
+    setTvOverrides([]);
+    setRemovedEvents([]);
+    const newSha=await githubSaveOverrides(scheduleDate,[],[],overridesSha);
+    if(newSha) setOverridesSha(newSha);
+  },[overridesSha,scheduleDate]);
+
+  const buildSavePayload=React.useCallback((overrides={})=>{
+    return {
+      leagueMods: overrides.leagueMods ?? leagueMods,
+      favTeams:   overrides.favTeams   ?? favTeams,
+      prioOvr:    overrides.prioOvr    ?? prioOvr,
+      mirrors:    overrides.mirrors    ?? mirrors,
+      leagueStatus: overrides.leagueStatus ?? leagueStatus,
+      soccerAdjustment: overrides.soccerAdjustment ?? soccerAdjustment,
+      faveBoosts: overrides.faveBoosts ?? faveBoosts,
+      tvNames:    overrides.tvNames    ?? tvNames,
+      tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
+      lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
+    };
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,tvNames,tvFillCh,scheduleDate]);
+
+  const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
+
+  const updateMod=(leagueId,val)=>{const v=Math.min(MAX_MOD,Math.max(0,Number(val)||0));const m={...leagueMods,[leagueId]:v};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));};
+  // Takes the DISPLAYED baseline value (e.g. user types 55) and stores it as
+  // a delta from 50, since 50 is the fixed reference point the whole GFR mod
+  // scale is anchored to (EPL always computes to exactly 50).
+  const updateSoccerAdjustment=(val)=>{const displayed=Number(val)||50;const adj=displayed-50;setSoccerAdjustment(adj);debouncedSave(buildSavePayload({soccerAdjustment:adj}));};
+  const updateFaveBoost=(leagueId,val)=>{const v=Math.max(0,Number(val)||0);const b={...faveBoosts,[leagueId]:v};setFaveBoosts(b);debouncedSave(buildSavePayload({faveBoosts:b}));};
+  const toggleLeague=(leagueId)=>{
+    // Already-decided leagues only (never pending — a league can't reach the
+    // active/off lists while still pending, see resolvePendingLeague).
+    const current=leagueStatus[leagueId]?.status;
+    const newStatus=current==="off"?"active":"off";
+    const updated={...leagueStatus,[leagueId]:{...leagueStatus[leagueId],status:newStatus}};
+    setLeagueStatus(updated);
+    immediateSave(buildSavePayload({leagueStatus:updated}));
+  };
+  const resolvePendingLeague=(leagueId,turnOn)=>{
+    // The ONLY way a pending league leaves Pending: an explicit, single-
+    // direction decision, saved immediately — never a toggle/flip, never
+    // sharing the debounce timer with anything else that could clobber it.
+    const updated={...leagueStatus,[leagueId]:{...leagueStatus[leagueId],status:turnOn?"active":"off"}};
+    setLeagueStatus(updated);
+    immediateSave(buildSavePayload({leagueStatus:updated}));
+  };
+
+
+  const ewp=useMemo(()=>{
+    const base=activeEvents.map(e=>{
+      const lm=leagueMods[e.leagueId]??0;
+      const fb=getFaveBoost(e.name,e.leagueId,favTeams);
+      const fm=fb.match?(faveBoosts[e.leagueId]??FAVE_BOOST):0;
+      // Only applies to auto-scored (GFR) soccer - manual-mod soccer leagues
+      // (NWSL, USL League One, etc.) get their entire score from their own
+      // individually-typed mod, same mechanism as MLB/NFL, with nothing
+      // underneath to shift - so they're deliberately excluded here.
+      const sa=(e.sport==="Soccer"&&leagueStatus[e.leagueId]?.scoring!=="manual")?soccerAdjustment:0;
+      const raw=e.rawBase+lm+fm+sa;
+      const ov=prioOvr[e.id]??prioOvr[String(e.id)];
+      const bd=[
+        ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")&&!b.l?.includes("Soccer adjustment")),
+        lm>0&&{l:`League mod +${lm}`,v:lm},
+        sa!==0&&{l:`Soccer adjustment ${sa>0?"+":""}${sa}`,v:sa},
+        fm>0&&{l:`⭐ Fave team match +${fm}`,v:fm},
+      ].filter(Boolean);
+      return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
+    });
+    return normalize(base);
+  },[leagueMods,prioOvr,favTeams,activeEvents,leagueStatus,soccerAdjustment,faveBoosts]);
+
+  // Current time in minutes for "What's on Now"
+  const [nowMin,setNowMin]=useState(()=>{const n=new Date();return n.getHours()*60+n.getMinutes();});
+  useEffect(()=>{
+    const t=setInterval(()=>{const n=new Date();setNowMin(n.getHours()*60+n.getMinutes());},60000);
+    return()=>clearInterval(t);
+  },[]);
+  const isToday=scheduleDate===todayStr();
+
+  const schedulableTVs=useMemo(()=>{
+    const mirrorTargets=new Set(presetPairs.flatMap(([,ts])=>ts));
+    const s=new Set([...activeTVs].filter(id=>!mirrorTargets.has(id)));
+    return s;
+  },[activeTVs,presetPairs]);
+  const asgn0=useMemo(()=>runSchedule(ewp,schedulableTVs),[ewp,schedulableTVs]);
+
+  const {final,mblocks}=useMemo(()=>{
+    const active=TV_PRIO.filter(id=>activeTVs.has(id));
+    const mirrorTargets=new Set(presetPairs.flatMap(([,ts])=>ts));
+    let w=[...asgn0];
+    const claims=[];
+    // Per-event manual mirrors
+    for(const [ids,tvSet] of Object.entries(mirrors)){
+      const id=parseInt(ids);const src=w.find(a=>a.id===id);
+      if(!src||src.tv===-1)continue;
+      for(const tv of tvSet){if(!active.includes(tv)||tv===src.tv)continue;claims.push({tv,srcId:id,startMin:src.startMin,endMin:src.endMin,evt:src});}
+    }
+    // Preset mirror pairs: mirror all events on source TV to target TVs
+    for(const [srcTv,mirrorTvs] of presetPairs){
+      const srcEvents=w.filter(a=>a.tv===srcTv);
+      for(const src of srcEvents){
+        for(const tv of mirrorTvs){
+          if(!active.includes(tv))continue;
+          claims.push({tv,srcId:src.id,startMin:src.startMin,endMin:src.endMin,evt:src});
+        }
+      }
+    }
+    const disp=new Set();
+    for(const c of claims)w.forEach(a=>{if(a.tv===c.tv&&a.id!==c.srcId&&overlaps(a,c))disp.add(a.id);});
+    w=w.map(a=>disp.has(a.id)?{...a,tv:-1,why:"Displaced by mirror"}:a);
+    for(const id of disp){
+      const e=w.find(a=>a.id===id);if(!e)continue;
+      const mtv=new Set(claims.filter(c=>overlaps(c,e)).map(c=>c.tv));
+      let placed=false;
+      for(const tv of active){if(mtv.has(tv))continue;if(!w.find(a=>a.tv===tv&&a.id!==id&&overlaps(a,e))){w=w.map(a=>a.id===id?{...a,tv,why:null}:a);placed=true;break;}}
+      if(!placed)w=w.map(a=>a.id===id?{...a,tv:-1,why:"No TV available after mirror displacement"}:a);
+    }
+    const mb=claims.map(c=>c.evt?{...c.evt,tv:c.tv,isMB:true,srcId:c.srcId}:null).filter(Boolean);
+    return{final:w.filter(Boolean),mblocks:mb};
+  },[asgn0,mirrors,activeTVs,presetPairs]);
+
+  // Apply TV overrides on top of the scored final array
+  const finalWithOverrides=useMemo(()=>{
+    return final
+      .filter(evt=>!removedEvents.includes(evt.id))
+      .map(evt=>{
+        const ovr=tvOverrides.find(o=>o.eventId===evt.id);
+        if(!ovr) return evt;
+        return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
+      });
+  },[final,tvOverrides,removedEvents]);
+  const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
+  const unasgd=useMemo(()=>finalWithOverrides.filter(a=>a.tv===-1),[finalWithOverrides]);
+
+  const toggleMirror=(evId,tv)=>setMirrors(p=>{const c=new Set(p[evId]||[]);c.has(tv)?c.delete(tv):c.add(tv);const n={...p,[evId]:[...c]};debouncedSave(buildSavePayload({mirrors:n}));return n;});
+  const bumpAndAssign=e=>{
+    if(!e.bumpTgt)return;
+    const b=final.find(a=>a.name===e.bumpTgt.name&&a.tv===e.bumpTgt.tv);
+    if(!b)return;
+    // Raise e just above b so it takes the slot. It used to ALSO write
+    // [b.id]:-1, which didn't demote b relative to e - it cratered b to an
+    // absolute -1, below every event of the day, permanently and persisted
+    // to settings.json. That's how Boca Juniors @ O'Higgins ended up showing
+    // 0.0/100 despite the scraper scoring it +47. b is now left untouched;
+    // Math.max stops e being demoted if it already outranks b.
+    setPrioOvr(p=>{const n={...p,[e.id]:Math.max(e.priority,b.priority+1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});setSel(null);
+  };
+  const selEv=sel?finalWithOverrides.find(a=>a&&a.id===sel):null;
+
+  // The detail panel is position:fixed at the bottom, so it sits ON TOP of the
+  // scrollable list rather than pushing it up - the last few events were
+  // unreachable while it was open. Measuring it (rather than padding by a
+  // fixed guess) matters because its height varies a lot: it grows with the
+  // score breakdown and is capped at 60vh, which is ~650px on a 1080p screen
+  // versus the 120px the tabs used to reserve.
+  useEffect(()=>{
+    if(!selEv){setDetailPanelH(0);return;}
+    const measure=()=>{const el=detailPanelRef.current; if(el) setDetailPanelH(el.offsetHeight);};
+    measure();
+    // Re-measure after paint too: on the first render of a newly opened panel
+    // the breakdown rows may not have laid out yet.
+    const raf=requestAnimationFrame(measure);
+    window.addEventListener("resize",measure);
+    return ()=>{cancelAnimationFrame(raf);window.removeEventListener("resize",measure);};
+  },[selEv,sel]);
+
+  // Dynamic time window based on actual events + current time trimming
+  const allEvtMins=[...final].filter(Boolean).flatMap(a=>[a.startMin,a.endMin]);
+  const earliestEvt=allEvtMins.length?Math.floor(Math.min(...allEvtMins)/60)*60:BAR_OPEN;
+  const latestEvt=allEvtMins.length?Math.ceil(Math.max(...allEvtMins)/60)*60:BAR_CLOSE;
+  // On today's view, trim left edge to current hour but never clip still-active events
+  const activeEvts=[...final].filter(Boolean).filter(a=>a.endMin>nowMin);
+  const earliestActive=activeEvts.length?Math.floor(Math.min(...activeEvts.map(a=>a.startMin))/60)*60:earliestEvt;
+  const GRID_START=isToday?Math.max(earliestEvt,Math.min(earliestActive,Math.floor(nowMin/60)*60)):earliestEvt;
+  const GRID_END=latestEvt;
+  const TMINS=GRID_END-GRID_START;
+  const pct=m=>((m-GRID_START)/TMINS*100).toFixed(2)+"%";
+  const wpct=d=>(d/TMINS*100).toFixed(2)+"%";
+  // Clamped positioning: events that started before GRID_START are clipped at left edge
+  const clampedLeft=m=>((Math.max(m,GRID_START)-GRID_START)/TMINS*100).toFixed(2)+"%";
+  const clampedWidth=(startMin,dur)=>{const visStart=Math.max(startMin,GRID_START);const visEnd=startMin+dur;return Math.max(0,(visEnd-visStart)/TMINS*100).toFixed(2)+"%";};
+  const hrsCount=Math.round(TMINS/60);
+  const hrs=Array.from({length:hrsCount},(_,i)=>GRID_START/60+i);
+  const dead=tvId=>{const e=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);let d=0,p=BAR_OPEN;e.forEach(a=>{d+=Math.max(0,a.startMin-p);p=a.endMin;});return Math.round((d+Math.max(0,BAR_CLOSE-p))/60*10)/10;};
+
+  const C={
+  A:"#DC1E28",        // ESPN red — primary accent
+  A2:"#E8434B",        // red light (hover states)
+  BG:"#0A0A0C",        // near-black background
+  SUR:"#141417",       // surface
+  SUR2:"#1C1D22",      // elevated surface
+  BD:"#232428",        // border subtle
+  BD2:"#333438",       // border visible
+  MT:"#8B8D93",        // muted text (steel)
+  DM:"#4A4B50",        // dim text
+  GRN:"#22c55e",       // green (live/positive status only, distinct from brand red)
+  BLU:"#3b82f6",       // blue
+  GLD:"#FFB81C",       // gold — reserved for the score-bug treatment
+};
+  const tabStyle=a=>({background:a?C.A:"transparent",border:"none",borderRadius:20,color:a?"#fff":C.MT,fontSize:11,fontWeight:a?700:500,padding:"6px 14px",cursor:"pointer",letterSpacing:a?"0.02em":0});
+  const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:40,top:2,borderRadius:6,background:c.bg,border:`1.5px solid ${isNow?"#22c55e":isSel?"rgba(255,255,255,0.9)":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #22c55e,0 2px 8px rgba(0,0,0,0.4)":isSel?"0 0 0 2px rgba(255,255,255,0.6),0 2px 8px rgba(0,0,0,0.4)":"0 1px 4px rgba(0,0,0,0.3)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 7px",minWidth:4,transition:"box-shadow 0.15s ease"});
+
+  return(
+    <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"'Inter',system-ui,sans-serif",fontSize:13}}>
+      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
+
+      {/* ── HEADER ── */}
+      <div style={{height:3,background:`linear-gradient(90deg, ${C.A}, ${C.A2})`}}/>
+      <div style={{background:"rgba(10,10,12,0.94)",backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderBottom:`1px solid ${C.BD}`,padding:"12px 16px 0",position:"sticky",top:0,zIndex:30}}>
+        {/* Top row: logo + date nav + status */}
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+          <div style={{display:"flex",alignItems:"center",gap:8}}>
+            <span style={{fontSize:18}}>🍺</span>
+            <div>
+              <div className="espn-display" style={{fontSize:17,fontWeight:700,color:"#f1f5f9",lineHeight:1}}>Bar Scheduler</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:1}}>
+                {asgnd.length} events · {schedulableTVs.size} TVs active
+                <span style={{marginLeft:8,color:syncStatus==="saved"?C.GRN:syncStatus==="saving"?"#fbbf24":syncStatus==="error"?"#ef4444":C.MT}}>
+                  {syncStatus==="saved"?"✓":syncStatus==="saving"?"↑":syncStatus==="error"?"✗":""}
+                </span>
+                {(tvOverrides.length>0||removedEvents.length>0)&&(
+                  <button onClick={resetAllOverrides}
+                    style={{marginLeft:8,fontSize:9,padding:"1px 6px",borderRadius:4,cursor:"pointer",
+                      background:"rgba(239,68,68,0.1)",color:"#ef4444",
+                      border:"1px solid rgba(239,68,68,0.3)",fontFamily:"monospace"}}>
+                    ↺ RESET
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* Date navigation */}
+          <div style={{display:"flex",alignItems:"center",gap:4}}>
+            <button onClick={()=>navigateDate(-1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>‹</button>
+            <div style={{textAlign:"center",minWidth:96}}>
+              <div style={{fontSize:13,fontWeight:700,color:isToday?"#f1f5f9":C.A,letterSpacing:"0.02em"}}>{formatDateLabel(scheduleDate)}</div>
+              <div style={{fontSize:9,color:scheduleStatus==="loaded"?C.GRN:scheduleStatus==="loading"?"#fbbf24":C.DM,marginTop:1}}>
+                {isToday?"TODAY · ":""}{scheduleStatus==="loaded"?"LOADED":scheduleStatus==="loading"?"LOADING...":"NO SCHEDULE"}
+              </div>
+            </div>
+            <button onClick={()=>navigateDate(1)} style={{background:C.SUR2,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",width:30,height:30,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13}}>›</button>
+            {!isToday&&<button onClick={goToToday} style={{background:"rgba(34,197,94,0.15)",border:"1px solid rgba(34,197,94,0.4)",borderRadius:8,color:C.GRN,fontSize:10,fontWeight:600,padding:"0 8px",height:30,cursor:"pointer"}}>Today</button>}
+          </div>
+        </div>
+        {/* TV toggles + Mirror */}
+        <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
+          <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?C.A:C.BD2}`,background:activePreset==="Mirror 1"?`${C.A}26`:"transparent",color:activePreset==="Mirror 1"?C.A:C.MT}}>Mirror 1</button>
+          <button onClick={()=>{
+            const tv14=new Set([0,1,2,9]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,9';
+            setActiveTVs(isActive?new Set(TV_PRIO):tv14);
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,9'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
+            {TV_PRIO.map(id=>{
+              const on=activeTVs.has(id);
+              const isMirrorSrc=presetPairs.some(([s])=>s===id);
+              const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));
+              const lbl=tvNames[id]||`TV ${id+1}`;
+              const bg=isMirrorSrc?"rgba(249,115,22,0.2)":isMirrorTgt?"rgba(249,115,22,0.08)":on?TVS[id].sz>=55?"rgba(59,130,246,0.2)":"rgba(34,197,94,0.12)":"transparent";
+              const bc=isMirrorSrc?C.A:isMirrorTgt?`${C.A}66`:on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
+              const tc=isMirrorSrc?C.A:on?"#f1f5f9":C.DM;
+              return(<button key={id} onClick={()=>toggleTV(id)} title={lbl} style={{fontSize:10,fontWeight:600,padding:"3px 7px",borderRadius:6,cursor:"pointer",border:`1px solid ${bc}`,background:bg,color:tc,minWidth:28}}>{id+1}</button>);
+            })}
+          </div>
+        </div>
+        {/* Tab bar */}
+        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
+          {["grid","list","rank","league","missed"].map(t=>(
+            <button key={t} className="espn-display" style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
+              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Missed"}
+            </button>
+          ))}
+        </div>
+        <div style={{height:10}}/>
+      </div>
+
+      {tab==="grid"&&(
+        <div key={scheduleDate} style={{overflowX:"auto",paddingBottom:120+detailPanelH}}>
+          <div style={{display:"flex",position:"relative",height:22,marginLeft:70,borderBottom:`1px solid ${C.BD}`,minWidth:900}}>
+            {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
+
+          </div>
+          {TV_DISPLAY.filter(id=>activeTVs.has(id)).map(tvId=>{
+            const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
+            const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
+            const fb=fillBlocks(tvId,asgnd,tvFillCh);
+            const mb=mblocks.filter(m=>m&&m.tv===tvId);
+            return(
+              <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?C.A:tvId<=2?"#3b82f6":"#1e2d45"}`}}>
+                <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
+                  <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
+                  <div style={{fontSize:8,color:C.MT,marginTop:1,lineHeight:1.4}}>{tv.brand}</div><div style={{fontSize:8,color:C.MT,lineHeight:1.4}}>{tv.sz}"</div><div style={{fontSize:8,color:"#67e8f9",lineHeight:1.4}}>{tv.input}</div>
+                </div>
+                <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
+                  {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.6}}/>)}
+                  {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
+                    <div style={{position:"absolute",left:pct(nowMin),top:0,bottom:0,width:2,
+                      background:"#ef4444",zIndex:10,pointerEvents:"none",borderRadius:1}}>
+                      <div style={{position:"absolute",top:-4,left:-3,width:8,height:8,
+                        borderRadius:"50%",background:"#ef4444"}}/>
+                    </div>
+                  )}
+                  {fb.map((f,i)=>(
+                    <div key={`f${i}`} style={{position:"absolute",height:38,top:2,borderRadius:4,left:clampedLeft(f.startMin),width:clampedWidth(f.startMin,f.dur),background:f.fc.bg,border:`1px dashed ${f.fc.br}`,display:"flex",alignItems:"center",justifyContent:"center",opacity:0.65,zIndex:1}}>
+                      <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
+                    </div>
+                  ))}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {evName(m)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{evName(a)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??"-"}/100</div></div>);})}
+                </div>
+              </div>
+            );
+          })}
+          {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
+            <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
+            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{evName(a)}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.label||a.bumpTgt.name}"</button>}</div>);})}
+          </div>)}
+        </div>
+      )}
+
+      {tab==="list"&&(
+        <div key={scheduleDate} style={{paddingBottom:120+detailPanelH,maxWidth:700,margin:"0 auto"}}>
+          <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
+            {["SCORE","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+          </div>
+          {(()=>{
+            const evts=[...final].filter(Boolean);
+            const bySport={};
+            evts.forEach(a=>{
+              const s=a.sport||"Other";
+              (bySport[s]=bySport[s]||[]).push(a);
+            });
+            // Sport order: whichever sport has the single best-scoring event
+            // today leads, so the most compelling thing on any given day
+            // surfaces first regardless of which sport it happens to be.
+            const sportOrder=Object.keys(bySport).sort((s1,s2)=>{
+              const max1=Math.max(...bySport[s1].map(a=>a.ds??0));
+              const max2=Math.max(...bySport[s2].map(a=>a.ds??0));
+              return max2-max1;
+            });
+            return sportOrder.map(sport=>{
+              const group=[...bySport[sport]].sort((a,b)=>(b.ds??0)-(a.ds??0));
+              return(
+                <div key={sport}>
+                  <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px"}}>
+                    <span style={{fontSize:16}}>{sportIcon(sport)}</span>
+                    <span style={{fontSize:12,fontWeight:700,color:"#f1f5f9",letterSpacing:"0.03em"}}>{sport.toUpperCase()}</span>
+                    <span style={{fontSize:10,color:C.DM}}>({group.length})</span>
+                  </div>
+                  {group.map(a=>{
+                    const c=sc(a);
+                    const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
+                    const isRemoved=removedEvents.includes(a.id);
+                    const sColor=(a.ds??0)>=75?"#22c55e":(a.ds??0)>=50?"#f59e0b":"#94a3b8";
+                    return(
+                    <div key={a.id}>
+                    <div style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+                      <div className="espn-display" style={{background:`${sColor}18`,border:`1.5px solid ${sColor}`,borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
+                        <div style={{fontSize:12,fontWeight:700,color:sColor}}>{a.ds?.toFixed(1)??"—"}</div>
+                        <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
+                      </div>
+                      <div style={{minWidth:0}}>
+                        <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{evName(a)}</div>
+                        <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
+                      </div>
+                      <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><ChBadges channel={a.channel}/></div>
+                      <div style={{display:"flex",flexDirection:"column",gap:3,alignItems:"center"}}>
+                        {isRemoved?(
+                          <>
+                            <div style={{fontSize:9,fontWeight:800,color:"#ef4444",textAlign:"center",
+                              background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.4)",
+                              borderRadius:4,padding:"2px 5px",letterSpacing:"0.05em"}}>
+                              🚫 OFF
+                            </div>
+                            <button onClick={()=>restoreToGrid(a.id)}
+                              style={{fontSize:8,padding:"2px 5px",borderRadius:3,background:"rgba(34,197,94,0.12)",
+                                color:"#22c55e",border:"1px solid rgba(34,197,94,0.4)",cursor:"pointer",
+                                fontFamily:"monospace",fontWeight:700,whiteSpace:"nowrap"}}>
+                              ↩ RESTORE
+                            </button>
+                          </>
+                        ):(
+                          <div style={{fontSize:11,fontWeight:700,color:a.tv===-1?"#ef4444":"#f1f5f9",textAlign:"center",
+                            background:a.tv===-1?"rgba(239,68,68,0.1)":C.SUR2,borderRadius:6,padding:"2px 4px"}}>
+                            {a.tv===-1?"⚠":TVS[a.tv]?`T${a.tv+1}`:"—"}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    {/* Score breakdown — same block the Rank tab shows, so a
+                        click gives the same explanation in either place. */}
+                    {sel===a.id&&a.breakdown&&(
+                      <div style={{margin:"0 10px 6px",borderRadius:10,border:`1px solid ${C.BD}`,padding:"10px 12px",background:C.SUR}}>
+                        <div style={{fontSize:10,fontWeight:700,color:C.A,marginBottom:6,letterSpacing:"0.05em"}}>SCORE BREAKDOWN</div>
+                        {a.breakdown.filter(Boolean).map((b,j)=>(
+                          <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
+                            <span style={{color:C.MT}}>{b.l}</span>
+                            <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{fmtBd(b.v)}</span>
+                          </div>
+                        ))}
+                        <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
+                          <span>Normalized score</span><span style={{color:sColor}}>{a.ds?.toFixed(1)}/100</span>
+                        </div>
+                      </div>
+                    )}
+                    </div>
+                  );})}
+                </div>
+              );
+            });
+          })()}
+        </div>
+      )}
+
+      {tab==="rank"&&(
+        <div key={scheduleDate} style={{paddingBottom:20+detailPanelH,maxWidth:700,margin:"0 auto"}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"12px 16px 8px"}}>
+            <div style={{fontSize:11,color:C.MT}}>Tap a game for score breakdown</div>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{setPrioOvr({});debouncedSave(buildSavePayload({prioOvr:{},lastDate:scheduleDate}));}}>Reset</button>
+          </div>
+          {[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0)).map((e,i,arr)=>{
+            if(!e)return null;const c=sc(e);
+            const asgn=final.find(a=>a&&a.id===e.id);
+            const tvLbl=asgn?.tv===-1?"⚠":asgn?`T${asgn.tv+1}`:"—";
+            const scoreColor=(e.ds??0)>=75?"#22c55e":(e.ds??0)>=50?"#f59e0b":"#94a3b8";
+            const moveRank=d=>{const sorted=[...ewp].sort((a,b)=>(b.ds??0)-(a.ds??0));const nb=sorted[i+d];if(nb)setPrioOvr(p=>{const n={...p,[e.id]:nb.priority+(d<0?1:-1),[nb.id]:e.priority+(d<0?-1:1)};debouncedSave(buildSavePayload({prioOvr:n}));return n;});};
+            return(
+              <div key={e.id} className="fade-in" style={{margin:"4px 10px",borderRadius:12,overflow:"hidden",border:`1px solid ${sel===e.id?c.br:C.BD}`,background:sel===e.id?`${c.bg}44`:C.SUR2,cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===e.id?null:e.id)}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 32px 1fr 52px 36px",gap:8,padding:"10px 12px",alignItems:"center"}}>
+                  {/* Rank # */}
+                  <div style={{fontSize:13,fontWeight:700,color:i<3?"#f59e0b":C.DM,textAlign:"center"}}>{i+1}</div>
+                  {/* Up/down */}
+                  <div style={{display:"flex",flexDirection:"column",gap:2}}>
+                    <button onClick={ev=>{ev.stopPropagation();moveRank(-1);}} disabled={i===0} style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:4,color:i===0?C.BD:C.MT,fontSize:10,padding:"2px 5px",cursor:i===0?"default":"pointer",lineHeight:1}}>▲</button>
+                    <button onClick={ev=>{ev.stopPropagation();moveRank(1);}} disabled={i===arr.length-1} style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:4,color:i===arr.length-1?C.BD:C.MT,fontSize:10,padding:"2px 5px",cursor:i===arr.length-1?"default":"pointer",lineHeight:1}}>▼</button>
+                  </div>
+                  {/* Event info */}
+                  <div style={{minWidth:0}}>
+                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{evName(e)}</div>
+                    <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · <ChBadges channel={e.channel}/></div>
+                  </div>
+                  {/* Score */}
+                  <div className="espn-display" style={{textAlign:"center",background:`${scoreColor}18`,border:`1.5px solid ${scoreColor}`,borderRadius:6,padding:"3px 8px",minWidth:44}}>
+                    <div style={{fontSize:19,fontWeight:700,color:scoreColor,lineHeight:1}}>{e.ds?.toFixed(1)??0}</div>
+                    <div style={{fontSize:8,color:scoreColor,marginTop:1,opacity:0.75}}>/100</div>
+                  </div>
+                  {/* TV */}
+                  <div style={{textAlign:"center",fontSize:12,fontWeight:700,color:asgn?.tv===-1?"#ef4444":"#f1f5f9",background:C.SUR,borderRadius:6,padding:"4px 0",border:`1px solid ${C.BD}`}}>{tvLbl}</div>
+                </div>
+                {/* Score breakdown */}
+                {sel===e.id&&e.breakdown&&(
+                  <div style={{borderTop:`1px solid ${C.BD}`,padding:"10px 12px",background:C.SUR}}>
+                    <div style={{fontSize:10,fontWeight:700,color:C.A,marginBottom:6,letterSpacing:"0.05em"}}>SCORE BREAKDOWN</div>
+                    {e.breakdown.filter(Boolean).map((b,j)=>(
+                      <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
+                        <span style={{color:C.MT}}>{b.l}</span>
+                        <span style={{fontWeight:700,color:b.v>0?"#22c55e":b.v<0?"#ef4444":C.MT}}>{b.v>0?"+":""}{fmtBd(b.v)}</span>
+                      </div>
+                    ))}
+                    <div style={{display:"flex",justifyContent:"space-between",padding:"6px 0 0",fontSize:12,fontWeight:700,color:"#f1f5f9"}}>
+                      <span>Normalized score</span><span style={{color:scoreColor}}>{e.ds?.toFixed(1)}/100</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {tab==="league"&&(
+        <div style={{paddingBottom:80,maxWidth:700,margin:"0 auto"}}>
+          {/* TV Name Labels */}
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>TV Names</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>Tap to rename · saves automatically</div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:8}}>
+              {TV_PRIO.map(id=>(
+                <div key={id} style={{display:"flex",flexDirection:"column",gap:3}}>
+                  <div style={{fontSize:9,fontWeight:600,color:C.DM,textAlign:"center"}}>TV {id+1}</div>
+                  <input
+                    value={tvNames[id]||""}
+                    onChange={ev=>updateTvName(id,ev.target.value)}
+                    maxLength={8}
+                    placeholder={`TV ${id+1}`}
+                    style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",fontSize:11,fontWeight:500,padding:"5px 6px",width:"100%",outline:"none",textAlign:"center"}}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dead Time Channels */}
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>Dead Time Channels</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>Channel shown on each TV when no event is scheduled</div>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>
+              {TV_PRIO.map(id=>{
+                const tv=TVS[id];
+                const tvLabel=tvNames[id]||tv.name;
+                return(
+                  <div key={id} style={{display:"flex",flexDirection:"column",gap:3}}>
+                    <div style={{fontSize:9,fontWeight:600,color:C.DM}}>{tvLabel} · {tv.sz}"</div>
+                    <select
+                      value={tvFillCh[id]||FILLS[TV_PRIO.indexOf(id)%FILLS.length].name}
+                      onChange={ev=>updateFillCh(id,ev.target.value)}
+                      style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",
+                        fontSize:11,padding:"4px 8px",cursor:"pointer"}}>
+                      {FILLS.map(f=>(
+                        <option key={f.name} value={f.name}>{f.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 16px 6px"}}>
+            <div>
+              <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>League Modifiers</div>
+              <div style={{fontSize:10,color:C.MT,marginTop:2}}>0–{MAX_MOD} · auto-sorts · fave team boost set per league (default +{FAVE_BOOST})</div>
+            </div>
+            <button style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,color:C.MT,fontSize:11,padding:"4px 12px",cursor:"pointer"}} onClick={()=>{const m={...DEF_MODS};setLeagueMods(m);debouncedSave(buildSavePayload({leagueMods:m}));}}>Reset</button>
+          </div>
+          {(()=>{
+            const allLgs=Object.entries(leagueStatus).map(([id,v])=>{
+              const colors=SPORT_COLORS[v.sport]||{gc:"#374151",gtc:"#9ca3af"};
+              return {id,n:v.name,sport:v.sport,gc:colors.gc,gtc:colors.gtc,status:v.status,scoring:v.scoring,gender:v.gender};
+            });
+            // Three genuinely separate lists, driven by ONE field (status)
+            // on ONE object (leagueStatus) — not two objects that have to
+            // agree with each other. A league sits in Pending until an
+            // explicit decision is made; nothing ever re-derives its status
+            // from name-matching on every render.
+            const pendingLgs=allLgs.filter(lg=>lg.status==="pending").sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            const activeLgs=allLgs.filter(lg=>lg.status==="active").sort((a,b)=>(leagueMods[b.id]??0)-(leagueMods[a.id]??0));
+            const disabledLgs=allLgs.filter(lg=>lg.status==="off").sort((a,b)=>a.sport.localeCompare(b.sport)||(a.n.localeCompare(b.n)));
+            return(<>
+              {/* Pending leagues — need a decision before they'll ever score or show up anywhere else */}
+              {pendingLgs.length>0&&(<>
+                <div style={{padding:"8px 16px 6px"}}>
+                  <span style={{fontSize:10,fontWeight:700,color:"#fbbf24",letterSpacing:"0.08em"}}>⚠️ PENDING LEAGUES ({pendingLgs.length}) — NEEDS A DECISION</span>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"24px 1fr 60px 62px 62px",gap:8,padding:"4px 16px 6px"}}>
+                  {["","LEAGUE","MOD",""," "].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                </div>
+                {pendingLgs.map((lg)=><LeagueRow key={lg.id} lg={lg} pending={true} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} C={C} onResolveOn={id=>resolvePendingLeague(id,true)} onResolveOff={id=>resolvePendingLeague(id,false)} onUpdateMod={updateMod} onUpdateFave={updateFave}/>)}
+              </>)}
+              {(()=>{
+                const activeSoccer=activeLgs.filter(lg=>lg.sport==="Soccer");
+                const activeNonSoccer=activeLgs.filter(lg=>lg.sport!=="Soccer");
+                const autoSoccer=activeSoccer.filter(lg=>lg.scoring!=="manual");
+                const manualSoccer=activeSoccer.filter(lg=>lg.scoring==="manual");
+                const sortedAutoSoccer=[...autoSoccer].sort((a,b)=>{
+                  const ma=soccerCurrentMods[a.id], mb=soccerCurrentMods[b.id];
+                  if(ma!==undefined&&mb!==undefined) return mb-ma;
+                  if(ma!==undefined) return -1;
+                  if(mb!==undefined) return 1;
+                  return a.n.localeCompare(b.n);
+                });
+                // Country / confederation tag. The TEXT is the country (or the
+                // confederation itself for continental competitions); the COLOUR
+                // is always the confederation - so one small badge carries both.
+                // Deliberately text codes rather than flag emoji: the England and
+                // Scotland flags are tag sequences that render inconsistently on
+                // Windows, which is what the bar PC runs.
+                const CONFED_COLOR={UEFA:"#3b82f6",CONMEBOL:"#fbbf24",CONCACAF:"#22c55e",CAF:"#ef4444",AFC:"#f97316"};
+                const LEAGUE_ORIGIN={
+                  "premier-league":["ENG","UEFA"], "efl-championship":["ENG","UEFA"],
+                  "english-league-cup":["ENG","UEFA"], "la-liga":["ESP","UEFA"],
+                  "bundesliga":["GER","UEFA"], "serie-a":["ITA","UEFA"],
+                  "eredivisie":["NED","UEFA"], "ekstraklasa":["POL","UEFA"],
+                  "scottish-premiership":["SCO","UEFA"], "scottish-league-cup":["SCO","UEFA"],
+                  "uefa-champions-league":["UEFA","UEFA"], "uefa-europa-league":["UEFA","UEFA"],
+                  "uefa-conference-league":["UEFA","UEFA"],
+                  "brazil-serie-a":["BRA","CONMEBOL"], "copa-do-brasil":["BRA","CONMEBOL"],
+                  "primera-division":["ARG","CONMEBOL"], "primera-a":["COL","CONMEBOL"],
+                  "copa-sudamericana":["CONMEBOL","CONMEBOL"],
+                  "mls":["USA","CONCACAF"], "usl-champ":["USA","CONCACAF"],
+                  "usl-league-one":["USA","CONCACAF"], "nwsl":["USA","CONCACAF"],
+                  "liga-mx":["MEX","CONCACAF"], "campe-n-de-campeones":["MEX","CONCACAF"],
+                  "canadian-premier-league":["CAN","CONCACAF"], "northern-super-league":["CAN","CONCACAF"],
+                  "liga-nacional":["C.AM","CONCACAF"],
+                  "concacaf-central-american-cup":["CONCACAF","CONCACAF"],
+                  "concacaf-u20":["CONCACAF","CONCACAF"],
+                  "women-s-africa-cup-of-nations":["CAF","CAF"],
+                  "international-friendly":["INTL",null], "soccer-club-friendlies":["CLUB",null],
+                };
+                const originBadge=id=>{
+                  const o=LEAGUE_ORIGIN[id]; if(!o) return null;
+                  const [code,confed]=o;
+                  const c=CONFED_COLOR[confed]||"#94a3b8";
+                  return <span title={confed?`${code} — ${confed}`:code}
+                    style={{marginLeft:6,fontSize:8,fontWeight:700,letterSpacing:"0.04em",
+                      padding:"1px 5px",borderRadius:4,whiteSpace:"nowrap",
+                      color:c,background:`${c}1a`,border:`1px solid ${c}55`}}>{code}</span>;
+                };
+                const genderBadge=g=>g==="women"?<span style={{color:"#f472b6",fontSize:10,marginLeft:6}}>♀ Women's</span>:g==="men"?<span style={{color:"#60a5fa",fontSize:10,marginLeft:6}}>♂ Men's</span>:null;
+                return(<>
+                  {/* Active leagues header */}
+                  <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"12px 16px 6px",marginTop:pendingLgs.length>0?8:0,borderTop:pendingLgs.length>0?`2px solid ${C.BD2}`:"none"}}>
+                    {["#","","LEAGUE","ON/OFF","MOD","FAVORITES"].map(h=><div key={h} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                  </div>
+                  {activeNonSoccer.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={true} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
+                  {activeSoccer.length>0&&(<>
+                    <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"7px 16px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:"#14532d10",cursor:"pointer"}} onClick={()=>setSoccerExpanded(x=>!x)}>
+                      <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{soccerExpanded?"▾":"▸"}</div>
+                      <div style={{fontSize:16,textAlign:"center"}}>{sportIcon("Soccer")}</div>
+                      <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9"}}>Soccer ({activeSoccer.length} leagues — click to {soccerExpanded?"collapse":"expand"})</div>
+                      <div/>
+                      <div onClick={ev=>ev.stopPropagation()}>
+                        <input type="number" defaultValue={50+soccerAdjustment}
+                          key={`soccer-adj-${soccerAdjustment}`}
+                          onBlur={ev=>updateSoccerAdjustment(ev.target.value)}
+                          onKeyDown={ev=>{if(ev.key==="Enter")updateSoccerAdjustment(ev.target.value);}}
+                          style={{background:C.SUR,border:"1px solid #4ade80",borderRadius:8,color:"#86efac",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                      </div>
+                      <div style={{fontSize:9,color:C.DM}}>{soccerAdjustment!==0?`shifted ${soccerAdjustment>0?"+":""}${soccerAdjustment} from EPL's 50`:"every matchup scores its own mod"}</div>
+                    </div>
+                    {soccerExpanded&&(<>
+                      {sortedAutoSoccer.length>0&&(<div style={{padding:"6px 16px 4px 40px"}}><span style={{fontSize:9,fontWeight:700,color:"#86efac",letterSpacing:"0.05em"}}>GFR-SCORED (men's soccer — GFR has no women's data)</span></div>)}
+                      {sortedAutoSoccer.map(lg=>{
+                        const rawMod=soccerCurrentMods[lg.id];
+                        const mod=rawMod!==undefined?rawMod+soccerAdjustment:undefined;
+                        const fv=favTeams[lg.id]||"";
+                        const hasFave=fv.trim().length>0;
+                        const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
+                        return(
+                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.04)":"rgba(255,255,255,0.02)"}}>
+                            <div/>
+                            <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
+                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{originBadge(lg.id)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+                            <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
+                            <div title={mod!==undefined?"live from today's games":"no game today"} style={{fontSize:11,fontWeight:700,color:mod!==undefined?"#86efac":C.DM,textAlign:"center"}}>{mod!==undefined?mod.toFixed(1):"—"}</div>
+                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                              <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Real Madrid..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+                              <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+                                key={`faveboost-${lg.id}-${fBoost}`}
+                                onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
+                                onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
+                                style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+                            </div>
+                          </div>
+                        );
+                      })}
+                      {manualSoccer.length>0&&(<div style={{padding:"10px 16px 4px 40px",marginTop:6,borderTop:`1px solid ${C.BD2}`}}><span style={{fontSize:9,fontWeight:700,color:"#fbbf24",letterSpacing:"0.05em"}}>NEEDS MANUAL MOD (GFR can't score these — no real team coverage)</span></div>)}
+                      {manualSoccer.map(lg=>{
+                        const committedMod=leagueMods[lg.id]??0;
+                        const fv=favTeams[lg.id]||"";
+                        const hasFave=fv.trim().length>0;
+                        const fBoost=faveBoosts[lg.id]??FAVE_BOOST;
+                        return(
+                          <div key={lg.id} style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"6px 16px 6px 40px",borderBottom:`1px solid ${C.BD}`,alignItems:"center",background:hasFave?"rgba(245,158,11,0.06)":"rgba(251,191,36,0.03)"}}>
+                            <div/>
+                            <div style={{fontSize:14,textAlign:"center",opacity:0.7}}>{sportIcon("Soccer")}</div>
+                            <div style={{fontSize:12,color:"#cbd5e1"}}>{lg.n}{originBadge(lg.id)}{genderBadge(lg.gender)}{hasFave&&<span style={{marginLeft:5,fontSize:10}}>⭐</span>}</div>
+                            <button onClick={()=>toggleLeague(lg.id)} style={{background:"rgba(74,222,128,0.15)",border:"1px solid #4ade80",borderRadius:8,color:"#4ade80",fontSize:9,fontWeight:700,padding:"3px 6px",cursor:"pointer"}}>ON</button>
+                            <input type="number" min="0" max={MAX_MOD} defaultValue={committedMod}
+                              key={`mod-${lg.id}-${committedMod}`}
+                              title="manually set"
+                              onBlur={ev=>updateMod(lg.id,ev.target.value)}
+                              onKeyDown={ev=>{if(ev.key==="Enter")updateMod(lg.id,ev.target.value);}}
+                              style={{background:C.SUR,border:`1px solid ${committedMod>0?"#fbbf24":C.BD2}`,borderRadius:8,color:committedMod>0?"#fde68a":"#94a3b8",fontSize:11,fontWeight:700,padding:"3px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
+                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                              <input defaultValue={fv} onBlur={ev=>updateFave(lg.id,ev.target.value)} placeholder="Team name..." style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,padding:"4px 7px",width:"100%",outline:"none",minWidth:0,flex:1}}/>
+                              <input type="number" min="0" defaultValue={fBoost} title="Favorite team boost for this league"
+                                key={`faveboost-${lg.id}-${fBoost}`}
+                                onBlur={ev=>updateFaveBoost(lg.id,ev.target.value)}
+                                onKeyDown={ev=>{if(ev.key==="Enter")updateFaveBoost(lg.id,ev.target.value);}}
+                                style={{background:C.SUR,border:`1px solid ${hasFave?"#f59e0b":C.BD2}`,borderRadius:8,color:hasFave?"#fde68a":"#94a3b8",fontSize:10,fontWeight:700,padding:"4px 3px",width:32,outline:"none",textAlign:"center",flexShrink:0}}/>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </>)}
+                  </>)}
+                </>);
+              })()}
+              {/* Disabled leagues sub-list */}
+              {disabledLgs.length>0&&(<>
+                <div style={{padding:"12px 16px 6px",marginTop:8,borderTop:`2px solid ${C.BD2}`}}>
+                  <span style={{fontSize:10,fontWeight:700,color:"#f87171",letterSpacing:"0.08em"}}>DISABLED LEAGUES ({disabledLgs.length})</span>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"28px 24px 1fr 50px 60px 150px",gap:8,padding:"4px 16px 6px"}}>
+                  {["","","LEAGUE","ON/OFF","MOD",""].map((h,i)=><div key={i} style={{fontSize:9,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
+                </div>
+                {disabledLgs.map((lg,i)=><LeagueRow key={lg.id} lg={lg} i={i} enabled={false} committedMod={leagueMods[lg.id]??0} favValue={favTeams[lg.id]} faveBoost={faveBoosts[lg.id]} C={C} onToggle={toggleLeague} onUpdateMod={updateMod} onUpdateFave={updateFave} onUpdateFaveBoost={updateFaveBoost}/>)}
+              </>)}
+            </>);
+          })()}
+        </div>
+      )}
+
+      {tab==="missed"&&(
+        <div style={{paddingBottom:80,maxWidth:860,margin:"0 auto"}}>
+          {(()=>{
+            // Two independent sources of "didn't make the cut":
+            //  1. scraper-side  — pushed in the schedule JSON as `dropped`
+            //  2. app-side      — scraped fine, but its league is off/pending here
+            const REASONS={
+              channel:{label:"NO CHANNEL YOU GET",  color:"#f87171", hint:"airs only on services not in channels.txt"},
+              cutoff: {label:"BEFORE 5AM CUTOFF",   color:"#a78bfa", hint:"starts before the 5am day boundary"},
+              practice:{label:"PRACTICE / QUALIFYING",color:"#fbbf24",hint:"session, not the actual event"},
+              marquee:{label:"NOT MARQUEE",         color:"#60a5fa", hint:"league is marquee-only"},
+              belowtier:{label:"BELOW DIVISION",    color:"#c084fc", hint:"neither team rated — lower division than wanted"},
+              leagueOff:{label:"LEAGUE TURNED OFF", color:"#94a3b8", hint:"you switched this league off"},
+              leaguePending:{label:"LEAGUE PENDING",color:"#fb923c", hint:"new league awaiting a decision"},
+            };
+            const rows=[];
+            (droppedEvents||[]).forEach((d,i)=>rows.push({
+              key:`s${i}`, reason:d.reason||"channel", time:d.time||"", name:d.name||"",
+              league:d.league||"", sport:d.sport||"Other", detail:d.detail||d.channel||"",
+            }));
+            (parsedEvents||[]).forEach((e,i)=>{
+              const st=leagueStatus[e.leagueId]?.status;
+              if(st==="active") return;
+              rows.push({
+                key:`a${i}`, reason: st==="off"?"leagueOff":"leaguePending",
+                time:e.time||"", name:e.name||"", rk:e.rk, league:e.league||"", sport:e.sport||"Other",
+                detail: st==="off" ? "league is switched off in the League tab"
+                                   : "league hasn't been turned on or off yet",
+              });
+            });
+
+            if(!rows.length) return (
+              <div style={{padding:"40px 20px",textAlign:"center",color:C.MT,fontSize:12}}>
+                Nothing was dropped for {formatDateLabel(scheduleDate)} — everything scraped made it through.
+              </div>
+            );
+
+            const byReason={};
+            rows.forEach(r=>{(byReason[r.reason]=byReason[r.reason]||[]).push(r);});
+            const order=Object.keys(byReason).sort((a,b)=>byReason[b].length-byReason[a].length);
+
+            return(<>
+              <div style={{display:"flex",gap:6,flexWrap:"wrap",padding:"10px 12px 4px"}}>
+                {order.map(k=>(
+                  <div key={k} style={{fontSize:9,fontWeight:700,padding:"3px 8px",borderRadius:20,
+                    background:`${(REASONS[k]||{}).color||"#94a3b8"}18`,
+                    border:`1px solid ${(REASONS[k]||{}).color||"#94a3b8"}`,
+                    color:(REASONS[k]||{}).color||"#94a3b8"}}>
+                    {(REASONS[k]||{}).label||k} {byReason[k].length}
+                  </div>
+                ))}
+                <div style={{fontSize:9,color:C.DM,alignSelf:"center",marginLeft:4}}>{rows.length} total</div>
+              </div>
+              {order.map(k=>{
+                const meta=REASONS[k]||{label:k,color:"#94a3b8",hint:""};
+                const grp=[...byReason[k]].sort((a,b)=>
+                  (a.sport||"Other").localeCompare(b.sport||"Other")
+                  || (a.time||"").localeCompare(b.time||""));
+                return(
+                  <div key={k}>
+                    <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px"}}>
+                      <span className="espn-display" style={{fontSize:12,fontWeight:700,color:meta.color,letterSpacing:"0.03em"}}>{meta.label}</span>
+                      <span style={{fontSize:10,color:C.DM}}>({grp.length}) · {meta.hint}</span>
+                    </div>
+                    {grp.map(r=>(
+                      <div key={r.key} style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",
+                        display:"grid",gridTemplateColumns:"52px minmax(0,1fr) 230px",gap:10,alignItems:"center",
+                        background:`${meta.color}0d`,border:`1px solid ${meta.color}33`}}>
+                        <div className="espn-display" style={{background:`${meta.color}18`,border:`1.5px solid ${meta.color}`,
+                          borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
+                          <div style={{fontSize:11,fontWeight:700,color:meta.color}}>{sportIcon(r.sport)}</div>
+                          <div style={{fontSize:8,color:C.MT,marginTop:1}}>{r.time?m2t(t2m(r.time)):"—"}</div>
+                        </div>
+                        <div style={{minWidth:0}}>
+                          <div style={{fontSize:13,fontWeight:600,color:"#cbd5e1",overflow:"hidden",
+                            textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{evName(r)}</div>
+                          <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",
+                            textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.league}</div>
+                        </div>
+                        <div style={{fontSize:9,color:C.DM,lineHeight:1.35}}>{r.detail}</div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </>);
+          })()}
+        </div>
+      )}
+
+      {selEv&&(
+        <div ref={detailPanelRef} style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+            <div>
+              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{evName(selEv)}</div>
+              <div style={{fontSize:10,color:C.MT}}>{selEv.league} · <ChBadges channel={selEv.channel}/> · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds?.toFixed(1)??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{faveBoosts[selEv.leagueId]??FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
+            </div>
+            <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
+          </div>
+          {selEv.tv===-1&&selEv.why&&(<div style={{background:"#2d1515",border:"1px solid #5a2020",borderRadius:6,padding:"8px 10px",marginBottom:10,fontSize:10,color:"#fca5a5",lineHeight:1.5}}>
+            <div style={{fontFamily:"monospace",fontSize:9,color:C.A,marginBottom:3}}>WHY UNASSIGNED</div>
+            {selEv.why}
+            {selEv.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6,display:"block"}} onClick={()=>bumpAndAssign(selEv)}>⚡ Bump "{selEv.bumpTgt.label||selEv.bumpTgt.name}"</button>}
+          </div>)}
+          <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>{selEv.tv===-1?"ASSIGN TO:":"MOVE TO:"}</div>
+          <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:10}}>
+            {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+              const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
+              const conflict=selEv.tv!==tvId&&final.some(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
+              return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:conflict?"not-allowed":"pointer",background:selEv.tv===tvId?C.A:"#2e3545",color:selEv.tv===tvId?"#fff":C.MT,border:`1px solid ${selEv.tv===tvId?C.A:C.BD2}`,opacity:conflict?0.3:1}} onClick={()=>{if(!conflict){const e=final.find(a=>a.id===selEv.id);if(e){setPrioOvr(p=>({...p,[selEv.id]:e.priority}));}}}} title={conflict?`Conflict`:tv.loc}>{tv.name}{selEv.tv===tvId?" ✓":""}{conflict?" ✗":""}</button>);
+            })}
+          </div>
+          {selEv.tv!==-1&&(<>
+            <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>📡 MIRROR TO: <span style={{color:C.DM}}>(displaces & reschedules)</span></div>
+            <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
+              {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                if(tvId===selEv.tv)return null;
+                const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;const mirSet=mirrors[selEv.id] instanceof Set?mirrors[selEv.id]:new Set(mirrors[selEv.id]||[]);const mir=mirSet.has(tvId);
+                const disp=final.find(a=>a&&a.tv===tvId&&a.id!==selEv.id&&overlaps(a,selEv));
+                return(<button key={tvId} style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,cursor:"pointer",background:mir?"#164e63":disp?"#2d1a0a":"#1f2937",color:mir?"#a5f3fc":disp?"#fb923c":C.MT,border:`1px solid ${mir?"#22d3ee":disp?"#c2410c":C.BD2}`}} onClick={()=>toggleMirror(selEv.id,tvId)}>{mir?"📡 ":disp?"⚡ ":""}{tv.name}{mir?" ✓":""}</button>);
+              })}
+            </div>
+            {(mirrors[selEv.id] instanceof Set?mirrors[selEv.id]:new Set(mirrors[selEv.id]||[])).size>0&&<div style={{fontFamily:"monospace",fontSize:10,color:"#22d3ee",marginTop:6}}>📡 Mirroring to {[...mirrors[selEv.id]].map(id=>TVS[id]?.name).join(", ")}</div>}
+          </>)}
+
+          {/* ── OVERRIDE ASSIGNMENT ── */}
+          <div style={{marginTop:10,borderTop:`1px solid ${C.BD}`,paddingTop:8}}>
+            <div style={{fontFamily:"monospace",fontSize:10,color:"#f59e0b",marginBottom:6}}>⏱ OVERRIDE ASSIGNMENT</div>
+            {ovrForm&&ovrForm.eventId===selEv.id?(
+              <div style={{background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.3)",borderRadius:6,padding:"8px"}}>
+                <div style={{display:"flex",gap:4,alignItems:"center",marginBottom:6,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TV:</span>
+                  {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
+                    const tvLabel=tvNames[tvId]||TVS[tvId].name;
+                    const isActive=ovrForm.tvId===tvId;
+                    return(<button key={tvId} onClick={()=>setOvrForm(f=>({...f,tvId}))}
+                      style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,cursor:"pointer",
+                        background:isActive?"#f59e0b":"transparent",color:isActive?"#000":C.MT,
+                        border:`1px solid ${isActive?"#f59e0b":C.BD2}`}}>{tvLabel}</button>);
+                  })}
+                </div>
+                <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,flexWrap:"wrap"}}>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FROM:</span>
+                    <input type="time"
+                      value={`${String(Math.floor(ovrForm.fromMin/60)).padStart(2,'0')}:${String(ovrForm.fromMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,fromMin:+h*60+ +m}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                  <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>TO:</span>
+                    <input type="time"
+                      value={`${String(Math.floor(ovrForm.toMin/60)).padStart(2,'0')}:${String(ovrForm.toMin%60).padStart(2,'0')}`}
+                      onChange={e=>{const[h,m]=e.target.value.split(':');setOvrForm(f=>({...f,toMin:+h*60+ +m}));}}
+                      style={{fontFamily:"monospace",fontSize:10,background:C.SUR,color:"#fff",border:`1px solid ${C.BD}`,borderRadius:4,padding:"2px 4px"}}/>
+                  </div>
+                </div>
+                <div style={{display:"flex",gap:6}}>
+                  <button disabled={ovrSaving} onClick={()=>{
+                    if(ovrForm.tvId===null){alert("Pick a TV first");return;}
+                    if(ovrForm.toMin<=ovrForm.fromMin){alert("End time must be after start");return;}
+                    const conflict=final.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
+                      !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin));
+                    if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||TVS[ovrForm.tvId].name} already has "${evName(conflict)}" in that window. Override anyway?`))return;
+                    saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
+                  }} style={{padding:"4px 12px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                    background:"#f59e0b",color:"#000",border:"none",cursor:"pointer",fontWeight:700}}>
+                    {ovrSaving?"SAVING...":"SAVE OVERRIDE"}
+                  </button>
+                  <button onClick={()=>setOvrForm(null)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"transparent",color:C.MT,border:`1px solid ${C.BD}`,cursor:"pointer"}}>
+                    CANCEL
+                  </button>
+                  <button onClick={()=>removeFromGrid(selEv.id)}
+                    style={{padding:"4px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,
+                      background:"rgba(239,68,68,0.1)",color:"#ef4444",
+                      border:"1px solid rgba(239,68,68,0.4)",cursor:"pointer",marginLeft:"auto"}}>
+                    🚫 REMOVE FROM GRID
+                  </button>
+                </div>
+              </div>
+            ):(
+              <div style={{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}}>
+                <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:null,fromMin:selEv.startMin,toMin:selEv.endMin})}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
+                    background:"rgba(245,158,11,0.1)",color:"#f59e0b",border:"1px solid rgba(245,158,11,0.4)"}}>
+                  + SET OVERRIDE
+                </button>
+                <button onClick={()=>removeFromGrid(selEv.id)}
+                  style={{padding:"3px 10px",borderRadius:4,fontFamily:"monospace",fontSize:10,cursor:"pointer",
+                    background:"rgba(239,68,68,0.1)",color:"#ef4444",border:"1px solid rgba(239,68,68,0.4)"}}>
+                  🚫 REMOVE FROM GRID
+                </button>
+                {tvOverrides.filter(o=>o.eventId===selEv.id).map(o=>(
+                  <div key={`${o.eventId}-${o.tvId}`} style={{display:"flex",gap:4,alignItems:"center",
+                    background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.2)",
+                    borderRadius:4,padding:"2px 6px"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:"#f59e0b"}}>
+                      {tvNames[o.tvId]||TVS[o.tvId].name} {String(Math.floor(o.startMin/60)).padStart(2,'0')}:{String(o.startMin%60).padStart(2,'0')}–{String(Math.floor(o.endMin/60)).padStart(2,'0')}:{String(o.endMin%60).padStart(2,'0')}
+                    </span>
+                    <button onClick={()=>setOvrForm({eventId:selEv.id,tvId:o.tvId,fromMin:o.startMin,toMin:o.endMin})}
+                      style={{background:"none",border:"none",color:"#f59e0b",cursor:"pointer",fontSize:10,padding:0,lineHeight:1}}
+                      title="Edit override">✏️</button>
+                    <button onClick={()=>removeOverride(selEv.id,o.tvId)}
+                      style={{background:"none",border:"none",color:"#ef4444",cursor:"pointer",fontSize:11,padding:0,lineHeight:1}}
+                      title="Remove override">✕</button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+    loadChannels().then(() => {
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App/>);
+    });
+  </script>
+</body>
+</html>
