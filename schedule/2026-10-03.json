@@ -163,7 +163,7 @@
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "eng.w.1",
-      "lgR": 84.3,
+      "lgR": 63.93,
       "_rk": [
         30,
         11
@@ -220,8 +220,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0,
-        "l": "insufficient data \u2014 flat mod"
+        "v": -0.519166106254235,
+        "l": "Quality -0.5 (GFR 74.5-76.8 vs tier1 baseline 151.6 (Serie A Women (Italy)))"
       },
       "_sk": {
         "v": 0,
@@ -235,11 +235,15 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0,
+      "_score": -0.519166106254235,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "ita.1",
-      "lgR": 75.82
+      "lgR": 75.82,
+      "_rk": [
+        88,
+        65
+      ]
     },
     {
       "id": 46021477,
@@ -302,8 +306,8 @@
       "_score": 2.5718223258772097,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "sco.3",
-      "lgR": 59.72,
+      "espn": "",
+      "lgR": 75.72,
       "_rk": [
         714,
         680
@@ -340,8 +344,8 @@
       "_score": 5.294180006360598,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "sco.3",
-      "lgR": 59.72,
+      "espn": "",
+      "lgR": 75.72,
       "_rk": [
         610,
         688
@@ -379,8 +383,8 @@
       "_score": 16.768790416622473,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "sco.3",
-      "lgR": 59.72,
+      "espn": "",
+      "lgR": 75.72,
       "_rk": [
         406,
         488
@@ -9614,9 +9618,9 @@
       "sport": "Football",
       "time": "13:00",
       "date": "2026-10-03",
-      "channel": "NBC Sports Philadelphia, FloSports",
+      "channel": "NBC Sports Philadelphia, Monumental Sports Network, FloSports",
       "reason": "channel",
-      "detail": "airs on NBC Sports Philadelphia, FloSports \u2014 none in channels.txt"
+      "detail": "airs on NBC Sports Philadelphia, Monumental Sports Network, FloSports \u2014 none in channels.txt"
     },
     {
       "name": "Marist @ Stetson",
@@ -11714,6 +11718,8 @@
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.39,
+        "SuperLiga (Romania)": 75.79,
+        "Superliga (Denmark)": 79.3,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -11745,8 +11751,6 @@
         "Ligue 2 (France)": 76.12,
         "Serie B (Italy)": 75.8,
         "Serie B (Brazil)": 72.44,
-        "SuperLiga (Romania)": 75.79,
-        "Superliga (Denmark)": 79.3,
         "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
@@ -11888,6 +11892,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "Persian Gulf Pro League (Iran)": {
           "country": "Iran",
           "confederation": "AFC"
@@ -12011,14 +12023,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -12601,7 +12605,7 @@
     },
     "usl-champ": {
       "rating": 68.62,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "USL Championship",
       "country": "USA",
       "confederation": "CONCACAF",
@@ -12635,7 +12639,7 @@
     },
     "primera-a": {
       "rating": 79.83,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Primera A",
       "country": "Colombia",
       "confederation": "CONMEBOL",
@@ -12690,7 +12694,7 @@
     },
     "laliga2": {
       "rating": 78.56,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "LaLiga 2",
       "country": "Spain",
       "confederation": "UEFA",
@@ -12710,17 +12714,17 @@
     },
     "usl-super-league": {
       "rating": 62.73,
-      "area": "mens_club_competition",
+      "area": "womens_club_league",
       "gfrLeague": "USL Super League",
       "country": "USA",
       "confederation": "CONCACAF",
-      "rosterMatched": 5,
+      "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1"
     },
     "liga-mx": {
       "rating": 80.05,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF",
@@ -12729,8 +12733,8 @@
       "rosterCode": "mex.1"
     },
     "women-s-super-league": {
-      "rating": 84.3,
-      "area": "womens_club_competition",
+      "rating": 63.93,
+      "area": "womens_club_league",
       "rosterMatched": 14,
       "rosterTotal": 14,
       "rosterCode": "eng.w.1",
@@ -12739,7 +12743,7 @@
       "confederation": "UEFA"
     },
     "league-one": {
-      "rating": 59.72,
+      "rating": 75.72,
       "area": "mens_club_league",
       "gfrLeague": "League One",
       "country": "England",
@@ -12766,11 +12770,11 @@
     },
     "serie-a-women": {
       "rating": 75.82,
-      "area": "womens_club_competition",
+      "area": "womens_club_league",
       "gfrLeague": "Serie A Women",
       "country": "Italy",
       "confederation": "UEFA",
-      "rosterMatched": 20,
+      "rosterMatched": 14,
       "rosterTotal": 20,
       "rosterCode": "ita.1"
     },
@@ -12884,7 +12888,7 @@
     },
     "premier-league": {
       "rating": 91.09,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Premier League",
       "country": "England",
       "confederation": "UEFA",
@@ -12893,7 +12897,7 @@
     },
     "serie-a": {
       "rating": 85.56,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Serie A",
       "country": "Italy",
       "confederation": "UEFA",
@@ -12911,7 +12915,7 @@
     },
     "liga-portugal": {
       "rating": 82.13,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Liga Portugal",
       "country": "Portugal",
       "confederation": "UEFA",
@@ -12919,7 +12923,7 @@
       "rosterTotal": 18
     },
     "pro-league": {
-      "rating": 82.56,
+      "rating": 82.53,
       "area": "mens_club_league",
       "gfrLeague": "Pro League",
       "country": "Belgium",
@@ -12937,8 +12941,8 @@
       "rosterTotal": 18
     },
     "ligue-2": {
-      "rating": 76.33,
-      "area": "mens_club_competition",
+      "rating": 76.12,
+      "area": "mens_club_league",
       "gfrLeague": "Ligue 2",
       "country": "France",
       "confederation": "UEFA",
@@ -12947,7 +12951,7 @@
     },
     "ligue-1": {
       "rating": 85.3,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
       "gfrLeague": "Ligue 1",
       "country": "France",
       "confederation": "UEFA",
@@ -13070,7 +13074,8 @@
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 26,
-      "rosterTotal": 42
+      "rosterTotal": 42,
+      "rosterCode": "usa.usl.l1.cup"
     },
     "fa-community-shield": {
       "rating": 96.45,
@@ -13150,10 +13155,10 @@
       "rosterTotal": 80
     },
     "serie-a-cup-women": {
-      "rating": 85.56,
+      "rating": 61.31,
       "area": "womens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 20,
+      "rosterMatched": 14,
       "rosterTotal": 20
     },
     "formula-3": {
