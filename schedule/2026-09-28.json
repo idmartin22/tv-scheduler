@@ -3,6 +3,39 @@
   "label": "Monday, September 28",
   "events": [
     {
+      "id": 20475536,
+      "lgId": 3643,
+      "lgSlug": "asean-cup",
+      "time": "05:00",
+      "name": "Bangladesh @ Singapore",
+      "sport": "Soccer",
+      "league": "ASEAN Cup",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "unclassified",
+      "area": "mens_club_league",
+      "espn": ""
+    },
+    {
       "id": 81686917,
       "lgId": 2003,
       "lgSlug": "atp",
@@ -31,6 +64,39 @@
         "l": ""
       },
       "_score": 10
+    },
+    {
+      "id": 32860193,
+      "lgId": 3643,
+      "lgSlug": "asean-cup",
+      "time": "08:30",
+      "name": "Indonesia @ Malaysia",
+      "sport": "Soccer",
+      "league": "ASEAN Cup",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "unclassified",
+      "area": "mens_club_league",
+      "espn": ""
     },
     {
       "id": 71675246,
@@ -374,7 +440,8 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -401,6 +468,44 @@
       "_rk": [
         4,
         8
+      ]
+    },
+    {
+      "id": 98408552,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Italy @ T\u00fcrkiye",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 11.596427760942987,
+        "l": "Quality +11.6 (Elo Italy 1837 vs Turkey 1839, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.596427760942987,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        20,
+        19
       ]
     },
     {
@@ -451,7 +556,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -597,7 +703,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -673,7 +780,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -819,7 +927,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX Sports 2",
-        "TUDN"
+        "TUDN",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -871,16 +980,6 @@
       "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
-      "name": "Bangladesh @ Singapore",
-      "league": "ASEAN Cup",
-      "sport": "Soccer",
-      "time": "05:00",
-      "date": "2026-09-28",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "Hangzhou Open",
       "league": "ATP",
       "sport": "Tennis",
@@ -889,16 +988,6 @@
       "channel": "T2, TSN+",
       "reason": "channel",
       "detail": "airs on T2, TSN+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Indonesia @ Malaysia",
-      "league": "ASEAN Cup",
-      "sport": "Soccer",
-      "time": "08:30",
-      "date": "2026-09-28",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Ukraine @ Georgia",
@@ -929,16 +1018,6 @@
       "channel": "DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Italy @ T\u00fcrkiye",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-28",
-      "channel": "ViX, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on ViX, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Monmouth @ Stony Brook",
@@ -2355,6 +2434,12 @@
       "confederation": "UEFA",
       "rosterMatched": 3,
       "rosterTotal": 10
+    },
+    "asean-cup": {
+      "area": "mens_club_league"
+    },
+    "dfb-pokal-women": {
+      "area": "womens_club_league"
     }
   }
 }
