@@ -31,8 +31,8 @@
         "l": ""
       },
       "_score": -20.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
+      "cat": "club_competition",
+      "area": "mens_club_competition",
       "espn": ""
     },
     {
@@ -64,8 +64,8 @@
         "l": ""
       },
       "_score": -20.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
+      "cat": "club_competition",
+      "area": "mens_club_competition",
       "espn": ""
     },
     {
@@ -375,44 +375,6 @@
       ]
     },
     {
-      "id": 64320220,
-      "lgId": 280,
-      "lgSlug": "uefa-nations-league",
-      "time": "14:45",
-      "name": "T\u00fcrkiye @ Belgium",
-      "sport": "Soccer",
-      "league": "UEFA Nations League",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 13.138168404284196,
-        "l": "Quality +13.1 (Elo Turkey 1839 vs Belgium 1979, world baseline 2608)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 13.138168404284196,
-      "cat": "national_men",
-      "area": "mens_national",
-      "espn": "uefa.nations",
-      "lgR": 1614.15,
-      "_rk": [
-        19,
-        8
-      ]
-    },
-    {
       "id": 1541792,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -422,8 +384,7 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 1",
-        "FOX One",
-        "ViX"
+        "FOX One"
       ],
       "dur": 120,
       "_st": {
@@ -5392,8 +5353,7 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2",
-        "ViX"
+        "FOX Sports 2"
       ],
       "dur": 120,
       "_st": {
@@ -5492,8 +5452,7 @@
       "sport": "Soccer",
       "league": "Liga MX Femenil",
       "ch": [
-        "TUDN",
-        "ViX"
+        "TUDN"
       ],
       "dur": 120,
       "_st": {
@@ -5653,6 +5612,16 @@
       "channel": "DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "T\u00fcrkiye @ Belgium",
+      "league": "UEFA Nations League",
+      "sport": "Soccer",
+      "time": "14:45",
+      "date": "2026-10-02",
+      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Slovakia @ Faroe Islands",
@@ -7859,17 +7828,19 @@
       "rosterTotal": 10
     },
     "asean-cup": {
-      "area": "mens_club_league"
+      "area": "mens_club_competition"
     },
     "dfb-pokal-women": {
-      "area": "womens_club_league"
+      "area": "womens_club_competition"
     },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 24,
-      "rosterCode": "eng.5"
+      "rosterCode": "eng.5",
+      "gfrLeague": "National League",
+      "country": "England"
     }
   }
 }
