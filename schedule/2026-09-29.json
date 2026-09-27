@@ -31,8 +31,8 @@
         "l": ""
       },
       "_score": -20.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
+      "cat": "club_competition",
+      "area": "mens_club_competition",
       "espn": ""
     },
     {
@@ -64,8 +64,8 @@
         "l": ""
       },
       "_score": -20.0,
-      "cat": "unclassified",
-      "area": "mens_club_league",
+      "cat": "club_competition",
+      "area": "mens_club_competition",
       "espn": ""
     },
     {
@@ -221,7 +221,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -259,7 +260,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -539,6 +541,44 @@
       "_score": 0.0
     },
     {
+      "id": 68277215,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Switzerland @ Scotland",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 11.737573031108026,
+        "l": "Quality +11.7 (Elo Switzerland 1942 vs Scotland 1747, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.737573031108026,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        11,
+        33
+      ]
+    },
+    {
       "id": 96062856,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -547,7 +587,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -651,6 +692,158 @@
       "_rk": [
         16,
         1
+      ]
+    },
+    {
+      "id": 60120335,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Estonia @ Bulgaria",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 2.1505519883595205,
+        "l": "Quality +2.2 (Elo Estonia 1374 vs Bulgaria 1432, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.1505519883595205,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        112,
+        94
+      ]
+    },
+    {
+      "id": 30264396,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Iceland @ Luxembourg",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 4.5825935665879065,
+        "l": "Quality +4.6 (Elo Iceland 1554 vs Luxembourg 1476, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.5825935665879065,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        72,
+        84
+      ]
+    },
+    {
+      "id": 39469779,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Albania @ San Marino",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.687717371407651,
+        "l": "Quality -1.7 (Elo Albania 1631 vs San Marino 822, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.687717371407651,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        56,
+        206
+      ]
+    },
+    {
+      "id": 9893700,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Kazakhstan @ Slovakia",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 5.353463888258512,
+        "l": "Quality +5.4 (Elo Kazakhstan 1431 vs Slovakia 1670, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.353463888258512,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        95,
+        50
       ]
     },
     {
@@ -1150,7 +1343,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -1189,7 +1383,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX One",
-        "Tubi"
+        "Tubi",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -1293,7 +1488,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -1871,7 +2067,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -2285,7 +2482,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -2410,56 +2608,6 @@
       "channel": "T2, TSN+",
       "reason": "channel",
       "detail": "airs on T2, TSN+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Switzerland @ Scotland",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-29",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Estonia @ Bulgaria",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-29",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Iceland @ Luxembourg",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-29",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Albania @ San Marino",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-29",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Kazakhstan @ Slovakia",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-09-29",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Lehigh @ University of Delaware",
@@ -3929,17 +4077,19 @@
       "rosterTotal": 10
     },
     "asean-cup": {
-      "area": "mens_club_league"
+      "area": "mens_club_competition"
     },
     "dfb-pokal-women": {
-      "area": "womens_club_league"
+      "area": "womens_club_competition"
     },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 24,
-      "rosterCode": "eng.5"
+      "rosterCode": "eng.5",
+      "gfrLeague": "National League",
+      "country": "England"
     }
   }
 }
