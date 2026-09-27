@@ -3,6 +3,72 @@
   "label": "Friday, October 2",
   "events": [
     {
+      "id": 32453803,
+      "lgId": 3643,
+      "lgSlug": "asean-cup",
+      "time": "05:00",
+      "name": "Pakistan @ Vietnam",
+      "sport": "Soccer",
+      "league": "ASEAN Cup",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "unclassified",
+      "area": "mens_club_league",
+      "espn": ""
+    },
+    {
+      "id": 54629213,
+      "lgId": 3643,
+      "lgSlug": "asean-cup",
+      "time": "05:00",
+      "name": "Philippines @ Thailand",
+      "sport": "Soccer",
+      "league": "ASEAN Cup",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "unclassified",
+      "area": "mens_club_league",
+      "espn": ""
+    },
+    {
       "id": 69495416,
       "lgId": 1999,
       "lgSlug": "dp-world-tour",
@@ -31,6 +97,36 @@
         "l": ""
       },
       "_score": 15
+    },
+    {
+      "id": 60564638,
+      "lgId": 2066,
+      "lgSlug": "world-rally-championship",
+      "time": "08:30",
+      "name": "Rally Italia Sardegna",
+      "sport": "Motorsports",
+      "league": "World Rally Championship",
+      "ch": [
+        "DAZN US"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
     },
     {
       "id": 80862382,
@@ -279,6 +375,44 @@
       ]
     },
     {
+      "id": 64320220,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "T\u00fcrkiye @ Belgium",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 13.138168404284196,
+        "l": "Quality +13.1 (Elo Turkey 1839 vs Belgium 1979, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 13.138168404284196,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        19,
+        8
+      ]
+    },
+    {
       "id": 1541792,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -288,7 +422,8 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 1",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -357,7 +492,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -676,36 +812,6 @@
       "cat": "unclassified"
     },
     {
-      "id": 90372961,
-      "lgId": 2180,
-      "lgSlug": "ncaa-women-5",
-      "time": "18:00",
-      "name": "Robert Morris @ Penn State",
-      "sport": "Hockey",
-      "league": "Women's College Ice Hockey",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 7117175,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
@@ -714,7 +820,8 @@
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -1986,36 +2093,6 @@
       "_score": 0
     },
     {
-      "id": 87442011,
-      "lgId": 2180,
-      "lgSlug": "ncaa-women-5",
-      "time": "18:00",
-      "name": "Boston University @ Wisconsin",
-      "sport": "Hockey",
-      "league": "Women's College Ice Hockey",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 38961800,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -2055,6 +2132,7 @@
       "sport": "Soccer",
       "league": "Primera Division",
       "ch": [
+        "Fanatiz",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -2129,7 +2207,8 @@
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -2361,7 +2440,7 @@
       "sport": "Hockey",
       "league": "Women's College Ice Hockey",
       "ch": [
-        "Big Ten Plus"
+        "MyNetworkTV"
       ],
       "dur": 150,
       "_st": {
@@ -2381,128 +2460,6 @@
         "l": ""
       },
       "_score": 0
-    },
-    {
-      "id": 12647915,
-      "lgId": 2180,
-      "lgSlug": "ncaa-women-5",
-      "time": "19:00",
-      "name": "St. Cloud State @ Minnesota State",
-      "sport": "Hockey",
-      "league": "Women's College Ice Hockey",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 26204775,
-      "lgId": 2180,
-      "lgSlug": "ncaa-women-5",
-      "time": "19:00",
-      "name": "Ohio State @ St. Thomas (MN)",
-      "sport": "Hockey",
-      "league": "Women's College Ice Hockey",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 37994388,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "19:00",
-      "name": "Northwestern @ Rutgers",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 27003554,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "19:00",
-      "name": "Ohio State @ Penn State",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
     },
     {
       "id": 70529311,
@@ -2513,6 +2470,7 @@
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
+        "ESPN U",
         "ESPN Unlimited"
       ],
       "dur": 120,
@@ -2575,7 +2533,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -2605,7 +2564,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -2635,7 +2595,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -2665,7 +2626,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -2695,7 +2657,8 @@
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -4263,7 +4226,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -4293,7 +4257,8 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -4323,7 +4288,8 @@
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -4576,37 +4542,6 @@
       "cat": "unclassified"
     },
     {
-      "id": 18949153,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "20:00",
-      "name": "Maryland @ Minnesota",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 87248284,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
@@ -4615,7 +4550,8 @@
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "SEC Network +"
       ],
       "dur": 120,
       "_st": {
@@ -4714,7 +4650,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX One"
+        "FOX One",
+        "Tubi"
       ],
       "dur": 120,
       "_st": {
@@ -5005,6 +4942,82 @@
       "_score": 0
     },
     {
+      "id": 78502318,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "20:30",
+      "name": "Uni\u00f3n @ Boca Juniors",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 10.721921218333621,
+        "l": "Quality +10.7 (GFR 81.5-86.4 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.721921218333621,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.56,
+      "_rk": [
+        261,
+        61
+      ]
+    },
+    {
+      "id": 31756889,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "20:30",
+      "name": "Gimnasia La Plata @ Independiente Rivadavia",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "Fanatiz"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.63669644164593,
+        "l": "Quality +8.6 (GFR 82.6-84.4 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.63669644164593,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.56,
+      "_rk": [
+        194,
+        115
+      ]
+    },
+    {
       "id": 83964014,
       "lgId": 230,
       "lgSlug": "primera-a",
@@ -5013,6 +5026,7 @@
       "sport": "Soccer",
       "league": "Primera A",
       "ch": [
+        "Fanatiz",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -5115,37 +5129,6 @@
         42,
         139
       ]
-    },
-    {
-      "id": 29484901,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "21:00",
-      "name": "UCLA @ Oregon",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
     },
     {
       "id": 84781720,
@@ -5370,97 +5353,6 @@
       ]
     },
     {
-      "id": 9587704,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "22:00",
-      "name": "Wisconsin @ Washington",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 82433654,
-      "lgId": 2890,
-      "lgSlug": "ncaa-college-volleyball-women",
-      "time": "22:00",
-      "name": "Michigan State @ UCLA",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 32777135,
-      "lgId": 2890,
-      "lgSlug": "ncaa-college-volleyball-women",
-      "time": "22:00",
-      "name": "Illinois @ Washington",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "Big Ten Plus"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 82559603,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -5500,7 +5392,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5599,7 +5492,8 @@
       "sport": "Soccer",
       "league": "Liga MX Femenil",
       "ch": [
-        "TUDN"
+        "TUDN",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5679,36 +5573,6 @@
       "channel": "Next Level Sports",
       "reason": "channel",
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
-    },
-    {
-      "name": "Pakistan @ Vietnam",
-      "league": "ASEAN Cup",
-      "sport": "Soccer",
-      "time": "05:00",
-      "date": "2026-10-02",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Philippines @ Thailand",
-      "league": "ASEAN Cup",
-      "sport": "Soccer",
-      "time": "05:00",
-      "date": "2026-10-02",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Rally Italia Sardegna",
-      "league": "World Rally Championship",
-      "sport": "Motorsports",
-      "time": "08:30",
-      "date": "2026-10-02",
-      "channel": "DAZN US, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Montenegro @ Latvia",
@@ -5791,16 +5655,6 @@
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "T\u00fcrkiye @ Belgium",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-02",
-      "channel": "Fubo Sports, ViX, fubo Sports Network, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Fubo Sports, ViX, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "Slovakia @ Faroe Islands",
       "league": "UEFA Nations League",
       "sport": "Soccer",
@@ -5849,6 +5703,26 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Robert Morris @ Penn State",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Boston University @ Wisconsin",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "18:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Syracuse @ Mercyhurst",
@@ -6041,6 +5915,46 @@
       "detail": "airs on Monumental Sports Network, Sportsnet, Sportsnet NOW, Sportsnet+, TVA Sports \u2014 none in channels.txt"
     },
     {
+      "name": "St. Cloud State @ Minnesota State",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ohio State @ St. Thomas (MN)",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Northwestern @ Rutgers",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ohio State @ Penn State",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "RIT @ Niagara",
       "league": "College Ice Hockey",
       "sport": "Hockey",
@@ -6221,6 +6135,16 @@
       "detail": "airs on NESN, Sportsnet+, TSN+, TSN3 \u2014 none in channels.txt"
     },
     {
+      "name": "Maryland @ Minnesota",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "Paraguay @ Colombia",
       "league": "International Friendly",
       "sport": "Soccer",
@@ -6281,26 +6205,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Uni\u00f3n @ Boca Juniors",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "20:30",
-      "date": "2026-10-02",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Gimnasia La Plata @ Independiente Rivadavia",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "20:30",
-      "date": "2026-10-02",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
       "name": "Abbotsford Canucks @ Calgary Wranglers",
       "league": "AHL",
       "sport": "Hockey",
@@ -6339,6 +6243,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "UCLA @ Oregon",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "21:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Wyoming @ UC Davis",
@@ -6439,6 +6353,36 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wisconsin @ Washington",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "22:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Michigan State @ UCLA",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "22:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Illinois @ Washington",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "22:00",
+      "date": "2026-10-02",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
       "name": "Kamloops Blazers @ Kelowna Rockets",
@@ -7045,6 +6989,7 @@
       "seen": [
         "Liga MX (Mexico)",
         "MLS (USA)",
+        "National League (England)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
@@ -7912,6 +7857,19 @@
       "confederation": "UEFA",
       "rosterMatched": 3,
       "rosterTotal": 10
+    },
+    "asean-cup": {
+      "area": "mens_club_league"
+    },
+    "dfb-pokal-women": {
+      "area": "womens_club_league"
+    },
+    "national-league": {
+      "rating": 62.52,
+      "area": "mens_club_league",
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.5"
     }
   }
 }
