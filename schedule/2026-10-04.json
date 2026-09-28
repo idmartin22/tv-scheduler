@@ -3,36 +3,6 @@
   "label": "Sunday, October 4",
   "events": [
     {
-      "id": 78936433,
-      "lgId": 2066,
-      "lgSlug": "world-rally-championship",
-      "time": "05:38",
-      "name": "Rally Italia Sardegna",
-      "sport": "Motorsports",
-      "league": "World Rally Championship",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
-    },
-    {
       "id": 27617615,
       "lgId": 409,
       "lgSlug": "serie-a-women",
@@ -4759,6 +4729,16 @@
       "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "05:38",
+      "date": "2026-10-04",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "China Open",
       "league": "WTA",
       "sport": "Tennis",
@@ -5956,7 +5936,6 @@
         "League Two (England)",
         "Liga MX (Mexico)",
         "MLS (USA)",
-        "National League (England)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
@@ -6827,17 +6806,13 @@
       "rosterMatched": 3,
       "rosterTotal": 10
     },
-    "asean-cup": {
-      "area": "mens_club_competition"
-    },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 24,
-      "rosterCode": "eng.5",
       "gfrLeague": "National League",
-      "country": "England"
+      "country": "England",
+      "rosterMatched": 24,
+      "rosterTotal": 24
     }
   }
 }
