@@ -943,6 +943,8 @@ function App(){
           if(typeof d.soccerAdjustment==="number") setSoccerAdjustment(d.soccerAdjustment);
           if(d.faveBoosts&&typeof d.faveBoosts==="object") setFaveBoosts(d.faveBoosts);
           if(d.areaBases&&typeof d.areaBases==="object") setAreaBases(d.areaBases);
+          if(d.confedBases&&typeof d.confedBases==="object") setConfedBases(d.confedBases);
+          if(d.confedOverrides&&typeof d.confedOverrides==="object") setConfedOverrides(d.confedOverrides);
           if(d.areaOverrides&&typeof d.areaOverrides==="object") setAreaOverrides(d.areaOverrides);
           if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
@@ -1126,6 +1128,8 @@ function App(){
       soccerAdjustment: overrides.soccerAdjustment ?? soccerAdjustment,
       faveBoosts: overrides.faveBoosts ?? faveBoosts,
       areaBases: overrides.areaBases ?? areaBases,
+      confedBases: overrides.confedBases ?? confedBases,
+      confedOverrides: overrides.confedOverrides ?? confedOverrides,
       areaOverrides: overrides.areaOverrides ?? areaOverrides,
       tvNames:    overrides.tvNames    ?? tvNames,
       tvOrder:    overrides.tvOrder    ?? tvOrder,
@@ -1133,7 +1137,7 @@ function App(){
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,areaBases,areaOverrides,tvNames,tvOrder,tvQuads,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,areaBases,areaOverrides,confedBases,confedOverrides,tvNames,tvOrder,tvQuads,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -1141,6 +1145,34 @@ function App(){
   // Takes the DISPLAYED baseline value (e.g. user types 55) and stores it as
   // a delta from 50, since 50 is the fixed reference point the whole GFR mod
   // scale is anchored to (EPL always computes to exactly 50).
+  // ── CONFEDERATION MODS FOR NATIONAL TEAMS ────────────────────────────────
+  // Every national fixture used to take one flat base, so an AFCON qualifier
+  // scored the same as a UEFA Nations League tie — and because CAF's mid-table
+  // sits above the world median, those games landed in the 60s and crowded the
+  // grid. The mod now comes from the confederation, anchored to the mean of
+  // each one's top ten on the Elo scale: UEFA 2010, CONMEBOL 1841, CAF 1724,
+  // AFC 1669, CONCACAF 1622, OFC 1054.
+  const CONFEDS=["UEFA","CONMEBOL","CAF","AFC","CONCACAF","OFC","INTERCONTINENTAL"];
+  const CONFED_LABEL={UEFA:"UEFA — Europe",CONMEBOL:"CONMEBOL — South America",
+    CAF:"CAF — Africa",AFC:"AFC — Asia",CONCACAF:"CONCACAF — N/C America",
+    OFC:"OFC — Oceania",INTERCONTINENTAL:"Intercontinental — World Cup, friendlies"};
+  const CONFED_DEFAULT={UEFA:50,CONMEBOL:42,CAF:36,AFC:33,CONCACAF:31,OFC:2,INTERCONTINENTAL:45};
+  // Worked out from the competition's own name. ESPN's code would be more
+  // stable but is not on the events yet, and this needs no re-scrape.
+  const confedFromName=(s)=>{
+    const t=(s||"").toLowerCase();
+    if(/world cup|friendly|finalissima|intercontinental|olympic/.test(t)
+       && !/qualif/.test(t)) return "INTERCONTINENTAL";
+    if(/uefa|euro|nations league a|european/.test(t)&&!/concacaf/.test(t)) return "UEFA";
+    if(/conmebol|copa america|south american/.test(t)) return "CONMEBOL";
+    if(/concacaf|gold cup|caribbean|central american/.test(t)) return "CONCACAF";
+    if(/afcon|africa|african|caf /.test(t)) return "CAF";
+    if(/afc|asian|gulf cup|asean/.test(t)) return "AFC";
+    if(/ofc|oceania|pacific/.test(t)) return "OFC";
+    if(/world cup qualif|wc qualif/.test(t)) return "INTERCONTINENTAL";
+    return null;
+  };
+
   const AREA_ORDER=["mens_club_league","mens_club_competition","mens_oneoff","mens_national",
                     "womens_club_league","womens_club_competition","womens_oneoff","womens_national"];
   const AREA_LABEL={mens_club_league:"Men's club leagues",mens_club_competition:"Men's club competitions",
@@ -1148,6 +1180,24 @@ function App(){
                     womens_club_league:"Women's club leagues",womens_club_competition:"Women's club competitions",
                     womens_oneoff:"Women's one-off finals",womens_national:"Women's national teams",
                     unassigned:"Unassigned — place these manually"};
+  // A national competition's mod comes from its confederation, not from one
+  // flat national base — that is what put AFCON qualifiers in the 60s.
+  const confedOf=(leagueId,leagueName)=>
+    confedOverrides[leagueId]||confedFromName(leagueName)||confedFromName(leagueId)||"INTERCONTINENTAL";
+  const confedBase=(c)=>{
+    const v=confedBases[c];
+    return (v===undefined||v===null||v==="")?(CONFED_DEFAULT[c]??45):Number(v);
+  };
+  const updateConfedBase=(c,val)=>{
+    const m={...confedBases,[c]:val===""?"":Number(val)};
+    setConfedBases(m);debouncedSave(buildSavePayload({confedBases:m}));
+  };
+  const updateConfedOverride=(leagueId,c)=>{
+    const m={...confedOverrides};
+    if(c) m[leagueId]=c; else delete m[leagueId];
+    setConfedOverrides(m);debouncedSave(buildSavePayload({confedOverrides:m}));
+  };
+  const isNationalArea=a=>a==="mens_national"||a==="womens_national";
   const areaBase=a=>areaBases[a]??50;
   // Mods run from the area's base at the top down to ZERO at the bottom, so
   // the gaps reflect the real rating spread. A league rated halfway between
@@ -1157,7 +1207,7 @@ function App(){
     if(!d) return undefined;
     // A flat area has no per-competition rating at all — national teams, where
     // every fixture takes the base and quality does the separating.
-    if(d.flat) return areaBase(area);
+    if(d.flat) return areaBase(area);   // non-national flat areas, if any
     if(rating===undefined||rating===null) return undefined;
     const span=(d.top??0)-(d.worst??0);
     if(!(span>0)) return areaBase(area);
@@ -1205,19 +1255,27 @@ function App(){
       //
       // Manual-mod soccer leagues are excluded, as before: they get their
       // whole score from their own typed mod, with nothing underneath.
-      let sa=0;
+      let sa=0, saLabel="Soccer adjustment";
       if(e.sport==="Soccer"&&leagueStatus[e.leagueId]?.scoring!=="manual"){
         const ar=areaOverrides[e.leagueId]||e.area;
+        if(isNationalArea(ar)){
+          // Confederation decides the mod; quality still separates fixtures
+          // within it. An AFCON qualifier and a UEFA Nations League tie no
+          // longer start from the same number.
+          sa=confedBase(confedOf(e.leagueId,e.league));
+          saLabel=`${confedOf(e.leagueId,e.league)} mod`;
+        }else{
         const rt=(e.lgR!==undefined&&e.lgR!==null)?e.lgR:(leagueGfr[e.leagueId]||{}).rating;
         const am=ar?areaModFor(ar,rt):undefined;
         sa=(am===undefined)?soccerAdjustment:am;   // no area yet -> old global nudge
+        }
       }
       const raw=e.rawBase+lm+fm+sa;
       const ov=prioOvr[e.id]??prioOvr[String(e.id)];
       const bd=[
         ...e.breakdown.filter(b=>b&&!b.l?.includes("League mod")&&!b.l?.includes("Fave")&&!b.l?.includes("Soccer adjustment")),
         lm>0&&{l:`League mod +${lm}`,v:lm},
-        sa!==0&&{l:`Soccer adjustment ${sa>0?"+":""}${sa}`,v:sa},
+        sa!==0&&{l:`${saLabel} ${sa>0?"+":""}${Number(sa).toFixed(1)}`,v:sa},
         fm>0&&{l:`⭐ Fave team match +${fm}`,v:fm},
       ].filter(Boolean);
       return {...e,priority:ov??raw,lm,isFave:fb.match,faveMatched:fb.teams,breakdown:bd};
@@ -2005,7 +2063,7 @@ function App(){
                               </div>
                               <div/>
                               <div onClick={ev=>ev.stopPropagation()}>
-                                {area!=="unassigned"&&(
+                                {area!=="unassigned"&&!isNationalArea(area)&&(
                                   <input type="number" defaultValue={areaBase(area)}
                                     key={`base-${area}-${areaBase(area)}`}
                                     title="Base mod: the best-rated league in this area gets this"
@@ -2016,12 +2074,79 @@ function App(){
                               </div>
                               <div style={{fontSize:9,color:C.DM}}>
                                 {area==="unassigned"?"set an area on each row"
+                                  :isNationalArea(area)?"mod comes from each confederation below"
                                   :d?(d.flat?"flat \u2014 every fixture takes the base, quality separates them"
                                            :`${d.top} \u2192 ${d.worst}  (base \u2192 0)`)
                                     :"no GFR ratings yet"}
                               </div>
                             </div>
-                            {open&&lgs.map(lg=>{
+                            {open&&isNationalArea(area)&&(()=>{
+                              const groups={};
+                              lgs.forEach(lg=>{
+                                const c=confedOf(lg.id,lg.n);
+                                (groups[c]=groups[c]||[]).push(lg);
+                              });
+                              return CONFEDS.filter(c=>groups[c]).map(c=>(
+                                <div key={c}>
+                                  <div style={{display:"grid",gridTemplateColumns:"60px 1fr 70px 210px",
+                                    gap:8,padding:"5px 16px 5px 32px",alignItems:"center",
+                                    borderBottom:`1px solid ${C.BD}`,background:"rgba(59,130,246,0.05)"}}>
+                                    <div/>
+                                    <div style={{fontSize:11,fontWeight:600,color:"#cbd5e1"}}>
+                                      {CONFED_LABEL[c]||c}
+                                      <span style={{fontSize:9,color:C.DM,marginLeft:8}}>
+                                        {groups[c].length} competition{groups[c].length===1?"":"s"}
+                                      </span>
+                                    </div>
+                                    <input type="number" defaultValue={confedBase(c)}
+                                      onBlur={ev=>updateConfedBase(c,ev.target.value)}
+                                      onKeyDown={ev=>{if(ev.key==="Enter")ev.target.blur();}}
+                                      style={{width:"100%",background:C.SUR,border:`1px solid ${C.BD2}`,
+                                        borderRadius:8,color:"#4ade80",fontSize:12,fontWeight:700,
+                                        padding:"3px 6px",textAlign:"center"}}/>
+                                    <div/>
+                                  </div>
+                                  {groups[c].map(lg=>{
+                                    const onToday=playingToday.has(lg.id);
+                                    const st=leagueStatus[lg.id]||{};
+                                    const on=st.enabled!==false;
+                                    const fv=(favTeams[lg.id]||[]).join(", ");
+                                    return(
+                                      <div key={lg.id} style={{display:"grid",
+                                        gridTemplateColumns:"34px 26px 1fr 60px 70px 210px",gap:8,
+                                        padding:"6px 16px 6px 44px",borderBottom:`1px solid ${C.BD}`,
+                                        alignItems:"center"}}>
+                                        <div/><div/>
+                                        <div style={{fontSize:12,color:"#f1f5f9",display:"flex",alignItems:"center"}}>
+                                          {lg.n}
+                                          <select value={confedOverrides[lg.id]||""}
+                                            onChange={ev=>updateConfedOverride(lg.id,ev.target.value)}
+                                            style={{marginLeft:8,background:C.SUR,color:confedOverrides[lg.id]?C.A:C.MT,
+                                              border:`1px solid ${confedOverrides[lg.id]?C.A:C.BD2}`,borderRadius:6,
+                                              fontSize:9,padding:"1px 3px"}}>
+                                            <option value="">auto</option>
+                                            {CONFEDS.map(x=><option key={x} value={x}>{x}</option>)}
+                                          </select>
+                                        </div>
+                                        <button onClick={()=>toggleLeague(lg.id)} style={{padding:"3px 0",borderRadius:8,
+                                          fontSize:10,fontWeight:700,cursor:"pointer",
+                                          background:on?"rgba(34,197,94,0.15)":C.SUR,
+                                          border:`1px solid ${on?"#22c55e":C.BD2}`,color:on?"#4ade80":C.MT}}>
+                                          {on?"ON":"OFF"}</button>
+                                        <div title={onToday?"has games today":"no games today"}
+                                          style={{fontSize:11,fontWeight:700,textAlign:"center",
+                                            color:onToday?"#86efac":"#cbd5e1"}}>
+                                          {confedBase(confedOf(lg.id,lg.n)).toFixed(1)}
+                                        </div>
+                                        <input defaultValue={fv} placeholder="Real Madrid..."
+                                          onBlur={ev=>updateFave(lg.id,ev.target.value)}
+                                          style={{width:"100%",background:C.SUR,border:`1px solid ${fv?C.A:C.BD2}`,
+                                            borderRadius:8,color:fv?C.A:"#f1f5f9",fontSize:10,padding:"3px 6px"}}/>
+                                      </div>);
+                                  })}
+                                </div>));
+                            })()}
+                            {open&&!isNationalArea(area)&&lgs.map(lg=>{
                               const rating=ratingFor(lg);
                               const mod=areaModFor(area,rating);
                               const onToday=playingToday.has(lg.id);
