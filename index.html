@@ -727,7 +727,7 @@ function App(){
     try{
       const sched=await githubLoadSchedule(dateStr);
       if(latestDateRequest.current!==dateStr)return; // a newer date nav has since superseded this fetch — discard
-      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setAreaData(sched.areas||{});setLeagueGfr(sched.leagueGfr||{});setScheduleStatus("loaded");}
+      if(sched?.events){setDynamicEvents(sched.events);setDroppedEvents(sched.dropped||[]);setAreaData(sched.areas||{});setLeagueGfr(sched.leagueGfr||{});setConfedAnchors(sched.confedAnchors||{});setScheduleStatus("loaded");}
       else {setDynamicEvents([]);setDroppedEvents([]);setAreaData({});setLeagueGfr({});setScheduleStatus("none");}
       const ovr=await githubLoadOverrides(dateStr);
       if(latestDateRequest.current!==dateStr)return;
@@ -919,6 +919,7 @@ function App(){
           setDroppedEvents(sched.dropped||[]);
           setAreaData(sched.areas||{});
           setLeagueGfr(sched.leagueGfr||{});
+          setConfedAnchors(sched.confedAnchors||{});
           setScheduleStatus("loaded");
         } else if(active) {
           setScheduleStatus("none");
