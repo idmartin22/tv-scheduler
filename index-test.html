@@ -769,6 +769,22 @@ function App(){
     loadScheduleForDate(t);
   },[loadScheduleForDate]);
 
+  // Reorder + quad controls live on the grid row itself: the grid is where you
+  // see the consequence of the order, so it is where changing it belongs.
+  const TvCtl=({id,idx,count})=>(
+    <div style={{display:"flex",alignItems:"center",gap:2,marginTop:2}}>
+      <button title="higher priority" onClick={()=>moveTv(id,-1)} disabled={idx<=0}
+        style={{background:"transparent",border:"none",padding:0,lineHeight:1,
+          color:idx<=0?"#2b3a52":"#7c8ea8",fontSize:10,cursor:idx<=0?"default":"pointer"}}>▲</button>
+      <button title="lower priority" onClick={()=>moveTv(id,1)} disabled={idx>=count-1}
+        style={{background:"transparent",border:"none",padding:0,lineHeight:1,
+          color:idx>=count-1?"#2b3a52":"#7c8ea8",fontSize:10,cursor:idx>=count-1?"default":"pointer"}}>▼</button>
+      <button title="show four events on this TV" onClick={()=>toggleQuad(id)}
+        style={{background:"transparent",border:`1px solid ${tvQuads[id]?"#c084fc":"#2b3a52"}`,
+          borderRadius:4,padding:"0 3px",marginLeft:2,lineHeight:1.4,
+          color:tvQuads[id]?"#c084fc":"#55688a",fontSize:7,fontWeight:700,cursor:"pointer"}}>Q</button>
+    </div>
+  );
   const moveTv=(id,dir)=>{
     const cur=[...tvOrder]; const i=cur.indexOf(id); const j=i+dir;
     if(i<0||j<0||j>=cur.length) return;
@@ -1410,7 +1426,9 @@ function App(){
             {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),fontSize:9,fontWeight:600,color:"#4a6080",transform:"translateX(-50%)",letterSpacing:"0.02em"}}>{h===12?"12P":h>12?`${h-12}P`:`${h}A`}</div>)}
 
           </div>
-          {TV_DISPLAY.filter(id=>activeTVs.has(id)).map(tvId=>{
+          {/* Drawn in PRIORITY order, so the row position on screen is the
+              priority you are setting with the arrows. */}
+          {tvOrder.filter(id=>TV_PRIO.includes(id)&&activeTVs.has(id)).map((tvId,tvIdx,tvArr)=>{
             const tv=TVS[tvId];const tvLabel=tvNames[tvId]||tv.name;
             const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
             const fb=fillBlocks(tvId,asgnd,tvFillCh);
@@ -1423,21 +1441,22 @@ function App(){
               const laneOf=a=>Math.min(QUAD_CAPACITY-1,Math.max(0,a.lane||0));
               return(
                 <div key={tvId} style={{borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?C.A:tvId<=2?"#3b82f6":"#1e2d45"}`}}>
-                  <div style={{display:"flex",alignItems:"center",padding:"3px 10px 1px"}}>
+                  <div style={{display:"flex",alignItems:"center",padding:"3px 10px 1px",gap:6}}>
                     <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9"}}>{tvLabel}</div>
-                    <span style={{marginLeft:6,fontSize:8,fontWeight:700,color:"#c084fc",
+                    <span style={{fontSize:8,fontWeight:700,color:"#c084fc",
                       border:"1px solid #c084fc55",borderRadius:4,padding:"1px 4px"}}>QUAD</span>
+                    <TvCtl id={tvId} idx={tvIdx} count={tvArr.length}/>
                   </div>
                   {Array.from({length:QUAD_CAPACITY},(_,lane)=>{
                     const le=te.filter(a=>laneOf(a)===lane);
                     return(
-                      <div key={lane} style={{display:"flex",alignItems:"center",minHeight:26,
+                      <div key={lane} style={{display:"flex",alignItems:"center",minHeight:34,
                         borderTop:lane?`1px solid ${C.BD}22`:"none"}}>
                         <div style={{width:72,flexShrink:0,padding:"0 10px 0 20px",
                           fontSize:9,color:le.length?"#94a3b8":"#3b4a63"}}>
                           {`pane ${lane+1}`}
                         </div>
-                        <div style={{flex:1,position:"relative",height:26,background:C.SUR,
+                        <div style={{flex:1,position:"relative",height:34,background:C.SUR,
                           marginRight:6,borderRadius:4}}>
                           {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.5}}/>)}
                           {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
@@ -1445,12 +1464,17 @@ function App(){
                           )}
                           {le.map(a=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;
                             const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
-                            return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),height:22,top:2,
+                            return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),height:30,top:2,
                               left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3,padding:"1px 5px"}}
                               className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}>
                               <div style={{fontSize:9,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",
-                                overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.25}}>
+                                overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.2}}>
                                 {a.isFave?"⭐":""}{evName(a)}
+                              </div>
+                              {/* where to tune — the whole point of the grid */}
+                              <div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap",
+                                overflow:"hidden",lineHeight:1.2}}>
+                                {m2t(a.startMin)} · <ChBadges channel={a.channel}/>
                               </div>
                             </div>);})}
                         </div>
@@ -1462,6 +1486,7 @@ function App(){
               <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?C.A:tvId<=2?"#3b82f6":"#1e2d45"}`}}>
                 <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
                   <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{tvLabel}</div>
+                  <TvCtl id={tvId} idx={tvIdx} count={tvArr.length}/>
                   <div style={{fontSize:8,color:C.MT,marginTop:1,lineHeight:1.4}}>{tv.brand}</div><div style={{fontSize:8,color:C.MT,lineHeight:1.4}}>{tv.sz}"</div><div style={{fontSize:8,color:"#67e8f9",lineHeight:1.4}}>{tv.input}</div>
                 </div>
                 <div style={{flex:1,height:46,position:"relative",background:C.SUR,marginRight:6,borderRadius:4}}>
