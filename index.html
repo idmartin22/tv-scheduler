@@ -1058,11 +1058,13 @@ function App(){
   },[ghaSha]);
 
 
-  const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin)=>{
+  const saveOverride=React.useCallback(async(eventId,tvId,fromMin,toMin,lane)=>{
     if(overridesLoading.current){console.warn('Override save skipped — schedule still loading');return;}
     setOvrSaving(true);
-    const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,created:Date.now()};
-    const updated=[...tvOverrides.filter(o=>!(o.eventId===eventId&&o.tvId===tvId)),newOvr];
+    // lane is the quad pane, when one was chosen; null lets it auto-place
+    const newOvr={eventId,tvId,startMin:fromMin,endMin:toMin,
+                  lane:(lane==null?null:lane),created:Date.now()};
+    const updated=[...tvOverrides.filter(o=>o.eventId!==eventId),newOvr];
     setTvOverrides(updated);
     const newSha=await githubSaveOverrides(scheduleDate,updated,removedEvents,overridesSha);
     if(newSha) setOverridesSha(newSha);
@@ -1272,7 +1274,17 @@ function App(){
       .map(evt=>{
         const ovr=tvOverrides.find(o=>o.eventId===evt.id);
         if(!ovr) return evt;
-        return {...evt, tv:ovr.tvId, startMin:ovr.startMin, endMin:ovr.endMin, dur:ovr.endMin-ovr.startMin, _override:true};
+        // On a quad, honour the pane if one was picked; otherwise drop into the
+        // first free pane rather than always landing on pane 1 and colliding.
+        let lane=ovr.lane;
+        if(lane==null&&tvQuads[ovr.tvId]){
+          const used=new Set(final.filter(o=>o.tv===ovr.tvId&&o.id!==evt.id&&
+            o.startMin<ovr.endMin&&ovr.startMin<o.endMin).map(o=>o.lane||0));
+          lane=0; while(lane<QUAD_CAPACITY&&used.has(lane)) lane++;
+          if(lane>=QUAD_CAPACITY) lane=0;
+        }
+        return {...evt, tv:ovr.tvId, lane:lane||0, startMin:ovr.startMin, endMin:ovr.endMin,
+                dur:ovr.endMin-ovr.startMin, _override:true};
       });
   },[final,tvOverrides,removedEvents]);
   const asgnd=useMemo(()=>finalWithOverrides.filter(a=>a.tv!==-1),[finalWithOverrides]);
@@ -2232,6 +2244,27 @@ function App(){
                         border:`1px solid ${isActive?"#f59e0b":C.BD2}`}}>{tvLabel}</button>);
                   })}
                 </div>
+                {ovrForm.tvId!=null&&tvQuads[ovrForm.tvId]&&(
+                  <div style={{display:"flex",gap:4,alignItems:"center",marginBottom:6,flexWrap:"wrap"}}>
+                    <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>PANE:</span>
+                    {Array.from({length:QUAD_CAPACITY},(_,l)=>{
+                      const on=(ovrForm.lane??0)===l;
+                      // which event currently holds this pane at that time
+                      const busy=asgnd.find(a=>a.tv===ovrForm.tvId&&(a.lane||0)===l&&
+                        a.id!==ovrForm.eventId&&a.startMin<ovrForm.toMin&&ovrForm.fromMin<a.endMin);
+                      return(<button key={l} onClick={()=>setOvrForm(f=>({...f,lane:l}))}
+                        title={busy?`currently ${evName(busy)}`:"free"}
+                        style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,cursor:"pointer",
+                          background:on?"#c084fc":"transparent",color:on?"#000":(busy?"#f59e0b":C.MT),
+                          border:`1px solid ${on?"#c084fc":(busy?"#f59e0b66":C.BD2)}`}}>
+                        {l+1}{busy?"*":""}
+                      </button>);
+                    })}
+                    <span style={{fontFamily:"monospace",fontSize:8,color:C.DM}}>
+                      * already in use at that time
+                    </span>
+                  </div>
+                )}
                 <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:8,flexWrap:"wrap"}}>
                   <div style={{display:"flex",gap:4,alignItems:"center"}}>
                     <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FROM:</span>
@@ -2255,7 +2288,7 @@ function App(){
                     const conflict=final.find(a=>a&&a.tv===ovrForm.tvId&&a.id!==selEv.id&&
                       !(a.endMin<=ovrForm.fromMin||a.startMin>=ovrForm.toMin));
                     if(conflict&&!window.confirm(`⚠️ ${tvNames[ovrForm.tvId]||TVS[ovrForm.tvId].name} already has "${evName(conflict)}" in that window. Override anyway?`))return;
-                    saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin);
+                    saveOverride(selEv.id,ovrForm.tvId,ovrForm.fromMin,ovrForm.toMin,ovrForm.lane);
                   }} style={{padding:"4px 12px",borderRadius:4,fontFamily:"monospace",fontSize:10,
                     background:"#f59e0b",color:"#000",border:"none",cursor:"pointer",fontWeight:700}}>
                     {ovrSaving?"SAVING...":"SAVE OVERRIDE"}
