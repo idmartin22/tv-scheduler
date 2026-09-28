@@ -33,72 +33,6 @@
       "_score": 15
     },
     {
-      "id": 35886510,
-      "lgId": 3643,
-      "lgSlug": "asean-cup",
-      "time": "08:30",
-      "name": "Bangladesh @ Indonesia",
-      "sport": "Soccer",
-      "league": "ASEAN Cup",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "espn": ""
-    },
-    {
-      "id": 26067154,
-      "lgId": 3643,
-      "lgSlug": "asean-cup",
-      "time": "08:30",
-      "name": "Singapore @ Malaysia",
-      "sport": "Soccer",
-      "league": "ASEAN Cup",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "espn": ""
-    },
-    {
       "id": 46827423,
       "lgId": 2003,
       "lgSlug": "atp",
@@ -127,36 +61,6 @@
         "l": ""
       },
       "_score": 10
-    },
-    {
-      "id": 33972365,
-      "lgId": 2066,
-      "lgSlug": "world-rally-championship",
-      "time": "10:05",
-      "name": "Rally Italia Sardegna",
-      "sport": "Motorsports",
-      "league": "World Rally Championship",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
     },
     {
       "id": 62617683,
@@ -407,36 +311,6 @@
         "l": ""
       },
       "_score": 0
-    },
-    {
-      "id": 40771862,
-      "lgId": 2478,
-      "lgSlug": "mma",
-      "time": "13:00",
-      "name": "Extreme Fighting Championship",
-      "sport": "Fighting",
-      "league": "MMA",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 15,
-        "l": "Boxing event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
     },
     {
       "id": 20959594,
@@ -4168,6 +4042,36 @@
       "detail": "airs on RDS \u2014 none in channels.txt"
     },
     {
+      "name": "Bangladesh @ Indonesia",
+      "league": "ASEAN Cup",
+      "sport": "Soccer",
+      "time": "08:30",
+      "date": "2026-10-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Singapore @ Malaysia",
+      "league": "ASEAN Cup",
+      "sport": "Soccer",
+      "time": "08:30",
+      "date": "2026-10-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "10:05",
+      "date": "2026-10-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "America's Day at the Races",
       "league": "Horse Racing",
       "sport": "Equestrian",
@@ -4176,6 +4080,16 @@
       "channel": "Fubo Sports, FOX Sports 2, FOX One, FOX Sports Racing",
       "reason": "marquee",
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
+    },
+    {
+      "name": "Extreme Fighting Championship",
+      "league": "MMA",
+      "sport": "Fighting",
+      "time": "13:00",
+      "date": "2026-10-01",
+      "channel": "DAZN US, Next Level Sports, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, Next Level Sports, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "New Haven @ Le Moyne",
@@ -5052,7 +4966,6 @@
       "seen": [
         "Liga MX (Mexico)",
         "MLS (USA)",
-        "National League (England)",
         "Primera A (Colombia)",
         "USL Championship (USA)"
       ]
@@ -5903,17 +5816,13 @@
       "rosterMatched": 3,
       "rosterTotal": 10
     },
-    "asean-cup": {
-      "area": "mens_club_competition"
-    },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 24,
-      "rosterCode": "eng.5",
       "gfrLeague": "National League",
-      "country": "England"
+      "country": "England",
+      "rosterMatched": 24,
+      "rosterTotal": 24
     }
   }
 }
