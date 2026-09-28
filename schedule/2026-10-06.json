@@ -2057,9 +2057,9 @@
       "sport": "Hockey",
       "time": "20:00",
       "date": "2026-10-06",
-      "channel": "Chicago Sports Network",
+      "channel": "Chicago Sports Network, Sportsnet+",
       "reason": "channel",
-      "detail": "airs on Chicago Sports Network \u2014 none in channels.txt"
+      "detail": "airs on Chicago Sports Network, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "New Orleans Pelicans @ Oklahoma City Thunder",
@@ -2117,9 +2117,9 @@
       "sport": "Hockey",
       "time": "21:40",
       "date": "2026-10-06",
-      "channel": "Scripps 66, KONG, Kraken Hockey Network, KING-NBC, Prime Video (Seattle)",
+      "channel": "Scripps 66, KONG, Kraken Hockey Network, KING-NBC, Prime Video (Seattle), Sportsnet+",
       "reason": "channel",
-      "detail": "airs on Scripps 66, KONG, Kraken Hockey Network, KING-NBC, Prime Video (Seattle) \u2014 none in channels.txt"
+      "detail": "airs on Scripps 66, KONG, Kraken Hockey Network, KING-NBC, Prime Video (Seattle), Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Los Angeles Lakers @ Golden State Warriors",
@@ -3393,11 +3393,10 @@
     },
     "northern-super-league": {
       "rating": 48.72,
-      "area": "womens_club_league",
+      "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
-      "rosterTotal": 6,
-      "rosterCode": "can.w.nsl"
+      "rosterTotal": 6
     },
     "scottish-league-cup": {
       "rating": 60.72,
@@ -3563,9 +3562,6 @@
     },
     "asean-cup": {
       "area": "mens_club_competition"
-    },
-    "dfb-pokal-women": {
-      "area": "womens_club_competition"
     },
     "national-league": {
       "rating": 62.52,
