@@ -2656,7 +2656,6 @@
         "League Two (England)",
         "Liga MX (Mexico)",
         "MLS (USA)",
-        "National League (England)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
@@ -3527,21 +3526,17 @@
       "rosterMatched": 3,
       "rosterTotal": 10
     },
-    "asean-cup": {
-      "area": "mens_club_competition"
+    "serie-a-brazil": {
+      "rating": 83.95,
+      "area": "mens_club_league"
     },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 24,
-      "rosterCode": "eng.5",
       "gfrLeague": "National League",
-      "country": "England"
-    },
-    "serie-a-brazil": {
-      "rating": 83.95,
-      "area": "mens_club_league"
+      "country": "England",
+      "rosterMatched": 24,
+      "rosterTotal": 24
     }
   }
 }
