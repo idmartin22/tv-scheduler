@@ -1496,7 +1496,6 @@
         "League One (England)",
         "League One (Scotland)",
         "League Two (England)",
-        "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
@@ -1942,16 +1941,6 @@
       "country": "USA",
       "confederation": "CONCACAF"
     },
-    "liga-mx": {
-      "rating": 80.05,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
     "women-s-super-league": {
       "rating": 63.93,
       "area": "womens_club_league",
@@ -2121,6 +2110,15 @@
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20
+    },
+    "liga-mx": {
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "super-league": {
       "rating": 79.57,
