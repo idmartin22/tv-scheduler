@@ -3,39 +3,6 @@
   "label": "Monday, September 28",
   "events": [
     {
-      "id": 20475536,
-      "lgId": 3643,
-      "lgSlug": "asean-cup",
-      "time": "05:00",
-      "name": "Bangladesh @ Singapore",
-      "sport": "Soccer",
-      "league": "ASEAN Cup",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "espn": ""
-    },
-    {
       "id": 81686917,
       "lgId": 2003,
       "lgSlug": "atp",
@@ -64,39 +31,6 @@
         "l": ""
       },
       "_score": 10
-    },
-    {
-      "id": 32860193,
-      "lgId": 3643,
-      "lgSlug": "asean-cup",
-      "time": "08:30",
-      "name": "Indonesia @ Malaysia",
-      "sport": "Soccer",
-      "league": "ASEAN Cup",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "espn": ""
     },
     {
       "id": 71675246,
@@ -1011,6 +945,16 @@
       "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
+      "name": "Bangladesh @ Singapore",
+      "league": "ASEAN Cup",
+      "sport": "Soccer",
+      "time": "05:00",
+      "date": "2026-09-28",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Hangzhou Open",
       "league": "ATP",
       "sport": "Tennis",
@@ -1019,6 +963,16 @@
       "channel": "T2, TSN+",
       "reason": "channel",
       "detail": "airs on T2, TSN+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Indonesia @ Malaysia",
+      "league": "ASEAN Cup",
+      "sport": "Soccer",
+      "time": "08:30",
+      "date": "2026-09-28",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Ukraine @ Georgia",
@@ -2449,9 +2403,6 @@
       "confederation": "UEFA",
       "rosterMatched": 3,
       "rosterTotal": 10
-    },
-    "asean-cup": {
-      "area": "mens_club_competition"
     },
     "national-league": {
       "rating": 62.52,
