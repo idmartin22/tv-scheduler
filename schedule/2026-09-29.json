@@ -313,8 +313,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 11.240875912408729,
-        "l": "Quality +11.2 (Philadelphia Phillies 0.512 vs Atlanta Braves 0.524)"
+        "v": 11.076923076923066,
+        "l": "Quality +11.1 (Philadelphia Phillies 0.513 vs Atlanta Braves 0.523)"
       },
       "_sk": {
         "v": 0,
@@ -328,7 +328,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.240875912408729,
+      "_score": 11.076923076923066,
       "_rk": [
         8,
         4
@@ -722,8 +722,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -2.4795081967213735,
-        "l": "Quality -2.5 (Chicago White Sox 0.502 vs Houston Astros 0.490)"
+        "v": -2.3880597014925997,
+        "l": "Quality -2.4 (Chicago White Sox 0.502 vs Houston Astros 0.490)"
       },
       "_sk": {
         "v": 0,
@@ -737,10 +737,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.4795081967213735,
+      "_score": -2.3880597014925997,
       "_rk": [
-        13,
-        23
+        12,
+        22
       ]
     },
     {
@@ -1107,8 +1107,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 15.454545454545453,
-        "l": "Quality +15.5 (Las Vegas Aces 4.500 vs Indiana Fever 3.700)"
+        "v": 14.86238532110092,
+        "l": "Quality +14.9 (Las Vegas Aces 4.600 vs Indiana Fever 3.500)"
       },
       "_sk": {
         "v": 0,
@@ -1122,10 +1122,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.454545454545453,
+      "_score": 14.86238532110092,
       "_rk": [
-        4,
-        5
+        3,
+        6
       ]
     },
     {
@@ -1502,8 +1502,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.302398331595343,
-        "l": "Quality +10.3 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
+        "v": 9.846153846153827,
+        "l": "Quality +9.8 (Boston Red Sox 0.512 vs New York Yankees 0.520)"
       },
       "_sk": {
         "v": 0,
@@ -1517,9 +1517,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.302398331595343,
+      "_score": 9.846153846153827,
       "_rk": [
-        8,
+        9,
         5
       ]
     },
@@ -1705,8 +1705,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 15.643939393939396,
-        "l": "Quality +15.6 (Minnesota Lynx 4.800 vs New York Liberty 3.500)"
+        "v": 15.045871559633028,
+        "l": "Quality +15.0 (Minnesota Lynx 4.500 vs New York Liberty 3.700)"
       },
       "_sk": {
         "v": 0,
@@ -1720,10 +1720,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.643939393939396,
+      "_score": 15.045871559633028,
       "_rk": [
-        3,
-        6
+        4,
+        5
       ]
     },
     {
@@ -1816,8 +1816,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.676746611053181,
-        "l": "Quality +9.7 (Chicago Cubs 0.516 vs San Diego Padres 0.515)"
+        "v": 10.153846153846104,
+        "l": "Quality +10.2 (Chicago Cubs 0.517 vs San Diego Padres 0.516)"
       },
       "_sk": {
         "v": 0,
@@ -1831,7 +1831,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.676746611053181,
+      "_score": 10.153846153846104,
       "_rk": [
         6,
         7
@@ -2755,9 +2755,7 @@
       "worst": 52.73,
       "anchored": true,
       "span": 38.36,
-      "seen": [
-        "Liga MX (Mexico)"
-      ]
+      "seen": []
     },
     "womens_club_league": {
       "leagues": {
@@ -3124,16 +3122,6 @@
       "country": "Spain",
       "confederation": "UEFA"
     },
-    "liga-mx": {
-      "rating": 80.05,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
     "liga-mx-femenil": {
       "rating": 71.26,
       "area": "womens_club_league",
@@ -3287,6 +3275,15 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 28,
       "rosterTotal": 30
+    },
+    "liga-mx": {
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "primera-a": {
       "rating": 79.83,
