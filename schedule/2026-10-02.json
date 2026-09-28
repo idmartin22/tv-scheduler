@@ -375,6 +375,44 @@
       ]
     },
     {
+      "id": 64320220,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "T\u00fcrkiye @ Belgium",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 13.138168404284196,
+        "l": "Quality +13.1 (Elo Turkey 1839 vs Belgium 1979, world baseline 2608)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 13.138168404284196,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.15,
+      "_rk": [
+        19,
+        8
+      ]
+    },
+    {
       "id": 1541792,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -384,7 +422,8 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 1",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -4179,6 +4218,38 @@
       "_score": 0
     },
     {
+      "id": 37690355,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "19:00",
+      "name": "San Francisco @ St. Mary's",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
       "id": 89241806,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -5353,7 +5424,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5452,7 +5524,8 @@
       "sport": "Soccer",
       "league": "Liga MX Femenil",
       "ch": [
-        "TUDN"
+        "TUDN",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5534,6 +5607,16 @@
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
     },
     {
+      "name": "China Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "07:00",
+      "date": "2026-10-02",
+      "channel": "RDS",
+      "reason": "channel",
+      "detail": "airs on RDS \u2014 none in channels.txt"
+    },
+    {
       "name": "Montenegro @ Latvia",
       "league": "UEFA Nations League",
       "sport": "Soccer",
@@ -5612,16 +5695,6 @@
       "channel": "DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "T\u00fcrkiye @ Belgium",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-02",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Slovakia @ Faroe Islands",
@@ -7152,9 +7225,7 @@
       "seen": [
         "Liga MX Femenil (Mexico)",
         "NWSL (USA)",
-        "Serie A Women (Italy)",
-        "USL Super League (USA)",
-        "Women's Super League (Switzerland)"
+        "USL Super League (USA)"
       ]
     },
     "mens_club_competition": {
@@ -7413,16 +7484,6 @@
       "country": "Mexico",
       "confederation": "CONCACAF"
     },
-    "women-s-super-league": {
-      "rating": 63.93,
-      "area": "womens_club_league",
-      "rosterMatched": 14,
-      "rosterTotal": 14,
-      "rosterCode": "eng.w.1",
-      "gfrLeague": "Women's Super League",
-      "country": "Switzerland",
-      "confederation": "UEFA"
-    },
     "usl-league-one": {
       "rating": 44.07,
       "area": "mens_club_competition",
@@ -7430,13 +7491,6 @@
       "rosterTotal": 17,
       "rosterCode": "usa.usl.l1",
       "confederation": "CONCACAF"
-    },
-    "serie-a-women": {
-      "rating": 75.82,
-      "area": "womens_club_league",
-      "gfrLeague": "Serie A Women",
-      "country": "Italy",
-      "confederation": "UEFA"
     },
     "liga-mx-femenil": {
       "rating": 71.26,
@@ -7651,6 +7705,20 @@
       "rosterMatched": 13,
       "rosterTotal": 20
     },
+    "women-s-super-league": {
+      "rating": 63.93,
+      "area": "womens_club_league",
+      "gfrLeague": "Women's Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "serie-a-women": {
+      "rating": 75.82,
+      "area": "womens_club_league",
+      "gfrLeague": "Serie A Women",
+      "country": "Italy",
+      "confederation": "UEFA"
+    },
     "campe-n-de-campeones": {
       "rating": 84.24,
       "area": "mens_club_competition",
@@ -7660,11 +7728,10 @@
     },
     "northern-super-league": {
       "rating": 48.72,
-      "area": "womens_club_league",
+      "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
-      "rosterTotal": 6,
-      "rosterCode": "can.w.nsl"
+      "rosterTotal": 6
     },
     "scottish-league-cup": {
       "rating": 60.72,
@@ -7829,9 +7896,6 @@
     },
     "asean-cup": {
       "area": "mens_club_competition"
-    },
-    "dfb-pokal-women": {
-      "area": "womens_club_competition"
     },
     "national-league": {
       "rating": 62.52,
