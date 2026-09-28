@@ -274,8 +274,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 11.240875912408729,
-        "l": "Quality +11.2 (Philadelphia Phillies 0.512 vs Atlanta Braves 0.524)"
+        "v": 11.076923076923066,
+        "l": "Quality +11.1 (Philadelphia Phillies 0.513 vs Atlanta Braves 0.523)"
       },
       "_sk": {
         "v": 0,
@@ -289,7 +289,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.240875912408729,
+      "_score": 11.076923076923066,
       "_rk": [
         8,
         4
@@ -579,8 +579,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -2.4795081967213735,
-        "l": "Quality -2.5 (Chicago White Sox 0.502 vs Houston Astros 0.490)"
+        "v": -2.3880597014925997,
+        "l": "Quality -2.4 (Chicago White Sox 0.502 vs Houston Astros 0.490)"
       },
       "_sk": {
         "v": 0,
@@ -594,10 +594,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.4795081967213735,
+      "_score": -2.3880597014925997,
       "_rk": [
-        13,
-        23
+        12,
+        22
       ]
     },
     {
@@ -1371,8 +1371,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 10.71969696969697,
-        "l": "Quality +10.7 (Atlanta Dream 5.000 vs Washington Mystics 0.700)"
+        "v": 10.458715596330277,
+        "l": "Quality +10.5 (Atlanta Dream 5.100 vs Washington Mystics 0.600)"
       },
       "_sk": {
         "v": 0,
@@ -1386,7 +1386,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.71969696969697,
+      "_score": 10.458715596330277,
       "_rk": [
         2,
         8
@@ -1661,8 +1661,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.302398331595343,
-        "l": "Quality +10.3 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
+        "v": 9.846153846153827,
+        "l": "Quality +9.8 (Boston Red Sox 0.512 vs New York Yankees 0.520)"
       },
       "_sk": {
         "v": 0,
@@ -1676,9 +1676,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.302398331595343,
+      "_score": 9.846153846153827,
       "_rk": [
-        8,
+        9,
         5
       ]
     },
@@ -1933,8 +1933,8 @@
       ],
       "dur": 140,
       "_st": {
-        "v": 15.643939393939396,
-        "l": "Quality +15.6 (Golden State Valkyries 5.600 vs Dallas Wings 2.700)"
+        "v": 15.045871559633028,
+        "l": "Quality +15.0 (Golden State Valkyries 5.800 vs Dallas Wings 2.400)"
       },
       "_sk": {
         "v": 0,
@@ -1948,7 +1948,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.643939393939396,
+      "_score": 15.045871559633028,
       "_rk": [
         1,
         7
@@ -2044,8 +2044,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.676746611053181,
-        "l": "Quality +9.7 (Chicago Cubs 0.516 vs San Diego Padres 0.515)"
+        "v": 10.153846153846104,
+        "l": "Quality +10.2 (Chicago Cubs 0.517 vs San Diego Padres 0.516)"
       },
       "_sk": {
         "v": 0,
@@ -2059,7 +2059,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.676746611053181,
+      "_score": 10.153846153846104,
       "_rk": [
         6,
         7
@@ -2512,6 +2512,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "AEW Dynamite",
+      "league": "Wrestling",
+      "sport": "Fighting",
+      "time": "20:00",
+      "date": "2026-09-30",
+      "channel": "TSN+, TSN2",
+      "reason": "channel",
+      "detail": "airs on TSN+, TSN2 \u2014 none in channels.txt"
     },
     {
       "name": "Grand Canyon @ Utah Tech",
@@ -3086,7 +3096,6 @@
       "anchored": true,
       "span": 38.36,
       "seen": [
-        "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
         "USL Championship (USA)"
@@ -3502,16 +3511,6 @@
       "country": "Spain",
       "confederation": "UEFA"
     },
-    "liga-mx": {
-      "rating": 80.05,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
     "usl-league-one": {
       "rating": 44.07,
       "area": "mens_club_competition",
@@ -3651,6 +3650,15 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 28,
       "rosterTotal": 30
+    },
+    "liga-mx": {
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "super-league": {
       "rating": 79.57,
