@@ -64,6 +64,36 @@
       "_score": 15
     },
     {
+      "id": 70160724,
+      "lgId": 3577,
+      "lgSlug": "road-cycling",
+      "time": "09:30",
+      "name": "UEC Road European Championships",
+      "sport": "Cycling",
+      "league": "Men's Road Cycling",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 46021477,
       "lgId": 3582,
       "lgSlug": "swimming-world-cup",
@@ -164,6 +194,36 @@
       "_score": 0
     },
     {
+      "id": 1526530,
+      "lgId": 2756,
+      "lgSlug": "imsa-michelin-pilot-challenge",
+      "time": "11:40",
+      "name": "FOX Factory 120",
+      "sport": "Motorsports",
+      "league": "IMSA Michelin Pilot Challenge",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
+    },
+    {
       "id": 53338543,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -200,6 +260,36 @@
         106,
         131
       ]
+    },
+    {
+      "id": 6952348,
+      "lgId": 2019,
+      "lgSlug": "pga-tour-champions",
+      "time": "12:00",
+      "name": "Jefferson Lehigh Valley Classic",
+      "sport": "Golf",
+      "league": "PGA Tour Champions",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 37829777,
@@ -4419,8 +4509,7 @@
       "sport": "Football",
       "league": "College Football",
       "ch": [
-        "FOX",
-        "FOX Deportes"
+        "FOX"
       ],
       "dur": 210,
       "_st": {
@@ -6963,7 +7052,6 @@
       "anchored": true,
       "span": 38.36,
       "seen": [
-        "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
@@ -7407,16 +7495,6 @@
       "country": "USA",
       "confederation": "CONCACAF"
     },
-    "liga-mx": {
-      "rating": 80.05,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
     "usl-league-one": {
       "rating": 44.07,
       "area": "mens_club_competition",
@@ -7549,6 +7627,15 @@
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20
+    },
+    "liga-mx": {
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "super-league": {
       "rating": 79.57,
