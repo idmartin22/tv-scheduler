@@ -234,14 +234,14 @@ async function githubSave(data, sha) {
       const meta = await rc.json();
       if (!sha) sha = meta.sha;
       const remote = JSON.parse(b64ToUtf8(meta.content));
-      const isEmpty = v => v === undefined || v === null ||
-        (typeof v === 'object' && Object.keys(v).length === 0);
-      const merged = { ...remote };
-      for (const [k, v] of Object.entries(data)) {
-        if (isEmpty(v) && !isEmpty(remote[k])) continue;   // never empty a stored value
-        merged[k] = v;
-      }
-      data = merged;
+      // Keep any key this payload does not carry — that is what stops an older
+      // build from stripping fields it has never heard of. But do NOT refuse
+      // empty values: clearing the last quad, or the last favourite, means
+      // saving an empty object, and blocking that made those settings
+      // impossible to turn off. Protection against a failed load lives at the
+      // call site instead, where the app simply does not save until settings
+      // have loaded.
+      data = { ...remote, ...data };
     }
   } catch(e) { /* fall through and save what we have */ }
 
@@ -926,7 +926,16 @@ function App(){
         settingsLoaded.current=true;
         if(active)setSyncStatus("saved");
       }catch(e){
-        settingsLoaded.current=true; // allow saves even if load failed
+        // Saves stay BLOCKED when the load failed. Allowing them is how an app
+        // running on defaults wrote empty objects over 69 manual league
+        // placements — the grid still works read-only, and a reload once the
+        // connection is back restores normal editing.
+        if(!lastKnownGood.current){
+          if(active)setSyncStatus("error");
+          console.warn("Settings failed to load — saving is disabled until a successful load");
+          return;
+        }
+        settingsLoaded.current=true;   // we have a known-good copy to build on
         // Restore last known good if available — never fall back to DEF_MODS
         if(lastKnownGood.current&&active){
           const d=lastKnownGood.current;
