@@ -848,6 +848,11 @@ function App(){
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
   // Priority order for the TVs, and which of them are quads. Both live in
   // settings.json so they follow you between devices.
+  // Confederation mods for national teams: your typed values, the Elo-derived
+  // anchors the scraper publishes, and per-competition confederation fixes.
+  const [confedBases,setConfedBases]=useState({});
+  const [confedOverrides,setConfedOverrides]=useState({});
+  const [confedAnchors,setConfedAnchors]=useState({});
   const [tvOrder,setTvOrder]=useState([...TV_PRIO]);
   const [tvQuads,setTvQuads]=useState({});
   const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
@@ -1185,9 +1190,27 @@ function App(){
   // flat national base — that is what put AFCON qualifiers in the 60s.
   const confedOf=(leagueId,leagueName)=>
     confedOverrides[leagueId]||confedFromName(leagueName)||confedFromName(leagueId)||"INTERCONTINENTAL";
+  const NAT_TOP=50;   // mod for the strongest confederation
+  // Computed from each confederation's Elo standing — the mean rating of its
+  // top ten, published by the scraper every run — scaled so the strongest sits
+  // at NAT_TOP and the weakest at zero. A value typed in the Leagues tab wins;
+  // the computed figure stays visible so drift can be seen.
+  const confedComputed=(c)=>{
+    const a=confedAnchors||{};
+    const vals=Object.values(a).map(Number).filter(v=>!isNaN(v));
+    if(vals.length<2) return null;
+    const hi=Math.max(...vals), lo=Math.min(...vals);
+    if(hi<=lo) return null;
+    if(c==="INTERCONTINENTAL") return Math.round(NAT_TOP*0.9*10)/10;
+    const v=Number(a[c]);
+    if(isNaN(v)) return null;
+    return Math.round(NAT_TOP*(v-lo)/(hi-lo)*10)/10;
+  };
   const confedBase=(c)=>{
     const v=confedBases[c];
-    return (v===undefined||v===null||v==="")?(CONFED_DEFAULT[c]??45):Number(v);
+    if(v!==undefined&&v!==null&&v!=="") return Number(v);
+    const comp=confedComputed(c);
+    return comp!==null?comp:(CONFED_DEFAULT[c]??45);
   };
   const updateConfedBase=(c,val)=>{
     const m={...confedBases,[c]:val===""?"":Number(val)};
