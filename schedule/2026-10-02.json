@@ -3,72 +3,6 @@
   "label": "Friday, October 2",
   "events": [
     {
-      "id": 32453803,
-      "lgId": 3643,
-      "lgSlug": "asean-cup",
-      "time": "05:00",
-      "name": "Pakistan @ Vietnam",
-      "sport": "Soccer",
-      "league": "ASEAN Cup",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "espn": ""
-    },
-    {
-      "id": 54629213,
-      "lgId": 3643,
-      "lgSlug": "asean-cup",
-      "time": "05:00",
-      "name": "Philippines @ Thailand",
-      "sport": "Soccer",
-      "league": "ASEAN Cup",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_competition",
-      "area": "mens_club_competition",
-      "espn": ""
-    },
-    {
       "id": 69495416,
       "lgId": 1999,
       "lgSlug": "dp-world-tour",
@@ -97,36 +31,6 @@
         "l": ""
       },
       "_score": 15
-    },
-    {
-      "id": 60564638,
-      "lgId": 2066,
-      "lgSlug": "world-rally-championship",
-      "time": "08:30",
-      "name": "Rally Italia Sardegna",
-      "sport": "Motorsports",
-      "league": "World Rally Championship",
-      "ch": [
-        "DAZN US"
-      ],
-      "dur": 240,
-      "_st": {
-        "v": 25,
-        "l": "NASCAR regular race +25"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 25
     },
     {
       "id": 80862382,
@@ -5607,6 +5511,26 @@
       "detail": "airs on Next Level Sports \u2014 none in channels.txt"
     },
     {
+      "name": "Pakistan @ Vietnam",
+      "league": "ASEAN Cup",
+      "sport": "Soccer",
+      "time": "05:00",
+      "date": "2026-10-02",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Philippines @ Thailand",
+      "league": "ASEAN Cup",
+      "sport": "Soccer",
+      "time": "05:00",
+      "date": "2026-10-02",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "China Open",
       "league": "ATP",
       "sport": "Tennis",
@@ -5615,6 +5539,16 @@
       "channel": "RDS",
       "reason": "channel",
       "detail": "airs on RDS \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rally Italia Sardegna",
+      "league": "World Rally Championship",
+      "sport": "Motorsports",
+      "time": "08:30",
+      "date": "2026-10-02",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Montenegro @ Latvia",
@@ -7031,7 +6965,6 @@
       "seen": [
         "Liga MX (Mexico)",
         "MLS (USA)",
-        "National League (England)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
@@ -7894,17 +7827,13 @@
       "rosterMatched": 3,
       "rosterTotal": 10
     },
-    "asean-cup": {
-      "area": "mens_club_competition"
-    },
     "national-league": {
       "rating": 62.52,
       "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 24,
-      "rosterCode": "eng.5",
       "gfrLeague": "National League",
-      "country": "England"
+      "country": "England",
+      "rosterMatched": 24,
+      "rosterTotal": 24
     }
   }
 }
