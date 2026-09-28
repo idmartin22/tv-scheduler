@@ -327,8 +327,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 11.240875912408729,
-        "l": "Quality +11.2 (Philadelphia Phillies 0.512 vs Atlanta Braves 0.524)"
+        "v": 11.076923076923066,
+        "l": "Quality +11.1 (Philadelphia Phillies 0.513 vs Atlanta Braves 0.523)"
       },
       "_sk": {
         "v": 0,
@@ -342,7 +342,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.240875912408729,
+      "_score": 11.076923076923066,
       "_rk": [
         8,
         4
@@ -831,8 +831,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -2.4795081967213735,
-        "l": "Quality -2.5 (Chicago White Sox 0.502 vs Houston Astros 0.490)"
+        "v": -2.3880597014925997,
+        "l": "Quality -2.4 (Chicago White Sox 0.502 vs Houston Astros 0.490)"
       },
       "_sk": {
         "v": 0,
@@ -846,10 +846,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.4795081967213735,
+      "_score": -2.3880597014925997,
       "_rk": [
-        13,
-        23
+        12,
+        22
       ]
     },
     {
@@ -2770,8 +2770,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 10.302398331595343,
-        "l": "Quality +10.3 (Boston Red Sox 0.512 vs New York Yankees 0.521)"
+        "v": 9.846153846153827,
+        "l": "Quality +9.8 (Boston Red Sox 0.512 vs New York Yankees 0.520)"
       },
       "_sk": {
         "v": 0,
@@ -2785,9 +2785,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.302398331595343,
+      "_score": 9.846153846153827,
       "_rk": [
-        8,
+        9,
         5
       ]
     },
@@ -3825,8 +3825,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 9.676746611053181,
-        "l": "Quality +9.7 (Chicago Cubs 0.516 vs San Diego Padres 0.515)"
+        "v": 10.153846153846104,
+        "l": "Quality +10.2 (Chicago Cubs 0.517 vs San Diego Padres 0.516)"
       },
       "_sk": {
         "v": 0,
@@ -3840,7 +3840,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.676746611053181,
+      "_score": 10.153846153846104,
       "_rk": [
         6,
         7
@@ -4964,7 +4964,6 @@
       "anchored": true,
       "span": 38.36,
       "seen": [
-        "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
         "USL Championship (USA)"
@@ -5380,16 +5379,6 @@
       "country": "Spain",
       "confederation": "UEFA"
     },
-    "liga-mx": {
-      "rating": 80.05,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
     "usl-league-one": {
       "rating": 44.07,
       "area": "mens_club_competition",
@@ -5529,6 +5518,15 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 28,
       "rosterTotal": 30
+    },
+    "liga-mx": {
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "super-league": {
       "rating": 79.57,
