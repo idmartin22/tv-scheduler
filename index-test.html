@@ -1473,9 +1473,9 @@ function App(){
                     return(
                       <div key={lane} style={{display:"flex",alignItems:"center",minHeight:34,
                         borderTop:lane?`1px solid ${C.BD}22`:"none"}}>
-                        <div style={{width:72,flexShrink:0,padding:"0 10px 0 20px",
-                          fontSize:9,color:le.length?"#94a3b8":"#3b4a63"}}>
-                          {`pane ${lane+1}`}
+                        <div style={{width:72,flexShrink:0,padding:"0 10px 0 22px",
+                          fontSize:13,lineHeight:1,color:le.length?"#c084fc":"#2b3a52"}}>
+                          {["\u2460","\u2461","\u2462","\u2463"][lane]}
                         </div>
                         <div style={{flex:1,position:"relative",height:34,background:C.SUR,
                           marginRight:6,borderRadius:4}}>
