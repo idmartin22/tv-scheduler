@@ -3,6 +3,36 @@
   "label": "Sunday, October 4",
   "events": [
     {
+      "id": 49500638,
+      "lgId": 1999,
+      "lgSlug": "dp-world-tour",
+      "time": "06:30",
+      "name": "Alfred Dunhill Links Championship",
+      "sport": "Golf",
+      "league": "DP World Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 27617615,
       "lgId": 409,
       "lgSlug": "serie-a-women",
@@ -348,7 +378,9 @@
       "sport": "Football",
       "league": "NFL",
       "ch": [
-        "NFL Network"
+        "ESPN Unlimited",
+        "NFL Network",
+        "ESPN Deportes"
       ],
       "dur": 180,
       "_st": {
@@ -4714,7 +4746,7 @@
       "sport": "Motorsports",
       "time": "03:00",
       "date": "2026-10-04",
-      "channel": "Apple TV",
+      "channel": "Apple TV, TSN+, RDS, TSN1, TSN5",
       "reason": "cutoff",
       "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
     },
@@ -4774,9 +4806,9 @@
       "sport": "Hockey",
       "time": "13:00",
       "date": "2026-10-04",
-      "channel": "Sportsnet+",
+      "channel": "Sportsnet+, TSN+, TSN3",
       "reason": "channel",
-      "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet+, TSN+, TSN3 \u2014 none in channels.txt"
     },
     {
       "name": "America's Day at the Races",
@@ -5264,9 +5296,9 @@
       "sport": "Hockey",
       "time": "18:00",
       "date": "2026-10-04",
-      "channel": "MSG Sportsnet, Utah 16, Sportsnet 360, Sportsnet NOW, Sportsnet+, TVA Sports",
+      "channel": "MSG Sportsnet, MSG Sportsnet 2, Utah 16, Sportsnet 360, Sportsnet NOW, Sportsnet+, TVA Sports",
       "reason": "channel",
-      "detail": "airs on MSG Sportsnet, Utah 16, Sportsnet 360, Sportsnet NOW, Sportsnet+, TVA Sports \u2014 none in channels.txt"
+      "detail": "airs on MSG Sportsnet, MSG Sportsnet 2, Utah 16, Sportsnet 360, Sportsnet NOW, Sportsnet+, TVA Sports \u2014 none in channels.txt"
     },
     {
       "name": "Sarnia Sting @ Oshawa Generals",
@@ -5934,7 +5966,6 @@
         "League One (England)",
         "League One (Scotland)",
         "League Two (England)",
-        "Liga MX (Mexico)",
         "MLS (USA)",
         "Primera A (Colombia)",
         "Primera Division (Bolivia)",
@@ -6380,16 +6411,6 @@
       "country": "USA",
       "confederation": "CONCACAF"
     },
-    "liga-mx": {
-      "rating": 80.05,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
     "women-s-super-league": {
       "rating": 63.93,
       "area": "womens_club_league",
@@ -6559,6 +6580,15 @@
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20
+    },
+    "liga-mx": {
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "super-league": {
       "rating": 79.57,
