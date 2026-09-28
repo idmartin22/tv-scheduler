@@ -589,6 +589,13 @@ const TVS=[
   {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+// A QUAD is a TV wired through a multiviewer: it shows four events at once.
+// In scheduling terms that is simply a TV whose capacity is 4 concurrent
+// events instead of 1 — so a quad sitting second in the priority order takes
+// events 2-5, and moving it down the order moves which four it takes. No
+// separate path: the same assignment loop handles both.
+const QUAD_CAPACITY=4;
+const tvCapacity=(tvId,quads)=>(quads&&quads[tvId])?QUAD_CAPACITY:1;
 // Grid display order: basement TVs first (1,2,3,10) then bar TVs in sequence (4-9)
 const TV_DISPLAY=[0,1,2,9,3,4,5,6,7,8];
 
@@ -629,8 +636,18 @@ function fillBlocks(tvId,assigned,tvFillChMap){
   return out;
 }
 
-function runSchedule(events,activeTVs){
-  const active=TV_PRIO.filter(id=>activeTVs.has(id));
+function runSchedule(events,activeTVs,tvOrder,tvQuads){
+  // tvOrder is the user's priority list; fall back to the built-in order.
+  const ord=(Array.isArray(tvOrder)&&tvOrder.length)?tvOrder:TV_PRIO;
+  const active=ord.filter(id=>activeTVs.has(id));
+  const ordIndex=id=>{const i=active.indexOf(id);return i<0?999:i;};
+  const quads=tvQuads||{};
+  // lanes let a quad hold four concurrent events; a single TV always uses 0
+  const freeLane=(tv,e)=>{
+    const used=new Set(asgn.filter(a=>a.tv===tv&&overlaps(a,e)).map(a=>a.lane||0));
+    for(let l=0;l<tvCapacity(tv,quads);l++) if(!used.has(l)) return l;
+    return -1;
+  };
   const asgn=[];
   // Events carrying pinTv (currently just NFL RedZone) claim that TV before
   // anything else is placed, so they are never outbid on score. Everything
@@ -638,24 +655,31 @@ function runSchedule(events,activeTVs){
   // it. If the pinned TV is switched off, the pin is ignored and the event
   // falls back to normal assignment rather than vanishing.
   const isPinned=e=>Number.isInteger(e.pinTv)&&active.includes(e.pinTv);
-  for(const e of events.filter(isPinned)) asgn.push({...e,tv:e.pinTv,why:null,pinned:true});
+  for(const e of events.filter(isPinned)) asgn.push({...e,tv:e.pinTv,lane:0,why:null,pinned:true});
   const sorted=[...events].filter(e=>!isPinned(e)).sort((a,b)=>b.priority-a.priority||a.startMin-b.startMin);
   for(const e of sorted){
     const avail=[];
     for(const tv of active){
       const cur=asgn.filter(a=>a.tv===tv);
-      if(cur.find(a=>overlaps(a,e)))continue;
+      const lane=freeLane(tv,e);
+      if(lane<0)continue;                     // every pane busy at this time
       const last=cur.reduce((mx,a)=>a.endMin<=e.startMin?Math.max(mx,a.endMin):mx,BAR_OPEN);
-      avail.push({tv,gap:e.startMin-last,ord:TVS[tv].ord});
+      avail.push({tv,lane,gap:e.startMin-last,ord:ordIndex(tv)});
     }
     if(avail.length){
       avail.sort((a,b)=>a.ord!==b.ord?a.ord-b.ord:a.gap-b.gap);
-      asgn.push({...e,tv:avail[0].tv,why:null});
+      asgn.push({...e,tv:avail[0].tv,lane:avail[0].lane,why:null});
     }else{
-      const blk=active.map(tv=>({tv,b:asgn.filter(a=>a.tv===tv).find(a=>overlaps(a,e))})).filter(x=>x.b);
+      // Every pane on every TV is busy. Name the weakest thing showing, which
+      // is what the bump flow offers to replace.
+      const blk=[];
+      for(const tv of active)
+        for(const b of asgn.filter(a=>a.tv===tv&&overlaps(a,e))) blk.push({tv,b});
       blk.sort((a,b)=>a.b.priority-b.b.priority);
       const lb=blk[0];
-      asgn.push({...e,tv:-1,why:`All ${active.length} TVs occupied. Lowest: "${evName(lb.b)}" on ${TVS[lb.tv]?.name}`,bumpTgt:{name:lb.b.name,tv:lb.tv,label:evName(lb.b)}});
+      const panes=active.reduce((n,tv)=>n+tvCapacity(tv,quads),0);
+      asgn.push({...e,tv:-1,why:lb?`All ${panes} panes across ${active.length} TVs occupied. Lowest: "${evName(lb.b)}" on ${TVS[lb.tv]?.name}`:"No TV available",
+                 bumpTgt:lb?{name:lb.b.name,tv:lb.tv,label:evName(lb.b)}:null});
     }
   }
   return asgn;
@@ -745,6 +769,17 @@ function App(){
     loadScheduleForDate(t);
   },[loadScheduleForDate]);
 
+  const moveTv=(id,dir)=>{
+    const cur=[...tvOrder]; const i=cur.indexOf(id); const j=i+dir;
+    if(i<0||j<0||j>=cur.length) return;
+    [cur[i],cur[j]]=[cur[j],cur[i]];
+    setTvOrder(cur); debouncedSave(buildSavePayload({tvOrder:cur}));
+  };
+  const toggleQuad=(id)=>{
+    const n={...tvQuads,[id]:!tvQuads[id]};
+    if(!n[id]) delete n[id];
+    setTvQuads(n); debouncedSave(buildSavePayload({tvQuads:n}));
+  };
   const updateTvName=(id,val)=>{
     const n={...tvNames,[id]:val||`TV ${id+1}`};
     setTvNames(n);
@@ -795,6 +830,10 @@ function App(){
   const [areaOverrides,setAreaOverrides]=useState({}); // leagueId -> area, manual placement
   const [areaExpanded,setAreaExpanded]=useState({});
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  // Priority order for the TVs, and which of them are quads. Both live in
+  // settings.json so they follow you between devices.
+  const [tvOrder,setTvOrder]=useState([...TV_PRIO]);
+  const [tvQuads,setTvQuads]=useState({});
   const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
   const [scheduleStatus,setScheduleStatus]=useState("none"); // none | loading | loaded | error
   const [ready,setReady]=useState(false);
@@ -827,6 +866,10 @@ function App(){
           if(data.leagueStatus&&typeof data.leagueStatus==="object") setLeagueStatus(healLeagueNames(data.leagueStatus));
           else{seededStatus=INITIAL_LEAGUE_STATUS;setLeagueStatus(seededStatus);}
           if(data.tvNames&&typeof data.tvNames==="object") setTvNames(prev=>({...prev,...data.tvNames}));
+          if(Array.isArray(data.tvOrder)&&data.tvOrder.length) setTvOrder(
+            [...data.tvOrder.filter(id=>TV_PRIO.includes(id)),
+             ...TV_PRIO.filter(id=>!data.tvOrder.includes(id))]);
+          if(data.tvQuads&&typeof data.tvQuads==="object") setTvQuads(data.tvQuads);
           if(data.tvFillCh&&typeof data.tvFillCh==="object") setTvFillCh(prev=>({...prev,...data.tvFillCh}));
           // Store as last known good — these are now the true defaults
           lastKnownGood.current = data;
@@ -878,6 +921,8 @@ function App(){
           if(d.areaOverrides&&typeof d.areaOverrides==="object") setAreaOverrides(d.areaOverrides);
           if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
           if(d.tvNames) setTvNames(prev=>({...prev,...d.tvNames}));
+          if(Array.isArray(d.tvOrder)&&d.tvOrder.length) setTvOrder(d.tvOrder);
+          if(d.tvQuads) setTvQuads(d.tvQuads);
           if(d.prioOvr) setPrioOvr(Object.fromEntries(Object.entries(d.prioOvr).map(([k,v])=>[Number(k),v])));
           if(d.mirrors) setMirrors(d.mirrors);
           if(d.leagueStatus) setLeagueStatus(healLeagueNames(d.leagueStatus));
@@ -1056,10 +1101,12 @@ function App(){
       areaBases: overrides.areaBases ?? areaBases,
       areaOverrides: overrides.areaOverrides ?? areaOverrides,
       tvNames:    overrides.tvNames    ?? tvNames,
+      tvOrder:    overrides.tvOrder    ?? tvOrder,
+      tvQuads:    overrides.tvQuads    ?? tvQuads,
       tvFillCh:   overrides.tvFillCh   ?? tvFillCh,
       lastDate:   overrides.lastDate   ?? scheduleDate ?? new Date().toISOString().slice(0,10),
     };
-  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,areaBases,areaOverrides,tvNames,tvFillCh,scheduleDate]);
+  },[leagueMods,favTeams,prioOvr,mirrors,leagueStatus,soccerAdjustment,faveBoosts,areaBases,areaOverrides,tvNames,tvOrder,tvQuads,tvFillCh,scheduleDate]);
 
   const updateFave=(leagueId,val)=>{const f={...favTeams,[leagueId]:val};setFavTeams(f);debouncedSave(buildSavePayload({favTeams:f}));};
 
@@ -1164,7 +1211,8 @@ function App(){
     const s=new Set([...activeTVs].filter(id=>!mirrorTargets.has(id)));
     return s;
   },[activeTVs,presetPairs]);
-  const asgn0=useMemo(()=>runSchedule(ewp,schedulableTVs),[ewp,schedulableTVs]);
+  const asgn0=useMemo(()=>runSchedule(ewp,schedulableTVs,tvOrder,tvQuads),
+                      [ewp,schedulableTVs,tvOrder,tvQuads]);
 
   const {final,mblocks}=useMemo(()=>{
     const active=TV_PRIO.filter(id=>activeTVs.has(id));
@@ -1367,6 +1415,49 @@ function App(){
             const te=asgnd.filter(a=>a.tv===tvId).sort((a,b)=>a.startMin-b.startMin);
             const fb=fillBlocks(tvId,asgnd,tvFillCh);
             const mb=mblocks.filter(m=>m&&m.tv===tvId);
+            const isQuad=!!tvQuads[tvId];
+            // A quad keeps its own TV name and gains a marker; its four panes
+            // are drawn as four lanes beneath, and empty lanes still show so
+            // unused capacity is visible rather than silently absent.
+            if(isQuad){
+              const laneOf=a=>Math.min(QUAD_CAPACITY-1,Math.max(0,a.lane||0));
+              return(
+                <div key={tvId} style={{borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?C.A:tvId<=2?"#3b82f6":"#1e2d45"}`}}>
+                  <div style={{display:"flex",alignItems:"center",padding:"3px 10px 1px"}}>
+                    <div style={{fontSize:11,fontWeight:700,color:"#f1f5f9"}}>{tvLabel}</div>
+                    <span style={{marginLeft:6,fontSize:8,fontWeight:700,color:"#c084fc",
+                      border:"1px solid #c084fc55",borderRadius:4,padding:"1px 4px"}}>QUAD</span>
+                  </div>
+                  {Array.from({length:QUAD_CAPACITY},(_,lane)=>{
+                    const le=te.filter(a=>laneOf(a)===lane);
+                    return(
+                      <div key={lane} style={{display:"flex",alignItems:"center",minHeight:26,
+                        borderTop:lane?`1px solid ${C.BD}22`:"none"}}>
+                        <div style={{width:72,flexShrink:0,padding:"0 10px 0 20px",
+                          fontSize:9,color:le.length?"#94a3b8":"#3b4a63"}}>
+                          {`pane ${lane+1}`}
+                        </div>
+                        <div style={{flex:1,position:"relative",height:26,background:C.SUR,
+                          marginRight:6,borderRadius:4}}>
+                          {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0,opacity:0.5}}/>)}
+                          {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
+                            <div style={{position:"absolute",left:pct(nowMin),top:0,bottom:0,width:2,background:"#ef4444",zIndex:10,pointerEvents:"none",borderRadius:1}}/>
+                          )}
+                          {le.map(a=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;
+                            const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
+                            return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),height:22,top:2,
+                              left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3,padding:"1px 5px"}}
+                              className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}>
+                              <div style={{fontSize:9,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",
+                                overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.25}}>
+                                {a.isFave?"⭐":""}{evName(a)}
+                              </div>
+                            </div>);})}
+                        </div>
+                      </div>);
+                  })}
+                </div>);
+            }
             return(
               <div key={tvId} style={{display:"flex",alignItems:"center",minHeight:50,borderBottom:`1px solid ${C.BD}`,minWidth:960,borderLeft:`3px solid ${tvId===0?C.A:tvId<=2?"#3b82f6":"#1e2d45"}`}}>
                 <div style={{width:72,flexShrink:0,padding:"0 10px"}}>
@@ -1552,6 +1643,54 @@ function App(){
 
       {tab==="league"&&(
         <div style={{paddingBottom:80,maxWidth:980,margin:"0 auto"}}>
+          {/* TV priority order and quad boxes */}
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>TV Priority</div>
+            <div style={{fontSize:10,color:C.MT,marginBottom:10}}>
+              Top of the list gets the best event. A QUAD shows four at once, so it takes the
+              next four in the list — move it up or down to change which four.
+            </div>
+            {tvOrder.filter(id=>TV_PRIO.includes(id)).map((id,i)=>{
+              const q=!!tvQuads[id];
+              return(
+                <div key={id} style={{display:"grid",gridTemplateColumns:"26px 1fr 84px 64px",
+                  gap:8,alignItems:"center",padding:"5px 0",
+                  borderBottom:i<tvOrder.length-1?`1px solid ${C.BD}44`:"none"}}>
+                  <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
+                  <div style={{fontSize:12,color:"#f1f5f9"}}>
+                    {tvNames[id]||`TV ${id+1}`}
+                    <span style={{marginLeft:6,fontSize:9,color:C.DM}}>TV {id+1}</span>
+                    {q&&<span style={{marginLeft:6,fontSize:8,fontWeight:700,color:"#c084fc",
+                      border:"1px solid #c084fc55",borderRadius:4,padding:"1px 4px"}}>QUAD</span>}
+                  </div>
+                  <button onClick={()=>toggleQuad(id)}
+                    style={{background:q?"rgba(192,132,252,0.15)":C.SUR,
+                      border:`1px solid ${q?"#c084fc":C.BD2}`,borderRadius:8,
+                      color:q?"#c084fc":C.MT,fontSize:10,fontWeight:700,padding:"4px 0",cursor:"pointer"}}>
+                    {q?"QUAD ON":"quad off"}
+                  </button>
+                  <div style={{display:"flex",gap:4,justifyContent:"flex-end"}}>
+                    <button onClick={()=>moveTv(id,-1)} disabled={i===0}
+                      style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:6,
+                        color:i===0?C.BD2:"#f1f5f9",fontSize:11,padding:"3px 8px",
+                        cursor:i===0?"default":"pointer"}}>↑</button>
+                    <button onClick={()=>moveTv(id,1)} disabled={i===tvOrder.length-1}
+                      style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:6,
+                        color:i===tvOrder.length-1?C.BD2:"#f1f5f9",fontSize:11,padding:"3px 8px",
+                        cursor:i===tvOrder.length-1?"default":"pointer"}}>↓</button>
+                  </div>
+                </div>);
+            })}
+            <div style={{fontSize:10,color:C.DM,marginTop:8}}>
+              {(() => {
+                const on=tvOrder.filter(id=>activeTVs.has(id));
+                const panes=on.reduce((n,id)=>n+(tvQuads[id]?QUAD_CAPACITY:1),0);
+                const nq=on.filter(id=>tvQuads[id]).length;
+                return `${on.length} TVs on · ${nq} quad${nq===1?"":"s"} · ${panes} events at once`;
+              })()}
+            </div>
+          </div>
+
           {/* TV Name Labels */}
           <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
             <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9",marginBottom:4}}>TV Names</div>
