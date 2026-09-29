@@ -397,12 +397,26 @@ const sportIcon = s => {
     case "soccer":      return "⚽";
     case "baseball":    return "⚾";
     case "basketball":  return "🏀";
-    case "ice hockey":  return "🏒";
+    case "hockey":
+    case "ice hockey":  return "🏒";   // the feed sends plain "Hockey"
     case "golf":        return "⛳";
     case "motorsports": return "🏎️";
     case "tennis":      return "🎾";
     case "fighting":    return "🥊";
-    case "rugby":       return "🏉";
+    case "rugby":
+    case "rugby league":
+    case "rugby union": return "🏉";
+    case "volleyball":  return "🏐";
+    case "cycling":     return "🚴";
+    case "lacrosse":    return "🥍";
+    case "aus football":
+    case "australian football": return "🏉";
+    case "athletics":   return "🏃";
+    case "swimming":    return "🏊";
+    case "gymnastics":  return "🤸";
+    case "horse racing":return "🏇";
+    case "wintersports":return "⛷️";
+    case "cricket":     return "🏏";
     case "softball":    return "🥎";
     default:            return "🏟️";
   }
