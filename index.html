@@ -1608,7 +1608,7 @@ function App(){
                               className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}>
                               <div style={{fontSize:9,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",
                                 overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.2}}>
-                                {a.isFave?"⭐":""}{evName(a)}
+                                {evName(a)}
                               </div>
                               {/* where to tune — the whole point of the grid */}
                               <div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap",
@@ -1643,7 +1643,7 @@ function App(){
                     </div>
                   ))}
                   {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {evName(m)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{a.isFave?"⭐":""}{stars(a.ds??0)}{evName(a)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??"-"}/100</div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{evName(a)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??"-"}/100</div></div>);})}
                 </div>
               </div>
             );
@@ -1697,7 +1697,7 @@ function App(){
                         <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
                       </div>
                       <div style={{minWidth:0}}>
-                        <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{a.isFave?"⭐ ":""}{evName(a)}</div>
+                        <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{evName(a)}</div>
                         <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
                       </div>
                       <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><ChBadges channel={a.channel}/></div>
@@ -1773,7 +1773,7 @@ function App(){
                   </div>
                   {/* Event info */}
                   <div style={{minWidth:0}}>
-                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{e.isFave?"⭐ ":""}{evName(e)}</div>
+                    <div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{evName(e)}</div>
                     <div style={{fontSize:10,color:C.MT,marginTop:2}}>{e.league} · {m2t(e.startMin)} · <ChBadges channel={e.channel}/></div>
                   </div>
                   {/* Score */}
@@ -2391,7 +2391,7 @@ function App(){
         <div ref={detailPanelRef} style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
             <div>
-              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{selEv.isFave?"⭐ ":""}{evName(selEv)}</div>
+              <div style={{fontWeight:700,fontSize:13,color:"#fff",marginBottom:2}}>{evName(selEv)}</div>
               <div style={{fontSize:10,color:C.MT}}>{selEv.league} · <ChBadges channel={selEv.channel}/> · {m2t(selEv.startMin)}–{m2t(selEv.endMin)} · {selEv.ds?.toFixed(1)??0}/100{selEv.isFave&&<span style={{color:"#fbbf24",marginLeft:6}}>⭐ Fave +{faveBoosts[selEv.leagueId]??FAVE_BOOST}</span>}{selEv.tv!==-1&&<span style={{color:C.MT,marginLeft:6}}>· {TVS[selEv.tv]?.name} ({TVS[selEv.tv]?.sz}")</span>}</div>
             </div>
             <button onClick={()=>setSel(null)} style={{background:"none",border:`1px solid ${C.BD}`,borderRadius:4,color:C.MT,fontSize:11,padding:"3px 8px",cursor:"pointer"}}>✕</button>
