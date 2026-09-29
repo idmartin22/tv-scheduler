@@ -1127,6 +1127,11 @@
       "name": "Muay Thai",
       "sport": "Fighting",
       "status": "off"
+    },
+    "nahl": {
+      "name": "NAHL",
+      "sport": "Hockey",
+      "status": "pending"
     }
   },
   "soccerAdjustment": 0,
@@ -1252,7 +1257,7 @@
     "8": "NHL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-09-29",
+  "lastDate": "2026-10-02",
   "tvOrder": [
     0,
     1,
@@ -1274,12 +1279,5 @@
     "8": true
   },
   "confedBases": {},
-  "confedOverrides": {
-    "uefa-nations-league": "UEFA",
-    "africa-cup-of-nations-qualifier": "CAF",
-    "arabian-gulf-cup": "AFC",
-    "concacaf-nations-league": "CONCACAF",
-    "international-friendly": "INTERCONTINENTAL",
-    "women-s-africa-cup-of-nations": "CAF"
-  }
+  "confedOverrides": {}
 }
