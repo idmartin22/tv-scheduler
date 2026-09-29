@@ -374,32 +374,41 @@ function overlaps(a,b) { return !(!a||!b||a.endMin<=b.startMin||a.startMin>=b.en
 
 function sportColor(s,l,fave) {
   s=s||""; l=l||"";
-  if(fave) return {bg:"#78350f",tx:"#fde68a",br:"#fbbf24"};
+  // A favourite keeps its SPORT colour and gains a gold border — replacing
+  // the colour outright meant a favourite hockey game and a favourite soccer
+  // game looked identical, and you lost the sport at a glance.
+  if(fave){
+    const base=sportColor(s,l,false);
+    return {...base,br:"#fbbf24",fave:true};
+  }
   if(l.includes("World Cup")) return {bg:"#7f1d1d",tx:"#fecaca",br:"#f87171"};
   // One colour per sport, and none of them the grey the default uses —
   // hockey, volleyball, cycling and the rest were all falling through to it,
   // and Motorsports was literally the same grey as "unknown".
+  // Hues spaced deliberately. Hockey is STEEL rather than blue, so it does
+  // not read as baseball; football is violet rather than brown, which sat on
+  // top of the amber used for favourites.
   if(s==="Soccer")     return {bg:"#14532d",tx:"#86efac",br:"#4ade80"};   // green
-  if(s==="Football")   return {bg:"#422006",tx:"#fde68a",br:"#d97706"};   // brown
-  if(s==="Golf")       return {bg:"#064e3b",tx:"#6ee7b7",br:"#34d399"};   // teal
+  if(s==="Football")   return {bg:"#4c1d95",tx:"#ddd6fe",br:"#a78bfa"};   // violet
+  if(s==="Golf")       return {bg:"#4d7c0f",tx:"#ecfccb",br:"#bef264"};   // bright olive
   if(s==="Baseball"&&l==="MLB") return {bg:"#1e3a8a",tx:"#93c5fd",br:"#60a5fa"};
-  if(s==="Baseball")   return {bg:"#1e40af",tx:"#bfdbfe",br:"#93c5fd"};   // blue
-  if(s==="Basketball") return {bg:"#7c2d12",tx:"#fed7aa",br:"#fb923c"};   // orange
+  if(s==="Baseball")   return {bg:"#1d4ed8",tx:"#bfdbfe",br:"#93c5fd"};   // blue
+  if(s==="Basketball") return {bg:"#9a3412",tx:"#fed7aa",br:"#fb923c"};   // orange
   if(s==="Hockey"||s==="Ice Hockey")
-                       return {bg:"#0c4a6e",tx:"#bae6fd",br:"#38bdf8"};   // ice blue
-  if(s==="Motorsports")return {bg:"#450a0a",tx:"#fecdd3",br:"#fb7185"};   // red
-  if(s==="Softball")   return {bg:"#581c87",tx:"#e9d5ff",br:"#c084fc"};   // purple
-  if(s==="Tennis")     return {bg:"#713f12",tx:"#fef08a",br:"#fde047"};   // yellow
-  if(s==="Fighting")   return {bg:"#7f1d1d",tx:"#fca5a5",br:"#f87171"};   // crimson
+                       return {bg:"#475569",tx:"#f1f5f9",br:"#cbd5e1"};   // steel / ice
+  if(s==="Motorsports")return {bg:"#0c0a09",tx:"#fafaf9",br:"#e7e5e4"};   // asphalt / chequered
+  if(s==="Softball")   return {bg:"#a21caf",tx:"#f5d0fe",br:"#e879f9"};   // magenta
+  if(s==="Tennis")     return {bg:"#854d0e",tx:"#fef08a",br:"#facc15"};   // gold
+  if(s==="Fighting")   return {bg:"#b91c1c",tx:"#fee2e2",br:"#f87171"};   // red
   if(s.startsWith("Rugby")) return {bg:"#1e1b4b",tx:"#c7d2fe",br:"#818cf8"}; // indigo
-  if(s==="Volleyball") return {bg:"#134e4a",tx:"#99f6e4",br:"#2dd4bf"};   // aqua
-  if(s==="Cycling")    return {bg:"#3f3f46",tx:"#e4e4e7",br:"#a1a1aa"};   // slate
-  if(s==="Lacrosse")   return {bg:"#4c1d95",tx:"#ddd6fe",br:"#a78bfa"};   // violet
+  if(s==="Volleyball") return {bg:"#0f766e",tx:"#99f6e4",br:"#2dd4bf"};   // teal
+  if(s==="Cycling")    return {bg:"#7c2d5f",tx:"#fbcfe8",br:"#f9a8d4"};   // plum
+  if(s==="Lacrosse")   return {bg:"#7e22ce",tx:"#f3e8ff",br:"#c084fc"};   // purple
   if(s==="Aus Football"||s==="Australian Football")
-                       return {bg:"#831843",tx:"#fbcfe8",br:"#f472b6"};   // pink
-  if(s==="Cricket")    return {bg:"#3b0764",tx:"#e9d5ff",br:"#a855f7"};
+                       return {bg:"#86198f",tx:"#f5d0fe",br:"#e879f9"};   // fuchsia
+  if(s==="Cricket")    return {bg:"#1e3a8a",tx:"#dbeafe",br:"#60a5fa"};
   if(s==="Athletics"||s==="Swimming"||s==="Gymnastics"||s==="Wintersports"||s==="Horse Racing")
-                       return {bg:"#164e63",tx:"#cffafe",br:"#22d3ee"};   // cyan, olympic-ish
+                       return {bg:"#155e75",tx:"#cffafe",br:"#22d3ee"};   // cyan
   return {bg:"#1f2937",tx:"#e5e7eb",br:"#9ca3af"};
 }
 const sc = obj => obj ? sportColor(obj.sport,obj.league,obj.isFave) : {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
@@ -1474,7 +1483,7 @@ function App(){
   GLD:"#FFB81C",       // gold — reserved for the score-bug treatment
 };
   const tabStyle=a=>({background:a?C.A:"transparent",border:"none",borderRadius:20,color:a?"#fff":C.MT,fontSize:11,fontWeight:a?700:500,padding:"6px 14px",cursor:"pointer",letterSpacing:a?"0.02em":0});
-  const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:40,top:2,borderRadius:6,background:c.bg,border:`1.5px solid ${isNow?"#22c55e":isSel?"rgba(255,255,255,0.9)":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #22c55e,0 2px 8px rgba(0,0,0,0.4)":isSel?"0 0 0 2px rgba(255,255,255,0.6),0 2px 8px rgba(0,0,0,0.4)":"0 1px 4px rgba(0,0,0,0.3)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 7px",minWidth:4,transition:"box-shadow 0.15s ease"});
+  const blkStyle=(c,isSel,isNow)=>({position:"absolute",height:40,top:2,borderRadius:6,background:c.bg,border:`${c.fave?2.5:1.5}px solid ${isNow?"#22c55e":isSel?"rgba(255,255,255,0.9)":c.br}`,overflow:"hidden",cursor:"pointer",boxShadow:isNow?"0 0 0 2px #22c55e,0 2px 8px rgba(0,0,0,0.4)":isSel?"0 0 0 2px rgba(255,255,255,0.6),0 2px 8px rgba(0,0,0,0.4)":"0 1px 4px rgba(0,0,0,0.3)",display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 7px",minWidth:4,transition:"box-shadow 0.15s ease"});
 
   return(
     <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"'Inter',system-ui,sans-serif",fontSize:13}}>
