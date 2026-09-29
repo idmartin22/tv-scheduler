@@ -376,17 +376,30 @@ function sportColor(s,l,fave) {
   s=s||""; l=l||"";
   if(fave) return {bg:"#78350f",tx:"#fde68a",br:"#fbbf24"};
   if(l.includes("World Cup")) return {bg:"#7f1d1d",tx:"#fecaca",br:"#f87171"};
-  if(s==="Soccer")     return {bg:"#14532d",tx:"#86efac",br:"#4ade80"};
-  if(s==="Golf")       return {bg:"#064e3b",tx:"#6ee7b7",br:"#34d399"};
+  // One colour per sport, and none of them the grey the default uses —
+  // hockey, volleyball, cycling and the rest were all falling through to it,
+  // and Motorsports was literally the same grey as "unknown".
+  if(s==="Soccer")     return {bg:"#14532d",tx:"#86efac",br:"#4ade80"};   // green
+  if(s==="Football")   return {bg:"#422006",tx:"#fde68a",br:"#d97706"};   // brown
+  if(s==="Golf")       return {bg:"#064e3b",tx:"#6ee7b7",br:"#34d399"};   // teal
   if(s==="Baseball"&&l==="MLB") return {bg:"#1e3a8a",tx:"#93c5fd",br:"#60a5fa"};
-  if(s==="Baseball")   return {bg:"#1e40af",tx:"#bfdbfe",br:"#93c5fd"};
-  if(s==="Basketball") return {bg:"#7c2d12",tx:"#fed7aa",br:"#fb923c"};
-  if(s==="Motorsports")return {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
-  if(s==="Softball")   return {bg:"#581c87",tx:"#e9d5ff",br:"#c084fc"};
-  if(s==="Tennis")     return {bg:"#713f12",tx:"#fef08a",br:"#fde047"};
-  if(s==="Fighting")   return {bg:"#7f1d1d",tx:"#fca5a5",br:"#f87171"};
-  if(s==="Rugby")      return {bg:"#1e1b4b",tx:"#c7d2fe",br:"#818cf8"};
-  if(s==="Football")   return {bg:"#052e16",tx:"#86efac",br:"#4ade80"};
+  if(s==="Baseball")   return {bg:"#1e40af",tx:"#bfdbfe",br:"#93c5fd"};   // blue
+  if(s==="Basketball") return {bg:"#7c2d12",tx:"#fed7aa",br:"#fb923c"};   // orange
+  if(s==="Hockey"||s==="Ice Hockey")
+                       return {bg:"#0c4a6e",tx:"#bae6fd",br:"#38bdf8"};   // ice blue
+  if(s==="Motorsports")return {bg:"#450a0a",tx:"#fecdd3",br:"#fb7185"};   // red
+  if(s==="Softball")   return {bg:"#581c87",tx:"#e9d5ff",br:"#c084fc"};   // purple
+  if(s==="Tennis")     return {bg:"#713f12",tx:"#fef08a",br:"#fde047"};   // yellow
+  if(s==="Fighting")   return {bg:"#7f1d1d",tx:"#fca5a5",br:"#f87171"};   // crimson
+  if(s.startsWith("Rugby")) return {bg:"#1e1b4b",tx:"#c7d2fe",br:"#818cf8"}; // indigo
+  if(s==="Volleyball") return {bg:"#134e4a",tx:"#99f6e4",br:"#2dd4bf"};   // aqua
+  if(s==="Cycling")    return {bg:"#3f3f46",tx:"#e4e4e7",br:"#a1a1aa"};   // slate
+  if(s==="Lacrosse")   return {bg:"#4c1d95",tx:"#ddd6fe",br:"#a78bfa"};   // violet
+  if(s==="Aus Football"||s==="Australian Football")
+                       return {bg:"#831843",tx:"#fbcfe8",br:"#f472b6"};   // pink
+  if(s==="Cricket")    return {bg:"#3b0764",tx:"#e9d5ff",br:"#a855f7"};
+  if(s==="Athletics"||s==="Swimming"||s==="Gymnastics"||s==="Wintersports"||s==="Horse Racing")
+                       return {bg:"#164e63",tx:"#cffafe",br:"#22d3ee"};   // cyan, olympic-ish
   return {bg:"#1f2937",tx:"#e5e7eb",br:"#9ca3af"};
 }
 const sc = obj => obj ? sportColor(obj.sport,obj.league,obj.isFave) : {bg:"#1f2937",tx:"#d1d5db",br:"#9ca3af"};
