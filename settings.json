@@ -1131,7 +1131,7 @@
     "nahl": {
       "name": "NAHL",
       "sport": "Hockey",
-      "status": "pending"
+      "status": "off"
     },
     "serie-a-brazil": {
       "name": "Serie A Brazil",
@@ -1290,12 +1290,6 @@
     "7": true,
     "8": true
   },
-  "confedBases": {
-    "CAF": 10,
-    "INTERCONTINENTAL": 10
-  },
-  "confedOverrides": {
-    "women-s-africa-cup-of-nations": "CAF",
-    "international-friendly-women": "INTERCONTINENTAL"
-  }
+  "confedBases": {},
+  "confedOverrides": {}
 }
