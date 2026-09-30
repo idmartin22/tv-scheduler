@@ -3,6 +3,37 @@
   "label": "Saturday, October 3",
   "events": [
     {
+      "id": 95144548,
+      "lgId": 3318,
+      "lgSlug": "afl-women",
+      "time": "05:15",
+      "name": "Port Adelaide Power - Adelaide Crows",
+      "sport": "Aus Football",
+      "league": "AFL Women",
+      "ch": [
+        "FOX Sports 2",
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "AFL Women not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 27715000,
       "lgId": 3577,
       "lgSlug": "road-cycling",
@@ -63,6 +94,96 @@
       "_score": 15
     },
     {
+      "id": 64779180,
+      "lgId": 2003,
+      "lgSlug": "atp",
+      "time": "07:00",
+      "name": "China Open",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10,
+        "l": "Tennis event +10"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10
+    },
+    {
+      "id": 38858087,
+      "lgId": 3622,
+      "lgSlug": "womens-road-cycling",
+      "time": "07:30",
+      "name": "UEC Road European Championships",
+      "sport": "Cycling",
+      "league": "Women's Road Cycling",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
+      "id": 55607096,
+      "lgId": 2026,
+      "lgSlug": "gt-world-challenge",
+      "time": "07:30",
+      "name": "GT World Challenge Europe",
+      "sport": "Motorsports",
+      "league": "GT World Challenge",
+      "ch": [
+        "beIN SPORTS 4"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
+    },
+    {
       "id": 63762704,
       "lgId": 541,
       "lgSlug": "laliga-2",
@@ -97,7 +218,7 @@
       "espn": "esp.2",
       "lgR": 78.55,
       "_rk": [
-        192,
+        193,
         609
       ]
     },
@@ -144,8 +265,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 0.1360544217686669,
-        "l": "Quality +0.1 (GFR 83.2-88.1 vs tier1 baseline 171.2 (WSL (England)))"
+        "v": 0.47334448960076947,
+        "l": "Quality +0.5 (GFR 83.2-88.2 vs tier1 baseline 171.0 (WSL (England)))"
       },
       "_sk": {
         "v": 0,
@@ -159,14 +280,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.1360544217686669,
+      "_score": 0.47334448960076947,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "eng.w.1",
       "lgR": 63.93,
       "_rk": [
-        30,
-        11
+        29,
+        10
       ]
     },
     {
@@ -241,8 +362,8 @@
       "espn": "",
       "lgR": 75.81,
       "_rk": [
-        94,
-        70
+        95,
+        71
       ]
     },
     {
@@ -309,8 +430,8 @@
       "espn": "eng.3",
       "lgR": 75.72,
       "_rk": [
-        715,
-        681
+        714,
+        682
       ]
     },
     {
@@ -347,8 +468,8 @@
       "espn": "eng.3",
       "lgR": 75.72,
       "_rk": [
-        613,
-        688
+        614,
+        689
       ]
     },
     {
@@ -424,8 +545,8 @@
       "espn": "eng.4",
       "lgR": 69.65,
       "_rk": [
-        1119,
-        1201
+        1118,
+        1200
       ]
     },
     {
@@ -540,7 +661,7 @@
       "lgR": 78.55,
       "_rk": [
         235,
-        193
+        194
       ]
     },
     {
@@ -1228,7 +1349,8 @@
       "sport": "Football",
       "league": "College Football",
       "ch": [
-        "FOX"
+        "FOX",
+        "FOX Deportes"
       ],
       "dur": 210,
       "_st": {
@@ -1325,6 +1447,37 @@
       ]
     },
     {
+      "id": 75842273,
+      "lgId": 2039,
+      "lgSlug": "imsa-sportscar-championship",
+      "time": "12:10",
+      "name": "Motul Petit Le Mans",
+      "sport": "Motorsports",
+      "league": "IMSA SportsCar Championship",
+      "ch": [
+        "NBC",
+        "Peacock"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
+    },
+    {
       "id": 87822855,
       "lgId": 541,
       "lgSlug": "laliga-2",
@@ -1360,7 +1513,7 @@
       "lgR": 78.55,
       "_rk": [
         547,
-        769
+        768
       ]
     },
     {
@@ -1398,7 +1551,7 @@
       "espn": "esp.2",
       "lgR": 78.55,
       "_rk": [
-        583,
+        582,
         423
       ]
     },
@@ -1470,6 +1623,40 @@
         51,
         1
       ]
+    },
+    {
+      "id": 23808687,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "13:00",
+      "name": "HOU / DET @ Cleveland Guardians",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "TBS",
+        "truTV",
+        "HBO Max (US)",
+        "Univision",
+        "TUDN"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0.0,
+        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
     },
     {
       "id": 4375996,
@@ -2079,74 +2266,6 @@
         296,
         245
       ]
-    },
-    {
-      "id": 65171222,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "14:00",
-      "name": "HOU / DET @ Cleveland Guardians",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "TBS",
-        "truTV",
-        "HBO Max (US)",
-        "Univision",
-        "TUDN"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0.0,
-        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
-      "id": 6569730,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "14:00",
-      "name": "BAL / KC @ Tampa Bay Rays",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "TBS",
-        "truTV",
-        "HBO Max (US)",
-        "Univision",
-        "TUDN"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0.0,
-        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
     },
     {
       "id": 83793356,
@@ -2850,8 +2969,7 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "ESPN Unlimited"
       ],
       "dur": 120,
       "_st": {
@@ -3017,6 +3135,7 @@
       "league": "UEFA Nations League",
       "ch": [
         "FOX Sports 2",
+        "FOX One",
         "ViX"
       ],
       "dur": 120,
@@ -3115,44 +3234,6 @@
       "area": "mens_club_league",
       "espn": "usa.usl.l1",
       "lgR": 44.07
-    },
-    {
-      "id": 60396908,
-      "lgId": 230,
-      "lgSlug": "primera-a",
-      "time": "15:00",
-      "name": "Jaguares de C\u00f3rdoba @ Rionegro \u00c1guilas",
-      "sport": "Soccer",
-      "league": "Primera A",
-      "ch": [
-        "Fanatiz"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 76.1-39.3 (not rated yet) vs tier1 baseline 159.6 (Primera A (Colombia) \u2014 opponent not in GFR))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "col.1",
-      "lgR": 79.82,
-      "_rk": [
-        716,
-        null
-      ]
     },
     {
       "id": 59715304,
@@ -3383,8 +3464,7 @@
       "sport": "Volleyball",
       "league": "Women's College Volleyball",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "ESPN Unlimited"
       ],
       "dur": 120,
       "_st": {
@@ -3622,6 +3702,37 @@
       },
       "_score": 0,
       "cat": "unclassified"
+    },
+    {
+      "id": 69059609,
+      "lgId": 2039,
+      "lgSlug": "imsa-sportscar-championship",
+      "time": "15:00",
+      "name": "Motul Petit Le Mans",
+      "sport": "Motorsports",
+      "league": "IMSA SportsCar Championship",
+      "ch": [
+        "Peacock",
+        "NBC Sports Network"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
     },
     {
       "id": 3874429,
@@ -4269,8 +4380,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -7.592319054652852,
-        "l": "Quality -7.6 (GFR 85.9-82.0 vs tier1 baseline 171.5 (NWSL (USA)))"
+        "v": -6.6617429837518,
+        "l": "Quality -6.7 (GFR 86.3-82.0 vs tier1 baseline 171.5 (NWSL (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -4284,14 +4395,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.592319054652852,
+      "_score": -6.6617429837518,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.nwsl",
       "lgR": 85.76,
       "_rk": [
-        18,
-        38
+        17,
+        37
       ]
     },
     {
@@ -5388,7 +5499,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5669,44 +5781,6 @@
       "_score": 0
     },
     {
-      "id": 72572000,
-      "lgId": 230,
-      "lgSlug": "primera-a",
-      "time": "17:05",
-      "name": "Boyac\u00e1 Chic\u00f3 @ Deportes Tolima",
-      "sport": "Soccer",
-      "league": "Primera A",
-      "ch": [
-        "Fanatiz"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0.5143798302293245,
-        "l": "Quality +0.5 (GFR 78.5-81.4 vs tier1 baseline 159.6 (Primera A (Colombia)))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.5143798302293245,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "col.1",
-      "lgR": 79.82,
-      "_rk": [
-        494,
-        267
-      ]
-    },
-    {
       "id": 49358621,
       "lgId": 592,
       "lgSlug": "usl-league-one",
@@ -5755,7 +5829,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -8.824923806298665,
+        "v": -8.786105342646797,
         "l": "Quality -8.8 (GFR 66.0-66.6 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
@@ -5770,13 +5844,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.824923806298665,
+      "_score": -8.786105342646797,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.62,
       "_rk": [
-        1480,
+        1481,
         1445
       ]
     },
@@ -6137,6 +6211,37 @@
       "_score": 0
     },
     {
+      "id": 2146312,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "18:00",
+      "name": "Louisiana Tech @ South Alabama",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 1289171,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -6274,7 +6379,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 38.1 (not rated yet)-88.2 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR))"
+        "l": "Quality -20.0 (GFR 37.9 (not rated yet)-88.2 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -6295,8 +6400,42 @@
       "lgR": 85.76,
       "_rk": [
         null,
-        10
+        11
       ]
+    },
+    {
+      "id": 3918713,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "18:30",
+      "name": "BAL / KC @ Tampa Bay Rays",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "TBS",
+        "truTV",
+        "HBO Max (US)",
+        "Univision",
+        "TUDN"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0.0,
+        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
     },
     {
       "id": 92913914,
@@ -6478,8 +6617,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -0.9609812996199508,
-        "l": "Quality -1.0 (GFR 66.3-70.4 vs tier1 baseline 137.2 (USL Championship (USA)))"
+        "v": -0.8948461393241767,
+        "l": "Quality -0.9 (GFR 66.3-70.4 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -6493,7 +6632,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.9609812996199508,
+      "_score": -0.8948461393241767,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
@@ -6517,8 +6656,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 12.52243270189423,
-        "l": "Quality +12.5 (GFR 70.9-70.3 vs tier1 baseline 137.2 (USL Championship (USA)))"
+        "v": 12.565055762081665,
+        "l": "Quality +12.6 (GFR 70.9-70.3 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -6532,7 +6671,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.52243270189423,
+      "_score": 12.565055762081665,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
@@ -6579,6 +6718,216 @@
       "_rk": [
         1303,
         null
+      ]
+    },
+    {
+      "id": 96664377,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:00",
+      "name": "Chicago Blackhawks @ Buffalo Sabres",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -3.01016360561019,
+        "l": "Quality -3.0 (Chicago Blackhawks -0.530 vs Buffalo Sabres 0.341)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.01016360561019,
+      "_rk": [
+        31,
+        4
+      ]
+    },
+    {
+      "id": 20892809,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:00",
+      "name": "Ottawa Senators @ Toronto Maple Leafs",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -2.0122641838929045,
+        "l": "Quality -2.0 (Ottawa Senators 0.232 vs Toronto Maple Leafs -0.358)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.0122641838929045,
+      "_rk": [
+        7,
+        30
+      ]
+    },
+    {
+      "id": 92008584,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:00",
+      "name": "Washington Capitals @ Tampa Bay Lightning",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 7.709262247611766,
+        "l": "Quality +7.7 (Washington Capitals 0.066 vs Tampa Bay Lightning 0.362)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.709262247611766,
+      "_rk": [
+        13,
+        3
+      ]
+    },
+    {
+      "id": 59858894,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:00",
+      "name": "Carolina Hurricanes @ Philadelphia Flyers",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 11.435527492114186,
+        "l": "Quality +11.4 (Carolina Hurricanes 0.610 vs Philadelphia Flyers 0.025)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.435527492114186,
+      "_rk": [
+        1,
+        16
+      ]
+    },
+    {
+      "id": 16801637,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:00",
+      "name": "Montreal Canadiens @ Pittsburgh Penguins",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 5.706687058267876,
+        "l": "Quality +5.7 (Montreal Canadiens 0.255 vs Pittsburgh Penguins 0.062)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.706687058267876,
+      "_rk": [
+        6,
+        14
+      ]
+    },
+    {
+      "id": 6985677,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:00",
+      "name": "Utah Mammoth @ Columbus Blue Jackets",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 2.0847788317186873,
+        "l": "Quality +2.1 (Utah Mammoth 0.077 vs Columbus Blue Jackets 0.039)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.0847788317186873,
+      "_rk": [
+        10,
+        15
       ]
     },
     {
@@ -7738,8 +8087,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.630857427716799,
-        "l": "Quality +7.6 (GFR 68.1-71.6 vs tier1 baseline 137.2 (USL Championship (USA)))"
+        "v": 7.701363073110179,
+        "l": "Quality +7.7 (GFR 68.1-71.6 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -7753,14 +8102,49 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.630857427716799,
+      "_score": 7.701363073110179,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.62,
       "_rk": [
-        1361,
+        1360,
         1097
+      ]
+    },
+    {
+      "id": 85903758,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:30",
+      "name": "New Jersey Devils @ New York Islanders",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -1.0079782058766287,
+        "l": "Quality -1.0 (New Jersey Devils -0.043 vs New York Islanders -0.021)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.0079782058766287,
+      "_rk": [
+        19,
+        17
       ]
     },
     {
@@ -8083,7 +8467,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 12.179710867397768,
+        "v": 12.224287484510459,
         "l": "Quality +12.2 (GFR 71.3-69.9 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
@@ -8098,13 +8482,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.179710867397768,
+      "_score": 12.224287484510459,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.62,
       "_rk": [
-        1124,
+        1123,
         1223
       ]
     },
@@ -8117,6 +8501,8 @@
       "sport": "Hockey",
       "league": "NHL",
       "ch": [
+        "ESPN Unlimited",
+        "ESPN Select",
         "Prime Video (US)"
       ],
       "dur": 150,
@@ -8140,6 +8526,41 @@
       "_rk": [
         5,
         21
+      ]
+    },
+    {
+      "id": 39135476,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "20:00",
+      "name": "Boston Bruins @ Minnesota Wild",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 5.354032307943167,
+        "l": "Quality +5.4 (Boston Bruins 0.067 vs Minnesota Wild 0.230)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.354032307943167,
+      "_rk": [
+        12,
+        8
       ]
     },
     {
@@ -8517,7 +8938,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 38.1 (not rated yet)-87.5 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR))"
+        "l": "Quality -20.0 (GFR 37.9 (not rated yet)-87.5 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -8591,8 +9012,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 2.5834995014954627,
-        "l": "Quality +2.6 (GFR 67.9-70.1 vs tier1 baseline 137.2 (USL Championship (USA)))"
+        "v": 2.6827757125153613,
+        "l": "Quality +2.7 (GFR 67.9-70.1 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -8606,14 +9027,49 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.5834995014954627,
+      "_score": 2.6827757125153613,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.62,
       "_rk": [
-        1373,
-        1204
+        1372,
+        1203
+      ]
+    },
+    {
+      "id": 22145073,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "21:00",
+      "name": "St. Louis Blues @ Colorado Avalanche",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 8.317411766028867,
+        "l": "Quality +8.3 (St. Louis Blues -0.040 vs Colorado Avalanche 0.501)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.317411766028867,
+      "_rk": [
+        18,
+        2
       ]
     },
     {
@@ -8852,7 +9308,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -12.32419008917486,
+        "v": -12.297526902020042,
         "l": "Quality -12.3 (GFR 64.0-66.6 vs tier1 baseline 137.2 (USL Championship (USA)))"
       },
       "_sk": {
@@ -8867,14 +9323,84 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.32419008917486,
+      "_score": -12.297526902020042,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "usa.usl.1",
       "lgR": 68.62,
       "_rk": [
-        1561,
+        1562,
         1442
+      ]
+    },
+    {
+      "id": 67714120,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "22:00",
+      "name": "Calgary Flames @ Vancouver Canucks",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -15.77050309099346,
+        "l": "Quality -15.8 (Calgary Flames -0.265 vs Vancouver Canucks -0.723)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -15.77050309099346,
+      "_rk": [
+        28,
+        32
+      ]
+    },
+    {
+      "id": 42796171,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "22:00",
+      "name": "Los Angeles Kings @ San Jose Sharks",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -6.7383158451459675,
+        "l": "Quality -6.7 (Los Angeles Kings -0.183 vs San Jose Sharks -0.239)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.7383158451459675,
+      "_rk": [
+        25,
+        27
       ]
     },
     {
@@ -8886,7 +9412,9 @@
       "sport": "Soccer",
       "league": "International Friendly",
       "ch": [
+        "Peacock ES",
         "TNT",
+        "truTV",
         "HBO Max (US)",
         "Telemundo",
         "NBC Universo"
@@ -8927,7 +9455,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Sports 2"
+        "FOX Sports 2",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -9379,7 +9908,7 @@
       "lgR": 71.26,
       "_rk": [
         131,
-        328
+        327
       ]
     },
     {
@@ -9425,6 +9954,36 @@
       "detail": "starts 12:30 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "RIZIN Landmark 16",
+      "league": "MMA",
+      "sport": "Fighting",
+      "time": "01:00",
+      "date": "2026-10-03",
+      "channel": "Fight Network Canada",
+      "reason": "cutoff",
+      "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Western Bulldogs - St. Kilda Saints",
+      "league": "AFL Women",
+      "sport": "Aus Football",
+      "time": "01:05",
+      "date": "2026-10-03",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One",
+      "reason": "cutoff",
+      "detail": "starts 01:05 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Tour de Langkawi",
+      "league": "Men's Road Cycling",
+      "sport": "Cycling",
+      "time": "01:30",
+      "date": "2026-10-03",
+      "channel": "Next Level Sports",
+      "reason": "cutoff",
+      "detail": "starts 01:30 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Japanese Grand Prix",
       "league": "MotoGP",
       "sport": "Motorsports",
@@ -9453,6 +10012,16 @@
       "channel": "Sling TV, HBO Max (US)",
       "reason": "cutoff",
       "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Brisbane Lions - Gold Coast Suns",
+      "league": "AFL Women",
+      "sport": "Aus Football",
+      "time": "03:05",
+      "date": "2026-10-03",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One",
+      "reason": "cutoff",
+      "detail": "starts 03:05 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "Bahrain Grand Prix",
@@ -9675,6 +10244,16 @@
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "Lazio @ Roma",
+      "league": "Serie A Women",
+      "sport": "Soccer",
+      "time": "12:00",
+      "date": "2026-10-03",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "MoraBanc Andorra @ Joventut Badalona",
       "league": "ACB",
       "sport": "Basketball",
@@ -9783,6 +10362,16 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Alfred State College @ SUNY Morrisville",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "12:00",
+      "date": "2026-10-03",
+      "channel": "BoxCast TV",
+      "reason": "channel",
+      "detail": "airs on BoxCast TV \u2014 none in channels.txt"
     },
     {
       "name": "Merrimack @ Yale",
@@ -11330,9 +11919,9 @@
       "sport": "Football",
       "time": "19:00",
       "date": "2026-10-03",
-      "channel": "CFL+ (US), TSN+, RDS, TSN1, TSN3, TSN5",
+      "channel": "CFL+ (US), TSN+, RDS, TSN1, TSN3, TSN5, TSN 4K",
       "reason": "channel",
-      "detail": "airs on CFL+ (US), TSN+, RDS, TSN1, TSN3, TSN5 \u2014 none in channels.txt"
+      "detail": "airs on CFL+ (US), TSN+, RDS, TSN1, TSN3, TSN5, TSN 4K \u2014 none in channels.txt"
     },
     {
       "name": "Sault Ste. Marie Greyhounds @ Flint Firebirds",
@@ -11373,66 +11962,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Chicago Blackhawks @ Buffalo Sabres",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-10-03",
-      "channel": "MSG Sportsnet, Chicago Sports Network, NHL Network USA Alternate, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on MSG Sportsnet, Chicago Sports Network, NHL Network USA Alternate, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Ottawa Senators @ Toronto Maple Leafs",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-10-03",
-      "channel": "Sportsnet, Sportsnet Ontario, Sportsnet Pacific, Sportsnet NOW",
-      "reason": "channel",
-      "detail": "airs on Sportsnet, Sportsnet Ontario, Sportsnet Pacific, Sportsnet NOW \u2014 none in channels.txt"
-    },
-    {
-      "name": "Washington Capitals @ Tampa Bay Lightning",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-10-03",
-      "channel": "Monumental Sports Network, Scripps 66, The Spot, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on Monumental Sports Network, Scripps 66, The Spot, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Carolina Hurricanes @ Philadelphia Flyers",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-10-03",
-      "channel": "NBC Sports Philadelphia, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on NBC Sports Philadelphia, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Montreal Canadiens @ Pittsburgh Penguins",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-10-03",
-      "channel": "SportsNet Pittsburgh, Sportsnet East, Sportsnet NOW, TVA Sports",
-      "reason": "channel",
-      "detail": "airs on SportsNet Pittsburgh, Sportsnet East, Sportsnet NOW, TVA Sports \u2014 none in channels.txt"
-    },
-    {
-      "name": "Utah Mammoth @ Columbus Blue Jackets",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-10-03",
-      "channel": "Utah 16, Arizona 61, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on Utah 16, Arizona 61, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Purdue @ Penn State",
@@ -11655,16 +12184,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "New Jersey Devils @ New York Islanders",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "19:30",
-      "date": "2026-10-03",
-      "channel": "MSG Sportsnet, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on MSG Sportsnet, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
       "name": "Milwaukee Admirals @ Rockford IceHogs",
       "league": "AHL",
       "sport": "Hockey",
@@ -11683,16 +12202,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Boston Bruins @ Minnesota Wild",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "20:00",
-      "date": "2026-10-03",
-      "channel": "NESN, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on NESN, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Calgary Hitmen @ Lethbridge Hurricanes",
@@ -11885,16 +12394,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "St. Louis Blues @ Colorado Avalanche",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "21:00",
-      "date": "2026-10-03",
-      "channel": "Altitude, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on Altitude, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
       "name": "Kelowna Rockets @ Kamloops Blazers",
       "league": "OHL",
       "sport": "Hockey",
@@ -11973,26 +12472,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Calgary Flames @ Vancouver Canucks",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "22:00",
-      "date": "2026-10-03",
-      "channel": "Sportsnet, Sportsnet NOW, TVA Sports 2",
-      "reason": "channel",
-      "detail": "airs on Sportsnet, Sportsnet NOW, TVA Sports 2 \u2014 none in channels.txt"
-    },
-    {
-      "name": "Los Angeles Kings @ San Jose Sharks",
-      "league": "NHL",
-      "sport": "Hockey",
-      "time": "22:00",
-      "date": "2026-10-03",
-      "channel": "FanDuel Sports Network West, NBC Sports California, Sportsnet+",
-      "reason": "channel",
-      "detail": "airs on FanDuel Sports Network West, NBC Sports California, Sportsnet+ \u2014 none in channels.txt"
     },
     {
       "name": "Swift Current Broncos @ Vancouver Giants",
@@ -12847,17 +13326,17 @@
         "Concacaf Champions Cup": 72.08,
         "Leagues Cup": 79.36,
         "Conmebol Libertadores": 78.08,
-        "English Fa Cup": 71.27,
+        "English Fa Cup": 71.28,
         "Carabao Cup": 78.34,
         "Copa Del Rey": 39.29,
         "Club World Cup": 85.21,
-        "German Cup": 64.6,
+        "German Cup": 64.61,
         "Coppa Italia": 70.75,
         "Uefa Champions League": 89.29,
         "Uefa Europa League": 82.57,
         "Uefa Conference League": 71.67,
         "U.S. Open Cup": 55.12,
-        "Usl Cup": 58.0
+        "Usl Cup": 57.99
       },
       "origin": {
         "Afc Champions League Elite": {
@@ -12966,7 +13445,7 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "Uefa Women'S Champions League": 85.26
+        "Uefa Women'S Champions League": 85.24
       },
       "origin": {
         "Uefa Women'S Champions League": {
@@ -12975,8 +13454,8 @@
         }
       },
       "label": "Women's club competitions",
-      "top": 85.26,
-      "worst": 85.26,
+      "top": 85.24,
+      "worst": 85.24,
       "anchored": true,
       "span": 0.0,
       "seen": []
@@ -13007,7 +13486,7 @@
       "area": "mens_national"
     },
     "uefa-women-s-champions-league": {
-      "rating": 85.26,
+      "rating": 85.24,
       "area": "womens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 18,
@@ -13133,6 +13612,9 @@
     "liga-mx-femenil": {
       "rating": 71.26,
       "area": "womens_club_league",
+      "rosterMatched": 17,
+      "rosterTotal": 18,
+      "rosterCode": "mex.w.1",
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -13427,7 +13909,7 @@
       "rosterTotal": 2
     },
     "usl-cup": {
-      "rating": 58.0,
+      "rating": 57.99,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 26,
@@ -13497,7 +13979,7 @@
       "rosterTotal": 27
     },
     "women-s-pro-baseball-league": {
-      "rating": 73.91,
+      "rating": 73.32,
       "area": "womens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -13517,6 +13999,15 @@
       "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
+    },
+    "serie-a-brazil": {
+      "rating": 83.95,
+      "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Brazil",
+      "confederation": "CONMEBOL",
+      "rosterMatched": 20,
+      "rosterTotal": 20
     }
   },
   "confedAnchors": {}
