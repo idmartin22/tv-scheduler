@@ -322,6 +322,37 @@
       "_score": 15
     },
     {
+      "id": 13981963,
+      "lgId": 3601,
+      "lgSlug": "cross-country-running",
+      "time": "13:00",
+      "name": "Bengal Invitational",
+      "sport": "Athletics",
+      "league": "Cross-Country Running",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Cross-Country Running not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 37829777,
       "lgId": 541,
       "lgSlug": "laliga-2",
@@ -357,7 +388,7 @@
       "lgR": 78.55,
       "_rk": [
         317,
-        597
+        596
       ]
     },
     {
@@ -517,7 +548,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX One",
-        "Tubi"
+        "Tubi",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -772,7 +804,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -1092,7 +1125,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -2083,37 +2117,6 @@
       "_score": 0
     },
     {
-      "id": 2146312,
-      "lgId": 2890,
-      "lgSlug": "ncaa-college-volleyball-women",
-      "time": "18:00",
-      "name": "Louisiana Tech @ South Alabama",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 80563407,
       "lgId": 2005,
       "lgSlug": "ncaa-hockey",
@@ -2423,6 +2426,7 @@
       "sport": "Hockey",
       "league": "NHL",
       "ch": [
+        "NBC",
         "ESPN Unlimited",
         "ESPN Select"
       ],
@@ -4788,8 +4792,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.25203252032517,
-        "l": "Quality +7.3 (GFR 88.6-85.5 vs tier1 baseline 171.5 (NWSL (USA)))"
+        "v": 8.987804878048829,
+        "l": "Quality +9.0 (GFR 88.6-86.1 vs tier1 baseline 171.5 (NWSL (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -4803,14 +4807,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.25203252032517,
+      "_score": 8.987804878048829,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.nwsl",
       "lgR": 85.76,
       "_rk": [
         9,
-        21
+        19
       ]
     },
     {
@@ -4985,7 +4989,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5024,7 +5029,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX One",
-        "Tubi"
+        "Tubi",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5063,7 +5069,8 @@
       "league": "CONCACAF Nations League",
       "ch": [
         "FOX Sports 2",
-        "FOX One"
+        "FOX One",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5100,6 +5107,38 @@
       "name": "Tulsa @ UAB",
       "sport": "Soccer",
       "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 93349852,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "20:00",
+      "name": "Rice @ UTSA",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -5377,6 +5416,36 @@
       "_score": 0
     },
     {
+      "id": 32872004,
+      "lgId": 2037,
+      "lgSlug": "high-school-football",
+      "time": "20:00",
+      "name": "Bryant at Little Rock Christian",
+      "sport": "Football",
+      "league": "High School Football",
+      "ch": [
+        "MyNetworkTV"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 0,
+        "l": "High School Football not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 95800514,
       "lgId": 3407,
       "lgSlug": "nahl",
@@ -5441,7 +5510,7 @@
       "espn": "",
       "lgR": 78.63,
       "_rk": [
-        260,
+        261,
         58
       ]
     },
@@ -5479,47 +5548,8 @@
       "espn": "",
       "lgR": 78.63,
       "_rk": [
-        195,
+        196,
         114
-      ]
-    },
-    {
-      "id": 83964014,
-      "lgId": 230,
-      "lgSlug": "primera-a",
-      "time": "20:45",
-      "name": "Alianza Petrolera @ Deportivo Cali",
-      "sport": "Soccer",
-      "league": "Primera A",
-      "ch": [
-        "Fanatiz",
-        "FOX Deportes"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 1.882680856455074,
-        "l": "Quality +1.9 (GFR 78.2-82.2 vs tier1 baseline 159.6 (Primera A (Colombia)))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 1.882680856455074,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "col.1",
-      "lgR": 79.82,
-      "_rk": [
-        517,
-        215
       ]
     },
     {
@@ -5593,7 +5623,7 @@
       "lgR": 71.26,
       "_rk": [
         42,
-        139
+        138
       ]
     },
     {
@@ -5987,9 +6017,39 @@
       "espn": "mex.w.1",
       "lgR": 71.26,
       "_rk": [
-        19,
+        21,
         48
       ]
+    },
+    {
+      "id": 88366802,
+      "lgId": 3318,
+      "lgSlug": "afl-women",
+      "time": "23:05",
+      "name": "Greater West Sydney Giants - Essendon Bombers",
+      "sport": "Aus Football",
+      "league": "AFL Women",
+      "ch": [
+        "FOX Soccer Plus"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "AFL Women not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     }
   ],
   "dropped": [
@@ -6104,6 +6164,16 @@
       "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "Werder Bremen @ Bayer Leverkusen",
+      "league": "Women's Bundesliga",
+      "sport": "Soccer",
+      "time": "12:30",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "America's Day at the Races",
       "league": "Horse Racing",
       "sport": "Equestrian",
@@ -6114,6 +6184,16 @@
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
+      "name": "Elias Faour - Narek Sachbazjan",
+      "league": "Boxing",
+      "sport": "Fighting",
+      "time": "13:00",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Motul Petit Le Mans",
       "league": "IMSA SportsCar Championship",
       "sport": "Motorsports",
@@ -6122,6 +6202,36 @@
       "channel": "Peacock",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
+    },
+    {
+      "name": "Manchester Basketball @ Bristol Flyers",
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "time": "14:30",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Leicester Riders @ London Lions",
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "time": "14:30",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Caledonia Gladiators @ Newcastle Eagles",
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "time": "14:30",
+      "date": "2026-10-02",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Zebre @ Cardiff Rugby",
@@ -6594,6 +6704,16 @@
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
+      "name": "Chartiers Valley at South Fayette",
+      "league": "High School Football",
+      "sport": "Football",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "KDKA+",
+      "reason": "channel",
+      "detail": "airs on KDKA+ \u2014 none in channels.txt"
+    },
+    {
       "name": "Peterborough Petes @ Kingston Frontenacs",
       "league": "OHL",
       "sport": "Hockey",
@@ -6692,6 +6812,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Marietta Blue Devils - Walton Raiders",
+      "league": "High School Football",
+      "sport": "Football",
+      "time": "19:30",
+      "date": "2026-10-02",
+      "channel": "Atlanta News First",
+      "reason": "channel",
+      "detail": "airs on Atlanta News First \u2014 none in channels.txt"
     },
     {
       "name": "Dubuque Fighting Saints @ Waterloo Black Hawks",
@@ -6939,9 +7069,9 @@
       "sport": "Football",
       "time": "21:30",
       "date": "2026-10-02",
-      "channel": "CFL+ (US), TSN+, TSN1, TSN4, TSN5",
+      "channel": "CFL+ (US), TSN+, TSN1, TSN4, TSN5, TSN 4K",
       "reason": "channel",
-      "detail": "airs on CFL+ (US), TSN+, TSN1, TSN4, TSN5 \u2014 none in channels.txt"
+      "detail": "airs on CFL+ (US), TSN+, TSN1, TSN4, TSN5, TSN 4K \u2014 none in channels.txt"
     },
     {
       "name": "North Carolina Courage @ Seattle Reign FC",
@@ -7861,17 +7991,17 @@
         "Concacaf Champions Cup": 72.08,
         "Leagues Cup": 79.36,
         "Conmebol Libertadores": 78.08,
-        "English Fa Cup": 71.27,
+        "English Fa Cup": 71.28,
         "Carabao Cup": 78.34,
         "Copa Del Rey": 39.29,
         "Club World Cup": 85.21,
-        "German Cup": 64.6,
+        "German Cup": 64.61,
         "Coppa Italia": 70.75,
         "Uefa Champions League": 89.29,
         "Uefa Europa League": 82.57,
         "Uefa Conference League": 71.67,
         "U.S. Open Cup": 55.12,
-        "Usl Cup": 58.0
+        "Usl Cup": 57.99
       },
       "origin": {
         "Afc Champions League Elite": {
@@ -7980,7 +8110,7 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "Uefa Women'S Champions League": 85.26
+        "Uefa Women'S Champions League": 85.24
       },
       "origin": {
         "Uefa Women'S Champions League": {
@@ -7989,8 +8119,8 @@
         }
       },
       "label": "Women's club competitions",
-      "top": 85.26,
-      "worst": 85.26,
+      "top": 85.24,
+      "worst": 85.24,
       "anchored": true,
       "span": 0.0,
       "seen": []
@@ -8021,7 +8151,7 @@
       "area": "mens_national"
     },
     "uefa-women-s-champions-league": {
-      "rating": 85.26,
+      "rating": 85.24,
       "area": "womens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 18,
@@ -8110,6 +8240,9 @@
     "liga-mx-femenil": {
       "rating": 71.26,
       "area": "womens_club_league",
+      "rosterMatched": 17,
+      "rosterTotal": 18,
+      "rosterCode": "mex.w.1",
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -8436,7 +8569,7 @@
       "rosterTotal": 2
     },
     "usl-cup": {
-      "rating": 58.0,
+      "rating": 57.99,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 26,
@@ -8506,7 +8639,7 @@
       "rosterTotal": 27
     },
     "women-s-pro-baseball-league": {
-      "rating": 73.91,
+      "rating": 73.32,
       "area": "womens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -8526,6 +8659,15 @@
       "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
+    },
+    "serie-a-brazil": {
+      "rating": 83.95,
+      "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Brazil",
+      "confederation": "CONMEBOL",
+      "rosterMatched": 20,
+      "rosterTotal": 20
     }
   },
   "confedAnchors": {}
