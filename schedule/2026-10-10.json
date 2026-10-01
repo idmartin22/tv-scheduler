@@ -989,7 +989,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 83.2-39.3 (not rated yet) vs tier1 baseline 172.6 (Bundesliga (Germany) \u2014 opponent not in GFR))"
+        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-39.3 (not rated yet) vs tier4 baseline 149.6 (3. Liga \u2014 league tracked by GFR, but neither team rated yet))"
       },
       "_sk": {
         "v": 0,
@@ -1008,7 +1008,7 @@
       "area": "mens_club_league",
       "espn": "",
       "_rk": [
-        160,
+        null,
         null
       ]
     },
@@ -1591,8 +1591,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 39.3 (not rated yet)-87.0 vs tier1 baseline 160.1 (Eredivisie (Netherlands) \u2014 opponent not in GFR))"
+        "v": 15.966346909891536,
+        "l": "Quality +16.0 (GFR 84.4-87.0 vs tier1 baseline 160.1 (Eredivisie (Netherlands)))"
       },
       "_sk": {
         "v": 0,
@@ -1606,13 +1606,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": 15.966346909891536,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ned.1",
       "lgR": 80.04,
       "_rk": [
-        null,
+        119,
         53
       ]
     },
@@ -14265,7 +14265,7 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 3,
+      "fixturesResolved": 4,
       "fixturesSeen": 4
     },
     "concacaf-nations-league": {
@@ -14339,7 +14339,7 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
-      "fixturesResolved": 3,
+      "fixturesResolved": 4,
       "fixturesSeen": 6,
       "gfrLeague": "NWSL",
       "country": "USA",
@@ -14484,7 +14484,7 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 2,
+      "fixturesResolved": 3,
       "fixturesSeen": 3,
       "rosterCode": "ned.1"
     },
@@ -14602,7 +14602,7 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 0,
+      "fixturesResolved": 1,
       "fixturesSeen": 1,
       "rosterCode": "por.1"
     },
@@ -14838,10 +14838,10 @@
       "rosterTotal": 2
     },
     "formula-3": {
-      "rating": 51.2,
+      "rating": 47.56,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 3,
+      "rosterMatched": 2,
       "rosterTotal": 10
     },
     "serie-a-brazil": {
