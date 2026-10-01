@@ -2242,10 +2242,27 @@ function App(){
                                       const hit=m.rosterMatched||0, tot=m.rosterTotal;
                                       const frac=hit/tot;
                                       const col=frac>=0.9?"#4ade80":frac>=0.6?"#fbbf24":"#f87171";
-                                      return <span title={`${hit} of ${tot} teams ESPN lists for this competition have a GFR rating`}
+                                      return <span title={`ESPN roster: ${hit} of ${tot} teams in this competition have a GFR rating`}
                                         style={{marginLeft:6,fontSize:9,fontWeight:700,color:col,
                                                 border:`1px solid ${col}44`,borderRadius:4,padding:"1px 4px"}}>
                                         {hit}/{tot}
+                                      </span>;
+                                    })()}
+                                    {(()=>{
+                                      // SECOND join: how many of this run's fixtures resolved
+                                      // BOTH teams against GFR. The roster badge measures ESPN
+                                      // against GFR; this measures the FEED against GFR. Liga
+                                      // Portugal read 18/18 while a fixture scored as "not rated
+                                      // yet" — two different joins, only one of them visible.
+                                      const m=gfrById[lg.id]||{};
+                                      if(!m.fixturesSeen) return null;
+                                      const ok=m.fixturesResolved||0, seen=m.fixturesSeen;
+                                      const frac=ok/seen;
+                                      const col=frac>=0.9?"#4ade80":frac>=0.6?"#fbbf24":"#f87171";
+                                      return <span title={`Feed fixtures: ${ok} of ${seen} had both teams resolve to a GFR rating`}
+                                        style={{marginLeft:4,fontSize:9,fontWeight:700,color:col,
+                                                border:`1px solid ${col}44`,borderRadius:4,padding:"1px 4px"}}>
+                                        {ok}/{seen} fx
                                       </span>;
                                     })()}
                                     <select value={areaOverrides[lg.id]||""} onChange={ev=>updateAreaOverride(lg.id,ev.target.value)}
