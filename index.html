@@ -147,6 +147,18 @@ function formatDateLabel(s) {
 }
 function todayStr() { return dateToStr(new Date()); }
 
+async function githubLoadJson(path) {
+  // Same authenticated API route the schedule uses, so the ratings tab needs
+  // no new access pattern and gets the same cache-busting.
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${path}?t=${Date.now()}`;
+    const r = await fetch(url, { headers: { 'Authorization': `Bearer ${GITHUB_PAT}`, 'Accept': 'application/vnd.github+json' } });
+    if (!r.ok) return null;
+    const meta = await r.json();
+    return JSON.parse(b64ToUtf8(meta.content));
+  } catch (e) { return null; }
+}
+
 async function githubLoadSchedule(date) {
   try {
     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/schedule/${date}.json?t=${Date.now()}`;
@@ -889,6 +901,13 @@ function App(){
   const [confedBases,setConfedBases]=useState({});
   const [confedOverrides,setConfedOverrides]=useState({});
   const [confedAnchors,setConfedAnchors]=useState({});
+  // Ratings tab: the tables behind every score. Loaded on demand — the men's
+  // soccer table alone is 1,751 rows, so nothing is fetched until opened.
+  const [ratingIndex,setRatingIndex]=useState(null);
+  const [ratingTable,setRatingTable]=useState(null);
+  const [ratingSlug,setRatingSlug]=useState(null);
+  const [ratingGroup,setRatingGroup]=useState(null);
+  const [ratingBusy,setRatingBusy]=useState(false);
   const [tvOrder,setTvOrder]=useState([...TV_PRIO]);
   const [tvQuads,setTvQuads]=useState({});
   const [tvFillCh,setTvFillCh]=useState(()=>Object.fromEntries(TV_PRIO.map((id,i)=>([id,FILLS[i%FILLS.length].name]))));
@@ -1303,6 +1322,25 @@ function App(){
   };
 
 
+  React.useEffect(()=>{
+    if(tab!=="ratings"||ratingIndex) return;
+    (async()=>{
+      try{
+        const d=await githubLoadJson("ratings/index.json");
+        setRatingIndex(d||{tables:[]});
+      }catch(e){ setRatingIndex({tables:[]}); }
+    })();
+  },[tab,ratingIndex]);
+
+  const openRatingTable=async(slug)=>{
+    if(ratingSlug===slug){ setRatingSlug(null); setRatingTable(null); return; }
+    setRatingSlug(slug); setRatingTable(null); setRatingGroup(null); setRatingBusy(true);
+    try{
+      setRatingTable(await githubLoadJson(`ratings/${slug}.json`));
+    }catch(e){ setRatingTable(null); }
+    setRatingBusy(false);
+  };
+
   const ewp=useMemo(()=>{
     const base=activeEvents.map(e=>{
       const lm=leagueMods[e.leagueId]??0;
@@ -1550,9 +1588,10 @@ function App(){
         </div>
         {/* Tab bar */}
         <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
-          {["grid","list","rank","league","missed"].map(t=>(
+          {["grid","list","rank","league","ratings","missed"].map(t=>(
             <button key={t} className="espn-display" style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
-              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League":"Missed"}
+              {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League"
+                :t==="ratings"?"Ratings":"Missed"}
             </button>
           ))}
         </div>
@@ -1801,6 +1840,96 @@ function App(){
                 )}
               </div>
             );
+          })}
+        </div>
+      )}
+
+      {tab==="ratings"&&(
+        <div style={{paddingBottom:80,maxWidth:980,margin:"0 auto"}}>
+          <div style={{padding:"14px 16px",borderBottom:`1px solid ${C.BD}`}}>
+            <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>Rating tables</div>
+            <div style={{fontSize:10,color:C.MT,marginTop:3}}>
+              The numbers every score is built from, exactly as fetched.
+              {ratingIndex?.updated?` Updated ${ratingIndex.updated}.`:""}
+            </div>
+          </div>
+
+          {!ratingIndex&&<div style={{padding:20,fontSize:12,color:C.MT}}>Loading…</div>}
+          {ratingIndex&&!ratingIndex.tables?.length&&(
+            <div style={{padding:20,fontSize:12,color:C.MT}}>
+              No rating tables published yet — they are written by the scraper each run.
+            </div>)}
+
+          {(ratingIndex?.tables||[]).map(t=>{
+            const open=ratingSlug===t.slug;
+            return(
+              <div key={t.slug}>
+                <div onClick={()=>openRatingTable(t.slug)}
+                  style={{display:"grid",gridTemplateColumns:"24px 1fr 70px 80px",gap:8,
+                    padding:"9px 16px",borderBottom:`1px solid ${C.BD}`,cursor:"pointer",
+                    alignItems:"center",background:open?"rgba(59,130,246,0.06)":"transparent"}}>
+                  <div style={{fontSize:11,color:C.DM}}>{open?"\u25be":"\u25b8"}</div>
+                  <div style={{fontSize:12,fontWeight:600,color:"#f1f5f9"}}>{t.name}</div>
+                  <div style={{fontSize:10,fontWeight:700,color:C.A,textAlign:"center"}}>{t.metric}</div>
+                  <div style={{fontSize:10,color:C.MT,textAlign:"right"}}>{t.count} teams</div>
+                </div>
+
+                {open&&ratingBusy&&(
+                  <div style={{padding:"10px 16px",fontSize:11,color:C.MT}}>Loading…</div>)}
+
+                {open&&!ratingBusy&&ratingTable&&(()=>{
+                  const rows=ratingTable.rows||[];
+                  const grp=ratingTable.groupBy;
+                  // Whatever columns this source actually provides — NHL has a
+                  // record, soccer has league and country, the rest just a rating.
+                  const cols=["rating","record","wins","losses","games"]
+                    .filter(c=>rows.some(r=>r[c]!==undefined&&r[c]!==null));
+                  const groups={};
+                  if(grp) rows.forEach(r=>{(groups[r[grp]||"—"]=groups[r[grp]||"—"]||[]).push(r);});
+                  const names=grp?Object.keys(groups).sort((a,b)=>
+                    (groups[b][0]?.rating||0)-(groups[a][0]?.rating||0)):[];
+                  const Table=({list})=>(
+                    <div>
+                      {list.map(r=>(
+                        <div key={`${r.rank}-${r.team}`} style={{display:"grid",
+                          gridTemplateColumns:`44px 1fr ${cols.map(()=>"78px").join(" ")}`,gap:8,
+                          padding:"4px 16px 4px 40px",borderBottom:`1px solid ${C.BD}22`,
+                          alignItems:"center"}}>
+                          <div style={{fontSize:10,color:C.DM,textAlign:"right"}}>{r.rank}</div>
+                          <div style={{fontSize:11,color:"#f1f5f9"}}>
+                            {r.team}
+                            {!grp&&r.country&&<span style={{fontSize:9,color:C.DM,marginLeft:6}}>{r.country}</span>}
+                          </div>
+                          {cols.map(c=>(
+                            <div key={c} style={{fontSize:11,fontWeight:c==="rating"?700:400,
+                              color:c==="rating"?"#86efac":C.MT,textAlign:"right"}}>
+                              {typeof r[c]==="number"?r[c].toFixed(2):(r[c]??"")}
+                            </div>))}
+                        </div>))}
+                    </div>);
+                  if(!grp) return <Table list={rows}/>;
+                  return(
+                    <div>
+                      {names.map(g=>(
+                        <div key={g}>
+                          <div style={{padding:"5px 16px 5px 28px",fontSize:10,fontWeight:700,
+                            color:"#cbd5e1",background:"rgba(255,255,255,0.03)",
+                            borderBottom:`1px solid ${C.BD}`}}>
+                            {g}
+                            <span style={{marginLeft:8,color:C.DM,fontWeight:400}}>
+                              {groups[g].length}
+                            </span>
+                          </div>
+                          <Table list={groups[g]}/>
+                        </div>))}
+                    </div>);
+                })()}
+
+                {open&&!ratingBusy&&!ratingTable&&(
+                  <div style={{padding:"10px 16px",fontSize:11,color:"#f87171"}}>
+                    Could not load this table.
+                  </div>)}
+              </div>);
           })}
         </div>
       )}
