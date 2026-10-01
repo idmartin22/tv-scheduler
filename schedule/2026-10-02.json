@@ -155,36 +155,6 @@
       "_score": 15
     },
     {
-      "id": 70160724,
-      "lgId": 3577,
-      "lgSlug": "road-cycling",
-      "time": "09:30",
-      "name": "UEC Road European Championships",
-      "sport": "Cycling",
-      "league": "Men's Road Cycling",
-      "ch": [
-        "HBO Max (US)"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15,
-        "l": "Cycling event +15"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15
-    },
-    {
       "id": 46021477,
       "lgId": 3582,
       "lgSlug": "swimming-world-cup",
@@ -213,6 +183,44 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 90533760,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "10:00",
+      "name": "Moldova @ Kazakhstan",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -7.061898538671737,
+        "l": "Quality -7.1 (Elo Moldova 1268 vs Kazakhstan 1426, UEFA baseline 3234)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.061898538671737,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.13,
+      "_rk": [
+        147,
+        95
+      ]
     },
     {
       "id": 87034652,
@@ -284,7 +292,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -311,6 +320,44 @@
       "_rk": [
         115,
         130
+      ]
+    },
+    {
+      "id": 66678174,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "12:00",
+      "name": "Montenegro @ Latvia",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -6.21242723060473,
+        "l": "Quality -6.2 (Elo Montenegro 1490 vs Latvia 1269, UEFA baseline 3234)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.21242723060473,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.13,
+      "_rk": [
+        83,
+        146
       ]
     },
     {
@@ -375,6 +422,45 @@
       "_score": 0
     },
     {
+      "id": 37829777,
+      "lgId": 541,
+      "lgSlug": "laliga-2",
+      "time": "14:30",
+      "name": "Real Oviedo @ Eldense",
+      "sport": "Soccer",
+      "league": "LaLiga2",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 2.2090400200518854,
+        "l": "Quality +2.2 (GFR 80.8-77.3 vs tier1 baseline 157.1 (LaLiga 2 (Spain)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.2090400200518854,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "esp.2",
+      "lgR": 78.55,
+      "_rk": [
+        316,
+        595
+      ]
+    },
+    {
       "id": 31117095,
       "lgId": 280,
       "lgSlug": "uefa-nations-league",
@@ -383,7 +469,8 @@
       "sport": "Soccer",
       "league": "UEFA Nations League",
       "ch": [
-        "FOX Soccer Plus"
+        "FOX Soccer Plus",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -410,6 +497,120 @@
       "_rk": [
         30,
         52
+      ]
+    },
+    {
+      "id": 65750525,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Georgia @ Hungary",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.4929114122346654,
+        "l": "Quality +1.5 (Elo Georgia 1630 vs Hungary 1691, UEFA baseline 3234)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.4929114122346654,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.13,
+      "_rk": [
+        57,
+        47
+      ]
+    },
+    {
+      "id": 93235407,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Romania @ Poland",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.6313151092660746,
+        "l": "Quality +0.6 (Elo Romania 1590 vs Poland 1681, UEFA baseline 3234)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.6313151092660746,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.13,
+      "_rk": [
+        65,
+        48
+      ]
+    },
+    {
+      "id": 65162124,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Northern Ireland @ Ukraine",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 3.3367275005874504,
+        "l": "Quality +3.3 (Elo Northern Ireland 1630 vs Ukraine 1798, UEFA baseline 3234)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 3.3367275005874504,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.13,
+      "_rk": [
+        57,
+        25
       ]
     },
     {
@@ -491,6 +692,44 @@
       ]
     },
     {
+      "id": 22909252,
+      "lgId": 280,
+      "lgSlug": "uefa-nations-league",
+      "time": "14:45",
+      "name": "Slovakia @ Faroe Islands",
+      "sport": "Soccer",
+      "league": "UEFA Nations League",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.3179280028513736,
+        "l": "Quality -2.3 (Elo Slovakia 1675 vs Faroe Islands 1382, UEFA baseline 3234)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.3179280028513736,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "uefa.nations",
+      "lgR": 1614.13,
+      "_rk": [
+        49,
+        109
+      ]
+    },
+    {
       "id": 33798901,
       "lgId": 2180,
       "lgSlug": "ncaa-women-5",
@@ -536,8 +775,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -0.8469287688330239,
-        "l": "Quality -0.8 (Elo Guadeloupe 1331 vs Saint Lucia 997, CONCACAF baseline 2374)"
+        "v": -3.0494278583642505,
+        "l": "Quality -3.0 (Elo Guadeloupe 1331 vs Saint Lucia 997, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -551,7 +790,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.8469287688330239,
+      "_score": -3.0494278583642505,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -792,8 +1031,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -0.8103771061781251,
-        "l": "Quality -0.8 (Elo Cuba 1265 vs Saint Kitts and Nevis 1065, CONCACAF baseline 2374)"
+        "v": -3.027640490572945,
+        "l": "Quality -3.0 (Elo Cuba 1265 vs Saint Kitts and Nevis 1065, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -807,7 +1046,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.8103771061781251,
+      "_score": -3.027640490572945,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -1113,8 +1352,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 9.290586119022635,
-        "l": "Quality +9.3 (Elo Guatemala 1509 vs Suriname 1470, CONCACAF baseline 2374)"
+        "v": 4.020140217830487,
+        "l": "Quality +4.0 (Elo Guatemala 1509 vs Suriname 1470, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -1128,7 +1367,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.290586119022635,
+      "_score": 4.020140217830487,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -2171,7 +2410,8 @@
       "league": "Primera Division",
       "ch": [
         "Fanatiz",
-        "FOX Deportes"
+        "FOX Deportes",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -2376,7 +2616,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+        "l": "Quality -20.0 (GFR 55.9-58.3 vs tier1 baseline 125.5 (USL Super League (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -2394,7 +2634,11 @@
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.w.usl.1",
-      "lgR": 62.73
+      "lgR": 62.73,
+      "_rk": [
+        349,
+        319
+      ]
     },
     {
       "id": 28001227,
@@ -3329,6 +3573,38 @@
       "name": "Florida International @ South Florida",
       "sport": "Soccer",
       "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 46900958,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "19:00",
+      "name": "Northwestern State @ Incarnate Word",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -4421,6 +4697,41 @@
       "cat": "unclassified"
     },
     {
+      "id": 97862373,
+      "lgId": 3506,
+      "lgSlug": "northern-super-league",
+      "time": "19:00",
+      "name": "Ottawa Rapid @ Montr\u00e9al Roses",
+      "sport": "Soccer",
+      "league": "Northern Super League",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 37.9"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "can.w.nsl",
+      "lgR": 37.93
+    },
+    {
       "id": 39560584,
       "lgId": 2180,
       "lgSlug": "ncaa-women-5",
@@ -4696,6 +5007,36 @@
       },
       "_score": 0,
       "cat": "unclassified"
+    },
+    {
+      "id": 21925176,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:07",
+      "name": "Minnesota @ Michigan Tech",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "FOX"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 89241806,
@@ -5093,8 +5434,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -6.329678167067845,
-        "l": "Quality -6.3 (Elo Bermuda 1068 vs Barbados 960, CONCACAF baseline 2374)"
+        "v": -6.317533027060089,
+        "l": "Quality -6.3 (Elo Bermuda 1068 vs Barbados 960, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -5108,7 +5449,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.329678167067845,
+      "_score": -6.317533027060089,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -5133,8 +5474,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -9.509672818044042,
-        "l": "Quality -9.5 (Elo Grenada 1047 vs Bonaire 807, CONCACAF baseline 2374)"
+        "v": -8.213034024903676,
+        "l": "Quality -8.2 (Elo Grenada 1047 vs Bonaire 807, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -5148,7 +5489,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.509672818044042,
+      "_score": -8.213034024903676,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -5173,8 +5514,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.308499475341027,
-        "l": "Quality +7.3 (Elo Honduras 1564 vs Martinique 1286, CONCACAF baseline 2374)"
+        "v": 2.622579599593289,
+        "l": "Quality +2.6 (Elo Honduras 1564 vs Martinique 1286, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -5188,7 +5529,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.308499475341027,
+      "_score": 2.622579599593289,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -5206,38 +5547,6 @@
       "name": "Tulsa @ UAB",
       "sport": "Soccer",
       "league": "College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 72111492,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "20:00",
-      "name": "Northwestern State @ Incarnate Word",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
@@ -5616,7 +5925,8 @@
       "league": "Primera Division",
       "ch": [
         "Fanatiz",
-        "FOX Deportes"
+        "FOX Deportes",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5759,7 +6069,8 @@
       "sport": "Soccer",
       "league": "Liga MX Femenil",
       "ch": [
-        "TUDN"
+        "TUDN",
+        "ViX"
       ],
       "dur": 120,
       "_st": {
@@ -5986,7 +6297,8 @@
       "league": "WNBA",
       "ch": [
         "ESPN2",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 140,
       "_st": {
@@ -6154,8 +6466,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.416054564533052,
-        "l": "Quality +7.4 (Elo Jamaica 1514 vs El Salvador 1343, CONCACAF baseline 2374)"
+        "v": 2.698416222288331,
+        "l": "Quality +2.7 (Elo Jamaica 1514 vs El Salvador 1343, world baseline 2608)"
       },
       "_sk": {
         "v": 0,
@@ -6169,7 +6481,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.416054564533052,
+      "_score": 2.698416222288331,
       "cat": "national_men",
       "area": "mens_national",
       "espn": "concacaf.nations.league",
@@ -6362,6 +6674,16 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Clara Tauson - Polina Kudermetova",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "02:00",
+      "date": "2026-10-02",
+      "channel": "Tennis Channel",
+      "reason": "cutoff",
+      "detail": "starts 02:00 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Rally Italia Sardegna",
       "league": "World Rally Championship",
       "sport": "Motorsports",
@@ -6398,16 +6720,6 @@
       "time": "04:00",
       "date": "2026-10-02",
       "channel": "Apple TV, TSN+, TSN1, TSN5",
-      "reason": "cutoff",
-      "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
-    },
-    {
-      "name": "UEC Road European Championships",
-      "league": "Women's Road Cycling",
-      "sport": "Cycling",
-      "time": "04:00",
-      "date": "2026-10-02",
-      "channel": "Sling TV, HBO Max (US)",
       "reason": "cutoff",
       "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
     },
@@ -6462,26 +6774,6 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "Moldova @ Kazakhstan",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "10:00",
-      "date": "2026-10-02",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Montenegro @ Latvia",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "12:00",
-      "date": "2026-10-02",
-      "channel": "Fubo Sports, fubo Sports Network, DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on Fubo Sports, fubo Sports Network, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
       "name": "Werder Bremen @ Bayer Leverkusen",
       "league": "Women's Bundesliga",
       "sport": "Soccer",
@@ -6517,7 +6809,7 @@
       "sport": "Motorsports",
       "time": "14:20",
       "date": "2026-10-02",
-      "channel": "Peacock, NBC",
+      "channel": "Peacock",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -6547,9 +6839,9 @@
       "sport": "Basketball",
       "time": "14:30",
       "date": "2026-10-02",
-      "channel": "DAZN Canada",
+      "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Zebre @ Cardiff Rugby",
@@ -6580,46 +6872,6 @@
       "channel": "Sportsnet+",
       "reason": "channel",
       "detail": "airs on Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Georgia @ Hungary",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-02",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Romania @ Poland",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-02",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Northern Ireland @ Ukraine",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-02",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Slovakia @ Faroe Islands",
-      "league": "UEFA Nations League",
-      "sport": "Soccer",
-      "time": "14:45",
-      "date": "2026-10-02",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Exeter Chiefs @ Bath",
@@ -7022,16 +7274,6 @@
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
-      "name": "Ottawa Rapid @ Montr\u00e9al Roses",
-      "league": "Northern Super League",
-      "sport": "Soccer",
-      "time": "19:00",
-      "date": "2026-10-02",
-      "channel": "TSN+, RDS 2",
-      "reason": "channel",
-      "detail": "airs on TSN+, RDS 2 \u2014 none in channels.txt"
-    },
-    {
       "name": "Southern Columbia - Mount Carmel",
       "league": "High School Football",
       "sport": "Football",
@@ -7140,16 +7382,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Minnesota @ Michigan Tech",
-      "league": "College Ice Hockey",
-      "sport": "Hockey",
-      "time": "19:07",
-      "date": "2026-10-02",
-      "channel": "Midco Sports Plus",
-      "reason": "channel",
-      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
     },
     {
       "name": "Miami (OH) @ Northern Michigan",
@@ -7300,6 +7532,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Long Island University @ Minnesota Duluth",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:07",
+      "date": "2026-10-02",
+      "channel": "SSSEN",
+      "reason": "channel",
+      "detail": "airs on SSSEN \u2014 none in channels.txt"
     },
     {
       "name": "Jesuit - Holy Cross",
@@ -7617,6 +7859,8 @@
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.34,
+        "SuperLiga (Romania)": 75.76,
+        "Superliga (Denmark)": 79.3,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -7648,8 +7892,6 @@
         "Ligue 2 (France)": 76.12,
         "Serie B (Italy)": 75.85,
         "Serie B (Brazil)": 72.43,
-        "SuperLiga (Romania)": 75.76,
-        "Superliga (Denmark)": 79.3,
         "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
@@ -7791,6 +8033,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "Persian Gulf Pro League (Iran)": {
           "country": "Iran",
           "confederation": "AFC"
@@ -7914,14 +8164,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -8487,12 +8729,16 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "rosterCode": "uefa.wchampions"
+      "rosterCode": "uefa.wchampions",
+      "fixturesResolved": 3,
+      "fixturesSeen": 4
     },
     "concacaf-nations-league": {
       "rating": 1128.08,
       "area": "mens_national",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "fixturesResolved": 15,
+      "fixturesSeen": 15
     },
     "mls": {
       "rating": 80.03,
@@ -8500,41 +8746,71 @@
       "rosterMatched": 30,
       "rosterTotal": 30,
       "rosterCode": "usa.1",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "gfrLeague": "MLS",
       "country": "USA",
       "confederation": "CONCACAF"
     },
     "africa-cup-of-nations-qualifier": {
       "rating": 1402.0,
-      "area": "mens_national"
+      "area": "mens_national",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1
     },
     "uefa-nations-league": {
       "rating": 1614.13,
       "area": "mens_national",
+      "confederation": "UEFA",
+      "fixturesResolved": 18,
+      "fixturesSeen": 18
+    },
+    "laliga2": {
+      "rating": 78.55,
+      "area": "mens_club_league",
+      "rosterMatched": 21,
+      "rosterTotal": 22,
+      "rosterCode": "esp.2",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "gfrLeague": "LaLiga 2",
+      "country": "Spain",
       "confederation": "UEFA"
     },
     "usl-super-league": {
-      "rating": 59.05,
-      "area": "mens_club_competition",
-      "rosterMatched": 5,
+      "rating": 62.73,
+      "area": "womens_club_league",
+      "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "gfrLeague": "USL Super League",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "liga-mx-femenil": {
-      "rating": 69.76,
-      "area": "womens_club_competition",
+      "rating": 71.26,
+      "area": "womens_club_league",
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
+      "gfrLeague": "Liga MX Femenil",
+      "country": "Mexico",
       "confederation": "CONCACAF"
     },
     "soccer-club-friendlies": {
-      "area": "mens_club_competition"
+      "area": "mens_club_competition",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1
     },
     "primera-division": {
       "rating": 81.64,
       "area": "mens_club_league",
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
       "confederation": "CONMEBOL",
@@ -8645,66 +8921,150 @@
     },
     "premier-league": {
       "rating": 91.09,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
+      "gfrLeague": "Premier League",
+      "country": "England",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20
     },
     "usl-champ": {
-      "rating": 67.46,
-      "area": "mens_club_competition",
+      "rating": 68.6,
+      "area": "mens_club_league",
+      "gfrLeague": "USL Championship",
+      "country": "USA",
       "confederation": "CONCACAF",
       "rosterMatched": 24,
       "rosterTotal": 25
     },
     "serie-a": {
       "rating": 85.52,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Italy",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20
     },
     "liga-mx": {
-      "rating": 80.25,
-      "area": "mens_club_competition",
+      "rating": 80.05,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
       "confederation": "CONCACAF",
       "rosterMatched": 18,
       "rosterTotal": 18
     },
+    "primera-a": {
+      "rating": 79.82,
+      "area": "mens_club_league",
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL",
+      "rosterMatched": 19,
+      "rosterTotal": 20
+    },
+    "super-league": {
+      "rating": 79.54,
+      "area": "mens_club_league",
+      "gfrLeague": "Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "liga-nacional": {
+      "rating": 73.76,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Nacional",
+      "country": "Honduras",
+      "confederation": "CONCACAF",
+      "rosterMatched": 10,
+      "rosterTotal": 12
+    },
     "liga-portugal": {
       "rating": 82.14,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Portugal",
+      "country": "Portugal",
       "confederation": "UEFA",
       "rosterMatched": 18,
+      "rosterTotal": 18
+    },
+    "pro-league": {
+      "rating": 82.53,
+      "area": "mens_club_league",
+      "gfrLeague": "Pro League",
+      "country": "Belgium",
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
+    },
+    "s-per-lig": {
+      "rating": 79.32,
+      "area": "mens_club_league",
+      "gfrLeague": "Super Lig",
+      "country": "Turkiye",
+      "confederation": "UEFA",
+      "rosterMatched": 17,
       "rosterTotal": 18
     },
     "ligue-2": {
-      "rating": 76.33,
-      "area": "mens_club_competition",
+      "rating": 76.12,
+      "area": "mens_club_league",
+      "gfrLeague": "Ligue 2",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18
     },
-    "laliga2": {
-      "rating": 77.76,
-      "area": "mens_club_competition",
+    "league-one": {
+      "rating": 75.72,
+      "area": "mens_club_league",
+      "gfrLeague": "League One",
+      "country": "England",
       "confederation": "UEFA",
-      "rosterMatched": 21,
-      "rosterTotal": 22
+      "rosterMatched": 24,
+      "rosterTotal": 24
+    },
+    "league-two": {
+      "rating": 69.65,
+      "area": "mens_club_league",
+      "gfrLeague": "League Two",
+      "country": "England",
+      "confederation": "UEFA",
+      "rosterMatched": 22,
+      "rosterTotal": 24
     },
     "ligue-1": {
       "rating": 85.3,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
+      "gfrLeague": "Ligue 1",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18
     },
-    "women-s-super-league": {
-      "rating": 84.3,
-      "area": "womens_club_competition",
+    "serie-b": {
+      "rating": 75.85,
+      "area": "mens_club_league",
+      "gfrLeague": "Serie B",
+      "country": "Italy",
       "confederation": "UEFA",
-      "rosterMatched": 14,
-      "rosterTotal": 14
+      "rosterMatched": 13,
+      "rosterTotal": 20
+    },
+    "women-s-super-league": {
+      "rating": 63.93,
+      "area": "womens_club_league",
+      "gfrLeague": "Women's Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "serie-a-women": {
+      "rating": 75.81,
+      "area": "womens_club_league",
+      "gfrLeague": "Serie A Women",
+      "country": "Italy",
+      "confederation": "UEFA"
     },
     "usl-league-one": {
       "rating": 44.07,
@@ -8721,11 +9081,14 @@
       "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.91,
-      "area": "mens_club_competition",
+      "rating": 37.93,
+      "area": "womens_club_league",
       "confederation": "CONCACAF",
-      "rosterMatched": 2,
-      "rosterTotal": 6
+      "rosterMatched": 0,
+      "rosterTotal": 6,
+      "fixturesResolved": 0,
+      "fixturesSeen": 1,
+      "rosterCode": "can.w.nsl"
     },
     "scottish-league-cup": {
       "rating": 60.72,
@@ -8891,6 +9254,8 @@
     "serie-a-brazil": {
       "rating": 83.95,
       "area": "mens_club_league",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "gfrLeague": "Serie A",
       "country": "Brazil",
       "confederation": "CONMEBOL",
@@ -8899,18 +9264,12 @@
     },
     "national-league": {
       "rating": 62.52,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
+      "area": "mens_club_league",
+      "gfrLeague": "National League",
+      "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
     }
   },
-  "confedAnchors": {
-    "UEFA": 2013.3,
-    "CONMEBOL": 1843.5,
-    "CONCACAF": 1624.1,
-    "CAF": 1715.1,
-    "AFC": 1664.6,
-    "OFC": 1053.7
-  }
+  "confedAnchors": {}
 }
