@@ -619,8 +619,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 90.0-39.3 (not rated yet) vs tier1 baseline 164.3 (Liga Portugal (Portugal) \u2014 opponent not in GFR))"
+        "v": 12.982343085449182,
+        "l": "Quality +13.0 (GFR 90.0-85.5 vs tier1 baseline 164.3 (Liga Portugal (Portugal)))"
       },
       "_sk": {
         "v": 0,
@@ -634,14 +634,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": 12.982343085449182,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "por.1",
       "lgR": 82.14,
       "_rk": [
         31,
-        null
+        84
       ]
     },
     {
@@ -4572,6 +4572,36 @@
       "_score": 0
     },
     {
+      "id": 12246735,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "20:05",
+      "name": "Air Force @ St. Thomas (MN)",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "MyNetworkTV"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 32001296,
       "lgId": 230,
       "lgSlug": "primera-a",
@@ -5043,6 +5073,7 @@
       "ch": [
         "FOX Sports 2",
         "FOX One",
+        "NBC Universo",
         "FOX Deportes"
       ],
       "dur": 120,
@@ -6996,7 +7027,7 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 3,
+      "fixturesResolved": 4,
       "fixturesSeen": 4
     },
     "concacaf-nations-league": {
@@ -7070,7 +7101,7 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
-      "fixturesResolved": 3,
+      "fixturesResolved": 4,
       "fixturesSeen": 6,
       "gfrLeague": "NWSL",
       "country": "USA",
@@ -7325,7 +7356,7 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 0,
+      "fixturesResolved": 1,
       "fixturesSeen": 1,
       "rosterCode": "por.1"
     },
@@ -7552,10 +7583,10 @@
       "rosterTotal": 2
     },
     "formula-3": {
-      "rating": 51.2,
+      "rating": 47.56,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 3,
+      "rosterMatched": 2,
       "rosterTotal": 10
     },
     "serie-a-brazil": {
