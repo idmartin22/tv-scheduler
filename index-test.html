@@ -1884,8 +1884,15 @@ function App(){
                   // record, soccer has league and country, the rest just a rating.
                   const cols=["rating","record","wins","losses","games"]
                     .filter(c=>rows.some(r=>r[c]!==undefined&&r[c]!==null));
+                  // Group by league AND country. Keying on the name alone put
+                  // England, Russia, Egypt, Azerbaijan and Ukraine into one
+                  // "Premier League" — five different competitions.
+                  const gkey=r=>{
+                    const base=r[grp]||"—";
+                    return (grp==="league"&&r.country)?`${base} (${r.country})`:base;
+                  };
                   const groups={};
-                  if(grp) rows.forEach(r=>{(groups[r[grp]||"—"]=groups[r[grp]||"—"]||[]).push(r);});
+                  if(grp) rows.forEach(r=>{const k=gkey(r);(groups[k]=groups[k]||[]).push(r);});
                   const names=grp?Object.keys(groups).sort((a,b)=>
                     (groups[b][0]?.rating||0)-(groups[a][0]?.rating||0)):[];
                   const Table=({list})=>(
@@ -1895,7 +1902,9 @@ function App(){
                           gridTemplateColumns:`44px 1fr ${cols.map(()=>"78px").join(" ")}`,gap:8,
                           padding:"4px 16px 4px 40px",borderBottom:`1px solid ${C.BD}22`,
                           alignItems:"center"}}>
-                          <div style={{fontSize:10,color:C.DM,textAlign:"right"}}>{r.rank}</div>
+                          <div style={{fontSize:10,color:C.DM,textAlign:"right"}}>
+                            {grp?(list.indexOf(r)+1):r.rank}
+                          </div>
                           <div style={{fontSize:11,color:"#f1f5f9"}}>
                             {r.team}
                             {!grp&&r.country&&<span style={{fontSize:9,color:C.DM,marginLeft:6}}>{r.country}</span>}
