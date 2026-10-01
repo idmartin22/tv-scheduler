@@ -114,8 +114,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -2.3849056603772967,
-        "l": "Quality -2.4 (GFR 76.8-85.2 vs tier2 baseline 163.6 (Spain (cross-tier)))"
+        "v": -8.657022439913337,
+        "l": "Quality -8.7 (GFR 76.8-77.4 vs tier1 baseline 157.1 (LaLiga 2 (Spain)))"
       },
       "_sk": {
         "v": 0,
@@ -129,14 +129,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.3849056603772967,
+      "_score": -8.657022439913337,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "esp.2",
       "lgR": 78.55,
       "_rk": [
         643,
-        94
+        589
       ]
     },
     {
@@ -4113,7 +4113,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 37.9 (not rated yet)-37.9 (not rated yet) vs tier4 baseline 171.5 (NWSL \u2014 league tracked by GFR, but neither team rated yet))"
+        "l": "Quality -20.0 (GFR 37.9 (not rated yet)-79.9 vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -4134,7 +4134,7 @@
       "lgR": 85.76,
       "_rk": [
         null,
-        null
+        47
       ]
     },
     {
@@ -7319,7 +7319,7 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 3,
+      "fixturesResolved": 4,
       "fixturesSeen": 4
     },
     "concacaf-nations-league": {
@@ -7372,7 +7372,7 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
-      "fixturesResolved": 3,
+      "fixturesResolved": 4,
       "fixturesSeen": 6,
       "gfrLeague": "NWSL",
       "country": "USA",
@@ -7849,10 +7849,10 @@
       "rosterTotal": 2
     },
     "formula-3": {
-      "rating": 51.2,
+      "rating": 47.56,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 3,
+      "rosterMatched": 2,
       "rosterTotal": 10
     },
     "serie-a-brazil": {
