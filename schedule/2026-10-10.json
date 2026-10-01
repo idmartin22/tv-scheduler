@@ -658,8 +658,8 @@
       "_score": -8.279438106910584,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "sco.3",
-      "lgR": 59.72,
+      "espn": "eng.3",
+      "lgR": 75.72,
       "_rk": [
         1129,
         664
@@ -750,6 +750,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "Peacock",
         "NBC Sports Network"
       ],
       "dur": 120,
@@ -788,6 +789,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "Peacock",
         "NBC Sports Network Extra"
       ],
       "dur": 120,
@@ -826,6 +828,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "Peacock",
         "NBC Sports Network Extra"
       ],
       "dur": 120,
@@ -1432,7 +1435,8 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
-        "NBC"
+        "NBC",
+        "Peacock"
       ],
       "dur": 120,
       "_st": {
@@ -2338,6 +2342,36 @@
         258,
         103
       ]
+    },
+    {
+      "id": 74319450,
+      "lgId": 949,
+      "lgSlug": "bbl-2",
+      "time": "14:00",
+      "name": "Alba Berlin @ Gladiators Trier",
+      "sport": "Basketball",
+      "league": "BBL",
+      "ch": [
+        "NBA TV"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "BBL not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 39815750,
@@ -4964,8 +4998,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+        "v": -8.427115640230404,
+        "l": "Quality -8.4 (GFR 62.4-58.3 vs tier1 baseline 125.5 (USL Super League (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -4979,11 +5013,15 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": -8.427115640230404,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.w.usl.1",
-      "lgR": 62.73
+      "lgR": 62.73,
+      "_rk": [
+        274,
+        319
+      ]
     },
     {
       "id": 82147644,
@@ -6327,8 +6365,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -20.0,
-        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
+        "v": 8.176443838108206,
+        "l": "Quality +8.2 (GFR 68.8-61.1 vs tier1 baseline 125.5 (USL Super League (USA)))"
       },
       "_sk": {
         "v": 0,
@@ -6342,11 +6380,15 @@
         "v": 0,
         "l": ""
       },
-      "_score": -20.0,
+      "_score": 8.176443838108206,
       "cat": "club_league",
       "area": "womens_club_league",
       "espn": "usa.w.usl.1",
-      "lgR": 62.73
+      "lgR": 62.73,
+      "_rk": [
+        182,
+        287
+      ]
     },
     {
       "id": 66780756,
@@ -7278,6 +7320,44 @@
       "_rk": [
         1073,
         1326
+      ]
+    },
+    {
+      "id": 49693756,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "19:00",
+      "name": "Atlante @ Quer\u00e9taro",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -0.9806770303646762,
+        "l": "Quality -1.0 (GFR 78.8-81.0 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.9806770303646762,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.05,
+      "_rk": [
+        471,
+        297
       ]
     },
     {
@@ -9723,6 +9803,44 @@
       ]
     },
     {
+      "id": 42684430,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "21:00",
+      "name": "Guadalajara @ Atlas",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 5.800834391438402,
+        "l": "Quality +5.8 (GFR 83.2-79.4 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.800834391438402,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.05,
+      "_rk": [
+        158,
+        417
+      ]
+    },
+    {
       "id": 56165925,
       "lgId": 2025,
       "lgSlug": "ncaa-soccer",
@@ -10649,8 +10767,7 @@
       "league": "NBA",
       "ch": [
         "ESPN2",
-        "ESPN Unlimited",
-        "ESPN Deportes"
+        "ESPN Unlimited"
       ],
       "dur": 150,
       "_st": {
@@ -10708,6 +10825,44 @@
       "_rk": [
         111,
         57
+      ]
+    },
+    {
+      "id": 53056046,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "23:00",
+      "name": "Monterrey @ Am\u00e9rica",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.672833907733219,
+        "l": "Quality +8.7 (GFR 80.6-83.2 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.672833907733219,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.05,
+      "_rk": [
+        327,
+        159
       ]
     },
     {
@@ -10857,6 +11012,16 @@
       "league": "National League",
       "sport": "Soccer",
       "time": "07:30",
+      "date": "2026-10-10",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rajadamnern World Series",
+      "league": "Muay Thai",
+      "sport": "Fighting",
+      "time": "08:10",
       "date": "2026-10-10",
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
@@ -12508,9 +12673,9 @@
       "sport": "Basketball",
       "time": "18:30",
       "date": "2026-10-10",
-      "channel": "TBD",
+      "channel": "NBA League Pass",
       "reason": "channel",
-      "detail": "airs on TBD \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass \u2014 none in channels.txt"
     },
     {
       "name": "Calgary Stampeders @ Winnipeg Blue Bombers",
@@ -12598,9 +12763,9 @@
       "sport": "Basketball",
       "time": "19:00",
       "date": "2026-10-10",
-      "channel": "TBD",
+      "channel": "NBA League Pass",
       "reason": "channel",
-      "detail": "airs on TBD \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass \u2014 none in channels.txt"
     },
     {
       "name": "Detroit Pistons @ Washington Wizards",
@@ -12608,9 +12773,9 @@
       "sport": "Basketball",
       "time": "19:00",
       "date": "2026-10-10",
-      "channel": "Monumental Sports Network, TBD",
+      "channel": "NBA League Pass, Monumental Sports Network",
       "reason": "channel",
-      "detail": "airs on Monumental Sports Network, TBD \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass, Monumental Sports Network \u2014 none in channels.txt"
     },
     {
       "name": "Northwestern @ Maryland",
@@ -12858,9 +13023,9 @@
       "sport": "Basketball",
       "time": "20:00",
       "date": "2026-10-10",
-      "channel": "TBD, Local 10",
+      "channel": "NBA League Pass, Local 10",
       "reason": "channel",
-      "detail": "airs on TBD, Local 10 \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass, Local 10 \u2014 none in channels.txt"
     },
     {
       "name": "Prince Albert Raiders @ Moose Jaw Warriors",
@@ -12958,9 +13123,9 @@
       "sport": "Basketball",
       "time": "20:30",
       "date": "2026-10-10",
-      "channel": "Kings.com, NBC Sports Bay Area, TBD",
+      "channel": "NBA League Pass, Kings.com, NBC Sports Bay Area",
       "reason": "channel",
-      "detail": "airs on Kings.com, NBC Sports Bay Area, TBD \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass, Kings.com, NBC Sports Bay Area \u2014 none in channels.txt"
     },
     {
       "name": "Henderson Silver Knights @ San Diego Gulls",
@@ -13168,6 +13333,8 @@
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.34,
+        "SuperLiga (Romania)": 75.76,
+        "Superliga (Denmark)": 79.3,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -13199,8 +13366,6 @@
         "Ligue 2 (France)": 76.12,
         "Serie B (Italy)": 75.85,
         "Serie B (Brazil)": 72.43,
-        "SuperLiga (Romania)": 75.76,
-        "Superliga (Denmark)": 79.3,
         "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
@@ -13342,6 +13507,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "Persian Gulf Pro League (Iran)": {
           "country": "Iran",
           "confederation": "AFC"
@@ -13465,14 +13638,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -14076,16 +14241,22 @@
   },
   "leagueGfr": {
     "usl-champ": {
-      "rating": 67.46,
-      "area": "mens_club_competition",
+      "rating": 68.6,
+      "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 25,
       "rosterCode": "usa.usl.1",
+      "fixturesResolved": 21,
+      "fixturesSeen": 22,
+      "gfrLeague": "USL Championship",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "international-friendly": {
       "rating": 1426.85,
-      "area": "mens_national"
+      "area": "mens_national",
+      "fixturesResolved": 6,
+      "fixturesSeen": 6
     },
     "uefa-women-s-champions-league": {
       "rating": 85.24,
@@ -14093,19 +14264,28 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "rosterCode": "uefa.wchampions"
+      "rosterCode": "uefa.wchampions",
+      "fixturesResolved": 3,
+      "fixturesSeen": 4
     },
     "concacaf-nations-league": {
       "rating": 1128.08,
       "area": "mens_national",
-      "confederation": "CONCACAF"
+      "confederation": "CONCACAF",
+      "fixturesResolved": 37,
+      "fixturesSeen": 37
     },
     "primera-a": {
       "rating": 79.82,
       "area": "mens_club_league",
       "rosterMatched": 19,
       "rosterTotal": 20,
-      "rosterCode": "col.1"
+      "rosterCode": "col.1",
+      "fixturesResolved": 4,
+      "fixturesSeen": 5,
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL"
     },
     "mls": {
       "rating": 80.03,
@@ -14113,6 +14293,8 @@
       "rosterMatched": 30,
       "rosterTotal": 30,
       "rosterCode": "usa.1",
+      "fixturesResolved": 16,
+      "fixturesSeen": 16,
       "gfrLeague": "MLS",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -14120,25 +14302,35 @@
     "canadian-premier-league": {
       "rating": 68.06,
       "area": "mens_club_league",
+      "fixturesResolved": 1,
+      "fixturesSeen": 3,
       "gfrLeague": "Premier League",
       "country": "Canada",
       "confederation": "CONCACAF"
     },
     "africa-cup-of-nations-qualifier": {
       "rating": 1402.0,
-      "area": "mens_national"
+      "area": "mens_national",
+      "fixturesResolved": 2,
+      "fixturesSeen": 2
     },
     "uefa-nations-league": {
       "rating": 1614.13,
       "area": "mens_national",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "fixturesResolved": 52,
+      "fixturesSeen": 52
     },
     "laliga2": {
-      "rating": 77.76,
-      "area": "mens_club_competition",
+      "rating": 78.55,
+      "area": "mens_club_league",
       "rosterMatched": 21,
       "rosterTotal": 22,
       "rosterCode": "esp.2",
+      "fixturesResolved": 10,
+      "fixturesSeen": 11,
+      "gfrLeague": "LaLiga 2",
+      "country": "Spain",
       "confederation": "UEFA"
     },
     "nwsl": {
@@ -14147,44 +14339,71 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
+      "fixturesResolved": 3,
+      "fixturesSeen": 6,
       "gfrLeague": "NWSL",
       "country": "USA",
       "confederation": "CONCACAF"
     },
     "usl-super-league": {
-      "rating": 59.05,
-      "area": "mens_club_competition",
-      "rosterMatched": 5,
+      "rating": 62.73,
+      "area": "womens_club_league",
+      "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
+      "gfrLeague": "USL Super League",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "liga-mx": {
-      "rating": 80.25,
-      "area": "mens_club_competition",
+      "rating": 80.05,
+      "area": "mens_club_league",
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
       "confederation": "CONCACAF"
     },
     "women-s-super-league": {
-      "rating": 84.3,
-      "area": "womens_club_competition",
+      "rating": 63.93,
+      "area": "womens_club_league",
       "rosterMatched": 14,
       "rosterTotal": 14,
       "rosterCode": "eng.w.1",
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
+      "gfrLeague": "Women's Super League",
+      "country": "Switzerland",
       "confederation": "UEFA"
     },
     "league-one": {
-      "rating": 59.72,
-      "area": "mens_club_league"
+      "rating": 75.72,
+      "area": "mens_club_league",
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.3",
+      "fixturesResolved": 4,
+      "fixturesSeen": 4,
+      "gfrLeague": "League One",
+      "country": "England",
+      "confederation": "UEFA"
     },
     "league-two": {
       "rating": 69.65,
       "area": "mens_club_league",
       "rosterMatched": 22,
       "rosterTotal": 24,
-      "rosterCode": "eng.4"
+      "rosterCode": "eng.4",
+      "fixturesResolved": 3,
+      "fixturesSeen": 4,
+      "gfrLeague": "League Two",
+      "country": "England",
+      "confederation": "UEFA"
     },
     "usl-league-one": {
       "rating": 44.07,
@@ -14192,26 +14411,41 @@
       "rosterMatched": 2,
       "rosterTotal": 17,
       "rosterCode": "usa.usl.l1",
+      "fixturesResolved": 0,
+      "fixturesSeen": 18,
       "confederation": "CONCACAF"
     },
     "serie-a-women": {
       "rating": 75.81,
-      "area": "womens_club_league"
+      "area": "womens_club_league",
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
+      "gfrLeague": "Serie A Women",
+      "country": "Italy",
+      "confederation": "UEFA"
     },
     "liga-mx-femenil": {
-      "rating": 69.76,
-      "area": "womens_club_competition",
+      "rating": 71.26,
+      "area": "womens_club_league",
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
+      "fixturesResolved": 4,
+      "fixturesSeen": 4,
+      "gfrLeague": "Liga MX Femenil",
+      "country": "Mexico",
       "confederation": "CONCACAF"
     },
     "soccer-club-friendlies": {
-      "area": "mens_club_competition"
+      "area": "mens_club_competition",
+      "fixturesResolved": 3,
+      "fixturesSeen": 3
     },
     "primera-division": {
       "rating": 81.64,
       "area": "mens_club_league",
+      "fixturesResolved": 21,
+      "fixturesSeen": 22,
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
       "confederation": "CONMEBOL",
@@ -14226,6 +14460,8 @@
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
       "rosterCode": "esp.1"
     },
     "bundesliga": {
@@ -14236,6 +14472,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
       "rosterCode": "ger.1"
     },
     "eredivisie": {
@@ -14246,6 +14484,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
+      "fixturesResolved": 2,
+      "fixturesSeen": 3,
       "rosterCode": "ned.1"
     },
     "brazil-serie-a": {
@@ -14280,7 +14520,9 @@
       "area": "mens_club_league",
       "gfrLeague": "Ekstraklasa",
       "country": "Poland",
-      "confederation": "UEFA"
+      "confederation": "UEFA",
+      "fixturesResolved": 3,
+      "fixturesSeen": 3
     },
     "scottish-championship": {
       "rating": 66.78,
@@ -14299,6 +14541,8 @@
       "confederation": "UEFA",
       "rosterMatched": 24,
       "rosterTotal": 24,
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
       "rosterCode": "eng.2"
     },
     "serie-b-brazil": {
@@ -14313,30 +14557,84 @@
     "premier-league": {
       "rating": 91.09,
       "area": "mens_club_league",
+      "gfrLeague": "Premier League",
+      "country": "England",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
+      "fixturesResolved": 6,
+      "fixturesSeen": 6,
       "rosterCode": "eng.1"
     },
     "serie-a": {
       "rating": 85.52,
       "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Italy",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "rosterCode": "ita.1"
+    },
+    "super-league": {
+      "rating": 79.54,
+      "area": "mens_club_league",
+      "gfrLeague": "Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "liga-nacional": {
+      "rating": 73.76,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Nacional",
+      "country": "Honduras",
+      "confederation": "CONCACAF",
+      "rosterMatched": 10,
+      "rosterTotal": 12
     },
     "liga-portugal": {
       "rating": 82.14,
       "area": "mens_club_league",
+      "gfrLeague": "Liga Portugal",
+      "country": "Portugal",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
+      "fixturesResolved": 0,
+      "fixturesSeen": 1,
       "rosterCode": "por.1"
     },
+    "pro-league": {
+      "rating": 76.52,
+      "area": "mens_club_league",
+      "gfrLeague": "Pro League",
+      "country": "Belgium",
+      "confederation": "UEFA",
+      "rosterMatched": 16,
+      "rosterTotal": 18,
+      "fixturesResolved": 3,
+      "fixturesSeen": 4,
+      "rosterCode": "ksa.1"
+    },
+    "s-per-lig": {
+      "rating": 79.32,
+      "area": "mens_club_league",
+      "gfrLeague": "Super Lig",
+      "country": "Turkiye",
+      "confederation": "UEFA",
+      "rosterMatched": 17,
+      "rosterTotal": 18,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "rosterCode": "tur.1"
+    },
     "ligue-2": {
-      "rating": 76.33,
-      "area": "mens_club_competition",
+      "rating": 76.12,
+      "area": "mens_club_league",
+      "gfrLeague": "Ligue 2",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18
@@ -14344,10 +14642,26 @@
     "ligue-1": {
       "rating": 85.3,
       "area": "mens_club_league",
+      "gfrLeague": "Ligue 1",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
       "rosterCode": "fra.1"
+    },
+    "serie-b": {
+      "rating": 75.85,
+      "area": "mens_club_league",
+      "gfrLeague": "Serie B",
+      "country": "Italy",
+      "confederation": "UEFA",
+      "rosterMatched": 13,
+      "rosterTotal": 20,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "rosterCode": "ita.2"
     },
     "campe-n-de-campeones": {
       "rating": 84.24,
@@ -14357,11 +14671,13 @@
       "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.91,
+      "rating": 37.93,
       "area": "womens_club_league",
       "confederation": "CONCACAF",
-      "rosterMatched": 2,
+      "rosterMatched": 0,
       "rosterTotal": 6,
+      "fixturesResolved": 0,
+      "fixturesSeen": 2,
       "rosterCode": "can.w.nsl"
     },
     "scottish-league-cup": {
@@ -14447,6 +14763,8 @@
       "confederation": "CONCACAF",
       "rosterMatched": 26,
       "rosterTotal": 42,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "rosterCode": "usa.usl.l1.cup"
     },
     "fa-community-shield": {
@@ -14529,6 +14847,8 @@
     "serie-a-brazil": {
       "rating": 83.95,
       "area": "mens_club_league",
+      "fixturesResolved": 13,
+      "fixturesSeen": 13,
       "gfrLeague": "Serie A",
       "country": "Brazil",
       "confederation": "CONMEBOL",
@@ -14537,46 +14857,23 @@
     },
     "national-league": {
       "rating": 62.52,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
+      "area": "mens_club_league",
+      "gfrLeague": "National League",
+      "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
     },
-    "pro-league": {
-      "rating": 76.52,
-      "area": "mens_club_league",
-      "rosterMatched": 16,
-      "rosterTotal": 18,
-      "rosterCode": "ksa.1"
-    },
     "3-liga": {
-      "area": "mens_club_league"
+      "area": "mens_club_league",
+      "fixturesResolved": 0,
+      "fixturesSeen": 3
     },
     "international-friendly-women": {
       "rating": 1429.0,
-      "area": "womens_national"
-    },
-    "s-per-lig": {
-      "rating": 79.32,
-      "area": "mens_club_league",
-      "rosterMatched": 17,
-      "rosterTotal": 18,
-      "rosterCode": "tur.1"
-    },
-    "serie-b": {
-      "rating": 75.85,
-      "area": "mens_club_league",
-      "rosterMatched": 13,
-      "rosterTotal": 20,
-      "rosterCode": "ita.2"
+      "area": "womens_national",
+      "fixturesResolved": 2,
+      "fixturesSeen": 2
     }
   },
-  "confedAnchors": {
-    "UEFA": 2013.3,
-    "CONMEBOL": 1843.5,
-    "CONCACAF": 1624.1,
-    "CAF": 1715.1,
-    "AFC": 1664.6,
-    "OFC": 1053.7
-  }
+  "confedAnchors": {}
 }
