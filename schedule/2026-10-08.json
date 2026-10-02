@@ -3,6 +3,36 @@
   "label": "Thursday, October 8",
   "events": [
     {
+      "id": 98537974,
+      "lgId": 1999,
+      "lgSlug": "dp-world-tour",
+      "time": "08:00",
+      "name": "Open de Espa\u00f1a",
+      "sport": "Golf",
+      "league": "DP World Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 52262393,
       "lgId": 3577,
       "lgSlug": "road-cycling",
@@ -126,82 +156,6 @@
       "cat": "unclassified"
     },
     {
-      "id": 89659047,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "14:00",
-      "name": "Cleveland Guardians @ Chicago White Sox",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "TBS",
-        "truTV",
-        "HBO Max (US)",
-        "Univision",
-        "TUDN"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 1.2307692307691689,
-        "l": "Quality +1.2 (Cleveland Guardians 0.502 vs Chicago White Sox 0.502)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 1.2307692307691689,
-      "_rk": [
-        12,
-        12
-      ]
-    },
-    {
-      "id": 51126574,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "14:00",
-      "name": "Tampa Bay Rays @ New York Yankees",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "TBS",
-        "truTV",
-        "HBO Max (US)",
-        "Univision",
-        "TUDN"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 14.4615384615385,
-        "l": "Quality +14.5 (Tampa Bay Rays 0.527 vs New York Yankees 0.520)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 14.4615384615385,
-      "_rk": [
-        3,
-        5
-      ]
-    },
-    {
       "id": 6884820,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
@@ -266,6 +220,36 @@
       "cat": "unclassified"
     },
     {
+      "id": 11223853,
+      "lgId": 2101,
+      "lgSlug": "korn-ferry-tour",
+      "time": "15:00",
+      "name": "Korn Ferry Tour Championship",
+      "sport": "Golf",
+      "league": "Korn Ferry Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 30,
+        "l": "Golf: tour championship +30"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30
+    },
+    {
       "id": 98152367,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
@@ -296,6 +280,42 @@
       },
       "_score": 0,
       "cat": "unclassified"
+    },
+    {
+      "id": 84074057,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "17:00",
+      "name": "Cleveland Guardians @ Chicago White Sox",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "TBS",
+        "truTV",
+        "HBO Max (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 1.2307692307691689,
+        "l": "Quality +1.2 (Cleveland Guardians 0.502 vs Chicago White Sox 0.502)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.2307692307691689,
+      "_rk": [
+        12,
+        12
+      ]
     },
     {
       "id": 95083823,
@@ -1066,8 +1086,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -5.59181712088968,
-        "l": "Quality -5.6 (Sam Houston Bearkats -11.900 vs Liberty Flames -2.100)"
+        "v": -5.55737052339707,
+        "l": "Quality -5.6 (Sam Houston Bearkats -11.800 vs Liberty Flames -2.100)"
       },
       "_sk": {
         "v": 0,
@@ -1081,10 +1101,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.59181712088968,
+      "_score": -5.55737052339707,
       "_rk": [
-        116,
-        75
+        113,
+        74
       ]
     },
     {
@@ -1100,8 +1120,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -9.729937530033636,
-        "l": "Quality -9.7 (Missouri State Bears -12.200 vs Western Kentucky Hilltoppers -12.800)"
+        "v": -10.785301505813234,
+        "l": "Quality -10.8 (Missouri State Bears -12.200 vs Western Kentucky Hilltoppers -15.600)"
       },
       "_sk": {
         "v": 0,
@@ -1115,10 +1135,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.729937530033636,
+      "_score": -10.785301505813234,
       "_rk": [
         117,
-        118
+        124
       ]
     },
     {
@@ -2275,7 +2295,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -0.964646117937803,
+        "v": -0.9688267834346806,
         "l": "Quality -1.0 (South Florida Bulls -1.500 vs UTSA Roadrunners -0.200)"
       },
       "_sk": {
@@ -2290,10 +2310,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.964646117937803,
+      "_score": -0.9688267834346806,
       "_rk": [
         72,
-        68
+        67
       ]
     },
     {
@@ -2310,7 +2330,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -7.359923113887554,
+        "v": -7.362699207972438,
         "l": "Quality -7.4 (South Alabama Jaguars -8.800 vs Arkansas State Red Wolves -9.900)"
       },
       "_sk": {
@@ -2325,9 +2345,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.359923113887554,
+      "_score": -7.362699207972438,
       "_rk": [
-        106,
+        105,
         108
       ]
     },
@@ -2366,6 +2386,42 @@
       "_rk": [
         27,
         18
+      ]
+    },
+    {
+      "id": 91680425,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "20:00",
+      "name": "Tampa Bay Rays @ New York Yankees",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "TBS",
+        "truTV",
+        "HBO Max (US)"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 14.4615384615385,
+        "l": "Quality +14.5 (Tampa Bay Rays 0.527 vs New York Yankees 0.520)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.4615384615385,
+      "_rk": [
+        3,
+        5
       ]
     },
     {
@@ -2886,8 +2942,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -3.5540069686411164,
-        "l": "Quality -3.6 (Tampa Bay Buccaneers -6.900 vs Dallas Cowboys 3.400)"
+        "v": -3.813229571984435,
+        "l": "Quality -3.8 (Tampa Bay Buccaneers -7.100 vs Dallas Cowboys 3.400)"
       },
       "_sk": {
         "v": 0,
@@ -2901,9 +2957,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.5540069686411164,
+      "_score": -3.813229571984435,
       "_rk": [
-        30,
+        31,
         8
       ]
     },
@@ -3639,16 +3695,6 @@
       "channel": "TSN+",
       "reason": "cutoff",
       "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
-    },
-    {
-      "name": "Hawai'i - Nevada",
-      "league": "Women's College Soccer",
-      "sport": "Soccer",
-      "time": "01:00",
-      "date": "2026-10-08",
-      "channel": "Big Ten Plus",
-      "reason": "cutoff",
-      "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "China Open",
@@ -5106,22 +5152,12 @@
       "fixturesResolved": 6,
       "fixturesSeen": 6
     },
-    "uefa-women-s-champions-league": {
-      "rating": 85.24,
-      "area": "womens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4
-    },
     "concacaf-nations-league": {
       "rating": 1128.08,
       "area": "mens_national",
       "confederation": "CONCACAF",
-      "fixturesResolved": 37,
-      "fixturesSeen": 37
+      "fixturesResolved": 29,
+      "fixturesSeen": 29
     },
     "primera-a": {
       "rating": 79.82,
@@ -5141,8 +5177,8 @@
       "rosterMatched": 30,
       "rosterTotal": 30,
       "rosterCode": "usa.1",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "gfrLeague": "MLS",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -5159,15 +5195,15 @@
     "africa-cup-of-nations-qualifier": {
       "rating": 1402.0,
       "area": "mens_national",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2
+      "fixturesResolved": 1,
+      "fixturesSeen": 1
     },
     "uefa-nations-league": {
       "rating": 1614.13,
       "area": "mens_national",
       "confederation": "UEFA",
-      "fixturesResolved": 52,
-      "fixturesSeen": 52
+      "fixturesResolved": 44,
+      "fixturesSeen": 44
     },
     "laliga2": {
       "rating": 78.55,
@@ -5274,8 +5310,8 @@
     },
     "soccer-club-friendlies": {
       "area": "mens_club_competition",
-      "fixturesResolved": 3,
-      "fixturesSeen": 3
+      "fixturesResolved": 2,
+      "fixturesSeen": 2
     },
     "primera-division": {
       "rating": 81.64,
@@ -5604,6 +5640,13 @@
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 2
+    },
+    "uefa-women-s-champions-league": {
+      "rating": 85.24,
+      "area": "womens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "u-s-open-cup": {
       "rating": 55.12,
