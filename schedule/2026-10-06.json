@@ -93,6 +93,36 @@
       "_score": 15
     },
     {
+      "id": 38777657,
+      "lgId": 3577,
+      "lgSlug": "road-cycling",
+      "time": "08:30",
+      "name": "Binche-Chimay-Binche",
+      "sport": "Cycling",
+      "league": "Men's Road Cycling",
+      "ch": [
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 15,
+        "l": "Cycling event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 18465573,
       "lgId": 3577,
       "lgSlug": "road-cycling",
@@ -193,76 +223,6 @@
       },
       "_score": 0,
       "cat": "unclassified"
-    },
-    {
-      "id": 31852790,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "14:00",
-      "name": "Los Angeles Dodgers @ MIL / NYM",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "FOX",
-        "FOX Sports 1",
-        "FOX One",
-        "FOX Deportes"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0.0,
-        "l": "Quality +0.0 (team not found in RPI data \u2014 flat mod)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0.0
-    },
-    {
-      "id": 81721469,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "14:00",
-      "name": "Milwaukee Brewers @ San Diego Padres",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "FOX",
-        "FOX Sports 1",
-        "FOX One",
-        "FOX Deportes"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 16.30769230769229,
-        "l": "Quality +16.3 (Milwaukee Brewers 0.537 vs San Diego Padres 0.516)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 16.30769230769229,
-      "_rk": [
-        1,
-        7
-      ]
     },
     {
       "id": 3104360,
@@ -860,6 +820,42 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 79489469,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "18:00",
+      "name": "Los Angeles Dodgers @ Atlanta Braves",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "FOX Sports 1",
+        "FOX One",
+        "FOX Deportes"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 15.69230769230774,
+        "l": "Quality +15.7 (Los Angeles Dodgers 0.528 vs Atlanta Braves 0.523)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15.69230769230774,
+      "_rk": [
+        2,
+        4
+      ]
     },
     {
       "id": 30582555,
@@ -2316,8 +2312,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -16.087595249536623,
-        "l": "Quality -16.1 (Troy Trojans -8.600 vs unlisted opponent -33.300 (not in FPI pool))"
+        "v": -16.073410111048577,
+        "l": "Quality -16.1 (Troy Trojans -8.600 vs unlisted opponent -33.260 (not in FPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -2331,10 +2327,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -16.087595249536623,
+      "_score": -16.073410111048577,
       "_rk": [
         null,
-        105
+        104
       ]
     },
     {
@@ -2500,6 +2496,42 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 75974748,
+      "lgId": 1758,
+      "lgSlug": "mlb",
+      "time": "21:30",
+      "name": "Milwaukee Brewers @ San Diego Padres",
+      "sport": "Baseball",
+      "league": "MLB",
+      "ch": [
+        "FOX Sports 1",
+        "FOX One",
+        "FOX Deportes"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 16.30769230769229,
+        "l": "Quality +16.3 (Milwaukee Brewers 0.537 vs San Diego Padres 0.516)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 16.30769230769229,
+      "_rk": [
+        1,
+        7
+      ]
     },
     {
       "id": 10819998,
@@ -3792,22 +3824,12 @@
       "fixturesResolved": 6,
       "fixturesSeen": 6
     },
-    "uefa-women-s-champions-league": {
-      "rating": 85.24,
-      "area": "womens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4
-    },
     "concacaf-nations-league": {
       "rating": 1128.08,
       "area": "mens_national",
       "confederation": "CONCACAF",
-      "fixturesResolved": 37,
-      "fixturesSeen": 37
+      "fixturesResolved": 29,
+      "fixturesSeen": 29
     },
     "mls": {
       "rating": 80.03,
@@ -3815,8 +3837,8 @@
       "rosterMatched": 30,
       "rosterTotal": 30,
       "rosterCode": "usa.1",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "gfrLeague": "MLS",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -3824,15 +3846,15 @@
     "africa-cup-of-nations-qualifier": {
       "rating": 1402.0,
       "area": "mens_national",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2
+      "fixturesResolved": 1,
+      "fixturesSeen": 1
     },
     "uefa-nations-league": {
       "rating": 1614.13,
       "area": "mens_national",
       "confederation": "UEFA",
-      "fixturesResolved": 52,
-      "fixturesSeen": 52
+      "fixturesResolved": 44,
+      "fixturesSeen": 44
     },
     "laliga2": {
       "rating": 78.55,
@@ -3939,8 +3961,8 @@
     },
     "soccer-club-friendlies": {
       "area": "mens_club_competition",
-      "fixturesResolved": 3,
-      "fixturesSeen": 3
+      "fixturesResolved": 2,
+      "fixturesSeen": 2
     },
     "primera-division": {
       "rating": 81.64,
@@ -4285,6 +4307,13 @@
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 2
+    },
+    "uefa-women-s-champions-league": {
+      "rating": 85.24,
+      "area": "womens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "u-s-open-cup": {
       "rating": 55.12,
