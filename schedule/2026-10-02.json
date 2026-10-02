@@ -453,6 +453,37 @@
       "_score": 0
     },
     {
+      "id": 7481672,
+      "lgId": 2180,
+      "lgSlug": "ncaa-women-5",
+      "time": "14:00",
+      "name": "Northeastern @ Rensselaer",
+      "sport": "Hockey",
+      "league": "Women's College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 37829777,
       "lgId": 541,
       "lgSlug": "laliga-2",
@@ -1322,37 +1353,6 @@
       "_st": {
         "v": 0,
         "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 77840368,
-      "lgId": 2180,
-      "lgSlug": "ncaa-women-5",
-      "time": "18:00",
-      "name": "Northeastern @ Rensselaer",
-      "sport": "Hockey",
-      "league": "Women's College Ice Hockey",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -2721,8 +2721,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.797761420850238,
-        "l": "Quality +7.8 (Pittsburgh Panthers 13.500 vs Virginia Tech Hokies 8.900)"
+        "v": 7.852055013380554,
+        "l": "Quality +7.9 (Pittsburgh Panthers 13.500 vs Virginia Tech Hokies 8.900)"
       },
       "_sk": {
         "v": 0,
@@ -2736,7 +2736,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.797761420850238,
+      "_score": 7.852055013380554,
       "_rk": [
         22,
         38
@@ -2755,7 +2755,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -4.463238827486784,
+        "v": -4.466651109799453,
         "l": "Quality -4.5 (Liberty Flames -2.100 vs Delaware Blue Hens -8.900)"
       },
       "_sk": {
@@ -2770,10 +2770,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.463238827486784,
+      "_score": -4.466651109799453,
       "_rk": [
-        75,
-        107
+        74,
+        106
       ]
     },
     {
@@ -5164,38 +5164,6 @@
       "cat": "unclassified"
     },
     {
-      "id": 42705437,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "19:30",
-      "name": "St. John's (NY) @ Creighton",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 43689172,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -5336,8 +5304,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 9.390932036525578,
-        "l": "Quality +9.4 (Penn State Nittany Lions 15.600 vs Northwestern Wildcats 11.200)"
+        "v": 9.420708570211293,
+        "l": "Quality +9.4 (Penn State Nittany Lions 15.600 vs Northwestern Wildcats 11.100)"
       },
       "_sk": {
         "v": 0,
@@ -5351,7 +5319,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.390932036525578,
+      "_score": 9.420708570211293,
       "_rk": [
         15,
         28
@@ -6023,6 +5991,38 @@
         196,
         115
       ]
+    },
+    {
+      "id": 59668295,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
+      "time": "20:30",
+      "name": "St. John's (NY) @ Creighton",
+      "sport": "Soccer",
+      "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 16396648,
@@ -6705,16 +6705,6 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
-      "name": "Clara Tauson - Polina Kudermetova",
-      "league": "WTA",
-      "sport": "Tennis",
-      "time": "02:00",
-      "date": "2026-10-02",
-      "channel": "Tennis Channel",
-      "reason": "cutoff",
-      "detail": "starts 02:00 AM \u2014 before the 5am day boundary"
-    },
-    {
       "name": "Rally Italia Sardegna",
       "league": "World Rally Championship",
       "sport": "Motorsports",
@@ -6733,6 +6723,16 @@
       "channel": "Sling TV, HBO Max (US)",
       "reason": "cutoff",
       "detail": "starts 03:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Clara Tauson - Polina Kudermetova",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "03:20",
+      "date": "2026-10-02",
+      "channel": "Tennis Channel",
+      "reason": "cutoff",
+      "detail": "starts 03:20 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "Tauranga Whai - Southern Hoiho",
@@ -6913,6 +6913,16 @@
       "channel": "Sportsnet World, Sportsnet NOW, Sportsnet+",
       "reason": "channel",
       "detail": "airs on Sportsnet World, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Florida A&M @ Mississippi Valley State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "15:00",
+      "date": "2026-10-02",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
       "name": "Morgan State @ North Carolina Central",
@@ -7255,6 +7265,16 @@
       "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "Ferris State @ Canisius",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-10-02",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
       "name": "Campbell @ William & Mary",
       "league": "Women's College Soccer",
       "sport": "Soccer",
@@ -7266,16 +7286,6 @@
     },
     {
       "name": "Alcorn State @ Texas Southern",
-      "league": "Women's College Volleyball",
-      "sport": "Volleyball",
-      "time": "19:00",
-      "date": "2026-10-02",
-      "channel": "YouTube US",
-      "reason": "channel",
-      "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
-      "name": "Florida A&M @ Mississippi Valley State",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
       "time": "19:00",
@@ -7397,16 +7407,6 @@
     {
       "name": "Windsor Spitfires @ Guelph Storm",
       "league": "OHL",
-      "sport": "Hockey",
-      "time": "19:07",
-      "date": "2026-10-02",
-      "channel": "FloHockey",
-      "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Ferris State @ Canisius",
-      "league": "College Ice Hockey",
       "sport": "Hockey",
       "time": "19:07",
       "date": "2026-10-02",
@@ -7700,9 +7700,9 @@
       "sport": "Football",
       "time": "21:30",
       "date": "2026-10-02",
-      "channel": "CFL+ (US), TSN+, TSN1, TSN4, TSN5, TSN 4K",
+      "channel": "CFL+ (US), TSN+, TSN1, TSN5, TSN 4K",
       "reason": "channel",
-      "detail": "airs on CFL+ (US), TSN+, TSN1, TSN4, TSN5, TSN 4K \u2014 none in channels.txt"
+      "detail": "airs on CFL+ (US), TSN+, TSN1, TSN5, TSN 4K \u2014 none in channels.txt"
     },
     {
       "name": "Ontario Reign @ Coachella Valley Firebirds",
@@ -8407,7 +8407,6 @@
       "anchored": true,
       "span": 38.36,
       "seen": [
-        "MLS (USA)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
         "Primera Division (Costa Rica)",
@@ -8754,47 +8753,19 @@
     }
   },
   "leagueGfr": {
-    "uefa-women-s-champions-league": {
-      "rating": 85.24,
-      "area": "womens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4
-    },
     "concacaf-nations-league": {
       "rating": 1128.08,
       "area": "mens_national",
       "confederation": "CONCACAF",
-      "fixturesResolved": 15,
-      "fixturesSeen": 15
-    },
-    "mls": {
-      "rating": 80.03,
-      "area": "mens_club_league",
-      "rosterMatched": 30,
-      "rosterTotal": 30,
-      "rosterCode": "usa.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "MLS",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
-    "africa-cup-of-nations-qualifier": {
-      "rating": 1402.0,
-      "area": "mens_national",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1
+      "fixturesResolved": 7,
+      "fixturesSeen": 7
     },
     "uefa-nations-league": {
       "rating": 1614.13,
       "area": "mens_national",
       "confederation": "UEFA",
-      "fixturesResolved": 18,
-      "fixturesSeen": 18
+      "fixturesResolved": 10,
+      "fixturesSeen": 10
     },
     "laliga2": {
       "rating": 78.55,
@@ -8831,11 +8802,6 @@
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
-    },
-    "soccer-club-friendlies": {
-      "area": "mens_club_competition",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1
     },
     "primera-division": {
       "rating": 81.64,
@@ -8901,6 +8867,15 @@
       "confederation": "UEFA",
       "rosterMatched": 12,
       "rosterTotal": 12
+    },
+    "mls": {
+      "rating": 80.03,
+      "area": "mens_club_league",
+      "gfrLeague": "MLS",
+      "country": "USA",
+      "confederation": "CONCACAF",
+      "rosterMatched": 30,
+      "rosterTotal": 30
     },
     "nwsl": {
       "rating": 85.76,
@@ -9232,6 +9207,13 @@
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 2
+    },
+    "uefa-women-s-champions-league": {
+      "rating": 85.24,
+      "area": "womens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "u-s-open-cup": {
       "rating": 55.12,
