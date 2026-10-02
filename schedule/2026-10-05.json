@@ -1104,7 +1104,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -5.087108013937282,
+        "v": -5.058365758754863,
         "l": "Quality -5.1 (Atlanta Falcons -3.500 vs New Orleans Saints -1.100)"
       },
       "_sk": {
@@ -1119,7 +1119,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.087108013937282,
+      "_score": -5.058365758754863,
       "_rk": [
         26,
         18
@@ -1818,7 +1818,6 @@
         "League One (England)",
         "League One (Scotland)",
         "League Two (England)",
-        "MLS (USA)",
         "Primera Division (Bolivia)",
         "Primera Division (Chile)",
         "Primera Division (Costa Rica)",
@@ -2187,47 +2186,19 @@
       "fixturesResolved": 3,
       "fixturesSeen": 3
     },
-    "uefa-women-s-champions-league": {
-      "rating": 85.24,
-      "area": "womens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "uefa.wchampions",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4
-    },
     "concacaf-nations-league": {
       "rating": 1128.08,
       "area": "mens_national",
       "confederation": "CONCACAF",
-      "fixturesResolved": 32,
-      "fixturesSeen": 32
-    },
-    "mls": {
-      "rating": 80.03,
-      "area": "mens_club_league",
-      "rosterMatched": 30,
-      "rosterTotal": 30,
-      "rosterCode": "usa.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "MLS",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
-    "africa-cup-of-nations-qualifier": {
-      "rating": 1402.0,
-      "area": "mens_national",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1
+      "fixturesResolved": 24,
+      "fixturesSeen": 24
     },
     "uefa-nations-league": {
       "rating": 1614.13,
       "area": "mens_national",
       "confederation": "UEFA",
-      "fixturesResolved": 42,
-      "fixturesSeen": 42
+      "fixturesResolved": 34,
+      "fixturesSeen": 34
     },
     "laliga2": {
       "rating": 78.55,
@@ -2334,8 +2305,8 @@
     },
     "soccer-club-friendlies": {
       "area": "mens_club_competition",
-      "fixturesResolved": 3,
-      "fixturesSeen": 3
+      "fixturesResolved": 2,
+      "fixturesSeen": 2
     },
     "primera-division": {
       "rating": 81.64,
@@ -2401,6 +2372,15 @@
       "confederation": "UEFA",
       "rosterMatched": 12,
       "rosterTotal": 12
+    },
+    "mls": {
+      "rating": 80.03,
+      "area": "mens_club_league",
+      "gfrLeague": "MLS",
+      "country": "USA",
+      "confederation": "CONCACAF",
+      "rosterMatched": 30,
+      "rosterTotal": 30
     },
     "canadian-premier-league": {
       "rating": 68.06,
@@ -2680,6 +2660,13 @@
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 2
+    },
+    "uefa-women-s-champions-league": {
+      "rating": 85.24,
+      "area": "womens_club_competition",
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
     },
     "u-s-open-cup": {
       "rating": 55.12,
