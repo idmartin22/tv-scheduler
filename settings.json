@@ -1147,6 +1147,11 @@
       "name": "AHL",
       "sport": "Hockey",
       "status": "off"
+    },
+    "uefa-youth-league": {
+      "name": "UEFA Youth League",
+      "sport": "Soccer",
+      "status": "pending"
     }
   },
   "soccerAdjustment": 0,
@@ -1274,7 +1279,7 @@
     "8": "NHL Network",
     "9": "Golf Channel"
   },
-  "lastDate": "2026-10-09",
+  "lastDate": "2026-10-13",
   "tvOrder": [
     0,
     1,
@@ -1296,8 +1301,5 @@
     "8": true
   },
   "confedBases": {},
-  "confedOverrides": {
-    "international-friendly-women": "INTERCONTINENTAL",
-    "women-s-africa-cup-of-nations": "INTERCONTINENTAL"
-  }
+  "confedOverrides": {}
 }
