@@ -35,7 +35,7 @@
       "cat": "club_competition",
       "area": "mens_club_competition",
       "espn": "uefa.europa",
-      "lgR": 82.47,
+      "lgR": 82.46,
       "_rk": [
         null,
         null
@@ -227,8 +227,8 @@
       "espn": "ksa.1",
       "lgR": 76.52,
       "_rk": [
-        100,
-        1011
+        99,
+        1013
       ]
     },
     {
@@ -419,8 +419,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -10.56519699812383,
-        "l": "Quality -10.6 (GFR 81.8-85.9 vs tier1 baseline 172.7 (Bundesliga (Germany)))"
+        "v": -10.427126710291478,
+        "l": "Quality -10.4 (GFR 81.8-85.9 vs tier1 baseline 172.6 (Bundesliga (Germany)))"
       },
       "_sk": {
         "v": 0,
@@ -434,13 +434,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.56519699812383,
+      "_score": -10.427126710291478,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ger.1",
       "lgR": 86.37,
       "_rk": [
-        237,
+        238,
         72
       ]
     },
@@ -453,6 +453,7 @@
       "sport": "Soccer",
       "league": "Serie A",
       "ch": [
+        "CBS Sports Network",
         "Paramount+ (US)"
       ],
       "dur": 120,
@@ -495,8 +496,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -6.992784380305549,
-        "l": "Quality -7.0 (GFR 84.0-82.7 vs tier1 baseline 170.3 (Ligue 1 (France)))"
+        "v": -7.0436528908148475,
+        "l": "Quality -7.0 (GFR 84.0-82.7 vs tier1 baseline 170.4 (Ligue 1 (France)))"
       },
       "_sk": {
         "v": 0,
@@ -510,13 +511,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.992784380305549,
+      "_score": -7.0436528908148475,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "fra.1",
       "lgR": 85.17,
       "_rk": [
-        132,
+        133,
         189
       ]
     },
@@ -557,7 +558,7 @@
       "lgR": 85.99,
       "_rk": [
         164,
-        135
+        136
       ]
     },
     {
@@ -653,37 +654,6 @@
       },
       "_score": 0,
       "cat": "unclassified"
-    },
-    {
-      "id": 99704876,
-      "lgId": 2890,
-      "lgSlug": "ncaa-college-volleyball-women",
-      "time": "15:00",
-      "name": "VCU @ George Mason",
-      "sport": "Volleyball",
-      "league": "Women's College Volleyball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 79634209,
@@ -1077,6 +1047,37 @@
       "_st": {
         "v": 0,
         "l": "Women's College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 4134129,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "18:00",
+      "name": "VCU @ George Mason",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -2181,7 +2182,7 @@
       "lgR": 83.95,
       "_rk": [
         240,
-        89
+        90
       ]
     },
     {
@@ -2199,7 +2200,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 77.4-39.3 (not rated yet) vs tier1 baseline 160.0 (MLS (USA) \u2014 opponent not in GFR))"
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 39.3"
       },
       "_sk": {
         "v": 0,
@@ -2217,11 +2218,7 @@
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "",
-      "lgR": 68.11,
-      "_rk": [
-        593,
-        null
-      ]
+      "lgR": 68.11
     },
     {
       "id": 49342088,
@@ -2236,8 +2233,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 7.4535315985130115,
-        "l": "Quality +7.5 (Boston Celtics 7.100 vs Philadelphia 76ers 0.900)"
+        "v": 9.685169842584923,
+        "l": "Quality +9.7 (Boston Celtics 4.400 vs Philadelphia 76ers 3.400)"
       },
       "_sk": {
         "v": 0,
@@ -2251,10 +2248,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.4535315985130115,
+      "_score": 9.685169842584923,
       "_rk": [
-        5,
-        18
+        4,
+        6
       ]
     },
     {
@@ -3903,8 +3900,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 0.09649620723463742,
-        "l": "Quality +0.1 (Memphis Tigers 3.600 vs Tulane Green Wave -2.500)"
+        "v": -0.005498584114588201,
+        "l": "Quality -0.0 (Memphis Tigers 3.600 vs Tulane Green Wave -2.800)"
       },
       "_sk": {
         "v": 0,
@@ -3918,10 +3915,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.09649620723463742,
+      "_score": -0.005498584114588201,
       "_rk": [
-        57,
-        77
+        56,
+        79
       ]
     },
     {
@@ -4173,6 +4170,861 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 42403451,
+      "lgId": 588,
+      "lgSlug": "nwsl",
+      "time": "20:00",
+      "name": "Racing Louisville @ Boston Legacy FC",
+      "sport": "Soccer",
+      "league": "NWSL",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 82.2-38.5 (not rated yet) vs tier1 baseline 171.5 (NWSL (USA) \u2014 opponent not in GFR))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.nwsl",
+      "lgR": 85.76,
+      "_rk": [
+        37,
+        null
+      ]
+    },
+    {
+      "id": 18806920,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "20:00",
+      "name": "Washington @ Purdue",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "FOX"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 1.3475030953363618,
+        "l": "Quality +1.3 (Washington Huskies 5.000 vs Purdue Boilermakers -0.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.3475030953363618,
+      "_rk": [
+        52,
+        70
+      ]
+    },
+    {
+      "id": 64540139,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "20:00",
+      "name": "Appalachian State @ Coastal Carolina",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": -17.750144337833007,
+        "l": "Quality -17.8 (Coastal Carolina Chanticleers -13.500 vs unlisted opponent -32.470 (not in FPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -17.750144337833007,
+      "_rk": [
+        null,
+        120
+      ]
+    },
+    {
+      "id": 75453809,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Miami @ SMU",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 20949023,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Tennessee @ Arkansas",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 69203606,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "South Carolina @ LSU",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 7031,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Alabama @ Vanderbilt",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 10158383,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "20:00",
+      "name": "TCU @ Baylor",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 16264686,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "20:00",
+      "name": "Arizona State @ Oklahoma State",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 75055274,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Jacksonville State @ New Mexico State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 59359481,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "20:30",
+      "name": "Duke @ SMU",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 46450330,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "21:00",
+      "name": "Atlas @ Necaxa",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -11.801540026151457,
+        "l": "Quality -11.8 (GFR 79.4-76.5 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -11.801540026151457,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.05,
+      "_rk": [
+        422,
+        678
+      ]
+    },
+    {
+      "id": 48908580,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "21:00",
+      "name": "Texas Tech @ BYU",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 35584472,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "21:00",
+      "name": "Arizona @ Utah",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 46986242,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "California Baptist @ Cal Poly",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 10554416,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "UC Irvine @ CSU Bakersfield",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 46522616,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "UC San Diego @ CSU Northridge",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 93519959,
+      "lgId": 218,
+      "lgSlug": "canadian-premier-league",
+      "time": "22:00",
+      "name": "HFX Wanderers @ Vancouver FC",
+      "sport": "Soccer",
+      "league": "Canadian Premier League",
+      "ch": [
+        "FOX Sports 2",
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -7.241523650062712,
+        "l": "Quality -7.2 (GFR 67.7-66.4 vs tier1 baseline 136.2 (Premier League (Canada)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.241523650062712,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 68.11,
+      "_rk": [
+        1388,
+        1456
+      ]
+    },
+    {
+      "id": 3131033,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "22:00",
+      "name": "Boston Bruins @ Anaheim Ducks",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -0.10587712864420293,
+        "l": "Quality -0.1 (Boston Bruins 0.067 vs Anaheim Ducks -0.074)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.10587712864420293,
+      "_rk": [
+        12,
+        20
+      ]
+    },
+    {
+      "id": 68987031,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "NC State @ California",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 49316309,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "UC Riverside @ UC Santa Barbara",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 68799336,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "Wake Forest @ Stanford",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 43761662,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "22:00",
+      "name": "California @ Stanford",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 898456,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "22:30",
+      "name": "Denver Nuggets @ Los Angeles Lakers",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 6.081193040596521,
+        "l": "Quality +6.1 (Denver Nuggets 3.200 vs Los Angeles Lakers 1.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.081193040596521,
+      "_rk": [
+        7,
+        12
+      ]
+    },
+    {
+      "id": 61190994,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "23:00",
+      "name": "Pumas UNAM @ Atlante",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -3.244224901932291,
+        "l": "Quality -3.2 (GFR 80.2-78.8 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.244224901932291,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.05,
+      "_rk": [
+        364,
+        476
+      ]
+    },
+    {
+      "id": 19466543,
+      "lgId": 2478,
+      "lgSlug": "mma",
+      "time": "23:00",
+      "name": "Professional Fighters League",
+      "sport": "Fighting",
+      "league": "MMA",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 15,
+        "l": "Boxing event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     }
   ],
   "dropped": [
@@ -4227,6 +5079,26 @@
       "detail": "airs on TSN+, TSN2 \u2014 none in channels.txt"
     },
     {
+      "name": "Charleston Southern @ Stony Brook",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "12:00",
+      "date": "2026-10-16",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "RB Leipzig @ Freiburg",
+      "league": "Women's Bundesliga",
+      "sport": "Soccer",
+      "time": "12:30",
+      "date": "2026-10-16",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "America's Day at the Races",
       "league": "Horse Racing",
       "sport": "Equestrian",
@@ -4245,6 +5117,26 @@
       "channel": "Big Ten Plus",
       "reason": "channel",
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sheffield Sharks @ Caledonia Gladiators",
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "time": "14:30",
+      "date": "2026-10-16",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "Manchester Basketball @ Newcastle Eagles",
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "time": "14:30",
+      "date": "2026-10-16",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "NASCAR CRAFTSMAN Truck Series Chase Race at Phoenix",
@@ -4275,6 +5167,106 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Le Moyne @ Mercyhurst",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "PSAC Sports Digital Network",
+      "reason": "channel",
+      "detail": "airs on PSAC Sports Digital Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Florida A&M @ Bethune-Cookman",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "South Carolina State @ North Carolina Central",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Delaware State @ Maryland Eastern Shore",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Morgan State @ Coppin State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Fairleigh Dickinson @ Stonehill",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "NEC Front Row",
+      "reason": "channel",
+      "detail": "airs on NEC Front Row \u2014 none in channels.txt"
+    },
+    {
+      "name": "Northeastern @ Hofstra",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "MSG Sportsnet, FloSports",
+      "reason": "channel",
+      "detail": "airs on MSG Sportsnet, FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "William & Mary @ Elon",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Campbell @ Hampton",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Binghamton @ NJIT",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-10-16",
+      "channel": "AmericaEast.TV",
+      "reason": "channel",
+      "detail": "airs on AmericaEast.TV \u2014 none in channels.txt"
     },
     {
       "name": "Penn State @ Northwestern",
@@ -4472,9 +5464,9 @@
       "sport": "Basketball",
       "time": "19:00",
       "date": "2026-10-16",
-      "channel": "NBA League Pass",
+      "channel": "NBA League Pass, WPLG Local 10, Local10+ Platinum",
       "reason": "channel",
-      "detail": "airs on NBA League Pass \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass, WPLG Local 10, Local10+ Platinum \u2014 none in channels.txt"
     },
     {
       "name": "Toronto Raptors @ Detroit Pistons",
@@ -4482,9 +5474,9 @@
       "sport": "Basketball",
       "time": "19:00",
       "date": "2026-10-16",
-      "channel": "NBA League Pass",
+      "channel": "NBA League Pass, Sportsnet One, Sportsnet NOW",
       "reason": "channel",
-      "detail": "airs on NBA League Pass \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass, Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
     },
     {
       "name": "Milwaukee Bucks @ Indiana Pacers",
@@ -4492,9 +5484,9 @@
       "sport": "Basketball",
       "time": "19:00",
       "date": "2026-10-16",
-      "channel": "NBA League Pass",
+      "channel": "NBA League Pass, Bucks+, MY24",
       "reason": "channel",
-      "detail": "airs on NBA League Pass \u2014 none in channels.txt"
+      "detail": "airs on NBA League Pass, Bucks+, MY24 \u2014 none in channels.txt"
     },
     {
       "name": "Minnesota Duluth @ Bemidji State",
@@ -4637,6 +5629,36 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "Stonehill @ Northern Michigan",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-10-16",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Alaska Fairbanks @ Michigan Tech",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-10-16",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Niagara @ Bowling Green",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-10-16",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "Youngstown Phantoms @ Muskegon Lumberjacks",
       "league": "USHL",
       "sport": "Hockey",
@@ -4665,6 +5687,446 @@
       "channel": "Big Ten Plus",
       "reason": "channel",
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Penn State @ Northwestern",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "19:30",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Texas Stars @ Manitoba Moose",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Colorado Eagles @ Milwaukee Admirals",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Iowa Wild @ Rockford IceHogs",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Atlanta Hawks @ Dallas Mavericks",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass, MavsTV+, Atlanta News First, Peachtree Sports Network, KFAA 29",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass, MavsTV+, Atlanta News First, Peachtree Sports Network, KFAA 29 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minnesota Timberwolves @ Chicago Bulls",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass, Chicago Sports Network",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass, Chicago Sports Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Charlotte Hornets @ Memphis Grizzlies",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass \u2014 none in channels.txt"
+    },
+    {
+      "name": "Washington Wizards @ New Orleans Pelicans",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass, Monumental Sports Network, Monumental Sports Network+, Pelicans+, Gulf Coast Sports & Entertainment Network",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass, Monumental Sports Network, Monumental Sports Network+, Pelicans+, Gulf Coast Sports & Entertainment Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sacramento Kings @ San Antonio Spurs",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass, Kings.com",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass, Kings.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Moose Jaw Warriors @ Prince Albert Raiders",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Medicine Hat Tigers @ Regina Pats",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Saskatoon Blades @ Swift Current Broncos",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "UCLA @ Wisconsin",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Maryland @ Wisconsin",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Michigan @ Minnesota",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minnesota State @ Wisconsin",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Grand Canyon @ Air Force",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Colorado State @ Texas State",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Oral Roberts @ Nebraska-Omaha",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-10-16",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rapid City Rush @ Kansas City",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sioux Falls Stampede @ Cedar Rapids",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Waterloo Black Hawks @ Des Moines Buccaneers",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Green Bay Gamblers @ Fargo Force",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Omaha Lancers @ Tri-City Storm",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Bentley @ North Dakota",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:07",
+      "date": "2026-10-16",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Idaho Steelheads @ New Mexico Goatheads",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Pittsburgh Penguins @ Colorado Avalanche",
+      "league": "NHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-10-16",
+      "channel": "Altitude, SportsNet Pittsburgh, KTVD, Sportsnet+, TVA Sports",
+      "reason": "channel",
+      "detail": "airs on Altitude, SportsNet Pittsburgh, KTVD, Sportsnet+, TVA Sports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lethbridge Hurricanes @ Calgary Hitmen",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Victoria Royals @ Red Deer Rebels",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Indiana @ Oregon",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "UC Davis @ San Jose State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "21:00",
+      "date": "2026-10-16",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lindenwood @ Air Force",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "21:05",
+      "date": "2026-10-16",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Winnipeg Blue Bombers @ Edmonton Elks",
+      "league": "CFL",
+      "sport": "Football",
+      "time": "21:30",
+      "date": "2026-10-16",
+      "channel": "CFL+ (US), TSN+, TSN3, TSN4",
+      "reason": "channel",
+      "detail": "airs on CFL+ (US), TSN+, TSN3, TSN4 \u2014 none in channels.txt"
+    },
+    {
+      "name": "San Diego Gulls @ Tucson Roadrunners",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Calgary Wranglers @ San Jose Barracuda",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Portland Trail Blazers @ Golden State Warriors",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass, BlazerVision, KUNP Portland",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass, BlazerVision, KUNP Portland \u2014 none in channels.txt"
+    },
+    {
+      "name": "Utah Jazz @ Phoenix Suns",
+      "league": "NBA",
+      "sport": "Basketball",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "NBA League Pass, Jazz+, KJZZ 14, Suns+, Arizona's Family 3TV",
+      "reason": "channel",
+      "detail": "airs on NBA League Pass, Jazz+, KJZZ 14, Suns+, Arizona's Family 3TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Penticton Vees @ Wenatchee Wild",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Penn State @ UCLA",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rutgers @ Washington",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lake Superior State @ Alaska Anchorage",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-10-16",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Portland Winterhawks @ Kelowna Rockets",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Kamloops Blazers @ Seattle Thunderbirds",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Everett Silvertips @ Tri-City Americans",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:05",
+      "date": "2026-10-16",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
     }
   ],
   "areas": {
@@ -4692,6 +6154,8 @@
         "Primera Division (Costa Rica)": 75.31,
         "Botola Pro (Morocco)": 76.18,
         "Super Liga (Serbia)": 74.34,
+        "SuperLiga (Romania)": 75.74,
+        "Superliga (Denmark)": 79.07,
         "Persian Gulf Pro League (Iran)": 73.56,
         "PSL (South Africa)": 73.55,
         "A-League (Australia)": 72.53,
@@ -4723,8 +6187,6 @@
         "Ligue 2 (France)": 76.34,
         "Serie B (Italy)": 75.99,
         "Serie B (Brazil)": 72.43,
-        "SuperLiga (Romania)": 75.74,
-        "Superliga (Denmark)": 79.07,
         "League One (England)": 75.72,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.72,
@@ -4866,6 +6328,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "Persian Gulf Pro League (Iran)": {
           "country": "Iran",
           "confederation": "AFC"
@@ -4989,14 +6459,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -5431,6 +6893,7 @@
       "anchored": true,
       "span": 32.36,
       "seen": [
+        "NWSL (USA)",
         "USL Super League (USA)"
       ]
     },
@@ -5439,19 +6902,19 @@
         "Afc Champions League Elite": 67.16,
         "Copa Do Brazil": 52.38,
         "Caf Champions League": 45.1,
-        "Concacaf Champions Cup": 72.09,
+        "Concacaf Champions Cup": 72.06,
         "Leagues Cup": 79.37,
         "Conmebol Libertadores": 78.16,
-        "English Fa Cup": 71.29,
-        "Carabao Cup": 78.36,
+        "English Fa Cup": 71.3,
+        "Carabao Cup": 78.37,
         "Copa Del Rey": 39.29,
         "Club World Cup": 85.18,
-        "German Cup": 64.65,
+        "German Cup": 64.63,
         "Coppa Italia": 70.75,
         "Uefa Champions League": 89.33,
-        "Uefa Europa League": 82.47,
-        "Uefa Conference League": 71.64,
-        "U.S. Open Cup": 55.09,
+        "Uefa Europa League": 82.46,
+        "Uefa Conference League": 71.68,
+        "U.S. Open Cup": 55.1,
         "Usl Cup": 57.99
       },
       "origin": {
@@ -5529,9 +6992,9 @@
     },
     "mens_oneoff": {
       "leagues": {
-        "Campeones Cup": 82.86,
+        "Campeones Cup": 82.87,
         "Community Shield": 96.45,
-        "Trophee Des Champions": 90.37,
+        "Trophee Des Champions": 90.53,
         "Uefa Super Cup": 92.77
       },
       "origin": {
@@ -5554,9 +7017,9 @@
       },
       "label": "Men's one-off finals",
       "top": 96.45,
-      "worst": 82.86,
+      "worst": 82.87,
       "anchored": true,
-      "span": 13.59,
+      "span": 13.58,
       "seen": []
     },
     "womens_club_competition": {
@@ -5576,15 +7039,6 @@
       "span": 0.0,
       "seen": []
     },
-    "mens_national": {
-      "leagues": {},
-      "origin": {},
-      "flat": true,
-      "label": "Men's national teams",
-      "top": null,
-      "worst": null,
-      "anchored": false
-    },
     "womens_national": {
       "leagues": {},
       "origin": {},
@@ -5596,34 +7050,17 @@
     }
   },
   "leagueGfr": {
-    "arabian-gulf-cup": {
-      "rating": 1441.0,
-      "area": "mens_national",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1
-    },
     "usl-champ": {
-      "rating": 67.46,
-      "area": "mens_club_competition",
+      "rating": 68.61,
+      "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 25,
       "rosterCode": "usa.usl.1",
       "fixturesResolved": 14,
       "fixturesSeen": 14,
+      "gfrLeague": "USL Championship",
+      "country": "USA",
       "confederation": "CONCACAF"
-    },
-    "international-friendly": {
-      "rating": 1426.61,
-      "area": "mens_national",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4
-    },
-    "concacaf-nations-league": {
-      "rating": 1127.56,
-      "area": "mens_national",
-      "confederation": "CONCACAF",
-      "fixturesResolved": 5,
-      "fixturesSeen": 5
     },
     "primera-a": {
       "rating": 79.81,
@@ -5632,7 +7069,10 @@
       "rosterTotal": 20,
       "rosterCode": "col.1",
       "fixturesResolved": 10,
-      "fixturesSeen": 11
+      "fixturesSeen": 11,
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL"
     },
     "mls": {
       "rating": 80.02,
@@ -5640,8 +7080,8 @@
       "rosterMatched": 30,
       "rosterTotal": 30,
       "rosterCode": "usa.1",
-      "fixturesResolved": 31,
-      "fixturesSeen": 31,
+      "fixturesResolved": 30,
+      "fixturesSeen": 30,
       "gfrLeague": "MLS",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -5649,60 +7089,71 @@
     "canadian-premier-league": {
       "rating": 68.11,
       "area": "mens_club_league",
-      "fixturesResolved": 3,
-      "fixturesSeen": 7,
+      "fixturesResolved": 4,
+      "fixturesSeen": 8,
       "gfrLeague": "Premier League",
       "country": "Canada",
       "confederation": "CONCACAF"
     },
-    "africa-cup-of-nations-qualifier": {
-      "rating": 1402.0,
-      "area": "mens_national",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1
-    },
-    "uefa-nations-league": {
-      "rating": 1614.13,
-      "area": "mens_national",
-      "confederation": "UEFA",
-      "fixturesResolved": 10,
-      "fixturesSeen": 10
-    },
     "laliga2": {
-      "rating": 77.44,
-      "area": "mens_club_competition",
+      "rating": 78.56,
+      "area": "mens_club_league",
       "rosterMatched": 21,
       "rosterTotal": 22,
       "rosterCode": "esp.2",
       "fixturesResolved": 2,
       "fixturesSeen": 2,
+      "gfrLeague": "LaLiga 2",
+      "country": "Spain",
       "confederation": "UEFA"
     },
+    "nwsl": {
+      "rating": 85.76,
+      "area": "womens_club_league",
+      "rosterMatched": 14,
+      "rosterTotal": 16,
+      "rosterCode": "usa.nwsl",
+      "fixturesResolved": 0,
+      "fixturesSeen": 1,
+      "gfrLeague": "NWSL",
+      "country": "USA",
+      "confederation": "CONCACAF"
+    },
     "usl-super-league": {
-      "rating": 59.07,
-      "area": "mens_club_competition",
-      "rosterMatched": 5,
+      "rating": 62.73,
+      "area": "womens_club_league",
+      "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
       "fixturesResolved": 4,
       "fixturesSeen": 4,
+      "gfrLeague": "USL Super League",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "liga-mx": {
-      "rating": 80.25,
-      "area": "mens_club_competition",
+      "rating": 80.05,
+      "area": "mens_club_league",
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 9,
-      "fixturesSeen": 9,
+      "fixturesResolved": 11,
+      "fixturesSeen": 11,
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
       "confederation": "CONCACAF"
     },
     "league-one": {
-      "rating": 59.72,
+      "rating": 75.72,
       "area": "mens_club_league",
-      "fixturesResolved": 0,
-      "fixturesSeen": 2
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.3",
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
+      "gfrLeague": "League One",
+      "country": "England",
+      "confederation": "UEFA"
     },
     "league-two": {
       "rating": 69.69,
@@ -5711,7 +7162,10 @@
       "rosterTotal": 24,
       "rosterCode": "eng.4",
       "fixturesResolved": 0,
-      "fixturesSeen": 1
+      "fixturesSeen": 1,
+      "gfrLeague": "League Two",
+      "country": "England",
+      "confederation": "UEFA"
     },
     "usl-league-one": {
       "rating": 44.07,
@@ -5800,13 +7254,6 @@
       "fixturesSeen": 2,
       "rosterCode": "sco.1"
     },
-    "nwsl": {
-      "rating": 85.76,
-      "area": "womens_club_league",
-      "gfrLeague": "NWSL",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
     "ekstraklasa": {
       "rating": 79.8,
       "area": "mens_club_league",
@@ -5849,16 +7296,20 @@
     "premier-league": {
       "rating": 91.05,
       "area": "mens_club_league",
+      "gfrLeague": "Premier League",
+      "country": "England",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
-      "fixturesResolved": 9,
-      "fixturesSeen": 9,
+      "fixturesResolved": 10,
+      "fixturesSeen": 10,
       "rosterCode": "eng.1"
     },
     "serie-a": {
       "rating": 85.41,
       "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Italy",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
@@ -5866,9 +7317,27 @@
       "fixturesSeen": 11,
       "rosterCode": "ita.1"
     },
+    "super-league": {
+      "rating": 79.09,
+      "area": "mens_club_league",
+      "gfrLeague": "Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "liga-nacional": {
+      "rating": 73.76,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Nacional",
+      "country": "Honduras",
+      "confederation": "CONCACAF",
+      "rosterMatched": 10,
+      "rosterTotal": 12
+    },
     "liga-mx-femenil": {
-      "rating": 69.79,
-      "area": "womens_club_competition",
+      "rating": 71.26,
+      "area": "womens_club_league",
+      "gfrLeague": "Liga MX Femenil",
+      "country": "Mexico",
       "confederation": "CONCACAF",
       "rosterMatched": 17,
       "rosterTotal": 18
@@ -5876,6 +7345,8 @@
     "liga-portugal": {
       "rating": 82.16,
       "area": "mens_club_league",
+      "gfrLeague": "Liga Portugal",
+      "country": "Portugal",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -5884,26 +7355,34 @@
       "rosterCode": "por.1"
     },
     "pro-league": {
-      "fixturesResolved": 7,
-      "fixturesSeen": 7,
       "rating": 76.52,
       "area": "mens_club_league",
+      "gfrLeague": "Pro League",
+      "country": "Belgium",
+      "confederation": "UEFA",
       "rosterMatched": 16,
       "rosterTotal": 18,
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
       "rosterCode": "ksa.1"
     },
     "s-per-lig": {
-      "fixturesResolved": 3,
-      "fixturesSeen": 3,
       "rating": 79.33,
       "area": "mens_club_league",
+      "gfrLeague": "Super Lig",
+      "country": "Turkiye",
+      "confederation": "UEFA",
       "rosterMatched": 17,
       "rosterTotal": 18,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "rosterCode": "tur.1"
     },
     "ligue-2": {
-      "rating": 76.56,
-      "area": "mens_club_competition",
+      "rating": 76.34,
+      "area": "mens_club_league",
+      "gfrLeague": "Ligue 2",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18
@@ -5911,6 +7390,8 @@
     "ligue-1": {
       "rating": 85.17,
       "area": "mens_club_league",
+      "gfrLeague": "Ligue 1",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -5919,20 +7400,30 @@
       "rosterCode": "fra.1"
     },
     "serie-b": {
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
       "rating": 75.99,
       "area": "mens_club_league",
+      "gfrLeague": "Serie B",
+      "country": "Italy",
+      "confederation": "UEFA",
       "rosterMatched": 13,
       "rosterTotal": 20,
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
       "rosterCode": "ita.2"
     },
     "women-s-super-league": {
-      "rating": 84.3,
-      "area": "womens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 14,
-      "rosterTotal": 14
+      "rating": 63.77,
+      "area": "womens_club_league",
+      "gfrLeague": "Women's Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "serie-a-women": {
+      "rating": 75.86,
+      "area": "womens_club_league",
+      "gfrLeague": "Serie A Women",
+      "country": "Italy",
+      "confederation": "UEFA"
     },
     "campe-n-de-campeones": {
       "rating": 83.88,
@@ -5969,7 +7460,7 @@
       "area": "mens_club_competition"
     },
     "uefa-conference-league": {
-      "rating": 71.64,
+      "rating": 71.68,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 27,
@@ -5979,7 +7470,7 @@
       "rosterCode": "uefa.europa.conf"
     },
     "english-league-cup": {
-      "rating": 78.36,
+      "rating": 78.37,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 90,
@@ -5993,14 +7484,14 @@
       "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 72.09,
+      "rating": 72.06,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
       "rosterTotal": 27
     },
     "uefa-europa-league": {
-      "rating": 82.47,
+      "rating": 82.46,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 34,
@@ -6055,7 +7546,7 @@
       "rosterTotal": 2
     },
     "troph-e-des-champions": {
-      "rating": 90.37,
+      "rating": 90.53,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -6083,14 +7574,14 @@
       "rosterTotal": 18
     },
     "u-s-open-cup": {
-      "rating": 55.09,
+      "rating": 55.1,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
       "rosterTotal": 80
     },
     "campeones-cup": {
-      "rating": 82.86,
+      "rating": 82.87,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
@@ -6111,7 +7602,7 @@
       "rosterTotal": 2
     },
     "concacaf-caribbean-cup": {
-      "rating": 72.09,
+      "rating": 72.06,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 22,
@@ -6134,8 +7625,8 @@
     "serie-a-brazil": {
       "rating": 83.95,
       "area": "mens_club_league",
-      "fixturesResolved": 19,
-      "fixturesSeen": 19,
+      "fixturesResolved": 18,
+      "fixturesSeen": 18,
       "gfrLeague": "Serie A",
       "country": "Brazil",
       "confederation": "CONMEBOL",
@@ -6144,8 +7635,9 @@
     },
     "national-league": {
       "rating": 62.52,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
+      "area": "mens_club_league",
+      "gfrLeague": "National League",
+      "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
     },
@@ -6171,7 +7663,7 @@
       "fixturesSeen": 18
     },
     "a-league": {
-      "rating": 82.47,
+      "rating": 82.46,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 34,
@@ -6181,12 +7673,5 @@
       "fixturesSeen": 1
     }
   },
-  "confedAnchors": {
-    "UEFA": 2019.2,
-    "CONMEBOL": 1842.8,
-    "CONCACAF": 1630.1,
-    "CAF": 1712.2,
-    "AFC": 1667.4,
-    "OFC": 1053.9
-  }
+  "confedAnchors": {}
 }
