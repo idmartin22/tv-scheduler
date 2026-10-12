@@ -685,8 +685,8 @@
       "_score": 9.59438550195635,
       "cat": "club_competition",
       "area": "mens_club_competition",
-      "espn": "bra.copa_do_brazil",
-      "lgR": 52.19,
+      "espn": "conmebol.sudamericana",
+      "lgR": 78.24,
       "_rk": [
         66,
         286
@@ -3620,9 +3620,11 @@
         "Afc Champions League Elite": 67.04,
         "Copa Do Brazil": 52.19,
         "Caf Champions League": 44.99,
+        "Concacaf Central American Cup": 56.33,
         "Concacaf Champions Cup": 72.04,
-        "Leagues Cup": 79.4,
+        "Leagues Cup": 80.48,
         "Conmebol Libertadores": 78.18,
+        "Conmebol Sudamericana": 78.24,
         "English Fa Cup": 71.2,
         "Carabao Cup": 78.33,
         "Copa Del Rey": 38.98,
@@ -3630,8 +3632,8 @@
         "German Cup": 64.51,
         "Coppa Italia": 70.64,
         "Uefa Champions League": 89.58,
-        "Uefa Europa League": 82.47,
-        "Uefa Conference League": 75.2,
+        "Uefa Europa League": 83.59,
+        "Uefa Conference League": 76.52,
         "U.S. Open Cup": 54.96,
         "Usl Cup": 57.89
       },
@@ -3648,6 +3650,10 @@
           "country": "",
           "confederation": "CAF"
         },
+        "Concacaf Central American Cup": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
         "Concacaf Champions Cup": {
           "country": "",
           "confederation": "CONCACAF"
@@ -3657,6 +3663,10 @@
           "confederation": "CONCACAF"
         },
         "Conmebol Libertadores": {
+          "country": "",
+          "confederation": "CONMEBOL"
+        },
+        "Conmebol Sudamericana": {
           "country": "",
           "confederation": "CONMEBOL"
         },
@@ -4186,21 +4196,22 @@
       "rosterTotal": 36
     },
     "copa-sudamericana": {
+      "rating": 78.24,
+      "area": "mens_club_competition",
+      "confederation": "CONMEBOL",
+      "rosterMatched": 55,
+      "rosterTotal": 58,
       "fixturesResolved": 4,
       "fixturesSeen": 4,
-      "rating": 52.19,
-      "area": "mens_club_competition",
-      "rosterMatched": 42,
-      "rosterTotal": 128,
-      "rosterCode": "bra.copa_do_brazil"
+      "rosterCode": "conmebol.sudamericana"
     },
     "uefa-conference-league": {
-      "rating": 75.2,
+      "rating": 76.52,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 30,
+      "rosterMatched": 31,
       "rosterTotal": 36,
-      "fixturesResolved": 12,
+      "fixturesResolved": 13,
       "fixturesSeen": 18,
       "rosterCode": "uefa.europa.conf"
     },
@@ -4219,27 +4230,27 @@
       "rosterTotal": 128
     },
     "concacaf-central-american-cup": {
-      "rating": 72.04,
+      "rating": 56.33,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
-      "rosterMatched": 22,
-      "rosterTotal": 27
+      "rosterMatched": 9,
+      "rosterTotal": 20
     },
     "uefa-europa-league": {
-      "rating": 82.47,
+      "rating": 83.59,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 34,
+      "rosterMatched": 35,
       "rosterTotal": 36,
-      "fixturesResolved": 15,
+      "fixturesResolved": 17,
       "fixturesSeen": 18,
       "rosterCode": "uefa.europa"
     },
     "leagues-cup": {
-      "rating": 79.4,
+      "rating": 80.48,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
-      "rosterMatched": 35,
+      "rosterMatched": 36,
       "rosterTotal": 36
     },
     "johan-cruyff-shield": {
@@ -4340,14 +4351,9 @@
       "rosterTotal": 2
     },
     "concacaf-caribbean-cup": {
-      "rating": 72.04,
-      "area": "mens_club_competition",
-      "confederation": "CONCACAF",
-      "rosterMatched": 22,
-      "rosterTotal": 27,
       "fixturesResolved": 0,
       "fixturesSeen": 1,
-      "rosterCode": "concacaf.champions"
+      "area": "mens_club_competition"
     },
     "women-s-pro-baseball-league": {
       "rating": 72.47,
@@ -4406,14 +4412,14 @@
     "a-league": {
       "rating": 72.53,
       "area": "mens_club_league",
-      "confederation": "AFC",
-      "rosterMatched": 34,
-      "rosterTotal": 36,
-      "rosterCode": "uefa.europa",
-      "fixturesResolved": 0,
+      "rosterMatched": 12,
+      "rosterTotal": 12,
+      "rosterCode": "aus.1",
+      "fixturesResolved": 2,
       "fixturesSeen": 2,
       "gfrLeague": "A-League",
-      "country": "Australia"
+      "country": "Australia",
+      "confederation": "AFC"
     },
     "ta-a-de-portugal": {
       "rating": 50.56,
