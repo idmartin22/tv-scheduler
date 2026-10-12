@@ -933,6 +933,13 @@ function App(){
           if(data.faveBoosts&&typeof data.faveBoosts==="object") setFaveBoosts(data.faveBoosts);
           if(data.areaBases&&typeof data.areaBases==="object") setAreaBases(data.areaBases);
           if(data.areaOverrides&&typeof data.areaOverrides==="object") setAreaOverrides(data.areaOverrides);
+          // Confederation bases and per-competition confederation assignments.
+          // These were saved correctly from the first build but only restored
+          // in the catch-block fallback below, so every normal (successful)
+          // load silently dropped them — the national-team mods reverted to
+          // their computed Elo figures and every dropdown went back to "auto".
+          if(data.confedBases&&typeof data.confedBases==="object") setConfedBases(data.confedBases);
+          if(data.confedOverrides&&typeof data.confedOverrides==="object") setConfedOverrides(data.confedOverrides);
           // Auto-clear prioOvr and mirrors if it's a new day
           const today=new Date();
           const todayStr=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
@@ -2296,7 +2303,8 @@ function App(){
                                         {groups[c].length} competition{groups[c].length===1?"":"s"}
                                       </span>
                                     </div>
-                                    <input type="number" defaultValue={confedBase(c)}
+                                    <input type="number" key={`cb-${c}-${confedBases[c]??""}`}
+                                      defaultValue={confedBase(c)}
                                       onBlur={ev=>updateConfedBase(c,ev.target.value)}
                                       onKeyDown={ev=>{if(ev.key==="Enter")ev.target.blur();}}
                                       style={{width:"100%",background:C.SUR,border:`1px solid ${C.BD2}`,
