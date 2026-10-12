@@ -106,6 +106,21 @@ function b64ToUtf8(b64) {
 // many rounds of latin-1/UTF-8 misdecoding a string has been through, so bad
 // data self-heals on load instead of needing a manual repair, and caps the
 // length so nothing can ever bloat settings.json the way it did on 2026-09-10.
+// Confederation bases used to be keyed by confederation alone, so a number
+// typed under Women's national teams also moved the men's row. They are now
+// keyed "<area>|<confederation>". Every legacy bare key is adopted into
+// womens_national, because that is the section those two values (CAF 10,
+// INTERCONTINENTAL 20) were actually typed under; the men's side falls back
+// to its computed Elo figure until something is typed there.
+function healConfedBases(m) {
+  if (!m || typeof m !== 'object') return {};
+  const out = {};
+  for (const [k, v] of Object.entries(m)) {
+    out[k.includes('|') ? k : `womens_national|${k}`] = v;
+  }
+  return out;
+}
+
 function healLeagueNames(ls) {
   if (!ls || typeof ls !== 'object') return ls;
   const out = {};
@@ -938,7 +953,7 @@ function App(){
           // in the catch-block fallback below, so every normal (successful)
           // load silently dropped them — the national-team mods reverted to
           // their computed Elo figures and every dropdown went back to "auto".
-          if(data.confedBases&&typeof data.confedBases==="object") setConfedBases(data.confedBases);
+          if(data.confedBases&&typeof data.confedBases==="object") setConfedBases(healConfedBases(data.confedBases));
           if(data.confedOverrides&&typeof data.confedOverrides==="object") setConfedOverrides(data.confedOverrides);
           // Auto-clear prioOvr and mirrors if it's a new day
           const today=new Date();
@@ -1011,7 +1026,7 @@ function App(){
           if(typeof d.soccerAdjustment==="number") setSoccerAdjustment(d.soccerAdjustment);
           if(d.faveBoosts&&typeof d.faveBoosts==="object") setFaveBoosts(d.faveBoosts);
           if(d.areaBases&&typeof d.areaBases==="object") setAreaBases(d.areaBases);
-          if(d.confedBases&&typeof d.confedBases==="object") setConfedBases(d.confedBases);
+          if(d.confedBases&&typeof d.confedBases==="object") setConfedBases(healConfedBases(d.confedBases));
           if(d.confedOverrides&&typeof d.confedOverrides==="object") setConfedOverrides(d.confedOverrides);
           if(d.areaOverrides&&typeof d.areaOverrides==="object") setAreaOverrides(d.areaOverrides);
           if(d.favTeams) setFavTeams(prev=>({...DEF_FAVES,...d.favTeams}));
@@ -1252,30 +1267,42 @@ function App(){
   // flat national base — that is what put AFCON qualifiers in the 60s.
   const confedOf=(leagueId,leagueName)=>
     confedOverrides[leagueId]||confedFromName(leagueName)||confedFromName(leagueId)||"INTERCONTINENTAL";
-  const NAT_TOP=50;   // mod for the strongest confederation
+  const isNationalArea=a=>a==="mens_national"||a==="womens_national";
+  const areaBase=a=>areaBases[a]??50;
+  const NAT_TOP=50;   // the scale CONFED_DEFAULT is written on
   // Computed from each confederation's Elo standing — the mean rating of its
   // top ten, published by the scraper every run — scaled so the strongest sits
-  // at NAT_TOP and the weakest at zero. A value typed in the Leagues tab wins;
-  // the computed figure stays visible so drift can be seen.
-  const confedComputed=(c)=>{
+  // at the AREA's base and the weakest at zero, exactly as club leagues scale.
+  // That is what keeps men's and women's apart on their own: mens_national
+  // tops out at 50, womens_national at 20, off the same Elo ladder.
+  // A value typed in the Leagues tab wins; the computed figure stays visible
+  // so drift can be seen.
+  const confedComputed=(area,c)=>{
     const a=confedAnchors||{};
     const vals=Object.values(a).map(Number).filter(v=>!isNaN(v));
     if(vals.length<2) return null;
     const hi=Math.max(...vals), lo=Math.min(...vals);
     if(hi<=lo) return null;
-    if(c==="INTERCONTINENTAL") return Math.round(NAT_TOP*0.9*10)/10;
+    const top=areaBase(area);
+    if(c==="INTERCONTINENTAL") return Math.round(top*0.9*10)/10;
     const v=Number(a[c]);
     if(isNaN(v)) return null;
-    return Math.round(NAT_TOP*(v-lo)/(hi-lo)*10)/10;
+    return Math.round(top*(v-lo)/(hi-lo)*10)/10;
   };
-  const confedBase=(c)=>{
-    const v=confedBases[c];
+  // Keyed "<area>|<confederation>", so men's CAF and women's CAF are separate
+  // numbers. They shared one key until 2026-10-12, which meant a figure typed
+  // under Women's national teams silently moved the men's row too.
+  const confedBase=(area,c)=>{
+    const v=confedBases[`${area}|${c}`];
     if(v!==undefined&&v!==null&&v!=="") return Number(v);
-    const comp=confedComputed(c);
-    return comp!==null?comp:(CONFED_DEFAULT[c]??45);
+    const comp=confedComputed(area,c);
+    if(comp!==null) return comp;
+    // Last-resort table, written on the men's 50-point scale — rescale it for
+    // an area whose base differs rather than handing women's the men's number.
+    return Math.round((CONFED_DEFAULT[c]??45)*(areaBase(area)/NAT_TOP)*10)/10;
   };
-  const updateConfedBase=(c,val)=>{
-    const m={...confedBases,[c]:val===""?"":Number(val)};
+  const updateConfedBase=(area,c,val)=>{
+    const m={...confedBases,[`${area}|${c}`]:val===""?"":Number(val)};
     setConfedBases(m);debouncedSave(buildSavePayload({confedBases:m}));
   };
   const updateConfedOverride=(leagueId,c)=>{
@@ -1283,8 +1310,6 @@ function App(){
     if(c) m[leagueId]=c; else delete m[leagueId];
     setConfedOverrides(m);debouncedSave(buildSavePayload({confedOverrides:m}));
   };
-  const isNationalArea=a=>a==="mens_national"||a==="womens_national";
-  const areaBase=a=>areaBases[a]??50;
   // Mods run from the area's base at the top down to ZERO at the bottom, so
   // the gaps reflect the real rating spread. A league rated halfway between
   // the area's best and worst gets half the base.
@@ -1367,7 +1392,7 @@ function App(){
           // Confederation decides the mod; quality still separates fixtures
           // within it. An AFCON qualifier and a UEFA Nations League tie no
           // longer start from the same number.
-          sa=confedBase(confedOf(e.leagueId,e.league));
+          sa=confedBase(ar,confedOf(e.leagueId,e.league));
           saLabel=`${confedOf(e.leagueId,e.league)} mod`;
         }else{
         const rt=(e.lgR!==undefined&&e.lgR!==null)?e.lgR:(leagueGfr[e.leagueId]||{}).rating;
@@ -2268,10 +2293,10 @@ function App(){
                               </div>
                               <div/>
                               <div onClick={ev=>ev.stopPropagation()}>
-                                {area!=="unassigned"&&!isNationalArea(area)&&(
+                                {area!=="unassigned"&&(
                                   <input type="number" defaultValue={areaBase(area)}
                                     key={`base-${area}-${areaBase(area)}`}
-                                    title="Base mod: the best-rated league in this area gets this"
+                                    title={isNationalArea(area)?"Base mod: the strongest confederation gets this, the weakest gets 0":"Base mod: the best-rated league in this area gets this"}
                                     onBlur={ev=>updateAreaBase(area,ev.target.value)}
                                     onKeyDown={ev=>{if(ev.key==="Enter")updateAreaBase(area,ev.target.value);}}
                                     style={{background:C.SUR,border:"1px solid #4ade80",borderRadius:8,color:"#86efac",fontSize:12,fontWeight:700,padding:"4px 6px",width:"100%",outline:"none",textAlign:"center"}}/>
@@ -2279,7 +2304,7 @@ function App(){
                               </div>
                               <div style={{fontSize:9,color:C.DM}}>
                                 {area==="unassigned"?"set an area on each row"
-                                  :isNationalArea(area)?"mod comes from each confederation below"
+                                  :isNationalArea(area)?`${areaBase(area)} \u2192 0 across the confederations below`
                                   :d?(d.flat?"flat \u2014 every fixture takes the base, quality separates them"
                                            :`${d.top} \u2192 ${d.worst}  (base \u2192 0)`)
                                     :"no GFR ratings yet"}
@@ -2303,9 +2328,9 @@ function App(){
                                         {groups[c].length} competition{groups[c].length===1?"":"s"}
                                       </span>
                                     </div>
-                                    <input type="number" key={`cb-${c}-${confedBases[c]??""}`}
-                                      defaultValue={confedBase(c)}
-                                      onBlur={ev=>updateConfedBase(c,ev.target.value)}
+                                    <input type="number" key={`cb-${area}-${c}-${confedBases[`${area}|${c}`]??""}`}
+                                      defaultValue={confedBase(area,c)}
+                                      onBlur={ev=>updateConfedBase(area,c,ev.target.value)}
                                       onKeyDown={ev=>{if(ev.key==="Enter")ev.target.blur();}}
                                       style={{width:"100%",background:C.SUR,border:`1px solid ${C.BD2}`,
                                         borderRadius:8,color:"#4ade80",fontSize:12,fontWeight:700,
@@ -2342,7 +2367,7 @@ function App(){
                                         <div title={onToday?"has games today":"no games today"}
                                           style={{fontSize:11,fontWeight:700,textAlign:"center",
                                             color:onToday?"#86efac":"#cbd5e1"}}>
-                                          {confedBase(confedOf(lg.id,lg.n)).toFixed(1)}
+                                          {confedBase(area,confedOf(lg.id,lg.n)).toFixed(1)}
                                         </div>
                                         <input defaultValue={fv} placeholder="Real Madrid..."
                                           onBlur={ev=>updateFave(lg.id,ev.target.value)}
