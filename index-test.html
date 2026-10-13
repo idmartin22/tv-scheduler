@@ -899,6 +899,23 @@ function App(){
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
   const [droppedEvents,setDroppedEvents]=useState([]); // scraper-side drops for this date (see Missed tab)
+  // Is the bar proxy serving this page? When it is, this page can talk to the
+  // TVs; loaded from GitHub Pages it cannot, because a browser refuses http
+  // requests from an https page. The probe is a RELATIVE url on purpose —
+  // served from the proxy it hits the proxy, and from Pages it 404s — so
+  // there is no IP address hardcoded in here to go stale.
+  const [proxyUp,setProxyUp]=useState(false);
+  React.useEffect(()=>{
+    let dead=false;
+    const ac=new AbortController();
+    const t=setTimeout(()=>ac.abort(),3000);
+    fetch("/channels",{signal:ac.signal})
+      .then(r=>r.ok?r.json():null)
+      .then(d=>{ if(!dead&&d&&d.count>0) setProxyUp(true); })
+      .catch(()=>{})
+      .finally(()=>clearTimeout(t));
+    return ()=>{dead=true;ac.abort();};
+  },[]);
   // Soccer areas. The scraper publishes each area's full league list with GFR
   // ratings plus the area's top/worst/scale; the app owns the base mod per
   // area and computes each league's mod from it, so a base change re-scores
@@ -1620,10 +1637,12 @@ function App(){
         </div>
         {/* Tab bar */}
         <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
-          {["grid","list","rank","league","ratings","missed"].map(t=>(
+          {/* Remote only appears when the proxy is serving this page, since
+              there is nothing for it to talk to otherwise. */}
+          {["grid","list","rank","league","ratings","missed",...(proxyUp?["remote"]:[])].map(t=>(
             <button key={t} className="espn-display" style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
               {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League"
-                :t==="ratings"?"Ratings":"Missed"}
+                :t==="ratings"?"Ratings":t==="missed"?"Missed":"Remote"}
             </button>
           ))}
         </div>
@@ -2572,6 +2591,24 @@ function App(){
               })}
             </>);
           })()}
+        </div>
+      )}
+
+      {/* ── REMOTE ──────────────────────────────────────────────────────────
+          remote.html in a frame rather than a port of it. Both pages are
+          served by the proxy, so this is same-origin: one implementation of
+          the remote, which keeps working standalone on a phone, and a fix to
+          it lands here automatically. Same-origin also means this page can
+          later drive the frame directly for the mini remote on an event. */}
+      {tab==="remote"&&(
+        <div style={{paddingBottom:20,maxWidth:880,margin:"0 auto"}}>
+          <div style={{fontFamily:"monospace",fontSize:10,color:C.DM,marginBottom:8}}>
+            FULL REMOTE · served by the bar proxy · also at <span style={{color:C.MT}}>/remote.html</span>
+          </div>
+          <iframe src="/remote.html" title="TV Remote"
+            style={{width:"100%",height:"calc(100vh - 170px)",minHeight:620,
+                    border:`1px solid ${C.BD}`,borderRadius:12,
+                    background:C.BG,display:"block"}}/>
         </div>
       )}
 
