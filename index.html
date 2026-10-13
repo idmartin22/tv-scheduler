@@ -7,6 +7,12 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-192.png">
   <meta name="theme-color" content="#DC1E28">
+  <!-- The Android equivalent of apple-mobile-web-app-capable. Without it a
+       home-screen shortcut opens inside the browser with the address bar
+       showing; with it, it launches standalone. remote.html has always had
+       this, which is why it installed cleanly and the grid did not. It
+       works over plain http, unlike true PWA installation. -->
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Bar Scheduler">
