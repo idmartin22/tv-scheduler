@@ -2687,21 +2687,28 @@ function App(){
                 📺 PUT ON TV <span style={{color:C.DM}}>— tunes it now, changes nothing on the grid</span>
               </div>
               {list.length>1&&(
-                <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:6,alignItems:"center"}}>
-                  <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FEED:</span>
+                <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8,alignItems:"center",
+                  maxWidth:"calc(100vw - 32px)"}}>
+                  <span style={{fontFamily:"monospace",fontSize:11,color:C.MT}}>FEED:</span>
                   {list.map(c=>(
                     <button key={c} onClick={()=>setPutCh(c)}
-                      style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,cursor:"pointer",
+                      style={{minHeight:36,padding:"7px 12px",borderRadius:8,fontFamily:"monospace",
+                        fontSize:12,cursor:"pointer",
                         background:c===ch?"#22c55e":"transparent",color:c===ch?"#000":C.MT,
                         border:`1px solid ${c===ch?"#22c55e":C.BD2}`}}>{c}</button>
                   ))}
                 </div>
               )}
-              <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
+              {/* Pinned to the visible width in viewport units, not 100%: the
+                  detail panel's content is wider than a phone screen, so a
+                  percentage wraps at the panel's width and the last buttons
+                  land off the right edge where they cannot be tapped. */}
+              <div style={{display:"flex",gap:8,flexWrap:"wrap",maxWidth:"calc(100vw - 32px)"}}>
                 {TV_PRIO.map(id=>(
                   <button key={id} onClick={()=>putOnTv(TV_PROXY_KEY(id),tvNames[id]||TVS[id].name)}
                     title={`${TVS[id].loc} — tune to ${ch}`}
-                    style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,
+                    style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
+                      fontFamily:"monospace",fontSize:13,fontWeight:700,
                       cursor:"pointer",background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
                     {TVS[id].name}</button>
                 ))}
@@ -2709,7 +2716,8 @@ function App(){
                   <button key={t.key} disabled={t.disabled}
                     onClick={()=>{ if(!t.disabled) putOnTv(t.key,t.label); }}
                     title={t.disabled?"no device on the Deck yet":`tune to ${ch}`}
-                    style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,
+                    style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
+                      fontFamily:"monospace",fontSize:13,fontWeight:700,
                       cursor:t.disabled?"not-allowed":"pointer",opacity:t.disabled?0.35:1,
                       background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
                     {t.label}</button>
