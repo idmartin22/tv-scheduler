@@ -41,6 +41,18 @@
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    // Samsung Internet will install an http page as a true full-screen app
+    // — that is how remote.html ended up on the home screen in June, after
+    // mkcert was abandoned — but it wants a service worker controlling the
+    // page. remote.html has always registered one; the grid never did, which
+    // is why it came back as a badged shortcut. The proxy serves /sw.js.
+    // On GitHub Pages this is harmless: the path simply 404s and the catch
+    // swallows it, and Pages is https so installation works there anyway.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(function(){});
+    }
+  </script>
   <script type="text/babel">
     const { useState, useMemo, useEffect } = React;
 
