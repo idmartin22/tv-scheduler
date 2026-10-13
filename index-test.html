@@ -1645,7 +1645,11 @@ function App(){
 
   return(
     <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"'Inter',system-ui,sans-serif",fontSize:13}}>
-      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
+      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}
+        .tabrow{scrollbar-width:none}.tabrow::-webkit-scrollbar{display:none}
+        .tabrow>button{white-space:nowrap}
+        @media(max-width:480px){.tabrow>button{padding:5px 7px!important;font-size:10px!important}}
+        @media(max-width:380px){.tabrow>button{padding:5px 5px!important;font-size:9px!important}}`}</style>
 
       {/* ── HEADER ── */}
       <div style={{height:3,background:`linear-gradient(90deg, ${C.A}, ${C.A2})`}}/>
@@ -1707,13 +1711,15 @@ function App(){
           </div>
         </div>
         {/* Tab bar */}
-        {/* Wraps, and never exceeds the screen. With six tabs this row fitted a
-            phone; the seventh (Remote) pushed it to 474px on a 412px screen,
-            which made the WHOLE PAGE draggable sideways — header, tabs and all
-            — because nothing here was constrained to the viewport. The grid
-            rows are wide too, but those live in their own scroller. */}
-        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,
-          width:"fit-content",maxWidth:"100%",flexWrap:"wrap"}}>
+        {/* One row at every width. Seven tabs do not fit a phone at the desktop
+            size, so .tabrow shrinks the padding and type below 480px and again
+            below 380px rather than wrapping. maxWidth keeps it inside the
+            screen — without that the row was 474px on a 412px phone and the
+            whole page slid sideways — and overflowX is a backstop so that if a
+            future tab ever breaks the budget, the strip scrolls on its own
+            instead of the page starting to drag again. */}
+        <div className="tabrow" style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,
+          padding:3,width:"fit-content",maxWidth:"100%",overflowX:"auto"}}>
           {/* Remote only appears when the proxy is serving this page, since
               there is nothing for it to talk to otherwise. */}
           {["grid","list","rank","league","ratings","missed",...(proxyUp?["remote"]:[])].map(t=>(
