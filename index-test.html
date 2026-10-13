@@ -1707,7 +1707,13 @@ function App(){
           </div>
         </div>
         {/* Tab bar */}
-        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
+        {/* Wraps, and never exceeds the screen. With six tabs this row fitted a
+            phone; the seventh (Remote) pushed it to 474px on a 412px screen,
+            which made the WHOLE PAGE draggable sideways — header, tabs and all
+            — because nothing here was constrained to the viewport. The grid
+            rows are wide too, but those live in their own scroller. */}
+        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,
+          width:"fit-content",maxWidth:"100%",flexWrap:"wrap"}}>
           {/* Remote only appears when the proxy is serving this page, since
               there is nothing for it to talk to otherwise. */}
           {["grid","list","rank","league","ratings","missed",...(proxyUp?["remote"]:[])].map(t=>(
