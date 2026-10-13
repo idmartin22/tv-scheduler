@@ -652,6 +652,17 @@ const TVS=[
   {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
+// The scheduler numbers its TVs from 0; the proxy keys them from 1. They are
+// the same ten TVs in the same order — scheduler brands match the proxy's
+// device types one for one — so the mapping is just the offset.
+const TV_PROXY_KEY=id=>`tv${id+1}`;
+// Living Room and Deck are deliberately NOT in TVS: they are never scheduled,
+// never take part in conflicts, and exist here only as somewhere to put a
+// game by hand. Deck has no device yet (type "tbd" in the remote).
+const OFFGRID_TVS=[
+  {key:"tv12",label:"Living Room"},
+  {key:"tv11",label:"Deck",disabled:true},
+];
 // A QUAD is a TV wired through a multiviewer: it shows four events at once.
 // In scheduling terms that is simply a TV whose capacity is 4 concurrent
 // events instead of 1 — so a quad sitting second in the priority order takes
@@ -884,6 +895,26 @@ function App(){
   const [removedEvents,setRemovedEvents]=useState([]);
   const [overridesSha,setOverridesSha]=useState(null);
   const [ovrForm,setOvrForm]=useState(null);
+  // Putting a game on a TV is a REMOTE action, not a scheduling one: it writes
+  // no override and moves nothing, so the grid stays the planning view it is
+  // and the quad panes keep showing the maximum number of events.
+  const [putCh,setPutCh]=useState(null);        // chosen feed, when an event lists several
+  const [miniRemote,setMiniRemote]=useState(null); // {key,label,ch,nonce}
+  // Derived rather than reset by an effect: when the selected event changes,
+  // a feed left over from the previous one is simply not one of its channels,
+  // so this falls back to that event's primary on its own.
+  const activeCh=ev=>{
+    const list=chArr(ev&&ev.channel);
+    return (putCh&&list.includes(putCh))?putCh:(list[0]||"");
+  };
+  const putOnTv=(key,label)=>{
+    if(!selEv) return;
+    const ch=activeCh(selEv);
+    if(!ch){ return; }
+    // The nonce forces the frame to reload when the same TV and channel are
+    // picked twice; without it the src is unchanged and nothing happens.
+    setMiniRemote({key,label,ch,nonce:Date.now()});
+  };
   const [ovrSaving,setOvrSaving]=useState(false);
   const [tab,setTab]=useState("grid");
   const [prioOvr,setPrioOvr]=useState({});
@@ -899,6 +930,23 @@ function App(){
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
   const [droppedEvents,setDroppedEvents]=useState([]); // scraper-side drops for this date (see Missed tab)
+  // Is the bar proxy serving this page? When it is, this page can talk to the
+  // TVs; loaded from GitHub Pages it cannot, because a browser refuses http
+  // requests from an https page. The probe is a RELATIVE url on purpose —
+  // served from the proxy it hits the proxy, and from Pages it 404s — so
+  // there is no IP address hardcoded in here to go stale.
+  const [proxyUp,setProxyUp]=useState(false);
+  React.useEffect(()=>{
+    let dead=false;
+    const ac=new AbortController();
+    const t=setTimeout(()=>ac.abort(),3000);
+    fetch("/channels",{signal:ac.signal})
+      .then(r=>r.ok?r.json():null)
+      .then(d=>{ if(!dead&&d&&d.count>0) setProxyUp(true); })
+      .catch(()=>{})
+      .finally(()=>clearTimeout(t));
+    return ()=>{dead=true;ac.abort();};
+  },[]);
   // Soccer areas. The scraper publishes each area's full league list with GFR
   // ratings plus the area's top/worst/scale; the app owns the base mod per
   // area and computes each league's mod from it, so a base change re-scores
@@ -1620,10 +1668,12 @@ function App(){
         </div>
         {/* Tab bar */}
         <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
-          {["grid","list","rank","league","ratings","missed"].map(t=>(
+          {/* Remote only appears when the proxy is serving this page, since
+              there is nothing for it to talk to otherwise. */}
+          {["grid","list","rank","league","ratings","missed",...(proxyUp?["remote"]:[])].map(t=>(
             <button key={t} className="espn-display" style={{...tabStyle(tab===t),borderRadius:10,fontSize:11}} onClick={()=>setTab(t)}>
               {t==="grid"?"Grid":t==="list"?"List":t==="rank"?"Rank":t==="league"?"League"
-                :t==="ratings"?"Ratings":"Missed"}
+                :t==="ratings"?"Ratings":t==="missed"?"Missed":"Remote"}
             </button>
           ))}
         </div>
@@ -2575,6 +2625,24 @@ function App(){
         </div>
       )}
 
+      {/* ── REMOTE ──────────────────────────────────────────────────────────
+          remote.html in a frame rather than a port of it. Both pages are
+          served by the proxy, so this is same-origin: one implementation of
+          the remote, which keeps working standalone on a phone, and a fix to
+          it lands here automatically. Same-origin also means this page can
+          later drive the frame directly for the mini remote on an event. */}
+      {tab==="remote"&&(
+        <div style={{paddingBottom:20,maxWidth:880,margin:"0 auto"}}>
+          <div style={{fontFamily:"monospace",fontSize:10,color:C.DM,marginBottom:8}}>
+            FULL REMOTE · served by the bar proxy · also at <span style={{color:C.MT}}>/remote.html</span>
+          </div>
+          <iframe src="/remote.html" title="TV Remote"
+            style={{width:"100%",height:"calc(100vh - 170px)",minHeight:620,
+                    border:`1px solid ${C.BD}`,borderRadius:12,
+                    background:C.BG,display:"block"}}/>
+        </div>
+      )}
+
       {selEv&&(
         <div ref={detailPanelRef} style={{position:"fixed",bottom:0,left:0,right:0,background:C.SUR,borderTop:`2px solid ${C.A}`,padding:"12px 14px",zIndex:40,maxHeight:"60vh",overflowY:"auto"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
@@ -2589,6 +2657,49 @@ function App(){
             {selEv.why}
             {selEv.bumpTgt&&<button style={{background:"#7c2d12",border:"1px solid #c2410c",borderRadius:4,color:"#fca5a5",fontSize:10,padding:"4px 10px",cursor:"pointer",marginTop:6,display:"block"}} onClick={()=>bumpAndAssign(selEv)}>⚡ Bump "{selEv.bumpTgt.label||selEv.bumpTgt.name}"</button>}
           </div>)}
+          {/* ── PUT ON TV ────────────────────────────────────────────────────
+              Tunes a TV and opens the remote. Writes NO override: the grid is
+              a guide, and pinning here would both leave the vacated pane empty
+              and risk stacking two events in one quad pane. */}
+          {proxyUp&&chArr(selEv.channel).length>0&&(()=>{
+            const list=chArr(selEv.channel), ch=activeCh(selEv);
+            return(
+            <div style={{marginBottom:10,paddingBottom:10,borderBottom:`1px solid ${C.BD}`}}>
+              <div style={{fontFamily:"monospace",fontSize:10,color:C.GRN||"#22c55e",marginBottom:5}}>
+                📺 PUT ON TV <span style={{color:C.DM}}>— tunes it now, changes nothing on the grid</span>
+              </div>
+              {list.length>1&&(
+                <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:6,alignItems:"center"}}>
+                  <span style={{fontFamily:"monospace",fontSize:9,color:C.MT}}>FEED:</span>
+                  {list.map(c=>(
+                    <button key={c} onClick={()=>setPutCh(c)}
+                      style={{padding:"2px 7px",borderRadius:4,fontFamily:"monospace",fontSize:9,cursor:"pointer",
+                        background:c===ch?"#22c55e":"transparent",color:c===ch?"#000":C.MT,
+                        border:`1px solid ${c===ch?"#22c55e":C.BD2}`}}>{c}</button>
+                  ))}
+                </div>
+              )}
+              <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
+                {TV_PRIO.map(id=>(
+                  <button key={id} onClick={()=>putOnTv(TV_PROXY_KEY(id),tvNames[id]||TVS[id].name)}
+                    title={`${TVS[id].loc} — tune to ${ch}`}
+                    style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,
+                      cursor:"pointer",background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
+                    {TVS[id].name}</button>
+                ))}
+                {OFFGRID_TVS.map(t=>(
+                  <button key={t.key} disabled={t.disabled}
+                    onClick={()=>{ if(!t.disabled) putOnTv(t.key,t.label); }}
+                    title={t.disabled?"no device on the Deck yet":`tune to ${ch}`}
+                    style={{padding:"3px 8px",borderRadius:4,fontFamily:"monospace",fontSize:9,fontWeight:700,
+                      cursor:t.disabled?"not-allowed":"pointer",opacity:t.disabled?0.35:1,
+                      background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
+                    {t.label}</button>
+                ))}
+              </div>
+            </div>);
+          })()}
+
           <div style={{fontFamily:"monospace",fontSize:10,color:C.MT,marginBottom:5}}>{selEv.tv===-1?"ASSIGN TO:":"MOVE TO:"}</div>
           <div style={{display:"flex",gap:4,flexWrap:"wrap",marginBottom:10}}>
             {TV_PRIO.filter(id=>activeTVs.has(id)).map(tvId=>{
@@ -2717,6 +2828,39 @@ function App(){
                 ))}
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* ── MINI REMOTE ──────────────────────────────────────────────────────
+          The same remote.html, told what to do through its URL. Loading the
+          frame IS the command, so the tune happens as this opens and the pad
+          is then there for whatever the app needs next — picking the game
+          inside ESPN, say, which no API can do for us. */}
+      {miniRemote&&(
+        <div onClick={()=>setMiniRemote(null)}
+          style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.72)",zIndex:60,
+            display:"flex",alignItems:"center",justifyContent:"center",padding:12}}>
+          <div onClick={e=>e.stopPropagation()}
+            style={{width:"min(430px,94vw)",height:"min(820px,92vh)",background:C.SUR,
+              border:`1px solid ${C.BD2}`,borderRadius:14,overflow:"hidden",
+              display:"flex",flexDirection:"column"}}>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",
+              padding:"8px 12px",borderBottom:`1px solid ${C.BD}`,flex:"0 0 auto"}}>
+              <div style={{minWidth:0}}>
+                <div style={{fontFamily:"monospace",fontSize:11,color:"#86efac",fontWeight:700}}>
+                  {miniRemote.label}</div>
+                <div style={{fontSize:10,color:C.MT,overflow:"hidden",textOverflow:"ellipsis",
+                  whiteSpace:"nowrap"}}>{miniRemote.ch}</div>
+              </div>
+              <button onClick={()=>setMiniRemote(null)}
+                style={{background:"transparent",border:`1px solid ${C.BD2}`,borderRadius:8,
+                  color:C.MT,fontSize:16,lineHeight:1,padding:"4px 10px",cursor:"pointer"}}>×</button>
+            </div>
+            <iframe title="Mini remote"
+              src={`/remote.html?device=${encodeURIComponent(miniRemote.key)}`
+                 + `&tune=${encodeURIComponent(miniRemote.ch)}&_=${miniRemote.nonce}`}
+              style={{flex:"1 1 auto",width:"100%",border:0,background:C.BG,display:"block"}}/>
           </div>
         </div>
       )}
