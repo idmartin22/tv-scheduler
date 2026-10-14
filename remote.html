@@ -68,7 +68,7 @@ const DEVICES = [
 // Bumped whenever any file in icons/ changes. Same reason as REMOTE_V in
 // index.html: without it the device keeps serving the icon it cached the
 // first time, so a redrawn tile never arrives.
-const ICONS_V = "2026-10-14g";
+const ICONS_V = "2026-10-14h";
 
 const TUNE_CHANNELS = [
   { ch: 349,   name: "Blue Jackets",    icon: "349" },
@@ -149,13 +149,13 @@ const STREAM_APPS = [
   { app: "Fandango",      name: "Fandango",      icon: "Fandango"             },
   { app: "Max",           name: "Max",           icon: "HBO_Max"              },
   { app: "Hulu",          name: "Hulu",          icon: "Hulu"                 },
-  { app: null,            name: "FOX One",       icon: "FOX_One"              },
+  { app: "FOX One",      name: "FOX One",       icon: "FOX_One"              },
   { app: "Netflix",       name: "Netflix",  icon: "Netflix"              },
   { app: "ViX",           name: "ViX",           icon: "ViX"                  },
-  { app: null,            name: "Fanatiz",       icon: "Fanatiz"              },
-  { app: null,            name: "Roku Channel",  icon: "The_Roku_Channel"     },
-  { app: null,            name: "Tubi",          icon: "Tubi"                 },
-  { app: null,            name: "beIN Connect",  icon: "beIN_SPORTS_CONNECT"  },
+  { app: "Fanatiz",      name: "Fanatiz",       icon: "Fanatiz"              },
+  { app: "Roku Channel", name: "Roku Channel",  icon: "The_Roku_Channel"     },
+  { app: "Tubi",         name: "Tubi",          icon: "Tubi"                 },
+  { app: "beIN Connect", name: "beIN Connect",  icon: "beIN_SPORTS_CONNECT"  },
 ];
 
 const ICONS = {
@@ -694,6 +694,17 @@ function App() {
     // Read off Bar 6 on 2026-10-12:
     //   <app id="158987" ...>DAZN Live Sports Streaming</app>
     'DAZN':        '158987',
+    // Read off Bar 6 on 2026-10-14 via /device/tv6/apps — not guessed:
+    //   808732 FOX One: Live News, Sports, TV
+    //   151908 The Roku Channel
+    //    41468 Tubi - Free Movies & TV
+    //   143975 beIN SPORTS CONNECT
+    //   229967 Fanatiz
+    'FOX One':      '808732',
+    'Roku Channel': '151908',
+    'Tubi':         '41468',
+    'beIN Connect': '143975',
+    'Fanatiz':      '229967',
   };
   // Fire TV launches by Android package name, not a numeric id.
   // Verified against `pm list packages -3` on Bar 4, 2026-09-13. Fire TV uses
