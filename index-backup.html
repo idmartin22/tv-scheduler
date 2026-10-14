@@ -629,6 +629,24 @@ const INITIAL_LEAGUE_STATUS={
   "mlb":{name:"MLB",sport:"Baseball",status:"active"},
 };
 
+// ── BAR_TRANSPORT ────────────────────────────────────────────────────────────
+// How this page talks to the TVs. On the bar network it calls the proxy on
+// 192.168.1.150 directly. Anywhere else — which includes this page's normal
+// home on GitHub Pages — it goes through a Cloudflare Worker that the bar PC
+// holds a socket open to, because an https page cannot call a plain-http LAN
+// address and the bar PC accepts nothing from the internet.
+//
+// Decided by hostname rather than by probing, so a button pressed a moment
+// after load cannot take the wrong route.
+const RELAY_URL = "https://bar-relay.isaac-d-martin.workers.dev";
+const RELAY_KEY = "jbUIOIZVsYHv2n6kuKxcv7zYmt-NkBPj";
+const ON_LAN = (()=>{
+  const h = window.location.hostname;
+  return h==="localhost" || h==="127.0.0.1"
+      || /^192\.168\./.test(h) || /^10\./.test(h)
+      || /^172\.(1[6-9]|2\d|3[01])\./.test(h);
+})();
+
 function makeEvent(o) {
   const st=o._st||{v:0,l:""},sk=o._sk||{v:0,l:""},rv=o._rv||{v:0,l:""},mq=o._mq||{v:0,l:""};
   const raw=st.v+sk.v+rv.v+mq.v;
@@ -948,19 +966,23 @@ function App(){
   });
   const [dynamicEvents,setDynamicEvents]=useState(null); // null = not yet loaded
   const [droppedEvents,setDroppedEvents]=useState([]); // scraper-side drops for this date (see Missed tab)
-  // Is the bar proxy serving this page? When it is, this page can talk to the
-  // TVs; loaded from GitHub Pages it cannot, because a browser refuses http
-  // requests from an https page. The probe is a RELATIVE url on purpose —
-  // served from the proxy it hits the proxy, and from Pages it 404s — so
-  // there is no IP address hardcoded in here to go stale.
+  // Can this page reach the TVs, and by which route?
+  //   served by the bar proxy  — call it directly, same network, instant
+  //   served from GitHub Pages — through the Cloudflare relay, which only
+  //     works while the bar PC has its socket open to it
+  // A browser will not let an https page call http://192.168.1.150, which is
+  // why the relay exists at all; see BAR_TRANSPORT above.
   const [proxyUp,setProxyUp]=useState(false);
   React.useEffect(()=>{
     let dead=false;
     const ac=new AbortController();
-    const t=setTimeout(()=>ac.abort(),3000);
-    fetch("/channels",{signal:ac.signal})
-      .then(r=>r.ok?r.json():null)
-      .then(d=>{ if(!dead&&d&&d.count>0) setProxyUp(true); })
+    const t=setTimeout(()=>ac.abort(),6000);
+    const probe = ON_LAN
+      ? fetch("/channels",{signal:ac.signal})
+          .then(r=>r.ok?r.json():null).then(d=>!!(d&&d.count>0))
+      : fetch(RELAY_URL+"/health?key="+encodeURIComponent(RELAY_KEY),{signal:ac.signal})
+          .then(r=>r.ok?r.json():null).then(d=>!!(d&&d.agents>0));
+    probe.then(ok=>{ if(!dead&&ok) setProxyUp(true); })
       .catch(()=>{})
       .finally(()=>clearTimeout(t));
     return ()=>{dead=true;ac.abort();};
@@ -1623,7 +1645,11 @@ function App(){
 
   return(
     <div style={{background:C.BG,minHeight:"100vh",color:"#f1f5f9",fontFamily:"'Inter',system-ui,sans-serif",fontSize:13}}>
-      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}`}</style>
+      <style>{`*{box-sizing:border-box;margin:0;padding:0}::-webkit-scrollbar{height:3px}::-webkit-scrollbar-thumb{background:${C.BD}}
+        .tabrow{scrollbar-width:none}.tabrow::-webkit-scrollbar{display:none}
+        .tabrow>button{white-space:nowrap}
+        @media(max-width:480px){.tabrow>button{padding:5px 7px!important;font-size:10px!important}}
+        @media(max-width:380px){.tabrow>button{padding:5px 5px!important;font-size:9px!important}}`}</style>
 
       {/* ── HEADER ── */}
       <div style={{height:3,background:`linear-gradient(90deg, ${C.A}, ${C.A2})`}}/>
@@ -1685,7 +1711,15 @@ function App(){
           </div>
         </div>
         {/* Tab bar */}
-        <div style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,padding:3,width:"fit-content"}}>
+        {/* One row at every width. Seven tabs do not fit a phone at the desktop
+            size, so .tabrow shrinks the padding and type below 480px and again
+            below 380px rather than wrapping. maxWidth keeps it inside the
+            screen — without that the row was 474px on a 412px phone and the
+            whole page slid sideways — and overflowX is a backstop so that if a
+            future tab ever breaks the budget, the strip scrolls on its own
+            instead of the page starting to drag again. */}
+        <div className="tabrow" style={{display:"flex",gap:2,background:C.SUR2,borderRadius:12,
+          padding:3,width:"fit-content",maxWidth:"100%",overflowX:"auto"}}>
           {/* Remote only appears when the proxy is serving this page, since
               there is nothing for it to talk to otherwise. */}
           {["grid","list","rank","league","ratings","missed",...(proxyUp?["remote"]:[])].map(t=>(
@@ -2654,7 +2688,7 @@ function App(){
           <div style={{fontFamily:"monospace",fontSize:10,color:C.DM,marginBottom:8}}>
             FULL REMOTE · served by the bar proxy · also at <span style={{color:C.MT}}>/remote.html</span>
           </div>
-          <iframe src="/remote.html" title="TV Remote"
+          <iframe src="remote.html" title="TV Remote"
             style={{width:"100%",height:"calc(100vh - 170px)",minHeight:620,
                     border:`1px solid ${C.BD}`,borderRadius:12,
                     background:C.BG,display:"block"}}/>
@@ -2884,7 +2918,7 @@ function App(){
                   color:C.MT,fontSize:16,lineHeight:1,padding:"4px 10px",cursor:"pointer"}}>×</button>
             </div>
             <iframe title="Mini remote"
-              src={`/remote.html?device=${encodeURIComponent(miniRemote.key)}`
+              src={`remote.html?device=${encodeURIComponent(miniRemote.key)}`
                  + `&tune=${encodeURIComponent(miniRemote.ch)}&_=${miniRemote.nonce}`}
               style={{flex:"1 1 auto",width:"100%",border:0,background:C.BG,display:"block"}}/>
           </div>
