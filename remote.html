@@ -62,22 +62,95 @@ const DEVICES = [
   { id: 11, name: "Deck",       size: null, type: "tbd",   proxyKey: "tv11" },
 ];
 
-const QUICK_CHANNELS = [
-  { name: "FOX",       ch: 8,    color: "#003da5", bg: "rgba(0,5,20,0.9)",     iconKey: "fox_ch"       },
-  { name: "Fox News",  ch: 204,  color: "#003087", bg: "rgba(0,5,20,0.9)",     iconKey: "foxnews_ch"   },
-  { name: "ESPN",      ch: 250,  color: "#cc0000", bg: "rgba(20,0,0,0.9)",     iconKey: "espn_ch"      },
-  { name: "FS1",       ch: 252,  color: "#f97316", bg: "rgba(20,10,0,0.9)",    iconKey: "fs1_ch"       },
-  { name: "NFL Net",   ch: 254,  color: "#5b9bd5", bg: "rgba(0,5,20,0.9)",     iconKey: "nfl_ch"       },
-  { name: "MLB Net",   ch: 258,  color: "#bf0d3e", bg: "rgba(15,0,5,0.9)",     iconKey: "mlb_ch"       },
-  { name: "NBA TV",    ch: 262,  color: "#c9082a", bg: "rgba(15,0,5,0.9)",     iconKey: "nba_ch"       },
-  { name: "NHL Net",   ch: 265,  color: "#a2aaad", bg: "rgba(5,5,10,0.9)",     iconKey: "nhl_ch"       },
-  // 453, from Channel_Map.xlsx ("FanDuel TV"). This said 382 for months; the
-  // button sends the NAME, so the proxy resolves the real number — this value
-  // is only the caption under the icon, and it was lying.
-  { name: "FanDuel",   ch: 453,  color: "#1493ff", bg: "rgba(0,10,25,0.9)",    iconKey: "fanduel_ch"   },
-  { name: "GuardsTV",  ch: 447,  color: "#c8102e", bg: "rgba(0,5,20,0.9)",     iconKey: "guardians_ch" },
-  { name: "USA",       ch: 500,  color: "#cc0000", bg: "rgba(15,0,0,0.9)",     iconKey: "usa_ch"       },
-  { name: "TNT",       ch: 502,  color: "#00a3e0", bg: "rgba(0,10,20,0.9)",    iconKey: "tnt_ch"       },
+// Every Spectrum channel number in Channel_Map.xlsx that has an icon, in
+// numeric order. The button sends the NUMBER, not the name, so a stale
+// name in the workbook (see CW 43 on 6) cannot tune the wrong network.
+const TUNE_CHANNELS = [
+  { ch: 2,     name: "PBS",             icon: "2" },
+  { ch: 3,     name: "NBC",             icon: "3" },
+  { ch: 4,     name: "CBS",             icon: "4" },
+  { ch: 5,     name: "ABC",             icon: "5" },
+  { ch: 6,     name: "MyNetworkTV",     icon: "6" },
+  { ch: 7,     name: "CW 55",           icon: "7" },
+  { ch: 8,     name: "FOX",             icon: "8" },
+  { ch: 11,    name: "Univision",       icon: "11" },
+  { ch: 13,    name: "Telemundo",       icon: "13" },
+  { ch: 17,    name: "Bounce",          icon: "17" },
+  { ch: 23,    name: "ION",             icon: "23" },
+  { ch: 211,   name: "CNBC",            icon: "211" },
+  { ch: 212,   name: "FOX Business",    icon: "212" },
+  { ch: 222,   name: "ViceTV",          icon: "222" },
+  { ch: 250,   name: "ESPN",            icon: "250" },
+  { ch: 251,   name: "ESPN2",           icon: "251" },
+  { ch: 252,   name: "FOX Sports 1",    icon: "252" },
+  { ch: 253,   name: "FOX Sports 2",    icon: "253" },
+  { ch: 254,   name: "NFL Network",     icon: "254" },
+  { ch: 255,   name: "NFL RedZone",     icon: "255" },
+  { ch: 257,   name: "Golf Channel",    icon: "257" },
+  { ch: 258,   name: "MLB Network",     icon: "258" },
+  { ch: 259,   name: "ESPNews",         icon: "259" },
+  { ch: 260,   name: "ESPN U",          icon: "260" },
+  { ch: 261,   name: "CBS Sports Net",  icon: "261" },
+  { ch: 262,   name: "NBA TV",          icon: "262" },
+  { ch: 263,   name: "Tennis Ch",       icon: "263" },
+  { ch: 265,   name: "NHL Network",     icon: "265" },
+  { ch: 266,   name: "Racer Net",       icon: "266" },
+  { ch: 269,   name: "SEC Network",     icon: "269" },
+  { ch: 271,   name: "Big Ten Net",     icon: "271" },
+  { ch: 278,   name: "ACC Network",     icon: "278" },
+  { ch: 349,   name: "Blue Jackets",    icon: "349" },
+  { ch: 447,   name: "Guardians.TV",    icon: "447" },
+  { ch: 449,   name: "beIN Sport",      icon: "449" },
+  { ch: 450,   name: "FOX Soccer+",     icon: "450" },
+  { ch: 453,   name: "FanDuel TV",      icon: "453" },
+  { ch: 500,   name: "USA Network",     icon: "500" },
+  { ch: 502,   name: "TNT",             icon: "502" },
+  { ch: 504,   name: "TBS",             icon: "504" },
+  { ch: 514,   name: "FX",              icon: "514" },
+  { ch: 516,   name: "FXX",             icon: "516" },
+  { ch: 522,   name: "Syfy",            icon: "522" },
+  { ch: 528,   name: "truTV",           icon: "528" },
+  { ch: 544,   name: "HLN",             icon: "544" },
+  { ch: 578,   name: "E!",              icon: "578" },
+  { ch: 702,   name: "Nickelodeon",     icon: "702" },
+  { ch: 721,   name: "Disney XD",       icon: "721" },
+  { ch: 789,   name: "BYU",             icon: "789" },
+  { ch: 817,   name: "Showtime",        icon: "817" },
+  { ch: 904,   name: "UniMás",          icon: "904" },
+  { ch: 908,   name: "Galavision",      icon: "908" },
+  { ch: 944,   name: "NBC Universo",    icon: "944" },
+  { ch: 1005,  name: "ESPN Deportes",   icon: "1005" },
+  { ch: 1006,  name: "FOX Deportes",    icon: "1006" },
+  { ch: 1007,  name: "beIN Espanol",    icon: "1007" },
+  { ch: 1008,  name: "TUDN",            icon: "1008" },
+  { ch: 2644,  name: "Cozi TV",         icon: "2644" },
+  { ch: 3330,  name: "RESN",            icon: "3330" },
+];
+
+// app: the key launchApp looks up in ROKU_APP_IDS / FIRETV_APP_PKGS /
+// VIZIO_APP_KEYS. null means no ID has been READ off a device yet, so the
+// tile renders disabled rather than guessing an id and launching nothing.
+// Fill these from http://192.168.1.150:3000/device/tv6/apps on house wifi.
+const STREAM_APPS = [
+  { app: "Spectrum TV",   name: "Spectrum TV",   icon: "Spectrum_TV"          },
+  { app: "DAZN",          name: "DAZN",       icon: "DAZN"                 },
+  { app: "YouTube TV",    name: "YouTube TV", icon: "YouTube_TV"           },
+  { app: "ESPN",          name: "ESPN",          icon: "ESPN_Unlimited"       },
+  { app: "Paramount+",    name: "Paramount+", icon: "Paramount+"           },
+  { app: "Peacock",       name: "Peacock",       icon: "Peacock"              },
+  { app: "Prime",         name: "Prime Video",   icon: "Prime_Video"          },
+  { app: "Apple TV",      name: "Apple TV",      icon: "Apple_TV"             },
+  { app: "Disney+",       name: "Disney+",       icon: "Disney+"              },
+  { app: "Fandango",      name: "Fandango",      icon: "Fandango"             },
+  { app: "Max",           name: "Max",           icon: "HBO_Max"              },
+  { app: "Hulu",          name: "Hulu",          icon: "Hulu"                 },
+  { app: null,            name: "FOX One",       icon: "FOX_One"              },
+  { app: "Netflix",       name: "Netflix",  icon: "Netflix"              },
+  { app: "ViX",           name: "ViX",           icon: "ViX"                  },
+  { app: null,            name: "Fanatiz",       icon: "Fanatiz"              },
+  { app: null,            name: "Roku Channel",  icon: "The_Roku_Channel"     },
+  { app: null,            name: "Tubi",          icon: "Tubi"                 },
+  { app: null,            name: "beIN Connect",  icon: "beIN_SPORTS_CONNECT"  },
 ];
 
 const ICONS = {
@@ -535,6 +608,7 @@ function App() {
   const trackH = isTablet ? '220px' : '160px';
   const [showNumPad, setShowNumPad] = useState(false);
   const [showAllChannels, setShowAllChannels] = useState(false);
+  const [showAllApps, setShowAllApps] = useState(false);
   const [tvOn, setTvOn] = useState(true);
   const [chanInput, setChanInput]   = useState("");
   const [status, setStatus]         = useState(null);
@@ -985,87 +1059,129 @@ function App() {
 
 
 
-          {/* QUICK TUNE CHANNELS — collapsible */}
+          {/* SPECTRUM CHANNELS — collapsible, every numbered channel */}
           {(()=>{
             const [pressedCh, setPressedCh] = useState(null);
-            const visibleCh = QUICK_CHANNELS;
             return (
               <Card style={{ padding:0, overflow:"hidden" }}>
-                <div style={{ padding:"12px 14px 8px", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
-                  <span style={{ fontSize:13, fontWeight:700, color:"#f1f5f9" }}>Quick Tune Channels</span>
-                  <span style={{ fontSize:9, color:C.DM }}>scroll →</span>
-                </div>
-                <div style={{ overflowX:"auto", WebkitOverflowScrolling:"touch", scrollbarWidth:"none", paddingBottom:10 }}>
-                  <div style={{ display:"flex", gap:8, padding:"0 10px", width:"max-content" }}>
-                    {visibleCh.map(ch => (
-                      <button key={ch.name}
-                        onMouseDown={() => setPressedCh(ch.name)}
-                        onMouseUp={() => setPressedCh(null)}
-                        onMouseLeave={() => setPressedCh(null)}
-                        onTouchStart={() => setPressedCh(ch.name)}
-                        onTouchEnd={() => setPressedCh(null)}
-                        onClick={() => tuneCh(ch.name)}
-                        title={ch.name}
-                        style={{
-                          padding:0, borderRadius:10, overflow:"hidden",
-                          border:`1.5px solid ${pressedCh===ch.name ? ch.color : ch.color + "50"}`,
-                          cursor:"pointer", display:"flex", flexDirection:"column",
-                          transition:"all 0.1s", flexShrink:0,
-                          width: isTablet ? 90 : 72,
-                          transform: pressedCh===ch.name ? "scale(0.92)" : "scale(1)",
-                          background: ch.bg,
-                        }}
-                      >
-                        <img src={ICONS[ch.iconKey]} alt={ch.name}
-                          style={{ width: isTablet ? 90 : 72, height:72, objectFit:"cover", display:"block" }} />
-                        <div style={{ padding:"3px 0", background:"rgba(0,0,0,0.6)", textAlign:"center" }}>
-                          <span style={{ fontSize:7, fontWeight:600, color:"#94a3b8" }}>ch {ch.ch}</span>
-                        </div>
-                      </button>
-                    ))}
+                <button
+                  onClick={() => setShowAllChannels(v => !v)}
+                  style={{
+                    width:"100%", background:"transparent", border:"none", cursor:"pointer",
+                    padding:"12px 14px", display:"flex", alignItems:"center",
+                    justifyContent:"space-between", textAlign:"left",
+                  }}
+                >
+                  <span style={{ fontSize:13, fontWeight:700, color:"#f1f5f9" }}>
+                    Spectrum Channels
+                    <span style={{ fontSize:10, fontWeight:500, color:C.DM, marginLeft:7 }}>
+                      {TUNE_CHANNELS.length}
+                    </span>
+                  </span>
+                  <span style={{
+                    color:C.MT, fontSize:11, display:"inline-block",
+                    transform: showAllChannels ? "rotate(180deg)" : "rotate(0deg)",
+                    transition:"transform 0.2s",
+                  }}>▼</span>
+                </button>
+                {showAllChannels && (
+                  <div style={{ padding:"0 10px 12px" }}>
+                    <div style={{ display:"grid", gridTemplateColumns:`repeat(${isTablet ? 6 : 4},1fr)`, gap: isTablet ? 8 : 7 }}>
+                      {TUNE_CHANNELS.map(c => (
+                        <button key={c.ch}
+                          onMouseDown={() => setPressedCh(c.ch)}
+                          onMouseUp={() => setPressedCh(null)}
+                          onMouseLeave={() => setPressedCh(null)}
+                          onTouchStart={() => setPressedCh(c.ch)}
+                          onTouchEnd={() => setPressedCh(null)}
+                          onClick={() => tuneCh(c.ch)}
+                          title={`${c.name} — ch ${c.ch}`}
+                          style={{
+                            padding:0, borderRadius:12, overflow:"hidden", border:"none",
+                            cursor:"pointer", display:"flex", flexDirection:"column",
+                            transition:"all 0.1s", background:"transparent",
+                            transform: pressedCh===c.ch ? "scale(0.92)" : "scale(1)",
+                            opacity: pressedCh===c.ch ? 0.75 : 1,
+                          }}
+                        >
+                          <img src={`icons/${c.icon}.png`} alt={c.name} loading="lazy"
+                            style={{ width:"100%", aspectRatio:"1", display:"block" }} />
+                          <div style={{ padding:"3px 2px", textAlign:"center" }}>
+                            <span style={{ fontSize:8, fontWeight:600, color:"#7a8fa8", lineHeight:1 }}>
+                              {c.ch}
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </Card>
             );
           })()}
 
-          {/* STREAMING SERVICES */}
-          <Card style={{ padding:0, overflow:"hidden" }}>
-            <div style={{ padding:"12px 14px 8px" }}>
-              <span style={{ fontSize:13, fontWeight:700, color:"#f1f5f9" }}>Streaming Services</span>
-            </div>
-            <div style={{ padding:"0 10px 10px" }}>
-              <div style={{ display:"grid", gridTemplateColumns:`repeat(${isTablet ? 6 : 4},1fr)`, gap: isTablet ? 8 : 7 }}>
-                {(()=>{ const [pressedApp, setPressedApp] = useState(null); return APPS.map(app => (
-                    <button key={app.name}
-                      onMouseDown={() => setPressedApp(app.name)}
-                      onMouseUp={() => setPressedApp(null)}
-                      onMouseLeave={() => setPressedApp(null)}
-                      onTouchStart={() => setPressedApp(app.name)}
-                      onTouchEnd={() => setPressedApp(null)}
-                      onClick={() => launchApp(app)}
-                      style={{
-                        padding:0, borderRadius:12, overflow:"hidden",
-                        border:`1px solid ${pressedApp===app.name ? app.color + "80" : app.color + "30"}`,
-                        cursor:"pointer", display:"flex", flexDirection:"column",
-                        transition:"all 0.1s",
-                        transform: pressedApp===app.name ? "scale(0.92)" : "scale(1)",
-                        background: `${app.color}12`,
-                      }}
-                    >
-                      <img src={ICONS[app.iconKey]} alt={app.name}
-                        style={{ width:"100%", aspectRatio:"1", objectFit:"cover", display:"block",
-                                 borderRadius:"17.5%" }} />
-                      <div style={{ padding:"3px 2px", background:"rgba(0,0,0,0.5)", textAlign:"center" }}>
-                        <span style={{ fontSize:8, fontWeight:600, color:"#7a8fa8", lineHeight:1 }}>
-                          {app.name}
-                        </span>
-                      </div>
-                    </button>
-                  ));})()}
-              </div>
-            </div>
-          </Card>
+          {/* STREAMING SERVICES — collapsible */}
+          {(()=>{
+            const [pressedApp, setPressedApp] = useState(null);
+            return (
+              <Card style={{ padding:0, overflow:"hidden" }}>
+                <button
+                  onClick={() => setShowAllApps(v => !v)}
+                  style={{
+                    width:"100%", background:"transparent", border:"none", cursor:"pointer",
+                    padding:"12px 14px", display:"flex", alignItems:"center",
+                    justifyContent:"space-between", textAlign:"left",
+                  }}
+                >
+                  <span style={{ fontSize:13, fontWeight:700, color:"#f1f5f9" }}>
+                    Streaming Services
+                    <span style={{ fontSize:10, fontWeight:500, color:C.DM, marginLeft:7 }}>
+                      {STREAM_APPS.length}
+                    </span>
+                  </span>
+                  <span style={{
+                    color:C.MT, fontSize:11, display:"inline-block",
+                    transform: showAllApps ? "rotate(180deg)" : "rotate(0deg)",
+                    transition:"transform 0.2s",
+                  }}>▼</span>
+                </button>
+                {showAllApps && (
+                  <div style={{ padding:"0 10px 12px" }}>
+                    <div style={{ display:"grid", gridTemplateColumns:`repeat(${isTablet ? 6 : 4},1fr)`, gap: isTablet ? 8 : 7 }}>
+                      {STREAM_APPS.map(a => (
+                        <button key={a.icon}
+                          disabled={!a.app}
+                          onMouseDown={() => a.app && setPressedApp(a.icon)}
+                          onMouseUp={() => setPressedApp(null)}
+                          onMouseLeave={() => setPressedApp(null)}
+                          onTouchStart={() => a.app && setPressedApp(a.icon)}
+                          onTouchEnd={() => setPressedApp(null)}
+                          onClick={() => a.app && launchApp({ name: a.app })}
+                          title={a.app ? a.name : `${a.name} — no app ID read from a device yet`}
+                          style={{
+                            padding:0, borderRadius:12, overflow:"hidden", border:"none",
+                            cursor: a.app ? "pointer" : "not-allowed",
+                            display:"flex", flexDirection:"column",
+                            transition:"all 0.1s", background:"transparent",
+                            transform: pressedApp===a.icon ? "scale(0.92)" : "scale(1)",
+                            opacity: !a.app ? 0.32 : (pressedApp===a.icon ? 0.75 : 1),
+                          }}
+                        >
+                          <img src={`icons/${a.icon}.png`} alt={a.name} loading="lazy"
+                            style={{ width:"100%", aspectRatio:"1", display:"block" }} />
+                          <div style={{ padding:"3px 2px", textAlign:"center" }}>
+                            <span style={{ fontSize:8, fontWeight:600, color:"#7a8fa8", lineHeight:1 }}>
+                              {a.name}
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </Card>
+            );
+          })()}
 
 
 
