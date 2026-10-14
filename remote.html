@@ -65,6 +65,11 @@ const DEVICES = [
 // Every Spectrum channel number in Channel_Map.xlsx that has an icon, in
 // numeric order. The button sends the NUMBER, not the name, so a stale
 // name in the workbook (see CW 43 on 6) cannot tune the wrong network.
+// Bumped whenever any file in icons/ changes. Same reason as REMOTE_V in
+// index.html: without it the device keeps serving the icon it cached the
+// first time, so a redrawn tile never arrives.
+const ICONS_V = "2026-10-14c";
+
 const TUNE_CHANNELS = [
   { ch: 349,   name: "Blue Jackets",    icon: "349" },
   { ch: 447,   name: "Guardians.TV",    icon: "447" },
@@ -1104,7 +1109,7 @@ function App() {
                             opacity: pressedCh===c.ch ? 0.75 : 1,
                           }}
                         >
-                          <img src={`icons/${c.icon}.png`} alt={c.name} loading="lazy"
+                          <img src={`icons/${c.icon}.png?v=${ICONS_V}`} alt={c.name} loading="lazy"
                             style={{ width:"100%", aspectRatio:"1", display:"block" }} />
                           <div style={{ padding:"3px 2px", textAlign:"center" }}>
                             <span style={{ fontSize:8, fontWeight:600, color:"#7a8fa8", lineHeight:1 }}>
@@ -1167,7 +1172,7 @@ function App() {
                             opacity: !a.app ? 0.32 : (pressedApp===a.icon ? 0.75 : 1),
                           }}
                         >
-                          <img src={`icons/${a.icon}.png`} alt={a.name} loading="lazy"
+                          <img src={`icons/${a.icon}.png?v=${ICONS_V}`} alt={a.name} loading="lazy"
                             style={{ width:"100%", aspectRatio:"1", display:"block" }} />
                           <div style={{ padding:"3px 2px", textAlign:"center" }}>
                             <span style={{ fontSize:8, fontWeight:600, color:"#7a8fa8", lineHeight:1 }}>
