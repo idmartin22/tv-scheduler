@@ -68,7 +68,7 @@ const DEVICES = [
 // Bumped whenever any file in icons/ changes. Same reason as REMOTE_V in
 // index.html: without it the device keeps serving the icon it cached the
 // first time, so a redrawn tile never arrives.
-const ICONS_V = "2026-10-14h";
+const ICONS_V = "2026-10-14i";
 
 const TUNE_CHANNELS = [
   { ch: 349,   name: "Blue Jackets",    icon: "349" },
@@ -726,6 +726,13 @@ function App() {
     // confirmed by reading it, not assumed, since 7 of the 12 packages first
     // guessed for this map were wrong.
     'DAZN':        'com.dazn',
+    // Read off Bar 4 and Bar 8 on 2026-10-14 via /device/:id/apps:
+    //   com.fox.foxone    FOX One      (both)
+    //   com.roku.web.trc  Roku Channel (Bar 4 only)
+    // Tubi, beIN Connect and Fanatiz are NOT installed on either Fire TV, so
+    // they stay absent here and fall through to "not configured for Fire TV".
+    'FOX One':      'com.fox.foxone',
+    'Roku Channel': 'com.roku.web.trc',
   };
   const VIZIO_APP_KEYS = {
     'Spectrum TV': 'spectrum', 'Prime': 'prime',      'Paramount+': 'paramount',
