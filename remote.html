@@ -71,7 +71,10 @@ const QUICK_CHANNELS = [
   { name: "MLB Net",   ch: 258,  color: "#bf0d3e", bg: "rgba(15,0,5,0.9)",     iconKey: "mlb_ch"       },
   { name: "NBA TV",    ch: 262,  color: "#c9082a", bg: "rgba(15,0,5,0.9)",     iconKey: "nba_ch"       },
   { name: "NHL Net",   ch: 265,  color: "#a2aaad", bg: "rgba(5,5,10,0.9)",     iconKey: "nhl_ch"       },
-  { name: "FanDuel",   ch: 382,  color: "#1493ff", bg: "rgba(0,10,25,0.9)",    iconKey: "fanduel_ch"   },
+  // 453, from Channel_Map.xlsx ("FanDuel TV"). This said 382 for months; the
+  // button sends the NAME, so the proxy resolves the real number — this value
+  // is only the caption under the icon, and it was lying.
+  { name: "FanDuel",   ch: 453,  color: "#1493ff", bg: "rgba(0,10,25,0.9)",    iconKey: "fanduel_ch"   },
   { name: "GuardsTV",  ch: 447,  color: "#c8102e", bg: "rgba(0,5,20,0.9)",     iconKey: "guardians_ch" },
   { name: "USA",       ch: 500,  color: "#cc0000", bg: "rgba(15,0,0,0.9)",     iconKey: "usa_ch"       },
   { name: "TNT",       ch: 502,  color: "#00a3e0", bg: "rgba(0,10,20,0.9)",    iconKey: "tnt_ch"       },
