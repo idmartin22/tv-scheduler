@@ -1828,10 +1828,63 @@ function App(){
               </div>
             );
           })}
-          {unasgd.length>0&&(<div style={{padding:"12px 14px",borderTop:`2px solid ${C.A}`}}>
-            <div style={{fontSize:12,fontWeight:700,color:"#ef4444",marginBottom:10}}>⚠ Unassigned — {unasgd.length} games</div>
-            {unasgd.filter(Boolean).map(a=>{const c=sc(a);return(<div key={a.id} style={{background:"rgba(239,68,68,0.06)",border:"1px solid rgba(239,68,68,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:8,cursor:"pointer"}} onClick={()=>setSel(sel===a.id?null:a.id)}><div style={{fontSize:13,fontWeight:600,color:"#f1f5f9",marginBottom:3}}>{evName(a)}</div><div style={{fontSize:11,color:C.MT,marginBottom:4}}>{m2t(a.startMin)}–{m2t(a.endMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??0}/100</div><div style={{fontSize:11,color:"#f87171",marginBottom:a.bumpTgt?8:0}}>{a.why}</div>{a.bumpTgt&&<button style={{background:"rgba(239,68,68,0.15)",border:"1px solid rgba(239,68,68,0.3)",borderRadius:8,color:"#fca5a5",fontSize:11,fontWeight:600,padding:"5px 12px",cursor:"pointer"}} onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}>⚡ Bump "{a.bumpTgt.label||a.bumpTgt.name}"</button>}</div>);})}
-          </div>)}
+          {unasgd.length>0&&(()=>{
+            // Unassigned events are drawn on the SAME time axis as the TVs, so
+            // a gap on a TV row lines up visually with whatever could fill it.
+            // They overlap each other by definition — overlapping is usually
+            // WHY they went unassigned — so pack them into as many lanes as it
+            // takes rather than letting blocks collide.
+            const sorted=[...unasgd].filter(Boolean).sort((a,b)=>a.startMin-b.startMin);
+            const lanes=[];
+            for(const a of sorted){
+              const i=lanes.findIndex(L=>!L.some(b=>overlaps(a,b)));
+              if(i===-1)lanes.push([a]); else lanes[i].push(a);
+            }
+            return(
+            <div style={{borderTop:`2px solid ${C.A}`,minWidth:960,paddingTop:4}}>
+              <div style={{display:"flex",alignItems:"center",gap:8,padding:"5px 10px 4px"}}>
+                <span style={{fontSize:11,fontWeight:700,color:"#ef4444"}}>&#9888; UNASSIGNED</span>
+                <span style={{fontSize:9,color:C.DM}}>{unasgd.length} games &middot; tap to place{lanes.length>1?` \u00b7 ${lanes.length} lanes`:""}</span>
+              </div>
+              {lanes.map((lane,li)=>(
+                <div key={li} style={{display:"flex",alignItems:"center",minHeight:34,
+                  borderTop:li?`1px solid ${C.BD}22`:"none"}}>
+                  <div style={{width:72,flexShrink:0,padding:"0 10px",fontSize:8,color:C.DM,lineHeight:1.2}}>
+                    {li===0?"BENCH":""}
+                  </div>
+                  <div style={{flex:1,position:"relative",height:34,background:C.SUR,marginRight:6,borderRadius:4}}>
+                    {hrs.map(h=><div key={h} style={{position:"absolute",left:pct(h*60),top:0,bottom:0,borderLeft:`1px solid ${C.BD}`,zIndex:0}}/>)}
+                    {isToday&&nowMin>=GRID_START&&nowMin<=GRID_END&&(
+                      <div style={{position:"absolute",left:pct(nowMin),top:0,bottom:0,width:2,
+                        background:"#ef4444",zIndex:10,pointerEvents:"none",borderRadius:1}}/>
+                    )}
+                    {lane.map(a=>{
+                      const c=sc(a);const isSel=sel===a.id;
+                      const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
+                      return(
+                        <div key={a.id} title={a.why||""}
+                          style={{...blkStyle(c,isSel,isNow),height:30,top:2,
+                            left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),
+                            zIndex:3,padding:"1px 5px",borderStyle:"dashed"}}
+                          onClick={()=>setSel(isSel?null:a.id)}>
+                          <div style={{fontSize:9,fontWeight:600,color:"#f1f5f9",whiteSpace:"nowrap",
+                            overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.2}}>
+                            {a.bumpTgt&&<span onClick={e=>{e.stopPropagation();bumpAndAssign(a);}}
+                              title={`Bump ${a.bumpTgt.label||a.bumpTgt.name}`}
+                              style={{cursor:"pointer",marginRight:3}}>&#9889;</span>}
+                            {evName(a)}
+                          </div>
+                          <div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap",
+                            overflow:"hidden",lineHeight:1.2}}>
+                            {m2t(a.startMin)} &middot; <ChBadges channel={a.channel}/>
+                          </div>
+                        </div>);
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>);
+          })()}
         </div>
       )}
 

@@ -638,6 +638,13 @@ const INITIAL_LEAGUE_STATUS={
 //
 // Decided by hostname rather than by probing, so a button pressed a moment
 // after load cannot take the wrong route.
+// Bumped whenever remote.html changes. The Remote tab used to load a bare
+// "remote.html", which gave the phone no reason to ever re-fetch it: an
+// installed PWA kept serving the copy it cached the first time, so a remote
+// deploy looked like nothing had happened. Appending this makes every deploy
+// a URL the device has not seen, so it updates without clearing any cache.
+const REMOTE_V = "2026-10-14i";
+
 const RELAY_URL = "https://bar-relay.isaac-d-martin.workers.dev";
 const RELAY_KEY = "jbUIOIZVsYHv2n6kuKxcv7zYmt-NkBPj";
 const ON_LAN = (()=>{
@@ -2688,7 +2695,7 @@ function App(){
           <div style={{fontFamily:"monospace",fontSize:10,color:C.DM,marginBottom:8}}>
             FULL REMOTE · served by the bar proxy · also at <span style={{color:C.MT}}>/remote.html</span>
           </div>
-          <iframe src="remote.html" title="TV Remote"
+          <iframe src={`remote.html?v=${REMOTE_V}`} title="TV Remote"
             style={{width:"100%",height:"calc(100vh - 170px)",minHeight:620,
                     border:`1px solid ${C.BD}`,borderRadius:12,
                     background:C.BG,display:"block"}}/>
