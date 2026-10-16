@@ -737,9 +737,9 @@ function App() {
     // whole reason ids get read off hardware instead of inferred.
     'Fanatiz':      'com.smartboxtv.nunchee.firetv.fanatizprod',
     'beIN Connect': 'ptv.bein.ui',
-    // Tubi is the one app in the tile list not installed on Bar 8 -- absent
-    // from all 240 packages, not just the third-party ones. It stays out
-    // until a package is read off a stick that actually has it.
+    // com.tubitv.ott, NOT com.tubitv -- the latter was an assumption, and an
+    // audit built on it reported Tubi missing even once it was installed.
+    'Tubi':         'com.tubitv.ott',
   };
   const VIZIO_APP_KEYS = {
     'Spectrum TV': 'spectrum', 'Prime': 'prime',      'Paramount+': 'paramount',
