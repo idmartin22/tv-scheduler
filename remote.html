@@ -755,13 +755,13 @@ function App() {
     setStatus(`Launching ${app.name}...`);
     let res;
     if (device.type === 'vizio') {
-      // Key off app.app, NOT app.name. These three tables are keyed by the
-      // tile's canonical `app` field; `name` is the display label and the two
-      // differ for exactly one tile -- {app:"Prime", name:"Prime Video"} --
-      // which silently broke the Prime tile on all three platforms at once.
-      // The Xumo branch below is the exception: its macro really is named
-      // "Prime Video", so it keeps using app.name.
-      const vizioKey = VIZIO_APP_KEYS[app.app];
+      // `app.name` here is already the tile's CANONICAL key, not its display
+      // label: the tile calls launchApp({ name: a.app }), so a.app -- the key
+      // these three tables use -- arrives as .name. Do not "fix" this to
+      // app.app by reading STREAM_APPS alone; that field does not exist on
+      // the object passed in, and every tile silently falls through to
+      // "not configured" (done on 2026-10-15, broke all 19 at once).
+      const vizioKey = VIZIO_APP_KEYS[app.name];
       if (vizioKey) res = await proxyPost(`/device/${devKey}/vizio/launch/${vizioKey}`);
       else { setStatus(`${app.name} not configured for Vizio`); return; }
     } else if (device.type === 'xumo') {
@@ -772,11 +772,11 @@ function App() {
       setStatus(`Opening ${app.name}...`);
       res = await proxyPost(`/device/${devKey}/xumo/launch/${encodeURIComponent(app.name)}`);
     } else if (device.type === 'firetv') {
-      const pkg = FIRETV_APP_PKGS[app.app];
+      const pkg = FIRETV_APP_PKGS[app.name];
       if (pkg) res = await proxyPost(`/device/${devKey}/launch/${encodeURIComponent(pkg)}`);
       else { setStatus(`${app.name} not configured for Fire TV`); return; }
     } else {
-      const appId = ROKU_APP_IDS[app.app];
+      const appId = ROKU_APP_IDS[app.name];
       if (appId) res = await proxyPost(`/device/${devKey}/launch/${appId}`);
       else { setStatus(`No app ID for ${app.name}`); return; }
     }
