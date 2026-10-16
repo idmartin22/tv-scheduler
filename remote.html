@@ -729,10 +729,17 @@ function App() {
     // Read off Bar 4 and Bar 8 on 2026-10-14 via /device/:id/apps:
     //   com.fox.foxone    FOX One      (both)
     //   com.roku.web.trc  Roku Channel (Bar 4 only)
-    // Tubi, beIN Connect and Fanatiz are NOT installed on either Fire TV, so
-    // they stay absent here and fall through to "not configured for Fire TV".
     'FOX One':      'com.fox.foxone',
     'Roku Channel': 'com.roku.web.trc',
+    // Read off Bar 8 on 2026-10-15 after installing them. Neither is
+    // guessable: Fanatiz ships under its developer's name (smartboxtv/
+    // nunchee), and beIN does not use a com.* package at all. This is the
+    // whole reason ids get read off hardware instead of inferred.
+    'Fanatiz':      'com.smartboxtv.nunchee.firetv.fanatizprod',
+    'beIN Connect': 'ptv.bein.ui',
+    // Tubi is the one app in the tile list not installed on Bar 8 -- absent
+    // from all 240 packages, not just the third-party ones. It stays out
+    // until a package is read off a stick that actually has it.
   };
   const VIZIO_APP_KEYS = {
     'Spectrum TV': 'spectrum', 'Prime': 'prime',      'Paramount+': 'paramount',
@@ -748,7 +755,13 @@ function App() {
     setStatus(`Launching ${app.name}...`);
     let res;
     if (device.type === 'vizio') {
-      const vizioKey = VIZIO_APP_KEYS[app.name];
+      // Key off app.app, NOT app.name. These three tables are keyed by the
+      // tile's canonical `app` field; `name` is the display label and the two
+      // differ for exactly one tile -- {app:"Prime", name:"Prime Video"} --
+      // which silently broke the Prime tile on all three platforms at once.
+      // The Xumo branch below is the exception: its macro really is named
+      // "Prime Video", so it keeps using app.name.
+      const vizioKey = VIZIO_APP_KEYS[app.app];
       if (vizioKey) res = await proxyPost(`/device/${devKey}/vizio/launch/${vizioKey}`);
       else { setStatus(`${app.name} not configured for Vizio`); return; }
     } else if (device.type === 'xumo') {
@@ -759,11 +772,11 @@ function App() {
       setStatus(`Opening ${app.name}...`);
       res = await proxyPost(`/device/${devKey}/xumo/launch/${encodeURIComponent(app.name)}`);
     } else if (device.type === 'firetv') {
-      const pkg = FIRETV_APP_PKGS[app.name];
+      const pkg = FIRETV_APP_PKGS[app.app];
       if (pkg) res = await proxyPost(`/device/${devKey}/launch/${encodeURIComponent(pkg)}`);
       else { setStatus(`${app.name} not configured for Fire TV`); return; }
     } else {
-      const appId = ROKU_APP_IDS[app.name];
+      const appId = ROKU_APP_IDS[app.app];
       if (appId) res = await proxyPost(`/device/${devKey}/launch/${appId}`);
       else { setStatus(`No app ID for ${app.name}`); return; }
     }
