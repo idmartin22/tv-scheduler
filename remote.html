@@ -621,6 +621,24 @@ function App() {
 
   const device = DEVICES.find(d => d.id === selectedId);
 
+  // tvOn was a GUESS -- useState(true) on every page load. That was harmless
+  // while the power button sent a plain toggle, but the moment it started
+  // sending explicit on/off (2026-10-16) the guess became load-bearing: open
+  // the remote against a sleeping box and the first press computes !true and
+  // sends OFF to something already off, so nothing happens. ADB devices can
+  // report their real wakefulness, so ask instead of assuming.
+  React.useEffect(() => {
+    let cancelled = false;
+    if (!device || !(device.type === 'firetv' || device.type === 'androidtv')) return;
+    (async () => {
+      try {
+        const st = await proxyGet(`/device/${device.proxyKey}/state`);
+        if (!cancelled && st && typeof st.awake === 'boolean') setTvOn(st.awake);
+      } catch (e) { /* leave the previous value; a wrong icon beats a crash */ }
+    })();
+    return () => { cancelled = true; };
+  }, [device && device.proxyKey]);
+
   // Map Roku key names to Vizio key names
   const ROKU_TO_VIZIO = {
     'Up': 'up', 'Down': 'down', 'Left': 'left', 'Right': 'right',
@@ -667,7 +685,11 @@ function App() {
       // Explicit on/off, not the toggle: the toggle turns an already-off TV
       // back ON when the scheduler means "off". Roku stays on the toggle
       // route until PowerOn/PowerOff is confirmed on a Roku stick.
-      await proxyPost(`/device/${devKey}/power/${newState ? 'on' : 'off'}`);
+      const r = await proxyPost(`/device/${devKey}/power/${newState ? 'on' : 'off'}`);
+      // The route reports what the device actually did. Believe it over the
+      // optimistic flip above -- otherwise one missed press leaves the UI
+      // inverted and every later press sends the wrong command.
+      if (r && typeof r.awakeAfter === 'boolean') setTvOn(r.awakeAfter);
     } else {
       await proxyPost(`/device/${devKey}/power`);
     }
