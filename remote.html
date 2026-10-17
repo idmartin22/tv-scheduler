@@ -47,7 +47,7 @@ const DEVICES = [
   { id: 1,  name: "Basement 1", size: 75,   type: "vizio", proxyKey: "tv1"  },
   { id: 2,  name: "Basement 2", size: 55,   type: "vizio", proxyKey: "tv2"  },
   { id: 3,  name: "Basement 3", size: 55,   type: "vizio", proxyKey: "tv3"  },
-  { id: 10, name: "Basement 10",size: 42,   type: "roku",  proxyKey: "tv10", tvBrand: "LG" },
+  { id: 10, name: "Basement 10",size: 42,   type: "androidtv", proxyKey: "tv10", tvBrand: "LG" }, // onn 4K Pro, LG 42LH40
   { id: 4,  name: "Bar 4",      size: null, type: "firetv", proxyKey: "tv4"  },
   { id: 5,  name: "Bar 5",      size: 32,   type: "vizio", proxyKey: "tv5"  },
   { id: 6,  name: "Bar 6",      size: null, type: "roku",  proxyKey: "tv6"  },
@@ -59,7 +59,7 @@ const DEVICES = [
   // mini status row, the same way Deck is handled. proxyKey tv12 so Deck keeps
   // tv11; display order comes from this array, not from the key.
   { id: 12, name: "Living Room",size: null, type: "xumo",  proxyKey: "tv12" },
-  { id: 11, name: "Deck",       size: null, type: "tbd",   proxyKey: "tv11" },
+  { id: 11, name: "Deck",       size: 42,   type: "roku",  proxyKey: "tv11", tvBrand: "LG" }, // the Roku that used to drive TV 10, LG 42LC7D
 ];
 
 // Every Spectrum channel number in Channel_Map.xlsx that has an icon, in
@@ -663,6 +663,11 @@ function App() {
       // On is Wake-on-LAN: in standby the box drops its TLS listener, so no
       // key press can reach it. Off is the Power key.
       await proxyPost(`/device/${devKey}/xumo/power/${newState ? 'on' : 'off'}`);
+    } else if (device.type === 'firetv' || device.type === 'androidtv') {
+      // Explicit on/off, not the toggle: the toggle turns an already-off TV
+      // back ON when the scheduler means "off". Roku stays on the toggle
+      // route until PowerOn/PowerOff is confirmed on a Roku stick.
+      await proxyPost(`/device/${devKey}/power/${newState ? 'on' : 'off'}`);
     } else {
       await proxyPost(`/device/${devKey}/power`);
     }
@@ -741,6 +746,34 @@ function App() {
     // audit built on it reported Tubi missing even once it was installed.
     'Tubi':         'com.tubitv.ott',
   };
+  // Google TV / Android TV packages. ALL nineteen read off the onn 4K Pro
+  // (TV 10) with `pm list packages` on 2026-10-16 -- none inferred from the
+  // Fire TV map, because ELEVEN of the nineteen differ between the two
+  // platforms. Copying Fire TV's would have left most tiles dead, and the
+  // differences are not guessable: Max is com.wbd.stream, Prime is
+  // com.amazon.amazonvideo.livingroom, ESPN is com.espn.score_center.
+  // Note Tubi inverts -- plain com.tubitv here, com.tubitv.ott on Fire TV.
+  const ANDROIDTV_APP_PKGS = {
+    'Spectrum TV':  'com.spectrum.stva.androidtv',
+    'Prime':        'com.amazon.amazonvideo.livingroom',
+    'Paramount+':   'com.cbs.ott',
+    'ESPN':         'com.espn.score_center',
+    'Peacock':      'com.peacocktv.peacockandroid',
+    'Netflix':      'com.netflix.ninja',
+    'Apple TV':     'com.apple.atve.androidtv.appletv',
+    'Max':          'com.wbd.stream',
+    'Hulu':         'com.hulu.livingroomplus',
+    'Disney+':      'com.disney.disneyplus',
+    'YouTube TV':   'com.google.android.youtube.tvunplugged',
+    'ViX':          'com.univision.prendetv',
+    'Fandango':     'air.com.vudu.air.DownloaderTablet',
+    'DAZN':         'com.dazn',
+    'FOX One':      'com.fox.foxone',
+    'Roku Channel': 'com.roku.web.trc',
+    'Fanatiz':      'com.smartboxtv.nunchee.fanatiz',
+    'beIN Connect': 'ptv.bein.ui',
+    'Tubi':         'com.tubitv',
+  };
   const VIZIO_APP_KEYS = {
     'Spectrum TV': 'spectrum', 'Prime': 'prime',      'Paramount+': 'paramount',
     'ESPN':        'espn',     'Peacock': 'peacock',  'Netflix':    'netflix',
@@ -771,10 +804,12 @@ function App() {
       // the far end of the row is 17 presses.
       setStatus(`Opening ${app.name}...`);
       res = await proxyPost(`/device/${devKey}/xumo/launch/${encodeURIComponent(app.name)}`);
-    } else if (device.type === 'firetv') {
-      const pkg = FIRETV_APP_PKGS[app.name];
+    } else if (device.type === 'firetv' || device.type === 'androidtv') {
+      // Same ADB launch route for both; only the package table differs.
+      const isFire = device.type === 'firetv';
+      const pkg = (isFire ? FIRETV_APP_PKGS : ANDROIDTV_APP_PKGS)[app.name];
       if (pkg) res = await proxyPost(`/device/${devKey}/launch/${encodeURIComponent(pkg)}`);
-      else { setStatus(`${app.name} not configured for Fire TV`); return; }
+      else { setStatus(`${app.name} not configured for ${isFire ? 'Fire TV' : 'Google TV'}`); return; }
     } else {
       const appId = ROKU_APP_IDS[app.name];
       if (appId) res = await proxyPost(`/device/${devKey}/launch/${appId}`);
