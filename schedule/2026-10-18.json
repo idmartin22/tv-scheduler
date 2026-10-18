@@ -109,11 +109,11 @@
       ]
     },
     {
-      "id": 77322064,
+      "id": 45567957,
       "lgId": 409,
       "lgSlug": "serie-a-women",
       "time": "06:30",
-      "name": "Como @ Juventus",
+      "name": "Como 1907 @ Juventus",
       "sport": "Soccer",
       "league": "Serie A Women",
       "ch": [
@@ -1521,6 +1521,37 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 13926732,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "12:00",
+      "name": "Ohio State @ Purdue",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "Big Ten Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 92422584,
@@ -4053,6 +4084,36 @@
       ]
     },
     {
+      "id": 93424536,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "14:00",
+      "name": "Wisconsin @ Iowa",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "Big Ten Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 33754218,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
@@ -4902,6 +4963,36 @@
       "_score": 0
     },
     {
+      "id": 51627983,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "16:00",
+      "name": "Rutgers @ Oregon",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "Big Ten Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 89225456,
       "lgId": 1820,
       "lgSlug": "nfl",
@@ -5277,8 +5368,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 3.782416795896456,
-        "l": "Quality +3.8 (Columbus Blue Jackets -0.019 vs Minnesota Wild 0.225)"
+        "v": 4.123094191375925,
+        "l": "Quality +4.1 (Columbus Blue Jackets -0.003 vs Minnesota Wild 0.229)"
       },
       "_sk": {
         "v": 0,
@@ -5292,9 +5383,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.782416795896456,
+      "_score": 4.123094191375925,
       "_rk": [
-        18,
+        16,
         6
       ]
     },
@@ -5549,8 +5640,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.7879040916139801,
-        "l": "Quality +1.8 (Carolina Hurricanes 0.546 vs Calgary Flames -0.444)"
+        "v": 2.3627350107567113,
+        "l": "Quality +2.4 (Carolina Hurricanes 0.564 vs Calgary Flames -0.432)"
       },
       "_sk": {
         "v": 0,
@@ -5564,44 +5655,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.7879040916139801,
+      "_score": 2.3627350107567113,
       "_rk": [
         1,
         30
-      ]
-    },
-    {
-      "id": 54402363,
-      "lgId": 1758,
-      "lgSlug": "mlb",
-      "time": "20:00",
-      "name": "Los Angeles Dodgers @ Milwaukee Brewers",
-      "sport": "Baseball",
-      "league": "MLB",
-      "ch": [
-        "FOX One"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 20.0,
-        "l": "Quality +20.0 (Los Angeles Dodgers 0.528 vs Milwaukee Brewers 0.537)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 20.0,
-      "_rk": [
-        2,
-        1
       ]
     },
     {
@@ -6553,9 +6610,9 @@
       "sport": "Wintersports",
       "time": "15:00",
       "date": "2026-10-18",
-      "channel": "Sportsnet NOW, Sportsnet+, CBC Gem",
+      "channel": "Sportsnet NOW, Sportsnet+, CBC",
       "reason": "channel",
-      "detail": "airs on Sportsnet NOW, Sportsnet+, CBC Gem \u2014 none in channels.txt"
+      "detail": "airs on Sportsnet NOW, Sportsnet+, CBC \u2014 none in channels.txt"
     },
     {
       "name": "West Virginia @ Maryland",
