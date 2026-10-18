@@ -2655,6 +2655,37 @@
       "cat": "unclassified"
     },
     {
+      "id": 63662889,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Morehead State @ Tennessee State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 1654702,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -4008,8 +4039,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -5.223056288181063,
-        "l": "Quality -5.2 (Montreal Canadiens 0.170 vs Chicago Blackhawks -0.451)"
+        "v": -5.246411896939306,
+        "l": "Quality -5.2 (Montreal Canadiens 0.187 vs Chicago Blackhawks -0.485)"
       },
       "_sk": {
         "v": 0,
@@ -4023,7 +4054,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.223056288181063,
+      "_score": -5.246411896939306,
       "_rk": [
         9,
         31
@@ -4334,8 +4365,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 16.083502326136227,
-        "l": "Quality +16.1 (Tampa Bay Lightning 0.341 vs Colorado Avalanche 0.510)"
+        "v": 16.054625385838555,
+        "l": "Quality +16.1 (Tampa Bay Lightning 0.353 vs Colorado Avalanche 0.510)"
       },
       "_sk": {
         "v": 0,
@@ -4349,7 +4380,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.083502326136227,
+      "_score": 16.054625385838555,
       "_rk": [
         3,
         2
@@ -4513,6 +4544,44 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 64052853,
+      "lgId": 588,
+      "lgSlug": "nwsl",
+      "time": "21:30",
+      "name": "Seattle Reign FC @ Utah Royals",
+      "sport": "Soccer",
+      "league": "NWSL",
+      "ch": [
+        "MyNetworkTV"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.3443396226415516,
+        "l": "Quality +1.3 (GFR 85.9-86.1 vs tier1 baseline 171.5 (NWSL (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.3443396226415516,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.nwsl",
+      "lgR": 85.76,
+      "_rk": [
+        18,
+        17
+      ]
     },
     {
       "id": 54067356,
@@ -4686,6 +4755,36 @@
       "_score": 0
     },
     {
+      "id": 85000555,
+      "lgId": 2000,
+      "lgSlug": "lpga-tour",
+      "time": "22:00",
+      "name": "BMW Ladies Championship",
+      "sport": "Golf",
+      "league": "LPGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 29112708,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -4718,6 +4817,44 @@
       "_rk": [
         62,
         108
+      ]
+    },
+    {
+      "id": 93930165,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "23:00",
+      "name": "Atl\u00e9tico San Luis @ Atlante",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "TUDN"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -10.969257340241814,
+        "l": "Quality -11.0 (GFR 78.3-77.6 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -10.969257340241814,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.05,
+      "_rk": [
+        508,
+        570
       ]
     },
     {
@@ -4780,6 +4917,26 @@
       "channel": "TSN+",
       "reason": "cutoff",
       "detail": "starts 02:30 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Australia - Scotland",
+      "league": "WXV Global Series",
+      "sport": "Rugby Union",
+      "time": "04:45",
+      "date": "2026-10-23",
+      "channel": "Paramount+ (US)",
+      "reason": "cutoff",
+      "detail": "starts 04:45 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "European Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "08:00",
+      "date": "2026-10-23",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
       "name": "Lyon Open",
@@ -5952,16 +6109,6 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Seattle Reign FC @ Utah Royals",
-      "league": "NWSL",
-      "sport": "Soccer",
-      "time": "21:30",
-      "date": "2026-10-23",
-      "channel": "NWSL+ (US)",
-      "reason": "channel",
-      "detail": "airs on NWSL+ (US) \u2014 none in channels.txt"
-    },
-    {
       "name": "New Orleans Pelicans @ Utah Jazz",
       "league": "NBA",
       "sport": "Basketball",
@@ -7074,8 +7221,8 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4,
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
       "gfrLeague": "NWSL",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -7098,8 +7245,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 10,
-      "fixturesSeen": 10,
+      "fixturesResolved": 11,
+      "fixturesSeen": 11,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
