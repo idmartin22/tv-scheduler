@@ -42,6 +42,44 @@
       ]
     },
     {
+      "id": 30245533,
+      "lgId": 409,
+      "lgSlug": "serie-a-women",
+      "time": "07:30",
+      "name": "FC Como Women @ Lazio",
+      "sport": "Soccer",
+      "league": "Serie A Women",
+      "ch": [
+        "FOX Soccer Plus"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.3981191222570515,
+        "l": "Quality -2.4 (GFR 74.7-75.5 vs tier1 baseline 151.7 (Serie A Women (Italy)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.3981191222570515,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "",
+      "lgR": 75.86,
+      "_rk": [
+        87,
+        78
+      ]
+    },
+    {
       "id": 69503371,
       "lgId": 521,
       "lgSlug": "scottish-premiership",
@@ -4380,8 +4418,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -6.34115551948784,
-        "l": "Quality -6.3 (Florida Panthers 0.108 vs Chicago Blackhawks -0.451)"
+        "v": -6.8528445443541415,
+        "l": "Quality -6.9 (Florida Panthers 0.094 vs Chicago Blackhawks -0.485)"
       },
       "_sk": {
         "v": 0,
@@ -4395,7 +4433,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.34115551948784,
+      "_score": -6.8528445443541415,
       "_rk": [
         13,
         31
@@ -5648,8 +5686,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 3.5495645950137167,
-        "l": "Quality +3.5 (New York Islanders -0.054 vs Dallas Stars 0.247)"
+        "v": 4.422411374052943,
+        "l": "Quality +4.4 (New York Islanders -0.028 vs Dallas Stars 0.270)"
       },
       "_sk": {
         "v": 0,
@@ -5663,7 +5701,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.5495645950137167,
+      "_score": 4.422411374052943,
       "_rk": [
         19,
         5
@@ -5856,8 +5894,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0.19038530359059916,
-        "l": "Quality +0.2 (Montreal Canadiens 0.170 vs Winnipeg Jets -0.152)"
+        "v": 0.33673183051164546,
+        "l": "Quality +0.3 (Montreal Canadiens 0.187 vs Winnipeg Jets -0.164)"
       },
       "_sk": {
         "v": 0,
@@ -5871,10 +5909,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.19038530359059916,
+      "_score": 0.33673183051164546,
       "_rk": [
         9,
-        22
+        25
       ]
     },
     {
@@ -5991,8 +6029,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 6.318978885840391,
-        "l": "Quality +6.3 (Colorado Avalanche 0.510 vs Nashville Predators -0.171)"
+        "v": 6.762697596108875,
+        "l": "Quality +6.8 (Colorado Avalanche 0.510 vs Nashville Predators -0.144)"
       },
       "_sk": {
         "v": 0,
@@ -6006,10 +6044,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.318978885840391,
+      "_score": 6.762697596108875,
       "_rk": [
         2,
-        26
+        24
       ]
     },
     {
@@ -6311,8 +6349,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -7.798291291900545,
-        "l": "Quality -7.8 (Minnesota Wild 0.225 vs Vancouver Canucks -0.650)"
+        "v": -7.655196264914404,
+        "l": "Quality -7.7 (Minnesota Wild 0.229 vs Vancouver Canucks -0.666)"
       },
       "_sk": {
         "v": 0,
@@ -6326,7 +6364,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.798291291900545,
+      "_score": -7.655196264914404,
       "_rk": [
         6,
         32
@@ -6514,6 +6552,16 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "Lyon Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "09:30",
+      "date": "2026-10-25",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
+    },
+    {
       "name": "Newcastle United @ Crystal Palace",
       "league": "Premier League",
       "sport": "Soccer",
@@ -6562,6 +6610,16 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "European Open",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "11:30",
+      "date": "2026-10-25",
+      "channel": "TSN+",
+      "reason": "channel",
+      "detail": "airs on TSN+ \u2014 none in channels.txt"
     },
     {
       "name": "Union Berlin @ Hamburger SV",
@@ -6782,6 +6840,16 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Shauna Browne - Jade Burden",
+      "league": "Boxing",
+      "sport": "Fighting",
+      "time": "13:00",
+      "date": "2026-10-25",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Victoriaville Tigres @ Newfoundland",
@@ -8336,8 +8404,8 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
-      "fixturesResolved": 7,
-      "fixturesSeen": 9,
+      "fixturesResolved": 8,
+      "fixturesSeen": 10,
       "gfrLeague": "NWSL",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -8360,8 +8428,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 15,
-      "fixturesSeen": 15,
+      "fixturesResolved": 16,
+      "fixturesSeen": 16,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -8415,8 +8483,8 @@
     "serie-a-women": {
       "rating": 75.86,
       "area": "womens_club_league",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "gfrLeague": "Serie A Women",
       "country": "Italy",
       "confederation": "UEFA"
@@ -8588,8 +8656,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
       "rosterCode": "por.1"
     },
     "pro-league": {
