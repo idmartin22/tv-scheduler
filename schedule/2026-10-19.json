@@ -487,8 +487,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.325939451319854,
-        "l": "Quality -1.3 (Anaheim Ducks -0.007 vs New York Rangers -0.059)"
+        "v": -1.6721424865986512,
+        "l": "Quality -1.7 (Anaheim Ducks -0.021 vs New York Rangers -0.071)"
       },
       "_sk": {
         "v": 0,
@@ -502,9 +502,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.325939451319854,
+      "_score": -1.6721424865986512,
       "_rk": [
-        16,
+        18,
         20
       ]
     },
@@ -522,8 +522,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 6.672074436359297,
-        "l": "Quality +6.7 (Colorado Avalanche 0.510 vs Philadelphia Flyers -0.152)"
+        "v": 6.788887849593116,
+        "l": "Quality +6.8 (Colorado Avalanche 0.510 vs Philadelphia Flyers -0.142)"
       },
       "_sk": {
         "v": 0,
@@ -537,7 +537,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.672074436359297,
+      "_score": 6.788887849593116,
       "_rk": [
         2,
         23
@@ -576,21 +576,20 @@
       "cat": "unclassified"
     },
     {
-      "id": 79692599,
-      "lgId": 707,
-      "lgSlug": "nhl",
-      "time": "19:30",
-      "name": "San Jose Sharks @ Toronto Maple Leafs",
-      "sport": "Hockey",
-      "league": "NHL",
+      "id": 57589348,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
+      "time": "19:00",
+      "name": "UCLA @ Northwestern",
+      "sport": "Soccer",
+      "league": "College Soccer",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "Big Ten Network"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": -6.7703613534410865,
-        "l": "Quality -6.8 (San Jose Sharks -0.177 vs Toronto Maple Leafs -0.190)"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -604,7 +603,39 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.7703613534410865,
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 79692599,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:30",
+      "name": "San Jose Sharks @ Toronto Maple Leafs",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -7.617153726439565,
+        "l": "Quality -7.6 (San Jose Sharks -0.210 vs Toronto Maple Leafs -0.225)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.617153726439565,
       "_rk": [
         27,
         28
@@ -778,8 +809,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 2.349039723249432,
-        "l": "Quality +2.3 (Pittsburgh Penguins -0.008 vs Utah Mammoth 0.139)"
+        "v": 1.9867178000187082,
+        "l": "Quality +2.0 (Pittsburgh Penguins -0.015 vs Utah Mammoth 0.127)"
       },
       "_sk": {
         "v": 0,
@@ -793,10 +824,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.349039723249432,
+      "_score": 1.9867178000187082,
       "_rk": [
         17,
-        11
+        12
       ]
     },
     {
@@ -952,14 +983,14 @@
       "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
-      "name": "Los Angeles Dodgers @ Milwaukee Brewers",
-      "league": "MLB",
-      "sport": "Baseball",
-      "time": "20:00",
+      "name": "UConn @ Texas",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
       "date": "2026-10-19",
-      "channel": "MLB.TV",
+      "channel": "WWAX",
       "reason": "channel",
-      "detail": "airs on MLB.TV \u2014 none in channels.txt"
+      "detail": "airs on WWAX \u2014 none in channels.txt"
     },
     {
       "name": "Uni\u00f3n @ Deportivo Riestra",
