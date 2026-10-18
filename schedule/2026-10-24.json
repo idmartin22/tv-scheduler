@@ -272,7 +272,8 @@
       "sport": "Soccer",
       "league": "Ekstraklasa",
       "ch": [
-        "beIN SPORTS 4"
+        "beIN SPORTS 4",
+        "beIN Sport USA Espanol"
       ],
       "dur": 120,
       "_st": {
@@ -619,6 +620,7 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
+        "Telemundo",
         "NBC Universo"
       ],
       "dur": 120,
@@ -1060,7 +1062,8 @@
       "sport": "Soccer",
       "league": "Ligue 1",
       "ch": [
-        "beIN SPORTS 5"
+        "beIN SPORTS 5",
+        "beIN Sport USA Espanol"
       ],
       "dur": 120,
       "_st": {
@@ -1364,6 +1367,7 @@
       "sport": "Football",
       "league": "College Football",
       "ch": [
+        "MyNetworkTV",
         "CW",
         "ESPN Unlimited"
       ],
@@ -1675,7 +1679,8 @@
       "league": "Premier League",
       "ch": [
         "Peacock",
-        "NBC Sports Network"
+        "NBC Sports Network",
+        "Telemundo"
       ],
       "dur": 120,
       "_st": {
@@ -1797,8 +1802,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.0139086134217004,
-        "l": "Quality -3.0 (Anaheim Ducks -0.007 vs Philadelphia Flyers -0.152)"
+        "v": -2.9102541933252635,
+        "l": "Quality -2.9 (Anaheim Ducks -0.021 vs Philadelphia Flyers -0.142)"
       },
       "_sk": {
         "v": 0,
@@ -1812,9 +1817,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.0139086134217004,
+      "_score": -2.9102541933252635,
       "_rk": [
-        16,
+        18,
         23
       ]
     },
@@ -2521,6 +2526,36 @@
         106,
         121
       ]
+    },
+    {
+      "id": 34121307,
+      "lgId": 2001,
+      "lgSlug": "pga-tour",
+      "time": "13:00",
+      "name": "Bermuda Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 94151607,
@@ -3523,7 +3558,8 @@
       "sport": "Soccer",
       "league": "Serie A",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "Telemundo"
       ],
       "dur": 120,
       "_st": {
@@ -4301,6 +4337,7 @@
       "sport": "Motorsports",
       "league": "NASCAR O'Reilly Auto Parts Series",
       "ch": [
+        "MyNetworkTV",
         "CW",
         "ESPN Unlimited"
       ],
@@ -4324,21 +4361,20 @@
       "_score": 25
     },
     {
-      "id": 97141853,
-      "lgId": 707,
-      "lgSlug": "nhl",
+      "id": 76510360,
+      "lgId": 495,
+      "lgSlug": "liga-portugal",
       "time": "15:30",
-      "name": "Los Angeles Kings @ New Jersey Devils",
-      "sport": "Hockey",
-      "league": "NHL",
+      "name": "Porto @ Gil Vicente",
+      "sport": "Soccer",
+      "league": "Liga Portugal",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "beIN Sport USA Espanol"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": -2.6388043551768456,
-        "l": "Quality -2.6 (Los Angeles Kings -0.158 vs New Jersey Devils 0.019)"
+        "v": 8.35084348922375,
+        "l": "Quality +8.4 (GFR 90.6-81.3 vs tier1 baseline 164.1 (Liga Portugal (Portugal)))"
       },
       "_sk": {
         "v": 0,
@@ -4352,9 +4388,48 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.6388043551768456,
+      "_score": 8.35084348922375,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "por.1",
+      "lgR": 82.12,
       "_rk": [
-        25,
+        22,
+        267
+      ]
+    },
+    {
+      "id": 97141853,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "15:30",
+      "name": "Los Angeles Kings @ New Jersey Devils",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -3.4013487809095624,
+        "l": "Quality -3.4 (Los Angeles Kings -0.194 vs New Jersey Devils 0.002)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.4013487809095624,
+      "_rk": [
+        26,
         15
       ]
     },
@@ -6464,6 +6539,7 @@
       "sport": "Football",
       "league": "College Football",
       "ch": [
+        "MyNetworkTV",
         "CW",
         "ESPN Unlimited"
       ],
@@ -6542,8 +6618,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.236649309077795,
-        "l": "Quality -2.2 (San Jose Sharks -0.177 vs Boston Bruins 0.061)"
+        "v": -2.237592944838319,
+        "l": "Quality -2.2 (San Jose Sharks -0.210 vs Boston Bruins 0.086)"
       },
       "_sk": {
         "v": 0,
@@ -6557,7 +6633,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.236649309077795,
+      "_score": -2.237592944838319,
       "_rk": [
         27,
         14
@@ -6576,8 +6652,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.7344626028867938,
-        "l": "Quality +1.7 (New York Rangers -0.059 vs Ottawa Senators 0.158)"
+        "v": 1.6013469273220473,
+        "l": "Quality +1.6 (New York Rangers -0.071 vs Ottawa Senators 0.162)"
       },
       "_sk": {
         "v": 0,
@@ -6591,7 +6667,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.7344626028867938,
+      "_score": 1.6013469273220473,
       "_rk": [
         20,
         10
@@ -6611,8 +6687,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.363765469669305,
-        "l": "Quality -3.4 (Nashville Predators -0.171 vs Pittsburgh Penguins -0.008)"
+        "v": -2.8410859415528273,
+        "l": "Quality -2.8 (Nashville Predators -0.144 vs Pittsburgh Penguins -0.015)"
       },
       "_sk": {
         "v": 0,
@@ -6626,9 +6702,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.363765469669305,
+      "_score": -2.8410859415528273,
       "_rk": [
-        26,
+        24,
         17
       ]
     },
@@ -6646,8 +6722,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 6.091852558749849,
-        "l": "Quality +6.1 (Buffalo Sabres 0.196 vs Washington Capitals 0.131)"
+        "v": 6.130390047703677,
+        "l": "Quality +6.1 (Buffalo Sabres 0.199 vs Washington Capitals 0.134)"
       },
       "_sk": {
         "v": 0,
@@ -6661,10 +6737,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.091852558749849,
+      "_score": 6.130390047703677,
       "_rk": [
-        8,
-        12
+        7,
+        11
       ]
     },
     {
@@ -6682,8 +6758,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 4.769175712751997,
-        "l": "Quality +4.8 (Vegas Golden Knights 0.277 vs Columbus Blue Jackets -0.019)"
+        "v": 5.196894584229726,
+        "l": "Quality +5.2 (Vegas Golden Knights 0.286 vs Columbus Blue Jackets -0.003)"
       },
       "_sk": {
         "v": 0,
@@ -6697,10 +6773,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.769175712751997,
+      "_score": 5.196894584229726,
       "_rk": [
         4,
-        18
+        16
       ]
     },
     {
@@ -6717,8 +6793,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.544435166408208,
-        "l": "Quality +8.5 (Carolina Hurricanes 0.546 vs St. Louis Blues -0.090)"
+        "v": 8.665232438499672,
+        "l": "Quality +8.7 (Carolina Hurricanes 0.564 vs St. Louis Blues -0.096)"
       },
       "_sk": {
         "v": 0,
@@ -6732,7 +6808,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.544435166408208,
+      "_score": 8.665232438499672,
       "_rk": [
         1,
         21
@@ -6752,8 +6828,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.03291179188927299,
-        "l": "Quality -0.0 (Toronto Maple Leafs -0.190 vs Edmonton Oilers 0.196)"
+        "v": -0.7055161680788512,
+        "l": "Quality -0.7 (Toronto Maple Leafs -0.225 vs Edmonton Oilers 0.189)"
       },
       "_sk": {
         "v": 0,
@@ -6767,10 +6843,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.03291179188927299,
+      "_score": -0.7055161680788512,
       "_rk": [
         28,
-        7
+        8
       ]
     },
     {
@@ -8315,8 +8391,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 9.000596445186686,
-        "l": "Quality +9.0 (Tampa Bay Lightning 0.341 vs Utah Mammoth 0.139)"
+        "v": 8.876625198765318,
+        "l": "Quality +8.9 (Tampa Bay Lightning 0.353 vs Utah Mammoth 0.127)"
       },
       "_sk": {
         "v": 0,
@@ -8330,10 +8406,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.000596445186686,
+      "_score": 8.876625198765318,
       "_rk": [
         3,
-        11
+        12
       ]
     },
     {
@@ -8844,8 +8920,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -10.992087644552651,
-        "l": "Quality -11.0 (Detroit Red Wings -0.157 vs Calgary Flames -0.444)"
+        "v": -9.915268891578767,
+        "l": "Quality -9.9 (Detroit Red Wings -0.136 vs Calgary Flames -0.432)"
       },
       "_sk": {
         "v": 0,
@@ -8859,9 +8935,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.992087644552651,
+      "_score": -9.915268891578767,
       "_rk": [
-        24,
+        22,
         30
       ]
     },
@@ -8880,8 +8956,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.7272153468136432,
-        "l": "Quality -0.7 (Minnesota Wild 0.225 vs Seattle Kraken -0.258)"
+        "v": -0.9199377485734045,
+        "l": "Quality -0.9 (Minnesota Wild 0.229 vs Seattle Kraken -0.277)"
       },
       "_sk": {
         "v": 0,
@@ -8895,7 +8971,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.7272153468136432,
+      "_score": -0.9199377485734045,
       "_rk": [
         6,
         29
@@ -9575,7 +9651,7 @@
       "sport": "Motorsports",
       "time": "00:00",
       "date": "2026-10-24",
-      "channel": "Sportsnet NOW, Sportsnet+",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One, FOX Sports Racing, Sportsnet NOW, Sportsnet+",
       "reason": "cutoff",
       "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
     },
@@ -11035,9 +11111,9 @@
       "sport": "Football",
       "time": "15:00",
       "date": "2026-10-24",
-      "channel": "CFL+ (US), TSN+, TSN3, TSN4",
+      "channel": "CFL+ (US), TSN+, TSN3, TSN4, RDS Info, CTV",
       "reason": "channel",
-      "detail": "airs on CFL+ (US), TSN+, TSN3, TSN4 \u2014 none in channels.txt"
+      "detail": "airs on CFL+ (US), TSN+, TSN3, TSN4, RDS Info, CTV \u2014 none in channels.txt"
     },
     {
       "name": "Ottawa RedBlacks @ Hamilton Tiger-Cats",
@@ -11045,9 +11121,9 @@
       "sport": "Football",
       "time": "15:00",
       "date": "2026-10-24",
-      "channel": "CFL+ (US), TSN+, TSN1",
+      "channel": "CFL+ (US), TSN+, TSN1, TSN 4K",
       "reason": "channel",
-      "detail": "airs on CFL+ (US), TSN+, TSN1 \u2014 none in channels.txt"
+      "detail": "airs on CFL+ (US), TSN+, TSN1, TSN 4K \u2014 none in channels.txt"
     },
     {
       "name": "Hamilton Hammers @ Laval Rocket",
@@ -11495,7 +11571,7 @@
       "sport": "Motorsports",
       "time": "17:00",
       "date": "2026-10-24",
-      "channel": "Apple TV, TSN+, TSN5",
+      "channel": "Apple TV, TSN+, RDS, TSN5",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Qualifying"
     },
@@ -13134,6 +13210,7 @@
         "League Two (England)",
         "Liga MX (Mexico)",
         "Liga Nacional (Honduras)",
+        "Liga Portugal (Portugal)",
         "Ligue 1 (Algeria)",
         "Ligue 1 (France)",
         "Ligue 1 (Tunisia)",
@@ -13572,8 +13649,8 @@
       "rosterMatched": 14,
       "rosterTotal": 16,
       "rosterCode": "usa.nwsl",
-      "fixturesResolved": 5,
-      "fixturesSeen": 6,
+      "fixturesResolved": 6,
+      "fixturesSeen": 7,
       "gfrLeague": "NWSL",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -13596,8 +13673,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 13,
-      "fixturesSeen": 13,
+      "fixturesResolved": 14,
+      "fixturesSeen": 14,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -13830,7 +13907,10 @@
       "country": "Portugal",
       "confederation": "UEFA",
       "rosterMatched": 18,
-      "rosterTotal": 18
+      "rosterTotal": 18,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "rosterCode": "por.1"
     },
     "pro-league": {
       "rating": 76.55,
