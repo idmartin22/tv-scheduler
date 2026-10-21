@@ -1291,8 +1291,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.7315658657829331,
-        "l": "Quality +1.7 (Atlanta Hawks 0.600 vs Orlando Magic 0.800)"
+        "v": 1.6225165562913904,
+        "l": "Quality +1.6 (Atlanta Hawks 0.700 vs Orlando Magic 0.600)"
       },
       "_sk": {
         "v": 0,
@@ -1306,10 +1306,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.7315658657829331,
+      "_score": 1.6225165562913904,
       "_rk": [
-        15,
-        14
+        14,
+        15
       ]
     },
     {
@@ -2052,8 +2052,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.7458745077194424,
-        "l": "Quality +1.7 (Philadelphia Flyers -0.133 vs Buffalo Sabres 0.223)"
+        "v": 1.712470293312816,
+        "l": "Quality +1.7 (Philadelphia Flyers -0.136 vs Buffalo Sabres 0.222)"
       },
       "_sk": {
         "v": 0,
@@ -2067,9 +2067,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.7458745077194424,
+      "_score": 1.712470293312816,
       "_rk": [
-        24,
+        23,
         7
       ]
     },
@@ -2087,8 +2087,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 3.9860832588368895,
-        "l": "Quality +4.0 (Florida Panthers 0.012 vs Ottawa Senators 0.194)"
+        "v": 4.105138403688284,
+        "l": "Quality +4.1 (Florida Panthers 0.011 vs Ottawa Senators 0.195)"
       },
       "_sk": {
         "v": 0,
@@ -2102,9 +2102,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.9860832588368895,
+      "_score": 4.105138403688284,
       "_rk": [
-        14,
+        16,
         8
       ]
     },
@@ -2123,8 +2123,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.956917978458989,
-        "l": "Quality +6.0 (Minnesota Timberwolves 3.100 vs Miami Heat 1.700)"
+        "v": 6.0927152317880795,
+        "l": "Quality +6.1 (Minnesota Timberwolves 3.100 vs Miami Heat 1.800)"
       },
       "_sk": {
         "v": 0,
@@ -2138,7 +2138,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.956917978458989,
+      "_score": 6.0927152317880795,
       "_rk": [
         8,
         12
@@ -2205,6 +2205,38 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 76933321,
+      "lgId": 2025,
+      "lgSlug": "ncaa-soccer",
+      "time": "19:30",
+      "name": "Houston Christian @ UT Rio Grande Valley",
+      "sport": "Soccer",
+      "league": "College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 27765273,
@@ -2686,8 +2718,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0.8616404308202157,
-        "l": "Quality +0.9 (Golden State Warriors -1.000 vs Los Angeles Lakers 1.700)"
+        "v": -0.8021631365479941,
+        "l": "Quality -0.8 (Golden State Warriors -2.400 vs Los Angeles Lakers 1.800)"
       },
       "_sk": {
         "v": 0,
@@ -2701,9 +2733,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.8616404308202157,
+      "_score": -0.8021631365479941,
       "_rk": [
-        20,
+        21,
         12
       ]
     },
@@ -3063,10 +3095,10 @@
       ]
     },
     {
-      "id": 5995118,
+      "id": 58354223,
       "lgId": 452,
       "lgSlug": "liga-mx",
-      "time": "23:00",
+      "time": "23:10",
       "name": "Cruz Azul @ Pachuca",
       "sport": "Soccer",
       "league": "Liga MX",
@@ -3469,6 +3501,16 @@
       "channel": "Big Ten Plus",
       "reason": "channel",
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sacramento State @ Oregon State",
+      "league": "College Soccer",
+      "sport": "Soccer",
+      "time": "22:00",
+      "date": "2026-10-21",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
       "name": "Portland Winterhawks @ Kelowna Rockets",
