@@ -3,6 +3,36 @@
   "label": "Thursday, October 29",
   "events": [
     {
+      "id": 49088354,
+      "lgId": 2551,
+      "lgSlug": "challenge-tour",
+      "time": "07:00",
+      "name": "Challenge Tour Grand Final",
+      "sport": "Golf",
+      "league": "Challenge Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 79724577,
       "lgId": 2003,
       "lgSlug": "atp",
@@ -38,6 +68,38 @@
       "lgSlug": "ncaa-women-3",
       "time": "12:00",
       "name": "East Tennessee State @ Chattanooga",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 12070143,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "12:00",
+      "name": "Northern Arizona @ Idaho State",
       "sport": "Soccer",
       "league": "Women's College Soccer",
       "ch": [
@@ -2185,44 +2247,6 @@
       ]
     },
     {
-      "id": 69450066,
-      "lgId": 317,
-      "lgSlug": "liga-nacional",
-      "time": "20:00",
-      "name": "Deportivo San Pedro @ Antigua GFC",
-      "sport": "Soccer",
-      "league": "Liga Nacional",
-      "ch": [
-        "FOX Deportes"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -20.0,
-        "l": "Quality -20.0 (GFR 38.7 (not rated yet)-38.7 (not rated yet) vs tier4 baseline 147.4 (Liga Nacional \u2014 league tracked by GFR, but neither team rated yet))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -20.0,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "",
-      "lgR": 73.68,
-      "_rk": [
-        null,
-        null
-      ]
-    },
-    {
       "id": 46835020,
       "lgId": 707,
       "lgSlug": "nhl",
@@ -3130,9 +3154,9 @@
       "sport": "Tennis",
       "time": "08:30",
       "date": "2026-10-29",
-      "channel": "TSN+",
+      "channel": "TSN+, TSN5",
       "reason": "channel",
-      "detail": "airs on TSN+ \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN5 \u2014 none in channels.txt"
     },
     {
       "name": "Idaho Steelheads @ Allen Americans",
@@ -4475,7 +4499,7 @@
       "rating": 73.68,
       "area": "mens_club_league",
       "fixturesResolved": 0,
-      "fixturesSeen": 2,
+      "fixturesSeen": 1,
       "gfrLeague": "Liga Nacional",
       "country": "Honduras",
       "confederation": "CONCACAF",
@@ -4796,8 +4820,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 6,
-      "fixturesSeen": 6,
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
       "rosterCode": "fra.1"
     },
     "serie-b": {
