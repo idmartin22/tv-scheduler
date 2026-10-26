@@ -80,7 +80,7 @@ function ChBadges({channel,style={}}){
     let badge=null;
     if(num!==null&&typeof num==="number") badge=<span style={{color:"#67e8f9",marginLeft:2}}>#{num}</span>;
     else if(num!==null&&typeof num==="string") badge=<span style={{color:"#c084fc",marginLeft:2}}>📱{num}</span>;
-    return <span key={i} style={style}>{ch}{badge}{i<chs.length-1?<span style={{color:"#64748b",margin:"0 4px"}}>·</span>:null}</span>;
+    return <span key={i} style={style}>{chLabel(ch)}{badge}{i<chs.length-1?<span style={{color:"#64748b",margin:"0 4px"}}>·</span>:null}</span>;
   });
 }
 const MAX_MOD = 100;
@@ -338,6 +338,12 @@ async function githubSave(data, sha) {
 // Spectrum Cleveland/Elyria channel lineup
 // SPECTRUM map and channel priority loaded dynamically from channels.txt
 let SPECTRUM = {};
+// Feed name -> short label for the grid. The feed name stays the key for
+// everything (events, overrides, priority); only what is PRINTED changes.
+// Channels with no "Display As" value in the workbook never appear here and
+// fall through to their full name.
+let CH_DISPLAY = {};
+const chLabel = ch => CH_DISPLAY[String(ch||"").trim()] || ch;
 let CHANNEL_PRIORITY = [];
 
 async function loadChannels() {
@@ -347,9 +353,24 @@ async function loadChannels() {
     const lines = text.split("\n");
     const priority = [];
     const spectrum = {};
+    const display = {};
     for (let line of lines) {
       line = line.trim();
       if (!line || line.startsWith("#")) continue;
+      // Optional display name: "Rock Entertainment Sports Network | RESN (3330)".
+      // Lift it out and put the line back together as the parser already
+      // expects, so the matching below is untouched and an old-format line
+      // behaves exactly as it always did.
+      let disp = null;
+      const bar = line.indexOf("|");
+      if (bar !== -1) {
+        const tail = line.slice(bar + 1).trim();
+        const tm = tail.match(/^(.+?)\s*(\([^)]*\))?\s*$/);
+        if (tm) {
+          disp = tm[1].trim();
+          line = (line.slice(0, bar).trim() + (tm[2] ? " " + tm[2] : "")).trim();
+        }
+      }
       const m = line.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
       if (m) {
         const name = m[1].trim();
@@ -357,12 +378,15 @@ async function loadChannels() {
         priority.push(name);
         // digits = Spectrum channel number, text = app availability label
         spectrum[name] = /^\d+$/.test(label) ? parseInt(label) : label;
+        if (disp && disp !== name) display[name] = disp;
       } else {
         priority.push(line);
+        if (disp && disp !== line) display[line] = disp;
       }
     }
     SPECTRUM = spectrum;
     CHANNEL_PRIORITY = priority;
+    CH_DISPLAY = display;
   } catch(e) {
     console.warn("channels.txt not found, using empty spectrum map", e);
   }
