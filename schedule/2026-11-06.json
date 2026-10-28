@@ -2544,8 +2544,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 6.663184014627136,
-        "l": "Quality +6.7 (Virginia Tech Hokies 6.600 vs SMU Mustangs 12.300)"
+        "v": 6.73180927498367,
+        "l": "Quality +6.7 (Virginia Tech Hokies 6.600 vs SMU Mustangs 12.500)"
       },
       "_sk": {
         "v": 0,
@@ -2559,10 +2559,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.663184014627136,
+      "_score": 6.73180927498367,
       "_rk": [
         45,
-        27
+        26
       ]
     },
     {
@@ -4084,7 +4084,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -2.2794027207202805,
+        "v": -2.2837608519219916,
         "l": "Quality -2.3 (South Florida Bulls -2.100 vs East Carolina Pirates -4.200)"
       },
       "_sk": {
@@ -4099,7 +4099,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.2794027207202805,
+      "_score": -2.2837608519219916,
       "_rk": [
         76,
         86
@@ -4396,7 +4396,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 8.177092856210002,
+        "v": 8.174003919007184,
         "l": "Quality +8.2 (Nebraska Cornhuskers 16.700 vs Illinois Fighting Illini 6.400)"
       },
       "_sk": {
@@ -4411,7 +4411,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.177092856210002,
+      "_score": 8.174003919007184,
       "_rk": [
         13,
         48
@@ -4761,8 +4761,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -0.004919928169051353,
-        "l": "Quality -0.0 (New Mexico Lobos 7.900 vs Nevada Wolf Pack -7.500)"
+        "v": -0.043776591820174106,
+        "l": "Quality -0.0 (New Mexico Lobos 7.900 vs Nevada Wolf Pack -7.600)"
       },
       "_sk": {
         "v": 0,
@@ -4776,10 +4776,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.004919928169051353,
+      "_score": -0.043776591820174106,
       "_rk": [
         41,
-        94
+        96
       ]
     },
     {
@@ -5208,44 +5208,6 @@
       "_score": 0
     },
     {
-      "id": 53363495,
-      "lgId": 1881,
-      "lgSlug": "liga-mx-femenil",
-      "time": "22:10",
-      "name": "Am\u00e9rica @ Guadalajara",
-      "sport": "Soccer",
-      "league": "Liga MX Femenil",
-      "ch": [
-        "NBC Universo"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 16.07350835322196,
-        "l": "Quality +16.1 (GFR 84.9-76.3 vs tier1 baseline 142.5 (Liga MX Femenil (Mexico)))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 16.07350835322196,
-      "cat": "club_league",
-      "area": "womens_club_league",
-      "espn": "mex.w.1",
-      "lgR": 71.26,
-      "_rk": [
-        22,
-        71
-      ]
-    },
-    {
       "id": 39955925,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -5259,7 +5221,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.275956640982106,
+        "v": 7.272632266492488,
         "l": "Quality +7.3 (TCU Horned Frogs 7.300 vs Arizona Wildcats 13.300)"
       },
       "_sk": {
@@ -5274,7 +5236,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.275956640982106,
+      "_score": 7.272632266492488,
       "_rk": [
         44,
         23
@@ -5465,6 +5427,16 @@
       "detail": "practice/qualifying session \u2014 First Practice"
     },
     {
+      "name": "GSOC Masters",
+      "league": "Curling",
+      "sport": "Wintersports",
+      "time": "12:00",
+      "date": "2026-11-06",
+      "channel": "Sportsnet, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
+    },
+    {
       "name": "Finland @ Denmark",
       "league": "Women's World Championship",
       "sport": "Hockey",
@@ -5543,6 +5515,16 @@
       "channel": "Sportsnet World, Sportsnet NOW, Sportsnet+",
       "reason": "channel",
       "detail": "airs on Sportsnet World, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "GSOC Masters",
+      "league": "Curling",
+      "sport": "Wintersports",
+      "time": "16:00",
+      "date": "2026-11-06",
+      "channel": "Sportsnet, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
     },
     {
       "name": "Hofstra @ Towson",
@@ -7606,8 +7588,8 @@
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
-      "fixturesResolved": 6,
-      "fixturesSeen": 7,
+      "fixturesResolved": 5,
+      "fixturesSeen": 6,
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -7615,8 +7597,8 @@
     "primera-division": {
       "rating": 81.64,
       "area": "mens_club_league",
-      "fixturesResolved": 12,
-      "fixturesSeen": 12,
+      "fixturesResolved": 13,
+      "fixturesSeen": 13,
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
       "confederation": "CONMEBOL",
