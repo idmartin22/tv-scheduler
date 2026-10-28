@@ -3351,7 +3351,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -3.6712503997441663,
+        "v": -3.675266225621605,
         "l": "Quality -3.7 (UTSA Roadrunners 0.500 vs Florida Atlantic Owls -10.900)"
       },
       "_sk": {
@@ -3366,7 +3366,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.6712503997441663,
+      "_score": -3.675266225621605,
       "_rk": [
         67,
         108
@@ -3846,7 +3846,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -2.958352808049005,
+        "v": -2.962543961043754,
         "l": "Quality -3.0 (James Madison Dukes 5.300 vs Southern Miss Golden Eagles -13.600)"
       },
       "_sk": {
@@ -3861,7 +3861,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.958352808049005,
+      "_score": -2.962543961043754,
       "_rk": [
         53,
         118
@@ -4613,6 +4613,16 @@
   ],
   "dropped": [
     {
+      "name": "Maple Leaf Pro Wrestling",
+      "league": "Wrestling",
+      "sport": "Fighting",
+      "time": "00:00",
+      "date": "2026-11-05",
+      "channel": "TSN+, TSN2",
+      "reason": "cutoff",
+      "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Chennai Open",
       "league": "WTA",
       "sport": "Tennis",
@@ -4663,6 +4673,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "GSOC Masters",
+      "league": "Curling",
+      "sport": "Wintersports",
+      "time": "12:00",
+      "date": "2026-11-05",
+      "channel": "Sportsnet, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
+    },
+    {
       "name": "America's Day at the Races",
       "league": "Horse Racing",
       "sport": "Equestrian",
@@ -4681,6 +4701,16 @@
       "channel": "SWAC TV",
       "reason": "channel",
       "detail": "airs on SWAC TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "GSOC Masters",
+      "league": "Curling",
+      "sport": "Wintersports",
+      "time": "16:00",
+      "date": "2026-11-05",
+      "channel": "Sportsnet, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet, Sportsnet NOW \u2014 none in channels.txt"
     },
     {
       "name": "Remo @ Palmeiras",
@@ -4901,6 +4931,16 @@
       "channel": "Midco Sports Plus",
       "reason": "channel",
       "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "GSOC Masters",
+      "league": "Curling",
+      "sport": "Wintersports",
+      "time": "20:00",
+      "date": "2026-11-05",
+      "channel": "Sportsnet One, Sportsnet NOW",
+      "reason": "channel",
+      "detail": "airs on Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
     },
     {
       "name": "UNLV @ Wyoming",
@@ -6082,8 +6122,8 @@
     "primera-division": {
       "rating": 81.64,
       "area": "mens_club_league",
-      "fixturesResolved": 12,
-      "fixturesSeen": 12,
+      "fixturesResolved": 13,
+      "fixturesSeen": 13,
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
       "confederation": "CONMEBOL",
