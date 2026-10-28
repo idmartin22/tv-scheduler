@@ -265,6 +265,37 @@
       ]
     },
     {
+      "id": 14101270,
+      "lgId": 3068,
+      "lgSlug": "marathon",
+      "time": "08:30",
+      "name": "New York Marathon",
+      "sport": "Athletics",
+      "league": "Marathon",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Marathon not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 11142180,
       "lgId": 410,
       "lgSlug": "serie-a",
@@ -5844,6 +5875,44 @@
       ]
     },
     {
+      "id": 75410931,
+      "lgId": 115,
+      "lgSlug": "primera-3",
+      "time": "18:45",
+      "name": "Gimnasia Mendoza @ Lan\u00fas",
+      "sport": "Soccer",
+      "league": "Primera Division",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.330415250820682,
+        "l": "Quality +1.3 (GFR 79.7-84.3 vs tier1 baseline 163.3 (Liga Profesional (Argentina)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.330415250820682,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 78.67,
+      "_rk": [
+        406,
+        119
+      ]
+    },
+    {
       "id": 26474142,
       "lgId": 587,
       "lgSlug": "mls",
@@ -6340,6 +6409,16 @@
       "channel": "ESPN Select, ESPN Unlimited",
       "reason": "cutoff",
       "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "GT World Challenge Asia",
+      "league": "GT World Challenge",
+      "sport": "Motorsports",
+      "time": "01:05",
+      "date": "2026-11-01",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "cutoff",
+      "detail": "starts 01:05 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "Perth Glory - Adelaide United",
@@ -7136,16 +7215,6 @@
       "league": "LNB",
       "sport": "Basketball",
       "time": "18:30",
-      "date": "2026-11-01",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Gimnasia Mendoza @ Lan\u00fas",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "18:45",
       "date": "2026-11-01",
       "channel": "Fanatiz",
       "reason": "channel",
@@ -8331,8 +8400,8 @@
     "primera-division": {
       "rating": 81.64,
       "area": "mens_club_league",
-      "fixturesResolved": 9,
-      "fixturesSeen": 9,
+      "fixturesResolved": 10,
+      "fixturesSeen": 10,
       "gfrLeague": "Liga Profesional",
       "country": "Argentina",
       "confederation": "CONMEBOL",
