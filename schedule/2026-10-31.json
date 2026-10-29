@@ -5146,6 +5146,41 @@
       ]
     },
     {
+      "id": 30559967,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "15:30",
+      "name": "UTEP @ North Dakota State",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": -8.411643026004729,
+        "l": "Quality -8.4 (UTEP Miners -24.300 vs North Dakota State Bison 0.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.411643026004729,
+      "_rk": [
+        136,
+        70
+      ]
+    },
+    {
       "id": 38764160,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -8098,6 +8133,7 @@
       "sport": "Soccer",
       "league": "Primera Division",
       "ch": [
+        "FOX Deportes",
         "ViX"
       ],
       "dur": 120,
@@ -10473,6 +10509,44 @@
       ]
     },
     {
+      "id": 86788359,
+      "lgId": 1881,
+      "lgSlug": "liga-mx-femenil",
+      "time": "23:10",
+      "name": "Santos Laguna @ Necaxa",
+      "sport": "Soccer",
+      "league": "Liga MX Femenil",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -14.785574605484559,
+        "l": "Quality -14.8 (GFR 67.1-57.4 vs tier1 baseline 142.5 (Liga MX Femenil (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -14.785574605484559,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "mex.w.1",
+      "lgR": 71.26,
+      "_rk": [
+        206,
+        333
+      ]
+    },
+    {
       "id": 86764949,
       "lgId": 1819,
       "lgSlug": "ufc",
@@ -10533,6 +10607,16 @@
       "channel": "Fubo Sports, FOX Soccer Plus",
       "reason": "cutoff",
       "detail": "starts 12:05 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Melbourne Cup Carnival - Derby Day",
+      "league": "Horse Racing",
+      "sport": "Equestrian",
+      "time": "00:30",
+      "date": "2026-10-31",
+      "channel": "Fubo Sports, FOX Sports 1, FOX One",
+      "reason": "cutoff",
+      "detail": "starts 12:30 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "GT World Challenge Asia",
@@ -12315,6 +12399,16 @@
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
+      "name": "Air Force @ UNLV",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "15:00",
+      "date": "2026-10-31",
+      "channel": "SSSEN",
+      "reason": "channel",
+      "detail": "airs on SSSEN \u2014 none in channels.txt"
+    },
+    {
       "name": "Fort Lewis @ Chadron State",
       "league": "College Football",
       "sport": "Football",
@@ -12563,16 +12657,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "UTEP @ North Dakota State",
-      "league": "College Football",
-      "sport": "Football",
-      "time": "15:30",
-      "date": "2026-10-31",
-      "channel": "MW+",
-      "reason": "channel",
-      "detail": "airs on MW+ \u2014 none in channels.txt"
     },
     {
       "name": "Tennessee Tech @ East Tennessee State",
@@ -12910,9 +12994,9 @@
       "sport": "Hockey",
       "time": "18:00",
       "date": "2026-10-31",
-      "channel": "FloHockey",
+      "channel": "SSSEN, FloHockey",
       "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
+      "detail": "airs on SSSEN, FloHockey \u2014 none in channels.txt"
     },
     {
       "name": "Tucson Roadrunners @ Ontario Reign",
@@ -13065,6 +13149,16 @@
       "detail": "airs on SportsNet Pittsburgh +, FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "NAPA Auto Parts 150",
+      "league": "ARCA Menards Series",
+      "sport": "Motorsports",
+      "time": "19:00",
+      "date": "2026-10-31",
+      "channel": "FloRacing",
+      "reason": "channel",
+      "detail": "airs on FloRacing \u2014 none in channels.txt"
+    },
+    {
       "name": "Wofford @ Samford",
       "league": "College Football",
       "sport": "Football",
@@ -13200,7 +13294,7 @@
       "sport": "Equestrian",
       "time": "20:00",
       "date": "2026-10-31",
-      "channel": "Fubo Sports, FOX Sports 2, FOX One, FOX Sports Racing",
+      "channel": "Fubo Sports, FOX Sports 1, FOX One, FOX Sports Racing",
       "reason": "marquee",
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
@@ -14393,8 +14487,8 @@
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -14577,8 +14671,8 @@
       "confederation": "UEFA",
       "rosterMatched": 17,
       "rosterTotal": 18,
-      "fixturesResolved": 3,
-      "fixturesSeen": 3,
+      "fixturesResolved": 4,
+      "fixturesSeen": 4,
       "rosterCode": "ksa.1"
     },
     "s-per-lig": {
