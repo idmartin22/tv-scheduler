@@ -3,6 +3,37 @@
   "label": "Monday, November 2",
   "events": [
     {
+      "id": 55815274,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "10:30",
+      "name": "Hofstra @ Georgia Tech",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 93507133,
       "lgId": 488,
       "lgSlug": "ekstraklasa",
@@ -584,6 +615,44 @@
       "cat": "unclassified"
     },
     {
+      "id": 71837431,
+      "lgId": 230,
+      "lgSlug": "primera-a",
+      "time": "16:05",
+      "name": "Fortaleza CEIF @ Rionegro \u00c1guilas",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -6.213097557320539,
+        "l": "Quality -6.2 (GFR 77.5-80.2 vs tier1 baseline 159.8 (Primera A (Colombia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.213097557320539,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "col.1",
+      "lgR": 79.87,
+      "_rk": [
+        588,
+        368
+      ]
+    },
+    {
       "id": 15306538,
       "lgId": 115,
       "lgSlug": "primera-3",
@@ -1028,8 +1097,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.649326190936474,
-        "l": "Quality +8.6 (Vegas Golden Knights 0.246 vs Boston Bruins 0.187)"
+        "v": 8.72975015204664,
+        "l": "Quality +8.7 (Vegas Golden Knights 0.254 vs Boston Bruins 0.190)"
       },
       "_sk": {
         "v": 0,
@@ -1043,7 +1112,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.649326190936474,
+      "_score": 8.72975015204664,
       "_rk": [
         6,
         9
@@ -1063,8 +1132,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.443708384456094,
-        "l": "Quality -2.4 (Detroit Red Wings -0.164 vs Florida Panthers 0.006)"
+        "v": -2.508675680734949,
+        "l": "Quality -2.5 (Detroit Red Wings -0.170 vs Florida Panthers 0.006)"
       },
       "_sk": {
         "v": 0,
@@ -1078,10 +1147,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.443708384456094,
+      "_score": -2.508675680734949,
       "_rk": [
         23,
-        16
+        17
       ]
     },
     {
@@ -1654,8 +1723,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.0045295170293347,
-        "l": "Quality -2.0 (Colorado Avalanche 0.418 vs Chicago Blackhawks -0.547)"
+        "v": -1.914265555027575,
+        "l": "Quality -1.9 (Colorado Avalanche 0.426 vs Chicago Blackhawks -0.551)"
       },
       "_sk": {
         "v": 0,
@@ -1669,7 +1738,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.0045295170293347,
+      "_score": -1.914265555027575,
       "_rk": [
         2,
         31
@@ -1967,8 +2036,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.586005053272745,
-        "l": "Quality -8.6 (Calgary Flames -0.332 vs San Jose Sharks -0.222)"
+        "v": -8.93967102010646,
+        "l": "Quality -8.9 (Calgary Flames -0.358 vs San Jose Sharks -0.224)"
       },
       "_sk": {
         "v": 0,
@@ -1982,10 +2051,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.586005053272745,
+      "_score": -8.93967102010646,
       "_rk": [
         30,
-        26
+        27
       ]
     },
     {
@@ -2332,6 +2401,26 @@
   ],
   "dropped": [
     {
+      "name": "Hong Kong Tennis Open",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "01:00",
+      "date": "2026-11-02",
+      "channel": "Tennis Channel",
+      "reason": "cutoff",
+      "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Chennai Open",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "04:30",
+      "date": "2026-11-02",
+      "channel": "Tennis Channel",
+      "reason": "cutoff",
+      "detail": "starts 04:30 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Paris Masters",
       "league": "ATP",
       "sport": "Tennis",
@@ -2340,6 +2429,16 @@
       "channel": "TSN+, TSN5",
       "reason": "channel",
       "detail": "airs on TSN+, TSN5 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Paris Masters",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "09:00",
+      "date": "2026-11-02",
+      "channel": "RDS 2",
+      "reason": "channel",
+      "detail": "airs on RDS 2 \u2014 none in channels.txt"
     },
     {
       "name": "Adirondack Thunder @ Worcester Railers",
@@ -3283,11 +3382,11 @@
         "Concacaf Central American Cup": 56.29,
         "Concacaf Champions Cup": 71.95,
         "Leagues Cup": 80.61,
-        "Conmebol Libertadores": 78.03,
-        "Conmebol Sudamericana": 78.27,
+        "Conmebol Libertadores": 79.82,
+        "Conmebol Sudamericana": 79.69,
         "English Fa Cup": 63.79,
         "Carabao Cup": 78.29,
-        "Copa Del Rey": 38.6,
+        "Copa Del Rey": 52.54,
         "Club World Cup": 85.29,
         "German Cup": 64.43,
         "Coppa Italia": 70.49,
@@ -3338,6 +3437,10 @@
           "country": "",
           "confederation": "UEFA"
         },
+        "Copa Del Rey": {
+          "country": "",
+          "confederation": "UEFA"
+        },
         "Club World Cup": {
           "country": "",
           "confederation": "UEFA"
@@ -3373,9 +3476,9 @@
       },
       "label": "Men's club competitions",
       "top": 89.66,
-      "worst": 38.6,
+      "worst": 44.66,
       "anchored": true,
-      "span": 51.06,
+      "span": 45.0,
       "seen": []
     },
     "mens_oneoff": {
@@ -3457,8 +3560,8 @@
       "rosterMatched": 19,
       "rosterTotal": 20,
       "rosterCode": "col.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "gfrLeague": "Primera A",
       "country": "Colombia",
       "confederation": "CONMEBOL"
@@ -3641,8 +3744,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 9,
-      "fixturesSeen": 9,
+      "fixturesResolved": 10,
+      "fixturesSeen": 10,
       "rosterCode": "ger.1"
     },
     "eredivisie": {
@@ -3683,8 +3786,8 @@
       "confederation": "UEFA",
       "rosterMatched": 12,
       "rosterTotal": 12,
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
       "rosterCode": "sco.1"
     },
     "ekstraklasa": {
@@ -3837,18 +3940,21 @@
       "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.37,
+      "rating": 45.93,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
-      "rosterTotal": 6
+      "rosterTotal": 8
     },
     "scottish-league-cup": {
       "rating": 60.48,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 32,
-      "rosterTotal": 45
+      "rosterTotal": 45,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "rosterCode": "sco.cis"
     },
     "uefa-champions-league": {
       "rating": 89.66,
@@ -3858,11 +3964,11 @@
       "rosterTotal": 36
     },
     "copa-sudamericana": {
-      "rating": 78.27,
+      "rating": 79.69,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 55,
-      "rosterTotal": 58
+      "rosterTotal": 56
     },
     "uefa-conference-league": {
       "rating": 76.5,
@@ -3923,11 +4029,11 @@
       "rosterTotal": 2
     },
     "copa-libertadores": {
-      "rating": 78.03,
+      "rating": 79.82,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 42,
-      "rosterTotal": 46
+      "rosterTotal": 44
     },
     "uefa-super-cup": {
       "rating": 95.1,
@@ -4048,11 +4154,11 @@
       "confederation": "AFC"
     },
     "ta-a-de-portugal": {
-      "rating": 50.32,
+      "rating": 51.55,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 46,
-      "rosterTotal": 141
+      "rosterMatched": 51,
+      "rosterTotal": 146
     },
     "a-league-women": {
       "rating": 67.8,
@@ -4062,14 +4168,14 @@
       "confederation": "AFC"
     },
     "copa-del-rey": {
-      "rating": 38.6,
+      "rating": 52.54,
       "area": "mens_club_competition",
-      "rosterMatched": 0,
-      "rosterTotal": 20,
+      "rosterMatched": 40,
+      "rosterTotal": 122,
       "rosterCode": "esp.copa_del_rey",
       "fixturesResolved": 0,
       "fixturesSeen": 6,
-      "confederation": ""
+      "confederation": "UEFA"
     }
   },
   "confedAnchors": {
