@@ -102,6 +102,44 @@
       "_score": 15
     },
     {
+      "id": 38429887,
+      "lgId": 514,
+      "lgSlug": "pro-league",
+      "time": "08:30",
+      "name": "Al Ittihad @ Abha",
+      "sport": "Soccer",
+      "league": "Pro League",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.1087746128846825,
+        "l": "Quality -1.1 (GFR 82.0-70.2 vs tier1 baseline 152.8 (Pro League (Saudi Arabia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.1087746128846825,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "ksa.1",
+      "lgR": 76.42,
+      "_rk": [
+        232,
+        1203
+      ]
+    },
+    {
       "id": 80862382,
       "lgId": 2478,
       "lgSlug": "mma",
@@ -723,7 +761,7 @@
       "_score": 8.72732507918227,
       "cat": "club_league",
       "area": "mens_club_league",
-      "espn": "",
+      "espn": "ksa.1",
       "lgR": 76.42,
       "_rk": [
         165,
@@ -7712,16 +7750,6 @@
       "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
-      "name": "Simsbury at Wethersfield",
-      "league": "High School Football",
-      "sport": "Football",
-      "time": "18:00",
-      "date": "2026-10-30",
-      "channel": "WWAX",
-      "reason": "channel",
-      "detail": "airs on WWAX \u2014 none in channels.txt"
-    },
-    {
       "name": "Nebraska @ Michigan",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
@@ -8587,9 +8615,9 @@
       "sport": "Hockey",
       "time": "22:00",
       "date": "2026-10-30",
-      "channel": "FloHockey",
+      "channel": "SSSEN, FloHockey",
       "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
+      "detail": "airs on SSSEN, FloHockey \u2014 none in channels.txt"
     },
     {
       "name": "Henderson Silver Knights @ Coachella Valley Firebirds",
@@ -9888,10 +9916,11 @@
       "gfrLeague": "Pro League",
       "country": "Belgium",
       "confederation": "UEFA",
-      "rosterMatched": 18,
+      "rosterMatched": 17,
       "rosterTotal": 18,
-      "fixturesResolved": 2,
-      "fixturesSeen": 2
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
+      "rosterCode": "ksa.1"
     },
     "s-per-lig": {
       "rating": 79.35,
