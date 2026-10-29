@@ -887,38 +887,6 @@
       "_score": 10
     },
     {
-      "id": 74100021,
-      "lgId": 2025,
-      "lgSlug": "ncaa-soccer",
-      "time": "15:00",
-      "name": "Milwaukee @ Detroit Mercy",
-      "sport": "Soccer",
-      "league": "College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 49668839,
       "lgId": 2025,
       "lgSlug": "ncaa-soccer",
@@ -1702,8 +1670,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 6.809431456063658,
-        "l": "Quality +6.8 (New Jersey Devils 0.095 vs Vegas Golden Knights 0.246)"
+        "v": 6.673465250431566,
+        "l": "Quality +6.7 (New Jersey Devils 0.085 vs Vegas Golden Knights 0.254)"
       },
       "_sk": {
         "v": 0,
@@ -1717,7 +1685,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.809431456063658,
+      "_score": 6.673465250431566,
       "_rk": [
         14,
         6
@@ -3176,8 +3144,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -4.028166418529312,
-        "l": "Quality -4.0 (Winnipeg Jets -0.266 vs Florida Panthers 0.006)"
+        "v": -4.018508118901225,
+        "l": "Quality -4.0 (Winnipeg Jets -0.268 vs Florida Panthers 0.006)"
       },
       "_sk": {
         "v": 0,
@@ -3191,10 +3159,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.028166418529312,
+      "_score": -4.018508118901225,
       "_rk": [
         29,
-        16
+        17
       ]
     },
     {
@@ -3211,7 +3179,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -8.969774476771354,
+        "v": -8.98936170212766,
         "l": "Quality -9.0 (Tulane Green Wave -4.000 vs Charlotte 49ers -22.000)"
       },
       "_sk": {
@@ -3226,7 +3194,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.969774476771354,
+      "_score": -8.98936170212766,
       "_rk": [
         85,
         133
@@ -5329,7 +5297,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 5.505943827563682,
+        "v": 5.499882380616325,
         "l": "Quality +5.5 (Baylor Bears 9.100 vs UCF Knights 6.600)"
       },
       "_sk": {
@@ -5344,7 +5312,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.505943827563682,
+      "_score": 5.499882380616325,
       "_rk": [
         38,
         45
@@ -5865,8 +5833,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.662046623957945,
-        "l": "Quality -8.7 (Seattle Kraken -0.227 vs Calgary Flames -0.332)"
+        "v": -8.744606198491896,
+        "l": "Quality -8.7 (Seattle Kraken -0.211 vs Calgary Flames -0.358)"
       },
       "_sk": {
         "v": 0,
@@ -5880,9 +5848,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.662046623957945,
+      "_score": -8.744606198491896,
       "_rk": [
-        27,
+        26,
         30
       ]
     },
@@ -7261,8 +7229,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -18.540616315388213,
-        "l": "Quality -18.5 (Kent State Golden Flashes -21.000 vs Sacramento State Hornets -33.200)"
+        "v": -18.504728132387704,
+        "l": "Quality -18.5 (Kent State Golden Flashes -20.900 vs Sacramento State Hornets -33.100)"
       },
       "_sk": {
         "v": 0,
@@ -7276,7 +7244,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -18.540616315388213,
+      "_score": -18.504728132387704,
       "_rk": [
         132,
         138
@@ -7431,7 +7399,7 @@
       "date": "2026-10-30",
       "channel": "Fubo Sports, FOX Sports 2, FOX One",
       "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Practice & Qualifying"
+      "detail": "practice/qualifying session \u2014 Practice"
     },
     {
       "name": "Robert Morris @ Lindenwood",
@@ -7442,6 +7410,16 @@
       "channel": "FloSports",
       "reason": "channel",
       "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Black's Tire 200",
+      "league": "NASCAR Craftsman Truck Series",
+      "sport": "Motorsports",
+      "time": "13:35",
+      "date": "2026-10-30",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One",
+      "reason": "practice",
+      "detail": "practice/qualifying session \u2014 Qualifying"
     },
     {
       "name": "Bryant @ NJIT",
@@ -7509,9 +7487,9 @@
       "sport": "Motorsports",
       "time": "15:00",
       "date": "2026-10-30",
-      "channel": "TSN+",
+      "channel": "ESPN Unlimited, TSN+",
       "reason": "practice",
-      "detail": "practice/qualifying session \u2014 Practice & Qualifying"
+      "detail": "practice/qualifying session \u2014 Practice"
     },
     {
       "name": "Manchester Basketball @ Bristol Flyers",
@@ -7582,6 +7560,16 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "National Debt Relief 250",
+      "league": "NASCAR O'Reilly Auto Parts Series",
+      "sport": "Motorsports",
+      "time": "16:05",
+      "date": "2026-10-30",
+      "channel": "ESPN Unlimited, TSN+",
+      "reason": "practice",
+      "detail": "practice/qualifying session \u2014 Qualifying"
     },
     {
       "name": "Penn State - Pittsburgh",
@@ -9495,11 +9483,11 @@
         "Concacaf Central American Cup": 56.29,
         "Concacaf Champions Cup": 71.95,
         "Leagues Cup": 80.61,
-        "Conmebol Libertadores": 78.03,
-        "Conmebol Sudamericana": 78.27,
+        "Conmebol Libertadores": 79.82,
+        "Conmebol Sudamericana": 79.69,
         "English Fa Cup": 63.79,
         "Carabao Cup": 78.29,
-        "Copa Del Rey": 38.6,
+        "Copa Del Rey": 52.54,
         "Club World Cup": 85.29,
         "German Cup": 64.43,
         "Coppa Italia": 70.49,
@@ -9550,6 +9538,10 @@
           "country": "",
           "confederation": "UEFA"
         },
+        "Copa Del Rey": {
+          "country": "",
+          "confederation": "UEFA"
+        },
         "Club World Cup": {
           "country": "",
           "confederation": "UEFA"
@@ -9585,9 +9577,9 @@
       },
       "label": "Men's club competitions",
       "top": 89.66,
-      "worst": 38.6,
+      "worst": 44.66,
       "anchored": true,
-      "span": 51.06,
+      "span": 45.0,
       "seen": []
     },
     "mens_oneoff": {
@@ -10001,11 +9993,11 @@
       "rosterTotal": 2
     },
     "northern-super-league": {
-      "rating": 48.37,
+      "rating": 45.93,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
-      "rosterTotal": 6
+      "rosterTotal": 8
     },
     "scottish-league-cup": {
       "rating": 60.48,
@@ -10022,11 +10014,11 @@
       "rosterTotal": 36
     },
     "copa-sudamericana": {
-      "rating": 78.27,
+      "rating": 79.69,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 55,
-      "rosterTotal": 58
+      "rosterTotal": 56
     },
     "uefa-conference-league": {
       "rating": 76.5,
@@ -10084,11 +10076,11 @@
       "rosterTotal": 2
     },
     "copa-libertadores": {
-      "rating": 78.03,
+      "rating": 79.82,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 42,
-      "rosterTotal": 46
+      "rosterTotal": 44
     },
     "uefa-super-cup": {
       "rating": 95.1,
@@ -10209,11 +10201,11 @@
       "confederation": "AFC"
     },
     "ta-a-de-portugal": {
-      "rating": 50.32,
+      "rating": 51.55,
       "area": "mens_club_competition",
       "confederation": "UEFA",
-      "rosterMatched": 46,
-      "rosterTotal": 141
+      "rosterMatched": 51,
+      "rosterTotal": 146
     },
     "a-league-women": {
       "rating": 67.8,
@@ -10223,14 +10215,14 @@
       "confederation": "AFC"
     },
     "copa-del-rey": {
-      "rating": 38.6,
+      "rating": 52.54,
       "area": "mens_club_competition",
-      "rosterMatched": 0,
-      "rosterTotal": 20,
+      "rosterMatched": 40,
+      "rosterTotal": 122,
       "rosterCode": "esp.copa_del_rey",
       "fixturesResolved": 0,
       "fixturesSeen": 6,
-      "confederation": ""
+      "confederation": "UEFA"
     }
   },
   "confedAnchors": {
