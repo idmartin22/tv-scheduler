@@ -1001,44 +1001,6 @@
       ]
     },
     {
-      "id": 29792401,
-      "lgId": 488,
-      "lgSlug": "ekstraklasa",
-      "time": "11:30",
-      "name": "Wieczysta Krak\u00f3w @ G\u00f3rnik Zabrze",
-      "sport": "Soccer",
-      "league": "Ekstraklasa",
-      "ch": [
-        "beIN SPORTS Xtra"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 5.577921486474132,
-        "l": "Quality +5.6 (GFR 78.0-84.4 vs tier1 baseline 159.5 (Ekstraklasa (Poland)))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 5.577921486474132,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "",
-      "lgR": 79.73,
-      "_rk": [
-        547,
-        118
-      ]
-    },
-    {
       "id": 88469260,
       "lgId": 410,
       "lgSlug": "serie-a",
@@ -1973,6 +1935,44 @@
       ]
     },
     {
+      "id": 25545741,
+      "lgId": 297,
+      "lgSlug": "ligue-2-2",
+      "time": "14:00",
+      "name": "Laval @ Saint-\u00c9tienne",
+      "sport": "Soccer",
+      "league": "Ligue 2",
+      "ch": [
+        "beIN SPORTS Xtra"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 7.551539113244882,
+        "l": "Quality +7.6 (GFR 74.2-82.0 vs tier1 baseline 152.7 (Ligue 2 (France)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.551539113244882,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "fra.2",
+      "lgR": 76.33,
+      "_rk": [
+        884,
+        228
+      ]
+    },
+    {
       "id": 50172354,
       "lgId": 3291,
       "lgSlug": "usl-super-league",
@@ -2768,7 +2768,7 @@
       "sport": "Soccer",
       "league": "Ekstraklasa",
       "ch": [
-        "beIN SPORTS Xtra"
+        "beIN SPORTS 5"
       ],
       "dur": 120,
       "_st": {
@@ -8532,16 +8532,6 @@
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
     },
     {
-      "name": "Laval @ Saint-\u00c9tienne",
-      "league": "Ligue 2",
-      "sport": "Soccer",
-      "time": "14:00",
-      "date": "2026-11-07",
-      "channel": "beIN SPORTS Xtra (Canada)",
-      "reason": "channel",
-      "detail": "airs on beIN SPORTS Xtra (Canada) \u2014 none in channels.txt"
-    },
-    {
       "name": "BKFC Fight Night",
       "league": "Bare Knuckle Fighting",
       "sport": "Fighting",
@@ -11399,8 +11389,8 @@
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
-      "fixturesResolved": 5,
-      "fixturesSeen": 6,
+      "fixturesResolved": 6,
+      "fixturesSeen": 7,
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -11488,8 +11478,8 @@
       "gfrLeague": "Ekstraklasa",
       "country": "Poland",
       "confederation": "UEFA",
-      "fixturesResolved": 11,
-      "fixturesSeen": 11
+      "fixturesResolved": 10,
+      "fixturesSeen": 10
     },
     "scottish-championship": {
       "rating": 66.7,
@@ -11572,8 +11562,8 @@
       "confederation": "UEFA",
       "rosterMatched": 17,
       "rosterTotal": 18,
-      "fixturesResolved": 6,
-      "fixturesSeen": 6,
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
       "rosterCode": "ksa.1"
     },
     "s-per-lig": {
@@ -11596,8 +11586,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "rosterCode": "fra.2"
     },
     "ligue-1": {
