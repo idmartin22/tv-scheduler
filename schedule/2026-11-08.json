@@ -506,7 +506,8 @@
       "sport": "Soccer",
       "league": "Ligue 1",
       "ch": [
-        "beIN Sport USA"
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
       ],
       "dur": 120,
       "_st": {
@@ -661,7 +662,8 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
-        "USA Network"
+        "USA Network",
+        "Telemundo"
       ],
       "dur": 120,
       "_st": {
@@ -815,7 +817,8 @@
       "league": "NFL",
       "ch": [
         "NFL Network",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 180,
       "_st": {
@@ -914,6 +917,45 @@
       "_rk": [
         74,
         19
+      ]
+    },
+    {
+      "id": 4992987,
+      "lgId": 263,
+      "lgSlug": "fa-cup",
+      "time": "10:00",
+      "name": "Crawley Town @ Wimborne Town",
+      "sport": "Soccer",
+      "league": "FA Cup",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 68.1-37.9 (not rated yet) vs tier1 baseline 140.0 (League Two (England) \u2014 opponent not in GFR))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "espn": "eng.fa",
+      "lgR": 63.69,
+      "_rk": [
+        1354,
+        null
       ]
     },
     {
@@ -1111,6 +1153,44 @@
       ]
     },
     {
+      "id": 25309597,
+      "lgId": 296,
+      "lgSlug": "ligue-1-3",
+      "time": "11:15",
+      "name": "Lyon @ Brest",
+      "sport": "Soccer",
+      "league": "Ligue 1",
+      "ch": [
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 2.8899909828675066,
+        "l": "Quality +2.9 (GFR 88.4-83.8 vs tier1 baseline 170.0 (Ligue 1 (France)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.8899909828675066,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "fra.1",
+      "lgR": 85.02,
+      "_rk": [
+        39,
+        137
+      ]
+    },
+    {
       "id": 71385802,
       "lgId": 296,
       "lgSlug": "ligue-1-3",
@@ -1233,7 +1313,8 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
-        "USA Network"
+        "USA Network",
+        "Telemundo"
       ],
       "dur": 120,
       "_st": {
@@ -1497,6 +1578,68 @@
       "_score": 0
     },
     {
+      "id": 75958510,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "12:00",
+      "name": "Princeton @ Murray State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 82552652,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "12:00",
+      "name": "UMass Lowell @ Canisius",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 75513794,
       "lgId": 263,
       "lgSlug": "fa-cup",
@@ -1667,6 +1810,76 @@
       "_st": {
         "v": 0,
         "l": "NBA G League not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 35548833,
+      "lgId": 588,
+      "lgSlug": "nwsl",
+      "time": "12:30",
+      "name": "Seattle Reign FC @ Gotham FC",
+      "sport": "Soccer",
+      "league": "NWSL",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 10.693877551020394,
+        "l": "Quality +10.7 (GFR 86.2-89.2 vs tier1 baseline 171.5 (NWSL (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.693877551020394,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.nwsl",
+      "lgR": 85.76,
+      "_rk": [
+        17,
+        10
+      ]
+    },
+    {
+      "id": 69115100,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "12:30",
+      "name": "Mercer @ Wake Forest",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -1944,8 +2157,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 4.098139882265074,
-        "l": "Quality +4.1 (Florida Panthers 0.024 vs Boston Bruins 0.194)"
+        "v": 4.125610093010407,
+        "l": "Quality +4.1 (Florida Panthers 0.025 vs Boston Bruins 0.199)"
       },
       "_sk": {
         "v": 0,
@@ -1959,10 +2172,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.098139882265074,
+      "_score": 4.125610093010407,
       "_rk": [
         16,
-        10
+        9
       ]
     },
     {
@@ -2590,6 +2803,441 @@
       "_score": 0
     },
     {
+      "id": 71006243,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Ripon @ Milwaukee",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -15.657293940632638,
+        "l": "Quality -15.7 (Milwaukee Panthers -4.200 vs unlisted opponent -20.460 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -15.657293940632638,
+      "_rk": [
+        null,
+        236
+      ]
+    },
+    {
+      "id": 74514190,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Princeton @ Siena",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -3.2386783673540394,
+        "l": "Quality -3.2 (Princeton Tigers 1.500 vs Siena Saints -6.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.2386783673540394,
+      "_rk": [
+        130,
+        291
+      ]
+    },
+    {
+      "id": 86487278,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Southeast Missouri State @ South Carolina",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -0.38163490724393334,
+        "l": "Quality -0.4 (Southeast Missouri State Redhawks -5.400 vs South Carolina Gamecocks 4.800)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.38163490724393334,
+      "_rk": [
+        271,
+        93
+      ]
+    },
+    {
+      "id": 70424000,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Marist @ UMass Lowell",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -6.349681246140601,
+        "l": "Quality -6.3 (Marist Red Foxes -4.400 vs UMass Lowell River Hawks -5.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.349681246140601,
+      "_rk": [
+        242,
+        273
+      ]
+    },
+    {
+      "id": 96788110,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Sacred Heart @ New Hampshire",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -10.286052235625636,
+        "l": "Quality -10.3 (Sacred Heart Pioneers -6.800 vs New Hampshire Wildcats -9.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -10.286052235625636,
+      "_rk": [
+        293,
+        335
+      ]
+    },
+    {
+      "id": 69203762,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Manhattan @ Maine",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -11.42886961966968,
+        "l": "Quality -11.4 (Manhattan Jaspers -9.400 vs Maine Black Bears -8.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -11.42886961966968,
+      "_rk": [
+        335,
+        322
+      ]
+    },
+    {
+      "id": 20165917,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Fairfield @ Bryant",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -6.349681246140601,
+        "l": "Quality -6.3 (Fairfield Stags -2.000 vs Bryant Bulldogs -8.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.349681246140601,
+      "_rk": [
+        183,
+        314
+      ]
+    },
+    {
+      "id": 35203743,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "Central Penn @ Navy",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -15.085885248610618,
+        "l": "Quality -15.1 (Navy Midshipmen -3.300 vs unlisted opponent -20.460 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -15.085885248610618,
+      "_rk": [
+        null,
+        215
+      ]
+    },
+    {
+      "id": 81358431,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "13:00",
+      "name": "Bellarmine @ Miami (OH)",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 9100415,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "13:00",
+      "name": "Campbell @ Davidson",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 32933175,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "13:00",
+      "name": "Butler @ Central Michigan",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 65208122,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "13:00",
+      "name": "Rhode Island @ South Florida",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 80992216,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "13:00",
+      "name": "UT Rio Grande Valley @ Kansas State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 44541268,
       "lgId": 303,
       "lgSlug": "bundesliga-5",
@@ -3031,6 +3679,901 @@
       "_score": 0
     },
     {
+      "id": 10098939,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Allen Univ @ Wofford",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -16.038233068647322,
+        "l": "Quality -16.0 (Wofford Terriers -4.800 vs unlisted opponent -20.460 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -16.038233068647322,
+      "_rk": [
+        null,
+        253
+      ]
+    },
+    {
+      "id": 37822746,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Merrimack @ UAlbany",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -7.23853921150819,
+        "l": "Quality -7.2 (Merrimack Warriors -3.500 vs UAlbany Great Danes -7.900)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.23853921150819,
+      "_rk": [
+        219,
+        311
+      ]
+    },
+    {
+      "id": 22656574,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Campbell @ Western Michigan",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -4.762434879412764,
+        "l": "Quality -4.8 (Campbell Fighting Camels -6.300 vs Western Michigan Broncos -1.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -4.762434879412764,
+      "_rk": [
+        285,
+        167
+      ]
+    },
+    {
+      "id": 37028732,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Quinnipiac @ Vermont",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -4.191026187390742,
+        "l": "Quality -4.2 (Quinnipiac Bobcats -4.200 vs Vermont Catamounts -2.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -4.191026187390742,
+      "_rk": [
+        236,
+        192
+      ]
+    },
+    {
+      "id": 47465303,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Central Connecticut @ Dartmouth",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -9.079744996912481,
+        "l": "Quality -9.1 (Central Connecticut Blue Devils -7.100 vs Dartmouth Big Green -7.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -9.079744996912481,
+      "_rk": [
+        299,
+        302
+      ]
+    },
+    {
+      "id": 40919125,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Brown @ Lehigh",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -5.524313135442124,
+        "l": "Quality -5.5 (Brown Bears -3.600 vs Lehigh Mountain Hawks -5.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -5.524313135442124,
+      "_rk": [
+        222,
+        264
+      ]
+    },
+    {
+      "id": 60914013,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:00",
+      "name": "Butler @ Boise State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "USA Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 4.618456132591254,
+        "l": "Quality +4.6 (Butler Bulldogs 4.000 vs Boise State Broncos 6.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.618456132591254,
+      "_rk": [
+        98,
+        76
+      ]
+    },
+    {
+      "id": 65834036,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Tennessee State @ Old Dominion",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 35443745,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Wofford @ Georgia State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 95513760,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Johnson University (TN) @ Western Carolina",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 94689313,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Delaware State @ Robert Morris",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 30815389,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Rochester Christian @ Oakland",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 73288974,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "UVA Wise @ East Tennessee State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 40031850,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Milwaukee @ SIU Edwardsville",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 89925693,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Northwestern @ UIC",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 3148834,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Louisiana Tech @ McNeese",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 25074719,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Saint Peter's @ Georgetown",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 45365249,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "UMBC @ Quinnipiac",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 99844777,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "William & Mary @ Virginia",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 20998207,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "UNC Greensboro @ Clemson",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 30942555,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Clarion @ Duquesne",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 21226134,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Vermont @ Fairfield",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 76189790,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Cornell @ Syracuse",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 73721454,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "UAlbany @ Mount St. Mary's",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 30804090,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Maine @ Merrimack",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 45672377,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Bryant @ Manhattan",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 77965540,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Florida A&M @ Florida State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 27897362,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:00",
+      "name": "Florida @ Chattanooga",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 83527562,
       "lgId": 488,
       "lgSlug": "ekstraklasa",
@@ -3069,6 +4612,37 @@
       ]
     },
     {
+      "id": 29360343,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "14:30",
+      "name": "Rice @ Richmond",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 7349747,
       "lgId": 410,
       "lgSlug": "serie-a",
@@ -3077,7 +4651,8 @@
       "sport": "Soccer",
       "league": "Serie A",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "Telemundo"
       ],
       "dur": 120,
       "_st": {
@@ -3115,7 +4690,8 @@
       "sport": "Soccer",
       "league": "Ligue 1",
       "ch": [
-        "beIN Sport USA"
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
       ],
       "dur": 120,
       "_st": {
@@ -3472,21 +5048,20 @@
       "_score": 0
     },
     {
-      "id": 9928085,
-      "lgId": 707,
-      "lgSlug": "nhl",
-      "time": "15:30",
-      "name": "Vegas Golden Knights @ Buffalo Sabres",
-      "sport": "Hockey",
-      "league": "NHL",
+      "id": 58080602,
+      "lgId": 2001,
+      "lgSlug": "pga-tour",
+      "time": "15:00",
+      "name": "World Wide Technology Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "Golf Channel USA"
       ],
-      "dur": 150,
+      "dur": 240,
       "_st": {
-        "v": 9.602629923019473,
-        "l": "Quality +9.6 (Vegas Golden Knights 0.244 vs Buffalo Sabres 0.265)"
+        "v": 15,
+        "l": "Golf event +15"
       },
       "_sk": {
         "v": 0,
@@ -3500,10 +5075,336 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.602629923019473,
+      "_score": 15
+    },
+    {
+      "id": 1751438,
+      "lgId": 588,
+      "lgSlug": "nwsl",
+      "time": "15:00",
+      "name": "Portland Thorns @ Washington Spirit",
+      "sport": "Soccer",
+      "league": "NWSL",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.870748299319676,
+        "l": "Quality +8.9 (GFR 87.3-87.5 vs tier1 baseline 171.5 (NWSL (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.870748299319676,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.nwsl",
+      "lgR": 85.76,
+      "_rk": [
+        14,
+        13
+      ]
+    },
+    {
+      "id": 50565293,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "15:00",
+      "name": "Southern University @ Drake",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.3498204019864506,
+        "l": "Quality -2.3 (Southern Jaguars -6.800 vs Drake Bulldogs 3.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.3498204019864506,
+      "_rk": [
+        293,
+        106
+      ]
+    },
+    {
+      "id": 80761563,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "15:00",
+      "name": "Western Kentucky @ Tennessee Tech",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.921229094008473,
+        "l": "Quality -2.9 (Western Kentucky Hilltoppers 1.800 vs Tennessee Tech Golden Eagles -6.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.921229094008473,
+      "_rk": [
+        125,
+        287
+      ]
+    },
+    {
+      "id": 53490309,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Christian Brothers @ Western Kentucky",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 88984040,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Mississippi State @ UT Martin",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 14476442,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Texas A&M-CC @ Baylor",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 63921713,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Eastern Illinois @ Iowa State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 40289747,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Iona @ Arizona",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 13383327,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Stonehill @ DePaul",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 9928085,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "15:30",
+      "name": "Vegas Golden Knights @ Buffalo Sabres",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 9.463118150842622,
+        "l": "Quality +9.5 (Vegas Golden Knights 0.251 vs Buffalo Sabres 0.263)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 9.463118150842622,
       "_rk": [
         8,
-        6
+        7
       ]
     },
     {
@@ -3540,6 +5441,37 @@
         8,
         27
       ]
+    },
+    {
+      "id": 20284138,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:30",
+      "name": "Columbia @ Belmont",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 45816756,
@@ -3639,6 +5571,138 @@
       "lgSlug": "ncaa-basketball-women",
       "time": "16:00",
       "name": "Louisville @ Southern Indiana",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 46517582,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "16:00",
+      "name": "Saint Peter's @ NJIT",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -10.413031944963862,
+        "l": "Quality -10.4 (Saint Peter's Peacocks -6.500 vs NJIT Highlanders -9.900)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -10.413031944963862,
+      "_rk": [
+        290,
+        341
+      ]
+    },
+    {
+      "id": 53857573,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "16:00",
+      "name": "Rider @ Binghamton",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -13.07960584106663,
+        "l": "Quality -13.1 (Rider Broncs -10.600 vs Binghamton Bearcats -10.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -13.07960584106663,
+      "_rk": [
+        353,
+        344
+      ]
+    },
+    {
+      "id": 13616413,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "16:00",
+      "name": "Binghamton @ Siena",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 50357096,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "16:00",
+      "name": "Portland @ Montana State",
       "sport": "Basketball",
       "league": "Women's College Basketball",
       "ch": [
@@ -3838,6 +5902,107 @@
       "_score": 0
     },
     {
+      "id": 64146368,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "17:00",
+      "name": "Lincoln (CA) @ Idaho",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -16.16521277798555,
+        "l": "Quality -16.2 (Idaho Vandals -5.000 vs unlisted opponent -20.460 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -16.16521277798555,
+      "_rk": [
+        null,
+        260
+      ]
+    },
+    {
+      "id": 41286766,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "17:00",
+      "name": "Richmond @ Temple",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.658742152273536,
+        "l": "Quality +1.7 (Richmond Spiders 1.900 vs Temple Owls 1.800)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.658742152273536,
+      "_rk": [
+        121,
+        125
+      ]
+    },
+    {
+      "id": 81709076,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "17:00",
+      "name": "NJIT @ Marist",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 69210822,
       "lgId": 2009,
       "lgSlug": "ncaa-basketball-women",
@@ -3903,6 +6068,141 @@
       ]
     },
     {
+      "id": 38280751,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "18:00",
+      "name": "North Dakota State @ CSU Bakersfield",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -13.68910844589012,
+        "l": "Quality -13.7 (North Dakota State Bison -1.100 vs unlisted opponent -20.460 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -13.68910844589012,
+      "_rk": [
+        165,
+        null
+      ]
+    },
+    {
+      "id": 25543445,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "18:00",
+      "name": "James Madison @ Virginia Tech",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 57870782,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "18:00",
+      "name": "New Hampshire @ Niagara",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 39912934,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "19:00",
+      "name": "Puebla @ Quer\u00e9taro",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "TUDN"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -14.782712511938833,
+        "l": "Quality -14.8 (GFR 75.7-77.9 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -14.782712511938833,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.06,
+      "_rk": [
+        746,
+        549
+      ]
+    },
+    {
       "id": 94515893,
       "lgId": 317,
       "lgSlug": "liga-nacional",
@@ -3953,8 +6253,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.42354281949347605,
-        "l": "Quality -0.4 (New Jersey Devils 0.141 vs Toronto Maple Leafs -0.171)"
+        "v": -0.3515513805863931,
+        "l": "Quality -0.4 (New Jersey Devils 0.145 vs Toronto Maple Leafs -0.170)"
       },
       "_sk": {
         "v": 0,
@@ -3968,7 +6268,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.42354281949347605,
+      "_score": -0.3515513805863931,
       "_rk": [
         14,
         23
@@ -3988,8 +6288,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.366951729295861,
-        "l": "Quality -8.4 (Philadelphia Flyers -0.217 vs Calgary Flames -0.371)"
+        "v": -8.098491317961855,
+        "l": "Quality -8.1 (Philadelphia Flyers -0.198 vs Calgary Flames -0.371)"
       },
       "_sk": {
         "v": 0,
@@ -4003,9 +6303,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.366951729295861,
+      "_score": -8.098491317961855,
       "_rk": [
-        25,
+        24,
         30
       ]
     },
@@ -4042,6 +6342,37 @@
         23,
         7
       ]
+    },
+    {
+      "id": 60309070,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:00",
+      "name": "East Texas A&M University @ SMU",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 3416473,
@@ -4092,8 +6423,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.513388743216593,
-        "l": "Quality -2.5 (Pittsburgh Penguins -0.009 vs Anaheim Ducks -0.168)"
+        "v": -2.086535724452035,
+        "l": "Quality -2.1 (Pittsburgh Penguins -0.011 vs Anaheim Ducks -0.136)"
       },
       "_sk": {
         "v": 0,
@@ -4107,10 +6438,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.513388743216593,
+      "_score": -2.086535724452035,
       "_rk": [
         17,
-        22
+        21
       ]
     },
     {
@@ -4389,6 +6720,16 @@
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Abu Dhabi Championship",
+      "league": "DP World Tour",
+      "sport": "Golf",
+      "time": "01:30",
+      "date": "2026-11-08",
+      "channel": "Fubo Sports, Golf Channel USA, Golf Channel Canada",
+      "reason": "cutoff",
+      "detail": "starts 01:30 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Hong Kong Tennis Open",
       "league": "WTA",
       "sport": "Tennis",
@@ -4477,6 +6818,16 @@
       "channel": "TSN+, TSN3",
       "reason": "channel",
       "detail": "airs on TSN+, TSN3 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Levadiakos @ AEK Athens",
+      "league": "Super League 1",
+      "sport": "Soccer",
+      "time": "10:00",
+      "date": "2026-11-08",
+      "channel": "Odyssey",
+      "reason": "channel",
+      "detail": "airs on Odyssey \u2014 none in channels.txt"
     },
     {
       "name": "Surrey 89ers @ Bristol Flyers",
@@ -4584,9 +6935,9 @@
       "sport": "Hockey",
       "time": "13:00",
       "date": "2026-11-08",
-      "channel": "TSN+, TSN4",
+      "channel": "TSN+, TSN4, RDS Info",
       "reason": "channel",
-      "detail": "airs on TSN+, TSN4 \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN4, RDS Info \u2014 none in channels.txt"
     },
     {
       "name": "Murcia @ Real Madrid",
@@ -4789,6 +7140,36 @@
       "detail": "airs on MW+ \u2014 none in channels.txt"
     },
     {
+      "name": "Green Bay @ St. Thomas (MN)",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "14:00",
+      "date": "2026-11-08",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minot State @ North Dakota",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "14:00",
+      "date": "2026-11-08",
+      "channel": "Summit League Network, Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Summit League Network, Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Indiana State @ Rutgers",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "14:00",
+      "date": "2026-11-08",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "Windsor Spitfires @ Kingston Frontenacs",
       "league": "OHL",
       "sport": "Hockey",
@@ -4912,6 +7293,26 @@
       "name": "Minnesota @ Iowa",
       "league": "Women's College Volleyball",
       "sport": "Volleyball",
+      "time": "15:00",
+      "date": "2026-11-08",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Idaho State @ Air Force",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "15:00",
+      "date": "2026-11-08",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Grambling State @ Wisconsin",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
       "time": "15:00",
       "date": "2026-11-08",
       "channel": "Big Ten Plus",
@@ -5159,6 +7560,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "St. Mary's @ Nevada",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "16:30",
+      "date": "2026-11-08",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
       "name": "Iowa Wild @ Rockford IceHogs",
       "league": "AHL",
       "sport": "Hockey",
@@ -5197,6 +7608,26 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Incarnate Word @ UTEP",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "18:00",
+      "date": "2026-11-08",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Norfolk State @ William & Mary",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "18:00",
+      "date": "2026-11-08",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
       "name": "Brantford Bulldogs @ Oshawa Generals",
@@ -5257,6 +7688,16 @@
       "channel": "Big Ten Plus",
       "reason": "channel",
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "UT Arlington @ Hawai'i",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "23:00",
+      "date": "2026-11-08",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
     }
   ],
   "areas": {
@@ -6023,6 +8464,7 @@
       "seen": [
         "A-League Women (Australia)",
         "Liga MX Femenil (Mexico)",
+        "NWSL (USA)",
         "Serie A Women (Italy)",
         "USL Super League (USA)",
         "Women's Super League (Switzerland)"
@@ -6242,6 +8684,18 @@
       "country": "Spain",
       "confederation": "UEFA"
     },
+    "nwsl": {
+      "rating": 85.76,
+      "area": "womens_club_league",
+      "rosterMatched": 14,
+      "rosterTotal": 16,
+      "rosterCode": "usa.nwsl",
+      "fixturesResolved": 4,
+      "fixturesSeen": 4,
+      "gfrLeague": "NWSL",
+      "country": "USA",
+      "confederation": "CONCACAF"
+    },
     "usl-super-league": {
       "rating": 62.73,
       "area": "womens_club_league",
@@ -6260,8 +8714,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 8,
-      "fixturesSeen": 8,
+      "fixturesResolved": 9,
+      "fixturesSeen": 9,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -6376,13 +8830,6 @@
       "fixturesSeen": 2,
       "rosterCode": "sco.1"
     },
-    "nwsl": {
-      "rating": 85.76,
-      "area": "womens_club_league",
-      "gfrLeague": "NWSL",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
     "ekstraklasa": {
       "rating": 79.73,
       "area": "mens_club_league",
@@ -6399,7 +8846,10 @@
       "country": "Scotland",
       "confederation": "UEFA",
       "rosterMatched": 9,
-      "rosterTotal": 10
+      "rosterTotal": 10,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "rosterCode": "sco.2"
     },
     "championship": {
       "rating": 81.12,
@@ -6536,8 +8986,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 9,
-      "fixturesSeen": 9,
+      "fixturesResolved": 10,
+      "fixturesSeen": 10,
       "rosterCode": "fra.1"
     },
     "serie-b": {
@@ -6830,7 +9280,7 @@
       "rosterTotal": 80,
       "rosterCode": "eng.fa",
       "fixturesResolved": 2,
-      "fixturesSeen": 6,
+      "fixturesSeen": 7,
       "confederation": "UEFA"
     }
   },
