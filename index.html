@@ -344,6 +344,36 @@ let SPECTRUM = {};
 // fall through to their full name.
 let CH_DISPLAY = {};
 const chLabel = ch => CH_DISPLAY[String(ch||"").trim()] || ch;
+
+// The normalized score, as a fixed block down the LEFT edge of a tile.
+//
+// It used to sit at the end of the second row, after the channel list — which
+// meant it was last in a nowrap line and the first thing to be clipped, and it
+// clipped exactly when the channel list was long, which is every NBA League
+// Pass game. Moving it left makes it a column you can read down a lane without
+// reading any of the text beside it.
+//
+// Width is sized for "100.0", the only value that is ever three digits, so the
+// column never shifts. The "/100" that used to follow is dropped: it was
+// identical on every event and cost ~18px to say so each time. The detail
+// panel still spells out "Normalized score … /100" for anyone who wants it.
+const SCORE_W = 38, SCORE_W_SM = 35;
+function ScoreBlock({ds, sm}) {
+  return (
+    <div style={{flex:`0 0 ${sm?SCORE_W_SM:SCORE_W}px`,alignSelf:"stretch",
+      display:"flex",alignItems:"center",justifyContent:"center",
+      borderRight:"1px solid rgba(255,255,255,0.14)"}}>
+      <span style={{fontSize:sm?10:11,fontWeight:800,color:"#fff",opacity:0.92,
+        letterSpacing:"-0.02em"}}>{ds?.toFixed(1) ?? "-"}</span>
+    </div>);
+}
+// Shared by all three tile shapes. blkStyle lays a tile out as a centred
+// column; the score block needs a ROW with the text stacked beside it, so the
+// direction and padding are overridden here rather than in blkStyle, which is
+// still used as-is by anything without a score. Women's tiles keep 3px so
+// nothing sits under the inset pink ring.
+const tileRow = c => ({flexDirection:"row",alignItems:"stretch",
+  padding:c.womens?"0 3px":0});
 let CHANNEL_PRIORITY = [];
 
 async function loadChannels() {
@@ -1914,17 +1944,23 @@ function App(){
                           )}
                           {le.map(a=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;
                             const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
-                            return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),height:30,top:2,
-                              left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3,padding:"1px 5px"}}
+                            return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),...tileRow(c),height:30,top:2,
+                              left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}}
                               className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}>
-                              <div style={{fontSize:9,fontWeight:600,color:c.womens?"#fbcfe8":"#f1f5f9",whiteSpace:"nowrap",
-                                overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.2}}>
-                                {evName(a)}
-                              </div>
-                              {/* where to tune — the whole point of the grid */}
-                              <div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap",
-                                overflow:"hidden",lineHeight:1.2}}>
-                                {m2t(a.startMin)} · <ChBadges channel={a.channel}/>
+                              {/* one point smaller than the full-height tile, matching the
+                                  9/8 type it sits beside */}
+                              <ScoreBlock ds={a.ds} sm/>
+                              <div style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",
+                                justifyContent:"center",padding:"1px 5px"}}>
+                                <div style={{fontSize:9,fontWeight:600,color:c.womens?"#fbcfe8":"#f1f5f9",whiteSpace:"nowrap",
+                                  overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.2}}>
+                                  {evName(a)}
+                                </div>
+                                {/* where to tune — the whole point of the grid */}
+                                <div style={{fontSize:8,color:"rgba(255,255,255,0.55)",whiteSpace:"nowrap",
+                                  overflow:"hidden",lineHeight:1.2}}>
+                                  {m2t(a.startMin)} · <ChBadges channel={a.channel}/>
+                                </div>
                               </div>
                             </div>);})}
                         </div>
@@ -1953,8 +1989,8 @@ function App(){
                       <span style={{fontFamily:"monospace",fontSize:8,fontWeight:700,color:f.fc.tx}}>{f.name}</span>
                     </div>
                   ))}
-                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><div style={{fontSize:10,fontWeight:600,color:c.womens?"#fbcfe8":"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {evName(m)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div>);})}
-                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><div style={{fontSize:10,fontWeight:600,color:c.womens?"#fbcfe8":"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{evName(a)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/> · {a.ds?.toFixed(1)??"-"}/100</div></div>);})}
+                  {mb.map((m,i)=>{if(!m)return null;const c=sc(m);return(<div key={`m${i}`} style={{...blkStyle(c,false),...tileRow(c),left:clampedLeft(m.startMin),width:clampedWidth(m.startMin,m.dur),zIndex:2,border:`2px solid ${c.br}`}} onClick={()=>setSel(sel===m.srcId?null:m.srcId)}><ScoreBlock ds={m.ds}/><div style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 6px"}}><div style={{fontSize:10,fontWeight:600,color:c.womens?"#fbcfe8":"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>📡 {evName(m)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",overflow:"hidden",marginTop:1}}>{m2t(m.startMin)} · <ChBadges channel={m.channel}/></div></div></div>);})}
+                  {te.map((a,i)=>{if(!a)return null;const c=sc(a);const isSel=sel===a.id;const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;return(<div key={a.id} style={{...blkStyle(c,isSel,isNow),...tileRow(c),left:clampedLeft(a.startMin),width:clampedWidth(a.startMin,a.dur),zIndex:3}} className={isNow?"now-playing":""} onClick={()=>setSel(isSel?null:a.id)}><ScoreBlock ds={a.ds}/><div style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",justifyContent:"center",padding:"0 6px"}}><div style={{fontSize:10,fontWeight:600,color:c.womens?"#fbcfe8":"#f1f5f9",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",lineHeight:1.3}}>{evName(a)}</div><div style={{fontSize:9,color:"rgba(255,255,255,0.5)",whiteSpace:"nowrap",overflow:"hidden",marginTop:1}}>{m2t(a.startMin)} · <ChBadges channel={a.channel}/></div></div></div>);})}
                 </div>
               </div>
             );
