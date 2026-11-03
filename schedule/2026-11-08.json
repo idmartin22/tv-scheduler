@@ -822,8 +822,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 1.0770855332629354,
-        "l": "Quality +1.1 (Cincinnati Bengals 3.800 vs Atlanta Falcons -3.900)"
+        "v": 1.216287678476997,
+        "l": "Quality +1.2 (Cincinnati Bengals 3.800 vs Atlanta Falcons -3.900)"
       },
       "_sk": {
         "v": 0,
@@ -837,7 +837,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.0770855332629354,
+      "_score": 1.216287678476997,
       "_rk": [
         5,
         24
@@ -890,7 +890,8 @@
       "sport": "Soccer",
       "league": "Women's Super League",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "CBS Sports Golazo Network"
       ],
       "dur": 120,
       "_st": {
@@ -1453,6 +1454,7 @@
       "league": "Serie A",
       "ch": [
         "Paramount+ (US)",
+        "CBS Sports Golazo Network",
         "NBC Universo"
       ],
       "dur": 120,
@@ -1483,20 +1485,20 @@
       ]
     },
     {
-      "id": 22627553,
-      "lgId": 1149,
-      "lgSlug": "ncaa-basketball",
+      "id": 14159693,
+      "lgId": 409,
+      "lgSlug": "serie-a-women",
       "time": "12:00",
-      "name": "Iona @ St. John's",
-      "sport": "Basketball",
-      "league": "Men's College Basketball",
+      "name": "Napoli @ Lazio",
+      "sport": "Soccer",
+      "league": "Serie A Women",
       "ch": [
-        "Peacock"
+        "CBS Sports Golazo Network"
       ],
       "dur": 120,
       "_st": {
-        "v": 4.7980195100375935,
-        "l": "Quality +4.8 (Iona Gaels -2.800 vs St. John's Red Storm 13.500)"
+        "v": -3.9421338155515633,
+        "l": "Quality -3.9 (GFR 74.8-74.3 vs tier1 baseline 151.7 (Serie A Women (Italy)))"
       },
       "_sk": {
         "v": 0,
@@ -1510,10 +1512,48 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.7980195100375935,
+      "_score": -3.9421338155515633,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "",
+      "lgR": 75.86,
       "_rk": [
-        200,
-        29
+        86,
+        90
+      ]
+    },
+    {
+      "id": 22627553,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "12:00",
+      "name": "Iona @ St. John's",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 4.418831564824979,
+        "l": "Quality +4.4 (Iona Gaels -3.100 vs St. John's Red Storm 12.900)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.418831564824979,
+      "_rk": [
+        206,
+        31
       ]
     },
     {
@@ -1973,8 +2013,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 1.2460401267159449,
-        "l": "Quality +1.2 (Denver Broncos 2.400 vs Carolina Panthers -2.400)"
+        "v": 1.3855103120042314,
+        "l": "Quality +1.4 (Denver Broncos 2.300 vs Carolina Panthers -2.300)"
       },
       "_sk": {
         "v": 0,
@@ -1988,10 +2028,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.2460401267159449,
+      "_score": 1.3855103120042314,
       "_rk": [
-        9,
-        19
+        10,
+        18
       ]
     },
     {
@@ -2008,8 +2048,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.06335797254487835,
-        "l": "Quality +0.1 (Dallas Cowboys 1.700 vs Indianapolis Colts -2.400)"
+        "v": 0.2009518773135915,
+        "l": "Quality +0.2 (Dallas Cowboys 1.700 vs Indianapolis Colts -2.400)"
       },
       "_sk": {
         "v": 0,
@@ -2023,10 +2063,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.06335797254487835,
+      "_score": 0.2009518773135915,
       "_rk": [
         13,
-        19
+        20
       ]
     },
     {
@@ -2044,8 +2084,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.570221752903907,
-        "l": "Quality +0.6 (New York Jets -4.000 vs Kansas City Chiefs 3.600)"
+        "v": 0.7086197778952943,
+        "l": "Quality +0.7 (New York Jets -3.900 vs Kansas City Chiefs 3.500)"
       },
       "_sk": {
         "v": 0,
@@ -2059,10 +2099,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.570221752903907,
+      "_score": 0.7086197778952943,
       "_rk": [
-        25,
-        8
+        24,
+        7
       ]
     },
     {
@@ -2080,7 +2120,7 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -6.730954676952749,
+        "v": -6.699266503667481,
         "l": "Quality -6.7 (Detroit Lions 2.200 vs Miami Dolphins -7.300)"
       },
       "_sk": {
@@ -2095,9 +2135,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.730954676952749,
+      "_score": -6.699266503667481,
       "_rk": [
-        11,
+        12,
         32
       ]
     },
@@ -2116,8 +2156,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -11.668273866923823,
-        "l": "Quality -11.7 (Cleveland Browns -5.100 vs New Orleans Saints -3.200)"
+        "v": -11.863080684596577,
+        "l": "Quality -11.9 (Cleveland Browns -5.200 vs New Orleans Saints -3.200)"
       },
       "_sk": {
         "v": 0,
@@ -2131,7 +2171,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.668273866923823,
+      "_score": -11.863080684596577,
       "_rk": [
         28,
         23
@@ -2151,8 +2191,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": -15.525554484088719,
-        "l": "Quality -15.5 (New York Giants -4.400 vs Philadelphia Eagles -6.400)"
+        "v": -15.149144254278731,
+        "l": "Quality -15.1 (New York Giants -4.200 vs Philadelphia Eagles -6.300)"
       },
       "_sk": {
         "v": 0,
@@ -2166,9 +2206,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -15.525554484088719,
+      "_score": -15.149144254278731,
       "_rk": [
-        27,
+        26,
         31
       ]
     },
@@ -2186,8 +2226,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 2.7666314677930304,
-        "l": "Quality +2.8 (Los Angeles Rams 3.800 vs Washington Commanders -2.900)"
+        "v": 2.9085140137493397,
+        "l": "Quality +2.9 (Los Angeles Rams 3.800 vs Washington Commanders -2.900)"
       },
       "_sk": {
         "v": 0,
@@ -2201,7 +2241,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.7666314677930304,
+      "_score": 2.9085140137493397,
       "_rk": [
         5,
         22
@@ -2220,8 +2260,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 4.125610093010407,
-        "l": "Quality +4.1 (Florida Panthers 0.025 vs Boston Bruins 0.199)"
+        "v": 4.040876477248803,
+        "l": "Quality +4.0 (Florida Panthers -0.001 vs Boston Bruins 0.222)"
       },
       "_sk": {
         "v": 0,
@@ -2235,7 +2275,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.125610093010407,
+      "_score": 4.040876477248803,
       "_rk": [
         16,
         9
@@ -2286,7 +2326,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 12.735336757009115,
+        "v": 12.69910964751799,
         "l": "Quality +12.7 (Arkansas Razorbacks 15.000 vs Virginia Cavaliers 13.400)"
       },
       "_sk": {
@@ -2301,10 +2341,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.735336757009115,
+      "_score": 12.69910964751799,
       "_rk": [
         20,
-        31
+        27
       ]
     },
     {
@@ -2910,8 +2950,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -15.65721840020178,
-        "l": "Quality -15.7 (Milwaukee Panthers -4.200 vs unlisted opponent -20.460 (not in BPI pool))"
+        "v": -16.066803475527223,
+        "l": "Quality -16.1 (Milwaukee Panthers -4.900 vs unlisted opponent -20.430 (not in BPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -2925,10 +2965,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -15.65721840020178,
+      "_score": -16.066803475527223,
       "_rk": [
         null,
-        236
+        247
       ]
     },
     {
@@ -2945,8 +2985,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -3.238386807796344,
-        "l": "Quality -3.2 (Princeton Tigers 1.500 vs Siena Saints -6.600)"
+        "v": -3.6169934069772514,
+        "l": "Quality -3.6 (Princeton Tigers 0.800 vs Siena Saints -6.600)"
       },
       "_sk": {
         "v": 0,
@@ -2960,10 +3000,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.238386807796344,
+      "_score": -3.6169934069772514,
       "_rk": [
-        129,
-        291
+        140,
+        288
       ]
     },
     {
@@ -2980,8 +3020,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -0.38129365003435767,
-        "l": "Quality -0.4 (Southeast Missouri State Redhawks -5.400 vs South Carolina Gamecocks 4.800)"
+        "v": 0.011586778875472338,
+        "l": "Quality +0.0 (Southeast Missouri State Redhawks -4.900 vs South Carolina Gamecocks 4.800)"
       },
       "_sk": {
         "v": 0,
@@ -2995,10 +3035,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.38129365003435767,
+      "_score": 0.011586778875472338,
       "_rk": [
-        271,
-        93
+        247,
+        97
       ]
     },
     {
@@ -3015,8 +3055,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -6.34944380180384,
-        "l": "Quality -6.3 (Marist Red Foxes -4.400 vs UMass Lowell River Hawks -5.600)"
+        "v": -6.039383486879448,
+        "l": "Quality -6.0 (Marist Red Foxes -5.700 vs UMass Lowell River Hawks -3.900)"
       },
       "_sk": {
         "v": 0,
@@ -3030,10 +3070,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.34944380180384,
+      "_score": -6.039383486879448,
       "_rk": [
-        242,
-        273
+        272,
+        228
       ]
     },
     {
@@ -3050,8 +3090,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -10.285883263609243,
-        "l": "Quality -10.3 (Sacred Heart Pioneers -6.800 vs New Hampshire Wildcats -9.400)"
+        "v": -8.270532244684102,
+        "l": "Quality -8.3 (Sacred Heart Pioneers -5.100 vs New Hampshire Wildcats -8.000)"
       },
       "_sk": {
         "v": 0,
@@ -3065,10 +3105,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.285883263609243,
+      "_score": -8.270532244684102,
       "_rk": [
-        293,
-        335
+        257,
+        307
       ]
     },
     {
@@ -3085,8 +3125,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -11.42872052671404,
-        "l": "Quality -11.4 (Manhattan Jaspers -9.400 vs Maine Black Bears -8.600)"
+        "v": -11.521634720342316,
+        "l": "Quality -11.5 (Manhattan Jaspers -9.400 vs Maine Black Bears -8.800)"
       },
       "_sk": {
         "v": 0,
@@ -3100,10 +3140,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.42872052671404,
+      "_score": -11.521634720342316,
       "_rk": [
-        335,
-        322
+        329,
+        318
       ]
     },
     {
@@ -3120,7 +3160,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -6.34944380180384,
+        "v": -6.294371916342838,
         "l": "Quality -6.3 (Fairfield Stags -2.000 vs Bryant Bulldogs -8.000)"
       },
       "_sk": {
@@ -3135,10 +3175,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.34944380180384,
+      "_score": -6.294371916342838,
       "_rk": [
-        183,
-        314
+        179,
+        307
       ]
     },
     {
@@ -3155,8 +3195,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -15.085799768649384,
-        "l": "Quality -15.1 (Navy Midshipmen -3.300 vs unlisted opponent -20.460 (not in BPI pool))"
+        "v": -17.214251408112474,
+        "l": "Quality -17.2 (Navy Midshipmen -6.700 vs unlisted opponent -20.430 (not in BPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -3170,10 +3210,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -15.085799768649384,
+      "_score": -17.214251408112474,
       "_rk": [
         null,
-        215
+        290
       ]
     },
     {
@@ -3818,8 +3858,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -16.038164154570044,
-        "l": "Quality -16.0 (Wofford Terriers -4.800 vs unlisted opponent -20.460 (not in BPI pool))"
+        "v": -16.003056368161378,
+        "l": "Quality -16.0 (Wofford Terriers -4.800 vs unlisted opponent -20.430 (not in BPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -3833,10 +3873,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -16.038164154570044,
+      "_score": -16.003056368161378,
       "_rk": [
         null,
-        253
+        243
       ]
     },
     {
@@ -3853,8 +3893,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -7.238317228663126,
-        "l": "Quality -7.2 (Merrimack Warriors -3.500 vs UAlbany Great Danes -7.900)"
+        "v": -9.609221499366896,
+        "l": "Quality -9.6 (Merrimack Warriors -4.900 vs UAlbany Great Danes -10.300)"
       },
       "_sk": {
         "v": 0,
@@ -3868,10 +3908,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.238317228663126,
+      "_score": -9.609221499366896,
       "_rk": [
-        219,
-        311
+        247,
+        340
       ]
     },
     {
@@ -3888,8 +3928,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -4.762169825269404,
-        "l": "Quality -4.8 (Campbell Fighting Camels -6.300 vs Western Michigan Broncos -1.200)"
+        "v": -5.0831768763917395,
+        "l": "Quality -5.1 (Campbell Fighting Camels -5.900 vs Western Michigan Broncos -2.200)"
       },
       "_sk": {
         "v": 0,
@@ -3903,10 +3943,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.762169825269404,
+      "_score": -5.0831768763917395,
       "_rk": [
-        285,
-        167
+        275,
+        185
       ]
     },
     {
@@ -3923,8 +3963,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -4.190751193717006,
-        "l": "Quality -4.2 (Quinnipiac Bobcats -4.200 vs Vermont Catamounts -2.400)"
+        "v": -4.445705802733266,
+        "l": "Quality -4.4 (Quinnipiac Bobcats -5.000 vs Vermont Catamounts -2.100)"
       },
       "_sk": {
         "v": 0,
@@ -3938,10 +3978,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.190751193717006,
+      "_score": -4.445705802733266,
       "_rk": [
-        236,
-        192
+        254,
+        183
       ]
     },
     {
@@ -3958,8 +3998,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -9.079555041443072,
-        "l": "Quality -9.1 (Central Connecticut Blue Devils -7.100 vs Dartmouth Big Green -7.200)"
+        "v": -8.079290922586562,
+        "l": "Quality -8.1 (Central Connecticut Blue Devils -6.900 vs Dartmouth Big Green -5.900)"
       },
       "_sk": {
         "v": 0,
@@ -3973,10 +4013,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.079555041443072,
+      "_score": -8.079290922586562,
       "_rk": [
-        299,
-        302
+        294,
+        275
       ]
     },
     {
@@ -3993,8 +4033,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -5.524061334005933,
-        "l": "Quality -5.5 (Brown Bears -3.600 vs Lehigh Mountain Hawks -5.100)"
+        "v": -6.549360345806226,
+        "l": "Quality -6.5 (Brown Bears -5.000 vs Lehigh Mountain Hawks -5.400)"
       },
       "_sk": {
         "v": 0,
@@ -4008,10 +4048,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.524061334005933,
+      "_score": -6.549360345806226,
       "_rk": [
-        222,
-        264
+        254,
+        265
       ]
     },
     {
@@ -4027,8 +4067,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 4.61864510897609,
-        "l": "Quality +4.6 (Butler Bulldogs 4.000 vs Boise State Broncos 6.300)"
+        "v": 5.131113550432978,
+        "l": "Quality +5.1 (Butler Bulldogs 5.100 vs Boise State Broncos 6.300)"
       },
       "_sk": {
         "v": 0,
@@ -4042,10 +4082,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.61864510897609,
+      "_score": 5.131113550432978,
       "_rk": [
-        98,
-        77
+        91,
+        81
       ]
     },
     {
@@ -4651,8 +4691,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -13.308052914930812,
-        "l": "Quality -13.3 (Cornell Big Red -0.500 vs unlisted opponent -20.460 (not in BPI pool))"
+        "v": -13.58066628825918,
+        "l": "Quality -13.6 (Cornell Big Red -1.000 vs unlisted opponent -20.430 (not in BPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -4666,10 +4706,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.308052914930812,
+      "_score": -13.58066628825918,
       "_rk": [
         null,
-        156
+        164
       ]
     },
     {
@@ -4783,6 +4823,7 @@
       "league": "Serie A",
       "ch": [
         "Paramount+ (US)",
+        "CBS Sports Golazo Network",
         "Telemundo"
       ],
       "dur": 120,
@@ -5292,8 +5333,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -2.349513380937059,
-        "l": "Quality -2.3 (Southern Jaguars -6.800 vs Drake Bulldogs 3.100)"
+        "v": -1.8320744007335281,
+        "l": "Quality -1.8 (Southern Jaguars -6.100 vs Drake Bulldogs 3.100)"
       },
       "_sk": {
         "v": 0,
@@ -5307,10 +5348,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.349513380937059,
+      "_score": -1.8320744007335281,
       "_rk": [
-        293,
-        106
+        282,
+        112
       ]
     },
     {
@@ -5327,8 +5368,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -2.920932012489457,
-        "l": "Quality -2.9 (Western Kentucky Hilltoppers 1.800 vs Tennessee Tech Golden Eagles -6.400)"
+        "v": -2.0233157228310703,
+        "l": "Quality -2.0 (Western Kentucky Hilltoppers 2.700 vs Tennessee Tech Golden Eagles -6.000)"
       },
       "_sk": {
         "v": 0,
@@ -5342,10 +5383,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.920932012489457,
+      "_score": -2.0233157228310703,
       "_rk": [
-        124,
-        287
+        113,
+        280
       ]
     },
     {
@@ -5579,8 +5620,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 9.463118150842622,
-        "l": "Quality +9.5 (Vegas Golden Knights 0.251 vs Buffalo Sabres 0.263)"
+        "v": 9.075329020364268,
+        "l": "Quality +9.1 (Vegas Golden Knights 0.238 vs Buffalo Sabres 0.260)"
       },
       "_sk": {
         "v": 0,
@@ -5594,7 +5635,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.463118150842622,
+      "_score": 9.075329020364268,
       "_rk": [
         8,
         7
@@ -5614,8 +5655,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.435052345870491,
-        "l": "Quality -2.4 (Philadelphia 76ers 4.900 vs Chicago Bulls -7.000)"
+        "v": -2.522039095438866,
+        "l": "Quality -2.5 (Philadelphia 76ers 4.600 vs Chicago Bulls -6.800)"
       },
       "_sk": {
         "v": 0,
@@ -5629,7 +5670,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.435052345870491,
+      "_score": -2.522039095438866,
       "_rk": [
         6,
         28
@@ -5834,8 +5875,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -10.412865181731998,
-        "l": "Quality -10.4 (Saint Peter's Peacocks -6.500 vs NJIT Highlanders -9.900)"
+        "v": -11.266646290878924,
+        "l": "Quality -11.3 (Saint Peter's Peacocks -7.100 vs NJIT Highlanders -10.700)"
       },
       "_sk": {
         "v": 0,
@@ -5849,10 +5890,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.412865181731998,
+      "_score": -11.266646290878924,
       "_rk": [
-        290,
-        341
+        296,
+        346
       ]
     },
     {
@@ -5869,8 +5910,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -13.079485462309854,
-        "l": "Quality -13.1 (Rider Broncs -10.600 vs Binghamton Bearcats -10.000)"
+        "v": -14.135266122342049,
+        "l": "Quality -14.1 (Rider Broncs -11.700 vs Binghamton Bearcats -10.600)"
       },
       "_sk": {
         "v": 0,
@@ -5884,9 +5925,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.079485462309854,
+      "_score": -14.135266122342049,
       "_rk": [
-        353,
+        354,
         344
       ]
     },
@@ -5966,8 +6007,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -16.1651460726928,
-        "l": "Quality -16.2 (Idaho Vandals -5.000 vs unlisted opponent -20.460 (not in BPI pool))"
+        "v": -16.066803475527223,
+        "l": "Quality -16.1 (Idaho Vandals -4.900 vs unlisted opponent -20.430 (not in BPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -5981,10 +6022,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -16.1651460726928,
+      "_score": -16.066803475527223,
       "_rk": [
         null,
-        260
+        247
       ]
     },
     {
@@ -6002,8 +6043,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 0.06335797254487797,
-        "l": "Quality +0.1 (Houston Texans 1.500 vs Los Angeles Chargers -2.200)"
+        "v": 0.03172924378635744,
+        "l": "Quality +0.0 (Houston Texans 1.500 vs Los Angeles Chargers -2.300)"
       },
       "_sk": {
         "v": 0,
@@ -6017,7 +6058,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.06335797254487797,
+      "_score": 0.03172924378635744,
       "_rk": [
         15,
         18
@@ -6038,8 +6079,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 6.990496304118268,
-        "l": "Quality +7.0 (Las Vegas Raiders -2.600 vs San Francisco 49ers 6.000)"
+        "v": 6.969857218402962,
+        "l": "Quality +7.0 (Las Vegas Raiders -2.600 vs San Francisco 49ers 5.900)"
       },
       "_sk": {
         "v": 0,
@@ -6053,7 +6094,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.990496304118268,
+      "_score": 6.969857218402962,
       "_rk": [
         21,
         1
@@ -6073,8 +6114,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 8.004223864836327,
-        "l": "Quality +8.0 (Green Bay Packers 1.600 vs New England Patriots 2.400)"
+        "v": 8.154415653093603,
+        "l": "Quality +8.2 (Green Bay Packers 1.600 vs New England Patriots 2.400)"
       },
       "_sk": {
         "v": 0,
@@ -6088,7 +6129,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.004223864836327,
+      "_score": 8.154415653093603,
       "_rk": [
         14,
         9
@@ -6108,8 +6149,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 1.5839493136219642,
-        "l": "Quality +1.6 (Arizona Cardinals -4.100 vs Seattle Seahawks 4.300)"
+        "v": -1.3789731051344734,
+        "l": "Quality -1.4 (Arizona Cardinals -5.100 vs Seattle Seahawks 3.400)"
       },
       "_sk": {
         "v": 0,
@@ -6123,10 +6164,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.5839493136219642,
+      "_score": -1.3789731051344734,
       "_rk": [
-        26,
-        4
+        27,
+        8
       ]
     },
     {
@@ -6206,8 +6247,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 1.6589674914612853,
-        "l": "Quality +1.7 (Richmond Spiders 1.900 vs Temple Owls 1.800)"
+        "v": 1.9703622392974753,
+        "l": "Quality +2.0 (Richmond Spiders 2.600 vs Temple Owls 1.700)"
       },
       "_sk": {
         "v": 0,
@@ -6221,10 +6262,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.6589674914612853,
+      "_score": 1.9703622392974753,
       "_rk": [
-        120,
-        124
+        114,
+        122
       ]
     },
     {
@@ -6334,8 +6375,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 13.115622241835833,
-        "l": "Quality +13.1 (Los Angeles Lakers 3.300 vs Detroit Pistons 6.600)"
+        "v": 14.056731202161188,
+        "l": "Quality +14.1 (Los Angeles Lakers 3.900 vs Detroit Pistons 6.500)"
       },
       "_sk": {
         "v": 0,
@@ -6349,9 +6390,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 13.115622241835833,
+      "_score": 14.056731202161188,
       "_rk": [
-        10,
+        9,
         2
       ]
     },
@@ -6369,8 +6410,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -13.68899866929908,
-        "l": "Quality -13.7 (North Dakota State Bison -1.100 vs unlisted opponent -20.460 (not in BPI pool))"
+        "v": -14.218137361917654,
+        "l": "Quality -14.2 (North Dakota State Bison -2.000 vs unlisted opponent -20.430 (not in BPI pool))"
       },
       "_sk": {
         "v": 0,
@@ -6384,9 +6425,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.68899866929908,
+      "_score": -14.218137361917654,
       "_rk": [
-        165,
+        179,
         null
       ]
     },
@@ -6541,8 +6582,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.3515513805863931,
-        "l": "Quality -0.4 (New Jersey Devils 0.145 vs Toronto Maple Leafs -0.170)"
+        "v": -0.19164457686156816,
+        "l": "Quality -0.2 (New Jersey Devils 0.157 vs Toronto Maple Leafs -0.171)"
       },
       "_sk": {
         "v": 0,
@@ -6556,9 +6597,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.3515513805863931,
+      "_score": -0.19164457686156816,
       "_rk": [
-        14,
+        13,
         23
       ]
     },
@@ -6576,8 +6617,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.098491317961855,
-        "l": "Quality -8.1 (Philadelphia Flyers -0.198 vs Calgary Flames -0.371)"
+        "v": -7.652025324774904,
+        "l": "Quality -7.7 (Philadelphia Flyers -0.200 vs Calgary Flames -0.347)"
       },
       "_sk": {
         "v": 0,
@@ -6591,10 +6632,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.098491317961855,
+      "_score": -7.652025324774904,
       "_rk": [
-        24,
-        30
+        25,
+        29
       ]
     },
     {
@@ -6610,8 +6651,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.10856921287320624,
-        "l": "Quality -0.1 (Utah Jazz -4.400 vs Minnesota Timberwolves 4.300)"
+        "v": 0.5493021161638909,
+        "l": "Quality +0.5 (Utah Jazz -4.000 vs Minnesota Timberwolves 4.400)"
       },
       "_sk": {
         "v": 0,
@@ -6625,7 +6666,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.10856921287320624,
+      "_score": 0.5493021161638909,
       "_rk": [
         24,
         8
@@ -6707,8 +6748,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.716556804963163,
-        "l": "Quality -8.7 (Brooklyn Nets -6.800 vs Dallas Mavericks -0.700)"
+        "v": -8.501341510157149,
+        "l": "Quality -8.5 (Brooklyn Nets -6.600 vs Dallas Mavericks -0.800)"
       },
       "_sk": {
         "v": 0,
@@ -6722,10 +6763,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.716556804963163,
+      "_score": -8.501341510157149,
       "_rk": [
         27,
-        17
+        18
       ]
     },
     {
@@ -6743,8 +6784,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.086535724452035,
-        "l": "Quality -2.1 (Pittsburgh Penguins -0.011 vs Anaheim Ducks -0.136)"
+        "v": -2.1208841763971344,
+        "l": "Quality -2.1 (Pittsburgh Penguins -0.015 vs Anaheim Ducks -0.137)"
       },
       "_sk": {
         "v": 0,
@@ -6758,7 +6799,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.086535724452035,
+      "_score": -2.1208841763971344,
       "_rk": [
         17,
         21
@@ -6778,8 +6819,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.3187281892206273,
-        "l": "Quality -2.3 (Boston Celtics 5.200 vs Milwaukee Bucks -7.200)"
+        "v": -2.407052510540437,
+        "l": "Quality -2.4 (Boston Celtics 5.200 vs Milwaukee Bucks -7.300)"
       },
       "_sk": {
         "v": 0,
@@ -6793,7 +6834,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.3187281892206273,
+      "_score": -2.407052510540437,
       "_rk": [
         5,
         29
@@ -6844,8 +6885,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 11.214361140443508,
-        "l": "Quality +11.2 (Tampa Bay Buccaneers 2.200 vs Chicago Bears 3.700)"
+        "v": 13.231094658910632,
+        "l": "Quality +13.2 (Tampa Bay Buccaneers 2.300 vs Chicago Bears 4.700)"
       },
       "_sk": {
         "v": 0,
@@ -6859,48 +6900,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.214361140443508,
+      "_score": 13.231094658910632,
       "_rk": [
-        11,
-        7
-      ]
-    },
-    {
-      "id": 51100045,
-      "lgId": 452,
-      "lgSlug": "liga-mx",
-      "time": "21:00",
-      "name": "Guadalajara @ Le\u00f3n",
-      "sport": "Soccer",
-      "league": "Liga MX",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 11.888001935171747,
-        "l": "Quality +11.9 (GFR 84.5-80.8 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 11.888001935171747,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "mex.1",
-      "lgR": 80.06,
-      "_rk": [
-        111,
-        312
+        10,
+        4
       ]
     },
     {
@@ -6947,8 +6950,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -10.345094998061263,
-        "l": "Quality -10.3 (Miami Heat 1.100 vs Sacramento Kings -10.000)"
+        "v": -11.146032962821003,
+        "l": "Quality -11.1 (Miami Heat 0.400 vs Sacramento Kings -10.100)"
       },
       "_sk": {
         "v": 0,
@@ -6962,10 +6965,49 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.345094998061263,
+      "_score": -11.146032962821003,
       "_rk": [
         14,
         30
+      ]
+    },
+    {
+      "id": 99510988,
+      "lgId": 452,
+      "lgSlug": "liga-mx",
+      "time": "21:10",
+      "name": "Guadalajara @ Le\u00f3n",
+      "sport": "Soccer",
+      "league": "Liga MX",
+      "ch": [
+        "TUDN",
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 11.888001935171747,
+        "l": "Quality +11.9 (GFR 84.5-80.8 vs tier1 baseline 160.1 (Liga MX (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.888001935171747,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "mex.1",
+      "lgR": 80.06,
+      "_rk": [
+        111,
+        312
       ]
     },
     {
@@ -7435,9 +7477,9 @@
       "sport": "Basketball",
       "time": "14:00",
       "date": "2026-11-08",
-      "channel": "Peachtree Sports Network, NBAGLeague.com",
+      "channel": "Peachtree Sports Network, NBA App, NBAGLeague.com",
       "reason": "channel",
-      "detail": "airs on Peachtree Sports Network, NBAGLeague.com \u2014 none in channels.txt"
+      "detail": "airs on Peachtree Sports Network, NBA App, NBAGLeague.com \u2014 none in channels.txt"
     },
     {
       "name": "Illinois @ Indiana",
@@ -7540,6 +7582,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "Lan\u00fas @ Central C\u00f3rdoba SdE",
+      "league": "Primera Division",
+      "sport": "Soccer",
+      "time": "15:00",
+      "date": "2026-11-08",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
+    },
+    {
       "name": "Florida Everblades @ Jacksonville IceMen",
       "league": "ECHL",
       "sport": "Hockey",
@@ -7605,9 +7657,9 @@
       "sport": "Basketball",
       "time": "15:00",
       "date": "2026-11-08",
-      "channel": "NBAGLeague.com",
+      "channel": "NBA App, NBAGLeague.com",
       "reason": "channel",
-      "detail": "airs on NBAGLeague.com \u2014 none in channels.txt"
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
     },
     {
       "name": "Oklahoma City Blue @ Osceola Magic",
@@ -7615,9 +7667,9 @@
       "sport": "Basketball",
       "time": "15:00",
       "date": "2026-11-08",
-      "channel": "NBAGLeague.com",
+      "channel": "NBA App, NBAGLeague.com",
       "reason": "channel",
-      "detail": "airs on NBAGLeague.com \u2014 none in channels.txt"
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
     },
     {
       "name": "Minnesota @ Iowa",
@@ -7650,6 +7702,16 @@
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
+      "name": "WTA Finals",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "15:00",
+      "date": "2026-11-08",
+      "channel": "TSN+, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on TSN+, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Trenton Ironhawks @ Norfolk Admirals",
       "league": "ECHL",
       "sport": "Hockey",
@@ -7668,156 +7730,6 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "River Plate @ Aldosivi",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Hurac\u00e1n @ Argentinos Juniors",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Atl\u00e9tico Tucum\u00e1n @ Banfield",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Racing Club @ Barracas Central",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Defensa y Justicia @ Boca Juniors",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Lan\u00fas @ Central C\u00f3rdoba SdE",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Belgrano @ Gimnasia La Plata",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Independiente Rivadavia @ Gimnasia Mendoza",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Deportivo Riestra @ Independiente",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Newell's Old Boys @ Instituto",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Estudiantes R\u00edo Cuarto @ Rosario Central",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Platense @ San Lorenzo",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Estudiantes @ Talleres de C\u00f3rdoba",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Sarmiento @ Tigre",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "V\u00e9lez Sarsfield @ Uni\u00f3n",
-      "league": "Primera Division",
-      "sport": "Soccer",
-      "time": "16:00",
-      "date": "2026-11-08",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Cincinnati Cyclones @ Indy Fuel",
@@ -7865,9 +7777,9 @@
       "sport": "Basketball",
       "time": "16:00",
       "date": "2026-11-08",
-      "channel": "NBAGLeague.com",
+      "channel": "NBA App, NBAGLeague.com",
       "reason": "channel",
-      "detail": "airs on NBAGLeague.com \u2014 none in channels.txt"
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
     },
     {
       "name": "GSOC Masters",
@@ -7908,6 +7820,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Newell's Old Boys @ Instituto",
+      "league": "Primera Division",
+      "sport": "Soccer",
+      "time": "17:30",
+      "date": "2026-11-08",
+      "channel": "Fanatiz",
+      "reason": "channel",
+      "detail": "airs on Fanatiz \u2014 none in channels.txt"
     },
     {
       "name": "Brampton Steelheads @ Saginaw Spirit",
@@ -7995,9 +7917,9 @@
       "sport": "Basketball",
       "time": "19:30",
       "date": "2026-11-08",
-      "channel": "NBAGLeague.com",
+      "channel": "NBA App, NBAGLeague.com",
       "reason": "channel",
-      "detail": "airs on NBAGLeague.com \u2014 none in channels.txt"
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
     },
     {
       "name": "Choloma @ Marath\u00f3n",
@@ -9045,8 +8967,8 @@
     "serie-a-women": {
       "rating": 75.86,
       "area": "womens_club_league",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "gfrLeague": "Serie A Women",
       "country": "Italy",
       "confederation": "UEFA"
