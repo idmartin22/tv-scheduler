@@ -1154,7 +1154,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 84.9-37.9 (not rated yet) vs tier1 baseline 172.4 (LaLiga (Spain) \u2014 opponent not in GFR))"
+        "l": "Quality -20.0 (GFR 84.9-37.9 (not rated yet) vs tier1 baseline 172.3 (LaLiga (Spain) \u2014 opponent not in GFR))"
       },
       "_sk": {
         "v": 0,
@@ -1724,6 +1724,36 @@
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 34306954,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "17:30",
+      "name": "Northwestern @ West Virginia",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "CBS Sports Network"
       ],
       "dur": 150,
       "_st": {
@@ -3029,11 +3059,105 @@
       "_score": 0
     },
     {
+      "id": 54684615,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "18:00",
+      "name": "Bryant @ Rutgers",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "Big Ten Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.1308562197092087,
+        "l": "Quality -1.1 (Bryant Bulldogs -8.000 vs Rutgers Scarlet Knights 6.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.1308562197092087,
+      "_rk": [
+        307,
+        82
+      ]
+    },
+    {
       "id": 3458543,
       "lgId": 1799,
       "lgSlug": "lbprc",
       "time": "18:21",
       "name": "Gigantes de Carolina @ Cangrejeros",
+      "sport": "Baseball",
+      "league": "LBPRC",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 25775030,
+      "lgId": 1799,
+      "lgSlug": "lbprc",
+      "time": "18:21",
+      "name": "Indios de Mayaguez @ Criollos Caguas",
+      "sport": "Baseball",
+      "league": "LBPRC",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 4626305,
+      "lgId": 1799,
+      "lgSlug": "lbprc",
+      "time": "18:21",
+      "name": "San Juan @ Leones de Ponce",
       "sport": "Baseball",
       "league": "LBPRC",
       "ch": [
@@ -3215,6 +3339,4124 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 92750521,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "19:00",
+      "name": "New York Knicks @ Indiana Pacers",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -1.0331534309946018,
+        "l": "Quality -1.0 (New York Knicks 4.400 vs Indiana Pacers -5.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.0331534309946018,
+      "_rk": [
+        7,
+        25
+      ]
+    },
+    {
+      "id": 65653834,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "19:00",
+      "name": "Milwaukee Bucks @ Orlando Magic",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -9.12875867386276,
+        "l": "Quality -9.1 (Milwaukee Bucks -7.200 vs Orlando Magic -0.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -9.12875867386276,
+      "_rk": [
+        29,
+        16
+      ]
+    },
+    {
+      "id": 40519011,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "19:00",
+      "name": "Florida State @ Pittsburgh",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 6.094378062881999,
+        "l": "Quality +6.1 (Florida State Seminoles 8.000 vs Pittsburgh Panthers 8.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.094378062881999,
+      "_rk": [
+        41,
+        40
+      ]
+    },
+    {
+      "id": 19158067,
+      "lgId": 1204,
+      "lgSlug": "nba-g-league",
+      "time": "19:00",
+      "name": "College Park Skyhawks @ Long Island Nets",
+      "sport": "Basketball",
+      "league": "NBA G League",
+      "ch": [
+        "Roku Sports"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NBA G League not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 56796295,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "19:00",
+      "name": "Nicaragua @ Montserrat",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX Soccer Plus",
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.6843971631205674,
+        "l": "Quality -1.7 (Elo Nicaragua 1255 vs Montserrat 1024, CONCACAF baseline 2374)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.6843971631205674,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league",
+      "lgR": 1190.95,
+      "_rk": [
+        147,
+        182
+      ]
+    },
+    {
+      "id": 49892885,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Northern Iowa @ Michigan State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "FOX Sports 1",
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.380900109769485,
+        "l": "Quality +8.4 (Northern Iowa Panthers 0.900 vs Michigan State Spartans 17.800)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.380900109769485,
+      "_rk": [
+        137,
+        10
+      ]
+    },
+    {
+      "id": 82317066,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Troy @ NC State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ACC Network",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 4.641419685327479,
+        "l": "Quality +4.6 (Troy Trojans -2.000 vs NC State Wolfpack 12.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.641419685327479,
+      "_rk": [
+        179,
+        39
+      ]
+    },
+    {
+      "id": 1576714,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "University of Georgia @ North Carolina",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 9.760946456884987,
+        "l": "Quality +9.8 (Georgia Bulldogs 10.400 vs North Carolina Tar Heels 11.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 9.760946456884987,
+      "_rk": [
+        55,
+        49
+      ]
+    },
+    {
+      "id": 39408469,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Merrimack @ Florida",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "SEC Network",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 7.668618124161483,
+        "l": "Quality +7.7 (Merrimack Warriors -4.900 vs Florida Gators 22.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.668618124161483,
+      "_rk": [
+        247,
+        2
+      ]
+    },
+    {
+      "id": 44151149,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Northern Arizona @ Kentucky",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 3.572996706915478,
+        "l": "Quality +3.6 (Northern Arizona Lumberjacks -7.300 vs Kentucky Wildcats 15.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 3.572996706915478,
+      "_rk": [
+        298,
+        19
+      ]
+    },
+    {
+      "id": 39927050,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Tennessee State @ Tennessee",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 6.155018904744481,
+        "l": "Quality +6.2 (Tennessee State Tigers -5.400 vs Tennessee Volunteers 19.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.155018904744481,
+      "_rk": [
+        265,
+        4
+      ]
+    },
+    {
+      "id": 76533995,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Kentucky @ South Carolina",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 64213258,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Tennessee @ Georgia",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 80294533,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Missouri @ Oklahoma",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 44595242,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Virginia Tech @ NC State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 67647068,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Florida State @ Boston College",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 83181071,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:00",
+      "name": "Denver @ LSU",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 94464926,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Colgate @ Yale",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 63252282,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Harvard @ Princeton",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 45420427,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Cornell @ Brown",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 54345027,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Prairie View A&M @ Vanderbilt",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 2.326503232101476,
+        "l": "Quality +2.3 (Prairie View A&M Panthers -10.400 vs Vanderbilt Commodores 15.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 2.326503232101476,
+      "_rk": [
+        341,
+        18
+      ]
+    },
+    {
+      "id": 95074252,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Charlotte @ Rice",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 63591091,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Temple @ Wichita State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 4850639,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Fordham @ Davidson",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 49385356,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Bradley @ Belmont",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 25971485,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Drake @ Valparaiso",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 95762479,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Evansville @ Southern Illinois",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 66022980,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Illinois State @ Murray State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 7157494,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Northern Iowa @ UIC",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 47220285,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Georgetown @ Creighton",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 88352366,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Middle Tennessee @ Kennesaw State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 74316401,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Niagara @ Sacred Heart",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 20695890,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Quinnipiac @ Marist",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 67018597,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "James Madison @ Arkansas State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 89565248,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Coastal Carolina @ Louisiana",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 14745068,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Georgia Southern @ South Alabama",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 92229045,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Tennessee State @ Lindenwood",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 79075628,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Maine @ Vermont",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 91753504,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Merrimack @ Providence",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 66467487,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Dartmouth @ Quinnipiac",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 62976244,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Northeastern @ UConn",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 63219732,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Boston College @ UMass Amherst",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 85128917,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:00",
+      "name": "Appalachian State @ Troy",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 24104521,
+      "lgId": 2037,
+      "lgSlug": "high-school-football",
+      "time": "19:00",
+      "name": "NDHSAA Division AAA",
+      "sport": "Football",
+      "league": "High School Football",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 0,
+        "l": "High School Football not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 33404699,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:00",
+      "name": "Rensselaer @ New Hampshire",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 366705,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Kentucky State @ Eastern Kentucky",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -15.875562153429684,
+        "l": "Quality -15.9 (Eastern Kentucky Colonels -4.600 vs unlisted opponent -20.430 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -15.875562153429684,
+      "_rk": [
+        null,
+        239
+      ]
+    },
+    {
+      "id": 73388847,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Champion Christian @ UT Martin",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -16.32179190499061,
+        "l": "Quality -16.3 (UT Martin Skyhawks -5.300 vs unlisted opponent -20.430 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -16.32179190499061,
+      "_rk": [
+        null,
+        263
+      ]
+    },
+    {
+      "id": 87648604,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Wright State @ Samford",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.011586778875472534,
+        "l": "Quality +0.0 (Wright State Raiders 1.500 vs Samford Bulldogs -1.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.011586778875472534,
+      "_rk": [
+        126,
+        171
+      ]
+    },
+    {
+      "id": 78378012,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Appalachian State @ Charlotte",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.05610440297597264,
+        "l": "Quality +0.1 (App State Mountaineers -1.100 vs Charlotte 49ers 1.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.05610440297597264,
+      "_rk": [
+        165,
+        133
+      ]
+    },
+    {
+      "id": 12311829,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Marist @ Lehigh",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -6.995590097367158,
+        "l": "Quality -7.0 (Marist Red Foxes -5.700 vs Lehigh Mountain Hawks -5.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.995590097367158,
+      "_rk": [
+        272,
+        265
+      ]
+    },
+    {
+      "id": 83327266,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Columbia @ Bucknell",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -7.888049600489019,
+        "l": "Quality -7.9 (Columbia Lions -3.200 vs Bucknell Bison -9.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.888049600489019,
+      "_rk": [
+        209,
+        326
+      ]
+    },
+    {
+      "id": 56335489,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Florida International @ Florida Gulf Coast",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -4.318211588001572,
+        "l": "Quality -4.3 (Florida International Panthers -2.700 vs Florida Gulf Coast Eagles -4.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -4.318211588001572,
+      "_rk": [
+        201,
+        234
+      ]
+    },
+    {
+      "id": 52785491,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Mount St. Mary's @ Virginia Tech",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.6793511403829737,
+        "l": "Quality +0.7 (Mount St. Mary's Mountaineers -8.100 vs Virginia Tech Hokies 9.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.6793511403829737,
+      "_rk": [
+        312,
+        57
+      ]
+    },
+    {
+      "id": 7551700,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Harvard @ George Washington",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.8813269910964756,
+        "l": "Quality +1.9 (Harvard Crimson -0.800 vs George Washington Revolutionaries 4.900)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.8813269910964756,
+      "_rk": [
+        159,
+        95
+      ]
+    },
+    {
+      "id": 75687383,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:00",
+      "name": "Long Island University @ Fordham",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -4.254464480635724,
+        "l": "Quality -4.3 (Long Island University Sharks -8.000 vs Fordham Rams 1.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -4.254464480635724,
+      "_rk": [
+        307,
+        132
+      ]
+    },
+    {
+      "id": 99098636,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:00",
+      "name": "Fisk @ North Alabama",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 39021152,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:00",
+      "name": "Wright State @ Indiana State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 18772791,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:00",
+      "name": "Auburn @ Texas Tech",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 11548419,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:00",
+      "name": "Oregon @ Maine",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 27579773,
+      "lgId": 2005,
+      "lgSlug": "ncaa-hockey",
+      "time": "19:15",
+      "name": "Union @ UMass Lowell",
+      "sport": "Hockey",
+      "league": "College Ice Hockey",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 83207699,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:30",
+      "name": "Ohio State @ UConn",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "TNT",
+        "HBO Max (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 14.21270886693499,
+        "l": "Quality +14.2 (Ohio State Buckeyes 13.100 vs UConn Huskies 18.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.21270886693499,
+      "_rk": [
+        29,
+        6
+      ]
+    },
+    {
+      "id": 91161971,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:30",
+      "name": "Mississippi @ Texas",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 77206151,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:30",
+      "name": "LSU @ Texas A&M",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 43737668,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:30",
+      "name": "TCU @ Kansas State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 15862371,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:30",
+      "name": "Tulsa @ Memphis",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 470389,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:30",
+      "name": "North Texas @ UAB",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 75442386,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "19:30",
+      "name": "South Florida @ Tulane",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 15532199,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:30",
+      "name": "South Dakota @ Drake",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.768327293367681,
+        "l": "Quality -1.8 (South Dakota Coyotes -6.000 vs Drake Bulldogs 3.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.768327293367681,
+      "_rk": [
+        280,
+        112
+      ]
+    },
+    {
+      "id": 12407241,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:30",
+      "name": "North Carolina Central @ Liberty",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -4.636947124830808,
+        "l": "Quality -4.6 (North Carolina Central Eagles -8.800 vs Liberty Flames 1.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -4.636947124830808,
+      "_rk": [
+        318,
+        128
+      ]
+    },
+    {
+      "id": 92568775,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:30",
+      "name": "Southeast Missouri State @ Middle Tennessee",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -3.871981836440641,
+        "l": "Quality -3.9 (Southeast Missouri State Redhawks -4.900 vs Middle Tennessee Blue Raiders -1.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.871981836440641,
+      "_rk": [
+        247,
+        166
+      ]
+    },
+    {
+      "id": 96828654,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:30",
+      "name": "College Of Biblical Studies @ McNeese",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 19997653,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "19:30",
+      "name": "Marquette @ Missouri State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 2869195,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "20:00",
+      "name": "Cleveland Cavaliers @ Miami Heat",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "DAZN US",
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 5.312783318223028,
+        "l": "Quality +5.3 (Cleveland Cavaliers 3.500 vs Miami Heat 0.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.312783318223028,
+      "_rk": [
+        10,
+        14
+      ]
+    },
+    {
+      "id": 80938257,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "20:00",
+      "name": "Atlanta Hawks @ Chicago Bulls",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -5.8905165767154966,
+        "l": "Quality -5.9 (Atlanta Hawks 1.600 vs Chicago Bulls -6.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -5.8905165767154966,
+      "_rk": [
+        13,
+        27
+      ]
+    },
+    {
+      "id": 33336760,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "20:00",
+      "name": "Memphis Grizzlies @ New Orleans Pelicans",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -5.080956052428682,
+        "l": "Quality -5.1 (Memphis Grizzlies -0.700 vs New Orleans Pelicans -3.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -5.080956052428682,
+      "_rk": [
+        16,
+        23
+      ]
+    },
+    {
+      "id": 93531194,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Virginia @ Maryland",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 10.784851811196488,
+        "l": "Quality +10.8 (Virginia Cavaliers 13.400 vs Maryland Terrapins 10.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.784851811196488,
+      "_rk": [
+        27,
+        51
+      ]
+    },
+    {
+      "id": 24602210,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "SIU Edwardsville @ Duke",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "CW",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.603488230271983,
+        "l": "Quality +8.6 (SIU Edwardsville Cougars -3.600 vs Duke Blue Devils 22.800)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.603488230271983,
+      "_rk": [
+        219,
+        1
+      ]
+    },
+    {
+      "id": 8836799,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Central Arkansas @ Arkansas",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 6.333089401146481,
+        "l": "Quality +6.3 (Central Arkansas Bears -0.900 vs Arkansas Razorbacks 15.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.333089401146481,
+      "_rk": [
+        161,
+        20
+      ]
+    },
+    {
+      "id": 46172333,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Fairleigh Dickinson @ Oklahoma",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -0.04715539448980444,
+        "l": "Quality -0.0 (Fairleigh Dickinson Knights -12.200 vs Oklahoma Sooners 12.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.04715539448980444,
+      "_rk": [
+        360,
+        42
+      ]
+    },
+    {
+      "id": 65903755,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Florida @ Mississippi State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 996763,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Vanderbilt @ Arkansas",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "SEC Network +"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 60576860,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "St. John's @ DePaul",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 81635804,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Seton Hall @ Marquette",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 42526707,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Utah Tech @ Northern Colorado",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 13349078,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Texas Southern @ Murray State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.5332925817578484,
+        "l": "Quality -2.5 (Texas Southern Tigers -8.000 vs Murray State Racers 3.900)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.5332925817578484,
+      "_rk": [
+        307,
+        103
+      ]
+    },
+    {
+      "id": 96687078,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Alcorn State @ Tarleton State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -9.417980177269353,
+        "l": "Quality -9.4 (Alcorn State Braves -11.300 vs Tarleton State Texans -3.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -9.417980177269353,
+      "_rk": [
+        351,
+        219
+      ]
+    },
+    {
+      "id": 27946856,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "College Of Biblical Studies @ Houston Christian",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -17.915469589136794,
+        "l": "Quality -17.9 (Houston Christian Huskies -7.800 vs unlisted opponent -20.430 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -17.915469589136794,
+      "_rk": [
+        null,
+        302
+      ]
+    },
+    {
+      "id": 91370568,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Georgia Southern @ UCF",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -0.49338514605073597,
+        "l": "Quality -0.5 (Georgia Southern Eagles -5.400 vs UCF Knights 4.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.49338514605073597,
+      "_rk": [
+        265,
+        99
+      ]
+    },
+    {
+      "id": 85799590,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:00",
+      "name": "Milwaukee @ TCU",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 3.350408586412978,
+        "l": "Quality +3.4 (Milwaukee Panthers -4.900 vs TCU Horned Frogs 12.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 3.350408586412978,
+      "_rk": [
+        247,
+        39
+      ]
+    },
+    {
+      "id": 89775966,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "20:00",
+      "name": "Pacific @ California Baptist",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 76704072,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "20:30",
+      "name": "Utah Jazz @ Houston Rockets",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 3.0009066183136905,
+        "l": "Quality +3.0 (Utah Jazz -4.200 vs Houston Rockets 6.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 3.0009066183136905,
+      "_rk": [
+        24,
+        2
+      ]
+    },
+    {
+      "id": 19223548,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "21:00",
+      "name": "New York Rangers @ Vancouver Canucks",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -13.01491883365829,
+        "l": "Quality -13.0 (New York Rangers -0.113 vs Vancouver Canucks -0.816)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -13.01491883365829,
+      "_rk": [
+        20,
+        32
+      ]
+    },
+    {
+      "id": 81409095,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "21:00",
+      "name": "Illinois @ UCLA",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "FOX",
+        "FOX Deportes"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 6.740267606409338,
+        "l": "Quality +6.7 (Illinois Fighting Illini 5.900 vs UCLA Bruins 12.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.740267606409338,
+      "_rk": [
+        48,
+        28
+      ]
+    },
+    {
+      "id": 3133965,
+      "lgId": 365,
+      "lgSlug": "concacaf-nations-league",
+      "time": "21:00",
+      "name": "Canada @ Guatemala",
+      "sport": "Soccer",
+      "league": "CONCACAF Nations League",
+      "ch": [
+        "FOX Sports 2",
+        "FOX One",
+        "ViX"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 13.815073815073815,
+        "l": "Quality +13.8 (Elo Canada 1739 vs Guatemala 1524, CONCACAF baseline 2374)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 13.815073815073815,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "concacaf.nations.league",
+      "lgR": 1190.95,
+      "_rk": [
+        31,
+        80
+      ]
+    },
+    {
+      "id": 77591519,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Ball State @ SMU",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ACC Network",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.8813269910964752,
+        "l": "Quality +1.9 (Ball State Cardinals -3.200 vs SMU Mustangs 7.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.8813269910964752,
+      "_rk": [
+        209,
+        73
+      ]
+    },
+    {
+      "id": 40368373,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Arizona @ Auburn",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 14.435296987437491,
+        "l": "Quality +14.4 (Arizona Wildcats 17.600 vs Auburn Tigers 14.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.435296987437491,
+      "_rk": [
+        11,
+        23
+      ]
+    },
+    {
+      "id": 73610874,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Xavier @ Mississippi State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "FOX Sports 1",
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 9.271252591779485,
+        "l": "Quality +9.3 (Xavier Musketeers 12.000 vs Mississippi State Bulldogs 8.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 9.271252591779485,
+      "_rk": [
+        42,
+        62
+      ]
+    },
+    {
+      "id": 6059202,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Seton Hall @ Alabama",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "SEC Network",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 11.051957555799488,
+        "l": "Quality +11.1 (Seton Hall Pirates 8.300 vs Alabama Crimson Tide 16.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.051957555799488,
+      "_rk": [
+        63,
+        15
+      ]
+    },
+    {
+      "id": 97177336,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "21:00",
+      "name": "Stanford @ UNLV",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "CBS Sports Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 18497312,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "Utah Valley @ Cal Poly",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 86112800,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "California Baptist @ CSU Fullerton",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 88465819,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "CSU Northridge @ UC Irvine",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 61850007,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "CSU Bakersfield @ UC San Diego",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 49293361,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Corban University @ Eastern Washington",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -12.560712570405624,
+        "l": "Quality -12.6 (Eastern Washington Eagles 0.600 vs unlisted opponent -20.430 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -12.560712570405624,
+      "_rk": [
+        null,
+        142
+      ]
+    },
+    {
+      "id": 77860242,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Cal Poly @ Idaho",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -5.848142164781907,
+        "l": "Quality -5.8 (Cal Poly Mustangs -4.400 vs Idaho Vandals -4.900)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -5.848142164781907,
+      "_rk": [
+        236,
+        247
+      ]
+    },
+    {
+      "id": 59723743,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "UL Monroe @ Arizona State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -3.170763655416321,
+        "l": "Quality -3.2 (UL Monroe Warhawks -12.400 vs Arizona State Sun Devils 7.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -3.170763655416321,
+      "_rk": [
+        361,
+        73
+      ]
+    },
+    {
+      "id": 12349050,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "21:00",
+      "name": "Princeton @ Pepperdine",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 92490769,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "21:30",
+      "name": "Golden State Warriors @ San Antonio Spurs",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 11.160471441523121,
+        "l": "Quality +11.2 (Golden State Warriors -0.100 vs San Antonio Spurs 8.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 11.160471441523121,
+      "_rk": [
+        15,
+        1
+      ]
+    },
+    {
+      "id": 49594277,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:30",
+      "name": "Chicago State @ San Diego",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -10.62917521722045,
+        "l": "Quality -10.6 (Chicago State Cougars -11.700 vs San Diego Toreros -5.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -10.62917521722045,
+      "_rk": [
+        354,
+        257
+      ]
+    },
+    {
+      "id": 27674729,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "22:00",
+      "name": "Nashville Predators @ Vegas Golden Knights",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 1.5172774809529497,
+        "l": "Quality +1.5 (Nashville Predators -0.155 vs Vegas Golden Knights 0.238)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.5172774809529497,
+      "_rk": [
+        22,
+        8
+      ]
+    },
+    {
+      "id": 90463449,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "22:00",
+      "name": "Portland Trail Blazers @ Sacramento Kings",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass",
+        "Peacock"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -8.2035466461064,
+        "l": "Quality -8.2 (Portland Trail Blazers 3.000 vs Sacramento Kings -10.100)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.2035466461064,
+      "_rk": [
+        11,
+        30
+      ]
+    },
+    {
+      "id": 65063100,
+      "lgId": 1204,
+      "lgSlug": "nba-g-league",
+      "time": "22:00",
+      "name": "Agua Caliente Clippers @ Santa Cruz Warriors",
+      "sport": "Basketball",
+      "league": "NBA G League",
+      "ch": [
+        "Roku Sports"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "NBA G League not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 33544034,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "Clemson @ Stanford",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 5850658,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "Georgia Tech @ California",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 81530787,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "UC Riverside @ Long Beach State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 18002699,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "22:00",
+      "name": "Sacramento State @ UC Santa Barbara",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 44778014,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "22:00",
+      "name": "UC San Diego @ Utah State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "CW",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 5.70984266373948,
+        "l": "Quality +5.7 (UC San Diego Tritons 3.200 vs Utah State Aggies 9.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 5.70984266373948,
+      "_rk": [
+        110,
+        57
+      ]
+    },
+    {
+      "id": 54500395,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "22:00",
+      "name": "East Texas A&M University @ Portland",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -6.039383486879448,
+        "l": "Quality -6.0 (East Texas A&M Lions -5.000 vs Portland Pilots -4.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -6.039383486879448,
+      "_rk": [
+        254,
+        239
+      ]
+    },
+    {
+      "id": 90046018,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "22:00",
+      "name": "UIC @ St. Mary's",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -9.62834563157665,
+        "l": "Quality -9.6 (UIC Flames 5.200 vs unlisted opponent -20.430 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -9.62834563157665,
+      "_rk": [
+        90,
+        null
+      ]
+    },
+    {
+      "id": 66802671,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "22:00",
+      "name": "Stanford @ Santa Clara",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 10587620,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "22:15",
+      "name": "Houston @ Colorado",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 4.878585980948184,
+        "l": "Quality +4.9 (Houston Cougars 14.000 vs Colorado Buffaloes -0.800)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 4.878585980948184,
+      "_rk": [
+        20,
+        73
+      ]
+    },
+    {
+      "id": 34612329,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "22:30",
+      "name": "Oklahoma City Thunder @ Los Angeles Clippers",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0.0,
+        "l": "Quality +0.0 (team not found in BPI data \u2014 flat mod)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.0
+    },
+    {
+      "id": 20918770,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "22:30",
+      "name": "Arkansas-Pine Bluff @ California Baptist",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -9.417980177269353,
+        "l": "Quality -9.4 (Arkansas-Pine Bluff Golden Lions -11.500 vs California Baptist Lancers -3.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -9.417980177269353,
+      "_rk": [
+        353,
+        214
+      ]
+    },
+    {
+      "id": 54759681,
+      "lgId": 130,
+      "lgSlug": "a-league-women",
+      "time": "23:00",
+      "name": "Newcastle Jets @ Melbourne City",
+      "sport": "Soccer",
+      "league": "A-League Women",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 6.047677183062392,
+        "l": "Quality +6.0 (GFR 63.7-76.1 vs tier1 baseline 135.5 (A-League Women (Australia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.047677183062392,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "aus.1",
+      "lgR": 67.76,
+      "_rk": [
+        260,
+        76
+      ]
+    },
+    {
+      "id": 35400543,
+      "lgId": 130,
+      "lgSlug": "a-league-women",
+      "time": "23:00",
+      "name": "Adelaide United @ Melbourne Victory",
+      "sport": "Soccer",
+      "league": "A-League Women",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.2915326902465054,
+        "l": "Quality -2.3 (GFR 64.3-70.3 vs tier1 baseline 135.5 (A-League Women (Australia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.2915326902465054,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "aus.1",
+      "lgR": 67.76,
+      "_rk": [
+        250,
+        155
+      ]
     }
   ],
   "dropped": [
@@ -3229,14 +7471,24 @@
       "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
     },
     {
-      "name": "UMass Amherst - Boston College",
-      "league": "College Ice Hockey",
-      "sport": "Hockey",
+      "name": "Hawai'i - Air Force",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
       "time": "00:00",
       "date": "2026-11-13",
-      "channel": "ESPN Select, ESPN Unlimited",
+      "channel": "KFVE, MW+",
       "reason": "cutoff",
       "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Riyadh Season Horse Racing",
+      "league": "Horse Racing",
+      "sport": "Equestrian",
+      "time": "07:15",
+      "date": "2026-11-13",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "marquee",
+      "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
       "name": "Stockholm Open",
@@ -3247,6 +7499,16 @@
       "channel": "TSN+",
       "reason": "channel",
       "detail": "airs on TSN+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "American @ Delaware State",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "11:00",
+      "date": "2026-11-13",
+      "channel": "YouTube US, MEAC Network",
+      "reason": "channel",
+      "detail": "airs on YouTube US, MEAC Network \u2014 none in channels.txt"
     },
     {
       "name": "America's Day at the Races",
@@ -3269,6 +7531,56 @@
       "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
     },
     {
+      "name": "Bethune-Cookman @ Utah State",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "13:00",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "UNC Wilmington @ Hampton",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "14:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Robert Morris @ University of Delaware",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "14:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Surrey 89ers @ London Lions",
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "time": "14:30",
+      "date": "2026-11-13",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "WTA Finals",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "15:00",
+      "date": "2026-11-13",
+      "channel": "TSN+, TSN3, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on TSN+, TSN3, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Minnesota State @ Bemidji State",
       "league": "Women's College Ice Hockey",
       "sport": "Hockey",
@@ -3277,6 +7589,26 @@
       "channel": "Big Ten Plus",
       "reason": "channel",
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "St. Mary's @ Hawai'i",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "16:00",
+      "date": "2026-11-13",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Towson @ Stony Brook",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "17:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
       "name": "Newfoundland @ Cape Breton Eagles",
@@ -3319,6 +7651,126 @@
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
+      "name": "Montclair State @ Rowan",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "West Georgia @ Stonehill",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "NEC Front Row",
+      "reason": "channel",
+      "detail": "airs on NEC Front Row \u2014 none in channels.txt"
+    },
+    {
+      "name": "North Carolina A&T @ Hofstra",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Coppin State @ Morgan State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Norfolk State @ Howard",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "North Carolina Central @ South Carolina State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "MEAC Network",
+      "reason": "channel",
+      "detail": "airs on MEAC Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Long Island University @ Mercyhurst",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "PSAC Sports Digital Network",
+      "reason": "channel",
+      "detail": "airs on PSAC Sports Digital Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Jackson State @ Bethune-Cookman",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Guilford @ North Carolina A&T",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lindenwood @ RIT",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Penn State @ Mercyhurst",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "18:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lake Superior State @ Michigan Tech",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "18:07",
+      "date": "2026-11-13",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
       "name": "Noblesville Boom @ Motor City Cruise",
       "league": "NBA G League",
       "sport": "Basketball",
@@ -3327,6 +7779,786 @@
       "channel": "NBA App, NBAGLeague.com",
       "reason": "channel",
       "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Drake @ Nebraska-Omaha",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "18:30",
+      "date": "2026-11-13",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Norfolk Admirals @ Adirondack Thunder",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Greenville Swamp Rabbits @ Jacksonville IceMen",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "New Mexico Goatheads @ Kalamazoo Wings",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Trenton Ironhawks @ Reading Royals",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Chicago Steel @ USA U18",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Waterloo Black Hawks @ Youngstown Phantoms",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ottawa 67s @ Flint Firebirds",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Barrie Colts @ Kitchener Rangers",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Shawinigan Cataractes @ Drummondville Voltigeurs",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rouyn-Noranda Huskies @ Val-D'Or Foreurs",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Baie-Comeau Drakkar @ Victoriaville Tigres",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wilkes-Barre/Scranton @ Hershey Bears",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Toronto Marlies @ Syracuse Crunch",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wenatchee Wild @ Brandon Wheat Kings",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Maine Celtics @ Delaware Blue Coats",
+      "league": "NBA G League",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "NBA App, NBAGLeague.com",
+      "reason": "channel",
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ohio @ Purdue",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sam Houston @ Illinois",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "St. Cloud State @ Minnesota",
+      "league": "Women's College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wisconsin @ Ohio State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Maryland @ Rutgers",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Penn State @ Michigan",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Iona @ Hofstra",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Chattanooga @ Elon",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Yale @ Northeastern",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Samford @ Indiana",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Alcorn State @ Alabama State",
+      "league": "Women's College Volleyball",
+      "sport": "Volleyball",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "SWAC TV",
+      "reason": "channel",
+      "detail": "airs on SWAC TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Holy Cross @ Niagara",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Indy Fuel @ Cincinnati Cyclones",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Brampton Steelheads @ Kingston Frontenacs",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Peterborough Petes @ Oshawa Generals",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sarnia Sting @ Sudbury Wolves",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Hamilton Hammers @ Lehigh Valley Phantoms",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Springfield Thunderbirds @ Providence Bruins",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Laval Rocket @ Rochester Americans",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "19:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Brantford Bulldogs @ Guelph Storm",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "London Knights @ Sault Ste. Marie Greyhounds",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Bowling Green @ Northern Michigan",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "19:07",
+      "date": "2026-11-13",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Trois-Rivieres Lions @ Atlanta Gladiators",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:10",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Toledo Walleye @ Wheeling Nailers",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:10",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Cedar Rapids @ Muskegon Lumberjacks",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "19:10",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "South Carolina Stingrays @ Florida Everblades",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "19:30",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Grand Rapids Griffins @ Iowa Wild",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Milwaukee Admirals @ Rockford IceHogs",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Isidro Metap\u00e1n @ Firpo",
+      "league": "Primera Division",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "CentroAm\u00e9rica TV",
+      "reason": "channel",
+      "detail": "airs on CentroAm\u00e9rica TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Edmonton Oil Kings @ Prince Albert Raiders",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Portland Winterhawks @ Regina Pats",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Oklahoma City Blue @ Memphis Hustle",
+      "league": "NBA G League",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "NBA App, NBAGLeague.com",
+      "reason": "channel",
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rio Grande Valley Vipers @ Texas Legends",
+      "league": "NBA G League",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "NBA App, NBAGLeague.com",
+      "reason": "channel",
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ohio State @ Wisconsin",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Alaska Anchorage @ Minnesota",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "MyNetworkTV, Big Ten Plus",
+      "reason": "channel",
+      "detail": "airs on MyNetworkTV, Big Ten Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Southern Mississippi @ Texas State",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Illinois State @ North Dakota State",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "Summit League Network, Midco Sports Plus, WDAY",
+      "reason": "channel",
+      "detail": "airs on Summit League Network, Midco Sports Plus, WDAY \u2014 none in channels.txt"
+    },
+    {
+      "name": "Southeast Missouri State @ Kansas City",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "20:00",
+      "date": "2026-11-13",
+      "channel": "Summit League Network, Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Summit League Network, Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Allen Americans @ Kansas City",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Idaho Steelheads @ Wichita Thunder",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Dubuque Fighting Saints @ Des Moines Buccaneers",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sioux City @ Fargo Force",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Green Bay Gamblers @ Madison Capitols",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Sioux Falls Stampede @ Omaha Lancers",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lincoln Stars @ Tri-City Storm",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Ferris State @ Augustana (S.D.)",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:07",
+      "date": "2026-11-13",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Minnesota State @ Bemidji State",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "20:07",
+      "date": "2026-11-13",
+      "channel": "Midco Sports Plus",
+      "reason": "channel",
+      "detail": "airs on Midco Sports Plus \u2014 none in channels.txt"
+    },
+    {
+      "name": "Wyoming @ Colorado State",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "20:30",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Utah @ Boise State",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "20:30",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Lindenwood @ Nebraska-Omaha",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "20:45",
+      "date": "2026-11-13",
+      "channel": "Summit League Network",
+      "reason": "channel",
+      "detail": "airs on Summit League Network \u2014 none in channels.txt"
+    },
+    {
+      "name": "Red Deer Rebels @ Lethbridge Hurricanes",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Calgary Hitmen @ Medicine Hat Tigers",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "21:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Tahoe Knight Monsters @ Rapid City Rush",
+      "league": "ECHL",
+      "sport": "Hockey",
+      "time": "21:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Bentley @ Air Force",
+      "league": "College Ice Hockey",
+      "sport": "Hockey",
+      "time": "21:05",
+      "date": "2026-11-13",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
+    },
+    {
+      "name": "Mississippi Valley State @ Oregon State",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "21:30",
+      "date": "2026-11-13",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Victoria Royals @ Kamloops Blazers",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:00",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Rip City Remix @ Stockton Kings",
+      "league": "NBA G League",
+      "sport": "Basketball",
+      "time": "22:00",
+      "date": "2026-11-13",
+      "channel": "NBA App, NBAGLeague.com",
+      "reason": "channel",
+      "detail": "airs on NBA App, NBAGLeague.com \u2014 none in channels.txt"
+    },
+    {
+      "name": "Southern Utah @ Portland State",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "22:00",
+      "date": "2026-11-13",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "Moose Jaw Warriors @ Penticton Vees",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Everett Silvertips @ Spokane Chiefs",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Seattle Thunderbirds @ Tri-City Americans",
+      "league": "OHL",
+      "sport": "Hockey",
+      "time": "22:05",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "San Diego Gulls @ Bakersfield Condors",
+      "league": "AHL",
+      "sport": "Hockey",
+      "time": "22:10",
+      "date": "2026-11-13",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
     }
   ],
   "areas": {
@@ -3354,6 +8586,8 @@
         "Primera Division (Chile)": 78.67,
         "Primera Division (Costa Rica)": 75.46,
         "Super Liga (Serbia)": 74.2,
+        "SuperLiga (Romania)": 75.62,
+        "Superliga (Denmark)": 79.0,
         "PSL (South Africa)": 73.56,
         "Persian Gulf Pro League (Iran)": 73.47,
         "A-League (Australia)": 72.59,
@@ -3385,8 +8619,6 @@
         "Ligue 2 (France)": 76.34,
         "Serie B (Italy)": 76.0,
         "Serie B (Brazil)": 72.43,
-        "SuperLiga (Romania)": 75.62,
-        "Superliga (Denmark)": 79.0,
         "League One (England)": 75.56,
         "League One (Scotland)": 59.72,
         "Veikkausliiga (Finland)": 72.69,
@@ -3528,6 +8760,14 @@
           "country": "Serbia",
           "confederation": "UEFA"
         },
+        "SuperLiga (Romania)": {
+          "country": "Romania",
+          "confederation": "UEFA"
+        },
+        "Superliga (Denmark)": {
+          "country": "Denmark",
+          "confederation": "UEFA"
+        },
         "PSL (South Africa)": {
           "country": "South Africa",
           "confederation": "CAF"
@@ -3651,14 +8891,6 @@
         "Serie B (Brazil)": {
           "country": "Brazil",
           "confederation": "CONMEBOL"
-        },
-        "SuperLiga (Romania)": {
-          "country": "Romania",
-          "confederation": "UEFA"
-        },
-        "Superliga (Denmark)": {
-          "country": "Denmark",
-          "confederation": "UEFA"
         },
         "League One (England)": {
           "country": "England",
@@ -3893,6 +9125,12 @@
         "Premier League (England)",
         "Premier League (Russia)",
         "Premier League (Ukraine)",
+        "Primera Division (Bolivia)",
+        "Primera Division (Chile)",
+        "Primera Division (Costa Rica)",
+        "Primera Division (Peru)",
+        "Primera Division (Uruguay)",
+        "Primera Division (Venezuela)",
         "Pro League (Belgium)",
         "Pro League (Saudi Arabia)",
         "Pro League (UAE)",
@@ -4097,19 +9335,19 @@
       "leagues": {
         "Afc Champions League Elite": 68.06,
         "Copa Do Brazil": 51.39,
-        "Caf Champions League": 44.05,
+        "Caf Champions League": 44.04,
         "Concacaf Central American Cup": 55.92,
         "Concacaf Champions Cup": 71.91,
         "Leagues Cup": 80.67,
-        "Conmebol Libertadores": 79.83,
-        "Conmebol Sudamericana": 79.69,
-        "English Fa Cup": 63.69,
-        "Carabao Cup": 78.29,
+        "Conmebol Libertadores": 79.88,
+        "Conmebol Sudamericana": 79.65,
+        "English Fa Cup": 63.66,
+        "Carabao Cup": 78.26,
         "Copa Del Rey": 52.05,
-        "Club World Cup": 85.42,
-        "German Cup": 64.15,
+        "Club World Cup": 85.47,
+        "German Cup": 64.13,
         "Coppa Italia": 70.27,
-        "Uefa Champions League": 89.53,
+        "Uefa Champions League": 89.51,
         "Uefa Europa League": 83.51,
         "Uefa Conference League": 76.37,
         "U.S. Open Cup": 54.36,
@@ -4194,18 +9432,18 @@
         }
       },
       "label": "Men's club competitions",
-      "top": 89.53,
-      "worst": 44.05,
+      "top": 89.51,
+      "worst": 44.04,
       "anchored": true,
-      "span": 45.48,
+      "span": 45.47,
       "seen": []
     },
     "mens_oneoff": {
       "leagues": {
         "Campeones Cup": 83.72,
         "Community Shield": 96.41,
-        "Trophee Des Champions": 91.53,
-        "Uefa Super Cup": 94.92
+        "Trophee Des Champions": 91.65,
+        "Uefa Super Cup": 94.55
       },
       "origin": {
         "Campeones Cup": {
@@ -4234,7 +9472,7 @@
     },
     "womens_club_competition": {
       "leagues": {
-        "Uefa Women'S Champions League": 85.29
+        "Uefa Women'S Champions League": 85.3
       },
       "origin": {
         "Uefa Women'S Champions League": {
@@ -4243,8 +9481,8 @@
         }
       },
       "label": "Women's club competitions",
-      "top": 85.29,
-      "worst": 85.29,
+      "top": 85.3,
+      "worst": 85.3,
       "anchored": true,
       "span": 0.0,
       "seen": []
@@ -4261,17 +9499,19 @@
   },
   "leagueGfr": {
     "usl-champ": {
-      "rating": 67.38,
-      "area": "mens_club_competition",
+      "rating": 68.58,
+      "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 25,
       "rosterCode": "usa.usl.1",
       "fixturesResolved": 4,
       "fixturesSeen": 4,
+      "gfrLeague": "USL Championship",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "uefa-women-s-champions-league": {
-      "rating": 85.29,
+      "rating": 85.3,
       "area": "womens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 18,
@@ -4284,8 +9524,8 @@
       "rating": 1190.95,
       "area": "mens_national",
       "confederation": "CONCACAF",
-      "fixturesResolved": 10,
-      "fixturesSeen": 10
+      "fixturesResolved": 12,
+      "fixturesSeen": 12
     },
     "mls": {
       "rating": 80.04,
@@ -4325,16 +9565,23 @@
       "rating": 73.6,
       "area": "mens_club_league",
       "fixturesResolved": 0,
-      "fixturesSeen": 1
+      "fixturesSeen": 1,
+      "gfrLeague": "Liga Nacional",
+      "country": "Honduras",
+      "confederation": "CONCACAF",
+      "rosterMatched": 10,
+      "rosterTotal": 12
     },
     "laliga2": {
-      "rating": 77.38,
-      "area": "mens_club_competition",
+      "rating": 78.59,
+      "area": "mens_club_league",
       "rosterMatched": 21,
       "rosterTotal": 22,
       "rosterCode": "esp.2",
       "fixturesResolved": 5,
       "fixturesSeen": 5,
+      "gfrLeague": "LaLiga 2",
+      "country": "Spain",
       "confederation": "UEFA"
     },
     "nwsl": {
@@ -4350,33 +9597,39 @@
       "confederation": "CONCACAF"
     },
     "usl-super-league": {
-      "rating": 58.54,
-      "area": "mens_club_competition",
-      "rosterMatched": 5,
+      "rating": 62.73,
+      "area": "womens_club_league",
+      "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
       "fixturesResolved": 2,
       "fixturesSeen": 2,
+      "gfrLeague": "USL Super League",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "liga-mx": {
-      "rating": 80.26,
-      "area": "mens_club_competition",
+      "rating": 80.06,
+      "area": "mens_club_league",
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
       "fixturesResolved": 9,
       "fixturesSeen": 9,
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
       "confederation": "CONCACAF"
     },
     "women-s-super-league": {
-      "rating": 84.35,
-      "area": "womens_club_competition",
+      "rating": 63.85,
+      "area": "womens_club_league",
       "rosterMatched": 14,
       "rosterTotal": 14,
       "rosterCode": "eng.w.1",
       "fixturesResolved": 7,
       "fixturesSeen": 7,
+      "gfrLeague": "Women's Super League",
+      "country": "Switzerland",
       "confederation": "UEFA"
     },
     "usl-league-one": {
@@ -4393,17 +9646,33 @@
       "rating": 75.85,
       "area": "womens_club_league",
       "fixturesResolved": 3,
-      "fixturesSeen": 3
+      "fixturesSeen": 3,
+      "gfrLeague": "Serie A Women",
+      "country": "Italy",
+      "confederation": "UEFA"
     },
     "liga-mx-femenil": {
-      "rating": 69.77,
-      "area": "womens_club_competition",
+      "rating": 71.24,
+      "area": "womens_club_league",
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
       "fixturesResolved": 6,
       "fixturesSeen": 6,
+      "gfrLeague": "Liga MX Femenil",
+      "country": "Mexico",
       "confederation": "CONCACAF"
+    },
+    "primera-division": {
+      "rating": 81.64,
+      "area": "mens_club_league",
+      "fixturesResolved": 14,
+      "fixturesSeen": 14,
+      "gfrLeague": "Liga Profesional",
+      "country": "Argentina",
+      "confederation": "CONMEBOL",
+      "rosterMatched": 28,
+      "rosterTotal": 30
     },
     "la-liga": {
       "rating": 86.18,
@@ -4500,8 +9769,8 @@
       "confederation": "UEFA",
       "rosterMatched": 24,
       "rosterTotal": 24,
-      "fixturesResolved": 15,
-      "fixturesSeen": 15,
+      "fixturesResolved": 12,
+      "fixturesSeen": 12,
       "rosterCode": "eng.2"
     },
     "serie-b-brazil": {
@@ -4516,6 +9785,8 @@
     "premier-league": {
       "rating": 90.96,
       "area": "mens_club_league",
+      "gfrLeague": "Premier League",
+      "country": "England",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
@@ -4526,6 +9797,8 @@
     "serie-a": {
       "rating": 85.37,
       "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Italy",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
@@ -4533,18 +9806,27 @@
       "fixturesSeen": 10,
       "rosterCode": "ita.1"
     },
-    "primera-division": {
-      "rating": 81.64,
+    "primera-a": {
+      "rating": 79.87,
       "area": "mens_club_league",
-      "gfrLeague": "Liga Profesional",
-      "country": "Argentina",
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
       "confederation": "CONMEBOL",
-      "rosterMatched": 28,
-      "rosterTotal": 30
+      "rosterMatched": 19,
+      "rosterTotal": 20
+    },
+    "super-league": {
+      "rating": 79.13,
+      "area": "mens_club_league",
+      "gfrLeague": "Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
     },
     "liga-portugal": {
       "rating": 81.97,
       "area": "mens_club_league",
+      "gfrLeague": "Liga Portugal",
+      "country": "Portugal",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -4553,26 +9835,34 @@
       "rosterCode": "por.1"
     },
     "pro-league": {
-      "fixturesResolved": 3,
-      "fixturesSeen": 3,
       "rating": 76.41,
       "area": "mens_club_league",
+      "gfrLeague": "Pro League",
+      "country": "Belgium",
+      "confederation": "UEFA",
       "rosterMatched": 17,
       "rosterTotal": 18,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
       "rosterCode": "ksa.1"
     },
     "s-per-lig": {
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
       "rating": 79.33,
       "area": "mens_club_league",
+      "gfrLeague": "Super Lig",
+      "country": "Turkiye",
+      "confederation": "UEFA",
       "rosterMatched": 17,
       "rosterTotal": 18,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "rosterCode": "tur.1"
     },
     "ligue-2": {
       "rating": 76.34,
       "area": "mens_club_league",
+      "gfrLeague": "Ligue 2",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -4580,9 +9870,29 @@
       "fixturesSeen": 2,
       "rosterCode": "fra.2"
     },
+    "league-one": {
+      "rating": 75.56,
+      "area": "mens_club_league",
+      "gfrLeague": "League One",
+      "country": "England",
+      "confederation": "UEFA",
+      "rosterMatched": 24,
+      "rosterTotal": 24
+    },
+    "league-two": {
+      "rating": 69.98,
+      "area": "mens_club_league",
+      "gfrLeague": "League Two",
+      "country": "England",
+      "confederation": "UEFA",
+      "rosterMatched": 22,
+      "rosterTotal": 24
+    },
     "ligue-1": {
       "rating": 85.02,
       "area": "mens_club_league",
+      "gfrLeague": "Ligue 1",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -4591,12 +9901,15 @@
       "rosterCode": "fra.1"
     },
     "serie-b": {
-      "fixturesResolved": 2,
-      "fixturesSeen": 3,
       "rating": 76.0,
       "area": "mens_club_league",
+      "gfrLeague": "Serie B",
+      "country": "Italy",
+      "confederation": "UEFA",
       "rosterMatched": 13,
       "rosterTotal": 20,
+      "fixturesResolved": 2,
+      "fixturesSeen": 3,
       "rosterCode": "ita.2"
     },
     "campe-n-de-campeones": {
@@ -4621,14 +9934,14 @@
       "rosterTotal": 45
     },
     "uefa-champions-league": {
-      "rating": 89.53,
+      "rating": 89.51,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 36,
       "rosterTotal": 36
     },
     "copa-sudamericana": {
-      "rating": 79.69,
+      "rating": 79.65,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 55,
@@ -4645,7 +9958,7 @@
       "rosterCode": "uefa.europa.conf"
     },
     "english-league-cup": {
-      "rating": 78.29,
+      "rating": 78.26,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 90,
@@ -4693,14 +10006,14 @@
       "rosterTotal": 2
     },
     "copa-libertadores": {
-      "rating": 79.83,
+      "rating": 79.88,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 42,
       "rosterTotal": 44
     },
     "uefa-super-cup": {
-      "rating": 94.92,
+      "rating": 94.55,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -4721,7 +10034,7 @@
       "rosterTotal": 2
     },
     "troph-e-des-champions": {
-      "rating": 91.53,
+      "rating": 91.65,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -4735,7 +10048,7 @@
       "rosterTotal": 46
     },
     "dfb-super-cup": {
-      "rating": 94.92,
+      "rating": 94.55,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -4756,14 +10069,14 @@
       "rosterTotal": 2
     },
     "pro-motocross-championship": {
-      "rating": 47.78,
+      "rating": 47.69,
       "area": "mens_club_competition",
       "confederation": "",
       "rosterMatched": 2,
       "rosterTotal": 4
     },
     "super-cup": {
-      "rating": 94.92,
+      "rating": 94.55,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -4785,8 +10098,9 @@
     },
     "national-league": {
       "rating": 62.51,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
+      "area": "mens_club_league",
+      "gfrLeague": "National League",
+      "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
     },
@@ -4805,14 +10119,14 @@
       "rosterTotal": 20
     },
     "ucl": {
-      "rating": 89.53,
+      "rating": 89.51,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 36,
       "rosterTotal": 36,
       "rosterCode": "uefa.champions",
-      "fixturesResolved": 18,
-      "fixturesSeen": 18
+      "fixturesResolved": 9,
+      "fixturesSeen": 9
     },
     "a-league": {
       "rating": 72.59,
@@ -4827,20 +10141,22 @@
       "confederation": "AFC"
     },
     "ta-a-de-portugal": {
-      "rating": 51.08,
+      "rating": 51.09,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 51,
       "rosterTotal": 146
     },
     "a-league-women": {
-      "rating": 72.59,
-      "area": "womens_club_competition",
-      "rosterMatched": 12,
+      "rating": 67.76,
+      "area": "womens_club_league",
+      "rosterMatched": 10,
       "rosterTotal": 12,
       "rosterCode": "aus.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
+      "fixturesResolved": 3,
+      "fixturesSeen": 3,
+      "gfrLeague": "A-League Women",
+      "country": "Australia",
       "confederation": "AFC"
     },
     "copa-del-rey": {
@@ -4850,11 +10166,11 @@
       "rosterTotal": 122,
       "rosterCode": "esp.copa_del_rey",
       "fixturesResolved": 0,
-      "fixturesSeen": 5,
+      "fixturesSeen": 4,
       "confederation": "UEFA"
     },
     "fa-cup": {
-      "rating": 63.69,
+      "rating": 63.66,
       "area": "mens_club_competition",
       "rosterMatched": 63,
       "rosterTotal": 80,
