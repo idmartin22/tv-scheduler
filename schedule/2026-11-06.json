@@ -389,6 +389,37 @@
       "_score": 0
     },
     {
+      "id": 74090795,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "12:00",
+      "name": "Life University @ South Carolina",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 11787208,
       "lgId": 514,
       "lgSlug": "pro-league",
@@ -1341,20 +1372,20 @@
     },
     {
       "id": 22372088,
-      "lgId": 2009,
-      "lgSlug": "ncaa-basketball-women",
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
       "time": "16:00",
       "name": "UC Davis @ Eastern Washington",
-      "sport": "Basketball",
-      "league": "Women's College Basketball",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
         "ESPN Unlimited",
         "ESPN Select"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
         "v": 0,
-        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -1368,7 +1399,8 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 36626144,
@@ -3854,8 +3886,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 6.169222720889892,
-        "l": "Quality +6.2 (Virginia Tech Hokies 6.100 vs SMU Mustangs 10.500)"
+        "v": 6.142069306115729,
+        "l": "Quality +6.1 (Virginia Tech Hokies 6.100 vs SMU Mustangs 10.500)"
       },
       "_sk": {
         "v": 0,
@@ -3869,7 +3901,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.169222720889892,
+      "_score": 6.142069306115729,
       "_rk": [
         47,
         34
@@ -6761,7 +6793,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -2.2701892255195957,
+        "v": -2.3372898908627415,
         "l": "Quality -2.3 (South Florida Bulls -2.200 vs East Carolina Pirates -3.800)"
       },
       "_sk": {
@@ -6776,7 +6808,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.2701892255195957,
+      "_score": -2.3372898908627415,
       "_rk": [
         75,
         82
@@ -7292,7 +7324,7 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.689088355956937,
+        "v": 7.656597250802535,
         "l": "Quality +7.7 (Nebraska Cornhuskers 14.700 vs Illinois Fighting Illini 5.900)"
       },
       "_sk": {
@@ -7307,7 +7339,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.689088355956937,
+      "_score": 7.656597250802535,
       "_rk": [
         17,
         48
@@ -8203,8 +8235,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -0.8432426843139293,
-        "l": "Quality -0.8 (New Mexico Lobos 6.200 vs Nevada Wolf Pack -8.200)"
+        "v": -0.7982155660001584,
+        "l": "Quality -0.8 (New Mexico Lobos 6.400 vs Nevada Wolf Pack -8.200)"
       },
       "_sk": {
         "v": 0,
@@ -8218,7 +8250,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.8432426843139293,
+      "_score": -0.7982155660001584,
       "_rk": [
         46,
         95
@@ -9143,8 +9175,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.575098433326909,
-        "l": "Quality +7.6 (TCU Horned Frogs 7.300 vs Arizona Wildcats 13.000)"
+        "v": 7.543007654951025,
+        "l": "Quality +7.5 (TCU Horned Frogs 7.300 vs Arizona Wildcats 13.000)"
       },
       "_sk": {
         "v": 0,
@@ -9158,7 +9190,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.575098433326909,
+      "_score": 7.543007654951025,
       "_rk": [
         43,
         26
@@ -9584,7 +9616,7 @@
       "sport": "Motorsports",
       "time": "16:00",
       "date": "2026-11-06",
-      "channel": "TSN+",
+      "channel": "ESPN Unlimited, CW, TSN+",
       "reason": "practice",
       "detail": "practice/qualifying session \u2014 Practice"
     },
@@ -10444,9 +10476,9 @@
       "sport": "Basketball",
       "time": "20:00",
       "date": "2026-11-06",
-      "channel": "Chicago Sports Network, NBA App, NBAGLeague.com",
+      "channel": "Chicago Sports Network, Chicago Sports Network Plus, NBA App, NBAGLeague.com",
       "reason": "channel",
-      "detail": "airs on Chicago Sports Network, NBA App, NBAGLeague.com \u2014 none in channels.txt"
+      "detail": "airs on Chicago Sports Network, Chicago Sports Network Plus, NBA App, NBAGLeague.com \u2014 none in channels.txt"
     },
     {
       "name": "Grand Canyon @ Air Force",
