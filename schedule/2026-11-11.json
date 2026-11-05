@@ -699,6 +699,36 @@
       "_score": 0
     },
     {
+      "id": 9123873,
+      "lgId": 2011,
+      "lgSlug": "wta",
+      "time": "17:00",
+      "name": "WTA Finals",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 30,
+        "l": "Tennis: finals +30"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30
+    },
+    {
       "id": 5653398,
       "lgId": 1149,
       "lgSlug": "ncaa-basketball",
@@ -1816,6 +1846,44 @@
       ]
     },
     {
+      "id": 42245424,
+      "lgId": 3291,
+      "lgSlug": "usl-super-league",
+      "time": "19:00",
+      "name": "Brooklyn FC @ DC Power FC",
+      "sport": "Soccer",
+      "league": "USL Super League",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.6351706036745592,
+        "l": "Quality -2.6 (GFR 60.4-63.9 vs tier1 baseline 125.5 (USL Super League (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.6351706036745592,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.w.usl.1",
+      "lgR": 62.73,
+      "_rk": [
+        299,
+        255
+      ]
+    },
+    {
       "id": 17951533,
       "lgId": 707,
       "lgSlug": "nhl",
@@ -1830,8 +1898,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.924098788239602,
-        "l": "Quality +8.9 (Tampa Bay Lightning 8.298 vs Buffalo Sabres 2.037)"
+        "v": 7.44367387028054,
+        "l": "Quality +7.4 (Tampa Bay Lightning 7.502 vs Buffalo Sabres 0.836)"
       },
       "_sk": {
         "v": 0,
@@ -1845,10 +1913,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.924098788239602,
+      "_score": 7.44367387028054,
       "_rk": [
         4,
-        15
+        17
       ]
     },
     {
@@ -1864,8 +1932,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -9.12875867386276,
-        "l": "Quality -9.1 (Washington Wizards -2.600 vs Indiana Pacers -5.300)"
+        "v": -7.752808988764045,
+        "l": "Quality -7.8 (Washington Wizards -3.200 vs Indiana Pacers -3.700)"
       },
       "_sk": {
         "v": 0,
@@ -1879,10 +1947,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.12875867386276,
+      "_score": -7.752808988764045,
       "_rk": [
         22,
-        25
+        24
       ]
     },
     {
@@ -1900,8 +1968,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 10.826106800547695,
-        "l": "Quality +10.8 (Cleveland Cavaliers 3.500 vs New York Knicks 4.400)"
+        "v": 11.216216216216218,
+        "l": "Quality +11.2 (Cleveland Cavaliers 3.100 vs New York Knicks 5.200)"
       },
       "_sk": {
         "v": 0,
@@ -1915,10 +1983,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.826106800547695,
+      "_score": 11.216216216216218,
       "_rk": [
-        10,
-        7
+        11,
+        5
       ]
     },
     {
@@ -1935,8 +2003,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.349155636695572,
-        "l": "Quality +5.3 (Boston Celtics 5.200 vs Toronto Raptors -1.300)"
+        "v": 3.6486486486486487,
+        "l": "Quality +3.6 (Boston Celtics 5.000 vs Toronto Raptors -2.300)"
       },
       "_sk": {
         "v": 0,
@@ -1950,9 +2018,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.349155636695572,
+      "_score": 3.6486486486486487,
       "_rk": [
-        5,
+        6,
         19
       ]
     },
@@ -3109,21 +3177,20 @@
       ]
     },
     {
-      "id": 11561718,
-      "lgId": 707,
-      "lgSlug": "nhl",
-      "time": "19:30",
-      "name": "New York Rangers @ Calgary Flames",
-      "sport": "Hockey",
-      "league": "NHL",
+      "id": 35588114,
+      "lgId": 2011,
+      "lgSlug": "wta",
+      "time": "19:00",
+      "name": "WTA Finals",
+      "sport": "Tennis",
+      "league": "WTA",
       "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
+        "Tennis Channel"
       ],
       "dur": 150,
       "_st": {
-        "v": -4.5207756468512486,
-        "l": "Quality -4.5 (New York Rangers 2.447 vs Calgary Flames -9.196)"
+        "v": 30,
+        "l": "Tennis: finals +30"
       },
       "_sk": {
         "v": 0,
@@ -3137,10 +3204,41 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.5207756468512486,
+      "_score": 30
+    },
+    {
+      "id": 11561718,
+      "lgId": 707,
+      "lgSlug": "nhl",
+      "time": "19:30",
+      "name": "New York Rangers @ Calgary Flames",
+      "sport": "Hockey",
+      "league": "NHL",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -4.438361332558773,
+        "l": "Quality -4.4 (New York Rangers 2.554 vs Calgary Flames -9.236)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -4.438361332558773,
       "_rk": [
         13,
-        30
+        29
       ]
     },
     {
@@ -3486,8 +3584,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 2.1999087174806036,
-        "l": "Quality +2.2 (San Antonio Spurs 8.300 vs Chicago Bulls -6.700)"
+        "v": 0.5405405405405399,
+        "l": "Quality +0.5 (San Antonio Spurs 8.100 vs Chicago Bulls -7.700)"
       },
       "_sk": {
         "v": 0,
@@ -3501,10 +3599,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.1999087174806036,
+      "_score": 0.5405405405405399,
       "_rk": [
         1,
-        27
+        29
       ]
     },
     {
@@ -3520,8 +3618,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 2.4737562756732085,
-        "l": "Quality +2.5 (Denver Nuggets 2.500 vs Memphis Grizzlies -0.700)"
+        "v": 2.702702702702702,
+        "l": "Quality +2.7 (Denver Nuggets 3.100 vs Memphis Grizzlies -1.100)"
       },
       "_sk": {
         "v": 0,
@@ -3535,10 +3633,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.4737562756732085,
+      "_score": 2.702702702702702,
       "_rk": [
-        12,
-        16
+        11,
+        18
       ]
     },
     {
@@ -3554,8 +3652,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.9244410177332307,
-        "l": "Quality -3.9 (Los Angeles Lakers 3.800 vs Milwaukee Bucks -7.200)"
+        "v": -4.044943820224719,
+        "l": "Quality -4.0 (Los Angeles Lakers 3.600 vs Milwaukee Bucks -7.200)"
       },
       "_sk": {
         "v": 0,
@@ -3569,10 +3667,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.9244410177332307,
+      "_score": -4.044943820224719,
       "_rk": [
         9,
-        29
+        28
       ]
     },
     {
@@ -3588,8 +3686,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -11.904394757131842,
-        "l": "Quality -11.9 (Brooklyn Nets -6.700 vs New Orleans Pelicans -3.600)"
+        "v": -10.89887640449438,
+        "l": "Quality -10.9 (Brooklyn Nets -6.300 vs New Orleans Pelicans -3.400)"
       },
       "_sk": {
         "v": 0,
@@ -3603,7 +3701,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.904394757131842,
+      "_score": -10.89887640449438,
       "_rk": [
         27,
         23
@@ -3992,8 +4090,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.6385124709217578,
-        "l": "Quality -1.6 (Philadelphia Flyers -5.826 vs Edmonton Oilers 3.309)"
+        "v": -1.6273062651526993,
+        "l": "Quality -1.6 (Philadelphia Flyers -6.033 vs Edmonton Oilers 3.449)"
       },
       "_sk": {
         "v": 0,
@@ -4007,7 +4105,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.6385124709217578,
+      "_score": -1.6273062651526993,
       "_rk": [
         27,
         10
@@ -4026,8 +4124,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -5.659213569776408,
-        "l": "Quality -5.7 (Orlando Magic -0.700 vs Utah Jazz -4.200)"
+        "v": -5.955056179775281,
+        "l": "Quality -6.0 (Orlando Magic -0.800 vs Utah Jazz -4.500)"
       },
       "_sk": {
         "v": 0,
@@ -4041,10 +4139,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.659213569776408,
+      "_score": -5.955056179775281,
       "_rk": [
         16,
-        24
+        25
       ]
     },
     {
@@ -4260,8 +4358,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.55220661062153,
-        "l": "Quality +5.6 (Utah Mammoth 3.180 vs Vegas Golden Knights 3.208)"
+        "v": 5.491705822656698,
+        "l": "Quality +5.5 (Utah Mammoth 2.893 vs Vegas Golden Knights 3.203)"
       },
       "_sk": {
         "v": 0,
@@ -4275,7 +4373,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.55220661062153,
+      "_score": 5.491705822656698,
       "_rk": [
         12,
         11
@@ -4296,8 +4394,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.498402555910543,
-        "l": "Quality +8.5 (Golden State Warriors -0.100 vs Houston Rockets 6.300)"
+        "v": 7.432432432432432,
+        "l": "Quality +7.4 (Golden State Warriors -0.400 vs Houston Rockets 5.900)"
       },
       "_sk": {
         "v": 0,
@@ -4311,10 +4409,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.498402555910543,
+      "_score": 7.432432432432432,
       "_rk": [
         15,
-        2
+        4
       ]
     },
     {
@@ -4332,8 +4430,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -6.249997339593448,
-        "l": "Quality -6.2 (Nashville Predators -3.677 vs Anaheim Ducks -5.611)"
+        "v": -5.542753391739781,
+        "l": "Quality -5.5 (Nashville Predators -3.067 vs Anaheim Ducks -5.225)"
       },
       "_sk": {
         "v": 0,
@@ -4347,7 +4445,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.249997339593448,
+      "_score": -5.542753391739781,
       "_rk": [
         22,
         25
@@ -4367,8 +4465,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -10.405850340425623,
-        "l": "Quality -10.4 (Pittsburgh Penguins -3.702 vs San Jose Sharks -11.688)"
+        "v": -10.788958651749942,
+        "l": "Quality -10.8 (Pittsburgh Penguins -3.911 vs San Jose Sharks -12.029)"
       },
       "_sk": {
         "v": 0,
@@ -4382,7 +4480,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -10.405850340425623,
+      "_score": -10.788958651749942,
       "_rk": [
         23,
         31
@@ -4401,8 +4499,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 12.743039707895939,
-        "l": "Quality +12.7 (Oklahoma City Thunder 6.300 vs Portland Trail Blazers 3.000)"
+        "v": 13.108108108108107,
+        "l": "Quality +13.1 (Oklahoma City Thunder 6.400 vs Portland Trail Blazers 3.300)"
       },
       "_sk": {
         "v": 0,
@@ -4416,10 +4514,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.743039707895939,
+      "_score": 13.108108108108107,
       "_rk": [
-        2,
-        11
+        3,
+        10
       ]
     },
     {
@@ -6192,8 +6290,8 @@
       "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
-      "fixturesResolved": 3,
-      "fixturesSeen": 3,
+      "fixturesResolved": 4,
+      "fixturesSeen": 4,
       "gfrLeague": "USL Super League",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -6359,8 +6457,8 @@
       "confederation": "UEFA",
       "rosterMatched": 24,
       "rosterTotal": 24,
-      "fixturesResolved": 12,
-      "fixturesSeen": 12,
+      "fixturesResolved": 9,
+      "fixturesSeen": 9,
       "rosterCode": "eng.2"
     },
     "serie-b-brazil": {
@@ -6580,8 +6678,8 @@
       "confederation": "UEFA",
       "rosterMatched": 35,
       "rosterTotal": 36,
-      "fixturesResolved": 17,
-      "fixturesSeen": 18,
+      "fixturesResolved": 16,
+      "fixturesSeen": 17,
       "rosterCode": "uefa.europa"
     },
     "leagues-cup": {
@@ -6710,16 +6808,6 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 20,
       "rosterTotal": 20
-    },
-    "ucl": {
-      "rating": 89.51,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 36,
-      "rosterTotal": 36,
-      "rosterCode": "uefa.champions",
-      "fixturesResolved": 9,
-      "fixturesSeen": 9
     },
     "a-league": {
       "rating": 72.54,
