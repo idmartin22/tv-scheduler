@@ -1148,6 +1148,33 @@ function App(){
   const [areaBases,setAreaBases]=useState({});      // area -> base mod (default 50)
   const [areaOverrides,setAreaOverrides]=useState({}); // leagueId -> area, manual placement
   const [areaExpanded,setAreaExpanded]=useState({});
+
+  // Which List tab headings are open. Both levels start folded, so the tab
+  // opens as a short index of sports and you go down to what you want.
+  //
+  // Only the OPEN ones are stored, which is what makes the default hold: a
+  // league appearing for the first time is absent from the map and therefore
+  // folded, same as everything else. Storing the shut ones instead would mean
+  // every new league arrived open, because nothing had folded it yet.
+  //
+  // This lives in localStorage rather than settings.json on purpose. Every
+  // settings write is a commit to the repo, and a commit per fold would be
+  // the same storm of per-file pushes that was cancelling Pages deploys. An
+  // unfolded heading is a per-device view preference, not shared state, so the
+  // browser is the right place for it. Reads and writes are wrapped because
+  // the accessor itself throws in a private window.
+  const LIST_OPEN_KEY="barListOpen";
+  const [listOpen,setListOpen]=useState(()=>{
+    try{ return JSON.parse(localStorage.getItem(LIST_OPEN_KEY)||"{}")||{}; }
+    catch(e){ return {}; }
+  });
+  const toggleOpen=k=>setListOpen(p=>{
+    const n={...p};
+    if(n[k]) delete n[k]; else n[k]=1;
+    try{ localStorage.setItem(LIST_OPEN_KEY,JSON.stringify(n)); }catch(e){}
+    return n;
+  });
+
   const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
   // Priority order for the TVs, and which of them are quads. Both live in
   // settings.json so they follow you between devices.
@@ -2077,28 +2104,106 @@ function App(){
             });
             return sportOrder.map(sport=>{
               const group=[...bySport[sport]].sort((a,b)=>(b.ds??0)-(a.ds??0));
+
+              // Second level: league inside the sport, so NFL sits above
+              // college football rather than interleaving with it.
+              //
+              // Leagues are ordered the way the LEAGUE TAB ranks them, which
+              // is two different keys because that tab has two sections. Every
+              // sport but soccer ranks on the League Modifier. Soccer leagues
+              // carry no mod at all — their score comes from the area/GFR path
+              // — so the League tab sorts its soccer section by GFR league
+              // rating, and so does this.
+              //
+              // A league with neither number has no position in that order, so
+              // it falls below every ranked league and is settled by the
+              // best-event rule the sports themselves already use. That also
+              // breaks a genuine tie between two ranked leagues (WTA and ATP
+              // are both mod 0), which a bare subtraction would leave to
+              // whatever order the events happened to arrive in.
+              const byLeague={};
+              group.forEach(a=>{const k=a.league||"—";(byLeague[k]=byLeague[k]||[]).push(a);});
+              const leagueRank=lg=>{
+                const e=byLeague[lg][0];
+                if(sport==="Soccer"){
+                  const r=(e.lgR!==undefined&&e.lgR!==null)?e.lgR:(leagueGfr[e.leagueId]||{}).rating;
+                  return (r===undefined||r===null)?null:r;
+                }
+                const m=leagueMods[e.leagueId];
+                return m===undefined?null:m;
+              };
+              // Soccer only: every men's league sits above every women's one,
+              // whatever they rate. Liga MX Femenil at 71.24 outranks a lot of
+              // men's leagues on GFR, but GFR rates each pool against itself,
+              // so the two numbers were never on one scale to begin with.
+              //
+              // Two signals, because neither covers everything. The area is
+              // authoritative but only exists for leagues GFR has placed —
+              // Women's College Soccer has none. The name test catches that
+              // one, and "Femenil"/"Femenino" besides.
+              const isWomensSoccer=lg=>{
+                const e=byLeague[lg][0];
+                return isWomensLeague(e.league)||/^womens_/.test(e.area||"");
+              };
+              const leagueOrder=Object.keys(byLeague).sort((l1,l2)=>{
+                if(sport==="Soccer"){
+                  const w1=isWomensSoccer(l1),w2=isWomensSoccer(l2);
+                  if(w1!==w2) return w1?1:-1;
+                }
+                const r1=leagueRank(l1),r2=leagueRank(l2);
+                if(r1!==null&&r2!==null&&r1!==r2) return r2-r1;
+                if(r1!==null&&r2===null) return -1;
+                if(r1===null&&r2!==null) return 1;
+                return (byLeague[l2][0]?.ds??0)-(byLeague[l1][0]?.ds??0);
+              });
+              // "Ligue 1" alone says very little, and the feed reuses names —
+              // Primera Division is Argentina here and Spain elsewhere. The
+              // country disambiguates a domestic league; a continental
+              // competition has no country, so it falls back to the
+              // confederation that runs it. Soccer only; nothing else needs it.
+              const lgWhere=lg=>{
+                if(sport!=="Soccer") return "";
+                const g=leagueGfr[byLeague[lg][0].leagueId]||{};
+                return g.country||g.confederation||"";
+              };
+              const sportShut=!listOpen[`s:${sport}`];
               return(
                 <div key={sport}>
-                  <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px"}}>
+                  <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px",cursor:"pointer",userSelect:"none"}}
+                       onClick={()=>toggleOpen(`s:${sport}`)}>
+                    <span style={{fontSize:11,color:C.DM,width:10,textAlign:"center"}}>{sportShut?"▸":"▾"}</span>
                     <span style={{fontSize:16}}>{sportIcon(sport)}</span>
                     <span style={{fontSize:12,fontWeight:700,color:"#f1f5f9",letterSpacing:"0.03em"}}>{sport.toUpperCase()}</span>
                     <span style={{fontSize:10,color:C.DM}}>({group.length})</span>
+                    {sportShut&&<span style={{fontSize:9.5,color:C.DM}}>· {leagueOrder.length} league{leagueOrder.length===1?"":"s"}</span>}
                   </div>
-                  {group.map(a=>{
+                  {!sportShut&&leagueOrder.map(lgName=>{
+                  const lgShut=!listOpen[`l:${sport}|${lgName}`];
+                  return(
+                  <div key={lgName}>
+                  <div style={{display:"flex",alignItems:"center",gap:7,margin:"8px 10px 2px 26px",paddingLeft:9,borderLeft:`2px solid ${C.BD2}`,cursor:"pointer",userSelect:"none"}}
+                       onClick={()=>toggleOpen(`l:${sport}|${lgName}`)}>
+                    <span style={{fontSize:10,color:C.DM,width:9,textAlign:"center"}}>{lgShut?"▸":"▾"}</span>
+                    <span style={{fontSize:10.5,fontWeight:700,letterSpacing:"0.07em",textTransform:"uppercase",color:C.MT}}>{lgName}</span>
+                    {lgWhere(lgName)&&(
+                      <span style={{fontSize:9.5,color:C.DM,whiteSpace:"nowrap"}}>· {lgWhere(lgName)}</span>
+                    )}
+                    <span style={{fontSize:9.5,color:C.DM}}>{byLeague[lgName].length}</span>
+                  </div>
+                  {!lgShut&&byLeague[lgName].map(a=>{
                     const c=sc(a);
                     const isNow=isToday&&nowMin>=a.startMin&&nowMin<a.endMin;
                     const isRemoved=removedEvents.includes(a.id);
                     const sColor=(a.ds??0)>=75?"#22c55e":(a.ds??0)>=50?"#f59e0b":"#94a3b8";
                     return(
                     <div key={a.id}>
-                    <div style={{margin:"3px 10px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+                    <div style={{margin:"3px 10px 3px 26px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
                       <div className="espn-display" style={{background:`${sColor}18`,border:`1.5px solid ${sColor}`,borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
                         <div style={{fontSize:12,fontWeight:700,color:sColor}}>{a.ds?.toFixed(1)??"—"}</div>
                         <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
                       </div>
                       <div style={{minWidth:0}}>
                         <div style={{fontSize:13,fontWeight:600,color:isRemoved?"#6b7280":"#f1f5f9",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",textDecoration:isRemoved?"line-through":"none"}}>{evName(a)}</div>
-                        <div style={{fontSize:10,color:C.MT,marginTop:2,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.league}</div>
                       </div>
                       <div style={{fontSize:10,fontWeight:500,color:c.tx,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><ChBadges channel={a.channel}/></div>
                       <div style={{display:"flex",flexDirection:"column",gap:3,alignItems:"center"}}>
@@ -2127,7 +2232,7 @@ function App(){
                     {/* Score breakdown — same block the Rank tab shows, so a
                         click gives the same explanation in either place. */}
                     {sel===a.id&&a.breakdown&&(
-                      <div style={{margin:"0 10px 6px",borderRadius:10,border:`1px solid ${C.BD}`,padding:"10px 12px",background:C.SUR}}>
+                      <div style={{margin:"0 10px 6px 26px",borderRadius:10,border:`1px solid ${C.BD}`,padding:"10px 12px",background:C.SUR}}>
                         <div style={{fontSize:10,fontWeight:700,color:C.A,marginBottom:6,letterSpacing:"0.05em"}}>SCORE BREAKDOWN</div>
                         {a.breakdown.filter(Boolean).map((b,j)=>(
                           <div key={j} style={{display:"flex",justifyContent:"space-between",padding:"4px 0",borderBottom:`1px solid ${C.BD}`,fontSize:11}}>
@@ -2141,6 +2246,8 @@ function App(){
                       </div>
                     )}
                     </div>
+                  );})}
+                  </div>
                   );})}
                 </div>
               );
