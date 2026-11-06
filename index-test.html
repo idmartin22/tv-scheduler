@@ -1149,26 +1149,29 @@ function App(){
   const [areaOverrides,setAreaOverrides]=useState({}); // leagueId -> area, manual placement
   const [areaExpanded,setAreaExpanded]=useState({});
 
-  // Which List tab headings are folded shut. Only the SHUT ones are stored,
-  // so a league that appears for the first time is open without having to be
-  // listed anywhere — and an old key for a league that never comes back costs
-  // one short string.
+  // Which List tab headings are open. Both levels start folded, so the tab
+  // opens as a short index of sports and you go down to what you want.
+  //
+  // Only the OPEN ones are stored, which is what makes the default hold: a
+  // league appearing for the first time is absent from the map and therefore
+  // folded, same as everything else. Storing the shut ones instead would mean
+  // every new league arrived open, because nothing had folded it yet.
   //
   // This lives in localStorage rather than settings.json on purpose. Every
   // settings write is a commit to the repo, and a commit per fold would be
-  // the same storm of per-file pushes that was cancelling Pages deploys. A
-  // folded heading is a per-device view preference, not shared state, so the
+  // the same storm of per-file pushes that was cancelling Pages deploys. An
+  // unfolded heading is a per-device view preference, not shared state, so the
   // browser is the right place for it. Reads and writes are wrapped because
   // the accessor itself throws in a private window.
-  const COLLAPSE_KEY="barListCollapsed";
-  const [listShut,setListShut]=useState(()=>{
-    try{ return JSON.parse(localStorage.getItem(COLLAPSE_KEY)||"{}")||{}; }
+  const LIST_OPEN_KEY="barListOpen";
+  const [listOpen,setListOpen]=useState(()=>{
+    try{ return JSON.parse(localStorage.getItem(LIST_OPEN_KEY)||"{}")||{}; }
     catch(e){ return {}; }
   });
-  const toggleShut=k=>setListShut(p=>{
+  const toggleOpen=k=>setListOpen(p=>{
     const n={...p};
     if(n[k]) delete n[k]; else n[k]=1;
-    try{ localStorage.setItem(COLLAPSE_KEY,JSON.stringify(n)); }catch(e){}
+    try{ localStorage.setItem(LIST_OPEN_KEY,JSON.stringify(n)); }catch(e){}
     return n;
   });
 
@@ -2163,11 +2166,11 @@ function App(){
                 const g=leagueGfr[byLeague[lg][0].leagueId]||{};
                 return g.country||g.confederation||"";
               };
-              const sportShut=!!listShut[`s:${sport}`];
+              const sportShut=!listOpen[`s:${sport}`];
               return(
                 <div key={sport}>
                   <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px",cursor:"pointer",userSelect:"none"}}
-                       onClick={()=>toggleShut(`s:${sport}`)}>
+                       onClick={()=>toggleOpen(`s:${sport}`)}>
                     <span style={{fontSize:11,color:C.DM,width:10,textAlign:"center"}}>{sportShut?"▸":"▾"}</span>
                     <span style={{fontSize:16}}>{sportIcon(sport)}</span>
                     <span style={{fontSize:12,fontWeight:700,color:"#f1f5f9",letterSpacing:"0.03em"}}>{sport.toUpperCase()}</span>
@@ -2175,11 +2178,11 @@ function App(){
                     {sportShut&&<span style={{fontSize:9.5,color:C.DM}}>· {leagueOrder.length} league{leagueOrder.length===1?"":"s"}</span>}
                   </div>
                   {!sportShut&&leagueOrder.map(lgName=>{
-                  const lgShut=!!listShut[`l:${sport}|${lgName}`];
+                  const lgShut=!listOpen[`l:${sport}|${lgName}`];
                   return(
                   <div key={lgName}>
                   <div style={{display:"flex",alignItems:"center",gap:7,margin:"8px 10px 2px 26px",paddingLeft:9,borderLeft:`2px solid ${C.BD2}`,cursor:"pointer",userSelect:"none"}}
-                       onClick={()=>toggleShut(`l:${sport}|${lgName}`)}>
+                       onClick={()=>toggleOpen(`l:${sport}|${lgName}`)}>
                     <span style={{fontSize:10,color:C.DM,width:9,textAlign:"center"}}>{lgShut?"▸":"▾"}</span>
                     <span style={{fontSize:10.5,fontWeight:700,letterSpacing:"0.07em",textTransform:"uppercase",color:C.MT}}>{lgName}</span>
                     {lgWhere(lgName)&&(
