@@ -1844,7 +1844,21 @@ function App(){
         .tabrow{scrollbar-width:none}.tabrow::-webkit-scrollbar{display:none}
         .tabrow>button{white-space:nowrap}
         @media(max-width:480px){.tabrow>button{padding:5px 7px!important;font-size:10px!important}}
-        @media(max-width:380px){.tabrow>button{padding:5px 5px!important;font-size:9px!important}}`}</style>
+        @media(max-width:380px){.tabrow>button{padding:5px 5px!important;font-size:9px!important}}
+
+        /* List tab widths. A phone and a 27" monitor get the same 700px column
+           otherwise, which is why the event and channel cells ellipsize on the
+           desktop app with half the window empty either side. Done in CSS
+           rather than a resize listener so nothing re-renders on a drag.
+           The grid lives here and NOT inline, because an inline
+           gridTemplateColumns outranks any class and the breakpoint would
+           never apply. */
+        .list-wrap{max-width:700px;margin:0 auto}
+        .list-row{display:grid;grid-template-columns:52px 1fr 80px 32px;gap:8px}
+        @media(min-width:900px){
+          .list-wrap{max-width:980px}
+          .list-row{grid-template-columns:56px 1fr 210px 36px}
+        }`}</style>
 
       {/* ── HEADER ── */}
       <div style={{height:3,background:`linear-gradient(90deg, ${C.A}, ${C.A2})`}}/>
@@ -2083,8 +2097,8 @@ function App(){
       )}
 
       {tab==="list"&&(
-        <div key={scheduleDate} style={{paddingBottom:120+detailPanelH,maxWidth:700,margin:"0 auto"}}>
-          <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
+        <div key={scheduleDate} className="list-wrap" style={{paddingBottom:120+detailPanelH}}>
+          <div className="list-row" style={{padding:"8px 16px 4px"}}>
             {["SCORE","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
           </div>
           {(()=>{
@@ -2197,7 +2211,7 @@ function App(){
                     const sColor=(a.ds??0)>=75?"#22c55e":(a.ds??0)>=50?"#f59e0b":"#94a3b8";
                     return(
                     <div key={a.id}>
-                    <div style={{margin:"3px 10px 3px 26px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+                    <div className="list-row" style={{margin:"3px 10px 3px 26px",borderRadius:10,padding:"10px 12px",alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
                       <div className="espn-display" style={{background:`${sColor}18`,border:`1.5px solid ${sColor}`,borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
                         <div style={{fontSize:12,fontWeight:700,color:sColor}}>{a.ds?.toFixed(1)??"—"}</div>
                         <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
