@@ -2105,13 +2105,40 @@ function App(){
                 const m=leagueMods[e.leagueId];
                 return m===undefined?null:m;
               };
+              // Soccer only: every men's league sits above every women's one,
+              // whatever they rate. Liga MX Femenil at 71.24 outranks a lot of
+              // men's leagues on GFR, but GFR rates each pool against itself,
+              // so the two numbers were never on one scale to begin with.
+              //
+              // Two signals, because neither covers everything. The area is
+              // authoritative but only exists for leagues GFR has placed —
+              // Women's College Soccer has none. The name test catches that
+              // one, and "Femenil"/"Femenino" besides.
+              const isWomensSoccer=lg=>{
+                const e=byLeague[lg][0];
+                return isWomensLeague(e.league)||/^womens_/.test(e.area||"");
+              };
               const leagueOrder=Object.keys(byLeague).sort((l1,l2)=>{
+                if(sport==="Soccer"){
+                  const w1=isWomensSoccer(l1),w2=isWomensSoccer(l2);
+                  if(w1!==w2) return w1?1:-1;
+                }
                 const r1=leagueRank(l1),r2=leagueRank(l2);
                 if(r1!==null&&r2!==null&&r1!==r2) return r2-r1;
                 if(r1!==null&&r2===null) return -1;
                 if(r1===null&&r2!==null) return 1;
                 return (byLeague[l2][0]?.ds??0)-(byLeague[l1][0]?.ds??0);
               });
+              // "Ligue 1" alone says very little, and the feed reuses names —
+              // Primera Division is Argentina here and Spain elsewhere. The
+              // country disambiguates a domestic league; a continental
+              // competition has no country, so it falls back to the
+              // confederation that runs it. Soccer only; nothing else needs it.
+              const lgWhere=lg=>{
+                if(sport!=="Soccer") return "";
+                const g=leagueGfr[byLeague[lg][0].leagueId]||{};
+                return g.country||g.confederation||"";
+              };
               return(
                 <div key={sport}>
                   <div style={{display:"flex",alignItems:"center",gap:8,padding:"14px 16px 6px",margin:"0 10px"}}>
@@ -2123,6 +2150,9 @@ function App(){
                   <div key={lgName}>
                   <div style={{display:"flex",alignItems:"center",gap:7,margin:"8px 10px 2px 26px",paddingLeft:9,borderLeft:`2px solid ${C.BD2}`}}>
                     <span style={{fontSize:10.5,fontWeight:700,letterSpacing:"0.07em",textTransform:"uppercase",color:C.MT}}>{lgName}</span>
+                    {lgWhere(lgName)&&(
+                      <span style={{fontSize:9.5,color:C.DM,whiteSpace:"nowrap"}}>· {lgWhere(lgName)}</span>
+                    )}
                     <span style={{fontSize:9.5,color:C.DM}}>{byLeague[lgName].length}</span>
                   </div>
                   {byLeague[lgName].map(a=>{
