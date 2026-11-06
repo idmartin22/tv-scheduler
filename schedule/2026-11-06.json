@@ -895,45 +895,6 @@
       ]
     },
     {
-      "id": 77336825,
-      "lgId": 541,
-      "lgSlug": "laliga-2",
-      "time": "14:30",
-      "name": "Eibar @ Castell\u00f3n",
-      "sport": "Soccer",
-      "league": "LaLiga2",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 15.430327868852476,
-        "l": "Quality +15.4 (GFR 81.0-83.7 vs tier1 baseline 157.2 (LaLiga 2 (Spain)))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 15.430327868852476,
-      "cat": "club_league",
-      "area": "mens_club_league",
-      "espn": "esp.2",
-      "lgR": 78.59,
-      "_rk": [
-        292,
-        145
-      ]
-    },
-    {
       "id": 69756974,
       "lgId": 303,
       "lgSlug": "bundesliga-5",
@@ -9688,6 +9649,16 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
+      "name": "America's Day at the Races",
+      "league": "Horse Racing",
+      "sport": "Equestrian",
+      "time": "12:30",
+      "date": "2026-11-06",
+      "channel": "Fubo Sports, FOX Sports 2, FOX One, FOX Sports Racing",
+      "reason": "marquee",
+      "detail": "Horse Racing is marquee-only and this matchup isn't on the marquee list"
+    },
+    {
       "name": "Finland @ Denmark",
       "league": "Women's World Championship",
       "sport": "Hockey",
@@ -10090,16 +10061,6 @@
     {
       "name": "Adirondack Thunder @ Trois-Rivieres Lions",
       "league": "ECHL",
-      "sport": "Hockey",
-      "time": "19:00",
-      "date": "2026-11-06",
-      "channel": "FloHockey",
-      "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
-    },
-    {
-      "name": "Des Moines Buccaneers @ Chicago Steel",
-      "league": "USHL",
       "sport": "Hockey",
       "time": "19:00",
       "date": "2026-11-06",
@@ -10602,6 +10563,16 @@
       "league": "USHL",
       "sport": "Hockey",
       "time": "19:35",
+      "date": "2026-11-06",
+      "channel": "FloHockey",
+      "reason": "channel",
+      "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Des Moines Buccaneers @ Chicago Steel",
+      "league": "USHL",
+      "sport": "Hockey",
+      "time": "20:00",
       "date": "2026-11-06",
       "channel": "FloHockey",
       "reason": "channel",
@@ -12109,18 +12080,6 @@
     }
   },
   "leagueGfr": {
-    "laliga2": {
-      "rating": 78.59,
-      "area": "mens_club_league",
-      "rosterMatched": 21,
-      "rosterTotal": 22,
-      "rosterCode": "esp.2",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "LaLiga 2",
-      "country": "Spain",
-      "confederation": "UEFA"
-    },
     "nwsl": {
       "rating": 85.74,
       "area": "womens_club_league",
@@ -12415,6 +12374,15 @@
       "confederation": "UEFA",
       "rosterMatched": 22,
       "rosterTotal": 24
+    },
+    "laliga2": {
+      "rating": 78.59,
+      "area": "mens_club_league",
+      "gfrLeague": "LaLiga 2",
+      "country": "Spain",
+      "confederation": "UEFA",
+      "rosterMatched": 21,
+      "rosterTotal": 22
     },
     "ligue-1": {
       "rating": 85.08,
