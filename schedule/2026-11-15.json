@@ -648,6 +648,36 @@
       ]
     },
     {
+      "id": 59784423,
+      "lgId": 3074,
+      "lgSlug": "figure-skating",
+      "time": "12:00",
+      "name": "Skate America",
+      "sport": "Wintersports",
+      "league": "Figure Skating",
+      "ch": [
+        "NBC"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Figure Skating not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 71524119,
       "lgId": 541,
       "lgSlug": "laliga-2",
@@ -2985,6 +3015,36 @@
       "_score": 0
     },
     {
+      "id": 50655201,
+      "lgId": 2001,
+      "lgSlug": "pga-tour",
+      "time": "14:00",
+      "name": "Austin Championship",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 40181355,
       "lgId": 3074,
       "lgSlug": "figure-skating",
@@ -4834,6 +4894,36 @@
       "_score": 0
     },
     {
+      "id": 63058332,
+      "lgId": 2019,
+      "lgSlug": "pga-tour-champions",
+      "time": "17:00",
+      "name": "Charles Schwab Cup Championship",
+      "sport": "Golf",
+      "league": "PGA Tour Champions",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 41420128,
       "lgId": 2009,
       "lgSlug": "ncaa-basketball-women",
@@ -6160,6 +6250,16 @@
       "detail": "airs on SNY, FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "The ANNIKA",
+      "league": "LPGA Tour",
+      "sport": "Golf",
+      "time": "13:30",
+      "date": "2026-11-15",
+      "channel": "CNBC Canada",
+      "reason": "channel",
+      "detail": "airs on CNBC Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "William & Mary @ Michigan",
       "league": "Men's College Basketball",
       "sport": "Basketball",
@@ -6705,9 +6805,9 @@
       "sport": "Hockey",
       "time": "20:00",
       "date": "2026-11-15",
-      "channel": "FloHockey",
+      "channel": "FanDuel Sports Network West, FloHockey",
       "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
+      "detail": "airs on FanDuel Sports Network West, FloHockey \u2014 none in channels.txt"
     },
     {
       "name": "Florida A&M @ UTEP",
@@ -7792,8 +7892,8 @@
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
-      "fixturesResolved": 5,
-      "fixturesSeen": 5,
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"

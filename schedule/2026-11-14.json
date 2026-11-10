@@ -1492,36 +1492,6 @@
       ]
     },
     {
-      "id": 59784423,
-      "lgId": 3074,
-      "lgSlug": "figure-skating",
-      "time": "12:00",
-      "name": "Skate America",
-      "sport": "Wintersports",
-      "league": "Figure Skating",
-      "ch": [
-        "NBC"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "Figure Skating not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
       "id": 37881945,
       "lgId": 271,
       "lgSlug": "womens-super-league",
@@ -6541,6 +6511,36 @@
       ]
     },
     {
+      "id": 5630276,
+      "lgId": 2011,
+      "lgSlug": "wta",
+      "time": "16:00",
+      "name": "WTA Finals",
+      "sport": "Tennis",
+      "league": "WTA",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 30,
+        "l": "Tennis: finals +30"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30
+    },
+    {
       "id": 32207040,
       "lgId": 2005,
       "lgSlug": "ncaa-hockey",
@@ -6653,6 +6653,7 @@
         "TBS",
         "truTV",
         "HBO Max (US)",
+        "Telemundo",
         "NBC Universo",
         "Peacock ES",
         "ViX"
@@ -7159,6 +7160,36 @@
         120,
         71
       ]
+    },
+    {
+      "id": 63058332,
+      "lgId": 2019,
+      "lgSlug": "pga-tour-champions",
+      "time": "17:00",
+      "name": "Charles Schwab Cup Championship",
+      "sport": "Golf",
+      "league": "PGA Tour Champions",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 22119117,
@@ -7915,6 +7946,44 @@
       "_rk": [
         106,
         126
+      ]
+    },
+    {
+      "id": 77427512,
+      "lgId": 1881,
+      "lgSlug": "liga-mx-femenil",
+      "time": "18:00",
+      "name": "Pumas UNAM @ Tigres UANL",
+      "sport": "Soccer",
+      "league": "Liga MX Femenil",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 8.669587272308037,
+        "l": "Quality +8.7 (GFR 72.0-81.0 vs tier1 baseline 142.5 (Liga MX Femenil (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 8.669587272308037,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "mex.w.1",
+      "lgR": 71.24,
+      "_rk": [
+        126,
+        45
       ]
     },
     {
@@ -9246,6 +9315,37 @@
       "cat": "unclassified"
     },
     {
+      "id": 56649750,
+      "lgId": 3389,
+      "lgSlug": "college-wrestling",
+      "time": "19:00",
+      "name": "Illinois - The Citadel",
+      "sport": "Fighting",
+      "league": "College Wrestling",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 15,
+        "l": "Boxing event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 82265098,
       "lgId": 958,
       "lgSlug": "nba",
@@ -9847,6 +9947,8 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
+        "Univision",
+        "TUDN",
         "ViX"
       ],
       "dur": 120,
@@ -10674,6 +10776,44 @@
       "cat": "unclassified"
     },
     {
+      "id": 70197401,
+      "lgId": 1881,
+      "lgSlug": "liga-mx-femenil",
+      "time": "22:00",
+      "name": "Ju\u00e1rez @ Guadalajara",
+      "sport": "Soccer",
+      "league": "Liga MX Femenil",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 7.939128429790172,
+        "l": "Quality +7.9 (GFR 75.4-76.7 vs tier1 baseline 142.5 (Liga MX Femenil (Mexico)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.939128429790172,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "mex.w.1",
+      "lgR": 71.24,
+      "_rk": [
+        81,
+        66
+      ]
+    },
+    {
       "id": 19897171,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -10780,6 +10920,36 @@
         197,
         231
       ]
+    },
+    {
+      "id": 13732902,
+      "lgId": 2000,
+      "lgSlug": "lpga-tour",
+      "time": "23:00",
+      "name": "The ANNIKA",
+      "sport": "Golf",
+      "league": "LPGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 76402355,
@@ -12124,6 +12294,16 @@
       "detail": "airs on CNBC Canada \u2014 none in channels.txt"
     },
     {
+      "name": "HSR Daytona Classic 24 Hour",
+      "league": "Other",
+      "sport": "Motorsports",
+      "time": "14:00",
+      "date": "2026-11-14",
+      "channel": "REV TV",
+      "reason": "channel",
+      "detail": "airs on REV TV \u2014 none in channels.txt"
+    },
+    {
       "name": "Northern Iowa @ South Dakota",
       "league": "College Football",
       "sport": "Football",
@@ -12399,9 +12579,9 @@
       "sport": "Tennis",
       "time": "15:00",
       "date": "2026-11-14",
-      "channel": "TSN+, TSN3, DAZN Canada",
+      "channel": "TSN+, TVA Sports 2, TSN3, DAZN Canada",
       "reason": "channel",
-      "detail": "airs on TSN+, TSN3, DAZN Canada \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TVA Sports 2, TSN3, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Lindenwood @ UT Martin",
@@ -12692,6 +12872,16 @@
       "channel": "NEC Front Row",
       "reason": "channel",
       "detail": "airs on NEC Front Row \u2014 none in channels.txt"
+    },
+    {
+      "name": "IHSAA Class 3A Tournament",
+      "league": "High School Football",
+      "sport": "Football",
+      "time": "17:00",
+      "date": "2026-11-14",
+      "channel": "Marquee Sports Network",
+      "reason": "channel",
+      "detail": "airs on Marquee Sports Network \u2014 none in channels.txt"
     },
     {
       "name": "Laval Rocket @ Rochester Americans",
@@ -13402,6 +13592,16 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
+    },
+    {
+      "name": "IHSAA Class 3A Tournament",
+      "league": "High School Football",
+      "sport": "Football",
+      "time": "20:00",
+      "date": "2026-11-14",
+      "channel": "Marquee Sports Network",
+      "reason": "channel",
+      "detail": "airs on Marquee Sports Network \u2014 none in channels.txt"
     },
     {
       "name": "Allen Americans @ Tulsa Oilers",
@@ -14626,8 +14826,8 @@
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
-      "fixturesResolved": 3,
-      "fixturesSeen": 3,
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"

@@ -34,10 +34,48 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "",
-      "lgR": 1426.5,
+      "lgR": 1415.5,
       "_rk": [
         102,
         108
+      ]
+    },
+    {
+      "id": 49440070,
+      "lgId": 2364,
+      "lgSlug": "africa-cup-of-nations-qualifier",
+      "time": "08:00",
+      "name": "Cameroon @ Namibia",
+      "sport": "Soccer",
+      "league": "Africa Cup of Nations Qualifier",
+      "ch": [
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 3.6450079239302697,
+        "l": "Quality +3.6 (Elo Cameroon 1622 vs Namibia 1305, CAF baseline 2754)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 3.6450079239302697,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "",
+      "lgR": 1415.5,
+      "_rk": [
+        59,
+        135
       ]
     },
     {
@@ -72,7 +110,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "",
-      "lgR": 1426.5,
+      "lgR": 1415.5,
       "_rk": [
         23,
         121
@@ -189,7 +227,7 @@
       "cat": "national_men",
       "area": "mens_national",
       "espn": "",
-      "lgR": 1426.5,
+      "lgR": 1415.5,
       "_rk": [
         95,
         156
@@ -438,6 +476,44 @@
       "_rk": [
         107,
         64
+      ]
+    },
+    {
+      "id": 95703816,
+      "lgId": 2364,
+      "lgSlug": "africa-cup-of-nations-qualifier",
+      "time": "12:00",
+      "name": "Guinea @ Eritrea",
+      "sport": "Soccer",
+      "league": "Africa Cup of Nations Qualifier",
+      "ch": [
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -1.707438841737394,
+        "l": "Quality -1.7 (Elo Guinea 1463 vs Eritrea 1206, CAF baseline 2754)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -1.707438841737394,
+      "cat": "national_men",
+      "area": "mens_national",
+      "espn": "",
+      "lgR": 1415.5,
+      "_rk": [
+        90,
+        159
       ]
     },
     {
@@ -3132,6 +3208,16 @@
   ],
   "dropped": [
     {
+      "name": "The ANNIKA",
+      "league": "LPGA Tour",
+      "sport": "Golf",
+      "time": "00:00",
+      "date": "2026-11-16",
+      "channel": "Fubo Sports, Golf Channel USA, Golf Channel Canada",
+      "reason": "cutoff",
+      "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Nitto ATP Finals",
       "league": "ATP",
       "sport": "Tennis",
@@ -3140,6 +3226,16 @@
       "channel": "TSN+",
       "reason": "channel",
       "detail": "airs on TSN+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Nitto ATP Finals",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "08:00",
+      "date": "2026-11-16",
+      "channel": "TSN+, TSN5",
+      "reason": "channel",
+      "detail": "airs on TSN+, TSN5 \u2014 none in channels.txt"
     },
     {
       "name": "Bayer Leverkusen @ Stuttgart",
@@ -3180,6 +3276,16 @@
       "channel": "NBA App",
       "reason": "channel",
       "detail": "airs on NBA App \u2014 none in channels.txt"
+    },
+    {
+      "name": "Nitto ATP Finals",
+      "league": "ATP",
+      "sport": "Tennis",
+      "time": "14:30",
+      "date": "2026-11-16",
+      "channel": "TSN+, TSN5",
+      "reason": "channel",
+      "detail": "airs on TSN+, TSN5 \u2014 none in channels.txt"
     },
     {
       "name": "Osceola Magic @ Mexico City Capitanes",
@@ -4233,10 +4339,10 @@
       "fixturesSeen": 23
     },
     "africa-cup-of-nations-qualifier": {
-      "rating": 1426.5,
+      "rating": 1415.5,
       "area": "mens_national",
-      "fixturesResolved": 22,
-      "fixturesSeen": 22
+      "fixturesResolved": 24,
+      "fixturesSeen": 24
     },
     "uefa-nations-league": {
       "rating": 1614.11,
@@ -4354,8 +4460,8 @@
       "rosterMatched": 17,
       "rosterTotal": 18,
       "rosterCode": "mex.w.1",
-      "fixturesResolved": 5,
-      "fixturesSeen": 5,
+      "fixturesResolved": 7,
+      "fixturesSeen": 7,
       "gfrLeague": "Liga MX Femenil",
       "country": "Mexico",
       "confederation": "CONCACAF"
