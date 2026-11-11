@@ -41,6 +41,36 @@
       ]
     },
     {
+      "id": 88197584,
+      "lgId": 2181,
+      "lgSlug": "alpine-world-cup",
+      "time": "07:00",
+      "name": "Slalom (Men) - Race 2",
+      "sport": "Wintersports",
+      "league": "Alpine World Cup",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Alpine World Cup not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 31599063,
       "lgId": 3380,
       "lgSlug": "cyclo-cross",
@@ -108,6 +138,66 @@
         873,
         522
       ]
+    },
+    {
+      "id": 73162979,
+      "lgId": 2003,
+      "lgSlug": "atp",
+      "time": "08:00",
+      "name": "Nitto ATP Finals",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 30,
+        "l": "Tennis: finals +30"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30
+    },
+    {
+      "id": 93763887,
+      "lgId": 2688,
+      "lgSlug": "show-jumping",
+      "time": "08:45",
+      "name": "FEI Jumping World Cup",
+      "sport": "Equestrian",
+      "league": "Show Jumping",
+      "ch": [
+        "beIN SPORTS 5"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Show Jumping not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 9525285,
@@ -5134,8 +5224,10 @@
       "sport": "Soccer",
       "league": "CONCACAF Nations League",
       "ch": [
+        "FOX",
         "FOX Sports 2",
         "FOX One",
+        "FOX Deportes",
         "ViX"
       ],
       "dur": 120,
@@ -6053,14 +6145,24 @@
       "detail": "starts 01:30 AM \u2014 before the 5am day boundary"
     },
     {
+      "name": "Slalom (Men) - Race 1",
+      "league": "Alpine World Cup",
+      "sport": "Wintersports",
+      "time": "04:00",
+      "date": "2026-11-15",
+      "channel": "Peacock",
+      "reason": "cutoff",
+      "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
+    },
+    {
       "name": "Nitto ATP Finals",
       "league": "ATP",
       "sport": "Tennis",
       "time": "05:30",
       "date": "2026-11-15",
-      "channel": "TSN+",
+      "channel": "TSN+, TSN5, RDS Info",
       "reason": "channel",
-      "detail": "airs on TSN+ \u2014 none in channels.txt"
+      "detail": "airs on TSN+, TSN5, RDS Info \u2014 none in channels.txt"
     },
     {
       "name": "Manresa @ Forca Lleida",
@@ -6878,9 +6980,9 @@
       "sport": "Basketball",
       "time": "19:30",
       "date": "2026-11-15",
-      "channel": "MW+",
+      "channel": "KFVE, MW+",
       "reason": "channel",
-      "detail": "airs on MW+ \u2014 none in channels.txt"
+      "detail": "airs on KFVE, MW+ \u2014 none in channels.txt"
     },
     {
       "name": "Colorado Eagles @ Ontario Reign",
@@ -7459,6 +7561,7 @@
         "League One (Scotland)",
         "League Two (England)",
         "Liga MX (Mexico)",
+        "Primera A (Colombia)",
         "USL Championship (USA)"
       ]
     },
@@ -7853,6 +7956,18 @@
       "fixturesResolved": 17,
       "fixturesSeen": 17
     },
+    "primera-a": {
+      "rating": 79.87,
+      "area": "mens_club_league",
+      "rosterMatched": 19,
+      "rosterTotal": 20,
+      "rosterCode": "col.1",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL"
+    },
     "africa-cup-of-nations-qualifier": {
       "rating": 1419.5,
       "area": "mens_national",
@@ -8111,15 +8226,6 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 28,
       "rosterTotal": 30
-    },
-    "primera-a": {
-      "rating": 79.87,
-      "area": "mens_club_league",
-      "gfrLeague": "Primera A",
-      "country": "Colombia",
-      "confederation": "CONMEBOL",
-      "rosterMatched": 19,
-      "rosterTotal": 20
     },
     "super-league": {
       "rating": 79.21,

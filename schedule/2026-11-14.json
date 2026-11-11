@@ -5426,6 +5426,44 @@
       ]
     },
     {
+      "id": 86221632,
+      "lgId": 230,
+      "lgSlug": "primera-a",
+      "time": "15:30",
+      "name": "Once Caldas @ Atl\u00e9tico Nacional",
+      "sport": "Soccer",
+      "league": "Primera A",
+      "ch": [
+        "FOX Deportes"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 17.73725834797891,
+        "l": "Quality +17.7 (GFR 82.5-85.4 vs tier1 baseline 159.7 (Primera A (Colombia)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 17.73725834797891,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "col.1",
+      "lgR": 79.87,
+      "_rk": [
+        203,
+        87
+      ]
+    },
+    {
       "id": 17529123,
       "lgId": 707,
       "lgSlug": "nhl",
@@ -12992,9 +13030,9 @@
       "sport": "Volleyball",
       "time": "15:00",
       "date": "2026-11-14",
-      "channel": "MW+",
+      "channel": "Arizona's Family Sports, MW+",
       "reason": "channel",
-      "detail": "airs on MW+ \u2014 none in channels.txt"
+      "detail": "airs on Arizona's Family Sports, MW+ \u2014 none in channels.txt"
     },
     {
       "name": "Colorado State @ San Diego State",
@@ -13118,16 +13156,6 @@
     },
     {
       "name": "Independiente Medell\u00edn @ Rionegro \u00c1guilas",
-      "league": "Primera A",
-      "sport": "Soccer",
-      "time": "15:30",
-      "date": "2026-11-14",
-      "channel": "Fanatiz",
-      "reason": "channel",
-      "detail": "airs on Fanatiz \u2014 none in channels.txt"
-    },
-    {
-      "name": "Once Caldas @ Atl\u00e9tico Nacional",
       "league": "Primera A",
       "sport": "Soccer",
       "time": "15:30",
@@ -14903,6 +14931,7 @@
         "League One (Scotland)",
         "League Two (England)",
         "Liga MX (Mexico)",
+        "Primera A (Colombia)",
         "USL Championship (USA)"
       ]
     },
@@ -15297,6 +15326,18 @@
       "fixturesResolved": 16,
       "fixturesSeen": 16
     },
+    "primera-a": {
+      "rating": 79.87,
+      "area": "mens_club_league",
+      "rosterMatched": 19,
+      "rosterTotal": 20,
+      "rosterCode": "col.1",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL"
+    },
     "africa-cup-of-nations-qualifier": {
       "rating": 1419.5,
       "area": "mens_national",
@@ -15555,15 +15596,6 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 28,
       "rosterTotal": 30
-    },
-    "primera-a": {
-      "rating": 79.87,
-      "area": "mens_club_league",
-      "gfrLeague": "Primera A",
-      "country": "Colombia",
-      "confederation": "CONMEBOL",
-      "rosterMatched": 19,
-      "rosterTotal": 20
     },
     "super-league": {
       "rating": 79.21,

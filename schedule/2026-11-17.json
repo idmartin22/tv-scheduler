@@ -1520,6 +1520,41 @@
       "_score": 0
     },
     {
+      "id": 34114227,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "18:00",
+      "name": "Eastern Michigan @ Western Michigan",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": -7.896715149534238,
+        "l": "Quality -7.9 (Eastern Michigan Eagles -18.100 vs Western Michigan Broncos -2.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.896715149534238,
+      "_rk": [
+        129,
+        76
+      ]
+    },
+    {
       "id": 80285943,
       "lgId": 1799,
       "lgSlug": "lbprc",
@@ -3004,6 +3039,75 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 16546309,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "19:00",
+      "name": "Ball State @ Ohio",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "CBS Sports Network"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": -11.242033011930054,
+        "l": "Quality -11.2 (Ball State Cardinals -20.000 vs Ohio Bobcats -9.700)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -11.242033011930054,
+      "_rk": [
+        130,
+        100
+      ]
+    },
+    {
+      "id": 79061721,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "19:00",
+      "name": "Miami (OH) @ Kent State",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ESPN U",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": -12.294492564144468,
+        "l": "Quality -12.3 (Miami (OH) RedHawks -9.000 vs Kent State Golden Flashes -23.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -12.294492564144468,
+      "_rk": [
+        96,
+        134
+      ]
     },
     {
       "id": 8691651,
@@ -4861,6 +4965,16 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
+      "name": "Pepperdine @ Nevada",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-11-17",
+      "channel": "Nevada Sports Net",
+      "reason": "channel",
+      "detail": "airs on Nevada Sports Net \u2014 none in channels.txt"
+    },
+    {
       "name": "Murray State @ Oregon",
       "league": "Women's College Basketball",
       "sport": "Basketball",
@@ -5837,6 +5951,7 @@
         "League One (Scotland)",
         "League Two (England)",
         "Liga MX (Mexico)",
+        "Primera A (Colombia)",
         "USL Championship (USA)"
       ]
     },
@@ -6231,6 +6346,18 @@
       "fixturesResolved": 32,
       "fixturesSeen": 32
     },
+    "primera-a": {
+      "rating": 79.87,
+      "area": "mens_club_league",
+      "rosterMatched": 19,
+      "rosterTotal": 20,
+      "rosterCode": "col.1",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL"
+    },
     "africa-cup-of-nations-qualifier": {
       "rating": 1498.83,
       "area": "mens_national",
@@ -6489,15 +6616,6 @@
       "confederation": "CONMEBOL",
       "rosterMatched": 28,
       "rosterTotal": 30
-    },
-    "primera-a": {
-      "rating": 79.87,
-      "area": "mens_club_league",
-      "gfrLeague": "Primera A",
-      "country": "Colombia",
-      "confederation": "CONMEBOL",
-      "rosterMatched": 19,
-      "rosterTotal": 20
     },
     "super-league": {
       "rating": 79.21,
