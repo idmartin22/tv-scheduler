@@ -3603,8 +3603,7 @@
         "Serie A (Ecuador)",
         "Serie A (Italy)",
         "Serie B (Brazil)",
-        "Serie B (Italy)",
-        "USL Championship (USA)"
+        "Serie B (Italy)"
       ]
     },
     "womens_club_league": {
@@ -3963,18 +3962,6 @@
     }
   },
   "leagueGfr": {
-    "usl-champ": {
-      "rating": 68.58,
-      "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 25,
-      "rosterCode": "usa.usl.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "USL Championship",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
     "international-friendly": {
       "rating": 1415.2,
       "area": "mens_national",
@@ -4261,6 +4248,15 @@
       "fixturesResolved": 9,
       "fixturesSeen": 9,
       "rosterCode": "eng.1"
+    },
+    "usl-champ": {
+      "rating": 68.58,
+      "area": "mens_club_league",
+      "gfrLeague": "USL Championship",
+      "country": "USA",
+      "confederation": "CONCACAF",
+      "rosterMatched": 24,
+      "rosterTotal": 25
     },
     "serie-a": {
       "rating": 85.28,

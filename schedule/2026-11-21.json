@@ -5379,6 +5379,76 @@
       ]
     },
     {
+      "id": 21106225,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "15:30",
+      "name": "Arkansas @ Texas",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 10.008625421469459,
+        "l": "Quality +10.0 (Arkansas Razorbacks 3.800 vs Texas Longhorns 24.000)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.008625421469459,
+      "_rk": [
+        51,
+        6
+      ]
+    },
+    {
+      "id": 27122731,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "15:30",
+      "name": "LSU @ Tennessee",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 15.022347682898143,
+        "l": "Quality +15.0 (LSU Tigers 22.100 vs Tennessee Volunteers 19.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15.022347682898143,
+      "_rk": [
+        7,
+        11
+      ]
+    },
+    {
       "id": 74212431,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -11506,8 +11576,7 @@
         "Serie A (Ecuador)",
         "Serie A (Italy)",
         "Serie B (Brazil)",
-        "Serie B (Italy)",
-        "USL Championship (USA)"
+        "Serie B (Italy)"
       ]
     },
     "womens_club_league": {
@@ -11866,18 +11935,6 @@
     }
   },
   "leagueGfr": {
-    "usl-champ": {
-      "rating": 68.58,
-      "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 25,
-      "rosterCode": "usa.usl.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "USL Championship",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
     "international-friendly": {
       "rating": 1415.2,
       "area": "mens_national",
@@ -12164,6 +12221,15 @@
       "fixturesResolved": 7,
       "fixturesSeen": 7,
       "rosterCode": "eng.1"
+    },
+    "usl-champ": {
+      "rating": 68.58,
+      "area": "mens_club_league",
+      "gfrLeague": "USL Championship",
+      "country": "USA",
+      "confederation": "CONCACAF",
+      "rosterMatched": 24,
+      "rosterTotal": 25
     },
     "serie-a": {
       "rating": 85.28,

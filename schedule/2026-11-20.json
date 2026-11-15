@@ -6469,6 +6469,16 @@
       "detail": "airs on MLB.TV \u2014 none in channels.txt"
     },
     {
+      "name": "HPP Open",
+      "league": "ATP Challenger Tour",
+      "sport": "Tennis",
+      "time": "06:30",
+      "date": "2026-11-20",
+      "channel": "T2",
+      "reason": "channel",
+      "detail": "airs on T2 \u2014 none in channels.txt"
+    },
+    {
       "name": "Riyadh Season Horse Racing",
       "league": "Horse Racing",
       "sport": "Equestrian",
@@ -8182,8 +8192,7 @@
         "Pro League (Saudi Arabia)",
         "Pro League (UAE)",
         "Serie B (Brazil)",
-        "Serie B (Italy)",
-        "USL Championship (USA)"
+        "Serie B (Italy)"
       ]
     },
     "womens_club_league": {
@@ -8542,18 +8551,6 @@
     }
   },
   "leagueGfr": {
-    "usl-champ": {
-      "rating": 68.58,
-      "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 25,
-      "rosterCode": "usa.usl.1",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "USL Championship",
-      "country": "USA",
-      "confederation": "CONCACAF"
-    },
     "international-friendly": {
       "rating": 1415.2,
       "area": "mens_national",
@@ -8817,6 +8814,15 @@
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20
+    },
+    "usl-champ": {
+      "rating": 68.58,
+      "area": "mens_club_league",
+      "gfrLeague": "USL Championship",
+      "country": "USA",
+      "confederation": "CONCACAF",
+      "rosterMatched": 24,
+      "rosterTotal": 25
     },
     "serie-a": {
       "rating": 85.28,
