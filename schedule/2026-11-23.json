@@ -732,6 +732,36 @@
       "_score": 0
     },
     {
+      "id": 23021216,
+      "lgId": 1799,
+      "lgSlug": "lbprc",
+      "time": "18:00",
+      "name": "Criollos Caguas @ San Juan",
+      "sport": "Baseball",
+      "league": "LBPRC",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 15612787,
       "lgId": 2009,
       "lgSlug": "ncaa-basketball-women",
@@ -809,36 +839,6 @@
       "_st": {
         "v": 0,
         "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 15978164,
-      "lgId": 1799,
-      "lgSlug": "lbprc",
-      "time": "18:21",
-      "name": "Criollos Caguas @ San Juan",
-      "sport": "Baseball",
-      "league": "LBPRC",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -2732,6 +2732,16 @@
       "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
+      "name": "Everton @ Brentford",
+      "league": "Premier League",
+      "sport": "Soccer",
+      "time": "15:00",
+      "date": "2026-11-23",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
+    },
+    {
       "name": "Grand Canyon @ High Point",
       "league": "Women's College Basketball",
       "sport": "Basketball",
@@ -4000,8 +4010,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 6,
-      "fixturesSeen": 6,
+      "fixturesResolved": 8,
+      "fixturesSeen": 8,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -4277,8 +4287,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 7,
-      "fixturesSeen": 7,
+      "fixturesResolved": 8,
+      "fixturesSeen": 8,
       "rosterCode": "fra.1"
     },
     "serie-b": {

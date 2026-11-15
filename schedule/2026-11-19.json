@@ -221,6 +221,36 @@
       "_score": 0
     },
     {
+      "id": 72682125,
+      "lgId": 2001,
+      "lgSlug": "pga-tour",
+      "time": "12:00",
+      "name": "The RSM Classic",
+      "sport": "Golf",
+      "league": "PGA Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
+    },
+    {
       "id": 98661929,
       "lgId": 392,
       "lgSlug": "uefa-womens-champions-league",
@@ -764,6 +794,36 @@
       "_score": 0
     },
     {
+      "id": 35798969,
+      "lgId": 1799,
+      "lgSlug": "lbprc",
+      "time": "18:00",
+      "name": "Indios de Mayaguez @ Cangrejeros",
+      "sport": "Baseball",
+      "league": "LBPRC",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 33932609,
       "lgId": 2009,
       "lgSlug": "ncaa-basketball-women",
@@ -1092,36 +1152,6 @@
       "_st": {
         "v": 0,
         "l": "College Ice Hockey not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 14957741,
-      "lgId": 1799,
-      "lgSlug": "lbprc",
-      "time": "18:21",
-      "name": "Indios de Mayaguez @ Cangrejeros",
-      "sport": "Baseball",
-      "league": "LBPRC",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -2330,8 +2360,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -9.453944337551828,
-        "l": "Quality -9.5 (Rice Owls -14.800 vs Temple Owls -10.300)"
+        "v": -10.177141470516863,
+        "l": "Quality -10.2 (Rice Owls -14.900 vs Temple Owls -12.400)"
       },
       "_sk": {
         "v": 0,
@@ -2345,10 +2375,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.453944337551828,
+      "_score": -10.177141470516863,
       "_rk": [
         119,
-        107
+        115
       ]
     },
     {
@@ -4405,6 +4435,16 @@
       "channel": "YouTube US",
       "reason": "channel",
       "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Las Vegas",
+      "league": "F1 Academy",
+      "sport": "Motorsports",
+      "time": "21:00",
+      "date": "2026-11-19",
+      "channel": "YouTube US",
+      "reason": "practice",
+      "detail": "practice/qualifying session \u2014 Practice"
     },
     {
       "name": "Fairfield @ Oregon",

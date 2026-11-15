@@ -3,6 +3,36 @@
   "label": "Sunday, November 15",
   "events": [
     {
+      "id": 23179005,
+      "lgId": 2003,
+      "lgSlug": "atp",
+      "time": "05:30",
+      "name": "Nitto ATP Finals",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 30,
+        "l": "Tennis: finals +30"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30
+    },
+    {
       "id": 64228667,
       "lgId": 409,
       "lgSlug": "serie-a-women",
@@ -170,11 +200,11 @@
       ]
     },
     {
-      "id": 73162979,
+      "id": 71430164,
       "lgId": 2003,
       "lgSlug": "atp",
       "time": "08:00",
-      "name": "Nitto ATP Finals",
+      "name": "Rafael Jodar @ Alexander Zverev",
       "sport": "Tennis",
       "league": "ATP",
       "ch": [
@@ -182,8 +212,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 30,
-        "l": "Tennis: finals +30"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -197,7 +227,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30
+      "_score": 10
     },
     {
       "id": 93763887,
@@ -700,6 +730,36 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 53314615,
+      "lgId": 2003,
+      "lgSlug": "atp",
+      "time": "12:00",
+      "name": "Nitto ATP Finals",
+      "sport": "Tennis",
+      "league": "ATP",
+      "ch": [
+        "Tennis Channel"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 30,
+        "l": "Tennis: finals +30"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 30
     },
     {
       "id": 85955706,
@@ -1296,8 +1356,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.44692737430167667,
-        "l": "Quality -0.4 (Indiana Pacers -3.100 vs Philadelphia 76ers 2.700)"
+        "v": 0.1129943502824861,
+        "l": "Quality +0.1 (Indiana Pacers -2.900 vs Philadelphia 76ers 3.000)"
       },
       "_sk": {
         "v": 0,
@@ -1311,10 +1371,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.44692737430167667,
+      "_score": 0.1129943502824861,
       "_rk": [
         21,
-        12
+        11
       ]
     },
     {
@@ -2196,8 +2256,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 11.700523896076124,
-        "l": "Quality +11.7 (Ole Miss Rebels 18.300 vs Oklahoma Sooners 13.600)"
+        "v": 11.271073472908334,
+        "l": "Quality +11.3 (Ole Miss Rebels 18.400 vs Oklahoma Sooners 12.900)"
       },
       "_sk": {
         "v": 0,
@@ -2211,10 +2271,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.700523896076124,
+      "_score": 11.271073472908334,
       "_rk": [
-        12,
-        21
+        13,
+        23
       ]
     },
     {
@@ -3805,11 +3865,11 @@
       ]
     },
     {
-      "id": 23022120,
+      "id": 87363442,
       "lgId": 2003,
       "lgSlug": "atp",
       "time": "14:30",
-      "name": "Nitto ATP Finals",
+      "name": "Arthur Fils @ Ben Shelton",
       "sport": "Tennis",
       "league": "ATP",
       "ch": [
@@ -3817,8 +3877,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 30,
-        "l": "Tennis: finals +30"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -3832,7 +3892,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30
+      "_score": 10
     },
     {
       "id": 73910557,
@@ -4689,11 +4749,11 @@
       "_score": 0
     },
     {
-      "id": 65740714,
+      "id": 22948843,
       "lgId": 2011,
       "lgSlug": "wta",
       "time": "15:00",
-      "name": "WTA Finals",
+      "name": "Mirra Andreeva @ Elina Svitolina",
       "sport": "Tennis",
       "league": "WTA",
       "ch": [
@@ -4701,8 +4761,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 30,
-        "l": "Tennis: finals +30"
+        "v": 10,
+        "l": "Tennis event +10"
       },
       "_sk": {
         "v": 0,
@@ -4716,7 +4776,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 30
+      "_score": 10
     },
     {
       "id": 6975505,
@@ -5467,8 +5527,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -11.620111731843574,
-        "l": "Quality -11.6 (Charlotte Hornets -5.300 vs LA Clippers -5.100)"
+        "v": -11.222222222222225,
+        "l": "Quality -11.2 (Charlotte Hornets -5.200 vs LA Clippers -4.900)"
       },
       "_sk": {
         "v": 0,
@@ -5482,7 +5542,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.620111731843574,
+      "_score": -11.222222222222225,
       "_rk": [
         24,
         23
@@ -5674,8 +5734,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 3.050847457627117,
-        "l": "Quality +3.1 (San Antonio Spurs 10.200 vs Utah Jazz -7.500)"
+        "v": 3.1638418079096047,
+        "l": "Quality +3.2 (San Antonio Spurs 10.300 vs Utah Jazz -7.500)"
       },
       "_sk": {
         "v": 0,
@@ -5689,7 +5749,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.050847457627117,
+      "_score": 3.1638418079096047,
       "_rk": [
         1,
         28
@@ -5990,8 +6050,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.361581920903955,
-        "l": "Quality +8.4 (Dallas Mavericks -0.100 vs Boston Celtics 7.500)"
+        "v": 8.47457627118644,
+        "l": "Quality +8.5 (Dallas Mavericks 0.100 vs Boston Celtics 7.400)"
       },
       "_sk": {
         "v": 0,
@@ -6005,9 +6065,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.361581920903955,
+      "_score": 8.47457627118644,
       "_rk": [
-        16,
+        15,
         2
       ]
     },
@@ -6024,8 +6084,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 4.6327683615819195,
-        "l": "Quality +4.6 (New York Knicks 5.700 vs Toronto Raptors -1.600)"
+        "v": 5.084745762711863,
+        "l": "Quality +5.1 (New York Knicks 6.000 vs Toronto Raptors -1.500)"
       },
       "_sk": {
         "v": 0,
@@ -6039,7 +6099,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.6327683615819195,
+      "_score": 5.084745762711863,
       "_rk": [
         5,
         19
@@ -6263,8 +6323,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 2.033898305084745,
-        "l": "Quality +2.0 (Houston Rockets 6.300 vs Washington Wizards -4.500)"
+        "v": 2.146892655367232,
+        "l": "Quality +2.1 (Houston Rockets 6.200 vs Washington Wizards -4.300)"
       },
       "_sk": {
         "v": 0,
@@ -6278,7 +6338,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.033898305084745,
+      "_score": 2.146892655367232,
       "_rk": [
         4,
         22
@@ -6599,8 +6659,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.04469273743017,
-        "l": "Quality -8.0 (Atlanta Hawks 1.100 vs Milwaukee Bucks -8.300)"
+        "v": -7.777777777777779,
+        "l": "Quality -7.8 (Atlanta Hawks 1.300 vs Milwaukee Bucks -8.300)"
       },
       "_sk": {
         "v": 0,
@@ -6614,7 +6674,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.04469273743017,
+      "_score": -7.777777777777779,
       "_rk": [
         14,
         29
@@ -6878,8 +6938,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.905027932960895,
-        "l": "Quality -2.9 (Oklahoma City Thunder 7.000 vs Sacramento Kings -9.600)"
+        "v": -2.777777777777777,
+        "l": "Quality -2.8 (Oklahoma City Thunder 7.200 vs Sacramento Kings -9.700)"
       },
       "_sk": {
         "v": 0,
@@ -6893,7 +6953,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.905027932960895,
+      "_score": -2.777777777777777,
       "_rk": [
         3,
         30
@@ -7041,16 +7101,6 @@
       "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
     },
     {
-      "name": "Nitto ATP Finals",
-      "league": "ATP",
-      "sport": "Tennis",
-      "time": "05:30",
-      "date": "2026-11-15",
-      "channel": "TSN+, TSN5, RDS Info",
-      "reason": "channel",
-      "detail": "airs on TSN+, TSN5, RDS Info \u2014 none in channels.txt"
-    },
-    {
       "name": "Manresa @ Forca Lleida",
       "league": "ACB",
       "sport": "Basketball",
@@ -7159,16 +7209,6 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "channel",
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
-    },
-    {
-      "name": "Nitto ATP Finals",
-      "league": "ATP",
-      "sport": "Tennis",
-      "time": "12:00",
-      "date": "2026-11-15",
-      "channel": "TSN+, TSN5, RDS Info",
-      "reason": "channel",
-      "detail": "airs on TSN+, TSN5, RDS Info \u2014 none in channels.txt"
     },
     {
       "name": "Samford @ Purdue",
@@ -7609,6 +7649,16 @@
       "channel": "SWAC TV",
       "reason": "channel",
       "detail": "airs on SWAC TV \u2014 none in channels.txt"
+    },
+    {
+      "name": "WTA Finals",
+      "league": "WTA",
+      "sport": "Tennis",
+      "time": "15:00",
+      "date": "2026-11-15",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Toronto Marlies @ Providence Bruins",

@@ -2713,6 +2713,66 @@
       "_score": 0
     },
     {
+      "id": 35342727,
+      "lgId": 1799,
+      "lgSlug": "lbprc",
+      "time": "18:00",
+      "name": "San Juan @ Criollos Caguas",
+      "sport": "Baseball",
+      "league": "LBPRC",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
+      "id": 68709825,
+      "lgId": 1799,
+      "lgSlug": "lbprc",
+      "time": "18:00",
+      "name": "Indios de Mayaguez @ Gigantes de Carolina",
+      "sport": "Baseball",
+      "league": "LBPRC",
+      "ch": [
+        "ViX"
+      ],
+      "dur": 180,
+      "_st": {
+        "v": 0,
+        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 68845757,
       "lgId": 1149,
       "lgSlug": "ncaa-basketball",
@@ -2882,66 +2942,6 @@
         349,
         69
       ]
-    },
-    {
-      "id": 8701331,
-      "lgId": 1799,
-      "lgSlug": "lbprc",
-      "time": "18:21",
-      "name": "San Juan @ Criollos Caguas",
-      "sport": "Baseball",
-      "league": "LBPRC",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 14304981,
-      "lgId": 1799,
-      "lgSlug": "lbprc",
-      "time": "18:21",
-      "name": "Indios de Mayaguez @ Gigantes de Carolina",
-      "sport": "Baseball",
-      "league": "LBPRC",
-      "ch": [
-        "ViX"
-      ],
-      "dur": 180,
-      "_st": {
-        "v": 0,
-        "l": "LBPRC not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     }
   ],
   "dropped": [
@@ -4074,8 +4074,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 6,
-      "fixturesSeen": 6,
+      "fixturesResolved": 8,
+      "fixturesSeen": 8,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -4351,8 +4351,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 7,
-      "fixturesSeen": 7,
+      "fixturesResolved": 8,
+      "fixturesSeen": 8,
       "rosterCode": "fra.1"
     },
     "serie-b": {
