@@ -397,6 +397,7 @@
       "sport": "Soccer",
       "league": "Bundesliga",
       "ch": [
+        "Telemundo",
         "Peacock ES"
       ],
       "dur": 120,
@@ -4204,7 +4205,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -5.3920515574650905,
+        "v": -5.376344086021504,
         "l": "Quality -5.4 (Orlando Magic 0.100 vs Washington Wizards -5.100)"
       },
       "_sk": {
@@ -4219,7 +4220,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.3920515574650905,
+      "_score": -5.376344086021504,
       "_rk": [
         17,
         23
@@ -4400,7 +4401,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -13.233082706766917,
+        "v": -13.225806451612902,
         "l": "Quality -13.2 (Brooklyn Nets -7.100 vs Charlotte Hornets -5.200)"
       },
       "_sk": {
@@ -4415,10 +4416,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -13.233082706766917,
+      "_score": -13.225806451612902,
       "_rk": [
         28,
-        25
+        24
       ]
     },
     {
@@ -5090,8 +5091,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -8.721804511278194,
-        "l": "Quality -8.7 (Indiana Pacers -3.300 vs Chicago Bulls -4.800)"
+        "v": -8.602150537634406,
+        "l": "Quality -8.6 (Indiana Pacers -3.300 vs Chicago Bulls -4.700)"
       },
       "_sk": {
         "v": 0,
@@ -5105,7 +5106,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.721804511278194,
+      "_score": -8.602150537634406,
       "_rk": [
         20,
         22
@@ -5124,7 +5125,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.41783029001074,
+        "v": -1.3978494623655904,
         "l": "Quality -1.4 (Oklahoma City Thunder 6.800 vs Milwaukee Bucks -8.100)"
       },
       "_sk": {
@@ -5139,7 +5140,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.41783029001074,
+      "_score": -1.3978494623655904,
       "_rk": [
         3,
         29
@@ -5195,8 +5196,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 12.014742014742016,
-        "l": "Quality +12.0 (Philadelphia 76ers 3.600 vs Houston Rockets 6.200)"
+        "v": 11.779141104294478,
+        "l": "Quality +11.8 (Philadelphia 76ers 3.400 vs Houston Rockets 6.200)"
       },
       "_sk": {
         "v": 0,
@@ -5210,9 +5211,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.014742014742016,
+      "_score": 11.779141104294478,
       "_rk": [
-        9,
+        11,
         4
       ]
     },
@@ -6419,6 +6420,16 @@
       "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
+      "name": "Brandon Wheat Kings @ Edmonton Oil Kings",
+      "league": "WHL",
+      "sport": "Hockey",
+      "time": "19:00",
+      "date": "2026-11-28",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
       "name": "Niagara @ Robert Morris",
       "league": "College Ice Hockey",
       "sport": "Hockey",
@@ -6579,7 +6590,17 @@
       "detail": "airs on FloHockey \u2014 none in channels.txt"
     },
     {
-      "name": "Brandon Wheat Kings @ Edmonton Oil Kings",
+      "name": "Regina Pats @ Kamloops Blazers",
+      "league": "WHL",
+      "sport": "Hockey",
+      "time": "20:00",
+      "date": "2026-11-28",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "Saskatoon Blades @ Medicine Hat Tigers",
       "league": "WHL",
       "sport": "Hockey",
       "time": "20:00",
@@ -6677,26 +6698,6 @@
       "channel": "MLB.TV",
       "reason": "channel",
       "detail": "airs on MLB.TV \u2014 none in channels.txt"
-    },
-    {
-      "name": "Regina Pats @ Kamloops Blazers",
-      "league": "WHL",
-      "sport": "Hockey",
-      "time": "21:00",
-      "date": "2026-11-28",
-      "channel": "YouTube US",
-      "reason": "channel",
-      "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
-      "name": "Saskatoon Blades @ Medicine Hat Tigers",
-      "league": "WHL",
-      "sport": "Hockey",
-      "time": "21:00",
-      "date": "2026-11-28",
-      "channel": "YouTube US",
-      "reason": "channel",
-      "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
       "name": "Everett Silvertips @ Portland Winterhawks",
@@ -8337,8 +8338,8 @@
       "rosterMatched": 51,
       "rosterTotal": 146,
       "rosterCode": "por.taca.portugal",
-      "fixturesResolved": 3,
-      "fixturesSeen": 4,
+      "fixturesResolved": 4,
+      "fixturesSeen": 5,
       "confederation": "UEFA"
     },
     "a-league-women": {

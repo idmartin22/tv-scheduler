@@ -387,7 +387,8 @@
       "sport": "Soccer",
       "league": "Premier League",
       "ch": [
-        "Peacock"
+        "Peacock",
+        "NBC Sports Network Extra"
       ],
       "dur": 120,
       "_st": {
@@ -3570,8 +3571,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 5.626535626535626,
-        "l": "Quality +5.6 (Los Angeles Lakers 4.300 vs Memphis Grizzlies 0.300)"
+        "v": 5.766871165644173,
+        "l": "Quality +5.8 (Los Angeles Lakers 4.300 vs Memphis Grizzlies 0.400)"
       },
       "_sk": {
         "v": 0,
@@ -3585,7 +3586,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 5.626535626535626,
+      "_score": 5.766871165644173,
       "_rk": [
         8,
         16
@@ -4279,7 +4280,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -6.788399570354456,
+        "v": -6.774193548387095,
         "l": "Quality -6.8 (Phoenix Suns -0.500 vs Utah Jazz -5.800)"
       },
       "_sk": {
@@ -4294,7 +4295,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.788399570354456,
+      "_score": -6.774193548387095,
       "_rk": [
         18,
         26
@@ -4546,7 +4547,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 6.60933660933661,
+        "v": 6.625766871165646,
         "l": "Quality +6.6 (Miami Heat 1.800 vs Cleveland Cavaliers 3.600)"
       },
       "_sk": {
@@ -4561,7 +4562,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.60933660933661,
+      "_score": 6.625766871165646,
       "_rk": [
         13,
         9
@@ -4580,7 +4581,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 6.855036855036855,
+        "v": 6.871165644171779,
         "l": "Quality +6.9 (Orlando Magic 0.100 vs Detroit Pistons 5.500)"
       },
       "_sk": {
@@ -4595,7 +4596,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.855036855036855,
+      "_score": 6.871165644171779,
       "_rk": [
         17,
         6
@@ -4614,7 +4615,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.32923832923833,
+        "v": 8.34355828220859,
         "l": "Quality +8.3 (Atlanta Hawks 1.000 vs New York Knicks 5.800)"
       },
       "_sk": {
@@ -4629,7 +4630,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.32923832923833,
+      "_score": 8.34355828220859,
       "_rk": [
         14,
         5
@@ -4648,7 +4649,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 4.275184275184277,
+        "v": 4.294478527607362,
         "l": "Quality +4.3 (Denver Nuggets 2.600 vs Toronto Raptors 0.900)"
       },
       "_sk": {
@@ -4663,7 +4664,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 4.275184275184277,
+      "_score": 4.294478527607362,
       "_rk": [
         12,
         15
@@ -4682,7 +4683,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.1364124597207295,
+        "v": -3.1182795698924726,
         "l": "Quality -3.1 (New Orleans Pelicans -6.500 vs Portland Trail Blazers 3.600)"
       },
       "_sk": {
@@ -4697,7 +4698,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.1364124597207295,
+      "_score": -3.1182795698924726,
       "_rk": [
         27,
         9
@@ -5196,6 +5197,16 @@
       "detail": "airs on NBA App \u2014 none in channels.txt"
     },
     {
+      "name": "Troy @ Nevada",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "16:00",
+      "date": "2026-11-29",
+      "channel": "Nevada Sports Net",
+      "reason": "channel",
+      "detail": "airs on Nevada Sports Net \u2014 none in channels.txt"
+    },
+    {
       "name": "Stanford @ Hawai'i",
       "league": "Women's College Soccer",
       "sport": "Soccer",
@@ -5326,6 +5337,16 @@
       "detail": "airs on NBA App \u2014 none in channels.txt"
     },
     {
+      "name": "Lethbridge Hurricanes @ Edmonton Oil Kings",
+      "league": "WHL",
+      "sport": "Hockey",
+      "time": "17:00",
+      "date": "2026-11-29",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
       "name": "Nicholls @ Texas State",
       "league": "Men's College Basketball",
       "sport": "Basketball",
@@ -5396,16 +5417,6 @@
       "detail": "airs on Big Ten Plus \u2014 none in channels.txt"
     },
     {
-      "name": "Lethbridge Hurricanes @ Edmonton Oil Kings",
-      "league": "WHL",
-      "sport": "Hockey",
-      "time": "18:00",
-      "date": "2026-11-29",
-      "channel": "YouTube US",
-      "reason": "channel",
-      "detail": "airs on YouTube US \u2014 none in channels.txt"
-    },
-    {
       "name": "Allen Americans @ Rapid City Rush",
       "league": "ECHL",
       "sport": "Hockey",
@@ -5414,6 +5425,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "Seattle Thunderbirds @ Victoria Royals",
+      "league": "WHL",
+      "sport": "Hockey",
+      "time": "18:05",
+      "date": "2026-11-29",
+      "channel": "YouTube US",
+      "reason": "channel",
+      "detail": "airs on YouTube US \u2014 none in channels.txt"
     }
   ],
   "areas": {
@@ -6984,8 +7005,8 @@
       "rosterMatched": 51,
       "rosterTotal": 146,
       "rosterCode": "por.taca.portugal",
-      "fixturesResolved": 3,
-      "fixturesSeen": 4,
+      "fixturesResolved": 4,
+      "fixturesSeen": 5,
       "confederation": "UEFA"
     },
     "a-league-women": {
