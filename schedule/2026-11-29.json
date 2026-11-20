@@ -226,6 +226,44 @@
       ]
     },
     {
+      "id": 5812407,
+      "lgId": 356,
+      "lgSlug": "caf-champions-league",
+      "time": "08:00",
+      "name": "Orlando Pirates @ Simba",
+      "sport": "Soccer",
+      "league": "CAF Champions League",
+      "ch": [
+        "beIN SPORTS 6"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 81.4-37.5 (not rated yet) vs tier1 baseline 147.0 (PSL (South Africa) \u2014 opponent not in GFR))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "espn": "caf.champions",
+      "lgR": 43.72,
+      "_rk": [
+        275,
+        null
+      ]
+    },
+    {
       "id": 67322291,
       "lgId": 488,
       "lgSlug": "ekstraklasa",
@@ -1347,41 +1385,6 @@
       "_score": 0
     },
     {
-      "id": 55922360,
-      "lgId": 1149,
-      "lgSlug": "ncaa-basketball",
-      "time": "13:00",
-      "name": "Loyola Chicago @ UMass Amherst",
-      "sport": "Basketball",
-      "league": "Men's College Basketball",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": -12.061125691723941,
-        "l": "Quality -12.1 (Loyola Chicago Ramblers 1.400 vs unlisted opponent -22.970 (not in BPI pool))"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": -12.061125691723941,
-      "_rk": [
-        127,
-        null
-      ]
-    },
-    {
       "id": 5165039,
       "lgId": 1149,
       "lgSlug": "ncaa-basketball",
@@ -1811,6 +1814,77 @@
       "_rk": [
         3,
         30
+      ]
+    },
+    {
+      "id": 62794086,
+      "lgId": 356,
+      "lgSlug": "caf-champions-league",
+      "time": "14:00",
+      "name": "Horoya @ Al Hilal Omdurman",
+      "sport": "Soccer",
+      "league": "CAF Champions League",
+      "ch": [
+        "beIN SPORTS 6"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 37.5"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "espn": "caf.champions",
+      "lgR": 43.72
+    },
+    {
+      "id": 61632908,
+      "lgId": 357,
+      "lgSlug": "caf-confederation-cup",
+      "time": "14:00",
+      "name": "AS Real Bamako @ USM Alger",
+      "sport": "Soccer",
+      "league": "CAF Confederation Cup",
+      "ch": [
+        "beIN SPORTS Xtra"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 37.5 (not rated yet)-78.5 vs tier1 baseline 150.6 (Ligue 1 (Algeria) \u2014 opponent not in GFR))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "espn": "caf.confed",
+      "_rk": [
+        null,
+        488
       ]
     },
     {
@@ -2820,6 +2894,44 @@
       "_rk": [
         189,
         83
+      ]
+    },
+    {
+      "id": 3128995,
+      "lgId": 488,
+      "lgSlug": "ekstraklasa",
+      "time": "14:15",
+      "name": "Radomiak Radom @ Jagiellonia Bia\u0142ystok",
+      "sport": "Soccer",
+      "league": "Ekstraklasa",
+      "ch": [
+        "beIN SPORTS 5"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0.5264616237184299,
+        "l": "Quality +0.5 (GFR 79.3-80.4 vs tier1 baseline 159.4 (Ekstraklasa (Poland)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0.5264616237184299,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "lgR": 79.69,
+      "_rk": [
+        437,
+        351
       ]
     },
     {
@@ -6798,8 +6910,8 @@
       "gfrLeague": "Ekstraklasa",
       "country": "Poland",
       "confederation": "UEFA",
-      "fixturesResolved": 13,
-      "fixturesSeen": 13
+      "fixturesResolved": 14,
+      "fixturesSeen": 14
     },
     "scottish-championship": {
       "rating": 66.78,
@@ -6924,8 +7036,8 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
-      "fixturesResolved": 15,
-      "fixturesSeen": 15,
+      "fixturesResolved": 17,
+      "fixturesSeen": 17,
       "rosterCode": "fra.1"
     },
     "serie-b": {
@@ -7268,6 +7380,22 @@
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 10
+    },
+    "caf-confederation-cup": {
+      "area": "mens_club_competition",
+      "confederation": "CAF",
+      "fixturesResolved": 0,
+      "fixturesSeen": 2
+    },
+    "caf-champions-league": {
+      "rating": 43.72,
+      "area": "mens_club_competition",
+      "confederation": "CAF",
+      "rosterMatched": 9,
+      "rosterTotal": 61,
+      "rosterCode": "caf.champions",
+      "fixturesResolved": 1,
+      "fixturesSeen": 6
     }
   },
   "confedAnchors": {

@@ -7924,6 +7924,38 @@
       ]
     },
     {
+      "id": 11867120,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "18:00",
+      "name": "Grand Canyon @ SMU",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
       "id": 40607098,
       "lgId": 2890,
       "lgSlug": "ncaa-college-volleyball-women",
@@ -8023,37 +8055,6 @@
         355,
         80
       ]
-    },
-    {
-      "id": 11867120,
-      "lgId": 2009,
-      "lgSlug": "ncaa-basketball-women",
-      "time": "18:00",
-      "name": "Grand Canyon @ SMU",
-      "sport": "Basketball",
-      "league": "Women's College Basketball",
-      "ch": [
-        "ESPN Unlimited",
-        "ACC Network X"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
     },
     {
       "id": 25056269,
@@ -11156,16 +11157,6 @@
       "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "Manama",
-      "league": "World Tour 3x3",
-      "sport": "Basketball",
-      "time": "08:15",
-      "date": "2026-11-21",
-      "channel": "CBC Gem",
-      "reason": "channel",
-      "detail": "airs on CBC Gem \u2014 none in channels.txt"
-    },
-    {
       "name": "Nitto ATP Finals",
       "league": "ATP",
       "sport": "Tennis",
@@ -11324,6 +11315,16 @@
       "channel": "TSN+",
       "reason": "channel",
       "detail": "airs on TSN+ \u2014 none in channels.txt"
+    },
+    {
+      "name": "Manama",
+      "league": "World Tour 3x3",
+      "sport": "Basketball",
+      "time": "11:00",
+      "date": "2026-11-21",
+      "channel": "CBC Gem",
+      "reason": "channel",
+      "detail": "airs on CBC Gem \u2014 none in channels.txt"
     },
     {
       "name": "America's Day at the Races",
@@ -12624,6 +12625,16 @@
       "channel": "ESPN Unlimited, ESPN Select",
       "reason": "belowtier",
       "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "TBD @ TBD",
+      "league": "Men's College Basketball",
+      "sport": "Basketball",
+      "time": "17:30",
+      "date": "2026-11-21",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the BPI pool \u2014 lower division than wanted"
     },
     {
       "name": "Michigan @ Michigan State",

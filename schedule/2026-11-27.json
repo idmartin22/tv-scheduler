@@ -34,6 +34,43 @@
       "cat": "unclassified"
     },
     {
+      "id": 96892206,
+      "lgId": 357,
+      "lgSlug": "caf-confederation-cup",
+      "time": "08:00",
+      "name": "Al Ahli Tripoli @ Azam",
+      "sport": "Soccer",
+      "league": "CAF Confederation Cup",
+      "ch": [
+        "beIN SPORTS 5"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 79.7-37.5 (not rated yet) vs tier1 baseline 153.0 (Pro League (Saudi Arabia) \u2014 opponent not in GFR))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_competition",
+      "area": "mens_club_competition",
+      "espn": "caf.confed",
+      "_rk": [
+        408,
+        null
+      ]
+    },
+    {
       "id": 76348732,
       "lgId": 1850,
       "lgSlug": "u17-world-cup",
@@ -7665,6 +7702,12 @@
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 10
+    },
+    "caf-confederation-cup": {
+      "area": "mens_club_competition",
+      "confederation": "CAF",
+      "fixturesResolved": 0,
+      "fixturesSeen": 1
     }
   },
   "confedAnchors": {
