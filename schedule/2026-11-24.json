@@ -2418,8 +2418,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 7.934645999162128,
-        "l": "Quality +7.9 (Detroit Pistons 5.900 vs Orlando Magic 0.400)"
+        "v": 7.984822934232715,
+        "l": "Quality +8.0 (Detroit Pistons 6.000 vs Orlando Magic 0.300)"
       },
       "_sk": {
         "v": 0,
@@ -2433,9 +2433,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.934645999162128,
+      "_score": 7.984822934232715,
       "_rk": [
-        6,
+        5,
         16
       ]
     },
@@ -3826,8 +3826,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 3.033095936321741,
-        "l": "Quality +3.0 (Boston Celtics 7.400 vs Washington Wizards -5.000)"
+        "v": 3.3052276559865086,
+        "l": "Quality +3.3 (Boston Celtics 7.300 vs Washington Wizards -4.700)"
       },
       "_sk": {
         "v": 0,
@@ -3841,10 +3841,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 3.033095936321741,
+      "_score": 3.3052276559865086,
       "_rk": [
         2,
-        22
+        21
       ]
     },
     {
@@ -4892,8 +4892,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 2.907415165479679,
-        "l": "Quality +2.9 (Dallas Mavericks -0.600 vs Denver Nuggets 2.900)"
+        "v": 2.672849915682967,
+        "l": "Quality +2.7 (Dallas Mavericks -0.700 vs Denver Nuggets 2.800)"
       },
       "_sk": {
         "v": 0,
@@ -4907,7 +4907,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.907415165479679,
+      "_score": 2.672849915682967,
       "_rk": [
         18,
         12
@@ -5742,6 +5742,7 @@
         "Serie B (Brazil)": 72.44,
         "Superliga (Denmark)": 78.82,
         "SuperLiga (Romania)": 75.7,
+        "Super Liga (Serbia)": 74.22,
         "2. Bundesliga (Germany)": 78.77,
         "HNL (Croatia)": 78.74,
         "Primera Division (Venezuela)": 75.46,
@@ -5778,7 +5779,6 @@
         "Ligue 2 (France)": 76.35,
         "Botola Pro (Morocco)": 76.2,
         "Ligat HaAl (Israel)": 75.94,
-        "Super Liga (Serbia)": 74.22,
         "Liga Nacional (Honduras)": 73.59,
         "Persian Gulf Pro League (Iran)": 73.48,
         "PSL (South Africa)": 73.48,
@@ -6021,6 +6021,10 @@
           "country": "Romania",
           "confederation": "UEFA"
         },
+        "Super Liga (Serbia)": {
+          "country": "Serbia",
+          "confederation": "UEFA"
+        },
         "2. Bundesliga (Germany)": {
           "country": "Germany",
           "confederation": "UEFA"
@@ -6163,10 +6167,6 @@
         },
         "Ligat HaAl (Israel)": {
           "country": "Israel",
-          "confederation": "UEFA"
-        },
-        "Super Liga (Serbia)": {
-          "country": "Serbia",
           "confederation": "UEFA"
         },
         "Liga Nacional (Honduras)": {
@@ -6613,13 +6613,15 @@
   },
   "leagueGfr": {
     "usl-champ": {
-      "rating": 67.37,
-      "area": "mens_club_competition",
+      "rating": 68.58,
+      "area": "mens_club_league",
       "rosterMatched": 24,
       "rosterTotal": 25,
       "rosterCode": "usa.usl.1",
       "fixturesResolved": 1,
       "fixturesSeen": 1,
+      "gfrLeague": "USL Championship",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "primera-a": {
@@ -6629,7 +6631,10 @@
       "rosterTotal": 20,
       "rosterCode": "col.1",
       "fixturesResolved": 2,
-      "fixturesSeen": 2
+      "fixturesSeen": 2,
+      "gfrLeague": "Primera A",
+      "country": "Colombia",
+      "confederation": "CONMEBOL"
     },
     "mls": {
       "rating": 80.06,
@@ -6653,13 +6658,15 @@
       "confederation": "CONCACAF"
     },
     "laliga2": {
-      "rating": 77.42,
-      "area": "mens_club_competition",
+      "rating": 78.61,
+      "area": "mens_club_league",
       "rosterMatched": 21,
       "rosterTotal": 22,
       "rosterCode": "esp.2",
       "fixturesResolved": 5,
       "fixturesSeen": 5,
+      "gfrLeague": "LaLiga 2",
+      "country": "Spain",
       "confederation": "UEFA"
     },
     "nwsl": {
@@ -6675,40 +6682,52 @@
       "confederation": "CONCACAF"
     },
     "usl-super-league": {
-      "rating": 58.46,
-      "area": "mens_club_competition",
-      "rosterMatched": 5,
+      "rating": 62.73,
+      "area": "womens_club_league",
+      "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
       "fixturesResolved": 4,
       "fixturesSeen": 4,
+      "gfrLeague": "USL Super League",
+      "country": "USA",
       "confederation": "CONCACAF"
     },
     "liga-mx": {
-      "rating": 80.22,
-      "area": "mens_club_competition",
+      "rating": 80.02,
+      "area": "mens_club_league",
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
       "fixturesResolved": 6,
       "fixturesSeen": 6,
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
       "confederation": "CONCACAF"
     },
     "women-s-super-league": {
-      "rating": 84.46,
-      "area": "womens_club_competition",
+      "rating": 63.82,
+      "area": "womens_club_league",
       "rosterMatched": 14,
       "rosterTotal": 14,
       "rosterCode": "eng.w.1",
       "fixturesResolved": 7,
       "fixturesSeen": 7,
+      "gfrLeague": "Women's Super League",
+      "country": "Switzerland",
       "confederation": "UEFA"
     },
     "league-one": {
-      "rating": 59.66,
+      "rating": 75.33,
       "area": "mens_club_league",
-      "fixturesResolved": 0,
-      "fixturesSeen": 1
+      "rosterMatched": 24,
+      "rosterTotal": 24,
+      "rosterCode": "eng.3",
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "gfrLeague": "League One",
+      "country": "England",
+      "confederation": "UEFA"
     },
     "league-two": {
       "rating": 70.15,
@@ -6717,13 +6736,19 @@
       "rosterTotal": 24,
       "rosterCode": "eng.4",
       "fixturesResolved": 1,
-      "fixturesSeen": 2
+      "fixturesSeen": 2,
+      "gfrLeague": "League Two",
+      "country": "England",
+      "confederation": "UEFA"
     },
     "serie-a-women": {
       "rating": 75.87,
       "area": "womens_club_league",
       "fixturesResolved": 2,
-      "fixturesSeen": 2
+      "fixturesSeen": 2,
+      "gfrLeague": "Serie A Women",
+      "country": "Italy",
+      "confederation": "UEFA"
     },
     "primera-division": {
       "rating": 81.62,
@@ -6841,6 +6866,8 @@
     "premier-league": {
       "rating": 90.9,
       "area": "mens_club_league",
+      "gfrLeague": "Premier League",
+      "country": "England",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
@@ -6851,6 +6878,8 @@
     "serie-a": {
       "rating": 85.28,
       "area": "mens_club_league",
+      "gfrLeague": "Serie A",
+      "country": "Italy",
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
@@ -6858,32 +6887,66 @@
       "fixturesSeen": 10,
       "rosterCode": "ita.1"
     },
+    "super-league": {
+      "rating": 79.08,
+      "area": "mens_club_league",
+      "gfrLeague": "Super League",
+      "country": "Switzerland",
+      "confederation": "UEFA"
+    },
+    "liga-nacional": {
+      "rating": 73.59,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Nacional",
+      "country": "Honduras",
+      "confederation": "CONCACAF",
+      "rosterMatched": 10,
+      "rosterTotal": 12
+    },
     "liga-mx-femenil": {
-      "rating": 69.77,
-      "area": "womens_club_competition",
+      "rating": 71.25,
+      "area": "womens_club_league",
+      "gfrLeague": "Liga MX Femenil",
+      "country": "Mexico",
       "confederation": "CONCACAF",
       "rosterMatched": 17,
       "rosterTotal": 18
     },
     "liga-portugal": {
       "rating": 82.07,
-      "area": "mens_club_competition",
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Portugal",
+      "country": "Portugal",
+      "confederation": "UEFA",
+      "rosterMatched": 18,
+      "rosterTotal": 18
+    },
+    "pro-league": {
+      "rating": 82.71,
+      "area": "mens_club_league",
+      "gfrLeague": "Pro League",
+      "country": "Belgium",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18
     },
     "s-per-lig": {
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
       "rating": 79.34,
       "area": "mens_club_league",
+      "gfrLeague": "Super Lig",
+      "country": "Turkiye",
+      "confederation": "UEFA",
       "rosterMatched": 17,
       "rosterTotal": 18,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "rosterCode": "tur.1"
     },
     "ligue-2": {
       "rating": 76.35,
       "area": "mens_club_league",
+      "gfrLeague": "Ligue 2",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -6894,6 +6957,8 @@
     "ligue-1": {
       "rating": 85.06,
       "area": "mens_club_league",
+      "gfrLeague": "Ligue 1",
+      "country": "France",
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18,
@@ -6902,12 +6967,15 @@
       "rosterCode": "fra.1"
     },
     "serie-b": {
-      "fixturesResolved": 0,
-      "fixturesSeen": 1,
       "rating": 76.0,
       "area": "mens_club_league",
+      "gfrLeague": "Serie B",
+      "country": "Italy",
+      "confederation": "UEFA",
       "rosterMatched": 13,
       "rosterTotal": 20,
+      "fixturesResolved": 0,
+      "fixturesSeen": 1,
       "rosterCode": "ita.2"
     },
     "usl-league-one": {
@@ -7104,8 +7172,9 @@
     },
     "national-league": {
       "rating": 62.62,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
+      "area": "mens_club_league",
+      "gfrLeague": "National League",
+      "country": "England",
       "rosterMatched": 24,
       "rosterTotal": 24
     },
@@ -7156,13 +7225,15 @@
       "confederation": "UEFA"
     },
     "a-league-women": {
-      "rating": 72.53,
-      "area": "womens_club_competition",
+      "rating": 67.89,
+      "area": "womens_club_league",
       "rosterMatched": 12,
       "rosterTotal": 12,
       "rosterCode": "aus.1",
       "fixturesResolved": 1,
       "fixturesSeen": 1,
+      "gfrLeague": "A-League Women",
+      "country": "Australia",
       "confederation": "AFC"
     },
     "copa-del-rey": {
