@@ -442,8 +442,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.794982154104555,
-        "l": "Quality +7.8 (Mississippi State Bulldogs 3.900 vs Ole Miss Rebels 17.600)"
+        "v": 7.738402727554501,
+        "l": "Quality +7.7 (Mississippi State Bulldogs 3.800 vs Ole Miss Rebels 17.700)"
       },
       "_sk": {
         "v": 0,
@@ -457,9 +457,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.794982154104555,
+      "_score": 7.738402727554501,
       "_rk": [
-        50,
+        53,
         13
       ]
     },
@@ -477,8 +477,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 10.47501574637833,
-        "l": "Quality +10.5 (Nebraska Cornhuskers 14.000 vs Iowa Hawkeyes 14.900)"
+        "v": 10.982022936253745,
+        "l": "Quality +11.0 (Nebraska Cornhuskers 14.900 vs Iowa Hawkeyes 15.700)"
       },
       "_sk": {
         "v": 0,
@@ -492,10 +492,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.47501574637833,
+      "_score": 10.982022936253745,
       "_rk": [
-        19,
-        17
+        18,
+        16
       ]
     },
     {
@@ -543,8 +543,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -0.4570094669952021,
-        "l": "Quality -0.5 (Tulsa Golden Hurricane 0.500 vs UTSA Roadrunners -1.800)"
+        "v": -0.42502523749126186,
+        "l": "Quality -0.4 (Tulsa Golden Hurricane 0.600 vs UTSA Roadrunners -2.000)"
       },
       "_sk": {
         "v": 0,
@@ -558,7 +558,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.4570094669952021,
+      "_score": -0.42502523749126186,
       "_rk": [
         69,
         77
@@ -578,8 +578,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -4.752172221501752,
-        "l": "Quality -4.8 (Toledo Rockets -3.200 vs Ohio Bobcats -10.100)"
+        "v": -4.711516061398283,
+        "l": "Quality -4.7 (Toledo Rockets -3.200 vs Ohio Bobcats -10.200)"
       },
       "_sk": {
         "v": 0,
@@ -593,10 +593,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.752172221501752,
+      "_score": -4.711516061398283,
       "_rk": [
         81,
-        105
+        104
       ]
     },
     {
@@ -612,8 +612,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -11.87498378939178,
-        "l": "Quality -11.9 (Buffalo Bulls -10.100 vs Akron Zips -23.100)"
+        "v": -11.891388191442548,
+        "l": "Quality -11.9 (Buffalo Bulls -10.300 vs Akron Zips -23.200)"
       },
       "_sk": {
         "v": 0,
@@ -627,7 +627,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -11.87498378939178,
+      "_score": -11.891388191442548,
       "_rk": [
         105,
         134
@@ -669,6 +669,44 @@
       "_rk": [
         373,
         392
+      ]
+    },
+    {
+      "id": 7649850,
+      "lgId": 302,
+      "lgSlug": "3-liga-2",
+      "time": "13:00",
+      "name": "Havelse @ Hansa Rostock",
+      "sport": "Soccer",
+      "league": "3. Liga",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -20.0,
+        "l": "Quality -20.0 (GFR 37.5 (not rated yet)-37.5 (not rated yet) vs tier4 baseline 149.7 (3. Liga \u2014 league tracked by GFR, but neither team rated yet))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -20.0,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "",
+      "_rk": [
+        null,
+        null
       ]
     },
     {
@@ -1287,6 +1325,70 @@
       "_score": 0
     },
     {
+      "id": 34367428,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "14:00",
+      "name": "Villanova @ Texas Tech",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 81772500,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "14:00",
+      "name": "Michigan @ Duke",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
       "id": 46896165,
       "lgId": 488,
       "lgSlug": "ekstraklasa",
@@ -1423,6 +1525,38 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 79771436,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "14:30",
+      "name": "Stanford @ Alabama",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 58514662,
@@ -1806,8 +1940,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -7.1145117364803525,
-        "l": "Quality -7.1 (App State Mountaineers -10.500 vs South Alabama Jaguars -9.400)"
+        "v": -7.247689798876607,
+        "l": "Quality -7.2 (App State Mountaineers -11.200 vs South Alabama Jaguars -9.300)"
       },
       "_sk": {
         "v": 0,
@@ -1821,10 +1955,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.1145117364803525,
+      "_score": -7.247689798876607,
       "_rk": [
-        107,
-        102
+        109,
+        103
       ]
     },
     {
@@ -2337,102 +2471,6 @@
       "cat": "unclassified"
     },
     {
-      "id": 8458145,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "15:00",
-      "name": "Villanova @ Texas Tech",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 51409034,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "15:00",
-      "name": "Stanford @ Alabama",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
-      "id": 40309080,
-      "lgId": 2028,
-      "lgSlug": "ncaa-women-3",
-      "time": "15:00",
-      "name": "Virginia Tech @ Baylor",
-      "sport": "Soccer",
-      "league": "Women's College Soccer",
-      "ch": [
-        "ESPN Unlimited",
-        "ESPN Select"
-      ],
-      "dur": 120,
-      "_st": {
-        "v": 0,
-        "l": "college/youth soccer \u2014 not scored"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0,
-      "cat": "unclassified"
-    },
-    {
       "id": 73049356,
       "lgId": 2028,
       "lgSlug": "ncaa-women-3",
@@ -2497,21 +2535,21 @@
       "cat": "unclassified"
     },
     {
-      "id": 28954363,
-      "lgId": 2024,
-      "lgSlug": "ncaa-football",
-      "time": "15:30",
-      "name": "Florida @ Florida State",
-      "sport": "Football",
-      "league": "College Football",
+      "id": 77671484,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "15:00",
+      "name": "Utah State @ BYU",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
       "ch": [
-        "ABC",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 210,
+      "dur": 120,
       "_st": {
-        "v": 7.469032122611799,
-        "l": "Quality +7.5 (Florida Gators 12.600 vs Florida State Seminoles 8.000)"
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
       },
       "_sk": {
         "v": 0,
@@ -2525,10 +2563,42 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.469032122611799,
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 28954363,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "15:30",
+      "name": "Florida @ Florida State",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "ABC",
+        "ESPN Unlimited"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 6.633433205909702,
+        "l": "Quality +6.6 (Florida Gators 12.800 vs Florida State Seminoles 5.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 6.633433205909702,
       "_rk": [
-        24,
-        38
+        21,
+        44
       ]
     },
     {
@@ -2544,8 +2614,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -4.394241991959539,
-        "l": "Quality -4.4 (North Dakota State Bison 0.800 vs San Jos\u00e9 State Spartans -13.100)"
+        "v": -4.640074547666501,
+        "l": "Quality -4.6 (North Dakota State Bison -0.500 vs San Jos\u00e9 State Spartans -12.700)"
       },
       "_sk": {
         "v": 0,
@@ -2559,10 +2629,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.394241991959539,
+      "_score": -4.640074547666501,
       "_rk": [
-        67,
-        116
+        75,
+        112
       ]
     },
     {
@@ -2579,8 +2649,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": -3.356244326287123,
-        "l": "Quality -3.4 (Temple Owls -13.000 vs Memphis Tigers 3.600)"
+        "v": -3.67561411228742,
+        "l": "Quality -3.7 (Temple Owls -13.200 vs Memphis Tigers 2.700)"
       },
       "_sk": {
         "v": 0,
@@ -2594,10 +2664,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.356244326287123,
+      "_score": -3.67561411228742,
       "_rk": [
-        115,
-        52
+        114,
+        55
       ]
     },
     {
@@ -2949,8 +3019,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 2.072748267898383,
-        "l": "Quality +2.1 (Air Force Falcons 0.000 vs New Mexico Lobos 5.700)"
+        "v": 2.070978406860214,
+        "l": "Quality +2.1 (Air Force Falcons -0.000 vs New Mexico Lobos 5.600)"
       },
       "_sk": {
         "v": 0,
@@ -2964,10 +3034,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.072748267898383,
+      "_score": 2.070978406860214,
       "_rk": [
-        74,
-        47
+        72,
+        44
       ]
     },
     {
@@ -3270,6 +3340,38 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 85590253,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "17:00",
+      "name": "Clemson @ Colorado",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
     },
     {
       "id": 88125391,
@@ -3604,6 +3706,166 @@
       "cat": "unclassified"
     },
     {
+      "id": 54225702,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "18:00",
+      "name": "West Virginia @ Virginia",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 57419899,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "18:00",
+      "name": "Tennessee @ Ohio State",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 79569954,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "18:00",
+      "name": "Mississippi State @ Notre Dame",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 83613527,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "18:00",
+      "name": "Xavier @ Michigan State",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
+      "id": 87375551,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "18:00",
+      "name": "Saint Louis @ Wake Forest",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
       "id": 14874773,
       "lgId": 1799,
       "lgSlug": "lbprc",
@@ -3737,8 +3999,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 9.63815789473684,
-        "l": "Quality +9.6 (Miami Heat 1.800 vs New York Knicks 6.000)"
+        "v": 9.995724668661822,
+        "l": "Quality +10.0 (Miami Heat 1.800 vs New York Knicks 6.000)"
       },
       "_sk": {
         "v": 0,
@@ -3752,7 +4014,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.63815789473684,
+      "_score": 9.995724668661822,
       "_rk": [
         13,
         5
@@ -4065,8 +4327,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -2.1968300774050866,
-        "l": "Quality -2.2 (Milwaukee Bucks -8.000 vs Detroit Pistons 6.000)"
+        "v": -1.9497334348819504,
+        "l": "Quality -1.9 (Milwaukee Bucks -7.700 vs Detroit Pistons 6.000)"
       },
       "_sk": {
         "v": 0,
@@ -4080,7 +4342,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -2.1968300774050866,
+      "_score": -1.9497334348819504,
       "_rk": [
         29,
         5
@@ -4100,8 +4362,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.2016218208625142,
-        "l": "Quality -1.2 (Philadelphia 76ers 3.600 vs Indiana Pacers -4.700)"
+        "v": -1.150038080731151,
+        "l": "Quality -1.2 (Philadelphia 76ers 3.400 vs Indiana Pacers -4.400)"
       },
       "_sk": {
         "v": 0,
@@ -4115,7 +4377,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.2016218208625142,
+      "_score": -1.150038080731151,
       "_rk": [
         11,
         20
@@ -4134,8 +4396,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -9.71618134906008,
-        "l": "Quality -9.7 (Brooklyn Nets -6.900 vs Toronto Raptors -1.900)"
+        "v": -9.946686976389948,
+        "l": "Quality -9.9 (Brooklyn Nets -6.900 vs Toronto Raptors -1.800)"
       },
       "_sk": {
         "v": 0,
@@ -4149,7 +4411,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.71618134906008,
+      "_score": -9.946686976389948,
       "_rk": [
         28,
         19
@@ -4205,8 +4467,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 12.93774931765694,
-        "l": "Quality +12.9 (Texas Longhorns 23.900 vs Texas A&M Aggies 11.800)"
+        "v": 12.728587664014876,
+        "l": "Quality +12.7 (Texas Longhorns 25.400 vs Texas A&M Aggies 10.100)"
       },
       "_sk": {
         "v": 0,
@@ -4220,10 +4482,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 12.93774931765694,
+      "_score": 12.728587664014876,
       "_rk": [
-        6,
-        28
+        3,
+        31
       ]
     },
     {
@@ -4240,8 +4502,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 2.9781650220449296,
-        "l": "Quality +3.0 (Minnesota Golden Gophers 0.300 vs Wisconsin Badgers 7.900)"
+        "v": 3.9957640252092173,
+        "l": "Quality +4.0 (Minnesota Golden Gophers 1.000 vs Wisconsin Badgers 10.000)"
       },
       "_sk": {
         "v": 0,
@@ -4255,10 +4517,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 2.9781650220449296,
+      "_score": 3.9957640252092173,
       "_rk": [
-        73,
-        40
+        67,
+        32
       ]
     },
     {
@@ -4402,8 +4664,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 10.995065789473683,
-        "l": "Quality +11.0 (Atlanta Hawks 1.500 vs Boston Celtics 7.400)"
+        "v": 10.89354424967935,
+        "l": "Quality +10.9 (Atlanta Hawks 1.500 vs Boston Celtics 7.000)"
       },
       "_sk": {
         "v": 0,
@@ -4417,7 +4679,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.995065789473683,
+      "_score": 10.89354424967935,
       "_rk": [
         14,
         2
@@ -4603,7 +4865,10 @@
       "sport": "Soccer",
       "league": "MLS",
       "ch": [
-        "Apple TV"
+        "FOX Sports 1",
+        "Apple TV",
+        "FOX One",
+        "FOX Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -4695,6 +4960,38 @@
       "_score": 0
     },
     {
+      "id": 77019834,
+      "lgId": 2028,
+      "lgSlug": "ncaa-women-3",
+      "time": "20:00",
+      "name": "Virginia Tech @ Baylor",
+      "sport": "Soccer",
+      "league": "Women's College Soccer",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "college/youth soccer \u2014 not scored"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0,
+      "cat": "unclassified"
+    },
+    {
       "id": 96254005,
       "lgId": 2398,
       "lgSlug": "concacaf-w-championship",
@@ -4742,8 +5039,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 7.664473684210526,
-        "l": "Quality +7.7 (Memphis Grizzlies 0.900 vs Minnesota Timberwolves 5.300)"
+        "v": 8.071825566481403,
+        "l": "Quality +8.1 (Memphis Grizzlies 1.000 vs Minnesota Timberwolves 5.300)"
       },
       "_sk": {
         "v": 0,
@@ -4757,7 +5054,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.664473684210526,
+      "_score": 8.071825566481403,
       "_rk": [
         15,
         7
@@ -4807,8 +5104,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -0.7593070401769262,
-        "l": "Quality -0.8 (Dallas Mavericks -0.500 vs Phoenix Suns -0.200)"
+        "v": -0.6930693069306936,
+        "l": "Quality -0.7 (Dallas Mavericks -0.500 vs Phoenix Suns -0.100)"
       },
       "_sk": {
         "v": 0,
@@ -4822,7 +5119,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.7593070401769262,
+      "_score": -0.6930693069306936,
       "_rk": [
         18,
         17
@@ -4842,8 +5139,8 @@
       ],
       "dur": 210,
       "_st": {
-        "v": 7.034432080621455,
-        "l": "Quality +7.0 (West Virginia Mountaineers 0.700 vs Utah Utes 18.700)"
+        "v": 7.417605124496332,
+        "l": "Quality +7.4 (West Virginia Mountaineers 1.200 vs Utah Utes 19.400)"
       },
       "_sk": {
         "v": 0,
@@ -4857,10 +5154,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.034432080621455,
+      "_score": 7.417605124496332,
       "_rk": [
-        68,
-        12
+        64,
+        11
       ]
     },
     {
@@ -4942,8 +5239,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 15.929276315789473,
-        "l": "Quality +15.9 (Los Angeles Lakers 4.100 vs San Antonio Spurs 8.800)"
+        "v": 16.408721675929886,
+        "l": "Quality +16.4 (Los Angeles Lakers 4.200 vs San Antonio Spurs 8.600)"
       },
       "_sk": {
         "v": 0,
@@ -4957,7 +5254,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 15.929276315789473,
+      "_score": 16.408721675929886,
       "_rk": [
         8,
         1
@@ -4976,8 +5273,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.19203833394766,
-        "l": "Quality -3.2 (Denver Nuggets 3.000 vs Utah Jazz -5.900)"
+        "v": -3.320639756283321,
+        "l": "Quality -3.3 (Denver Nuggets 3.100 vs Utah Jazz -6.000)"
       },
       "_sk": {
         "v": 0,
@@ -4991,7 +5288,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.19203833394766,
+      "_score": -3.320639756283321,
       "_rk": [
         12,
         26
@@ -5010,8 +5307,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -12.701806118687797,
-        "l": "Quality -12.7 (New Orleans Pelicans -6.500 vs LA Clippers -5.000)"
+        "v": -13.031226199543031,
+        "l": "Quality -13.0 (New Orleans Pelicans -6.400 vs LA Clippers -5.000)"
       },
       "_sk": {
         "v": 0,
@@ -5025,7 +5322,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.701806118687797,
+      "_score": -13.031226199543031,
       "_rk": [
         27,
         23
@@ -5045,8 +5342,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.2016218208625142,
-        "l": "Quality -1.2 (Golden State Warriors -5.000 vs Portland Trail Blazers 3.900)"
+        "v": -1.1500380807311503,
+        "l": "Quality -1.2 (Golden State Warriors -5.000 vs Portland Trail Blazers 4.000)"
       },
       "_sk": {
         "v": 0,
@@ -5060,7 +5357,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.2016218208625142,
+      "_score": -1.1500380807311503,
       "_rk": [
         23,
         9
@@ -5365,6 +5662,16 @@
       "channel": "BallerTV",
       "reason": "channel",
       "detail": "airs on BallerTV \u2014 none in channels.txt"
+    },
+    {
+      "name": "1. FC N\u00fcrnberg @ Heidenheim",
+      "league": "2. Bundesliga",
+      "sport": "Soccer",
+      "time": "12:30",
+      "date": "2026-11-27",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Hampton @ UMass Lowell",
@@ -6292,9 +6599,9 @@
       "sport": "Hockey",
       "time": "21:00",
       "date": "2026-11-27",
-      "channel": "SOCO CW",
+      "channel": "NESN+, SOCO CW",
       "reason": "channel",
-      "detail": "airs on SOCO CW \u2014 none in channels.txt"
+      "detail": "airs on NESN+, SOCO CW \u2014 none in channels.txt"
     },
     {
       "name": "Allen Americans @ Rapid City Rush",
@@ -7884,7 +8191,7 @@
     "3-liga": {
       "area": "mens_club_league",
       "fixturesResolved": 0,
-      "fixturesSeen": 2
+      "fixturesSeen": 3
     },
     "serie-a-brazil": {
       "rating": 83.91,
