@@ -2059,6 +2059,36 @@
       "_score": 0
     },
     {
+      "id": 36214340,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "18:00",
+      "name": "Purdue @ Nebraska",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "Big Ten Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 80325540,
       "lgId": 230,
       "lgSlug": "primera-a",
@@ -4481,6 +4511,36 @@
       ]
     },
     {
+      "id": 34249639,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "20:00",
+      "name": "Wisconsin @ Penn State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "Big Ten Network"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 56243560,
       "lgId": 1149,
       "lgSlug": "ncaa-basketball",
@@ -5020,7 +5080,10 @@
       "sport": "Soccer",
       "league": "MLS",
       "ch": [
-        "Apple TV"
+        "FOX Sports 1",
+        "Apple TV",
+        "FOX One",
+        "FOX Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -5120,6 +5183,16 @@
     }
   ],
   "dropped": [
+    {
+      "name": "San Jose State - UC San Diego",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "00:00",
+      "date": "2026-11-24",
+      "channel": "FloSports",
+      "reason": "cutoff",
+      "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
+    },
     {
       "name": "Republic of Ireland U17 @ Costa Rica U17",
       "league": "U17 World Cup",

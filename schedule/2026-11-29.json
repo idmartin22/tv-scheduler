@@ -186,6 +186,37 @@
       ]
     },
     {
+      "id": 11856484,
+      "lgId": 1994,
+      "lgSlug": "motogp",
+      "time": "08:00",
+      "name": "Valencia Grand Prix",
+      "sport": "Motorsports",
+      "league": "MotoGP",
+      "ch": [
+        "FOX Sports 1",
+        "FOX One"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 25,
+        "l": "NASCAR regular race +25"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 25
+    },
+    {
       "id": 16132046,
       "lgId": 540,
       "lgSlug": "la-liga",
@@ -224,6 +255,36 @@
         187,
         77
       ]
+    },
+    {
+      "id": 11265486,
+      "lgId": 2175,
+      "lgSlug": "ladies-european-tour",
+      "time": "08:00",
+      "name": "Andalucia Costa del Sol Open de Espana",
+      "sport": "Golf",
+      "league": "Ladies European Tour",
+      "ch": [
+        "Golf Channel USA"
+      ],
+      "dur": 240,
+      "_st": {
+        "v": 15,
+        "l": "Golf event +15"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 15
     },
     {
       "id": 5812407,
@@ -349,7 +410,8 @@
       "sport": "Soccer",
       "league": "Ligue 1",
       "ch": [
-        "beIN Sport USA"
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
       ],
       "dur": 120,
       "_st": {
@@ -796,7 +858,8 @@
       "sport": "Soccer",
       "league": "Ligue 1",
       "ch": [
-        "beIN Sport USA"
+        "beIN Sport USA",
+        "beIN Sport USA Espanol"
       ],
       "dur": 120,
       "_st": {
@@ -899,6 +962,44 @@
       "_rk": [
         628,
         144
+      ]
+    },
+    {
+      "id": 72066333,
+      "lgId": 270,
+      "lgSlug": "premier-league",
+      "time": "11:30",
+      "name": "Manchester City @ Arsenal FC",
+      "sport": "Soccer",
+      "league": "Premier League",
+      "ch": [
+        "Telemundo"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 16.98511051512071,
+        "l": "Quality +17.0 (GFR 93.6-97.5 vs tier1 baseline 181.9 (Premier League (England)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 16.98511051512071,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "eng.1",
+      "lgR": 90.91,
+      "_rk": [
+        9,
+        1
       ]
     },
     {
@@ -3083,7 +3184,8 @@
       "sport": "Soccer",
       "league": "Serie A",
       "ch": [
-        "Paramount+ (US)"
+        "Paramount+ (US)",
+        "Telemundo"
       ],
       "dur": 120,
       "_st": {
@@ -3675,6 +3777,44 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 62167607,
+      "lgId": 495,
+      "lgSlug": "liga-portugal",
+      "time": "15:30",
+      "name": "Sporting CP @ Porto",
+      "sport": "Soccer",
+      "league": "Liga Portugal",
+      "ch": [
+        "beIN Sport USA Espanol"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 17.685987367950354,
+        "l": "Quality +17.7 (GFR 90.3-91.0 vs tier1 baseline 163.8 (Liga Portugal (Portugal)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 17.685987367950354,
+      "cat": "club_league",
+      "area": "mens_club_league",
+      "espn": "por.1",
+      "lgR": 81.92,
+      "_rk": [
+        27,
+        22
+      ]
     },
     {
       "id": 2208440,
@@ -5277,16 +5417,6 @@
       "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
-      "name": "Valencia Grand Prix",
-      "league": "MotoGP",
-      "sport": "Motorsports",
-      "time": "08:00",
-      "date": "2026-11-29",
-      "channel": "Sportsnet One, Sportsnet NOW",
-      "reason": "channel",
-      "detail": "airs on Sportsnet One, Sportsnet NOW \u2014 none in channels.txt"
-    },
-    {
       "name": "Ajax @ Feyenoord",
       "league": "Eredivisie",
       "sport": "Soccer",
@@ -5325,16 +5455,6 @@
       "channel": "Sportsnet World, Sportsnet NOW, Sportsnet+",
       "reason": "channel",
       "detail": "airs on Sportsnet World, Sportsnet NOW, Sportsnet+ \u2014 none in channels.txt"
-    },
-    {
-      "name": "Manchester City @ Arsenal FC",
-      "league": "Premier League",
-      "sport": "Soccer",
-      "time": "11:30",
-      "date": "2026-11-29",
-      "channel": "DAZN Canada",
-      "reason": "channel",
-      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "America's Day at the Races",
@@ -5465,6 +5585,16 @@
       "channel": "FloHockey",
       "reason": "channel",
       "detail": "airs on FloHockey \u2014 none in channels.txt"
+    },
+    {
+      "name": "PAOK @ AEK Athens",
+      "league": "Super League 1",
+      "sport": "Soccer",
+      "time": "14:00",
+      "date": "2026-11-29",
+      "channel": "Odyssey",
+      "reason": "channel",
+      "detail": "airs on Odyssey \u2014 none in channels.txt"
     },
     {
       "name": "Union @ Wisconsin",
@@ -5732,9 +5862,9 @@
       "sport": "Hockey",
       "time": "16:00",
       "date": "2026-11-29",
-      "channel": "FloHockey",
+      "channel": "FloHockey, CITY Toronto",
       "reason": "channel",
-      "detail": "airs on FloHockey \u2014 none in channels.txt"
+      "detail": "airs on FloHockey, CITY Toronto \u2014 none in channels.txt"
     },
     {
       "name": "Mexico City Capitanes @ Austin Spurs",
@@ -6598,6 +6728,7 @@
         "League One (Scotland)",
         "League Two (England)",
         "Liga Nacional (Honduras)",
+        "Liga Portugal (Portugal)",
         "Ligue 1 (Algeria)",
         "Ligue 1 (France)",
         "Ligue 1 (Tunisia)",
@@ -7026,8 +7157,8 @@
       "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4,
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
       "gfrLeague": "USL Super League",
       "country": "USA",
       "confederation": "CONCACAF"
@@ -7191,8 +7322,8 @@
       "confederation": "UEFA",
       "rosterMatched": 20,
       "rosterTotal": 20,
-      "fixturesResolved": 10,
-      "fixturesSeen": 10,
+      "fixturesResolved": 11,
+      "fixturesSeen": 11,
       "rosterCode": "eng.1"
     },
     "usl-champ": {
@@ -7248,7 +7379,10 @@
       "country": "Portugal",
       "confederation": "UEFA",
       "rosterMatched": 18,
-      "rosterTotal": 18
+      "rosterTotal": 18,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
+      "rosterCode": "por.1"
     },
     "pro-league": {
       "rating": 76.52,

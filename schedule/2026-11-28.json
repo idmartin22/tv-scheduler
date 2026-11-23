@@ -5182,6 +5182,44 @@
       ]
     },
     {
+      "id": 3832287,
+      "lgId": 3291,
+      "lgSlug": "usl-super-league",
+      "time": "18:00",
+      "name": "Sporting JAX @ Tampa Bay Sun",
+      "sport": "Soccer",
+      "league": "USL Super League",
+      "ch": [
+        "Peacock"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 1.462814996926858,
+        "l": "Quality +1.5 (GFR 65.7-60.4 vs tier1 baseline 125.5 (USL Super League (USA)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 1.462814996926858,
+      "cat": "club_league",
+      "area": "womens_club_league",
+      "espn": "usa.w.usl.1",
+      "lgR": 62.73,
+      "_rk": [
+        234,
+        298
+      ]
+    },
+    {
       "id": 79429780,
       "lgId": 958,
       "lgSlug": "nba",
@@ -6715,7 +6753,10 @@
       "sport": "Soccer",
       "league": "MLS",
       "ch": [
-        "Apple TV"
+        "FOX Sports 1",
+        "Apple TV",
+        "FOX One",
+        "FOX Deportes"
       ],
       "dur": 120,
       "_st": {
@@ -6885,6 +6926,26 @@
       "channel": "MUTV",
       "reason": "channel",
       "detail": "airs on MUTV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Everton U18 @ Liverpool U18",
+      "league": "U18 Premier League",
+      "sport": "Soccer",
+      "time": "06:00",
+      "date": "2026-11-28",
+      "channel": "All Red Video",
+      "reason": "channel",
+      "detail": "airs on All Red Video \u2014 none in channels.txt"
+    },
+    {
+      "name": "Karlsruher SC @ Hertha BSC",
+      "league": "2. Bundesliga",
+      "sport": "Soccer",
+      "time": "07:00",
+      "date": "2026-11-28",
+      "channel": "DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Rajadamnern World Series",
@@ -8052,9 +8113,9 @@
       "sport": "Hockey",
       "time": "22:00",
       "date": "2026-11-28",
-      "channel": "SSSEN, FloHockey",
+      "channel": "SSSEN, KVVU-FOX, FloHockey",
       "reason": "channel",
-      "detail": "airs on SSSEN, FloHockey \u2014 none in channels.txt"
+      "detail": "airs on SSSEN, KVVU-FOX, FloHockey \u2014 none in channels.txt"
     },
     {
       "name": "Abbotsford Canucks @ Bakersfield Condors",
@@ -9056,8 +9117,8 @@
       "rosterMatched": 8,
       "rosterTotal": 8,
       "rosterCode": "usa.w.usl.1",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4,
+      "fixturesResolved": 5,
+      "fixturesSeen": 5,
       "gfrLeague": "USL Super League",
       "country": "USA",
       "confederation": "CONCACAF"
