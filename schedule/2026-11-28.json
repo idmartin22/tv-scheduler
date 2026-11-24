@@ -6258,7 +6258,8 @@
         "ABC",
         "SEC Network",
         "ESPN Unlimited",
-        "Disney+"
+        "Disney+",
+        "ESPN Deportes"
       ],
       "dur": 210,
       "_st": {
@@ -7023,16 +7024,6 @@
   ],
   "dropped": [
     {
-      "name": "Kutztown - East Stroudsburg",
-      "league": "College Football",
-      "sport": "Football",
-      "time": "00:00",
-      "date": "2026-11-28",
-      "channel": "ESPN Select, ESPN Unlimited",
-      "reason": "cutoff",
-      "detail": "starts 12:00 AM \u2014 before the 5am day boundary"
-    },
-    {
       "name": "Short Track World Tour",
       "league": "Short Track",
       "sport": "Wintersports",
@@ -7374,6 +7365,16 @@
     },
     {
       "name": "UAlbany @ Lehigh",
+      "league": "College Football",
+      "sport": "Football",
+      "time": "12:00",
+      "date": "2026-11-28",
+      "channel": "ESPN Unlimited, ESPN Select",
+      "reason": "belowtier",
+      "detail": "neither team is in the FPI pool \u2014 lower division than wanted"
+    },
+    {
+      "name": "East Stroudsburg @ Kutztown",
       "league": "College Football",
       "sport": "Football",
       "time": "12:00",
