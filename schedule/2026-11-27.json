@@ -226,8 +226,8 @@
       "espn": "ksa.1",
       "lgR": 76.49,
       "_rk": [
-        847,
-        143
+        846,
+        145
       ]
     },
     {
@@ -425,7 +425,7 @@
       "lgR": 79.71,
       "_rk": [
         235,
-        197
+        196
       ]
     },
     {
@@ -438,6 +438,7 @@
       "league": "College Football",
       "ch": [
         "ABC",
+        "SEC Network",
         "ESPN Unlimited"
       ],
       "dur": 210,
@@ -497,6 +498,37 @@
         18,
         16
       ]
+    },
+    {
+      "id": 45755986,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "12:00",
+      "name": "Akron @ Louisville",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ACC Network X"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 69186167,
@@ -698,8 +730,8 @@
       "espn": "ksa.1",
       "lgR": 76.49,
       "_rk": [
-        420,
-        388
+        417,
+        387
       ]
     },
     {
@@ -891,37 +923,6 @@
       "_st": {
         "v": 0,
         "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 0
-    },
-    {
-      "id": 30218551,
-      "lgId": 2009,
-      "lgSlug": "ncaa-basketball-women",
-      "time": "13:00",
-      "name": "Akron @ Louisville",
-      "sport": "Basketball",
-      "league": "Women's College Basketball",
-      "ch": [
-        "ESPN Unlimited",
-        "ACC Network X"
-      ],
-      "dur": 150,
-      "_st": {
-        "v": 0,
-        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -1197,8 +1198,7 @@
       "sport": "Hockey",
       "league": "NHL",
       "ch": [
-        "NHL Network",
-        "Prime Video (US)"
+        "NHL Network"
       ],
       "dur": 150,
       "_st": {
@@ -1488,8 +1488,8 @@
       "espn": "",
       "lgR": 79.71,
       "_rk": [
-        448,
-        149
+        445,
+        151
       ]
     },
     {
@@ -1506,8 +1506,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -5.146456692913387,
-        "l": "Quality -5.1 (GFR 81.4-88.4 vs tier1 baseline 172.6 (Bundesliga (Germany)))"
+        "v": -4.874919820397695,
+        "l": "Quality -4.9 (GFR 81.4-88.4 vs tier1 baseline 172.4 (Bundesliga (Germany)))"
       },
       "_sk": {
         "v": 0,
@@ -1521,13 +1521,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": -5.146456692913387,
+      "_score": -4.874919820397695,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ger.1",
       "lgR": 86.28,
       "_rk": [
-        276,
+        277,
         43
       ]
     },
@@ -1638,8 +1638,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -4.791133844842293,
-        "l": "Quality -4.8 (GFR 87.9-79.9 vs tier1 baseline 170.7 (Serie A (Italy)))"
+        "v": -4.93115972632822,
+        "l": "Quality -4.9 (GFR 87.9-79.9 vs tier1 baseline 170.8 (Serie A (Italy)))"
       },
       "_sk": {
         "v": 0,
@@ -1653,14 +1653,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.791133844842293,
+      "_score": -4.93115972632822,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ita.1",
       "lgR": 85.33,
       "_rk": [
-        50,
-        389
+        51,
+        388
       ]
     },
     {
@@ -1677,8 +1677,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 8.874229169654422,
-        "l": "Quality +8.9 (GFR 88.7-88.2 vs tier1 baseline 170.0 (Ligue 1 (France)))"
+        "v": 8.941524796447084,
+        "l": "Quality +8.9 (GFR 88.7-88.2 vs tier1 baseline 170.2 (Ligue 1 (France)))"
       },
       "_sk": {
         "v": 0,
@@ -1692,7 +1692,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.874229169654422,
+      "_score": 8.941524796447084,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "fra.1",
@@ -1715,8 +1715,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 7.371956339210745,
-        "l": "Quality +7.4 (Denver Broncos 2.400 vs Pittsburgh Steelers 1.700)"
+        "v": 7.285654537850271,
+        "l": "Quality +7.3 (Denver Broncos 2.400 vs Pittsburgh Steelers 1.700)"
       },
       "_sk": {
         "v": 0,
@@ -1730,10 +1730,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.371956339210745,
+      "_score": 7.285654537850271,
       "_rk": [
         11,
-        15
+        14
       ]
     },
     {
@@ -1750,8 +1750,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -7.359550561797743,
-        "l": "Quality -7.4 (GFR 89.5-88.9 vs tier1 baseline 181.8 (Premier League (England)))"
+        "v": -7.494655835827259,
+        "l": "Quality -7.5 (GFR 89.5-88.9 vs tier1 baseline 181.9 (Premier League (England)))"
       },
       "_sk": {
         "v": 0,
@@ -1765,14 +1765,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.359550561797743,
+      "_score": -7.494655835827259,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "eng.1",
       "lgR": 90.89,
       "_rk": [
         34,
-        38
+        39
       ]
     },
     {
@@ -1790,8 +1790,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -6.4925373134328535,
-        "l": "Quality -6.5 (GFR 84.4-84.3 vs tier1 baseline 172.2 (LaLiga (Spain)))"
+        "v": -6.683832996137623,
+        "l": "Quality -6.7 (GFR 84.4-84.3 vs tier1 baseline 172.3 (LaLiga (Spain)))"
       },
       "_sk": {
         "v": 0,
@@ -1805,13 +1805,13 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.4925373134328535,
+      "_score": -6.683832996137623,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "esp.1",
       "lgR": 86.09,
       "_rk": [
-        118,
+        117,
         119
       ]
     },
@@ -1830,7 +1830,7 @@
       "dur": 120,
       "_st": {
         "v": 20.0,
-        "l": "Quality +20.0 (GFR 84.6-85.0 vs tier1 baseline 162.3 (Championship (England)))"
+        "l": "Quality +20.0 (GFR 84.6-85.0 vs tier1 baseline 162.2 (Championship (England)))"
       },
       "_sk": {
         "v": 0,
@@ -1850,8 +1850,8 @@
       "espn": "eng.2",
       "lgR": 81.13,
       "_rk": [
-        111,
-        101
+        110,
+        100
       ]
     },
     {
@@ -2820,8 +2820,7 @@
       "league": "NHL",
       "ch": [
         "ESPN Unlimited",
-        "ESPN Select",
-        "Prime Video (US)"
+        "ESPN Select"
       ],
       "dur": 150,
       "_st": {
@@ -3286,7 +3285,6 @@
       "league": "CONCACAF W Championship",
       "ch": [
         "Paramount+ (US)",
-        "TUDN",
         "ViX"
       ],
       "dur": 120,
@@ -4228,8 +4226,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 9.877688738928722,
-        "l": "Quality +9.9 (Miami Heat 1.900 vs New York Knicks 5.900)"
+        "v": 10.268886043533929,
+        "l": "Quality +10.3 (Miami Heat 1.700 vs New York Knicks 6.300)"
       },
       "_sk": {
         "v": 0,
@@ -4243,10 +4241,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.877688738928722,
+      "_score": 10.268886043533929,
       "_rk": [
         13,
-        5
+        3
       ]
     },
     {
@@ -4556,8 +4554,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.48715983135301,
-        "l": "Quality -1.5 (Milwaukee Bucks -7.400 vs Detroit Pistons 6.100)"
+        "v": -2.1782178217821784,
+        "l": "Quality -2.2 (Milwaukee Bucks -7.900 vs Detroit Pistons 5.900)"
       },
       "_sk": {
         "v": 0,
@@ -4571,10 +4569,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.48715983135301,
+      "_score": -2.1782178217821784,
       "_rk": [
         29,
-        3
+        6
       ]
     },
     {
@@ -4586,13 +4584,12 @@
       "sport": "Basketball",
       "league": "NBA",
       "ch": [
-        "NBA League Pass",
-        "Peacock"
+        "NBA League Pass"
       ],
       "dur": 150,
       "_st": {
-        "v": -1.9471061709467232,
-        "l": "Quality -1.9 (Philadelphia 76ers 2.400 vs Indiana Pacers -4.100)"
+        "v": -1.5181518151815176,
+        "l": "Quality -1.5 (Philadelphia 76ers 2.700 vs Indiana Pacers -4.100)"
       },
       "_sk": {
         "v": 0,
@@ -4606,10 +4603,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.9471061709467232,
+      "_score": -1.5181518151815176,
       "_rk": [
-        11,
-        20
+        10,
+        21
       ]
     },
     {
@@ -4625,8 +4622,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -9.306247604446149,
-        "l": "Quality -9.3 (Brooklyn Nets -7.200 vs Toronto Raptors -0.900)"
+        "v": -8.668866886688667,
+        "l": "Quality -8.7 (Brooklyn Nets -7.100 vs Toronto Raptors -0.800)"
       },
       "_sk": {
         "v": 0,
@@ -4640,7 +4637,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -9.306247604446149,
+      "_score": -8.668866886688667,
       "_rk": [
         28,
         18
@@ -4940,21 +4937,21 @@
       "_score": 0
     },
     {
-      "id": 79173797,
-      "lgId": 958,
-      "lgSlug": "nba",
-      "time": "20:00",
-      "name": "Atlanta Hawks @ Boston Celtics",
+      "id": 50790758,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "19:30",
+      "name": "Penn State @ Mississippi State",
       "sport": "Basketball",
-      "league": "NBA",
+      "league": "Men's College Basketball",
       "ch": [
-        "NBA League Pass",
-        "Peacock"
+        "SEC Network",
+        "ESPN Unlimited"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": 11.016448755799239,
-        "l": "Quality +11.0 (Atlanta Hawks 1.900 vs Boston Celtics 6.800)"
+        "v": 7.467288215411948,
+        "l": "Quality +7.5 (Penn State Nittany Lions 6.000 vs Mississippi State Bulldogs 11.100)"
       },
       "_sk": {
         "v": 0,
@@ -4968,7 +4965,41 @@
         "v": 0,
         "l": ""
       },
-      "_score": 11.016448755799239,
+      "_score": 7.467288215411948,
+      "_rk": [
+        84,
+        50
+      ]
+    },
+    {
+      "id": 79173797,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "20:00",
+      "name": "Atlanta Hawks @ Boston Celtics",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 10.909090909090908,
+        "l": "Quality +10.9 (Atlanta Hawks 1.700 vs Boston Celtics 6.800)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.909090909090908,
       "_rk": [
         13,
         2
@@ -5020,8 +5051,7 @@
       "league": "NHL",
       "ch": [
         "ESPN Unlimited",
-        "ESPN Select",
-        "Prime Video (US)"
+        "ESPN Select"
       ],
       "dur": 150,
       "_st": {
@@ -5213,7 +5243,7 @@
       "espn": "usa.1",
       "lgR": 80.05,
       "_rk": [
-        228,
+        229,
         97
       ]
     },
@@ -5291,7 +5321,6 @@
       "ch": [
         "CBS Sports Network",
         "Paramount+ (US)",
-        "TUDN",
         "ViX"
       ],
       "dur": 120,
@@ -5329,8 +5358,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 8.232813159004639,
-        "l": "Quality +8.2 (Memphis Grizzlies 0.900 vs Minnesota Timberwolves 5.600)"
+        "v": 8.604353393085786,
+        "l": "Quality +8.6 (Memphis Grizzlies 1.200 vs Minnesota Timberwolves 5.500)"
       },
       "_sk": {
         "v": 0,
@@ -5344,7 +5373,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.232813159004639,
+      "_score": 8.604353393085786,
       "_rk": [
         15,
         7
@@ -5394,8 +5423,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 0.008435259384225586,
-        "l": "Quality +0.0 (Dallas Mavericks 0.200 vs Phoenix Suns -0.200)"
+        "v": -0.3080308030803085,
+        "l": "Quality -0.3 (Dallas Mavericks 0.100 vs Phoenix Suns -0.400)"
       },
       "_sk": {
         "v": 0,
@@ -5409,7 +5438,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 0.008435259384225586,
+      "_score": -0.3080308030803085,
       "_rk": [
         16,
         17
@@ -5529,8 +5558,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 16.710248840151834,
-        "l": "Quality +16.7 (Los Angeles Lakers 4.200 vs San Antonio Spurs 9.000)"
+        "v": 16.542893725992315,
+        "l": "Quality +16.5 (Los Angeles Lakers 4.100 vs San Antonio Spurs 8.800)"
       },
       "_sk": {
         "v": 0,
@@ -5544,7 +5573,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.710248840151834,
+      "_score": 16.542893725992315,
       "_rk": [
         9,
         1
@@ -5563,8 +5592,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -4.246837868915295,
-        "l": "Quality -4.2 (Denver Nuggets 2.300 vs Utah Jazz -6.000)"
+        "v": -4.158415841584159,
+        "l": "Quality -4.2 (Denver Nuggets 2.400 vs Utah Jazz -6.200)"
       },
       "_sk": {
         "v": 0,
@@ -5578,7 +5607,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.246837868915295,
+      "_score": -4.158415841584159,
       "_rk": [
         12,
         26
@@ -5597,8 +5626,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -12.870831736297434,
-        "l": "Quality -12.9 (New Orleans Pelicans -6.400 vs LA Clippers -4.800)"
+        "v": -12.959295929592958,
+        "l": "Quality -13.0 (New Orleans Pelicans -6.500 vs LA Clippers -5.300)"
       },
       "_sk": {
         "v": 0,
@@ -5612,10 +5641,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.870831736297434,
+      "_score": -12.959295929592958,
       "_rk": [
         27,
-        23
+        25
       ]
     },
     {
@@ -5627,13 +5656,12 @@
       "sport": "Basketball",
       "league": "NBA",
       "ch": [
-        "NBA League Pass",
-        "Peacock"
+        "NBA League Pass"
       ],
       "dur": 150,
       "_st": {
-        "v": -0.4522805672671531,
-        "l": "Quality -0.5 (Golden State Warriors -4.900 vs Portland Trail Blazers 4.500)"
+        "v": 1.5620998719590264,
+        "l": "Quality +1.6 (Golden State Warriors -3.300 vs Portland Trail Blazers 4.500)"
       },
       "_sk": {
         "v": 0,
@@ -5647,9 +5675,9 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.4522805672671531,
+      "_score": 1.5620998719590264,
       "_rk": [
-        24,
+        20,
         8
       ]
     },
@@ -5751,8 +5779,8 @@
       "espn": "usa.1",
       "lgR": 80.05,
       "_rk": [
-        169,
-        360
+        168,
+        359
       ]
     }
   ],
@@ -5766,6 +5794,16 @@
       "channel": "DAZN US, DAZN Canada",
       "reason": "cutoff",
       "detail": "starts 01:00 AM \u2014 before the 5am day boundary"
+    },
+    {
+      "name": "Southern Hoiho - Northern Kahu",
+      "league": "Tauihi Basketball",
+      "sport": "Basketball",
+      "time": "01:30",
+      "date": "2026-11-27",
+      "channel": "ESPN Select, ESPN Unlimited",
+      "reason": "cutoff",
+      "detail": "starts 01:30 AM \u2014 before the 5am day boundary"
     },
     {
       "name": "Figure Skating Grand Prix",
@@ -6276,6 +6314,16 @@
       "channel": "BallerTV",
       "reason": "channel",
       "detail": "airs on BallerTV \u2014 none in channels.txt"
+    },
+    {
+      "name": "Croatia @ Poland",
+      "league": "FIBA World Cup",
+      "sport": "Basketball",
+      "time": "14:45",
+      "date": "2026-11-27",
+      "channel": "DAZN US, DAZN Canada",
+      "reason": "channel",
+      "detail": "airs on DAZN US, DAZN Canada \u2014 none in channels.txt"
     },
     {
       "name": "Wealdstone @ Scunthorpe United",
@@ -7016,6 +7064,16 @@
       "channel": "NBA App, TV 32",
       "reason": "channel",
       "detail": "airs on NBA App, TV 32 \u2014 none in channels.txt"
+    },
+    {
+      "name": "Pacific @ UC Davis",
+      "league": "Women's College Soccer",
+      "sport": "Soccer",
+      "time": "20:00",
+      "date": "2026-11-27",
+      "channel": "FloSports",
+      "reason": "channel",
+      "detail": "airs on FloSports \u2014 none in channels.txt"
     },
     {
       "name": "Swift Current Broncos @ Prince Albert Raiders",
@@ -7949,20 +8007,12 @@
         "Premier League (England)",
         "Premier League (Russia)",
         "Premier League (Ukraine)",
-        "Primera Division (Bolivia)",
-        "Primera Division (Chile)",
-        "Primera Division (Costa Rica)",
-        "Primera Division (Peru)",
-        "Primera Division (Uruguay)",
-        "Primera Division (Venezuela)",
         "Pro League (Belgium)",
         "Pro League (Saudi Arabia)",
         "Pro League (UAE)",
         "Serie A (Brazil)",
         "Serie A (Ecuador)",
-        "Serie A (Italy)",
-        "Serie B (Brazil)",
-        "Serie B (Italy)"
+        "Serie A (Italy)"
       ]
     },
     "womens_club_league": {
@@ -8153,18 +8203,18 @@
         "Copa Do Brazil": 51.46,
         "Caf Champions League": 43.72,
         "Concacaf Central American Cup": 55.86,
-        "Concacaf Champions Cup": 71.67,
-        "Leagues Cup": 80.68,
-        "Conmebol Libertadores": 79.87,
-        "Conmebol Sudamericana": 79.5,
+        "Concacaf Champions Cup": 71.68,
+        "Leagues Cup": 80.67,
+        "Conmebol Libertadores": 79.88,
+        "Conmebol Sudamericana": 79.52,
         "English Fa Cup": 63.52,
-        "Carabao Cup": 78.23,
-        "Copa De La Reina": 62.03,
-        "Copa Del Rey": 51.82,
-        "Club World Cup": 85.52,
-        "German Cup": 64.02,
-        "Coppa Italia": 70.14,
-        "Uefa Champions League": 89.53,
+        "Carabao Cup": 78.24,
+        "Copa De La Reina": 62.05,
+        "Copa Del Rey": 51.83,
+        "Club World Cup": 85.53,
+        "German Cup": 63.99,
+        "Coppa Italia": 70.15,
+        "Uefa Champions League": 89.54,
         "Uefa Europa League": 83.55,
         "Uefa Conference League": 76.38,
         "U.S. Open Cup": 54.21,
@@ -8253,18 +8303,18 @@
         }
       },
       "label": "Men's club competitions",
-      "top": 89.53,
+      "top": 89.54,
       "worst": 43.72,
       "anchored": true,
-      "span": 45.81,
+      "span": 45.82,
       "seen": []
     },
     "mens_oneoff": {
       "leagues": {
         "Campeones Cup": 83.18,
         "Community Shield": 95.17,
-        "Trophee Des Champions": 90.39,
-        "Uefa Super Cup": 93.81
+        "Trophee Des Champions": 90.23,
+        "Uefa Super Cup": 93.66
       },
       "origin": {
         "Campeones Cup": {
@@ -8328,8 +8378,8 @@
       "rosterMatched": 18,
       "rosterTotal": 18,
       "rosterCode": "mex.1",
-      "fixturesResolved": 4,
-      "fixturesSeen": 4,
+      "fixturesResolved": 2,
+      "fixturesSeen": 2,
       "gfrLeague": "Liga MX",
       "country": "Mexico",
       "confederation": "CONCACAF"
@@ -8345,17 +8395,6 @@
       "gfrLeague": "League One",
       "country": "England",
       "confederation": "UEFA"
-    },
-    "primera-division": {
-      "rating": 81.63,
-      "area": "mens_club_league",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "Liga Profesional",
-      "country": "Argentina",
-      "confederation": "CONMEBOL",
-      "rosterMatched": 28,
-      "rosterTotal": 30
     },
     "la-liga": {
       "rating": 86.09,
@@ -8457,8 +8496,8 @@
       "confederation": "UEFA",
       "rosterMatched": 24,
       "rosterTotal": 24,
-      "fixturesResolved": 3,
-      "fixturesSeen": 3,
+      "fixturesResolved": 1,
+      "fixturesSeen": 1,
       "rosterCode": "eng.2"
     },
     "serie-b-brazil": {
@@ -8502,6 +8541,15 @@
       "fixturesResolved": 1,
       "fixturesSeen": 1,
       "rosterCode": "ita.1"
+    },
+    "primera-division": {
+      "rating": 81.63,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga Profesional",
+      "country": "Argentina",
+      "confederation": "CONMEBOL",
+      "rosterMatched": 28,
+      "rosterTotal": 30
     },
     "primera-a": {
       "rating": 79.85,
@@ -8622,10 +8670,7 @@
       "country": "Italy",
       "confederation": "UEFA",
       "rosterMatched": 13,
-      "rosterTotal": 20,
-      "fixturesResolved": 0,
-      "fixturesSeen": 1,
-      "rosterCode": "ita.2"
+      "rosterTotal": 20
     },
     "women-s-super-league": {
       "rating": 63.85,
@@ -8649,7 +8694,7 @@
       "rosterTotal": 17
     },
     "campe-n-de-campeones": {
-      "rating": 83.74,
+      "rating": 83.95,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 2,
@@ -8670,14 +8715,14 @@
       "rosterTotal": 45
     },
     "uefa-champions-league": {
-      "rating": 89.53,
+      "rating": 89.54,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 36,
       "rosterTotal": 36
     },
     "copa-sudamericana": {
-      "rating": 79.5,
+      "rating": 79.52,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 55,
@@ -8694,7 +8739,7 @@
       "rosterCode": "uefa.europa.conf"
     },
     "english-league-cup": {
-      "rating": 78.23,
+      "rating": 78.24,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 90,
@@ -8725,7 +8770,7 @@
       "rosterCode": "uefa.europa"
     },
     "leagues-cup": {
-      "rating": 80.68,
+      "rating": 80.67,
       "area": "mens_club_competition",
       "confederation": "CONCACAF",
       "rosterMatched": 36,
@@ -8739,14 +8784,14 @@
       "rosterTotal": 2
     },
     "copa-libertadores": {
-      "rating": 79.87,
+      "rating": 79.88,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 42,
       "rosterTotal": 44
     },
     "uefa-super-cup": {
-      "rating": 93.81,
+      "rating": 93.66,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -8767,21 +8812,21 @@
       "rosterTotal": 2
     },
     "troph-e-des-champions": {
-      "rating": 90.39,
+      "rating": 90.23,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 2
     },
     "coppa-italia": {
-      "rating": 70.14,
+      "rating": 70.15,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 34,
       "rosterTotal": 46
     },
     "dfb-super-cup": {
-      "rating": 93.81,
+      "rating": 93.66,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -8816,7 +8861,7 @@
       "rosterTotal": 4
     },
     "super-cup": {
-      "rating": 93.81,
+      "rating": 93.66,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
@@ -8858,16 +8903,6 @@
       "rosterMatched": 20,
       "rosterTotal": 20
     },
-    "ucl": {
-      "rating": 89.53,
-      "area": "mens_club_competition",
-      "confederation": "UEFA",
-      "rosterMatched": 36,
-      "rosterTotal": 36,
-      "rosterCode": "uefa.champions",
-      "fixturesResolved": 9,
-      "fixturesSeen": 9
-    },
     "ta-a-de-portugal": {
       "rating": 50.89,
       "area": "mens_club_competition",
@@ -8892,7 +8927,7 @@
       "confederation": "AFC"
     },
     "copa-del-rey": {
-      "rating": 51.82,
+      "rating": 51.83,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 40,
@@ -8933,7 +8968,7 @@
       "fixturesSeen": 2
     },
     "copa-de-la-reina": {
-      "rating": 62.03,
+      "rating": 62.05,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 22,
