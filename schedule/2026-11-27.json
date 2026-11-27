@@ -77,7 +77,7 @@
       "dur": 120,
       "_st": {
         "v": -20.0,
-        "l": "Quality -20.0 (GFR 81.4-37.5 (not rated yet) vs tier1 baseline 153.0 (Pro League (Saudi Arabia) \u2014 opponent not in GFR))"
+        "l": "neither team rated by GFR and the league has no coverage \u2014 both sides at the unrated default 37.5"
       },
       "_sk": {
         "v": 0,
@@ -95,10 +95,7 @@
       "cat": "club_competition",
       "area": "mens_club_competition",
       "espn": "caf.confed",
-      "_rk": [
-        283,
-        null
-      ]
+      "lgR": 43.04
     },
     {
       "id": 11265486,
@@ -205,7 +202,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 6.495057660626022,
+        "v": 6.500617538081502,
         "l": "Quality +6.5 (GFR 74.6-83.6 vs tier1 baseline 153.0 (Pro League (Saudi Arabia)))"
       },
       "_sk": {
@@ -220,14 +217,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.495057660626022,
+      "_score": 6.500617538081502,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ksa.1",
       "lgR": 76.49,
       "_rk": [
         846,
-        145
+        147
       ]
     },
     {
@@ -403,8 +400,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 10.644539931841779,
-        "l": "Quality +10.6 (GFR 82.1-82.5 vs tier1 baseline 159.4 (Ekstraklasa (Poland)))"
+        "v": 9.859274250482441,
+        "l": "Quality +9.9 (GFR 82.1-82.5 vs tier1 baseline 159.6 (Ekstraklasa (Poland)))"
       },
       "_sk": {
         "v": 0,
@@ -418,14 +415,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.644539931841779,
+      "_score": 9.859274250482441,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "",
       "lgR": 79.71,
       "_rk": [
-        235,
-        196
+        233,
+        198
       ]
     },
     {
@@ -441,7 +438,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -8.468558241988742,
+        "v": -8.509537496733712,
         "l": "Quality -8.5 (GFR 76.3-74.9 vs tier1 baseline 158.9 (Super Lig (Turkiye)))"
       },
       "_sk": {
@@ -456,14 +453,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -8.468558241988742,
+      "_score": -8.509537496733712,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "tur.1",
       "lgR": 79.43,
       "_rk": [
         694,
-        820
+        821
       ]
     },
     {
@@ -500,41 +497,6 @@
       "_rk": [
         53,
         13
-      ]
-    },
-    {
-      "id": 99626112,
-      "lgId": 2024,
-      "lgSlug": "ncaa-football",
-      "time": "12:00",
-      "name": "Nebraska @ Iowa",
-      "sport": "Football",
-      "league": "College Football",
-      "ch": [
-        "CBS",
-        "Paramount+ (US)"
-      ],
-      "dur": 210,
-      "_st": {
-        "v": 10.947314049586778,
-        "l": "Quality +10.9 (Nebraska Cornhuskers 14.900 vs Iowa Hawkeyes 15.600)"
-      },
-      "_sk": {
-        "v": 0,
-        "l": ""
-      },
-      "_rv": {
-        "v": 0,
-        "l": ""
-      },
-      "_mq": {
-        "v": 0,
-        "l": ""
-      },
-      "_score": 10.947314049586778,
-      "_rk": [
-        18,
-        16
       ]
     },
     {
@@ -735,6 +697,41 @@
       ]
     },
     {
+      "id": 94344626,
+      "lgId": 2024,
+      "lgSlug": "ncaa-football",
+      "time": "12:08",
+      "name": "Nebraska @ Iowa",
+      "sport": "Football",
+      "league": "College Football",
+      "ch": [
+        "CBS",
+        "Paramount+ (US)"
+      ],
+      "dur": 210,
+      "_st": {
+        "v": 10.947314049586778,
+        "l": "Quality +10.9 (Nebraska Cornhuskers 14.900 vs Iowa Hawkeyes 15.600)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 10.947314049586778,
+      "_rk": [
+        18,
+        16
+      ]
+    },
+    {
       "id": 11787208,
       "lgId": 514,
       "lgSlug": "pro-league",
@@ -747,7 +744,7 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 7.953047775947281,
+        "v": 7.9580074104569745,
         "l": "Quality +8.0 (GFR 79.5-79.9 vs tier1 baseline 153.0 (Pro League (Saudi Arabia)))"
       },
       "_sk": {
@@ -762,15 +759,46 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.953047775947281,
+      "_score": 7.9580074104569745,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ksa.1",
       "lgR": 76.49,
       "_rk": [
-        417,
-        387
+        415,
+        384
       ]
+    },
+    {
+      "id": 18969800,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "12:30",
+      "name": "Tennessee Tech @ Grambling State",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
     },
     {
       "id": 7649850,
@@ -1103,6 +1131,41 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 80620359,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "13:00",
+      "name": "St. John's @ Iowa State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 14.842977329651275,
+        "l": "Quality +14.8 (St. John's Red Storm 16.500 vs Iowa State Cyclones 18.300)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 14.842977329651275,
+      "_rk": [
+        19,
+        10
+      ]
     },
     {
       "id": 33120576,
@@ -1540,8 +1603,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 6.620240035560855,
-        "l": "Quality +6.6 (GFR 79.1-83.5 vs tier1 baseline 159.4 (Ekstraklasa (Poland)))"
+        "v": 6.024379912458258,
+        "l": "Quality +6.0 (GFR 79.1-83.5 vs tier1 baseline 159.6 (Ekstraklasa (Poland)))"
       },
       "_sk": {
         "v": 0,
@@ -1555,14 +1618,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 6.620240035560855,
+      "_score": 6.024379912458258,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "",
       "lgR": 79.71,
       "_rk": [
-        445,
-        151
+        444,
+        153
       ]
     },
     {
@@ -1579,8 +1642,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -4.874919820397695,
-        "l": "Quality -4.9 (GFR 81.4-88.4 vs tier1 baseline 172.4 (Bundesliga (Germany)))"
+        "v": -5.16047828823158,
+        "l": "Quality -5.2 (GFR 81.4-88.4 vs tier1 baseline 172.6 (Bundesliga (Germany)))"
       },
       "_sk": {
         "v": 0,
@@ -1594,14 +1657,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.874919820397695,
+      "_score": -5.16047828823158,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ger.1",
       "lgR": 86.19,
       "_rk": [
-        277,
-        43
+        275,
+        45
       ]
     },
     {
@@ -1699,20 +1762,21 @@
       "cat": "unclassified"
     },
     {
-      "id": 58514662,
-      "lgId": 410,
-      "lgSlug": "serie-a",
-      "time": "14:45",
-      "name": "Bologna @ Venezia",
-      "sport": "Soccer",
-      "league": "Serie A",
+      "id": 65300896,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "14:30",
+      "name": "Georgetown @ UCLA",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
       "ch": [
-        "Paramount+ (US)"
+        "FOX",
+        "FOX One"
       ],
       "dur": 120,
       "_st": {
-        "v": -4.93115972632822,
-        "l": "Quality -4.9 (GFR 87.9-79.9 vs tier1 baseline 170.8 (Serie A (Italy)))"
+        "v": 10.836695255165488,
+        "l": "Quality +10.8 (Georgetown Hoyas 6.600 vs UCLA Bruins 18.800)"
       },
       "_sk": {
         "v": 0,
@@ -1726,14 +1790,48 @@
         "v": 0,
         "l": ""
       },
-      "_score": -4.93115972632822,
+      "_score": 10.836695255165488,
+      "_rk": [
+        81,
+        8
+      ]
+    },
+    {
+      "id": 58514662,
+      "lgId": 410,
+      "lgSlug": "serie-a",
+      "time": "14:45",
+      "name": "Bologna @ Venezia",
+      "sport": "Soccer",
+      "league": "Serie A",
+      "ch": [
+        "Paramount+ (US)"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -5.2183279476344415,
+        "l": "Quality -5.2 (GFR 87.9-79.9 vs tier1 baseline 171.0 (Serie A (Italy)))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -5.2183279476344415,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "ita.1",
       "lgR": 85.38,
       "_rk": [
-        51,
-        388
+        52,
+        385
       ]
     },
     {
@@ -1750,8 +1848,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": 8.941524796447084,
-        "l": "Quality +8.9 (GFR 88.7-88.2 vs tier1 baseline 170.2 (Ligue 1 (France)))"
+        "v": 9.088518843120095,
+        "l": "Quality +9.1 (GFR 88.7-88.2 vs tier1 baseline 170.0 (Ligue 1 (France)))"
       },
       "_sk": {
         "v": 0,
@@ -1765,14 +1863,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": 8.941524796447084,
+      "_score": 9.088518843120095,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "fra.1",
       "lgR": 85.09,
       "_rk": [
-        41,
-        45
+        42,
+        47
       ]
     },
     {
@@ -1788,8 +1886,8 @@
       ],
       "dur": 180,
       "_st": {
-        "v": 7.285654537850271,
-        "l": "Quality +7.3 (Denver Broncos 2.400 vs Pittsburgh Steelers 1.700)"
+        "v": 7.2107698779974765,
+        "l": "Quality +7.2 (Denver Broncos 2.400 vs Pittsburgh Steelers 1.600)"
       },
       "_sk": {
         "v": 0,
@@ -1803,10 +1901,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 7.285654537850271,
+      "_score": 7.2107698779974765,
       "_rk": [
         11,
-        14
+        15
       ]
     },
     {
@@ -1823,8 +1921,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -7.494655835827259,
-        "l": "Quality -7.5 (GFR 89.5-88.9 vs tier1 baseline 181.9 (Premier League (England)))"
+        "v": -7.853356890459341,
+        "l": "Quality -7.9 (GFR 89.5-88.9 vs tier1 baseline 181.9 (Premier League (England)))"
       },
       "_sk": {
         "v": 0,
@@ -1838,14 +1936,14 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.494655835827259,
+      "_score": -7.853356890459341,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "eng.1",
       "lgR": 90.94,
       "_rk": [
-        34,
-        39
+        36,
+        40
       ]
     },
     {
@@ -1863,8 +1961,8 @@
       ],
       "dur": 120,
       "_st": {
-        "v": -6.683832996137623,
-        "l": "Quality -6.7 (GFR 84.4-84.3 vs tier1 baseline 172.3 (LaLiga (Spain)))"
+        "v": -5.994397759103719,
+        "l": "Quality -6.0 (GFR 84.4-84.3 vs tier1 baseline 172.1 (LaLiga (Spain)))"
       },
       "_sk": {
         "v": 0,
@@ -1878,7 +1976,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -6.683832996137623,
+      "_score": -5.994397759103719,
       "cat": "club_league",
       "area": "mens_club_league",
       "espn": "esp.1",
@@ -1923,7 +2021,7 @@
       "espn": "eng.2",
       "lgR": 81.12,
       "_rk": [
-        110,
+        109,
         100
       ]
     },
@@ -2709,6 +2807,37 @@
       "cat": "unclassified"
     },
     {
+      "id": 11479551,
+      "lgId": 2009,
+      "lgSlug": "ncaa-basketball-women",
+      "time": "15:00",
+      "name": "Colorado State @ Little Rock",
+      "sport": "Basketball",
+      "league": "Women's College Basketball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Basketball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 28954363,
       "lgId": 2024,
       "lgSlug": "ncaa-football",
@@ -2846,6 +2975,41 @@
       "_rk": [
         234,
         343
+      ]
+    },
+    {
+      "id": 52915465,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "15:30",
+      "name": "TBD @ Maryland",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN U",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -7.167004732927654,
+        "l": "Quality -7.2 (Maryland Terrapins 10.900 vs unlisted opponent -24.140 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -7.167004732927654,
+      "_rk": [
+        null,
+        51
       ]
     },
     {
@@ -3380,7 +3544,8 @@
       "_score": -20.0,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "espn": "concacaf.womens.championship"
+      "espn": "concacaf.womens.championship",
+      "lgR": 38.16
     },
     {
       "id": 48670647,
@@ -3582,6 +3747,41 @@
       "cat": "unclassified"
     },
     {
+      "id": 27930331,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "17:00",
+      "name": "Texas @ St. Mary's",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "FOX",
+        "FOX One"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -2.4481941317641107,
+        "l": "Quality -2.4 (Texas Longhorns 19.600 vs unlisted opponent -24.140 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -2.4481941317641107,
+      "_rk": [
+        5,
+        null
+      ]
+    },
+    {
       "id": 88125391,
       "lgId": 707,
       "lgSlug": "nhl",
@@ -3678,6 +3878,41 @@
         "l": ""
       },
       "_score": 0
+    },
+    {
+      "id": 53271798,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "17:30",
+      "name": "Michigan @ Kansas State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN U",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 7.21399337930068,
+        "l": "Quality +7.2 (Michigan Wolverines 12.700 vs Kansas State Wildcats 4.200)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 7.21399337930068,
+      "_rk": [
+        41,
+        104
+      ]
     },
     {
       "id": 15527353,
@@ -4105,6 +4340,37 @@
       "cat": "unclassified"
     },
     {
+      "id": 90920519,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "18:00",
+      "name": "UC San Diego @ Long Beach State",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
+      "ch": [
+        "ESPN Unlimited",
+        "ESPN Select"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 0
+    },
+    {
       "id": 43374317,
       "lgId": 1139,
       "lgSlug": "fiba-world-cup",
@@ -4299,8 +4565,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 10.330898152127205,
-        "l": "Quality +10.3 (Miami Heat 1.800 vs New York Knicks 6.200)"
+        "v": 9.884868421052634,
+        "l": "Quality +9.9 (Miami Heat 1.800 vs New York Knicks 6.200)"
       },
       "_sk": {
         "v": 0,
@@ -4314,7 +4580,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.330898152127205,
+      "_score": 9.884868421052634,
       "_rk": [
         13,
         4
@@ -4627,8 +4893,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.356024506466982,
-        "l": "Quality -3.4 (Milwaukee Bucks -9.200 vs Detroit Pistons 5.900)"
+        "v": -3.8665759019741293,
+        "l": "Quality -3.9 (Milwaukee Bucks -9.200 vs Detroit Pistons 5.400)"
       },
       "_sk": {
         "v": 0,
@@ -4642,10 +4908,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.356024506466982,
+      "_score": -3.8665759019741293,
       "_rk": [
         29,
-        5
+        7
       ]
     },
     {
@@ -4661,7 +4927,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -1.3138189244383922,
+        "v": -1.313818924438391,
         "l": "Quality -1.3 (Philadelphia 76ers 2.700 vs Indiana Pacers -4.000)"
       },
       "_sk": {
@@ -4676,7 +4942,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -1.3138189244383922,
+      "_score": -1.313818924438391,
       "_rk": [
         11,
         21
@@ -4695,7 +4961,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -7.950987066031313,
+        "v": -7.950987066031312,
         "l": "Quality -8.0 (Brooklyn Nets -7.000 vs Toronto Raptors -0.800)"
       },
       "_sk": {
@@ -4710,7 +4976,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -7.950987066031313,
+      "_score": -7.950987066031312,
       "_rk": [
         28,
         19
@@ -4761,7 +5027,8 @@
       "league": "College Football",
       "ch": [
         "ABC",
-        "ESPN Unlimited"
+        "ESPN Unlimited",
+        "ESPN Deportes"
       ],
       "dur": 210,
       "_st": {
@@ -5057,8 +5324,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 10.97550494198539,
-        "l": "Quality +11.0 (Atlanta Hawks 1.700 vs Boston Celtics 6.800)"
+        "v": 10.378289473684212,
+        "l": "Quality +10.4 (Atlanta Hawks 1.600 vs Boston Celtics 6.800)"
       },
       "_sk": {
         "v": 0,
@@ -5072,7 +5339,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 10.97550494198539,
+      "_score": 10.378289473684212,
       "_rk": [
         14,
         2
@@ -5316,7 +5583,7 @@
       "espn": "usa.1",
       "lgR": 80.05,
       "_rk": [
-        229,
+        226,
         97
       ]
     },
@@ -5416,7 +5683,8 @@
       "_score": -20.0,
       "cat": "club_competition",
       "area": "womens_club_competition",
-      "espn": "concacaf.womens.championship"
+      "espn": "concacaf.womens.championship",
+      "lgR": 38.16
     },
     {
       "id": 88189775,
@@ -5431,8 +5699,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 9.170605930382468,
-        "l": "Quality +9.2 (Memphis Grizzlies 1.300 vs Minnesota Timberwolves 5.800)"
+        "v": 8.77467105263158,
+        "l": "Quality +8.8 (Memphis Grizzlies 1.300 vs Minnesota Timberwolves 5.800)"
       },
       "_sk": {
         "v": 0,
@@ -5446,10 +5714,10 @@
         "v": 0,
         "l": ""
       },
-      "_score": 9.170605930382468,
+      "_score": 8.77467105263158,
       "_rk": [
         15,
-        7
+        6
       ]
     },
     {
@@ -5484,20 +5752,21 @@
       "_score": 0
     },
     {
-      "id": 14761101,
-      "lgId": 958,
-      "lgSlug": "nba",
-      "time": "21:00",
-      "name": "Dallas Mavericks @ Phoenix Suns",
+      "id": 95055869,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "20:30",
+      "name": "Miami @ Alabama",
       "sport": "Basketball",
-      "league": "NBA",
+      "league": "Men's College Basketball",
       "ch": [
-        "NBA League Pass"
+        "ESPN U",
+        "ESPN Unlimited"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": -0.29271613342409686,
-        "l": "Quality -0.3 (Dallas Mavericks 0.200 vs Phoenix Suns -0.500)"
+        "v": 14.118436954478316,
+        "l": "Quality +14.1 (Miami Hurricanes 17.600 vs Alabama Crimson Tide 15.500)"
       },
       "_sk": {
         "v": 0,
@@ -5511,7 +5780,41 @@
         "v": 0,
         "l": ""
       },
-      "_score": -0.29271613342409686,
+      "_score": 14.118436954478316,
+      "_rk": [
+        14,
+        24
+      ]
+    },
+    {
+      "id": 14761101,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "21:00",
+      "name": "Dallas Mavericks @ Phoenix Suns",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "NBA League Pass"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": -0.3948264125255253,
+        "l": "Quality -0.4 (Dallas Mavericks 0.100 vs Phoenix Suns -0.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -0.3948264125255253,
       "_rk": [
         16,
         17
@@ -5619,20 +5922,21 @@
       "_score": 0
     },
     {
-      "id": 4724873,
-      "lgId": 958,
-      "lgSlug": "nba",
-      "time": "21:30",
-      "name": "Los Angeles Lakers @ San Antonio Spurs",
-      "sport": "Basketball",
-      "league": "NBA",
+      "id": 28805601,
+      "lgId": 2890,
+      "lgSlug": "ncaa-college-volleyball-women",
+      "time": "21:00",
+      "name": "Sacramento State @ Cal Poly",
+      "sport": "Volleyball",
+      "league": "Women's College Volleyball",
       "ch": [
-        "Prime Video (US)"
+        "ESPN Unlimited",
+        "ESPN Select"
       ],
-      "dur": 150,
+      "dur": 120,
       "_st": {
-        "v": 16.390201976794152,
-        "l": "Quality +16.4 (Los Angeles Lakers 4.000 vs San Antonio Spurs 8.700)"
+        "v": 0,
+        "l": "Women's College Volleyball not yet approved for baseline scoring \u2014 flat mod"
       },
       "_sk": {
         "v": 0,
@@ -5646,7 +5950,72 @@
         "v": 0,
         "l": ""
       },
-      "_score": 16.390201976794152,
+      "_score": 0
+    },
+    {
+      "id": 71050669,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "21:00",
+      "name": "Tennessee @ Louisville",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": 13.692236733788336,
+        "l": "Quality +13.7 (Tennessee Volunteers 17.600 vs Louisville Cardinals 14.500)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 13.692236733788336,
+      "_rk": [
+        14,
+        30
+      ]
+    },
+    {
+      "id": 4724873,
+      "lgId": 958,
+      "lgSlug": "nba",
+      "time": "21:30",
+      "name": "Los Angeles Lakers @ San Antonio Spurs",
+      "sport": "Basketball",
+      "league": "NBA",
+      "ch": [
+        "Prime Video (US)"
+      ],
+      "dur": 150,
+      "_st": {
+        "v": 16.54605263157895,
+        "l": "Quality +16.5 (Los Angeles Lakers 4.000 vs San Antonio Spurs 9.400)"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": 16.54605263157895,
       "_rk": [
         9,
         1
@@ -5665,7 +6034,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -3.9686861810755607,
+        "v": -3.96868618107556,
         "l": "Quality -4.0 (Denver Nuggets 2.300 vs Utah Jazz -6.200)"
       },
       "_sk": {
@@ -5680,7 +6049,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -3.9686861810755607,
+      "_score": -3.96868618107556,
       "_rk": [
         12,
         26
@@ -5699,7 +6068,7 @@
       ],
       "dur": 150,
       "_st": {
-        "v": -12.035398230088497,
+        "v": -12.035398230088495,
         "l": "Quality -12.0 (New Orleans Pelicans -6.600 vs LA Clippers -5.200)"
       },
       "_sk": {
@@ -5714,7 +6083,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": -12.035398230088497,
+      "_score": -12.035398230088495,
       "_rk": [
         27,
         25
@@ -5733,8 +6102,8 @@
       ],
       "dur": 150,
       "_st": {
-        "v": 1.9510098839707792,
-        "l": "Quality +2.0 (Golden State Warriors -3.300 vs Portland Trail Blazers 4.800)"
+        "v": 1.8667763157894766,
+        "l": "Quality +1.9 (Golden State Warriors -3.300 vs Portland Trail Blazers 4.800)"
       },
       "_sk": {
         "v": 0,
@@ -5748,7 +6117,7 @@
         "v": 0,
         "l": ""
       },
-      "_score": 1.9510098839707792,
+      "_score": 1.8667763157894766,
       "_rk": [
         20,
         8
@@ -5852,8 +6221,44 @@
       "espn": "usa.1",
       "lgR": 80.05,
       "_rk": [
-        168,
-        359
+        172,
+        358
+      ]
+    },
+    {
+      "id": 12444671,
+      "lgId": 1149,
+      "lgSlug": "ncaa-basketball",
+      "time": "23:30",
+      "name": "TBD @ San Diego State",
+      "sport": "Basketball",
+      "league": "Men's College Basketball",
+      "ch": [
+        "ESPN",
+        "ESPN2",
+        "ESPN Unlimited"
+      ],
+      "dur": 120,
+      "_st": {
+        "v": -8.306027981484371,
+        "l": "Quality -8.3 (San Diego State Aztecs 8.800 vs unlisted opponent -24.140 (not in BPI pool))"
+      },
+      "_sk": {
+        "v": 0,
+        "l": ""
+      },
+      "_rv": {
+        "v": 0,
+        "l": ""
+      },
+      "_mq": {
+        "v": 0,
+        "l": ""
+      },
+      "_score": -8.306027981484371,
+      "_rk": [
+        null,
+        69
       ]
     }
   ],
@@ -5939,8 +6344,8 @@
       "detail": "starts 04:00 AM \u2014 before the 5am day boundary"
     },
     {
-      "name": "Bobsleigh World Cup",
-      "league": "Bobsleigh",
+      "name": "Monobob (Women)",
+      "league": "Bobsleigh World Cup",
       "sport": "Wintersports",
       "time": "04:00",
       "date": "2026-11-27",
@@ -6377,6 +6782,16 @@
       "channel": "The U",
       "reason": "channel",
       "detail": "airs on The U \u2014 none in channels.txt"
+    },
+    {
+      "name": "Jesuit - Catholic",
+      "league": "High School Football",
+      "sport": "Football",
+      "time": "14:00",
+      "date": "2026-11-27",
+      "channel": "Gulf Coast Sports & Entertainment Network",
+      "reason": "channel",
+      "detail": "airs on Gulf Coast Sports & Entertainment Network \u2014 none in channels.txt"
     },
     {
       "name": "Fairfield @ BYU",
@@ -7209,16 +7624,6 @@
       "detail": "airs on YouTube US \u2014 none in channels.txt"
     },
     {
-      "name": "New Mexico State @ Nevada",
-      "league": "Women's College Basketball",
-      "sport": "Basketball",
-      "time": "20:00",
-      "date": "2026-11-27",
-      "channel": "MW+",
-      "reason": "channel",
-      "detail": "airs on MW+ \u2014 none in channels.txt"
-    },
-    {
       "name": "Missouri State @ Oral Roberts",
       "league": "Men's College Basketball",
       "sport": "Basketball",
@@ -7397,6 +7802,16 @@
       "channel": "YouTube US",
       "reason": "channel",
       "detail": "airs on YouTube US \u2014 none in channels.txt"
+    },
+    {
+      "name": "New Mexico State @ Nevada",
+      "league": "Women's College Basketball",
+      "sport": "Basketball",
+      "time": "21:00",
+      "date": "2026-11-27",
+      "channel": "MW+",
+      "reason": "channel",
+      "detail": "airs on MW+ \u2014 none in channels.txt"
     },
     {
       "name": "Cincinnati @ Minnesota",
@@ -8086,9 +8501,6 @@
         "Championship (England)",
         "Championship (Scotland)",
         "Ekstraklasa (Poland)",
-        "League One (England)",
-        "League One (Scotland)",
-        "Liga MX (Mexico)",
         "Ligue 1 (Algeria)",
         "Ligue 1 (France)",
         "Ligue 1 (Tunisia)",
@@ -8295,21 +8707,22 @@
         "Afc Champions League Elite": 67.99,
         "Copa Do Brazil": 51.46,
         "Caf Champions League": 43.72,
+        "Caf Confederation Cup": 43.04,
         "Concacaf Central American Cup": 55.86,
         "Concacaf Champions Cup": 71.68,
         "Leagues Cup": 80.67,
-        "Conmebol Libertadores": 79.88,
-        "Conmebol Sudamericana": 79.52,
+        "Conmebol Libertadores": 79.9,
+        "Conmebol Sudamericana": 79.55,
         "English Fa Cup": 63.52,
         "Carabao Cup": 78.24,
-        "Copa De La Reina": 62.05,
-        "Copa Del Rey": 51.83,
-        "Club World Cup": 85.53,
-        "German Cup": 63.99,
-        "Coppa Italia": 70.15,
+        "Copa De La Reina": 62.02,
+        "Copa Del Rey": 51.82,
+        "Club World Cup": 85.47,
+        "German Cup": 64.02,
+        "Coppa Italia": 70.2,
         "Uefa Champions League": 89.54,
-        "Uefa Europa League": 83.55,
-        "Uefa Conference League": 76.38,
+        "Uefa Europa League": 83.57,
+        "Uefa Conference League": 76.39,
         "U.S. Open Cup": 54.21,
         "Usl Cup": 57.38
       },
@@ -8323,6 +8736,10 @@
           "confederation": "CONMEBOL"
         },
         "Caf Champions League": {
+          "country": "",
+          "confederation": "CAF"
+        },
+        "Caf Confederation Cup": {
           "country": "",
           "confederation": "CAF"
         },
@@ -8397,9 +8814,9 @@
       },
       "label": "Men's club competitions",
       "top": 89.54,
-      "worst": 43.72,
+      "worst": 43.04,
       "anchored": true,
-      "span": 45.82,
+      "span": 46.5,
       "seen": []
     },
     "mens_oneoff": {
@@ -8436,9 +8853,14 @@
     },
     "womens_club_competition": {
       "leagues": {
+        "Concacaf W Championship": 37.55,
         "Uefa Women'S Champions League": 85.22
       },
       "origin": {
+        "Concacaf W Championship": {
+          "country": "",
+          "confederation": "CONCACAF"
+        },
         "Uefa Women'S Champions League": {
           "country": "",
           "confederation": "UEFA"
@@ -8446,9 +8868,9 @@
       },
       "label": "Women's club competitions",
       "top": 85.22,
-      "worst": 85.22,
+      "worst": 37.55,
       "anchored": true,
-      "span": 0.0,
+      "span": 47.67,
       "seen": []
     }
   },
@@ -8464,30 +8886,6 @@
       "gfrLeague": "MLS",
       "country": "USA",
       "confederation": "CONCACAF"
-    },
-    "liga-mx": {
-      "rating": 80.02,
-      "area": "mens_club_league",
-      "rosterMatched": 18,
-      "rosterTotal": 18,
-      "rosterCode": "mex.1",
-      "fixturesResolved": 2,
-      "fixturesSeen": 2,
-      "gfrLeague": "Liga MX",
-      "country": "Mexico",
-      "confederation": "CONCACAF"
-    },
-    "league-one": {
-      "rating": 75.37,
-      "area": "mens_club_league",
-      "rosterMatched": 24,
-      "rosterTotal": 24,
-      "rosterCode": "eng.3",
-      "fixturesResolved": 1,
-      "fixturesSeen": 1,
-      "gfrLeague": "League One",
-      "country": "England",
-      "confederation": "UEFA"
     },
     "la-liga": {
       "rating": 86.17,
@@ -8644,6 +9042,15 @@
       "rosterMatched": 28,
       "rosterTotal": 30
     },
+    "liga-mx": {
+      "rating": 80.02,
+      "area": "mens_club_league",
+      "gfrLeague": "Liga MX",
+      "country": "Mexico",
+      "confederation": "CONCACAF",
+      "rosterMatched": 18,
+      "rosterTotal": 18
+    },
     "primera-a": {
       "rating": 79.85,
       "area": "mens_club_league",
@@ -8719,6 +9126,15 @@
       "confederation": "UEFA",
       "rosterMatched": 18,
       "rosterTotal": 18
+    },
+    "league-one": {
+      "rating": 75.37,
+      "area": "mens_club_league",
+      "gfrLeague": "League One",
+      "country": "England",
+      "confederation": "UEFA",
+      "rosterMatched": 24,
+      "rosterTotal": 24
     },
     "league-two": {
       "rating": 70.16,
@@ -8818,21 +9234,18 @@
       "rosterTotal": 36
     },
     "copa-sudamericana": {
-      "rating": 79.52,
+      "rating": 79.55,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 55,
       "rosterTotal": 56
     },
     "uefa-conference-league": {
-      "rating": 76.38,
+      "rating": 76.39,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 31,
-      "rosterTotal": 36,
-      "fixturesResolved": 14,
-      "fixturesSeen": 18,
-      "rosterCode": "uefa.europa.conf"
+      "rosterTotal": 36
     },
     "english-league-cup": {
       "rating": 78.24,
@@ -8856,14 +9269,11 @@
       "rosterTotal": 20
     },
     "uefa-europa-league": {
-      "rating": 83.55,
+      "rating": 83.57,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 35,
-      "rosterTotal": 36,
-      "fixturesResolved": 17,
-      "fixturesSeen": 18,
-      "rosterCode": "uefa.europa"
+      "rosterTotal": 36
     },
     "leagues-cup": {
       "rating": 80.67,
@@ -8873,14 +9283,14 @@
       "rosterTotal": 36
     },
     "johan-cruyff-shield": {
-      "rating": 85.33,
+      "rating": 85.96,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 2,
       "rosterTotal": 2
     },
     "copa-libertadores": {
-      "rating": 79.88,
+      "rating": 79.9,
       "area": "mens_club_competition",
       "confederation": "CONMEBOL",
       "rosterMatched": 42,
@@ -8915,7 +9325,7 @@
       "rosterTotal": 2
     },
     "coppa-italia": {
-      "rating": 70.15,
+      "rating": 70.2,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 34,
@@ -9000,7 +9410,7 @@
       "rosterTotal": 20
     },
     "ta-a-de-portugal": {
-      "rating": 50.89,
+      "rating": 50.85,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 51,
@@ -9023,7 +9433,7 @@
       "confederation": "AFC"
     },
     "copa-del-rey": {
-      "rating": 51.83,
+      "rating": 51.82,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 40,
@@ -9058,13 +9468,17 @@
       "rosterTotal": 11
     },
     "concacaf-w-championship": {
+      "rating": 38.16,
       "area": "womens_club_competition",
       "confederation": "CONCACAF",
+      "rosterMatched": 0,
+      "rosterTotal": 10,
+      "rosterCode": "concacaf.womens.championship",
       "fixturesResolved": 0,
       "fixturesSeen": 2
     },
     "copa-de-la-reina": {
-      "rating": 62.05,
+      "rating": 62.02,
       "area": "mens_club_competition",
       "confederation": "UEFA",
       "rosterMatched": 22,
@@ -9085,10 +9499,21 @@
       "rosterTotal": 10
     },
     "caf-confederation-cup": {
+      "rating": 43.04,
       "area": "mens_club_competition",
       "confederation": "CAF",
+      "rosterMatched": 8,
+      "rosterTotal": 58,
+      "rosterCode": "caf.confed",
       "fixturesResolved": 0,
       "fixturesSeen": 1
+    },
+    "caf-champions-league": {
+      "rating": 43.72,
+      "area": "mens_club_competition",
+      "confederation": "CAF",
+      "rosterMatched": 9,
+      "rosterTotal": 61
     }
   },
   "confedAnchors": {
