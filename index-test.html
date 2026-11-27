@@ -857,9 +857,19 @@ const TV_PROXY_KEY=id=>TVS[id].proxyKey;
 // built these flip to the source boxes (tv4b / tv12b), which stay drivable
 // from the remote either way.
 const OFFGRID_TVS=[
-  {key:"tv12a",label:"Living Room"},   // V655-J09 SmartCast (Xumo is tv12b, remote-only)
-  {key:"tv11", label:"Deck"},          // Roku 3800X, live since 2026-11
+  {key:"tv12a", label:"Living Room"},   // V655-J09 SmartCast
+  {key:"tv11",  label:"Deck"},          // Roku 3800X, live since 2026-11
 ];
+
+// Screens 4 and 12 carry a panel AND a source box, and either can be the thing
+// that tunes. The grid SCHEDULES the panel; PUT ON TV is a manual "play it here
+// now", so both are offered there. Keyed by the panel's proxy key so the box
+// renders directly after its own screen instead of being exiled to the end of
+// the row -- and so this keeps working if the grid order changes.
+const SOURCE_AFTER={
+  "tv4a":  {key:"tv4b",  label:"Basement 4 \u00B7 onn"},
+  "tv12a": {key:"tv12b", label:"Living Room \u00B7 Xumo"},
+};
 // A QUAD is a TV wired through a multiviewer: it shows four events at once.
 // In scheduling terms that is simply a TV whose capacity is 4 concurrent
 // events instead of 1 — so a quad sitting second in the priority order takes
@@ -3096,24 +3106,31 @@ function App(){
                   percentage wraps at the panel's width and the last buttons
                   land off the right edge where they cannot be tapped. */}
               <div style={{display:"flex",gap:8,flexWrap:"wrap",maxWidth:"calc(100vw - 32px)"}}>
-                {TV_PRIO.map(id=>(
-                  <button key={id} onClick={()=>putOnTv(TV_PROXY_KEY(id),tvNames[id]||TVS[id].name)}
-                    title={`${TVS[id].loc} — tune to ${ch}`}
-                    style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
-                      fontFamily:"monospace",fontSize:13,fontWeight:700,
-                      cursor:"pointer",background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
-                    {TVS[id].name}</button>
-                ))}
-                {OFFGRID_TVS.map(t=>(
-                  <button key={t.key} disabled={t.disabled}
-                    onClick={()=>{ if(!t.disabled) putOnTv(t.key,t.label); }}
-                    title={t.disabled?"no device on the Deck yet":`tune to ${ch}`}
-                    style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
-                      fontFamily:"monospace",fontSize:13,fontWeight:700,
-                      cursor:t.disabled?"not-allowed":"pointer",opacity:t.disabled?0.35:1,
-                      background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
-                    {t.label}</button>
-                ))}
+                {(()=>{
+                  // One ordered pass rather than two maps, so a screen's source
+                  // box can sit directly after its own panel.
+                  const btn=(key,label,title,disabled)=>(
+                    <button key={key} disabled={disabled}
+                      onClick={()=>{ if(!disabled) putOnTv(key,label); }}
+                      title={title}
+                      style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
+                        fontFamily:"monospace",fontSize:13,fontWeight:700,
+                        cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.35:1,
+                        background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
+                      {label}</button>
+                  );
+                  const out=[];
+                  const emit=(key,label,title,disabled)=>{
+                    out.push(btn(key,label,title,disabled));
+                    const src=SOURCE_AFTER[key];
+                    if(src) out.push(btn(src.key,src.label,`tune to ${ch}`,false));
+                  };
+                  TV_PRIO.forEach(id=>emit(TV_PROXY_KEY(id),tvNames[id]||TVS[id].name,
+                                           `${TVS[id].loc} — tune to ${ch}`,false));
+                  OFFGRID_TVS.forEach(t=>emit(t.key,t.label,
+                                       t.disabled?"no device yet":`tune to ${ch}`,t.disabled));
+                  return out;
+                })()}
               </div>
             </div>);
           })()}
