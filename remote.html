@@ -43,24 +43,35 @@
     const { useState, useRef } = React;
 
 
+// 14 control targets, not 12. Screens 4 and 12 each carry a panel AND a
+// source box, so the TV number is no longer the identity: `id` is just a
+// unique row key for React and the <select>, `screen` is the TV number, and
+// `proxyKey` is the only thing the proxy ever sees.
+//
+// The grid (index.html) schedules the PANEL on screens 4 and 12 for now and
+// flips to the source box when the rack is built. The remote lists both
+// either way, so any box stays drivable by hand.
+//
+// Renumbered 2026-11-27: the old "Bar 4..9" / "Basement 10" labels were from
+// the pre-swap layout and no longer matched the room. Priority order is now
+// the same as the screen order for 1-10.
 const DEVICES = [
-  { id: 1,  name: "Basement 1", size: 75,   type: "vizio", proxyKey: "tv1"  },
-  { id: 2,  name: "Basement 2", size: 55,   type: "vizio", proxyKey: "tv2"  },
-  { id: 3,  name: "Basement 3", size: 55,   type: "vizio", proxyKey: "tv3"  },
-  { id: 10, name: "Basement 10",size: 42,   type: "androidtv", proxyKey: "tv10", tvBrand: "LG" }, // onn 4K Pro, LG 42LH40
-  { id: 4,  name: "Bar 4",      size: null, type: "firetv", proxyKey: "tv4"  },
-  { id: 5,  name: "Bar 5",      size: 32,   type: "vizio", proxyKey: "tv5"  },
-  { id: 6,  name: "Bar 6",      size: null, type: "roku",  proxyKey: "tv6"  },
-  { id: 7,  name: "Bar 7",      size: null, type: "roku",  proxyKey: "tv7"  },
-  { id: 8,  name: "Bar 8",      size: null, type: "firetv", proxyKey: "tv8"  },
-  { id: 9,  name: "Bar 9",      size: null, type: "roku",  proxyKey: "tv9"  },
-  // Xumo Stream Box @ 192.168.1.120. Left as "tbd" until the control protocol
-  // is confirmed on the device — "tbd" keeps it in the picker but out of the
-  // mini status row, the same way Deck is handled. proxyKey tv12 so Deck keeps
-  // tv11; display order comes from this array, not from the key.
-  { id: 12, name: "Living Room",size: null, type: "xumo",  proxyKey: "tv12" },
-  { id: 11, name: "Deck",       size: 42,   type: "roku",  proxyKey: "tv11", tvBrand: "LG" }, // the Roku that used to drive TV 10, LG 42LC7D
+  { id: 1,  screen: 1,  name: "TV 1",               size: 70, type: "vizio",     proxyKey: "tv1"   }, // V705-H3
+  { id: 2,  screen: 2,  name: "TV 2",               size: 55, type: "vizio",     proxyKey: "tv2"   }, // V555-J01
+  { id: 3,  screen: 3,  name: "TV 3",               size: 55, type: "vizio",     proxyKey: "tv3"   }, // V555-J01
+  { id: 4,  screen: 4,  name: "TV 4",               size: 50, type: "vizio",     proxyKey: "tv4a"  }, // V505-H9
+  { id: 5,  screen: 4,  name: "TV 4 \u00B7 onn",     size: 50, type: "androidtv", proxyKey: "tv4b"  }, // onn 4K Pro on TV 4
+  { id: 6,  screen: 5,  name: "TV 5",               size: 55, type: "firetv",    proxyKey: "tv5"   }, // Firestick / Philips panel
+  { id: 7,  screen: 6,  name: "TV 6",               size: 32, type: "vizio",     proxyKey: "tv6"   }, // D32h-J04 (was tv5)
+  { id: 8,  screen: 7,  name: "TV 7",               size: 47, type: "roku",      proxyKey: "tv7"   }, // Roku 3820 / Vizio E470VL
+  { id: 9,  screen: 8,  name: "TV 8",               size: 32, type: "roku",      proxyKey: "tv8"   }, // Roku 3820 / Vizio E320VL
+  { id: 10, screen: 9,  name: "TV 9",               size: 55, type: "firetv",    proxyKey: "tv9"   }, // Firestick / LG 55LV4400
+  { id: 11, screen: 10, name: "TV 10",              size: 60, type: "roku",      proxyKey: "tv10"  }, // Roku 3820 / Sharp 60N3540UW
+  { id: 12, screen: 11, name: "Deck",               size: 42, type: "roku",      proxyKey: "tv11"  }, // Roku 3800X / LG 42LC7D
+  { id: 13, screen: 12, name: "Living Room",        size: 65, type: "vizio",     proxyKey: "tv12a" }, // V655-J09
+  { id: 14, screen: 12, name: "Living Room \u00B7 Xumo", size: 65, type: "xumo",  proxyKey: "tv12b" }, // Xumo Stream Box
 ];
+
 
 // Every Spectrum channel number in Channel_Map.xlsx that has an icon, in
 // numeric order. The button sends the NUMBER, not the name, so a stale

@@ -827,29 +827,38 @@ const EVENTS = [
   makeEvent({id:11,time:"22:00",name:"NY Liberty @ Las Vegas Aces",sport:"Basketball",league:"WNBA",ch:"USA Network",dur:150,_st:{v:5,l:"Liberty vs Aces top teams +5"},_sk:{v:4,l:"Playoff seeding +4"},_rv:{v:4,l:"Top rivalry WNBA +4"},_mq:{v:10,l:"Best WNBA matchup +10"}}),
 ];
 
+// Rebuilt 2026-11-27. id, ord and the TV number now all agree: id 0 is TV 1 is
+// first in the priority order. They used to diverge, which made the table hard
+// to read and the "TVs 1-4" preset below hard to follow.
+//
+// proxyKey names the device the proxy should talk to when a game is placed
+// here. On screens with both a smart panel and a source box that is the box,
+// because the box is what actually tunes. The 42" LG that used to be id 9 is
+// out of service; the V505-H9 that came down from the bedroom is the new TV 4.
 const TVS=[
-  {id:0,name:"TV 1",sz:75,loc:"Basement — Center",zone:"basement",brand:"Vizio",input:"SmartCast",ord:0},
-  {id:1,name:"TV 2",sz:55,loc:"Basement — Left",zone:"basement",brand:"Vizio",input:"SmartCast",ord:1},
-  {id:2,name:"TV 3",sz:55,loc:"Basement — Right",zone:"basement",brand:"Vizio",input:"SmartCast",ord:2},
-  {id:3,name:"TV 4",sz:55,loc:"Bar — Right Corner",zone:"bar",brand:"Philips",input:"Firestick",ord:4},
-  {id:4,name:"TV 5",sz:32,loc:"Bar — Right Side",zone:"bar",brand:"Vizio",input:"SmartCast",ord:8},
-  {id:5,name:"TV 6",sz:47,loc:"Bar — Center Right",zone:"bar",brand:"Vizio",input:"Roku",ord:3},
-  {id:6,name:"TV 7",sz:32,loc:"Bar — Center Left",zone:"bar",brand:"Vizio",input:"Roku",ord:9},
-  {id:7,name:"TV 8",sz:55,loc:"Bar — Left Side",zone:"bar",brand:"LG",input:"Firestick",ord:5},
-  {id:8,name:"TV 9",sz:60,loc:"Bar — Left Corner",zone:"bar",brand:"Sharp",input:"Roku",ord:6},
-  {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
+  {id:0,name:"TV 1", sz:70,loc:"Basement — Center",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:0,proxyKey:"tv1"},
+  {id:1,name:"TV 2", sz:55,loc:"Basement — Left",        zone:"basement",brand:"Vizio",  input:"SmartCast",ord:1,proxyKey:"tv2"},
+  {id:2,name:"TV 3", sz:55,loc:"Basement — Right",       zone:"basement",brand:"Vizio",  input:"SmartCast",ord:2,proxyKey:"tv3"},
+  {id:3,name:"TV 4", sz:50,loc:"Basement — Corner",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:3,proxyKey:"tv4a"},
+  {id:4,name:"TV 5", sz:55,loc:"Bar — Right Corner",     zone:"bar",     brand:"Philips",input:"Firestick",ord:4,proxyKey:"tv5"},
+  {id:5,name:"TV 6", sz:32,loc:"Bar — Right Side",       zone:"bar",     brand:"Vizio",  input:"SmartCast",ord:5,proxyKey:"tv6"},
+  {id:6,name:"TV 7", sz:47,loc:"Bar — Center Right",     zone:"bar",     brand:"Vizio",  input:"Roku",     ord:6,proxyKey:"tv7"},
+  {id:7,name:"TV 8", sz:32,loc:"Bar — Center Left",      zone:"bar",     brand:"Vizio",  input:"Roku",     ord:7,proxyKey:"tv8"},
+  {id:8,name:"TV 9", sz:55,loc:"Bar — Left Side",        zone:"bar",     brand:"LG",     input:"Firestick",ord:8,proxyKey:"tv9"},
+  {id:9,name:"TV 10",sz:60,loc:"Bar — Left Corner",      zone:"bar",     brand:"Sharp",  input:"Roku",     ord:9,proxyKey:"tv10"},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
-// The scheduler numbers its TVs from 0; the proxy keys them from 1. They are
-// the same ten TVs in the same order — scheduler brands match the proxy's
-// device types one for one — so the mapping is just the offset.
-const TV_PROXY_KEY=id=>`tv${id+1}`;
+// No longer a simple offset: screens 4 and 12 carry both a panel and a source
+// box, so the proxy key lives on each TVS row.
+const TV_PROXY_KEY=id=>TVS[id].proxyKey;
 // Living Room and Deck are deliberately NOT in TVS: they are never scheduled,
 // never take part in conflicts, and exist here only as somewhere to put a
-// game by hand. Deck has no device yet (type "tbd" in the remote).
+// game by hand. Both targets are the panel itself for now; when the rack is
+// built these flip to the source boxes (tv4b / tv12b), which stay drivable
+// from the remote either way.
 const OFFGRID_TVS=[
-  {key:"tv12",label:"Living Room"},
-  {key:"tv11",label:"Deck",disabled:true},
+  {key:"tv12a",label:"Living Room"},   // V655-J09 SmartCast (Xumo is tv12b, remote-only)
+  {key:"tv11", label:"Deck"},          // Roku 3800X, live since 2026-11
 ];
 // A QUAD is a TV wired through a multiviewer: it shows four events at once.
 // In scheduling terms that is simply a TV whose capacity is 4 concurrent
@@ -859,7 +868,8 @@ const OFFGRID_TVS=[
 const QUAD_CAPACITY=4;
 const tvCapacity=(tvId,quads)=>(quads&&quads[tvId])?QUAD_CAPACITY:1;
 // Grid display order: basement TVs first (1,2,3,10) then bar TVs in sequence (4-9)
-const TV_DISPLAY=[0,1,2,9,3,4,5,6,7,8];
+// (TV_DISPLAY removed - it was never referenced, and priority order is now
+//  the same as display order anyway.)
 
 const FILLS=[
   {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
@@ -1902,10 +1912,10 @@ function App(){
         <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
           <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?C.A:C.BD2}`,background:activePreset==="Mirror 1"?`${C.A}26`:"transparent",color:activePreset==="Mirror 1"?C.A:C.MT}}>Mirror 1</button>
           <button onClick={()=>{
-            const tv14=new Set([0,1,2,9]);
-            const isActive=[...activeTVs].sort().join()==='0,1,2,9';
+            const tv14=new Set([0,1,2,3]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,3';
             setActiveTVs(isActive?new Set(TV_PRIO):tv14);
-          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,9'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>TVs 1–4</button>
           <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
             {TV_PRIO.map(id=>{
               const on=activeTVs.has(id);
