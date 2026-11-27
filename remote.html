@@ -288,17 +288,17 @@ function IconBtn({ label, sub, color, onClick, size = 1 }) {
   );
 }
 
-function NavPad({ onKey, onVolume, isTablet }) {
+function NavPad({ onKey, onVolume, isTablet, onInput, showInput }) {
   const [touching, setTouching] = useState(null);
 
-  const circleBtn = (label, key, style={}) => {
+  const circleBtn = (label, key, style={}, onPress=null) => {
     const [p, setP] = useState(false);
     return (
       <button
         onMouseDown={() => setP(true)} onMouseUp={() => setP(false)}
         onMouseLeave={() => setP(false)}
         onTouchStart={() => setP(true)} onTouchEnd={() => setP(false)}
-        onClick={() => onKey(key)}
+        onClick={() => onPress ? onPress() : onKey(key)}
         style={{
           width: isTablet ? 64 : 52, height: isTablet ? 64 : 52, borderRadius: "50%",
           background: p ? C.SUR3 : C.SUR2,
@@ -320,7 +320,19 @@ function NavPad({ onKey, onVolume, isTablet }) {
     <div>
       {/* Top row: INPUT MENU HOME MIC OPTIONS */}
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:12, padding:"0 4px" }}>
-        {circleBtn("INPUT", "InputHDMI1")}
+        {/* Only the Vizio panels have inputs to switch between. The sticks and
+            boxes ARE an input on a panel that never leaves it, so the old
+            "InputHDMI1" here was a Roku key that did nothing on a Vizio and
+            nothing meaningful on a stick either. */}
+        {/* Rendered unconditionally and hidden when it does not apply.
+            circleBtn calls useState internally, so calling it on some renders
+            and not others changes the hook count between renders and React
+            throws -- switching from a Vizio to a stick would have crashed the
+            remote outright. visibility:hidden keeps the hook count and the
+            layout constant and still swallows clicks. */}
+        <div style={{ visibility: showInput ? "visible" : "hidden" }}>
+          {circleBtn("INPUT", null, {}, onInput)}
+        </div>
         {circleBtn("MENU", "Info")}
         <button
           onClick={() => onKey("Home")}
@@ -856,6 +868,25 @@ function App() {
   // from outside can act on a TV immediately, without waiting a render for
   // setSelectedId to land — a state setter would leave this closure holding
   // the OLD device and tune the wrong TV.
+  // Opens the set's OWN input list and leaves the choosing to the D-pad.
+  //
+  // The obvious version -- buttons that jump straight to an input -- is not
+  // buildable reliably here. Writing current_input is refused by this
+  // firmware, and driving the on-screen list by a computed step count breaks
+  // because that list is not the API's list: it carries WatchFree+ and
+  // AirPlay, which name_input never reports, drops COMP and the tuner, which
+  // it does, and Vizio seeds it with seasonal promo tiles. An offset derived
+  // from the API is wrong today and wrong differently after a firmware
+  // update -- and a wrong offset selects the wrong input silently.
+  //
+  // Opening the list cannot be wrong: the user is looking at the screen.
+  const openInputs = async () => {
+    setStatus("Opening input list...");
+    const r = await proxyPost(`/device/${device.proxyKey}/vizio/input`);
+    setStatus(r?.error ? `Error: ${r.error}` : "Pick with the arrows");
+    setTimeout(() => setStatus(null), 2500);
+  };
+
   const tuneCh = async (ch, dev = device) => {
     // proxyKey, not `tv${dev.id}`: the two agree for every device today, but
     // the DEVICES comment says display order comes from the array and not the
@@ -1121,7 +1152,9 @@ function App() {
 
           {/* NAVIGATE */}
           <Card>
-            <NavPad onKey={sendKey} onVolume={handleVolume} isTablet={isTablet} />
+            <NavPad onKey={sendKey} onVolume={handleVolume} isTablet={isTablet}
+                    showInput={device.type === 'vizio'} onInput={openInputs} />
+
             {status && (
               <div style={{
                 marginTop:8, fontSize:10, fontWeight:500,
