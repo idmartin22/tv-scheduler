@@ -788,7 +788,7 @@ const INITIAL_LEAGUE_STATUS={
 // installed PWA kept serving the copy it cached the first time, so a remote
 // deploy looked like nothing had happened. Appending this makes every deploy
 // a URL the device has not seen, so it updates without clearing any cache.
-const REMOTE_V = "2026-10-17a";
+const REMOTE_V = "2026-11-27b";
 
 const RELAY_URL = "https://bar-relay.isaac-d-martin.workers.dev";
 const RELAY_KEY = "jbUIOIZVsYHv2n6kuKxcv7zYmt-NkBPj";
@@ -827,30 +827,49 @@ const EVENTS = [
   makeEvent({id:11,time:"22:00",name:"NY Liberty @ Las Vegas Aces",sport:"Basketball",league:"WNBA",ch:"USA Network",dur:150,_st:{v:5,l:"Liberty vs Aces top teams +5"},_sk:{v:4,l:"Playoff seeding +4"},_rv:{v:4,l:"Top rivalry WNBA +4"},_mq:{v:10,l:"Best WNBA matchup +10"}}),
 ];
 
+// Rebuilt 2026-11-27. id, ord and the TV number now all agree: id 0 is TV 1 is
+// first in the priority order. They used to diverge, which made the table hard
+// to read and the "Basement" preset below hard to follow.
+//
+// proxyKey names the device the proxy should talk to when a game is placed
+// here. On screens with both a smart panel and a source box that is the box,
+// because the box is what actually tunes. The 42" LG that used to be id 9 is
+// out of service; the V505-H9 that came down from the bedroom is the new TV 4.
 const TVS=[
-  {id:0,name:"TV 1",sz:75,loc:"Basement — Center",zone:"basement",brand:"Vizio",input:"SmartCast",ord:0},
-  {id:1,name:"TV 2",sz:55,loc:"Basement — Left",zone:"basement",brand:"Vizio",input:"SmartCast",ord:1},
-  {id:2,name:"TV 3",sz:55,loc:"Basement — Right",zone:"basement",brand:"Vizio",input:"SmartCast",ord:2},
-  {id:3,name:"TV 4",sz:55,loc:"Bar — Right Corner",zone:"bar",brand:"Philips",input:"Firestick",ord:4},
-  {id:4,name:"TV 5",sz:32,loc:"Bar — Right Side",zone:"bar",brand:"Vizio",input:"SmartCast",ord:8},
-  {id:5,name:"TV 6",sz:47,loc:"Bar — Center Right",zone:"bar",brand:"Vizio",input:"Roku",ord:3},
-  {id:6,name:"TV 7",sz:32,loc:"Bar — Center Left",zone:"bar",brand:"Vizio",input:"Roku",ord:9},
-  {id:7,name:"TV 8",sz:55,loc:"Bar — Left Side",zone:"bar",brand:"LG",input:"Firestick",ord:5},
-  {id:8,name:"TV 9",sz:60,loc:"Bar — Left Corner",zone:"bar",brand:"Sharp",input:"Roku",ord:6},
-  {id:9,name:"TV 10",sz:42,loc:"Basement — Opposite Wall",zone:"basement",brand:"LG",input:"Roku",ord:7},
+  {id:0,name:"Basement 1",   sz:70,loc:"Basement — Center",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:0,proxyKey:"tv1"},
+  {id:1,name:"Basement 2",   sz:55,loc:"Basement — Left",        zone:"basement",brand:"Vizio",  input:"SmartCast",ord:1,proxyKey:"tv2"},
+  {id:2,name:"Basement 3",   sz:55,loc:"Basement — Right",       zone:"basement",brand:"Vizio",  input:"SmartCast",ord:2,proxyKey:"tv3"},
+  {id:3,name:"Basement 4",   sz:50,loc:"Basement — Corner",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:3,proxyKey:"tv4a"},
+  {id:4,name:"Bar 5",        sz:55,loc:"Bar — Right Corner",     zone:"bar",     brand:"Philips",input:"Firestick",ord:4,proxyKey:"tv5"},
+  {id:5,name:"Bar 6",        sz:32,loc:"Bar — Right Side",       zone:"bar",     brand:"Vizio",  input:"SmartCast",ord:5,proxyKey:"tv6"},
+  {id:6,name:"Bar 7",        sz:47,loc:"Bar — Center Right",     zone:"bar",     brand:"Vizio",  input:"Roku",     ord:6,proxyKey:"tv7"},
+  {id:7,name:"Bar 8",        sz:32,loc:"Bar — Center Left",      zone:"bar",     brand:"Vizio",  input:"Roku",     ord:7,proxyKey:"tv8"},
+  {id:8,name:"Bar 9",        sz:55,loc:"Bar — Left Side",        zone:"bar",     brand:"LG",     input:"Firestick",ord:8,proxyKey:"tv9"},
+  {id:9,name:"Bar 10",       sz:60,loc:"Bar — Left Corner",      zone:"bar",     brand:"Sharp",  input:"Roku",     ord:9,proxyKey:"tv10"},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
-// The scheduler numbers its TVs from 0; the proxy keys them from 1. They are
-// the same ten TVs in the same order — scheduler brands match the proxy's
-// device types one for one — so the mapping is just the offset.
-const TV_PROXY_KEY=id=>`tv${id+1}`;
+// No longer a simple offset: screens 4 and 12 carry both a panel and a source
+// box, so the proxy key lives on each TVS row.
+const TV_PROXY_KEY=id=>TVS[id].proxyKey;
 // Living Room and Deck are deliberately NOT in TVS: they are never scheduled,
 // never take part in conflicts, and exist here only as somewhere to put a
-// game by hand. Deck has no device yet (type "tbd" in the remote).
+// game by hand. Both targets are the panel itself for now; when the rack is
+// built these flip to the source boxes (tv4b / tv12b), which stay drivable
+// from the remote either way.
 const OFFGRID_TVS=[
-  {key:"tv12",label:"Living Room"},
-  {key:"tv11",label:"Deck",disabled:true},
+  {key:"tv12a", label:"Living Room"},   // V655-J09 SmartCast
+  {key:"tv11",  label:"Deck"},          // Roku 3800X, live since 2026-11
 ];
+
+// Screens 4 and 12 carry a panel AND a source box, and either can be the thing
+// that tunes. The grid SCHEDULES the panel; PUT ON TV is a manual "play it here
+// now", so both are offered there. Keyed by the panel's proxy key so the box
+// renders directly after its own screen instead of being exiled to the end of
+// the row -- and so this keeps working if the grid order changes.
+const SOURCE_AFTER={
+  "tv4a":  {key:"tv4b",  label:"Basement 4 \u00B7 onn"},
+  "tv12a": {key:"tv12b", label:"Living Room \u00B7 Xumo"},
+};
 // A QUAD is a TV wired through a multiviewer: it shows four events at once.
 // In scheduling terms that is simply a TV whose capacity is 4 concurrent
 // events instead of 1 — so a quad sitting second in the priority order takes
@@ -859,7 +878,8 @@ const OFFGRID_TVS=[
 const QUAD_CAPACITY=4;
 const tvCapacity=(tvId,quads)=>(quads&&quads[tvId])?QUAD_CAPACITY:1;
 // Grid display order: basement TVs first (1,2,3,10) then bar TVs in sequence (4-9)
-const TV_DISPLAY=[0,1,2,9,3,4,5,6,7,8];
+// (TV_DISPLAY removed - it was never referenced, and priority order is now
+//  the same as display order anyway.)
 
 const FILLS=[
   {name:"ESPN",c:{bg:"#7f1d1d",tx:"#fca5a5",br:"#ef4444"}},
@@ -1059,7 +1079,7 @@ function App(){
     setTvQuads(n); debouncedSave(buildSavePayload({tvQuads:n}));
   };
   const updateTvName=(id,val)=>{
-    const n={...tvNames,[id]:val||`TV ${id+1}`};
+    const n={...tvNames,[id]:val||TVS[id].name};
     setTvNames(n);
     debouncedSave(buildSavePayload({tvNames:n}));
   };
@@ -1175,7 +1195,7 @@ function App(){
     return n;
   });
 
-  const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,TVS[id].name]))));
   // Priority order for the TVs, and which of them are quads. Both live in
   // settings.json so they follow you between devices.
   // Confederation mods for national teams: your typed values, the Elo-derived
@@ -1844,7 +1864,21 @@ function App(){
         .tabrow{scrollbar-width:none}.tabrow::-webkit-scrollbar{display:none}
         .tabrow>button{white-space:nowrap}
         @media(max-width:480px){.tabrow>button{padding:5px 7px!important;font-size:10px!important}}
-        @media(max-width:380px){.tabrow>button{padding:5px 5px!important;font-size:9px!important}}`}</style>
+        @media(max-width:380px){.tabrow>button{padding:5px 5px!important;font-size:9px!important}}
+
+        /* List tab widths. A phone and a 27" monitor get the same 700px column
+           otherwise, which is why the event and channel cells ellipsize on the
+           desktop app with half the window empty either side. Done in CSS
+           rather than a resize listener so nothing re-renders on a drag.
+           The grid lives here and NOT inline, because an inline
+           gridTemplateColumns outranks any class and the breakpoint would
+           never apply. */
+        .list-wrap{max-width:700px;margin:0 auto}
+        .list-row{display:grid;grid-template-columns:52px 1fr 80px 32px;gap:8px}
+        @media(min-width:900px){
+          .list-wrap{max-width:980px}
+          .list-row{grid-template-columns:56px 1fr 210px 36px}
+        }`}</style>
 
       {/* ── HEADER ── */}
       <div style={{height:3,background:`linear-gradient(90deg, ${C.A}, ${C.A2})`}}/>
@@ -1888,16 +1922,16 @@ function App(){
         <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10,flexWrap:"wrap"}}>
           <button onClick={()=>applyPreset("Mirror 1")} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${activePreset==="Mirror 1"?C.A:C.BD2}`,background:activePreset==="Mirror 1"?`${C.A}26`:"transparent",color:activePreset==="Mirror 1"?C.A:C.MT}}>Mirror 1</button>
           <button onClick={()=>{
-            const tv14=new Set([0,1,2,9]);
-            const isActive=[...activeTVs].sort().join()==='0,1,2,9';
+            const tv14=new Set([0,1,2,3]);
+            const isActive=[...activeTVs].sort().join()==='0,1,2,3';
             setActiveTVs(isActive?new Set(TV_PRIO):tv14);
-          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,9'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,9'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>Basement</button>
           <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
             {TV_PRIO.map(id=>{
               const on=activeTVs.has(id);
               const isMirrorSrc=presetPairs.some(([s])=>s===id);
               const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));
-              const lbl=tvNames[id]||`TV ${id+1}`;
+              const lbl=tvNames[id]||TVS[id].name;
               const bg=isMirrorSrc?"rgba(249,115,22,0.2)":isMirrorTgt?"rgba(249,115,22,0.08)":on?TVS[id].sz>=55?"rgba(59,130,246,0.2)":"rgba(34,197,94,0.12)":"transparent";
               const bc=isMirrorSrc?C.A:isMirrorTgt?`${C.A}66`:on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
               const tc=isMirrorSrc?C.A:on?"#f1f5f9":C.DM;
@@ -2083,8 +2117,8 @@ function App(){
       )}
 
       {tab==="list"&&(
-        <div key={scheduleDate} style={{paddingBottom:120+detailPanelH,maxWidth:700,margin:"0 auto"}}>
-          <div style={{padding:"8px 16px 4px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8}}>
+        <div key={scheduleDate} className="list-wrap" style={{paddingBottom:120+detailPanelH}}>
+          <div className="list-row" style={{padding:"8px 16px 4px"}}>
             {["SCORE","EVENT","CHANNEL","TV"].map(h=><div key={h} style={{fontSize:10,fontWeight:600,color:C.DM,letterSpacing:"0.05em"}}>{h}</div>)}
           </div>
           {(()=>{
@@ -2197,7 +2231,7 @@ function App(){
                     const sColor=(a.ds??0)>=75?"#22c55e":(a.ds??0)>=50?"#f59e0b":"#94a3b8";
                     return(
                     <div key={a.id}>
-                    <div style={{margin:"3px 10px 3px 26px",borderRadius:10,padding:"10px 12px",display:"grid",gridTemplateColumns:"52px 1fr 80px 32px",gap:8,alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
+                    <div className="list-row" style={{margin:"3px 10px 3px 26px",borderRadius:10,padding:"10px 12px",alignItems:"center",opacity:isRemoved?0.55:1,background:isRemoved?"rgba(239,68,68,0.06)":isNow?"rgba(34,197,94,0.08)":sel===a.id?`${c.bg}55`:`${c.bg}22`,border:`1px solid ${isRemoved?"rgba(239,68,68,0.4)":isNow?"rgba(34,197,94,0.3)":sel===a.id?c.br:"transparent"}`,borderStyle:isRemoved?"dashed":"solid",cursor:"pointer",transition:"all 0.15s"}} onClick={()=>setSel(sel===a.id?null:a.id)}>
                       <div className="espn-display" style={{background:`${sColor}18`,border:`1.5px solid ${sColor}`,borderRadius:6,padding:"3px 5px",textAlign:"center"}}>
                         <div style={{fontSize:12,fontWeight:700,color:sColor}}>{a.ds?.toFixed(1)??"—"}</div>
                         <div style={{fontSize:8,color:C.MT,marginTop:1}}>{m2t(a.startMin)}</div>
@@ -2428,7 +2462,7 @@ function App(){
                   borderBottom:i<tvOrder.length-1?`1px solid ${C.BD}44`:"none"}}>
                   <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
                   <div style={{fontSize:12,color:"#f1f5f9"}}>
-                    {tvNames[id]||`TV ${id+1}`}
+                    {tvNames[id]||TVS[id].name}
                     <span style={{marginLeft:6,fontSize:9,color:C.DM}}>TV {id+1}</span>
                     {q&&<span style={{marginLeft:6,fontSize:8,fontWeight:700,color:"#c084fc",
                       border:"1px solid #c084fc55",borderRadius:4,padding:"1px 4px"}}>QUAD</span>}
@@ -2472,8 +2506,8 @@ function App(){
                   <input
                     value={tvNames[id]||""}
                     onChange={ev=>updateTvName(id,ev.target.value)}
-                    maxLength={8}
-                    placeholder={`TV ${id+1}`}
+                    maxLength={12}
+                    placeholder={TVS[id].name}
                     style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",fontSize:11,fontWeight:500,padding:"5px 6px",width:"100%",outline:"none",textAlign:"center"}}
                   />
                 </div>
@@ -3072,24 +3106,31 @@ function App(){
                   percentage wraps at the panel's width and the last buttons
                   land off the right edge where they cannot be tapped. */}
               <div style={{display:"flex",gap:8,flexWrap:"wrap",maxWidth:"calc(100vw - 32px)"}}>
-                {TV_PRIO.map(id=>(
-                  <button key={id} onClick={()=>putOnTv(TV_PROXY_KEY(id),tvNames[id]||TVS[id].name)}
-                    title={`${TVS[id].loc} — tune to ${ch}`}
-                    style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
-                      fontFamily:"monospace",fontSize:13,fontWeight:700,
-                      cursor:"pointer",background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
-                    {TVS[id].name}</button>
-                ))}
-                {OFFGRID_TVS.map(t=>(
-                  <button key={t.key} disabled={t.disabled}
-                    onClick={()=>{ if(!t.disabled) putOnTv(t.key,t.label); }}
-                    title={t.disabled?"no device on the Deck yet":`tune to ${ch}`}
-                    style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
-                      fontFamily:"monospace",fontSize:13,fontWeight:700,
-                      cursor:t.disabled?"not-allowed":"pointer",opacity:t.disabled?0.35:1,
-                      background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
-                    {t.label}</button>
-                ))}
+                {(()=>{
+                  // One ordered pass rather than two maps, so a screen's source
+                  // box can sit directly after its own panel.
+                  const btn=(key,label,title,disabled)=>(
+                    <button key={key} disabled={disabled}
+                      onClick={()=>{ if(!disabled) putOnTv(key,label); }}
+                      title={title}
+                      style={{minWidth:66,minHeight:44,padding:"10px 12px",borderRadius:10,
+                        fontFamily:"monospace",fontSize:13,fontWeight:700,
+                        cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.35:1,
+                        background:"#14321f",color:"#86efac",border:"1px solid #22c55e55"}}>
+                      {label}</button>
+                  );
+                  const out=[];
+                  const emit=(key,label,title,disabled)=>{
+                    out.push(btn(key,label,title,disabled));
+                    const src=SOURCE_AFTER[key];
+                    if(src) out.push(btn(src.key,src.label,`tune to ${ch}`,false));
+                  };
+                  TV_PRIO.forEach(id=>emit(TV_PROXY_KEY(id),tvNames[id]||TVS[id].name,
+                                           `${TVS[id].loc} — tune to ${ch}`,false));
+                  OFFGRID_TVS.forEach(t=>emit(t.key,t.label,
+                                       t.disabled?"no device yet":`tune to ${ch}`,t.disabled));
+                  return out;
+                })()}
               </div>
             </div>);
           })()}
