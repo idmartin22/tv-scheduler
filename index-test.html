@@ -829,23 +829,23 @@ const EVENTS = [
 
 // Rebuilt 2026-11-27. id, ord and the TV number now all agree: id 0 is TV 1 is
 // first in the priority order. They used to diverge, which made the table hard
-// to read and the "TVs 1-4" preset below hard to follow.
+// to read and the "Basement" preset below hard to follow.
 //
 // proxyKey names the device the proxy should talk to when a game is placed
 // here. On screens with both a smart panel and a source box that is the box,
 // because the box is what actually tunes. The 42" LG that used to be id 9 is
 // out of service; the V505-H9 that came down from the bedroom is the new TV 4.
 const TVS=[
-  {id:0,name:"TV 1", sz:70,loc:"Basement — Center",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:0,proxyKey:"tv1"},
-  {id:1,name:"TV 2", sz:55,loc:"Basement — Left",        zone:"basement",brand:"Vizio",  input:"SmartCast",ord:1,proxyKey:"tv2"},
-  {id:2,name:"TV 3", sz:55,loc:"Basement — Right",       zone:"basement",brand:"Vizio",  input:"SmartCast",ord:2,proxyKey:"tv3"},
-  {id:3,name:"TV 4", sz:50,loc:"Basement — Corner",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:3,proxyKey:"tv4a"},
-  {id:4,name:"TV 5", sz:55,loc:"Bar — Right Corner",     zone:"bar",     brand:"Philips",input:"Firestick",ord:4,proxyKey:"tv5"},
-  {id:5,name:"TV 6", sz:32,loc:"Bar — Right Side",       zone:"bar",     brand:"Vizio",  input:"SmartCast",ord:5,proxyKey:"tv6"},
-  {id:6,name:"TV 7", sz:47,loc:"Bar — Center Right",     zone:"bar",     brand:"Vizio",  input:"Roku",     ord:6,proxyKey:"tv7"},
-  {id:7,name:"TV 8", sz:32,loc:"Bar — Center Left",      zone:"bar",     brand:"Vizio",  input:"Roku",     ord:7,proxyKey:"tv8"},
-  {id:8,name:"TV 9", sz:55,loc:"Bar — Left Side",        zone:"bar",     brand:"LG",     input:"Firestick",ord:8,proxyKey:"tv9"},
-  {id:9,name:"TV 10",sz:60,loc:"Bar — Left Corner",      zone:"bar",     brand:"Sharp",  input:"Roku",     ord:9,proxyKey:"tv10"},
+  {id:0,name:"Basement 1",   sz:70,loc:"Basement — Center",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:0,proxyKey:"tv1"},
+  {id:1,name:"Basement 2",   sz:55,loc:"Basement — Left",        zone:"basement",brand:"Vizio",  input:"SmartCast",ord:1,proxyKey:"tv2"},
+  {id:2,name:"Basement 3",   sz:55,loc:"Basement — Right",       zone:"basement",brand:"Vizio",  input:"SmartCast",ord:2,proxyKey:"tv3"},
+  {id:3,name:"Basement 4",   sz:50,loc:"Basement — Corner",      zone:"basement",brand:"Vizio",  input:"SmartCast",ord:3,proxyKey:"tv4a"},
+  {id:4,name:"Bar 5",        sz:55,loc:"Bar — Right Corner",     zone:"bar",     brand:"Philips",input:"Firestick",ord:4,proxyKey:"tv5"},
+  {id:5,name:"Bar 6",        sz:32,loc:"Bar — Right Side",       zone:"bar",     brand:"Vizio",  input:"SmartCast",ord:5,proxyKey:"tv6"},
+  {id:6,name:"Bar 7",        sz:47,loc:"Bar — Center Right",     zone:"bar",     brand:"Vizio",  input:"Roku",     ord:6,proxyKey:"tv7"},
+  {id:7,name:"Bar 8",        sz:32,loc:"Bar — Center Left",      zone:"bar",     brand:"Vizio",  input:"Roku",     ord:7,proxyKey:"tv8"},
+  {id:8,name:"Bar 9",        sz:55,loc:"Bar — Left Side",        zone:"bar",     brand:"LG",     input:"Firestick",ord:8,proxyKey:"tv9"},
+  {id:9,name:"Bar 10",       sz:60,loc:"Bar — Left Corner",      zone:"bar",     brand:"Sharp",  input:"Roku",     ord:9,proxyKey:"tv10"},
 ];
 const TV_PRIO=[...TVS].sort((a,b)=>a.ord-b.ord).map(t=>t.id);
 // No longer a simple offset: screens 4 and 12 carry both a panel and a source
@@ -1069,7 +1069,7 @@ function App(){
     setTvQuads(n); debouncedSave(buildSavePayload({tvQuads:n}));
   };
   const updateTvName=(id,val)=>{
-    const n={...tvNames,[id]:val||`TV ${id+1}`};
+    const n={...tvNames,[id]:val||TVS[id].name};
     setTvNames(n);
     debouncedSave(buildSavePayload({tvNames:n}));
   };
@@ -1185,7 +1185,7 @@ function App(){
     return n;
   });
 
-  const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,`TV ${id+1}`]))));
+  const [tvNames,setTvNames]=useState(()=>Object.fromEntries(TV_PRIO.map(id=>([id,TVS[id].name]))));
   // Priority order for the TVs, and which of them are quads. Both live in
   // settings.json so they follow you between devices.
   // Confederation mods for national teams: your typed values, the Elo-derived
@@ -1915,13 +1915,13 @@ function App(){
             const tv14=new Set([0,1,2,3]);
             const isActive=[...activeTVs].sort().join()==='0,1,2,3';
             setActiveTVs(isActive?new Set(TV_PRIO):tv14);
-          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>TVs 1–4</button>
+          }} style={{fontSize:10,fontWeight:600,padding:"4px 10px",borderRadius:20,cursor:"pointer",border:`1px solid ${[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.BD2}`,background:[...activeTVs].sort().join()==='0,1,2,3'?"rgba(59,130,246,0.15)":"transparent",color:[...activeTVs].sort().join()==='0,1,2,3'?"#3b82f6":C.MT}}>Basement</button>
           <div style={{display:"flex",alignItems:"center",gap:3,flexWrap:"wrap"}}>
             {TV_PRIO.map(id=>{
               const on=activeTVs.has(id);
               const isMirrorSrc=presetPairs.some(([s])=>s===id);
               const isMirrorTgt=presetPairs.some(([,ts])=>ts.includes(id));
-              const lbl=tvNames[id]||`TV ${id+1}`;
+              const lbl=tvNames[id]||TVS[id].name;
               const bg=isMirrorSrc?"rgba(249,115,22,0.2)":isMirrorTgt?"rgba(249,115,22,0.08)":on?TVS[id].sz>=55?"rgba(59,130,246,0.2)":"rgba(34,197,94,0.12)":"transparent";
               const bc=isMirrorSrc?C.A:isMirrorTgt?`${C.A}66`:on?TVS[id].sz>=55?"#3b82f6":"#22c55e":C.BD;
               const tc=isMirrorSrc?C.A:on?"#f1f5f9":C.DM;
@@ -2452,7 +2452,7 @@ function App(){
                   borderBottom:i<tvOrder.length-1?`1px solid ${C.BD}44`:"none"}}>
                   <div style={{fontSize:11,fontWeight:700,color:C.DM,textAlign:"center"}}>{i+1}</div>
                   <div style={{fontSize:12,color:"#f1f5f9"}}>
-                    {tvNames[id]||`TV ${id+1}`}
+                    {tvNames[id]||TVS[id].name}
                     <span style={{marginLeft:6,fontSize:9,color:C.DM}}>TV {id+1}</span>
                     {q&&<span style={{marginLeft:6,fontSize:8,fontWeight:700,color:"#c084fc",
                       border:"1px solid #c084fc55",borderRadius:4,padding:"1px 4px"}}>QUAD</span>}
@@ -2496,8 +2496,8 @@ function App(){
                   <input
                     value={tvNames[id]||""}
                     onChange={ev=>updateTvName(id,ev.target.value)}
-                    maxLength={8}
-                    placeholder={`TV ${id+1}`}
+                    maxLength={12}
+                    placeholder={TVS[id].name}
                     style={{background:C.SUR,border:`1px solid ${C.BD2}`,borderRadius:8,color:"#f1f5f9",fontSize:11,fontWeight:500,padding:"5px 6px",width:"100%",outline:"none",textAlign:"center"}}
                   />
                 </div>
